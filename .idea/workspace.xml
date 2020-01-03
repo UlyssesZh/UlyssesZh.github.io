@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="16a7a17c-936b-43f1-bb9a-c6456214c5e4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/favicon.ico" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -105,7 +104,7 @@
       <updated>1577847792213</updated>
       <workItem from="1577847797740" duration="19366000" />
       <workItem from="1577953829484" duration="684000" />
-      <workItem from="1577955202649" duration="14385000" />
+      <workItem from="1577955202649" duration="14761000" />
     </task>
     <task id="LOCAL-00001" summary="Init project">
       <created>1577847840311</created>
@@ -135,7 +134,14 @@
       <option name="project" value="LOCAL" />
       <updated>1578020891768</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Changed back the project structure">
+      <created>1578023637300</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1578023637300</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -146,17 +152,18 @@
     <MESSAGE value="Init project" />
     <MESSAGE value="Commit changes" />
     <MESSAGE value="Changed repository structure" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changed repository structure" />
+    <MESSAGE value="Changed back the project structure" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changed back the project structure" />
   </component>
   <component name="WindowStateProjectService">
     <state x="330" y="375" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1577966311987">
       <screen x="0" y="24" width="1920" height="993" />
     </state>
     <state x="330" y="375" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.24.1920.993@0.24.1920.993" timestamp="1577966311987" />
-    <state x="531" y="126" key="CommitChangelistDialog2" timestamp="1578020891458">
+    <state x="531" y="126" key="CommitChangelistDialog2" timestamp="1578023637101">
       <screen x="0" y="24" width="1920" height="993" />
     </state>
-    <state x="531" y="126" key="CommitChangelistDialog2/0.24.1920.993@0.24.1920.993" timestamp="1578020891458" />
+    <state x="531" y="126" key="CommitChangelistDialog2/0.24.1920.993@0.24.1920.993" timestamp="1578023637101" />
     <state x="418" y="285" key="EnvironmentVariablesDialog" timestamp="1577952678854">
       <screen x="0" y="24" width="1920" height="993" />
     </state>
@@ -185,10 +192,10 @@
       <screen x="0" y="24" width="1920" height="993" />
     </state>
     <state x="170" y="160" key="SettingsEditor/0.24.1920.993@0.24.1920.993" timestamp="1577958141421" />
-    <state x="561" y="265" key="Vcs.Push.Dialog.v2" timestamp="1578020897632">
+    <state x="561" y="265" key="Vcs.Push.Dialog.v2" timestamp="1578023638964">
       <screen x="0" y="24" width="1920" height="993" />
     </state>
-    <state x="561" y="265" key="Vcs.Push.Dialog.v2/0.24.1920.993@0.24.1920.993" timestamp="1578020897632" />
+    <state x="561" y="265" key="Vcs.Push.Dialog.v2/0.24.1920.993@0.24.1920.993" timestamp="1578023638964" />
     <state x="624" y="357" key="com.intellij.ide.util.TipDialog" timestamp="1577955202175">
       <screen x="0" y="24" width="1920" height="993" />
     </state>
