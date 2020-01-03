@@ -1,0 +1,6 @@
+rm -rf docs
+cd src
+bundle exec jekyll build
+cp -r _site/ ..
+cd ..
+mv _site/ docs/
