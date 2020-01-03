@@ -2,7 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="16a7a17c-936b-43f1-bb9a-c6456214c5e4" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/_includes/head.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_layouts/myhome.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_layouts/mypost.html" beforeDir="false" afterPath="$PROJECT_DIR$/_layouts/mypost.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_site/404.html" beforeDir="false" afterPath="$PROJECT_DIR$/_site/404.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_site/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/_site/favicon.ico" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_site/feed.xml" beforeDir="false" afterPath="$PROJECT_DIR$/_site/feed.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_site/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_site/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_site/update/2020/01/01/new-blog.html" beforeDir="false" afterPath="$PROJECT_DIR$/_site/update/2020/01/01/new-blog.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/404.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/assets/main.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/assets/minima-social-icons.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/feed.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/update/2020/01/01/new-blog.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/favicon.ico" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.md" beforeDir="false" afterPath="$PROJECT_DIR$/index.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,7 +71,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="/usr/share/rvm/rubies/ruby-2.6.3/bin/ruby" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/_includes" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -66,6 +84,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/_includes" />
       <recent name="$PROJECT_DIR$/docs" />
       <recent name="$PROJECT_DIR$/docs/_layouts" />
     </key>
@@ -104,7 +123,7 @@
       <updated>1577847792213</updated>
       <workItem from="1577847797740" duration="19366000" />
       <workItem from="1577953829484" duration="684000" />
-      <workItem from="1577955202649" duration="14761000" />
+      <workItem from="1577955202649" duration="22039000" />
     </task>
     <task id="LOCAL-00001" summary="Init project">
       <created>1577847840311</created>
@@ -141,7 +160,14 @@
       <option name="project" value="LOCAL" />
       <updated>1578023637300</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Changed back the project structure">
+      <created>1578023961311</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1578023961311</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -160,10 +186,10 @@
       <screen x="0" y="24" width="1920" height="993" />
     </state>
     <state x="330" y="375" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.24.1920.993@0.24.1920.993" timestamp="1577966311987" />
-    <state x="531" y="126" key="CommitChangelistDialog2" timestamp="1578023637101">
+    <state x="531" y="126" key="CommitChangelistDialog2" timestamp="1578023961106">
       <screen x="0" y="24" width="1920" height="993" />
     </state>
-    <state x="531" y="126" key="CommitChangelistDialog2/0.24.1920.993@0.24.1920.993" timestamp="1578023637101" />
+    <state x="531" y="126" key="CommitChangelistDialog2/0.24.1920.993@0.24.1920.993" timestamp="1578023961106" />
     <state x="418" y="285" key="EnvironmentVariablesDialog" timestamp="1577952678854">
       <screen x="0" y="24" width="1920" height="993" />
     </state>
@@ -192,10 +218,10 @@
       <screen x="0" y="24" width="1920" height="993" />
     </state>
     <state x="170" y="160" key="SettingsEditor/0.24.1920.993@0.24.1920.993" timestamp="1577958141421" />
-    <state x="561" y="265" key="Vcs.Push.Dialog.v2" timestamp="1578023638964">
+    <state x="561" y="265" key="Vcs.Push.Dialog.v2" timestamp="1578023962664">
       <screen x="0" y="24" width="1920" height="993" />
     </state>
-    <state x="561" y="265" key="Vcs.Push.Dialog.v2/0.24.1920.993@0.24.1920.993" timestamp="1578023638964" />
+    <state x="561" y="265" key="Vcs.Push.Dialog.v2/0.24.1920.993@0.24.1920.993" timestamp="1578023962664" />
     <state x="624" y="357" key="com.intellij.ide.util.TipDialog" timestamp="1577955202175">
       <screen x="0" y="24" width="1920" height="993" />
     </state>
