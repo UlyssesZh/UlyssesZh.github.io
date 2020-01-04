@@ -2,24 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="16a7a17c-936b-43f1-bb9a-c6456214c5e4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/_includes/head.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_layouts/myhome.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_sass/minima.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_layouts/mypost.html" beforeDir="false" afterPath="$PROJECT_DIR$/_layouts/mypost.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/_config.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_layouts/myhome.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_layouts/mypost.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_posts/2020-01-02-new-blog.md" beforeDir="false" afterPath="$PROJECT_DIR$/_posts/2020-01-02-new-blog.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/_site/404.html" beforeDir="false" afterPath="$PROJECT_DIR$/_site/404.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/_site/favicon.ico" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_site/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_site/assets/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/_site/assets/main.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/_site/feed.xml" beforeDir="false" afterPath="$PROJECT_DIR$/_site/feed.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/_site/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_site/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/_site/update/2020/01/01/new-blog.html" beforeDir="false" afterPath="$PROJECT_DIR$/_site/update/2020/01/01/new-blog.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/404.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/assets/main.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/assets/minima-social-icons.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/feed.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/update/2020/01/01/new-blog.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/favicon.ico" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.md" beforeDir="false" afterPath="$PROJECT_DIR$/index.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -71,7 +65,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/_includes" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/assets" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -84,10 +78,19 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/assets" />
+      <recent name="$PROJECT_DIR$/_sass" />
       <recent name="$PROJECT_DIR$/_includes" />
       <recent name="$PROJECT_DIR$/docs" />
       <recent name="$PROJECT_DIR$/docs/_layouts" />
     </key>
+  </component>
+  <component name="RubyModuleManagerSettings">
+    <option name="blackListedRootsPaths">
+      <list>
+        <option value="$PROJECT_DIR$/_site" />
+      </list>
+    </option>
   </component>
   <component name="RunAnythingCache">
     <option name="myCommands">
@@ -123,7 +126,7 @@
       <updated>1577847792213</updated>
       <workItem from="1577847797740" duration="19366000" />
       <workItem from="1577953829484" duration="684000" />
-      <workItem from="1577955202649" duration="22039000" />
+      <workItem from="1577955202649" duration="28584000" />
     </task>
     <task id="LOCAL-00001" summary="Init project">
       <created>1577847840311</created>
@@ -167,7 +170,14 @@
       <option name="project" value="LOCAL" />
       <updated>1578023961311</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Added favicon and custom head">
+      <created>1578064642132</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1578064642132</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -179,17 +189,18 @@
     <MESSAGE value="Commit changes" />
     <MESSAGE value="Changed repository structure" />
     <MESSAGE value="Changed back the project structure" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changed back the project structure" />
+    <MESSAGE value="Added favicon and custom head" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added favicon and custom head" />
   </component>
   <component name="WindowStateProjectService">
     <state x="330" y="375" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1577966311987">
       <screen x="0" y="24" width="1920" height="993" />
     </state>
     <state x="330" y="375" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.24.1920.993@0.24.1920.993" timestamp="1577966311987" />
-    <state x="531" y="126" key="CommitChangelistDialog2" timestamp="1578023961106">
+    <state x="531" y="126" key="CommitChangelistDialog2" timestamp="1578064641933">
       <screen x="0" y="24" width="1920" height="993" />
     </state>
-    <state x="531" y="126" key="CommitChangelistDialog2/0.24.1920.993@0.24.1920.993" timestamp="1578023961106" />
+    <state x="531" y="126" key="CommitChangelistDialog2/0.24.1920.993@0.24.1920.993" timestamp="1578064641933" />
     <state x="418" y="285" key="EnvironmentVariablesDialog" timestamp="1577952678854">
       <screen x="0" y="24" width="1920" height="993" />
     </state>
@@ -214,14 +225,18 @@
       <screen x="0" y="24" width="1920" height="993" />
     </state>
     <state width="557" height="252" key="GridCell.Tab.0.right/0.24.1920.993@0.24.1920.993" timestamp="1578021968925" />
+    <state x="119" y="256" key="IDE.errors.dialog" timestamp="1578117643354">
+      <screen x="0" y="24" width="1920" height="993" />
+    </state>
+    <state x="119" y="256" key="IDE.errors.dialog/0.24.1920.993@0.24.1920.993" timestamp="1578117643354" />
     <state x="170" y="160" key="SettingsEditor" timestamp="1577958141421">
       <screen x="0" y="24" width="1920" height="993" />
     </state>
     <state x="170" y="160" key="SettingsEditor/0.24.1920.993@0.24.1920.993" timestamp="1577958141421" />
-    <state x="561" y="265" key="Vcs.Push.Dialog.v2" timestamp="1578023962664">
+    <state x="561" y="265" key="Vcs.Push.Dialog.v2" timestamp="1578064644540">
       <screen x="0" y="24" width="1920" height="993" />
     </state>
-    <state x="561" y="265" key="Vcs.Push.Dialog.v2/0.24.1920.993@0.24.1920.993" timestamp="1578023962664" />
+    <state x="561" y="265" key="Vcs.Push.Dialog.v2/0.24.1920.993@0.24.1920.993" timestamp="1578064644540" />
     <state x="624" y="357" key="com.intellij.ide.util.TipDialog" timestamp="1577955202175">
       <screen x="0" y="24" width="1920" height="993" />
     </state>
@@ -230,10 +245,10 @@
       <screen x="0" y="24" width="1920" height="993" />
     </state>
     <state x="216" y="244" width="704" height="536" key="find.popup/0.24.1920.993@0.24.1920.993" timestamp="1578023229237" />
-    <state x="242" y="237" width="672" height="159" key="run.anything.popup" timestamp="1577955558098">
+    <state x="242" y="237" width="672" height="159" key="run.anything.popup" timestamp="1578113884568">
       <screen x="0" y="24" width="1920" height="993" />
     </state>
-    <state x="242" y="237" width="672" height="159" key="run.anything.popup/0.24.1920.993@0.24.1920.993" timestamp="1577955558098" />
+    <state x="242" y="237" width="672" height="159" key="run.anything.popup/0.24.1920.993@0.24.1920.993" timestamp="1578113884568" />
     <state x="624" y="256" width="672" height="678" key="search.everywhere.popup" timestamp="1577958866833">
       <screen x="0" y="24" width="1920" height="993" />
     </state>
