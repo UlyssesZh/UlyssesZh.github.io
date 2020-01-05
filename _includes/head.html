@@ -4,18 +4,24 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	{%- seo -%}
 	<link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}">
-	<link rel="icon" type="image/x-icon" href="/favicon.ico?">
+	<link rel="icon" type="image/x-icon" href="{{ "/favicon.ico?" | relative-url }}">
 	{%- feed_meta -%}
 	{%- if jekyll.environment == 'production' and site.google_analytics -%}
 		{%- include google-analytics.html -%}
 	{%- endif -%}
 	<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-	tex2jax: {
-		inlineMath: [['$','$'],['\\(','\\)']],
-		skipTags: ['pre'],
-	}
-});
-</script>
-	<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+		MathJax.Hub.Config({
+			tex2jax: {
+				inlineMath: [['$', '$'], ['\\(', '\\)']],
+				processEscapes: true,
+				skipTags: ['pre'],
+			},
+			TeX: {
+				equationNumbers: {
+					autoNumber: 'all'
+				}
+			}
+		});
+	</script>
+	<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </head>

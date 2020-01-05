@@ -6,7 +6,9 @@ baseurl: ""
 url: "https://UlyssesZh.github.io"
 twitter_username: UlyssesZhan
 github_username:  UlyssesZh
-header_pages: []
+header_pages:
+  - my_pages/about.md
+  - my_pages/contact.md
 theme: minima
 plugins:
   - jekyll-feed
