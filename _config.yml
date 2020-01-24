@@ -4,8 +4,6 @@ description: >-
   Here we are at the awesome (awful) blog written by Ulysses Zhan!
 baseurl: ""
 url: "https://UlyssesZh.github.io"
-twitter_username: UlyssesZhan
-github_username:  UlyssesZh
 header_pages:
   - my_pages/about.md
   - my_pages/contact.md
@@ -18,3 +16,15 @@ exclude:
   - Gemfile.lock
   - .git/
   - .idea/
+
+# Google
+measurement_id: G-7TSJ5VM6YC
+google_verification: ZuV45Knwuwl49Nvh9UsDzniZ-3qy3bGhBPofLK3SZPw
+tagmanager_id: GTM-5PX967D
+
+# Social
+twitter_username: UlyssesZhan
+github_username: UlyssesZh
+facebook_username: YouqiuZhan
+instagram_username: ulysseszhan
+pinterest_username: ulysseszhan
