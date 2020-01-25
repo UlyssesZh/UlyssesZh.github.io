@@ -1,7 +1,7 @@
 ---
-layout: default
-permalink: /about/
 title: About
+permalink: "/about/"
+layout: default
 ---
 
 Here is the blog written by me, Ulysses Zhan.
