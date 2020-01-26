@@ -1,8 +1,9 @@
 ---
-layout: post
 title: Hyperellipsoids in barycentric coordinates
-date: 2020-01-25 17:13:57 +0800
-categories: math
+date: 2020-01-25 09:13:57 Z
+categories:
+- math
+layout: post
 ---
 
 # Some notations
