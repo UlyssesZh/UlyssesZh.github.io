@@ -1,8 +1,9 @@
 ---
-layout: post
 title: Use complex numbers as canonical variables
-date: 2020-01-06 14:09:47 +0800
-categories: physics
+date: 2020-01-06 06:09:47 Z
+categories:
+- physics
+layout: post
 ---
 
 # Introduction

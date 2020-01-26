@@ -1,7 +1,7 @@
 ---
-layout: default
-permalink: /donate/
 title: Donate
+permalink: "/donate/"
+layout: default
 ---
 
 If you like my blog,

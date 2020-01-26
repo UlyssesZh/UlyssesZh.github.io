@@ -1,7 +1,7 @@
 ---
-layout: default
-permalink: /contact/
 title: Contact
+permalink: "/contact/"
+layout: default
 ---
 
 You can find my appearance in many places,
