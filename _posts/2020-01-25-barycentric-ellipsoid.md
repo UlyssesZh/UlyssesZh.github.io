@@ -127,8 +127,8 @@ Substitute Formula \ref{barycenter zero} into \ref{Q^-1},
 and then we can derive that
 \begin{equation\*}
     \mathbf Q=\left(\begin{matrix}
-        &&&0\\\\&\mathbf V\mathbf V^{\mathrm T}&&\vdots\\\\
-        &&&0\\\\0&\cdots&0&n
+        &&&0\\\\&\mathbf V\mathbf V^{\mathrm T}&&\vdots
+        \\\\&&&0\\\\0&\cdots&0&n
     \end{matrix}\right)^{-1}=
     \left(\begin{matrix}
         &&&0\\\\&\mathbf W&&\vdots\\\\&&&0\\\\0&\cdots&0&\frac1n
