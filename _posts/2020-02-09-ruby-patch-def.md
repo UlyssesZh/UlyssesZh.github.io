@@ -271,4 +271,4 @@ and
 [#16617](https://bugs.ruby-lang.org/issues/16617){:target="_blank"}).
 Although both of them have been fixed (or will be fixed),
 I cannot be sure that there will not be further and fatal bugs.
-I think these features are not very reliable in recent Ruby versions.
+I do not think these features are very reliable in recent Ruby versions.
