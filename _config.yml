@@ -13,6 +13,7 @@ description: Here we are at the awesome (awful) blog written by Ulysses Zhan!
 baseurl: ''
 url: https://UlyssesZh.github.io
 header_pages:
+- my_pages/friends.md
 - my_pages/about.md
 - my_pages/contact.md
 theme: minima
