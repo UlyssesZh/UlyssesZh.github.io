@@ -52,7 +52,8 @@ V1: o4 motif motif
 V2: o5 motif
 ```
 The audio above is an illustration for octave intervals.
-As can be heard, the first part of the audio are played in
+As can be heard, the first part of the audio is played in
+octave intervals while the second part is played in single notes.
 
 Considering that, here comes an amazing idea by which we can kind
 of make the sequence $\left\\{f_k\right\\}$ seem "periodic".
