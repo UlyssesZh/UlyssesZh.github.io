@@ -224,7 +224,7 @@ By solving it, we can derive that
 \begin{equation\*}
     \mathbf c=\frac{\Im\mathbf c\_0}mt+\mathbf c\_0,
 \end{equation\*}
-where $\mathbf c\_0$ are $3$ arbitrary complex constants.
+where $\mathbf c\_0$ is $3$ arbitrary complex constants.
 
 ## Harmonic oscillator
 
@@ -235,7 +235,7 @@ The Hamiltonian of a harmonic oscillator is
 where $c$ is a complex number, $\alpha=\sqrt k$, $\beta=\frac1{\sqrt m}$.
 Substitute it into \ref{new canonical eq}, and then we can derive that
 \begin{equation\*}
-    \frac{\mathrm d\mathbf c}{\mathrm dt}=-\mathrm i\omega c,
+    \frac{\mathrm dc}{\mathrm dt}=-\mathrm i\omega c,
 \end{equation\*}
 where $\omega:=\alpha\beta=\sqrt{\frac km}$.
 By solving it, we can derive that
