@@ -1,6 +1,6 @@
 ---
 title: The octave group (unfinished)
-date: 2020-03-30 11:16:53 +0800
+date: 2020-03-30 03:16:53 Z
 categories:
 - math
 layout: post
