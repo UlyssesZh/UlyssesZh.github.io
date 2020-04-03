@@ -13,6 +13,11 @@
 
 <main class="page-content" aria-label="Content">
 	<div class="wrapper">
+		<!-- Added begin -->
+		{%- if page.title -%}
+			<h2 class="page-title">{{ page.title }}</h2>
+		{%- endif -%}
+		<!-- Added end -->
 		{{ content }}
 	</div>
 </main>

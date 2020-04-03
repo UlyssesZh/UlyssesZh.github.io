@@ -10,15 +10,19 @@ collections:
     output: true
 email: UlyssesZhan@gmail.com
 description: Here we are at the awesome (awful) blog written by Ulysses Zhan!
+copyright: 2020 Ulysses Zhan
 baseurl: ''
 url: https://UlyssesZh.github.io
 header_pages:
-- my_pages/friends.md
 - my_pages/about.md
+- my_pages/archives.html
 - my_pages/contact.md
+- my_pages/friends.md
 theme: minima
 plugins:
 - jekyll-feed
+- jekyll-sitemap
+- jekyll-archives
 exclude:
 - README.md
 - Gemfile
@@ -33,3 +37,19 @@ github_username: UlyssesZh
 facebook_username: YouqiuZhan
 instagram_username: ulysseszhan
 pinterest_username: ulysseszhan
+
+jekyll-archives:
+  enabled: all
+  layout: archive
+  layouts:
+    year: year-archive
+    month: month-archive
+    day: day-archive
+    category: tag-category-archive
+    tag: tag-category-archive
+  permalinks:
+    year: '/archives/:year/'
+    month: '/archives/:year/:month/'
+    day: '/archives/:year/:month/:day/'
+    tag: '/archives/tag/:name/'
+    category: '/archives/category/:name/'
