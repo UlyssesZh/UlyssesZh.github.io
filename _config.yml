@@ -37,7 +37,6 @@ github_username: UlyssesZh
 facebook_username: YouqiuZhan
 instagram_username: ulysseszhan
 pinterest_username: ulysseszhan
-
 jekyll-archives:
   enabled: all
   layout: archive
@@ -48,8 +47,8 @@ jekyll-archives:
     category: tag-category-archive
     tag: tag-category-archive
   permalinks:
-    year: '/archives/:year/'
-    month: '/archives/:year/:month/'
-    day: '/archives/:year/:month/:day/'
-    tag: '/archives/tag/:name/'
-    category: '/archives/category/:name/'
+    year: "/archives/:year/"
+    month: "/archives/:year/:month/"
+    day: "/archives/:year/:month/:day/"
+    tag: "/archives/tag/:name/"
+    category: "/archives/category/:name/"
