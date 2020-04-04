@@ -1,7 +1,7 @@
 ---
 title: Contact
 permalink: "/contact/"
-layout: default
+layout: my_page
 ---
 
 You can find my appearance in many places,

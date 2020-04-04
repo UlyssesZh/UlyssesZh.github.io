@@ -1,0 +1,22 @@
+---
+layout: default
+---
+
+<div class="home">
+  {%- if page.title -%}
+    <h1 class="page-heading">{{ page.title }}</h1>
+  {%- endif -%}
+
+  {{ content }}
+
+  {%- if site.posts.size > 0 -%}
+    <!-- Modified begin -->
+    <h2 class="post-list-heading">
+      {{ site.collections.posts.title | default: "Posts" }}
+    </h2>
+    {%- include posts_list.html posts=site.posts -%}
+    <!-- Modified end -->
+    <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
+  {%- endif -%}
+
+</div>

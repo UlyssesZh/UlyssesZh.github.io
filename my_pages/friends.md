@@ -1,7 +1,7 @@
 ---
 title: Friends
 permalink: "/friends/"
-layout: default
+layout: my_page
 ---
 
 Here are some of my friends (ordered lexicographically):

@@ -1,7 +1,7 @@
 ---
 title: About
 permalink: "/about/"
-layout: default
+layout: my_page
 ---
 
 Here is the blog written by me, Ulysses Zhan.

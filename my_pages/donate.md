@@ -1,7 +1,7 @@
 ---
 title: Donate
 permalink: "/donate/"
-layout: default
+layout: my_page
 ---
 
 If you like my blog,
