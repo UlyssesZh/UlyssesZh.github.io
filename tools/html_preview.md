@@ -17,8 +17,8 @@ MathJax is enabled, so you can type math as $\LaTeX$.
 
 <p id="output"></p>
 <script>
-	var input = document.getElementById('input');
-	var output = document.getElementById('output');
+	const input = document.getElementById('input');
+	const output = document.getElementById('output');
 	autosize(input);
 	input.addEventListener("keydown", event => {
 		if (event.ctrlKey && event.key === "Enter") {
