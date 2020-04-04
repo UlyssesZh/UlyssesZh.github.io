@@ -1,10 +1,12 @@
 ---
-layout: default
+layout: tool
+title: HTML preview
 ---
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/autosize.js/4.0.2/autosize.min.js"></script>
 
-This page is used for HTML preview. The texts you input in the area below will be filled into a `<p>` tag below.
+The texts you input in the area below will
+be filled into a `<p>` tag below.
 
 MathJax is enabled, so you can type math as $\LaTeX$.
 

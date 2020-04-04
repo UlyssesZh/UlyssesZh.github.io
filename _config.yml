@@ -1,12 +1,9 @@
 ---
 title: Ulysses' trip
-timezone: UTC
+timezone: CN
 collections:
   posts:
     title: Posts
-    output: true
-  uploads:
-    title: Uploads
     output: true
 email: UlyssesZhan@gmail.com
 description: Here we are at the awesome (awful) blog written by Ulysses Zhan!
