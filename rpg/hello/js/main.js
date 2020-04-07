@@ -8,22 +8,22 @@ Sprite.prototype.isClicked = function() {
 		this.y <= TouchInput.y && TouchInput.y <= this.y + this.height;
 };
 
-const sprite = new Sprite();
-const background = new Sprite();
-const upButton = new Sprite();
-const downButton = new Sprite();
-const leftButton = new Sprite();
-const rightButton = new Sprite();
-const clearButton = new Sprite();
-let right = true;
-let down = true;
+var sprite = new Sprite();
+var background = new Sprite();
+var upButton = new Sprite();
+var downButton = new Sprite();
+var leftButton = new Sprite();
+var rightButton = new Sprite();
+var clearButton = new Sprite();
+var right = true;
+var down = true;
 
 function clearBackground() {
 	background.bitmap.clearRect(1, 1,
 		Graphics.width - 2, Graphics.height - 2);
 }
 
-const size = 50;
+var size = 50;
 function setButton(button, text, x, y) {
 	button.bitmap = new Bitmap(size, size);
 	button.bitmap.fontSize = size;
@@ -93,16 +93,16 @@ Graphics.boxHeight = 624;
 WebAudio.initialize(false);
 Input.initialize();
 TouchInput.initialize();
-const deltaTime = 1.0 / 60.0;
-let accumulator = 0.0;
-let currentTime;
+var deltaTime = 1.0 / 60.0;
+var accumulator = 0.0;
+var currentTime;
 window.scene = new Stage();
 start();
 function performUpdate() {
 	Graphics.tickStart();
-	const newTime = performance.now();
+	var newTime = performance.now();
 	if (currentTime === undefined) currentTime = newTime;
-	const fTime = ((newTime - currentTime) / 1000).clamp(0, 0.25);
+	var fTime = ((newTime - currentTime) / 1000).clamp(0, 0.25);
 	currentTime = newTime;
 	accumulator += fTime;
 	while (accumulator >= deltaTime) {
