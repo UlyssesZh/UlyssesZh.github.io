@@ -13,10 +13,7 @@
 	var siteStructure;
 	xhr.open('GET', url);
 	xhr.overrideMimeType('application/json');
-	xhr.onerror = () => {
-		alert('Error loading map.json');
-		siteStructure = null;
-	};
+	xhr.onerror = () => console.warn('Error loading map.json');
 	
 	var oldSceneManagerRun = SceneManager.run;
 	SceneManager.run = function(sceneClass) {
@@ -31,6 +28,7 @@
 	};
 	
 	function useRTP(url) {
+		if (siteStructure === undefined) return false;
 		if (url[0] === '/') return false;
 		var pos = siteStructure;
 		var ary = url.split('/');
@@ -61,18 +59,18 @@
 	var oldBitmapLoad = Bitmap.load;
 	Bitmap.load = function(url) {
 		if (useRTP(url)) url = path + url;
-		return oldBitmapLoad(url);
+		return oldBitmapLoad.call(this, url);
 	};
 	
 	var oldGraphicsSetLoadingImage = Graphics.setLoadingImage;
 	Graphics.setLoadingImage = function(url) {
 		if (useRTP(url)) url = path + url;
-		oldGraphicsSetLoadingImage(url);
+		oldGraphicsSetLoadingImage.call(this, url);
 	};
 	
 	var oldHtml5AudioSetup = Html5Audio.setup;
 	Html5Audio.setup = function(url) {
 		if (useRTP(url)) url = path + url;
-		oldHtml5AudioSetup(url);
+		oldHtml5AudioSetup.call(this, url);
 	}
 })();
