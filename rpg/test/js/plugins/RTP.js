@@ -1,4 +1,18 @@
-// author: Ulysses
+/*:
+ * @plugindesc Make the game find resources from RTP
+ * @author Ulysses
+ *
+ * @param RTPPath
+ * @desc The path of RTP. Can be relative.
+ * @default ../common/
+ *
+ * @help
+ * Suppose your game dir name is "my_game".
+ * Put the file _gem_map at the parent folder of my_game
+ * and run the command `./_game_map my_game` before using the plugin.
+ */
+
+ULYSSES_PLUGINS.register(1);
 
 (() => {
 	function buildParent(structure) {
@@ -48,7 +62,7 @@
 		return false;
 	}
 	
-	var path = PluginManager.parameters('rtp')['RTPPath'];
+	var path = ULYSSES_PLUGINS.parameters().RTPPath;
 	
 	var oldWebAudioInitialize = WebAudio.prototype.initialize;
 	WebAudio.prototype.initialize = function(url) {
@@ -72,5 +86,5 @@
 	Html5Audio.setup = function(url) {
 		if (useRTP(url)) url = path + url;
 		oldHtml5AudioSetup.call(this, url);
-	}
+	};
 })();

@@ -1,10 +1,30 @@
-// author: Ulysses
+/*:
+ * @plugindesc Add the function of removing savefiles.
+ * @author Ulysses
+ *
+ * @param removeKeyCode
+ * @desc The code of the key by triggering which to remove a savefile.
+ * @default 46
+ *
+ * @param keepBackup
+ * @desc Whether to keep the backup of a savefile when removing it.
+ * @default true
+ *
+ * @param playRemoveSound
+ * @desc How the SE will be played.
+ * @default SoundManager.playCancel.bind(SoundManager)
+ *
+ * @help
+ * Add the function of removing savefiles.
+ */
+
+ULYSSES_PLUGINS.register(1);
 
 (() => {
-	var parameters = PluginManager.parameters('remove_savefile');
-	var keyCode = parameters.removeKeyCode;
-	var keepBackup = parameters.keepBackup;
-	var playRemoveSound = parameters.playRemoveSound;
+	var parameters = ULYSSES_PLUGINS.parameters();
+	var keyCode = Number(parameters.removeKeyCode);
+	var keepBackup = parameters.keepBackup === 'true';
+	var playRemoveSound = eval(parameters.playRemoveSound);
 	
 	Input.keyMapper[keyCode] = 'remove';
 	
