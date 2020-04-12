@@ -1,0 +1,42 @@
+require:
+  - rubocop-performance
+  - rubocop-rspec
+
+AllCops:
+  Exclude:
+    - '_site/**/*'
+  TargetRubyVersion: 2.7
+
+Layout/Tab:
+  Enabled: false
+
+Style/HashEachMethods:
+  Enabled: true
+
+Style/HashTransformKeys:
+  Enabled: true
+
+Style/HashTransformValues:
+  Enabled: true
+
+Style/CharacterLiteral:
+  Enabled: false
+
+Style/StabbyLambdaParentheses:
+  Enabled: false
+
+Style/LambdaCall:
+  Enabled: false
+
+Style/MethodDefParentheses:
+  Enabled: false
+
+Layout/IndentationWidth:
+  Width: 1
+
+Layout/HashAlignment:
+  EnforcedHashRocketStyle: table
+  EnforcedColonStyle: table
+
+Layout/TrailingWhitespace:
+  Enabled: false

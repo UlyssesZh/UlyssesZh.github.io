@@ -1,0 +1,36 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+def build path, indent
+	dir = Dir.new path
+	return '' if dir.children == ['index.html']
+	
+	newline = ?\n + ?\t * indent
+	result = '<ul>' + newline
+	dir.children.sort.each do |child|
+		next if child == 'index.html'
+		
+		result += '<li>'
+		subpath = File.join path, child
+		child_title = child
+		if File.exist? File.join subpath, 'index.html'
+			child_title = "<a href=\"#{subpath[5..]}/\">#{child_title}</a>"
+		end
+		result += child_title
+		result += build subpath, indent + 1
+		result += '</li>' + newline
+	end
+	result + '</ul>'
+end
+
+File.open 'my_pages/archives.html', 'w+' do |file|
+	file.puts <<~HEAD
+---
+title: Archives
+permalink: "/archives/"
+layout: my_page
+---
+
+	HEAD
+	file.puts build '_site/archives', 1
+end

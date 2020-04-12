@@ -12,7 +12,7 @@ baseurl: ''
 url: https://UlyssesZh.github.io
 header_pages:
 - my_pages/about.md
-- my_pages/archives.html
+- my_pages/archives.html.bak
 - my_pages/contact.md
 - my_pages/friends.md
 theme: minima
@@ -25,8 +25,9 @@ exclude:
 - README.md
 - Gemfile
 - Gemfile.lock
-- ".git/"
-- ".idea/"
+- .git/
+- .idea/
+- .rubocop.yml
 measurement_id: G-7TSJ5VM6YC
 google_verification: ZuV45Knwuwl49Nvh9UsDzniZ-3qy3bGhBPofLK3SZPw
 tagmanager_id: GTM-5PX967D

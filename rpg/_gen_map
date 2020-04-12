@@ -16,7 +16,7 @@ end
 dist = ARGV.first
 result = { dist => {} }
 build result[dist], Dir.new(dist)
-open filename = "#{dist}/map.json", 'w+' do |file|
+File.open filename = "#{dist}/map.json", 'w+' do |file|
 	file.puts JSON.generate result
 end
 system "git add #{filename}"
