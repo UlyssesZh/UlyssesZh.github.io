@@ -12,7 +12,7 @@ baseurl: ''
 url: https://UlyssesZh.github.io
 header_pages:
 - my_pages/about.md
-- my_pages/archives.html.bak
+- my_pages/archives.html
 - my_pages/contact.md
 - my_pages/friends.md
 theme: minima
