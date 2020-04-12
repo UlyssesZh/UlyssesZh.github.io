@@ -16,6 +16,7 @@ header_pages:
 - my_pages/contact.md
 - my_pages/friends.md
 theme: minima
+future: true
 plugins:
 - jekyll-feed
 - jekyll-sitemap
