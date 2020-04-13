@@ -22,6 +22,7 @@ plugins:
 - jekyll-sitemap
 - jekyll-archives
 exclude:
+- LICENSE.md
 - README.md
 - Gemfile
 - Gemfile.lock
