@@ -6,7 +6,7 @@ gem 'jekyll', '~> 3.8'
 gem 'minima', '~> 2.5'
 group :jekyll_plugins do
 	gem 'github-pages', '~> 204'
-	gem 'jekyll-archives'
+	gem 'jekyll-archives' # gh pages does not support this!
 	gem 'jekyll-feed', '~> 0.13'
 	gem 'jekyll-sitemap', '~> 1.4'
 end
