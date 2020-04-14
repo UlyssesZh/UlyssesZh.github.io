@@ -1,0 +1,1156 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-04-14T02:36:58+00:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Ulysses’ trip</title><subtitle>Here we are at the awesome (awful) blog written by Ulysses Zhan!</subtitle><entry><title type="html">Algebraic structure of compounds</title><link href="http://localhost:4000/chemistry/2020/04/13/chemical-algebra.html" rel="alternate" type="text/html" title="Algebraic structure of compounds" /><published>2020-04-13T13:59:28+00:00</published><updated>2020-04-13T13:59:28+00:00</updated><id>http://localhost:4000/chemistry/2020/04/13/chemical-algebra</id><content type="html" xml:base="http://localhost:4000/chemistry/2020/04/13/chemical-algebra.html">&lt;p&gt;Test&lt;/p&gt;</content><author><name></name></author><summary type="html">Test</summary></entry><entry><title type="html">The concentration change of gas in reversible reactions</title><link href="http://localhost:4000/chemistry/2020/04/12/concentration-time.html" rel="alternate" type="text/html" title="The concentration change of gas in reversible reactions" /><published>2020-04-12T02:00:01+00:00</published><updated>2020-04-12T02:00:01+00:00</updated><id>http://localhost:4000/chemistry/2020/04/12/concentration-time</id><content type="html" xml:base="http://localhost:4000/chemistry/2020/04/12/concentration-time.html">&lt;h1 id=&quot;introduction&quot;&gt;Introduction&lt;/h1&gt;
+
+&lt;p&gt;A reversible elementary reaction takes place inside a closed,
+highly thermally conductive container of constant volume,
+whose reactants are all gases, and the reaction equation is
+\begin{equation*}
+    \sum_ka_kX_k\rightleftharpoons\sum_kb_kY_k,
+\end{equation*}
+where $X_k$ and $Y_k$ are reactants, and $a_k$ and $b_k$ are
+stoichiometries.&lt;/p&gt;
+
+&lt;p&gt;Use square brackets to denote concentrations.
+Our goal is to find $\left[X_k\right]$ and $\left[Y_k\right]$
+as functions with respect to time $t$.&lt;/p&gt;
+
+&lt;h1 id=&quot;the-approach&quot;&gt;The approach&lt;/h1&gt;
+
+&lt;p&gt;It is easy to write out the rate equations
+\begin{equation}
+\begin{split}
+    \frac{\mathrm d\left[X_j\right]}{\mathrm dt}=
+        a_j\left(\mu_Y\prod_k\left[Y_k\right]^{b_k}-
+        \mu_X\prod_k\left[X_k\right]^{a_k}\right),\&lt;br /&gt;
+    \frac{\mathrm d\left[Y_j\right]}{\mathrm dt}=
+        b_j\left(\mu_X\prod_k\left[X_k\right]^{a_k}-
+        \mu_Y\prod_k\left[Y_k\right]^{b_k}\right),
+\end{split}
+    \label{rate_equations}
+\end{equation}
+where $\mu_X$ and $\mu_Y$ are rate constants derived by experimenting.&lt;/p&gt;
+
+&lt;p&gt;Apply a substitution
+\begin{equation}
+\begin{split}
+    x_j:=\frac{\left[X_j\right]}{a_j},\quad
+    y_j:=\frac{\left[Y_j\right]}{b_j},\&lt;br /&gt;
+    \mu_x:=\mu_X\prod_ka_k^{a_k},\quad
+    \mu_y:=\mu_Y\prod_kb_k^{b_k}
+\end{split}
+    \label{substitution}
+\end{equation}
+to Formula \ref{rate_equations}, and then it becomes
+\begin{equation}
+\begin{split}
+    \frac{\mathrm dx_j}{\mathrm dt}=
+    \mu_y\prod_ky_k^{b_k}-\mu_x\prod_kx_k^{a_k},\&lt;br /&gt;
+    \frac{\mathrm dy_j}{\mathrm dt}=
+    \mu_x\prod_kx_k^{a_k}-\mu_y\prod_ky_k^{b_k},
+\end{split}
+    \label{substituted_rate}
+\end{equation}
+which means the changes of $x_j$ are all equal,
+the changes of $y_j$ are all equal,
+and the changes of $x_j$ are opposite to the changes of $y_j$.&lt;/p&gt;
+
+&lt;p&gt;Denote the changes of $x_j$ are equal to $s$, the initial value of
+$x_j$ is $A_j$, the initial value of $y_j$ is $B_j$, which means
+\begin{equation}
+\begin{split}
+    x_j=A_j+s,\&lt;br /&gt;
+    y_j=B_j-s.
+\end{split}
+    \label{back}
+\end{equation}&lt;/p&gt;
+
+&lt;p&gt;Substitute Formula \ref{back} into Formula \ref{substituted_rate},
+and it can be derived that
+\begin{equation*}
+    \frac{\mathrm ds}{\mathrm dt}=F\left(s\right),
+\end{equation*}
+by which we can reduce the problem to an integral problem
+\begin{equation}
+    t=\int_0^s\frac{\mathrm ds}{F\left(s\right)},
+    \label{separated}
+\end{equation}
+where
+\begin{equation}
+    F\left(s\right):=\mu_y\prod_k\left(B_k-s\right)^{b_k}-
+    \mu_x\prod_k\left(A_k+s\right)^{a_k}
+    \label{def_F}
+\end{equation}
+is a polynomial of $n$th degree, where
+\begin{equation*}
+    n:=\max\left(\sum_ka_k,\sum_kb_k\right)
+\end{equation*}
+is the larger of the orders of the forward and reverse reactions.
+The degree of $F$ may be lower if the high-order term is offset,
+but only mathematicians believe in such coincidences.&lt;/p&gt;
+
+&lt;p&gt;Since Formula \ref{separated} is to integrate a rational function,
+it is easy.&lt;/p&gt;
+
+&lt;p&gt;After deriving $s$ as a function of $t$, substitute it into
+Formula \ref{back} and then Formula \ref{substitution}.
+We can derive
+\begin{equation}
+\begin{split}
+    \left[X_j\right]=a_j\left(A_j+s\right),\&lt;br /&gt;
+    \left[Y_j\right]=b_j\left(B_j-s\right)
+\end{split}
+    \label{result}
+\end{equation}
+as the answer.&lt;/p&gt;
+
+&lt;h1 id=&quot;properties-of-f&quot;&gt;Properties of $F$&lt;/h1&gt;
+
+&lt;p&gt;As we all know, here exists a state where the system is in
+chemical equilibrium.
+Denote the value of $s$ in this case as $q$.
+It is easy to figure out that $q$ is a zero of $F\left(s\right)$
+on the interval
+\begin{equation*}
+    I:=\left(-\min_kA_k,\min_kB_k\right),
+\end{equation*}
+which is the range of $s$ such that the concentration of all reactants
+are positive.&lt;/p&gt;
+
+&lt;p&gt;It is obvious that the value of $q$ is unique.
+It is because $F$ is monotonic over $I$ and the signs of its value
+at ends of interval $I$ are different.&lt;/p&gt;
+
+&lt;p&gt;Note that $q$ is a flaw of $\frac1{F\left(s\right)}$ and that
+the improper integral $\int_0^q\frac{\mathrm ds}{F\left(s\right)}$
+diverges, so we can imagine how $s$ changes with respect to $t$.
+$s=0$ when $t=0$, and then $s$ changes monotonically, and finally
+$s\rightarrow q$ when $t\rightarrow+\infty$. Thus, the range of $s$
+over $t\in\left[0,+\infty\right)$ is $\left[0,q\right)$ for $q&amp;gt;0$
+or $\left(q,0\right]$ for $q&amp;lt;0$.
+$q=0$ is not considered because only mathematicians
+believe in such coincidences.&lt;/p&gt;
+
+&lt;p&gt;Suppose $F$ has $n$ different complex zeros $r_\alpha$, one of which
+is $q$. The possible existence of multiple roots is ignored because
+only mathematicians believe in such coincidences.
+Decompose the rational function $\frac1{F\left(s\right)}$ into
+several partial fractions, and it can be derived that
+\begin{equation}
+    \frac1{F\left(s\right)}=\sum_\alpha\frac{C_\alpha}{r_\alpha-s},
+    \label{partial_fractions}
+\end{equation}
+where $C_\alpha$ are undetermined coefficients.&lt;/p&gt;
+
+&lt;p&gt;Integrate Formula \ref{partial_fractions},
+and then it can be derived that
+\begin{equation}
+    t=-\sum_\alpha C_\alpha\ln\left(1-\frac s{r_\alpha}\right)
+    \label{integrated}
+\end{equation}
+In most cases, Formula \ref{integrated} cannot be solved analytically
+and can only be solved numerically.&lt;/p&gt;
+
+&lt;p&gt;Note that if the coefficients $C_\alpha$ are in general commensurable,
+Formula \ref{integrated} can be reduced into a rational equation.
+However, only mathematicians believe in such coincidences.
+However, if $n=2$, it can be proved that the equation can be reduced
+into a rational one.&lt;/p&gt;
+
+&lt;h1 id=&quot;example&quot;&gt;Example&lt;/h1&gt;
+
+&lt;p&gt;The closed container that is highly thermally conductive is
+in a certain temperature environment,
+and the water-gas shift reaction
+\begin{equation*}
+    \ce{CO +H2O\rightleftharpoons CO2 +H2}
+\end{equation*}
+occurs under the catalysis of a certain catalyst,
+where the forward rate constant
+\begin{equation*}
+    \mu_1=2.07\times10^{-4}\quad\left(\text{SI}\right),
+\end{equation*}
+and the reverse rate constant
+\begin{equation*}
+    \mu_2=8.29\times10^{-6}\quad\left(\text{SI}\right).
+\end{equation*}
+Initial concentrations are
+\begin{split}
+    \left[\ce{CO}\right]_0=10.00\quad\left(\text{SI}\right),\&lt;br /&gt;
+    \left[\ce{H2O}\right]_0=20.00\quad\left(\text{SI}\right),\&lt;br /&gt;
+    \left[\ce{CO2}\right]_0=30.00\quad\left(\text{SI}\right),\&lt;br /&gt;
+    \left[\ce{H2}\right]_0=40.00\quad\left(\text{SI}\right).
+\end{split}
+Find $\left[\ce{H2O}\right]$ as a function of time.&lt;/p&gt;
+
+&lt;p&gt;Formula \ref{def_F} becomes
+\begin{equation*}
+    F\left(s\right):=8.29\times10^{-6}\left(30-s\right)\left(40-s\right)
+    -2.07\times10^{-4}\left(10+s\right)\left(20+x\right)
+    \quad\left(\text{SI}\right).
+\end{equation*}
+It is a polynomial of $2$nd degree.
+Its two roots are
+\begin{split}
+    r_1=-28.65\quad\left(\text{SI}\right),\&lt;br /&gt;
+    r_2=-5.53\quad\left(\text{SI}\right).
+\end{split}
+Decomposing $\frac1{F\left(s\right)}$ into partial fractions,
+we can derive that
+\begin{split}
+    C_1=-217.654\quad\left(\text{SI}\right),\&lt;br /&gt;
+    C_2=217.654\quad\left(\text{SI}\right).
+\end{split}
+Thus,
+\begin{equation*}
+    t=217.654\ln\left(1-\frac s{-28.65}\right)-
+    217.654\ln\left(1-\frac s{-5.53}\right)
+    \quad\left(\text{SI}\right).
+\end{equation*}
+Since $C_1$ and $C_2$ are in general commensurable,
+we can solve the equation analytically into
+\begin{equation*}
+    s=\frac{5.53\left(1-1.0046^t\right)}{1.0046^t-0.1929}
+    \quad\left(\text{SI}\right).
+\end{equation*}
+Use Formula \ref{result}, and then we can find the answer
+\begin{equation*}
+    \left[\ce{H2O}\right]=20+
+    \frac{5.53\left(1-1.0046^t\right)}{1.0046^t-0.1929}
+    \quad\left(\text{SI}\right).
+\end{equation*}&lt;/p&gt;</content><author><name></name></author><summary type="html">Introduction</summary></entry><entry><title type="html">Snippet: O, ‘tis too true!</title><link href="http://localhost:4000/literature/2020/04/11/tis-too-true.html" rel="alternate" type="text/html" title="Snippet: O, 'tis too true!" /><published>2020-04-11T08:34:42+00:00</published><updated>2020-04-11T08:34:42+00:00</updated><id>http://localhost:4000/literature/2020/04/11/tis-too-true</id><content type="html" xml:base="http://localhost:4000/literature/2020/04/11/tis-too-true.html">&lt;p&gt;O, 'tis too true!&lt;/p&gt;
+
+&lt;p&gt;How smart a lash that speech doth give my conscience!&lt;/p&gt;
+
+&lt;p&gt;The harlot's cheek, beautied with plastering art,&lt;/p&gt;
+
+&lt;p&gt;Is not more ugly to the thing that helps it&lt;/p&gt;
+
+&lt;p&gt;Than is my deed to my most painted word:&lt;/p&gt;
+
+&lt;p&gt;O heavy burthen!&lt;/p&gt;
+
+&lt;p&gt;(From &lt;em&gt;Hamlet&lt;/em&gt; Act 3 Scene 1, Shakespeare)&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;啊，这句话是太真实了！&lt;/p&gt;
+
+&lt;p&gt;它在我的良心上抽了多么重的一鞭！&lt;/p&gt;
+
+&lt;p&gt;涂脂抹粉的娼妇的脸，&lt;/p&gt;
+
+&lt;p&gt;还不及掩藏在虚伪的言辞后面的我的行为更丑恶。&lt;/p&gt;
+
+&lt;p&gt;难堪的重负啊！&lt;/p&gt;
+
+&lt;p&gt;（朱生豪译）&lt;/p&gt;</content><author><name></name></author><summary type="html">O, 'tis too true!</summary></entry><entry><title type="html">The structure of a basic RM game</title><link href="http://localhost:4000/programming/2020/04/08/basic-rm-game.html" rel="alternate" type="text/html" title="The structure of a basic RM game" /><published>2020-04-08T01:28:05+00:00</published><updated>2020-04-08T01:28:05+00:00</updated><id>http://localhost:4000/programming/2020/04/08/basic-rm-game</id><content type="html" xml:base="http://localhost:4000/programming/2020/04/08/basic-rm-game.html">&lt;p&gt;&lt;a href=&quot;https://tkool.jp/&quot; target=&quot;_blank&quot;&gt;RPG Maker (RM)&lt;/a&gt;
+is a tool for making games.&lt;/p&gt;
+
+&lt;p&gt;I only have experience in using RPG Maker XP, RPG Maker VX,
+RPG Maker VX Ace, and RPG Maker MV.&lt;/p&gt;
+
+&lt;p&gt;Games made by using RM are based on&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;XP&lt;/td&gt;
+      &lt;td&gt;RGSS&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;VX&lt;/td&gt;
+      &lt;td&gt;RGSS2&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;VA&lt;/td&gt;
+      &lt;td&gt;RGSS3&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;MV&lt;/td&gt;
+      &lt;td&gt;rpg_core.js&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;In most cases, when I say RGSS, I mean RGSS, RGSS2, and RGSS3.
+RGSS is in Ruby and rpg_core.js is in Javascript.&lt;/p&gt;
+
+&lt;p&gt;The scripts of a basic RGSS game look like&lt;/p&gt;
+&lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;start&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;# some codes&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;update&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;# some codes&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;start&lt;/span&gt;
+&lt;span class=&quot;kp&quot;&gt;loop&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;update&lt;/span&gt;
+  &lt;span class=&quot;no&quot;&gt;Input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;update&lt;/span&gt;
+  &lt;span class=&quot;no&quot;&gt;Graphics&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;update&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;The scripts of a basic rpg_core.js game look like&lt;/p&gt;
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;start&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;// some codes&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;update&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;// some codes&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;Graphics&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;initialize&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;816&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;624&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;webgl&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;Graphics&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;boxWidth&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;816&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;Graphics&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;boxHeight&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;624&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;WebAudio&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;initialize&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;Input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;initialize&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;TouchInput&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;initialize&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;deltaTime&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;1.0&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;60.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;accumulator&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;0.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;currentTime&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;window&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;scene&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Stage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;start&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;performUpdate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;Graphics&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;tickStart&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;newTime&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;performance&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;now&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;currentTime&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;undefined&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;currentTime&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;newTime&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;fTime&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;newTime&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;currentTime&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;clamp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;0.25&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;currentTime&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;newTime&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;accumulator&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;fTime&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;accumulator&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;deltaTime&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;Input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;update&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;TouchInput&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;update&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;update&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;accumulator&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;deltaTime&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;Graphics&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;render&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;window&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;scene&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;requestAnimationFrame&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;performUpdate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;Graphics&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;tickEnd&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;performUpdate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;There is a simple rpg_core.js game written by me which can be accessed
+&lt;a href=&quot;/rpg/hello/&quot;&gt;here&lt;/a&gt;.
+You can look at its source code by using your browser.&lt;/p&gt;
+
+&lt;p&gt;RM also provides a lot of scripts serving as making RPG.
+There is a simple RPG built by me which can be accessed
+&lt;a href=&quot;/rpg/test/&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The source codes of RGSS are secret, but those of rpg_core.js are not a secret
+and can be seen at
+&lt;a href=&quot;https://github.com/rpgtkoolmv/corescript/&quot; target=&quot;_blank&quot;&gt;its GitHub repo&lt;/a&gt;.&lt;/p&gt;</content><author><name></name></author><summary type="html">RPG Maker (RM) is a tool for making games.</summary></entry><entry><title type="html">The frequency assignment of musical notes</title><link href="http://localhost:4000/music/2020/03/27/notes-frequency.html" rel="alternate" type="text/html" title="The frequency assignment of musical notes" /><published>2020-03-27T07:31:55+00:00</published><updated>2020-03-27T07:31:55+00:00</updated><id>http://localhost:4000/music/2020/03/27/notes-frequency</id><content type="html" xml:base="http://localhost:4000/music/2020/03/27/notes-frequency.html">&lt;h1 id=&quot;the-notes&quot;&gt;The notes&lt;/h1&gt;
+
+&lt;p&gt;First, let’s define what is a &lt;em&gt;note&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;A note is an element of the countable set $N$.
+Here exists a bijection from $\mathbb Z$ to $N$ denoted as
+$k\mapsto \nu_k$. Therefore, all notes form a sequence
+\begin{equation*}
+    \dots,\nu_{-2},\nu_{-1},\nu_0,\nu_1,\nu_2,\dots
+\end{equation*}&lt;/p&gt;
+
+&lt;p&gt;Our goal is to define a &lt;em&gt;frequency assignment&lt;/em&gt;, which is a mapping
+$f:N\rightarrow\mathbb R$, whose meaning is the frequency (in Hz)
+of the sound of a note.&lt;/p&gt;
+
+&lt;p&gt;It is a natural idea to define a sequence
+\begin{equation*}
+    f_k:=f\left(\nu_k\right).
+\end{equation*}
+It makes sense that the sequence is in strictly increasing order.&lt;/p&gt;
+
+&lt;h1 id=&quot;the-octaves&quot;&gt;The octaves&lt;/h1&gt;
+
+&lt;p&gt;Now, let’s think about a &lt;em&gt;musical interval&lt;/em&gt;. At this stage, a
+musical interval can be defined as an unordered pair of notes.
+After long time of experimenting, people find that they tend to
+think a musical interval extremely harmonic if it consists of
+such two notes that the frequency of one of them doubles that of
+the other.&lt;/p&gt;
+
+&lt;p&gt;In other words, the musical interval of $\nu_a$ and $\nu_b$ is
+extremely harmonic if $f_b=2f_a$. In fact, it is so harmonic that
+if the two notes are played simultaneously, a person tend to
+think there is only one note being played:&lt;/p&gt;
+&lt;audio controls=&quot;&quot;&gt;
+    &lt;source src=&quot;/assets/audios/octave_interval.mp3&quot; type=&quot;audio/mpeg&quot; /&gt;
+(Your browser does not support the audio element.)
+&lt;/audio&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;motif = c4 c g g a a g2
+piano:
+V1: o4 motif motif
+V2: o5 motif
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;The audio above is an illustration for octave intervals.
+As can be heard, the first part of the audio is played in
+octave intervals while the second part is played in single notes.&lt;/p&gt;
+
+&lt;p&gt;Considering that, here comes an amazing idea by which we can kind
+of make the sequence $\left\{f_k\right\}$ seem “periodic”.
+Let the “period” be denoted as $n$. Because it is not virtually
+periodic, we tend to call it an &lt;em&gt;octave&lt;/em&gt; instead of a period.
+After that, the constant $n$ is the length of an octave.&lt;/p&gt;
+
+&lt;p&gt;What on earth is an octave defined? It is
+\begin{equation*}
+    \forall k:f_{k+n}=2f_k.
+\end{equation*}
+Why do we say an octave is like a period? It is because according
+to the explanation above, corresponding notes in different octaves
+sound so harmonic that a person almost think they are the same.
+In this way, for some questions, we only need to consider
+a single octave instead of all notes.
+Let’s define the &lt;em&gt;base octave&lt;/em&gt;, notes of which can generate all
+other notes by multiplying the frequency by a power of 2:
+\begin{equation*}
+    O_0:=\left\{\nu_k\middle|k\in T\right\},
+\end{equation*}
+so we can say the frequency assignment has $n$ different tones.
+A &lt;em&gt;tone&lt;/em&gt; is an integer in
+\begin{equation*}
+    T:=\left[0,n\right)\cap\mathbb Z
+\end{equation*}
+representing where a note is in an octave.&lt;/p&gt;
+
+&lt;p&gt;We can thus define a sequence of octaves
+\begin{equation*}
+    O_m:=\left\{\nu_{k+mn}\middle|\nu_k\in O_0\right\}.
+\end{equation*}
+In fact, any octave can be the base octave. They are all the same.
+For any $m$, all notes can be generated by notes in $O_m$.&lt;/p&gt;
+
+&lt;p&gt;\begin{array}{|c|cccccc|}
+    \hline
+    T &amp;amp; \cdots &amp;amp; O_{-1} &amp;amp; O_0 &amp;amp; O_1 &amp;amp; O_2 &amp;amp; \cdots
+    \\\hline
+    0&amp;amp;\cdots&amp;amp; \nu_{-n}&amp;amp;\nu_0&amp;amp; \nu_l &amp;amp; \nu_{2n}&amp;amp;\cdots\&lt;br /&gt;
+    1&amp;amp;\cdots&amp;amp;\nu_{-n+1}&amp;amp;\nu_1&amp;amp;\nu_{n+1}&amp;amp;\nu_{2n+1}&amp;amp;\cdots\&lt;br /&gt;
+    2&amp;amp;\cdots&amp;amp;\nu_{-n+2}&amp;amp;\nu_2&amp;amp;\nu_{n+2}&amp;amp;\nu_{2n+2}&amp;amp;\cdots
+    \&lt;br /&gt;
+    \cdots&amp;amp;\cdots&amp;amp;\cdots&amp;amp;\cdots&amp;amp;\cdots&amp;amp;\cdots&amp;amp;\cdots
+    \&lt;br /&gt;
+    n-1&amp;amp;\cdots&amp;amp;\nu_{-1}&amp;amp;\nu_{n-1}&amp;amp;\nu_{2n-1}&amp;amp;\nu_{3n-1}&amp;amp;\cdots
+    \\\hline
+    \label{octaves}
+\end{array}
+Table \ref{octaves} shows the sequence of octaves.&lt;/p&gt;
+
+&lt;p&gt;If we define $p_k:=\log_2f_k$, it is interesting to see that
+\begin{equation*}
+    \forall k:p_{k+n}=p_k+1.
+\end{equation*}
+From that, we can naturally think an excellent frequency
+assignment be defined as
+\begin{equation}
+    p_k:=p_0+\frac kn,
+    \label{p_freq_def}
+\end{equation}
+which is an elegant arithmetic progression.&lt;/p&gt;
+
+&lt;h1 id=&quot;the-octave-group&quot;&gt;The octave group&lt;/h1&gt;
+
+&lt;p&gt;Note that here “group” is the group concept in algebra.&lt;/p&gt;
+
+&lt;p&gt;Let $O_0$ be isomorphic to the additive group of
+$\mathbb Z/n\mathbb Z$, the integers modulo $n$,
+under the isomorphism $k\mapsto\nu_k$, which means to
+make $O_0$ a cyclic group of order $n$. I call this group an
+&lt;em&gt;octave group&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;To make you have a good sense of what on earth the group looks
+like, the definition of its group operation can be defined as
+\begin{equation}
+    \nu_a\circ\nu_b:=\nu_{\left(a+b\right)\mathbin\%n},
+    \label{group_op_def}
+\end{equation}
+where $x\mathbin\%y:=x-y\left\lfloor\frac xy\right\rfloor$.&lt;/p&gt;
+
+&lt;p&gt;Note that this binary operator $\circ$ can be extended to
+be used for the whole $N$ while the definition remains the same
+as Formula \ref{group_op_def}.&lt;/p&gt;
+
+&lt;!--
+Let
+\begin{equation\*}
+    Q:=\left\\{\frac kn\middle|
+    k\in T\right\\}.
+\end{equation\*}
+It is obvious that $q\mapsto \nu_{\left(m+q\right)n}$
+is a bijection from $Q$ to $O_m$. Pointing out such a bijection
+is natural because elements in $Q$ seem to have
+a similar form to that of $p_k$ in Formula \ref{p_freq_def}.
+
+In fact, $Q$ is a group of size $T$ whose group operation is
+defined as
+\begin{equation\*}
+    q_1\circ q_2:=q_1+q_2-\left\lfloor q_1+q_2\right\rfloor.
+\end{equation\*}
+In this way, $\left(Q,\circ\right)$ forms a group, as can
+be verified:
+1. The closure and associativity can be verified.
+2. The identity element is $0$.
+3. The inverse elemeent of $q$ is $q^{\circ-1}=1-q$.
+
+With the bijection (or isomorphism)
+$q\mapsto \nu_{\left(m+q\right)n}$, we can
+also define a group operation $\circ$ on $O_m$.
+Therefore, we can call $\left(O_m,\circ\right)$
+an *octave group*.
+--&gt;
+
+&lt;p&gt;The octave group has a musical meaning which
+we should take a further look at musical intervals to find out.&lt;/p&gt;
+
+&lt;h1 id=&quot;the-musical-intervals&quot;&gt;The musical intervals&lt;/h1&gt;
+
+&lt;p&gt;Taking Formula \ref{p_freq_def}, people find that although
+it is sometimes subjective whether a musical interval sounds
+harmonic or not, it does not depend on where the interval is
+located but on how far the two notes making up the interval are.&lt;/p&gt;
+
+&lt;p&gt;Taking this sense, we can consider only those intervals involving
+$\nu_0$ because we can always translate a interval so that one of
+its notes is $\nu_0$. Taking this idea, we can conclude that an
+interval can be represented by a note $\nu_k$ because
+the interval is equivalent to another interval
+which consists of $\nu_0$ and $\nu_k$.&lt;/p&gt;
+
+&lt;p&gt;We can make this idea even further. Previously, I have stated
+that a note can always be generated by a note in $O_0$. Therefore,
+an interval can be represented as a note in $O_0$.&lt;/p&gt;
+
+&lt;p&gt;Now, let’s look back to the octave group $\left(O_0,\circ\right)$.
+Denote the interval $b$ as that represented by $\nu_b$.
+Then, translate interval $b$ to such a location that
+its lower note is $\nu_a$.
+Then, its higher note represents
+the same interval as $\nu_a\circ\nu_b$.&lt;/p&gt;
+
+&lt;p&gt;Well, why do we focus on the group? It is because we need to
+mention an important concept in group theory,
+which is “generator”. It has something to do with determining
+the value of $n$.&lt;/p&gt;
+
+&lt;p&gt;The value of $p_0$ does not matter because changing it is just a
+translation of the whole sequence. What really matters is the
+value of $n$.&lt;/p&gt;
+
+&lt;p&gt;The inventor of the current prevailing frequency assignment
+(which is the $12$-tone equal temperament shown in
+Formula \ref{12_equal_def}) may think the generator of the group
+a vital thing.
+Actually, people think it a wonderful thing that a note
+representing a very harmonic interval is a generator of the
+octave group.&lt;/p&gt;
+
+&lt;p&gt;Fortunately, such a goal is achievable. People find that if
+$p_b=p_a+\frac7{12}$, then the interval
+(which is the perfect fifth interval if you know music theory)
+consisting of $\nu_a$ and $\nu_b$ sounds very harmonic:&lt;/p&gt;
+
+&lt;audio controls=&quot;&quot;&gt;
+    &lt;source src=&quot;/assets/audios/fifth_interval.mp3&quot; type=&quot;audio/mpeg&quot; /&gt;
+(Your browser does not support the audio element.)
+&lt;/audio&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;motif = e4 a f2 d4 g c2
+piano:
+V1: motif
+V2: (transpose 7) motif
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Furthermore, as can be seen in Table \ref{generator},
+$\nu_7$ is a generator of the group $O_0$ if $n:=12$.
+\begin{array}{|c|cccccccccccc|}
+    \hline
+    j&amp;amp;0&amp;amp;1&amp;amp;2&amp;amp;3&amp;amp;4&amp;amp;5&amp;amp;6&amp;amp;7&amp;amp;8&amp;amp;9&amp;amp;10&amp;amp;11
+    \\\hline
+    \nu_7^{\circ j}&amp;amp;
+    \nu_0&amp;amp;\nu_7&amp;amp;\nu_2&amp;amp;\nu_9&amp;amp;\nu_4&amp;amp;\nu_{11}&amp;amp;\nu_6&amp;amp;\nu_1&amp;amp;
+    \nu_8&amp;amp;\nu_3&amp;amp;\nu_{10}&amp;amp;\nu_5
+    \\\hline
+    \label{generator}
+\end{array}
+Thus, wonderful! Let’s take $n:=12$.&lt;/p&gt;
+
+&lt;h1 id=&quot;the-12-tone-equal-temperament&quot;&gt;The $12$-tone equal temperament&lt;/h1&gt;
+
+&lt;p&gt;The $12$-tone equal temperament is the most popular
+frequency assignment used nowadays. It is defined as
+\begin{equation}
+    f_k:=16.3516\cdot 2^\frac k{12},
+    \label{12_equal_def}
+\end{equation}
+which can be derived from Formula \ref{p_freq_def} taking
+\begin{equation*}
+    p_0:=4.03136\qquad n:=12.
+\end{equation*}&lt;/p&gt;
+
+&lt;p&gt;The frequency assignment has $12$ different tones, $7$ of which
+have their names:
+\begin{align*}
+    \mathrm C_m&amp;amp;:=\nu_{12m},\&lt;br /&gt;
+    \mathrm D_m&amp;amp;:=\nu_{12m+2},\&lt;br /&gt;
+    \mathrm E_m&amp;amp;:=\nu_{12m+4},\&lt;br /&gt;
+    \mathrm F_m&amp;amp;:=\nu_{12m+5},\&lt;br /&gt;
+    \mathrm G_m&amp;amp;:=\nu_{12m+7},\&lt;br /&gt;
+    \mathrm A_m&amp;amp;:=\nu_{12m+9},\&lt;br /&gt;
+    \mathrm B_m&amp;amp;:=\nu_{12m+11}.
+\end{align*}
+The famous “middle C” is $\mathrm C_4$.&lt;/p&gt;
+
+&lt;p&gt;This notation is called the
+&lt;a href=&quot;https://en.wikipedia.org/wiki/
+Scientific_pitch_notation&quot; target=&quot;_blank&quot;&gt;&lt;em&gt;scientific pitch notation&lt;/em&gt;&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Note that in fact, this definition of $12$-tone equal temperament
+has some slight error. The accurate value for $p_0$ is
+\begin{equation*}
+    p_0:=\log_255-\frac74
+\end{equation*}
+because it is stipulated that $f\left(\mathrm A_4\right)=440$,
+which is standardized as ISO 16 and known as
+&lt;a href=&quot;https://en.wikipedia.org/wiki/
+A440_(pitch_standard)&quot; target=&quot;_blank&quot;&gt;A440&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h1 id=&quot;why-frac-712&quot;&gt;Why $\frac 7{12}$&lt;/h1&gt;
+
+&lt;p&gt;People think if the ratio of two frequencies is a simple
+rational number, then the interval of the two notes is harmonic.&lt;/p&gt;
+
+&lt;p&gt;$2^\frac 7{12}\approx\frac32$, which is a simple ratio.
+Harmonic, huh.&lt;/p&gt;
+
+&lt;p&gt;(Finally, as is a notice, codes appearing above are
+&lt;a href=&quot;https://alda.io/&quot; target=&quot;_blank&quot;&gt;alda&lt;/a&gt; codes,
+which are used to write music.)&lt;/p&gt;</content><author><name></name></author><summary type="html">The notes</summary></entry><entry><title type="html">Normal vectors of a scalar field</title><link href="http://localhost:4000/math/2020/03/03/normal-field.html" rel="alternate" type="text/html" title="Normal vectors of a scalar field" /><published>2020-03-03T12:56:59+00:00</published><updated>2020-03-03T12:56:59+00:00</updated><id>http://localhost:4000/math/2020/03/03/normal-field</id><content type="html" xml:base="http://localhost:4000/math/2020/03/03/normal-field.html">&lt;p&gt;Consider the function $y=f\left(\mathbf x\right)$, where the domain
+$D\subseteq\mathbb R^n$, and the function is differentiable
+everywhere.&lt;/p&gt;
+
+&lt;p&gt;According to some well-known theories, we can derive that
+the normal vector of the graph of the function at
+$\left(\mathbf x_0,f\left(\mathbf x_0\right)\right)$ is
+$\left(\nabla f\left(\mathbf x_0\right),-1\right)$.&lt;/p&gt;
+
+&lt;p&gt;This gives us an idea that, in fact a conservative field
+consists of normal vectors of its potential function
+(a scalar function).&lt;/p&gt;
+
+&lt;p&gt;We also know that a scalar function can be derived from
+its gradient by integrating it along an arbitrary path
+(what exactly the path is is not important because it is a
+conservative field, so you can choose one as long as it can
+make the calculation easy). Here it can come into our minds that
+we can derive a multi-variable function from its normal vectors.&lt;/p&gt;
+
+&lt;p&gt;The method is to make the last component of the normal vectors
+be $-1$ and then calculate the integral of the rest components.&lt;/p&gt;
+
+&lt;p&gt;I am sorry that the passage is too brief, but I need to have some
+rest after experiencing several continuous tests
+today and yesterday. Bless me!&lt;/p&gt;</content><author><name></name></author><summary type="html">Consider the function $y=f\left(\mathbf x\right)$, where the domain $D\subseteq\mathbb R^n$, and the function is differentiable everywhere.</summary></entry><entry><title type="html">It is Feb 29 today!</title><link href="http://localhost:4000/update/2020/02/29/feb-29.html" rel="alternate" type="text/html" title="It is Feb 29 today!" /><published>2020-02-29T10:17:07+00:00</published><updated>2020-02-29T10:17:07+00:00</updated><id>http://localhost:4000/update/2020/02/29/feb-29</id><content type="html" xml:base="http://localhost:4000/update/2020/02/29/feb-29.html">&lt;p&gt;It is Feb 29 today. The date appears once for as long as 4 years!&lt;/p&gt;
+
+&lt;p&gt;Then I find an excuse for updating my blog.&lt;/p&gt;</content><author><name></name></author><summary type="html">It is Feb 29 today. The date appears once for as long as 4 years!</summary></entry><entry><title type="html">Monkey-patching graciously</title><link href="http://localhost:4000/programming/2020/02/09/ruby-patch-def.html" rel="alternate" type="text/html" title="Monkey-patching graciously" /><published>2020-02-09T05:16:31+00:00</published><updated>2020-02-09T05:16:31+00:00</updated><id>http://localhost:4000/programming/2020/02/09/ruby-patch-def</id><content type="html" xml:base="http://localhost:4000/programming/2020/02/09/ruby-patch-def.html">&lt;p&gt;I am going to show how to monkey-patch graciously using
+&lt;a href=&quot;https://www.ruby-lang.org/&quot; target=&quot;_blank&quot;&gt;Ruby&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The original idea is to implement a method &lt;code class=&quot;highlighter-rouge&quot;&gt;Module#def_after&lt;/code&gt; so that
+I can easily make something to be done after the original method.
+Like this:&lt;/p&gt;
+&lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Foo&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;bar&lt;/span&gt;
+    &lt;span class=&quot;nb&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'before'&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Foo&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;def_after&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:bar&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;
+    &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;' &amp;amp; after'&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+
+&lt;span class=&quot;no&quot;&gt;Foo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;new&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;bar&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# =&amp;gt; before &amp;amp; after&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;The implementation is a little easy:&lt;/p&gt;
+&lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Module&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;def_after&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;method_name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;refine_block&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;old&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;instance_method&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;method_name&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;define_method&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;method_name&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;**&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;opts&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;block&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;old&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;bind_call&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;**&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;opts&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;block&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;refine_block&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;**&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;opts&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;block&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;However, there is a little problem. The &lt;code class=&quot;highlighter-rouge&quot;&gt;self&lt;/code&gt; in &lt;code class=&quot;highlighter-rouge&quot;&gt;refine_block&lt;/code&gt;
+depends on how and where &lt;code class=&quot;highlighter-rouge&quot;&gt;refine_block&lt;/code&gt; is defined instead of
+just being the instance receiving the method.&lt;/p&gt;
+
+&lt;p&gt;Since an instance method (&lt;code class=&quot;highlighter-rouge&quot;&gt;UnboundMethod&lt;/code&gt; object) defined in a
+&lt;code class=&quot;highlighter-rouge&quot;&gt;Module&lt;/code&gt; can &lt;code class=&quot;highlighter-rouge&quot;&gt;bind&lt;/code&gt; any other object, we can use
+&lt;code class=&quot;highlighter-rouge&quot;&gt;Module#define_method&lt;/code&gt; and send &lt;code class=&quot;highlighter-rouge&quot;&gt;refine_block&lt;/code&gt; as a block parameter,
+and then bind the instance method to &lt;code class=&quot;highlighter-rouge&quot;&gt;self&lt;/code&gt;:&lt;/p&gt;
+&lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Proc&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;bind&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;receiver&lt;/span&gt;
+    &lt;span class=&quot;no&quot;&gt;Module&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;new&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;module_exec&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;self&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;block&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;
+      &lt;span class=&quot;nb&quot;&gt;instance_method&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;define_method&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:_&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;block&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;bind&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;receiver&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;bind_call&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;receiver&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;**&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;opts&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;block&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;bind&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;receiver&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;**&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;opts&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;block&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Module&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;def_after&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;method_name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;refine_block&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;old&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;instance_method&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;method_name&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;define_method&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;method_name&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;**&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;opts&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;block&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;old&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;bind_call&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;**&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;opts&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;block&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;refine_block&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;bind_call&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;**&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;opts&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;block&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;The &lt;code class=&quot;highlighter-rouge&quot;&gt;self&lt;/code&gt; can successfully be converted. You can test it yourself.&lt;/p&gt;
+
+&lt;p&gt;Here is still a problem. When the new instance method is defined,
+its visibility is &lt;code class=&quot;highlighter-rouge&quot;&gt;public&lt;/code&gt;, while the original visibility may be
+&lt;code class=&quot;highlighter-rouge&quot;&gt;private&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;protected&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Use the following means to get the visibility beforehand and set
+the visibility afterward:&lt;/p&gt;
+&lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Module&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;method_visibility&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;method_name&lt;/span&gt;
+    &lt;span class=&quot;sx&quot;&gt;%i[public protected private]&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;find&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;visibility&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;
+      &lt;span class=&quot;nb&quot;&gt;__send__&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:&quot;&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;visibility&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;_method_defined?&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;method_name&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;def_after&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;method_name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;refine_block&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;visibility&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;method_visibility&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;method_name&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;old&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;instance_method&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;method_name&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;define_method&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;method_name&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;**&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;opts&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;block&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;old&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;bind_call&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;**&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;opts&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;block&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;refine_block&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;bind_call&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;**&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;opts&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;block&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+    &lt;span class=&quot;nb&quot;&gt;__send__&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;visibility&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;method_name&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;There can be some improvement. If we need to refine a singleton
+method, calling &lt;code class=&quot;highlighter-rouge&quot;&gt;def_after&lt;/code&gt; on its &lt;code class=&quot;highlighter-rouge&quot;&gt;singleton_class&lt;/code&gt; will lead to
+calling &lt;code class=&quot;highlighter-rouge&quot;&gt;obj.singleton_class.instance_method(sym).bind_call(obj, *)&lt;/code&gt;,
+which is way too complex. The straightforward way to do it is to call
+&lt;code class=&quot;highlighter-rouge&quot;&gt;obj.method(sym).call(*)&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;With this inspiration, we can implement &lt;code class=&quot;highlighter-rouge&quot;&gt;Object#def_after&lt;/code&gt;:&lt;/p&gt;
+&lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Object&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;def_after&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;method_name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;refine_block&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;visibility&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;singleton_class&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;method_visibility&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;method_name&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;old&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;method&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;method_name&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;define_singleton_method&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;method_name&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;**&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;opts&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;block&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;old&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;**&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;opts&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;block&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;refine_block&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;bind_call&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;**&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;opts&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;block&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;singleton_class&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;__send__&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;visibility&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;method_name&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Then there comes a new problem. A &lt;code class=&quot;highlighter-rouge&quot;&gt;Module&lt;/code&gt; also has singleton
+methods, while &lt;code class=&quot;highlighter-rouge&quot;&gt;Module#def_after&lt;/code&gt; can only change its instance
+methods instead of its singleton methods.
+The way to solve this is to judge whether &lt;code class=&quot;highlighter-rouge&quot;&gt;is_a? Module&lt;/code&gt; in
+&lt;code class=&quot;highlighter-rouge&quot;&gt;Object#def_after&lt;/code&gt;, and add a keyword argument &lt;code class=&quot;highlighter-rouge&quot;&gt;singleton&lt;/code&gt;:&lt;/p&gt;
+&lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Object&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;def_after&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;method_name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;singleton: &lt;/span&gt;&lt;span class=&quot;kp&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;refine_block&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;singleton&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;||=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;is_a?&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Module&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;# mod: the module containing the old method&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;# get_method: the method to get the Method/UnboundMethod obj&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;# def_method: the method to define a new method&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;mod&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;get_method&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;def_method&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;singleton&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;?&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;singleton_class&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;method&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(:&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;method&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;method&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:define_singleton_method&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)]&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;method&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:instance_method&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;method&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:define_method&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)]&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;# get visibility&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;visibility&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mod&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;method_visibility&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;method_name&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;# get old&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;old&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;get_method&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;method_name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;# override&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;def_method&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;method_name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;**&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;opts&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;block&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;old&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;old&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;bind&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;self&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;unless&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;old&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;is_a?&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Method&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;old&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;**&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;opts&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;block&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;refine_block&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;bind_call&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;**&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;opts&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;block&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;# set visibility&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;mod&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;__send__&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;visibility&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;method_name&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;What about parsing a callable object as an argument instead of
+through &lt;code class=&quot;highlighter-rouge&quot;&gt;refine_block&lt;/code&gt;?
+Parsing a &lt;code class=&quot;highlighter-rouge&quot;&gt;Symbol&lt;/code&gt; can also be useful. Like this:&lt;/p&gt;
+&lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;no&quot;&gt;Object&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;def_after&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:display&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:puts&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Then &lt;code class=&quot;highlighter-rouge&quot;&gt;Object#def_after&lt;/code&gt; will be a little complex:&lt;/p&gt;
+&lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Object&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;# pat: when refine_block is nil, it is used to represent a refinement&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;# singleton: force singleton when self is a Module&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;def_after&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;method_name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pat&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kp&quot;&gt;nil&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;singleton: &lt;/span&gt;&lt;span class=&quot;kp&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;refine_block&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;singleton&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;||=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;is_a?&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Module&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;# mod: the module containing the old method&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;# get_method: the method to get the Method/UnboundMethod obj&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;# def_method: the method to define a new method&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;mod&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;get_method&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;def_method&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;singleton&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;?&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;singleton_class&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;method&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(:&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;method&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;method&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:define_singleton_method&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)]&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;method&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:instance_method&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;method&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:define_method&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)]&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;# get visibility&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;visibility&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mod&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;method_visibility&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;method_name&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;# get pat&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;pat&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;refine_block&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;ss&quot;&gt;to_sym:  &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;symbol&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;get_method&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;symbol&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;to_sym&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+      &lt;span class=&quot;ss&quot;&gt;to_proc: :to_proc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;to_proc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;ss&quot;&gt;call:    &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;callable&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;callable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;method&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:call&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;each&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;duck&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;break&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;respond_to?&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;duck&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;# get old&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;old&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;get_method&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;method_name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;# override&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;def_method&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;method_name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;**&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;opts&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;block&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;
+      &lt;span class=&quot;c1&quot;&gt;# bind old&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;old&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;old&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;bind&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;self&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;unless&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;old&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;is_a?&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Method&lt;/span&gt;
+      &lt;span class=&quot;c1&quot;&gt;# bind pat&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;pat&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;bind&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;self&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;unless&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;is_a?&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Method&lt;/span&gt;
+      &lt;span class=&quot;c1&quot;&gt;# call the new method&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;old&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;**&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;opts&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;block&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;pat&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;**&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;opts&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;block&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;# set visibility&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;mod&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;__send__&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;visibility&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;method_name&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;We are still not satisfied. We need to define a lot of methods like
+&lt;code class=&quot;highlighter-rouge&quot;&gt;def_after&lt;/code&gt;, such as &lt;code class=&quot;highlighter-rouge&quot;&gt;def_before&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;def_if&lt;/code&gt;…
+Maybe we should define &lt;code class=&quot;highlighter-rouge&quot;&gt;Object::def_&lt;/code&gt; and use it like this:&lt;/p&gt;
+&lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Object&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;# use this binding to eval to avoid excessive local variables&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;class_binding&lt;/span&gt;
+    &lt;span class=&quot;nb&quot;&gt;binding&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;ss&quot;&gt;after:  &lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'result = old.(*); pat.(*); result'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;ss&quot;&gt;after!: &lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'old.(*); pat.(*)'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;ss&quot;&gt;before: &lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'pat.(*); old.(*)'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;ss&quot;&gt;with:   &lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'pat.(old.(*), *)'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;ss&quot;&gt;chain:  &lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'pat.(old, *)'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;ss&quot;&gt;and:    &lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'old.(*) &amp;amp;&amp;amp; pat.(*)'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;ss&quot;&gt;or:     &lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'old.(*) || pat.(*)'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;ss&quot;&gt;if:     &lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'pat.(*) &amp;amp;&amp;amp; old.(*)'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;ss&quot;&gt;unless: &lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'pat.(*) || old.(*)'&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;each&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sym&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;code&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;str&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;def_(:&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sym&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;) { |old, pat, *| &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;code&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt; }&quot;&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;gsub!&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;?&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'*args, **opts, &amp;amp;block'&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;class_binding&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;eval&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;str&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;singleton_class&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;undef_method&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;def_&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:class_binding&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;The main difficulty is to implement &lt;code class=&quot;highlighter-rouge&quot;&gt;Object::def_&lt;/code&gt;.
+We can accomplish this just by editing the &lt;code class=&quot;highlighter-rouge&quot;&gt;Object#def_after&lt;/code&gt; we
+defined before:&lt;/p&gt;
+&lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Object&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;# the method is going to be undefined soon&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;def_&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sym&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;def_block&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;# pat: when refine_block is nil, it is used to represent a refinement&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;# singleton: force singleton when self is a Module&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;define_method&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:&quot;def_&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sym&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;method_name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pat&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kp&quot;&gt;nil&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;singleton: &lt;/span&gt;&lt;span class=&quot;kp&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+                                    &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;refine_block&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;singleton&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;||=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;is_a?&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Module&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+      &lt;span class=&quot;c1&quot;&gt;# mod: the module containing the old method&lt;/span&gt;
+      &lt;span class=&quot;c1&quot;&gt;# get_method: the method to get the Method/UnboundMethod obj&lt;/span&gt;
+      &lt;span class=&quot;c1&quot;&gt;# def_method: the method to define a new method&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;mod&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;get_method&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;def_method&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;singleton&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;?&lt;/span&gt;
+          &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;singleton_class&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;method&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(:&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;method&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;method&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:define_singleton_method&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)]&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+          &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;method&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:instance_method&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;method&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:define_method&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)]&lt;/span&gt;
+      &lt;span class=&quot;c1&quot;&gt;# get visibility&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;visibility&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mod&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;method_visibility&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;method_name&lt;/span&gt;
+      &lt;span class=&quot;c1&quot;&gt;# get pat&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;pat&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;refine_block&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;ss&quot;&gt;to_sym:  &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;symbol&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;get_method&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;symbol&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;to_sym&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+        &lt;span class=&quot;ss&quot;&gt;to_proc: :to_proc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;to_proc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;ss&quot;&gt;call:    &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;callable&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;callable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;method&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:call&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;}.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;each&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;duck&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;break&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;respond_to?&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;duck&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+      &lt;span class=&quot;c1&quot;&gt;# get old&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;old&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;get_method&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;method_name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+      &lt;span class=&quot;c1&quot;&gt;# override&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;def_method&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;method_name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;**&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;opts&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;block&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;# bind old&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;old&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;old&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;bind&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;self&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;unless&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;old&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;is_a?&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Method&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;# bind pat&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;pat&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;bind&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;self&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;unless&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;is_a?&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Method&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;# call the new method&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;def_block&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;old&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;**&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;opts&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;block&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+      &lt;span class=&quot;c1&quot;&gt;# set visibility&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;mod&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;__send__&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;visibility&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;method_name&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;The final source code can be found &lt;a href=&quot;/assets/codes/patch_def.rb&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The reason why I do not use &lt;code class=&quot;highlighter-rouge&quot;&gt;Module#refine&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;Module#using&lt;/code&gt; is
+that they currently have too much limitations and even bugs.
+I have already found as many as two bugs
+(&lt;a href=&quot;https://bugs.ruby-lang.org/issues/16107&quot; target=&quot;_blank&quot;&gt;#16107&lt;/a&gt;
+and
+&lt;a href=&quot;https://bugs.ruby-lang.org/issues/16617&quot; target=&quot;_blank&quot;&gt;#16617&lt;/a&gt;).
+Although both of them have been fixed (or will be fixed),
+I cannot be sure that there will not be further and fatal bugs.
+I do not think these features are very reliable in recent Ruby versions.&lt;/p&gt;</content><author><name></name></author><summary type="html">I am going to show how to monkey-patch graciously using Ruby.</summary></entry><entry><title type="html">Amazing Siteleaf</title><link href="http://localhost:4000/update/2020/01/26/siteleaf.html" rel="alternate" type="text/html" title="Amazing Siteleaf" /><published>2020-01-26T03:33:48+00:00</published><updated>2020-01-26T03:33:48+00:00</updated><id>http://localhost:4000/update/2020/01/26/siteleaf</id><content type="html" xml:base="http://localhost:4000/update/2020/01/26/siteleaf.html">&lt;p&gt;I have been using &lt;a href=&quot;https://www.siteleaf.com/&quot;&gt;Siteleaf&lt;/a&gt;
+to manage my blog. It is just convenient and amazing.&lt;/p&gt;
+
+&lt;p&gt;If you own your own website, Siteleaf is perfect for managing it.
+It supports Jekyll and GitHub pages, and is free for developers.
+The only disadvantage is that its built-in Markdown editor does not
+support real-time $\LaTeX$ preview.&lt;/p&gt;
+
+&lt;p&gt;(In fact, I use RubyMine as my editor because it is a powerful Ruby IDE
+and there is VCS and terminals integrated.)&lt;/p&gt;
+
+&lt;p&gt;By the way, I apologize for my poor English.&lt;/p&gt;</content><author><name></name></author><summary type="html">I have been using Siteleaf to manage my blog. It is just convenient and amazing.</summary></entry><entry><title type="html">Hyperellipsoids in barycentric coordinates</title><link href="http://localhost:4000/math/2020/01/25/barycentric-ellipsoid.html" rel="alternate" type="text/html" title="Hyperellipsoids in barycentric coordinates" /><published>2020-01-25T09:13:57+00:00</published><updated>2020-01-25T09:13:57+00:00</updated><id>http://localhost:4000/math/2020/01/25/barycentric-ellipsoid</id><content type="html" xml:base="http://localhost:4000/math/2020/01/25/barycentric-ellipsoid.html">&lt;h1 id=&quot;some-notations&quot;&gt;Some notations&lt;/h1&gt;
+
+&lt;p&gt;\begin{equation*}
+    S_n:=\left\{\mathbf a\in\mathbb R^{n}\middle|\sum_ja_j=1\right\}.
+\end{equation*}
+\begin{equation*}
+    \mathbf1:=\left(\begin{matrix}1\\\vdots\\1\end{matrix}\right).
+\end{equation*}
+\begin{equation*}
+    \mathbf v_1:=\left(\begin{matrix}
+        \\\mathbf v\\\\1
+    \end{matrix}\right).
+\end{equation*}
+\begin{equation*}
+    \mathbf M_1:=\left(\begin{matrix}
+        \\&amp;amp;\mathbf M&amp;amp;\\\\&amp;amp;\mathbf1^{\mathrm T}
+    \end{matrix}\right).
+\end{equation*}&lt;/p&gt;
+
+&lt;h1 id=&quot;introduction-to-barycentric-coordinates&quot;&gt;Introduction to barycentric coordinates&lt;/h1&gt;
+
+&lt;p&gt;Let $\mathbf v_j$ be the vertices of a simplex in $\mathbb R^{n-1}$,
+then any point $\mathbf r\in\mathbb R^{n-1}$
+can be expressed by a tuple $\boldsymbol\lambda\in S_n$ such that
+$\mathbf r=\sum_j\lambda_j\mathbf v_j$.&lt;/p&gt;
+
+&lt;p&gt;If regarding $\mathbf V$ as a $\left(n-1\right)\times n$ matrix
+whose $j$th column is $\mathbf v_j$, then we have
+$\mathbf r=\mathbf V\boldsymbol\lambda$.&lt;/p&gt;
+
+&lt;p&gt;Along with the normalization condition $\sum_j\lambda_j=1$ or
+$\mathbf1^{\mathrm T}\boldsymbol\lambda=1$, we have
+$\mathbf r_1=\mathbf V_1
+\boldsymbol\lambda$,
+so
+\begin{equation}
+    \boldsymbol\lambda=\mathbf V_1^{-1}
+    \mathbf r_1.
+    \label{as Cartesian}
+\end{equation}&lt;/p&gt;
+
+&lt;p&gt;Usually, due to the convenience, we select the center of the Cartesian
+coordinate system so properly that $\sum_j\mathbf v_j=\mathbf0$ or
+\begin{equation}
+    \mathbf V\mathbf1=\mathbf0.
+    \label{barycenter zero}
+\end{equation}&lt;/p&gt;
+
+&lt;h1 id=&quot;the-research-object&quot;&gt;The research object&lt;/h1&gt;
+
+&lt;p&gt;We are going to show that the equation
+\begin{equation}
+    \boldsymbol\lambda^{\mathrm T}\boldsymbol\lambda=1
+    \label{research object}
+\end{equation}
+depicts a hyperellipsoid whose center is $\mathbf0$ and
+its tangent hyperplane at $\mathbf v_j$ is parallel to the hyperplane
+that passes all $\mathbf v_k$ that $k\ne j$.&lt;/p&gt;
+
+&lt;h1 id=&quot;the-quadric&quot;&gt;The quadric&lt;/h1&gt;
+
+&lt;p&gt;We are going to rewrite Formula \ref{research object} in the form of
+a quadric of $\mathbf r$.&lt;/p&gt;
+
+&lt;p&gt;Substitute Formula \ref{as Cartesian} into \ref{research object}, and
+then we can derive that
+\begin{equation}
+    1=\boldsymbol\lambda^{\mathrm T}\boldsymbol\lambda
+    =\left(\mathbf V_1^{-1}
+        \mathbf r_1\right)^{\mathrm T}
+        \left(\mathbf V_1^{-1}
+        \mathbf r_1\right)
+    =\mathbf r_1^{\mathrm T}
+        \left(\left(\mathbf V_1^{-1}
+        \right)^{\mathrm T}\mathbf V_1^{-1}
+        \right)\mathbf r_1.
+    \label{r quadric}
+\end{equation}
+Let
+\begin{equation}
+    \mathbf Q:=\left(\mathbf V_1^{-1}
+        \right)^{\mathrm T}\mathbf V_1^{-1}
+    =\left(\mathbf V_1
+        \mathbf V_1^{\mathrm T}\right)^{-1},
+    \label{Q def}
+\end{equation}
+and substitute Formula \ref{Q def} into \ref{r quadric},
+and then we can derive the quadric of $\mathbf r_1$
+\begin{equation}
+    \mathbf r_1^{\mathrm T}\mathbf Q\mathbf r_1=1.
+\end{equation}
+Note that besides $\mathbf r$, there is a $1$ in $\mathbf r_1$, so
+the quadric is a $2$nd-degree polynomial of $\mathbf r$,
+including quadratic terms, linear terms and a constant term.&lt;/p&gt;
+
+&lt;p&gt;In order to show that the center of the quadric is a hyperellipsoid
+whose center is $\mathbf0$, we need to prove that the coefficients
+of the linear terms are all $0$, and the coefficients of the suqare
+terms are all positive.&lt;/p&gt;
+
+&lt;h1 id=&quot;proving-that-the-center-of-the-quadric-is-mathbf0&quot;&gt;Proving that the center of the quadric is $\mathbf0$&lt;/h1&gt;
+
+&lt;p&gt;Note that $\mathbf Q=\left(\mathbf V_1\mathbf V_1^{\mathrm T}\right)^{-1}$,
+so
+\begin{equation}
+    \mathbf Q^{-1}=
+    \left(\begin{matrix}
+        \\&amp;amp;\mathbf V&amp;amp;\\\\1&amp;amp;\cdots&amp;amp;1
+    \end{matrix}\right)
+    \left(\begin{matrix}
+        &amp;amp;&amp;amp;&amp;amp;1\\&amp;amp;\mathbf V^{\mathrm T}&amp;amp;&amp;amp;\vdots\\&amp;amp;&amp;amp;&amp;amp;1
+    \end{matrix}\right)=
+    \left(\begin{matrix}
+        \\&amp;amp;\mathbf V\mathbf V^{\mathrm T}&amp;amp;&amp;amp;\mathbf V\mathbf1
+        \\\\&amp;amp;\mathbf1^{\mathrm T}\mathbf V^{\mathrm T}&amp;amp;&amp;amp;n
+    \end{matrix}\right).
+    \label{Q^-1}
+\end{equation}
+Substitute Formula \ref{barycenter zero} into \ref{Q^-1},
+and then we can derive that
+\begin{equation*}
+    \mathbf Q=\left(\begin{matrix}
+        &amp;amp;&amp;amp;&amp;amp;0\\&amp;amp;\mathbf V\mathbf V^{\mathrm T}&amp;amp;&amp;amp;\vdots
+        \\&amp;amp;&amp;amp;&amp;amp;0\\0&amp;amp;\cdots&amp;amp;0&amp;amp;n
+    \end{matrix}\right)^{-1}=
+    \left(\begin{matrix}
+        &amp;amp;&amp;amp;&amp;amp;0\\&amp;amp;\mathbf W&amp;amp;&amp;amp;\vdots\\&amp;amp;&amp;amp;&amp;amp;0\\0&amp;amp;\cdots&amp;amp;0&amp;amp;\frac1n
+    \end{matrix}\right),
+\end{equation*}
+where $\mathbf W:=\left(\mathbf V\mathbf V^{\mathrm T}\right)^{-1}$,
+so
+\begin{equation*}
+    \mathbf r_1^{\mathrm T}\mathbf Q\mathbf r_1=
+    \mathbf r^{\mathrm T}\mathbf W\mathbf r+\frac1n.
+\end{equation*}
+The linear terms are all $0$, so the center of the quadric is $\mathbf0$.&lt;/p&gt;
+
+&lt;h1 id=&quot;proving-that-the-quadric-is-a-hyperellipsoid&quot;&gt;Proving that the quadric is a hyperellipsoid&lt;/h1&gt;
+
+&lt;p&gt;We need to show that the square terms are all positive.
+In other words, the components on the diagonal of $\mathbf W$
+are all positive.&lt;/p&gt;
+
+&lt;p&gt;Because $\mathbf Q=
+\left(\mathbf V_1^{-1}\right)^{\mathrm T}\mathbf V_1^{-1}$,
+we have
+\begin{equation*}
+    \left(\mathbf Q\right)_{j,j}=
+    \sum_k\left(\mathbf V_1^{-1}\right)_{j,k}^2&amp;gt;0.
+\end{equation*}
+Therefore, obviously, the components on the diagonal of $\mathbf W$
+are all positive.&lt;/p&gt;
+
+&lt;h1 id=&quot;proving-that-the-its-tangent-hyperplane-at-mathbf-v_j-is-parallel-to-p_j&quot;&gt;Proving that the its tangent hyperplane at $\mathbf v_j$ is parallel to $P_j$&lt;/h1&gt;
+
+&lt;p&gt;Here $P_j$ is defined as the hyperplane that
+passes all $\mathbf v_k$ that $k\ne j$.&lt;/p&gt;
+
+&lt;p&gt;The equation of the quadric is $F\left(\mathbf r\right)=0$,
+where the quadratic function
+\begin{equation*}
+    F\left(\mathbf r\right):=\mathbf r^{\mathrm T}\mathbf W\mathbf r
+    +\frac1n-1.
+\end{equation*}
+According to geometry, the normal vector of the quadric at $\mathbf v_j$
+is the gradient of $F$ at $\mathbf v_j$, which is
+\begin{equation*}
+    \boldsymbol\nu_j:=
+    \left.\frac{\partial F\left(\mathbf r\right)}{\partial\mathbf r}\right|
+    _{\mathbf r=\mathbf v_j}=
+    2\mathbf W\mathbf v_j.
+\end{equation*}&lt;/p&gt;
+
+&lt;p&gt;Now consider the normal vector $\mathbf m_j$ of $P_j$. Assume that
+\begin{equation*}
+    P_j:n\mathbf m_j^{\mathrm T}\mathbf r+2=0.
+\end{equation*}
+The equation of $P_j$ should holds when $\mathbf r=\mathbf v_k$
+for all $k\ne j$, so we can derive $n-1$ linear equations with respect
+to $\mathbf m_j$
+\begin{equation}
+    \forall k\ne j:n\mathbf m_j^{\mathrm T}\mathbf v_k+2=0.
+    \label{equations for m}
+\end{equation}&lt;/p&gt;
+
+&lt;p&gt;If we can show that
+\begin{equation}
+    \mathbf m_j=\boldsymbol\nu_j=2\mathbf W\mathbf v_j
+    \label{solution for m}
+\end{equation}
+is the solution to Formula \ref{equations for m},
+then we can say that the two hyperplane are parallel.
+Thus, we need to verify the equations derived from
+substituting Formula \ref{solution for m} into \ref{equations for m}
+\begin{equation*}
+    \forall k\ne j:n\mathbf v_j^{\mathrm T}\mathbf W\mathbf v_k+1=0,
+\end{equation*}
+which is to say that the $n\times n$ matrix
+\begin{equation*}
+    \mathbf P:=\mathbf V^{\mathrm T}\mathbf W\mathbf V=&lt;br /&gt;
+    \mathbf V^{\mathrm T}\left(\mathbf V\mathbf V^{\mathrm T}\right)^{-1}
+    \mathbf V
+\end{equation*}
+is such a matrix that all of its components except those on its
+diagonal are $-\frac1n$.&lt;/p&gt;
+
+&lt;p&gt;According to conclusions in matrix analysis,
+if we regard $\mathbf V^{\mathrm T}$ as $n-1$ $n$-dimensional vectors,
+then $\mathbf P$ is an orthogonal projection in $\mathbb R^n$ to
+the linear subspace whose basis is the $n-1$ vectors.&lt;/p&gt;
+
+&lt;p&gt;Note that with Formula \ref{barycenter zero}, we can say that
+the subspace is just a hyperplane whose normal vector is $\mathbf1$.
+With the conclusion, we can easily write out the form of $\mathbf P$
+because we just need to write out one set of its basis $\mathbf B$.
+Writing out $\mathbf B$ only requires finding out $n-1$ linearly independent
+vectors that are perpendicular to $\mathbf1$.
+For example,
+\begin{equation*}
+    \mathbf B:=\left(\begin{matrix}
+        n-1&amp;amp;-1&amp;amp;-1&amp;amp;\cdots&amp;amp;-1\\-1&amp;amp;n-1&amp;amp;-1&amp;amp;\cdots&amp;amp;-1
+        \\-1&amp;amp;-1&amp;amp;n-1&amp;amp;\cdots&amp;amp;-1\\\vdots&amp;amp;\vdots&amp;amp;\vdots&amp;amp;\ddots&amp;amp;\vdots
+        \\-1&amp;amp;-1&amp;amp;-1&amp;amp;\cdots&amp;amp;n-1\\-1&amp;amp;-1&amp;amp;-1&amp;amp;\cdots&amp;amp;-1
+    \end{matrix}\right).
+\end{equation*}&lt;/p&gt;
+
+&lt;p&gt;Then, we have
+\begin{equation*}
+    \mathbf P=\mathbf B\left(\mathbf B^{\mathrm T}\mathbf B\right)^{-1}
+    \mathbf B^{\mathrm T}.
+\end{equation*}
+After some calculation, we can derive that the components of $\mathbf P$
+are $1-\frac1n$ on the diagonal and $-\frac1n$ elsewhere,
+which is what we want to show.&lt;/p&gt;
+
+&lt;p&gt;We have proved that the tangent hyperplane of the quadric
+at $\mathbf v_j$ is parallel to $P_j$.&lt;/p&gt;</content><author><name></name></author><summary type="html">Some notations</summary></entry></feed>

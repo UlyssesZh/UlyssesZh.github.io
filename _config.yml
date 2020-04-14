@@ -29,6 +29,7 @@ exclude:
 - .git/
 - .idea/
 - .rubocop.yml
+- serve.sh
 measurement_id: G-7TSJ5VM6YC
 google_verification: ZuV45Knwuwl49Nvh9UsDzniZ-3qy3bGhBPofLK3SZPw
 tagmanager_id: GTM-5PX967D
@@ -52,3 +53,6 @@ jekyll-archives:
     day: "/archives/:year/:month/:day/"
     tag: "/archives/tag/:name/"
     category: "/archives/category/:name/"
+rpg-map:
+  enabled:
+  - test

@@ -2,20 +2,19 @@
 
 source 'https://rubygems.org'
 
-gem 'jekyll', '~> 3.8'
-gem 'minima', '~> 2.5'
+gem 'jekyll', '~> 4'
+gem 'minima'
 group :jekyll_plugins do
-	gem 'github-pages', '~> 204'
-	gem 'jekyll-archives' # gh pages does not support this!
-	gem 'jekyll-feed', '~> 0.13'
-	gem 'jekyll-sitemap', '~> 1.4'
+	gem 'jekyll-archives'
+	gem 'jekyll-feed'
+	gem 'jekyll-sitemap'
 end
 install_if -> { RUBY_PLATFORM =~ /mingw|mswin|java/ } do
-	gem 'tzinfo', '~> 1.2'
+	gem 'tzinfo'
 	gem 'tzinfo-data'
 end
-gem 'faraday', '~> 0'
+gem 'faraday'
 gem 'rubocop'
 gem 'rubocop-rspec'
 gem 'rubocop-performance'
-gem 'wdm', '~> 0.1.1', install_if: Gem.win_platform?
+gem 'wdm', install_if: Gem.win_platform?
