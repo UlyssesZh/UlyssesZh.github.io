@@ -3,6 +3,9 @@ title: Hyperellipsoids in barycentric coordinates
 date: 2020-01-25 09:13:57 Z
 categories:
 - math
+tags:
+- linear algebra
+- long paper
 layout: post
 ---
 

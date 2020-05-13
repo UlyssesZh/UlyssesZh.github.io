@@ -3,6 +3,10 @@ title: The frequency assignment of musical notes
 date: 2020-03-27 07:31:55 Z
 categories:
 - music
+tags:
+- music theory
+- number sequence
+- long paper
 layout: post
 ---
 

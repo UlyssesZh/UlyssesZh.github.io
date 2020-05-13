@@ -4,6 +4,10 @@ date: 2020-02-09 05:16:31 Z
 categories:
 - programming
 layout: post
+tags:
+- ruby
+- meta programming
+- long paper
 ---
 
 I am going to show how to monkey-patch graciously using

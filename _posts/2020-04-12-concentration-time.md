@@ -3,6 +3,10 @@ title: The concentration change of gas in reversible reactions
 date: 2020-04-12 10:00:01 +0800
 categories:
 - chemistry
+tags:
+- calculus
+- chemical reaction
+- long paper
 layout: post
 ---
 

@@ -163,7 +163,7 @@
 
           
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/alda-rb/event_list.rb, line 294</span>
+            <pre><span class="ruby-comment"># File lib/alda-rb/event_list.rb, line 298</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-operator">...</span>)
   <span class="ruby-keyword">super</span>
   <span class="ruby-identifier">on_contained</span>
@@ -208,7 +208,7 @@
 
           
           <div class="method-source-code" id="clear-source">
-            <pre><span class="ruby-comment"># File lib/alda-rb/event_list.rb, line 304</span>
+            <pre><span class="ruby-comment"># File lib/alda-rb/event_list.rb, line 308</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">clear</span>
   <span class="ruby-ivar">@events</span>.<span class="ruby-identifier">clear</span>
   <span class="ruby-ivar">@variables</span>.<span class="ruby-identifier">clear</span>
@@ -254,7 +254,7 @@
 
           
           <div class="method-source-code" id="export-source">
-            <pre><span class="ruby-comment"># File lib/alda-rb/event_list.rb, line 254</span>
+            <pre><span class="ruby-comment"># File lib/alda-rb/event_list.rb, line 258</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">export</span> <span class="ruby-operator">**</span><span class="ruby-identifier">opts</span>
   <span class="ruby-constant">Alda</span>.<span class="ruby-identifier">export</span> <span class="ruby-value">code:</span> <span class="ruby-keyword">self</span>, <span class="ruby-operator">**</span><span class="ruby-identifier">opts</span>
 <span class="ruby-keyword">end</span></pre>
@@ -292,7 +292,7 @@
 
           
           <div class="method-source-code" id="load-source">
-            <pre><span class="ruby-comment"># File lib/alda-rb/event_list.rb, line 274</span>
+            <pre><span class="ruby-comment"># File lib/alda-rb/event_list.rb, line 278</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">load</span> <span class="ruby-identifier">filename</span>
   <span class="ruby-identifier">event</span> = <span class="ruby-constant">Alda</span><span class="ruby-operator">::</span><span class="ruby-constant">InlineLisp</span>.<span class="ruby-identifier">new</span> <span class="ruby-value">:alda_code</span>, <span class="ruby-constant">File</span>.<span class="ruby-identifier">read</span>(<span class="ruby-identifier">filename</span>)
   <span class="ruby-ivar">@events</span>.<span class="ruby-identifier">push</span> <span class="ruby-identifier">event</span>
@@ -338,7 +338,7 @@
 
           
           <div class="method-source-code" id="parse-source">
-            <pre><span class="ruby-comment"># File lib/alda-rb/event_list.rb, line 237</span>
+            <pre><span class="ruby-comment"># File lib/alda-rb/event_list.rb, line 241</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">parse</span> <span class="ruby-operator">**</span><span class="ruby-identifier">opts</span>
   <span class="ruby-constant">Alda</span>.<span class="ruby-identifier">parse</span> <span class="ruby-value">code:</span> <span class="ruby-keyword">self</span>, <span class="ruby-operator">**</span><span class="ruby-identifier">opts</span>
 <span class="ruby-keyword">end</span></pre>
@@ -385,7 +385,7 @@
 
           
           <div class="method-source-code" id="play-source">
-            <pre><span class="ruby-comment"># File lib/alda-rb/event_list.rb, line 220</span>
+            <pre><span class="ruby-comment"># File lib/alda-rb/event_list.rb, line 224</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">play</span> <span class="ruby-operator">**</span><span class="ruby-identifier">opts</span>
   <span class="ruby-constant">Alda</span>.<span class="ruby-identifier">play</span> <span class="ruby-value">code:</span> <span class="ruby-keyword">self</span>, <span class="ruby-operator">**</span><span class="ruby-identifier">opts</span>
 <span class="ruby-keyword">end</span></pre>
@@ -421,7 +421,7 @@
 
           
           <div class="method-source-code" id="save-source">
-            <pre><span class="ruby-comment"># File lib/alda-rb/event_list.rb, line 263</span>
+            <pre><span class="ruby-comment"># File lib/alda-rb/event_list.rb, line 267</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">save</span> <span class="ruby-identifier">filename</span>
   <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-identifier">filename</span>, <span class="ruby-string">&#39;w&#39;</span>) { <span class="ruby-identifier">_1</span>.<span class="ruby-identifier">puts</span> <span class="ruby-identifier">to_s</span> }
 <span class="ruby-keyword">end</span></pre>
@@ -457,7 +457,7 @@
 
           
           <div class="method-source-code" id="to_s-source">
-            <pre><span class="ruby-comment"># File lib/alda-rb/event_list.rb, line 285</span>
+            <pre><span class="ruby-comment"># File lib/alda-rb/event_list.rb, line 289</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_s</span>
   <span class="ruby-identifier">events_alda_codes</span>
 <span class="ruby-keyword">end</span></pre>

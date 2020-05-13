@@ -188,7 +188,7 @@
 
           
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/alda-rb/event_list.rb, line 173</span>
+            <pre><span class="ruby-comment"># File lib/alda-rb/event_list.rb, line 177</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span> <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>
   <span class="ruby-ivar">@events</span> <span class="ruby-operator">||=</span> []
   <span class="ruby-ivar">@variables</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">Set</span>.<span class="ruby-identifier">new</span>
@@ -234,7 +234,7 @@
 
           
           <div class="method-source-code" id="events_alda_codes-source">
-            <pre><span class="ruby-comment"># File lib/alda-rb/event_list.rb, line 194</span>
+            <pre><span class="ruby-comment"># File lib/alda-rb/event_list.rb, line 198</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">events_alda_codes</span> <span class="ruby-identifier">delimiter</span> = <span class="ruby-string">&#39; &#39;</span>
   <span class="ruby-ivar">@events</span>.<span class="ruby-identifier">map</span>(<span class="ruby-operator">&amp;</span><span class="ruby-value">:to_alda_code</span>).<span class="ruby-identifier">join</span> <span class="ruby-identifier">delimiter</span>
 <span class="ruby-keyword">end</span></pre>
@@ -272,7 +272,7 @@
 
           
           <div class="method-source-code" id="has_variable-3F-source">
-            <pre><span class="ruby-comment"># File lib/alda-rb/event_list.rb, line 134</span>
+            <pre><span class="ruby-comment"># File lib/alda-rb/event_list.rb, line 138</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">has_variable?</span> <span class="ruby-identifier">name</span>
   <span class="ruby-ivar">@variables</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">name</span>) <span class="ruby-operator">||</span> <span class="ruby-operator">!</span><span class="ruby-operator">!</span><span class="ruby-ivar">@parent</span>&amp;.<span class="ruby-identifier">has_variable?</span>(<span class="ruby-identifier">name</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -308,7 +308,7 @@
 
           
           <div class="method-source-code" id="import-source">
-            <pre><span class="ruby-comment"># File lib/alda-rb/event_list.rb, line 146</span>
+            <pre><span class="ruby-comment"># File lib/alda-rb/event_list.rb, line 150</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">import</span> <span class="ruby-identifier">event_list</span>
   <span class="ruby-ivar">@events</span>.<span class="ruby-identifier">concat</span> <span class="ruby-identifier">event_list</span>.<span class="ruby-identifier">events</span>
   <span class="ruby-keyword">nil</span>
@@ -405,9 +405,13 @@
       <span class="ruby-identifier">sequence_sugar</span>.(<span class="ruby-constant">Alda</span><span class="ruby-operator">::</span><span class="ruby-constant">Part</span>.<span class="ruby-identifier">new</span> [<span class="ruby-identifier">part</span>])
     <span class="ruby-keyword">end</span>
   <span class="ruby-keyword">when</span> <span class="ruby-regexp">/\A[a-z][a-z].*\z/</span>                   <span class="ruby-operator">=~</span> <span class="ruby-identifier">name</span>
-    <span class="ruby-keyword">if</span> <span class="ruby-identifier">block</span> <span class="ruby-operator">||</span> <span class="ruby-operator">!</span><span class="ruby-identifier">has_variable?</span>(<span class="ruby-identifier">name</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">==</span> <span class="ruby-value">1</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Alda</span><span class="ruby-operator">::</span><span class="ruby-constant">Event</span>)
+    <span class="ruby-identifier">arg</span> = <span class="ruby-identifier">args</span>.<span class="ruby-identifier">first</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">block</span> <span class="ruby-operator">||</span> <span class="ruby-operator">!</span><span class="ruby-identifier">has_variable?</span>(<span class="ruby-identifier">name</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">==</span> <span class="ruby-value">1</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">arg</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Alda</span><span class="ruby-operator">::</span><span class="ruby-constant">Event</span>) <span class="ruby-operator">&amp;&amp;</span>
+        <span class="ruby-operator">!</span><span class="ruby-identifier">arg</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Alda</span><span class="ruby-operator">::</span><span class="ruby-constant">InlineLisp</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-identifier">arg</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Alda</span><span class="ruby-operator">::</span><span class="ruby-constant">LispIdentifier</span>) <span class="ruby-operator">&amp;&amp;</span>
+        <span class="ruby-operator">!</span>(<span class="ruby-identifier">arg</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Alda</span><span class="ruby-operator">::</span><span class="ruby-constant">EventContainer</span>) <span class="ruby-operator">&amp;&amp;</span>
+            (<span class="ruby-identifier">arg</span>.<span class="ruby-identifier">event</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Alda</span><span class="ruby-operator">::</span><span class="ruby-constant">InlineLisp</span>) <span class="ruby-operator">||</span> <span class="ruby-identifier">arg</span>.<span class="ruby-identifier">event</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Alda</span><span class="ruby-operator">::</span><span class="ruby-constant">LispIdentifier</span>)))
       <span class="ruby-constant">Alda</span><span class="ruby-operator">::</span><span class="ruby-constant">SetVariable</span>.<span class="ruby-identifier">new</span> <span class="ruby-identifier">name</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>
-    <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">has_variable?</span>(<span class="ruby-identifier">name</span>) <span class="ruby-operator">&amp;&amp;</span> (<span class="ruby-identifier">args</span>.<span class="ruby-identifier">empty?</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">==</span> <span class="ruby-value">1</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Alda</span><span class="ruby-operator">::</span><span class="ruby-constant">Event</span>))
+    <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">has_variable?</span>(<span class="ruby-identifier">name</span>) <span class="ruby-operator">&amp;&amp;</span> (<span class="ruby-identifier">args</span>.<span class="ruby-identifier">empty?</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">==</span> <span class="ruby-value">1</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">arg</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Alda</span><span class="ruby-operator">::</span><span class="ruby-constant">Event</span>))
       <span class="ruby-identifier">sequence_sugar</span>.(<span class="ruby-constant">Alda</span><span class="ruby-operator">::</span><span class="ruby-constant">GetVariable</span>.<span class="ruby-identifier">new</span> <span class="ruby-identifier">name</span>)
     <span class="ruby-keyword">else</span>
       <span class="ruby-constant">Alda</span><span class="ruby-operator">::</span><span class="ruby-constant">InlineLisp</span>.<span class="ruby-identifier">new</span> <span class="ruby-identifier">name</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>
@@ -513,7 +517,7 @@
 
           
           <div class="method-source-code" id="to_a-source">
-            <pre><span class="ruby-comment"># File lib/alda-rb/event_list.rb, line 184</span>
+            <pre><span class="ruby-comment"># File lib/alda-rb/event_list.rb, line 188</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_a</span>
   <span class="ruby-ivar">@events</span>
 <span class="ruby-keyword">end</span></pre>

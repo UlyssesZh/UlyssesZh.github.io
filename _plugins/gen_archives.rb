@@ -43,7 +43,7 @@ module Jekyll
 				
 				result += '<li>'
 				subpath = File.join path, key
-				child_title = key
+				child_title = key.tr ?-, ?\s
 				if archives[key]['index.html']
 					child_title = "<a href=\"#{subpath}/\">#{child_title}</a>"
 				end

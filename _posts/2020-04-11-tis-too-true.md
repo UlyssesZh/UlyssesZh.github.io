@@ -3,6 +3,8 @@ title: "Snippet: O, 'tis too true!"
 date: 2020-04-11 16:34:42 +0800
 categories:
 - literature
+tags:
+- snippet
 layout: post
 ---
 

@@ -3,6 +3,10 @@ title: Use complex numbers as canonical variables
 date: 2020-01-06 06:09:47 Z
 categories:
 - physics
+tags:
+- hamiltonian
+- complex
+- long paper
 layout: post
 ---
 

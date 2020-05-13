@@ -3,6 +3,8 @@ title: Normal vectors of a scalar field
 date: 2020-03-03 12:56:59 Z
 categories:
 - math
+tags:
+- calculus
 layout: post
 ---
 
