@@ -32,7 +32,7 @@ It is easy to write out the rate equations
 \begin{split}
     \frac{\mathrm d\left\[X_j\right]}{\mathrm dt}=
         a_j\left(\mu_Y\prod_k\left\[Y_k\right]^{b_k}-
-        \mu_X\prod_k\left\[X_k\right]^{a_k}\right),\\\
+        \mu_X\prod_k\left\[X_k\right]^{a_k}\right),\\\\\
     \frac{\mathrm d\left\[Y_j\right]}{\mathrm dt}=
         b_j\left(\mu_X\prod_k\left\[X_k\right]^{a_k}-
         \mu_Y\prod_k\left\[Y_k\right]^{b_k}\right),
@@ -45,7 +45,7 @@ Apply a substitution
 \begin{equation}
 \begin{split}
     x_j:=\frac{\left\[X_j\right]}{a_j},\quad
-    y_j:=\frac{\left\[Y_j\right]}{b_j},\\\
+    y_j:=\frac{\left\[Y_j\right]}{b_j},\\\\\
     \mu_x:=\mu_X\prod_ka_k^{a_k},\quad
     \mu_y:=\mu_Y\prod_kb_k^{b_k}
 \end{split}
@@ -55,7 +55,7 @@ to Formula \ref{rate_equations}, and then it becomes
 \begin{equation}
 \begin{split}
     \frac{\mathrm dx_j}{\mathrm dt}=
-    \mu_y\prod_ky_k^{b_k}-\mu_x\prod_kx_k^{a_k},\\\
+    \mu_y\prod_ky_k^{b_k}-\mu_x\prod_kx_k^{a_k},\\\\\
     \frac{\mathrm dy_j}{\mathrm dt}=
     \mu_x\prod_kx_k^{a_k}-\mu_y\prod_ky_k^{b_k},
 \end{split}
@@ -69,7 +69,7 @@ Denote the changes of $x_j$ are equal to $s$, the initial value of
 $x_j$ is $A_j$, the initial value of $y_j$ is $B_j$, which means
 \begin{equation}
 \begin{split}
-    x_j=A_j+s,\\\
+    x_j=A_j+s,\\\\\
     y_j=B_j-s.
 \end{split}
     \label{back}
@@ -107,7 +107,7 @@ Formula \ref{back} and then Formula \ref{substitution}.
 We can derive
 \begin{equation}
 \begin{split}
-    \left\[X_j\right]=a_j\left(A_j+s\right),\\\
+    \left\[X_j\right]=a_j\left(A_j+s\right),\\\\\
     \left\[Y_j\right]=b_j\left(B_j-s\right)
 \end{split}
     \label{result}
@@ -186,9 +186,9 @@ and the reverse rate constant
 \end{equation\*}
 Initial concentrations are
 \begin{split}
-    \left\[\ce{CO}\right]_0=10.00\quad\left(\text{SI}\right),\\\
-    \left\[\ce{H2O}\right]_0=20.00\quad\left(\text{SI}\right),\\\
-    \left\[\ce{CO2}\right]_0=30.00\quad\left(\text{SI}\right),\\\
+    \left\[\ce{CO}\right]_0=10.00\quad\left(\text{SI}\right),\\\\\
+    \left\[\ce{H2O}\right]_0=20.00\quad\left(\text{SI}\right),\\\\\
+    \left\[\ce{CO2}\right]_0=30.00\quad\left(\text{SI}\right),\\\\\
     \left\[\ce{H2}\right]_0=40.00\quad\left(\text{SI}\right).
 \end{split}
 Find $\left\[\ce{H2O}\right]$ as a function of time.

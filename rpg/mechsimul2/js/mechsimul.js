@@ -287,10 +287,10 @@ function createButtons() {
 				if (!this.panelFFT) {
 					var length = canvas.history[this.i].length;
 					this.panelFFT = new Panel(
-						(y) => (canvas.mappingY(y) - 384) / length + 384,
+						(y) => (canvas.mappingY(y) - 384) / length * 5 + 384,
 						canvas.colors[this.i]);
 					var fft = new FFT(length);
-					this.panelFFT.drawDiscrete(fft.forward(canvas.history[this.i]).slice(0, 100));
+					this.panelFFT.drawDiscrete(fft.forward(canvas.history[this.i]).slice(0, 160));
 					fft.dispose();
 					window.scene.addChild(this.panelFFT);
 				}
