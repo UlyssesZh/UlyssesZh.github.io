@@ -3,7 +3,7 @@ layout: tool
 title: HTML preview
 ---
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/autosize.js/4.0.2/autosize.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/autosize@4.0.2/dist/autosize.min.js"></script>
 
 The texts you input in the area below will
 be filled into a `<p>` tag below.

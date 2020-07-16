@@ -7,6 +7,10 @@
 	{%- seo -%}
 	<link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}">
 	<link rel="icon" type="image/x-icon" href="{{ "/favicon.ico?" | relative-url }}">
+	<!-- Gitalk begin -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+	<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+	<!-- Gitalk end -->
 	{%- feed_meta -%}
 	{%- if jekyll.environment == 'production' and site.google_analytics -%}
 		{%- include google-analytics.html -%}

@@ -12,11 +12,32 @@
 {%- include header.html -%}
 
 <main class="page-content" aria-label="Content">
-	<div class="wrapper">{{ content }}</div>
+	<div class="wrapper">
+		{{ content }}
+		{%- unless layout.no_gitalk -%}
+			<div id="gitalk-container"></div>
+		{%- endunless -%}
+	</div>
 </main>
 
 {%- include footer.html -%}
 
 </body>
+
+{%- unless layout.no_gitalk -%}
+	<script>
+		const gitalk = new Gitalk({
+			clientID: '49611570ab5cf827576b',
+			clientSecret: '6dedc6014eb010990d395ae8aae632c7811dfeff',
+			repo: 'UlyssesZh.github.io',
+			owner: 'UlyssesZh',
+			admin: ['UlyssesZh'],
+			id: location.pathname,
+			distractionFreeMode: false,
+			language: document.documentElement.lang
+		})
+		gitalk.render('gitalk-container')
+	</script>
+{%- endunless -%}
 
 </html>
