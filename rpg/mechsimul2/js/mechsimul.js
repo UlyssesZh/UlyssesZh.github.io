@@ -77,12 +77,14 @@ Panel.prototype.drawDiscrete = function (data) {
 	this.bitmap.fontSize = 12;
 	var lastX = 0;
 	var lastY = this.mappingY(data[0]);
+	var unit = Graphics.width / data.length;
+	var groupSize = Math.floor(40 / unit);
 	for (var i = 2; i < data.length; i += 2) {
-		var x = Graphics.width * i / data.length;
+		var x = unit * i;
 		var y = this.mappingY(data[i]);
 		this.bitmap.drawLine(lastX, lastY, x, y, this.curveColor);
-		if (i % 10 === 2)
-			this.bitmap.drawText(String(i/2 - 1), lastX, 500, 30, 15)
+		if (i % groupSize === 2)
+			this.bitmap.drawText(String(i/2 - 1), lastX, 500, 30, 15);
 		lastX = x;
 		lastY = y;
 	}
@@ -95,6 +97,7 @@ Panel.prototype.drawDiscrete = function (data) {
 		lastX = x;
 		lastY = y;
 	}
+	this.bitmap.drawText(`* ${1/(N*dt)}Hz`, 0, 520, 800, 15);
 }
 Panel.prototype.drawCurve = function (data) {
 	for (var i = 0; i < data.length; i++) {
@@ -197,7 +200,6 @@ var CLASSIC_4TH = [[], [1 / 2.0], [0, 1 / 2.0], [0, 0, 1], [1 / 6.0, 1 / 3.0, 1 
 var RALSTON_4TH = [[], [0.4], [0.29697761, 0.15875964], [0.21810040, -3.05096516, 3.83286476], [0.17476028, -0.55148066, 1.20553560, 0.17118478]];
 var THREE_EIGHTH_4TH = [[], [1 / 3.0], [-1 / 3.0, 1], [1, -1, 1], [1 / 8.0, 3 / 8.0, 3 / 8.0, 1 / 8.0]];
 
-window.N = 1e6;
 var RECTANGULAR = (n) => 1;
 var TRIANGULAR = (n) => 1 - 2 * Math.abs(n - N / 2) / N
 var WELCH = (n) => 1 - (2 * n / N - 1) ** 2;
@@ -207,11 +209,10 @@ var HAMMING = (n) => 25/46.0 - (1 - 25/46.0) * Math.cos(2 * Math.PI * n / N);
 function RungeKutta() {
 	this.initialize.apply(this, arguments);
 }
-RungeKutta.prototype.initialize = function (initial, maxT, dt, matrix, func, canvas) {
+RungeKutta.prototype.initialize = function (initial, maxT, matrix, func, canvas) {
 	this.current = initial;
 	this.t = 0;
 	this.maxT = maxT;
-	this.dt = dt;
 	this.coefs = matrix[matrix.length - 1];
 	this.pyramid = matrix.slice(0, matrix.length - 1);
 	this.func = func;
@@ -222,7 +223,7 @@ RungeKutta.prototype.initialize = function (initial, maxT, dt, matrix, func, can
 RungeKutta.prototype.update = function () {
 	if (Input.isTriggered('ok'))
 		this.stopped = !this.stopped;
-	var batchSize = 1 / (60 * this.dt);
+	var batchSize = 1 / (60 * dt);
 	for (var _ = 0; _ < batchSize && this.t <= this.maxT && !this.stopped; _++) {
 		if (this.canvas && !this.canvas.trace(this.t, this.current)) {
 			this.stopped = true;
@@ -240,7 +241,7 @@ RungeKutta.prototype.inc = function () {
 			for (var k = 0; k < this.zeros.length; k++)
 				inner[k] += ary[j][k] * this.pyramid[i][j];
 		for (var k = 0; k < this.zeros.length; k++)
-			inner[k] = inner[k] * this.dt + this.current[k];
+			inner[k] = inner[k] * dt + this.current[k];
 		var x = this.func(this.t, inner);
 		for (var k = 0; k < this.zeros.length; k++)
 			sum[k] += this.coefs[i] * x[k];
@@ -249,11 +250,11 @@ RungeKutta.prototype.inc = function () {
 	var tempCurrent = this.current;
 	this.current = [];
 	for (var k = 0; k < this.zeros.length; k++)
-		this.current[k] = tempCurrent[k] + sum[k] * this.dt;
-	this.t += this.dt;
+		this.current[k] = tempCurrent[k] + sum[k] * dt;
+	this.t += dt;
 }
-RungeKutta.solveHamiltonian = function (n, qp0, maxT, dt, hamiltonian, dqp, canvas) {
-	return new RungeKutta(qp0, maxT, dt, THREE_EIGHTH_4TH, (t, qp) => {
+RungeKutta.solveHamiltonian = function (n, qp0, maxT, hamiltonian, dqp, canvas) {
+	return new RungeKutta(qp0, maxT, THREE_EIGHTH_4TH, (t, qp) => {
 		var dqpdt = div(qp, dqp, (x) => hamiltonian(t, x));
 		var result = [];
 		for (var i = 0; i < n; i++) {
@@ -290,7 +291,9 @@ function createButtons() {
 						(y) => (canvas.mappingY(y) - 384) / length * 5 + 384,
 						canvas.colors[this.i]);
 					var fft = new FFT(length);
-					this.panelFFT.drawDiscrete(fft.forward(canvas.history[this.i]).slice(0, 160));
+					var fftResult = fft.forward(canvas.history[this.i]);
+					console.log(fftResult);
+					this.panelFFT.drawDiscrete(fftResult.slice(0, spectrumSize * 2));
 					fft.dispose();
 					window.scene.addChild(this.panelFFT);
 				}
@@ -312,18 +315,26 @@ function createButtons() {
 	}
 }
 
-var pole1, pole2;
+var pole1 = new Sprite();
+var pole2 = new Sprite();
+pole1.bitmap = pole2.bitmap = new Bitmap(1, 250);
+pole1.bitmap.fillAll('gray');
+pole1.x = 512 - 200;
+pole2.x = 512 + 200;
+pole1.y = pole2.y = 384;
+var m = [1, 1], l = [0.5, 0.5], k = 50, g = 10, l0 = 0.8, d = 0.8;
+var qp0 = [2, 0, 0, 0];
+var [sin, cos, sqrt] = [Math.sin, Math.cos, Math.sqrt];
+var periodDetected;
+var canvas;
+var spectrumSize = 160;
+var dt = 5e-4;
+var N = 1e5;
+
 function start() {
-	pole1 = new Sprite();
-	pole2 = new Sprite();
-	pole1.bitmap = pole2.bitmap = new Bitmap(1, 250);
-	pole1.bitmap.fillAll('gray');
-	pole1.x = 512 - 200;
-	pole2.x = 512 + 200;
-	pole1.y = pole2.y = 384;
-	var periodDetected = false;
-	var canvas = new ScrollingPanel(
-		2, (t) => t * 40, (y) => (100 * y + 384), ['white', 'yellow', 'orange', 'pink'],
+	periodDetected = false;
+	canvas = new ScrollingPanel(
+		2, (t) => t * 100, (y) => (100 * y + 384), ['white', 'yellow', 'orange', 'pink'],
 		(t, qp) => {
 			pole1.rotation = qp[0];
 			pole2.rotation = qp[1];
@@ -337,13 +348,28 @@ function start() {
 	canvas.detectPeriod = true;
 	window.scene.addChild(canvas);
 	rungeKutta = RungeKutta.solveHamiltonian(
-		2, [2, 0, 0, 0], Number.POSITIVE_INFINITY, 1e-4,
-		(t, qp) => qp[2]**2 + qp[3]**2 - Math.cos(qp[0]) - Math.cos(qp[1]) - Math.cos(qp[0] - qp[1]),
-		1e-6, canvas
+		2, qp0, Number.POSITIVE_INFINITY,
+		(t, qp) => {
+			var [[q1, q2, p1, p2], [l1, l2], [m1, m2]] = [qp, l, m];
+			var uncoupled = (q, p, m, l) => p**2 / (2 * m * l**2) - m * g * l * cos(q);
+			var coupled = k * (sqrt(
+				(l1*cos(q1) - l2*cos(q2))**2 + (d - l1*sin(q1) + l2*sin(q2))**2
+			) - l0)**2 / 2;
+			return uncoupled(q1, p1, m1, l1) + uncoupled(q2, p2, m2, l2) + coupled;
+		}, 1e-6, canvas
 	);
 	canvas.addChild(pole1);
 	canvas.addChild(pole2);
 	window.scene.showing = canvas;
+}
+
+function restart() {
+	periodDetected = undefined;
+	window.scene.children.length = 0;
+	canvas = undefined;
+	buttons = undefined;
+	rungeKutta = undefined;
+	start();
 }
 
 function update() {
