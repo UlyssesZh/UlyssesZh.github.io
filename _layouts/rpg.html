@@ -31,28 +31,42 @@
 </head>
 <body style="background-color: black">
 {%- include google_analytics_body.html -%}
-<!-- pixi.js & pixi-tilemap.js are in specific version modified for RMMV -->
-<script type="text/javascript" src="../core/js/libs/pixi.js"></script>
-<script type="text/javascript" src="../core/js/libs/pixi-tilemap.js"></script>
-<!-- Strangely, pixi-picture.min.js is different from pixi-picture.js -->
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/pixi-picture@1.1.0/bin/pixi-picture.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/fpsmeter@0.3.1/dist/fpsmeter.min.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lz-string@1.3.6/libs/lz-string.min.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/iphone-inline-video@1.9.6/dist/iphone-inline-video.browser.js"></script>
-<!-- Following are RMMV scripts -->
-<script type="text/javascript" src="../core/js/rpg_core.js"></script>
+<script>
+(async function() {
+	const prefix = "https://cdn.jsdelivr.net/gh/rpgtkoolmv/corescript@v1.3b/";
+	let libs = ['pixi', 'pixi-tilemap', 'pixi-picture', 'fpsmeter', 'lz-string', 'iphone-inline-video.browser']
+	async function fetchMod(url) {
+		let files = await fetch(url).then(r => r.json());
+		files = files.map(file => fetch(prefix + file).then(r => r.text()));
+		return Promise.all(files);
+	}
+	function runScriptFromString(string) {
+		eval.call(window, string);
+	}
+	async function runScriptFromUrl(url) {
+		eval.call(window, await fetch(url).then(r => r.text()));
+	}
+	libs = libs.map(lib => fetch(prefix + 'js/libs/' + lib + '.js').then(r => r.text()));
+	libs = await Promise.all(libs);
+	libs = libs.join("\n");
+	runScriptFromString(libs);
 {% if page.scripts == "common" %}
-	<script type="text/javascript" src="../common/js/rpg_managers.js"></script>
-	<script type="text/javascript" src="../common/js/rpg_objects.js"></script>
-	<script type="text/javascript" src="../common/js/rpg_scenes.js"></script>
-	<script type="text/javascript" src="../common/js/rpg_sprites.js"></script>
-	<script type="text/javascript" src="../common/js/rpg_windows.js"></script>
-	<script type="text/javascript" src="js/plugins.js"></script>
+	let modules = await fetch(prefix + 'modules.json').then(r => r.json());
+	modules = modules.map(mod => fetchMod(prefix + mod + '.json'));
+	modules = await Promise.all(modules);
+	modules = modules.flatMap(e => e.join("\n")).join("\n");
+	runScriptFromString(modules);
+	await runScriptFromUrl('js/plugins.js');
 	{{ content }}
-	<script type="text/javascript" src="../common/js/main.js"></script>
+	await runScriptFromUrl(prefix + 'js/main.js');
 {% else %}
+	let modules = await fetchMod(prefix + 'rpg_core.json').then(r => r.join("\n"));
+	runScriptFromString(modules);
 	{{ content }}
-	<script type="module" src="js/main.js"></script>
+	await runScriptFromUrl('js/main.js');
 {% endif %}
+	window.onload();
+})();
+</script>
 </body>
 </html>

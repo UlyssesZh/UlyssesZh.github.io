@@ -106,8 +106,8 @@ including quadratic terms, linear terms and a constant term.
 
 In order to show that the center of the quadric is a hyperellipsoid
 whose center is $\mathbf0$, we need to prove that the coefficients
-of the linear terms are all $0$, and the coefficients of the suqare
-terms are all positive.
+of the linear terms are all $0$,
+and the determinant of the coefficients is positive.
 
 # Proving that the center of the quadric is $\mathbf0$
 
@@ -148,19 +148,15 @@ The linear terms are all $0$, so the center of the quadric is $\mathbf0$.
 
 # Proving that the quadric is a hyperellipsoid
 
-We need to show that the square terms are all positive.
-In other words, the components on the diagonal of $\mathbf W$
-are all positive.
+We need to show that determinant of the coefficients matrix is positive.
 
 Because $\mathbf Q=
 \left(\mathbf V_1^{-1}\right)^{\mathrm T}\mathbf V_1^{-1}$,
 we have
 \begin{equation\*}
-    \left(\mathbf Q\right)\_{j,j}=
-    \sum_k\left(\mathbf V_1^{-1}\right)_{j,k}^2>0.
+    \left|\mathbf Q\right|=
+    \left|\mathbf V_1^{-1}\right|^2>0.
 \end{equation\*}
-Therefore, obviously, the components on the diagonal of $\mathbf W$
-are all positive.
 
 # Proving that the its tangent hyperplane at $\mathbf v_j$ is parallel to $P_j$
 
