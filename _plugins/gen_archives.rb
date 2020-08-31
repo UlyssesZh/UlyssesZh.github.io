@@ -5,6 +5,7 @@ require 'jekyll-archives'
 module Jekyll
 	class ArchivesPageGenerator < Generator
 		safe true
+		priority :low
 		def generate site
 			archives = site.config['archives']
 			structure = {}

@@ -1,3 +1,14 @@
+function download(filename, object) {
+  let element = document.createElement('a');
+  let url = 'data:text/plain;charset=utf-8,' + encodeURIComponent(JSON.stringify(object));
+  element.setAttribute('href', url);
+  element.setAttribute('download', filename);
+  element.style.display = 'none';
+  document.body.appendChild(element);
+  element.click();
+  document.body.removeChild(element);
+}
+
 Bitmap.prototype.drawLine = function (x1, y1, x2, y2, color) {
 	var t;
 	var steep = Math.abs(y2 - y1) > Math.abs(x2 - x1);
@@ -17,9 +28,9 @@ Bitmap.prototype.drawLine = function (x1, y1, x2, y2, color) {
 	var y = y1;
 	for (var x = x1; x <= x2; x++) {
 		if (steep) {
-			this.fillRect(y, x, 1, 1, color);
+			this.setPixel(y, x, color);
 		} else {
-			this.fillRect(x, y, 1, 1, color);
+			this.setPixel(x, y, color);
 		}
 		e += de;
 		if (e >= 0.5) {
@@ -27,6 +38,9 @@ Bitmap.prototype.drawLine = function (x1, y1, x2, y2, color) {
 			e -= 1;
 		}
 	}
+}
+Bitmap.prototype.setPixel = function (x, y, color) {
+	this.fillRect(x, y, 1, 1, color);
 }
 
 function Button() {
@@ -66,7 +80,7 @@ function Panel() {
 	this.initialize.apply(this, arguments);
 }
 Panel.prototype = Object.create(Sprite.prototype);
-Panel.prototype.constructor = Button;
+Panel.prototype.constructor = Panel;
 Panel.prototype.initialize = function (mappingY, curveColor) {
 	Sprite.prototype.initialize.apply(this);
 	this.curveColor = curveColor;
@@ -103,7 +117,7 @@ Panel.prototype.drawCurve = function (data) {
 	for (var i = 0; i < data.length; i++) {
 		var x = Graphics.width * i / data.length;
 		var y = this.mappingY(data[i]);
-		this.bitmap.fillRect(x, y, 1, 1, this.curveColor);
+		this.bitmap.setPixel(x, y, this.curveColor);
 	}
 }
 
@@ -111,8 +125,8 @@ function ScrollingPanel() {
 	this.initialize.apply(this, arguments);
 }
 ScrollingPanel.prototype = Object.create(Sprite.prototype);
-ScrollingPanel.prototype.constructor = Button;
-ScrollingPanel.prototype.initialize = function (n, mappingX, mappingY, colors, onTrace, window) {
+ScrollingPanel.prototype.constructor = ScrollingPanel;
+ScrollingPanel.prototype.initialize = function (n, mappingX, mappingY, colors, onTrace, detectPeriod, window) {
 	Sprite.prototype.initialize.apply(this);
 	this.n = n;
 	this.colors = colors;
@@ -120,38 +134,51 @@ ScrollingPanel.prototype.initialize = function (n, mappingX, mappingY, colors, o
 	this.addChild(this.sprite);
 	this.oldSprite = new Sprite();
 	this.addChild(this.oldSprite);
-	this.sprite.bitmap = new Bitmap(Graphics.width, Graphics.height);
-	this.oldSprite.bitmap = new Bitmap(Graphics.width, Graphics.height);
 	this.mappingX = mappingX;
 	this.mappingY = mappingY;
-	this.labels = [];
-	for (var i = 0; i < n * 2; i++) {
+	this.detectPeriod = detectPeriod;
+	this.onTrace = onTrace;
+	this.window = window;
+	this.clear();
+}
+ScrollingPanel.prototype.clear = function () {
+	this.periodDetected = false
+	this.sprite.bitmap = new Bitmap(Graphics.width, Graphics.height);
+	this.oldSprite.bitmap = new Bitmap(Graphics.width, Graphics.height);
+	if (!this.labels)
+		this.labels = [];
+	for (var i = 0; i < this.n; i++) {
 		var sprite = new Sprite();
+		if (this.labels[i])
+			this.labels[i].destroy();
 		this.labels[i] = sprite;
 		sprite.bitmap = new Bitmap(30, 30);
 		sprite.bitmap.textColor = this.colors[i];
-		sprite.bitmap.drawText(
-			this.getLabelString(i), 0, 0, 30, 30, 'right'
-		);
+		sprite.bitmap.drawText(this.getLabelString(i), 0, 0, 30, 30, 'right');
 		sprite.anchor.x = 1;
 		sprite.anchor.y = 0.5;
 		sprite.x = Graphics.width;
 		this.addChild(sprite);
 	}
 	this.quo = 0;
-	this.detectPeriod = false;
-	this.onTrace = onTrace;
 	this.history = [];
-	for (var i = 0; i < n * 2; i++)
+	for (var i = 0; i < this.n; i++)
 		this.history.push([]);
-	this.window = window;
+	if (buttons) {
+		for (var i = buttons.children.length - 1; i >= 0; i--)
+			if (buttons.children[i].panelFFT)
+				buttons.children[i].panelFFT.destroy();
+		buttons.destroy();
+	}
 }
 ScrollingPanel.prototype.trace = function (t, data) {
-	if (this.detectPeriod) {
-		for (var i = 0; i < this.n * 2; i++)
+	if (this.detectPeriod && !this.periodDetected) {
+		for (var i = 0; i < this.n; i++)
 			this.history[i].push(data[i] * this.window(this.history[0].length));
-		if (this.history[0].length >= window.N)
-			this.detectPeriod = false;
+		if (this.history[0].length >= window.N) {
+			this.periodDetected = true;
+			window.createButtons(this);
+		}
 	}
 	var x = this.mappingX(t) - Graphics.width * this.quo;
 	this.sprite.x = Graphics.width - x;
@@ -165,10 +192,10 @@ ScrollingPanel.prototype.trace = function (t, data) {
 		this.sprite.bitmap.clear();
 		this.quo++;
 	}
-	for (var i = 0; i < data.length; i++) {
+	for (var i = 0; i < this.n; i++) {
 		var y = this.mappingY(data[i]);
 		this.labels[i].y = y;
-		this.sprite.bitmap.fillRect(x, y, 1, 1, this.colors[i]);
+		this.sprite.bitmap.setPixel(x, y, this.colors[i]);
 	}
 	return this.onTrace(t, data);
 }
@@ -178,52 +205,58 @@ require(['js/libs/fftw/main'], (FFTW) => {
 });
 ScrollingPanel.prototype.outputHistoryFFT = function () {
 	var fft = new FFT(this.history[0].length);
-	for (var i = 0; i < this.n * 2; i++) {
+	for (var i = 0; i < this.n; i++) {
 		console.log(`frequencies of ${this.getLabelString(i)}:`);
 		console.log(fft.forward(this.history[i]))
 	}
 	fft.dispose();
 }
 ScrollingPanel.prototype.getLabelString = function (i) {
-	return i < this.n ? `q${i}` : `p${i - this.n}`;
+	return i < this.n/2 ? `q${i}` : `p${i - this.n/2}`;
 }
 
 var FORWARD_EULER = [[], [1]];
-var EXPLICIT_MIDPOINT = [[], [1 / 2.0], [0, 1]];
-var HEUN = [[], [1], [1 / 2.0, 1 / 2.0]];
-var RALSTON = [[], [2 / 3.0], [1 / 4.0, 3 / 4.0]];
-var KUTTA_3RD = [[], [1 / 2.0], [-1, 2], [1 / 6.0, 2 / 3.0, 1 / 6.0]];
-var HEUN_3RD = [[], [1 / 3.0], [0, 2 / 3.0], [1 / 4.0, 0, 3 / 4.0]];
-var RALSTON_3RD = [[], [1 / 2.0], [0, 3 / 4.0], [2 / 9.0, 1 / 3.0, 4 / 9.0]];
-var SSPRK3 = [[], [1], [1 / 4.0, 1 / 4.0], [1 / 6.0, 1 / 6.0, 2 / 3.0]];
-var CLASSIC_4TH = [[], [1 / 2.0], [0, 1 / 2.0], [0, 0, 1], [1 / 6.0, 1 / 3.0, 1 / 3.0, 1 / 6.0]];
+var EXPLICIT_MIDPOINT = [[], [1/2], [0, 1]];
+var HEUN = [[], [1], [1/2, 1/2]];
+var RALSTON = [[], [2/3], [1/4, 3/4]];
+var KUTTA_3RD = [[], [1/2], [-1, 2], [1/6, 2/3, 1/6]];
+var HEUN_3RD = [[], [1/3], [0, 2/3], [1/4, 0, 3/4]];
+var RALSTON_3RD = [[], [1/2], [0, 3/4], [2/9, 1/3, 4/9]];
+var SSPRK3 = [[], [1], [1/4, 1/4], [1/6, 1/6, 2/3]];
+var CLASSIC_4TH = [[], [1/2], [0, 1/2], [0, 0, 1], [1/6, 1/3, 1/3, 1/6]];
 var RALSTON_4TH = [[], [0.4], [0.29697761, 0.15875964], [0.21810040, -3.05096516, 3.83286476], [0.17476028, -0.55148066, 1.20553560, 0.17118478]];
-var THREE_EIGHTH_4TH = [[], [1 / 3.0], [-1 / 3.0, 1], [1, -1, 1], [1 / 8.0, 3 / 8.0, 3 / 8.0, 1 / 8.0]];
+var THREE_EIGHTH_4TH = [[], [1/3], [-1/3, 1], [1, -1, 1], [1/8, 3/8, 3/8, 1/8]];
 
-var RECTANGULAR = (n) => 1;
-var TRIANGULAR = (n) => 1 - 2 * Math.abs(n - N / 2) / N
-var WELCH = (n) => 1 - (2 * n / N - 1) ** 2;
-var SINE = (n) => Math.sin(Math.PI * n / N);
-var HAMMING = (n) => 25/46.0 - (1 - 25/46.0) * Math.cos(2 * Math.PI * n / N);
+var RECTANGULAR = n => 1;
+var TRIANGULAR = n => 1 - 2 * Math.abs(n - N / 2) / N
+var WELCH = n => 1 - (2 * n / N - 1) ** 2;
+var SINE = n => Math.sin(Math.PI * n / N);
+var HAMMING = n => 25/46 - (1 - 25/46) * Math.cos(2 * Math.PI * n / N);
 
 function RungeKutta() {
 	this.initialize.apply(this, arguments);
 }
 RungeKutta.prototype.initialize = function (initial, maxT, matrix, func, canvas) {
-	this.current = initial;
-	this.t = 0;
+	this.initial = initial;
 	this.maxT = maxT;
 	this.coefs = matrix[matrix.length - 1];
 	this.pyramid = matrix.slice(0, matrix.length - 1);
 	this.func = func;
 	this.canvas = canvas;
-	this.zeros = initial.map(() => 0);
+	this.recordHistory = false;
+	this.clear();
+}
+RungeKutta.prototype.clear = function () {
+	this.current = this.initial;
+	this.t = 0;
 	this.stopped = false;
+	this.zeros = this.initial.map(() => 0);
+	this.history = [];
 }
 RungeKutta.prototype.update = function () {
 	if (Input.isTriggered('ok'))
 		this.stopped = !this.stopped;
-	var batchSize = 1 / (60 * dt);
+	var batchSize = window.xSpeed / (60 * dt);
 	for (var _ = 0; _ < batchSize && this.t <= this.maxT && !this.stopped; _++) {
 		if (this.canvas && !this.canvas.trace(this.t, this.current)) {
 			this.stopped = true;
@@ -233,6 +266,7 @@ RungeKutta.prototype.update = function () {
 	}
 }
 RungeKutta.prototype.inc = function () {
+	this.record();
 	var ary = [];
 	var sum = Object.create(this.zeros);
 	for (var i = 0; i < this.coefs.length; i++) {
@@ -242,7 +276,10 @@ RungeKutta.prototype.inc = function () {
 				inner[k] += ary[j][k] * this.pyramid[i][j];
 		for (var k = 0; k < this.zeros.length; k++)
 			inner[k] = inner[k] * dt + this.current[k];
-		var x = this.func(this.t, inner);
+		var sumPyramidRow = 0;
+		for (var k = 0; k < this.pyramid[i].length; k++)
+			sumPyramidRow += this.pyramid[i][k];
+		var x = this.func(this.t + sumPyramidRow * dt, inner);
 		for (var k = 0; k < this.zeros.length; k++)
 			sum[k] += this.coefs[i] * x[k];
 		ary.push(x);
@@ -253,8 +290,24 @@ RungeKutta.prototype.inc = function () {
 		this.current[k] = tempCurrent[k] + sum[k] * dt;
 	this.t += dt;
 }
-RungeKutta.solveHamiltonian = function (n, qp0, maxT, hamiltonian, dqp, canvas) {
-	return new RungeKutta(qp0, maxT, THREE_EIGHTH_4TH, (t, qp) => {
+RungeKutta.prototype.record = function () {
+	if (this.recordHistory)
+		this.history.push({t: this.t, x: this.current});
+}
+RungeKutta.prototype.downloadHistory = function (minT=0, maxT=this.t) {
+	if (this.recordHistory)
+		download(
+			'mechsimul-' + new Date().toISOString() + '.json',
+			this.history.slice(minT / dt, maxT / dt)
+		);
+	else
+		console.log('Please run `rungeKutta.recordHistory = true` beforehand');
+}
+RungeKutta.solveHamiltonian = function (n, qp0, maxT, canvas, hamiltonian, dqp=1e-6) {
+	return new RungeKutta(qp0, maxT, THREE_EIGHTH_4TH, canonicalEquation(n, hamiltonian, dqp), canvas)
+}
+function canonicalEquation(n, hamiltonian, dqp=1e-6) {
+	return (t, qp) => {
 		var dqpdt = div(qp, dqp, (x) => hamiltonian(t, x));
 		var result = [];
 		for (var i = 0; i < n; i++) {
@@ -262,17 +315,16 @@ RungeKutta.solveHamiltonian = function (n, qp0, maxT, hamiltonian, dqp, canvas) 
 			result[i + n] = -dqpdt[i];
 		}
 		return result;
-	}, canvas)
+	}
 }
 
-var rungeKutta = undefined;
 var buttons = undefined;
 
 function createButtons() {
 	buttons = new Sprite();
 	window.scene.addChild(buttons);
-	var canvas = rungeKutta.canvas;
-	for (var i = 0; i < canvas.n * 2; i++) {
+	var canvas = window.rungeKutta.canvas;
+	for (var i = 0; i < canvas.n; i++) {
 		var button = new Button(
 			0, 28 * i, 30, 28,
 			canvas.getLabelString(i),
@@ -292,7 +344,6 @@ function createButtons() {
 						canvas.colors[this.i]);
 					var fft = new FFT(length);
 					var fftResult = fft.forward(canvas.history[this.i]);
-					console.log(fftResult);
 					this.panelFFT.drawDiscrete(fftResult.slice(0, spectrumSize * 2));
 					fft.dispose();
 					window.scene.addChild(this.panelFFT);
@@ -315,64 +366,56 @@ function createButtons() {
 	}
 }
 
-var pole1 = new Sprite();
-var pole2 = new Sprite();
-pole1.bitmap = pole2.bitmap = new Bitmap(1, 250);
-pole1.bitmap.fillAll('gray');
-pole1.x = 512 - 200;
-pole2.x = 512 + 200;
-pole1.y = pole2.y = 384;
-var m = [1, 1], l = [0.5, 0.5], k = 50, g = 10, l0 = 0.8, d = 0.8;
-var qp0 = [2, 0, 0, 0];
-var [sin, cos, sqrt] = [Math.sin, Math.cos, Math.sqrt];
-var periodDetected;
-var canvas;
-var spectrumSize = 160;
+var {E, PI, LN2, LN10, LOG2E, LOG10E, PI, SQRT1_2, SQRT2,
+abs, acos, acosh, asin, asinh, atan, atanh, atan2, cbrt, ceil, clz32,
+cos, cosh, exp, expm1, floor, fround, hypot, imul, log, log1p, log10, log2,
+max, min, pow, random, round, sign, sin, sinh, sqrt, tan, tanh, trunc} = Math;
+
+// How wide is the resulting frequency spectrum? No more than N.
+var spectrumSize = 300;
+// How many seconds does one increment have? No more than 1/60.
 var dt = 5e-4;
+// The FFT will be available after how many samples have been established?
+// No less than spectrumSize.
 var N = 1e5;
+// How many times faster than reality should the simulator run?
+var xSpeed = 1;
+
+var canvas;
+var rungeKutta;
+
+var u = 0.3
+var gamma = 21.7
+var beta = 0.2
+var kappa = 8
+var omega = 10
+var f = 20
+// H = p^2/2 + omega^2 (1 + u cos(gamma t)) q^2/2 - f q cos(kappa t + beta)
 
 function start() {
-	periodDetected = false;
 	canvas = new ScrollingPanel(
-		2, (t) => t * 100, (y) => (100 * y + 384), ['white', 'yellow', 'orange', 'pink'],
-		(t, qp) => {
-			pole1.rotation = qp[0];
-			pole2.rotation = qp[1];
-			if (!canvas.detectPeriod && !periodDetected) {
-				periodDetected = true;
-				createButtons(canvas);
-			}
-			return true;
-		}, HAMMING
+		2, t => t * 70, y => (10 * y + 384), ['white', 'yellow'],
+		(t, qp) => true, true, HAMMING
 	);
-	canvas.detectPeriod = true;
-	window.scene.addChild(canvas);
 	rungeKutta = RungeKutta.solveHamiltonian(
-		2, qp0, Number.POSITIVE_INFINITY,
+		1, [2, 0], Number.POSITIVE_INFINITY, canvas,
 		(t, qp) => {
-			var [[q1, q2, p1, p2], [l1, l2], [m1, m2]] = [qp, l, m];
-			var uncoupled = (q, p, m, l) => p**2 / (2 * m * l**2) - m * g * l * cos(q);
-			var coupled = k * (sqrt(
-				(l1*cos(q1) - l2*cos(q2))**2 + (d - l1*sin(q1) + l2*sin(q2))**2
-			) - l0)**2 / 2;
-			return uncoupled(q1, p1, m1, l1) + uncoupled(q2, p2, m2, l2) + coupled;
-		}, 1e-6, canvas
+			var [q, p] = qp;
+			return p**2/2+omega**2*(1+u*cos(gamma*t))*q**2/2-f*q*cos(kappa*t+beta);
+		}
 	);
-	canvas.addChild(pole1);
-	canvas.addChild(pole2);
+	window.scene.addChild(canvas);
 	window.scene.showing = canvas;
 }
 
 function restart() {
-	periodDetected = undefined;
-	window.scene.children.length = 0;
-	canvas = undefined;
-	buttons = undefined;
-	rungeKutta = undefined;
-	start();
+	canvas.clear();
+	rungeKutta.clear();
+	canvas.visible = true;
+	window.scene.showing = canvas;
 }
 
 function update() {
-	rungeKutta.update();
+	if (rungeKutta) rungeKutta.update();
 	if (buttons) buttons.update();
 }
