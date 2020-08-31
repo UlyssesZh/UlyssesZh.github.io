@@ -25,11 +25,13 @@ jobs:
           bundle install
           mkdir _site
           cd _site
+          git config --global user.name "Ulysses Zhan"
+          git config --global user.email "2938747508@qq.com"
           git init
           git remote add origin https://github.com/UlyssesZh/UlyssesZh.github.io.git
           git pull origin master
           cd ..
           bundle exec jekyll build
           cd _site
-          git commit -a -m "commit changes" --author "Ulysses Zhan <2938747508@qq.com>"
+          git commit -a -m "commit changes"
           git push origin master
