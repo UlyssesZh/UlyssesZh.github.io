@@ -31,5 +31,5 @@ jobs:
           cd ..
           bundle exec jekyll build
           cd _site
-          git commit -a -m "commit changes"
+          git commit -a -m "commit changes" --author "Ulysses Zhan <2938747508@qq.com>"
           git push origin master
