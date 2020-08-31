@@ -11,11 +11,25 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Deploy to GitHub Pages
-        if: success()
-        uses: crazy-max/ghaction-github-pages@v2
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
         with:
-          target_branch: master
-          build_dir: '.'
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ruby-version: 2.7.1
+      - name: Setup GIT token
+        uses: fregante/setup-git-token@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Run the default task
+        run: |
+          gem install bundler
+          bundle install
+          mkdir _site
+          cd _site
+          git init
+          git remote add origin https://github.com/UlyssesZh/UlyssesZh.github.io.git
+          git pull origin master
+          cd ..
+          bundle exec jekyll build
+          cd _site
+          git commit -a -m "commit changes"
+          git push origin master
