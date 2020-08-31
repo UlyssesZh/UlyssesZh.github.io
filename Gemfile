@@ -10,7 +10,7 @@ group :jekyll_plugins do
 	gem 'jekyll-sitemap'
 end
 install_if -> { RUBY_PLATFORM =~ /mingw|mswin|java/ } do
-	gem 'tzinfo'
+	gem 'tzinfo', '~> 1.2'
 	gem 'tzinfo-data'
 end
 gem 'faraday'
