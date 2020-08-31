@@ -9,25 +9,13 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: Set up Ruby
-        uses: ruby/setup-ruby@v1
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Deploy to GitHub Pages
+        if: success()
+        uses: crazy-max/ghaction-github-pages@v2
         with:
-          ruby-version: 2.7.1
-      - name: Run the default task
-        run: |
-          gem install bundler
-          bundle install
-          mkdir _site
-          cd _site
-          git init
-          git remote add origin https://github.com/UlyssesZh/UlyssesZh.github.io.git
-          git pull origin master
-          cd ..
-          bundle exec jekyll build
-          cd _site
-          git config --global user.name "UlyssesZh"
-          git config --global user.email "2938747508@qq.com"
-          git add --all
-          git commit -m "commit changes"
-          git push origin master
+          target_branch: master
+          build_dir: '.'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
