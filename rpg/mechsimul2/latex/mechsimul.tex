@@ -1,4 +1,4 @@
-% !TEX options=--shell-escape
+% !TEX options=-shell-escape
 \documentclass[12pt]{article}
 \usepackage{amsfonts}
 \usepackage{amsmath}
@@ -24,12 +24,17 @@
 \makesavenoteenv{tabular}
 \makesavenoteenv{table}
 
-\setminted{fontsize=\footnotesize}
+\definecolor{bg}{rgb}{0.95,0.95,0.95}
+\setminted{
+  fontsize=\footnotesize,
+  bgcolor=bg,
+  frame=leftline
+}
 
 \providecommand{\keywords}[1]{\small\textbf{\textit{Keywords---}} #1}
 
 \title{A multifunctional hamiltonian mechanics simulator and some of its application examples}
-\author{詹有丘}
+\author{詹有丘 (Zhan Youqiu)}
 
 \begin{document}
 
@@ -71,14 +76,14 @@
 
 \begin{abstract}
 We have developed a convenient online software that can simulate hamiltonian mechanics.
-The user can see the motion of a system as long as he tells the software
+Users can see the motion of a system as long as he tells the simulator
 the hamiltonian of the system and the initial conditions of it.
-The software can also analyze the oscillation pattern of a oscillator
+The simulator can also analyze the oscillation pattern of a oscillator
 by using FFT to derive the frequency domain of the motion.
-The software is small and fast, and is convenient and easy to operate and customize.
+The simulator is small and fast, and is convenient and easy to operate and customize.
 The user interface is simple (a graphics interface for simple basic operations
 and a console interface for other operations).
-The software can also output data of the simulated system to create datasets
+The simulator can also output data of the simulated system to create datasets
 for other potential usages.
 There are a lot of applications that can be done with it.
 \end{abstract}
@@ -98,7 +103,7 @@ but most of them have one of the following disadvantages:
   This makes them unportable.
 
   \item Not convenient enough.
-  Most of the softwares require the user to download the program files into the disk.
+  Most of the simulators require the user to download the program files into the disk.
   This is inconvenient because you have to reinstall the software when you use another device.
 
   \item Not customizable enough.
@@ -112,22 +117,22 @@ but most of them have one of the following disadvantages:
 
   \item Too difficult to operate.
   Some powerful simulators have very complicated user interface,
-  which requires the user to study for hours to being able to operate the software and check the result.
+  which requires the user to study for hours to being able to operate the simulator and check the result.
   This is not friendly to new users.
 \end{enumerate}
 
-Because of this, we created a software to solve the problems above.
+Because of this, we created a simulator to solve the problems above.
 It is available on a
 \href{https://UlyssesZh.github.io/rpg/mechsimul2}{webpage}.
 
-The software is a mechanics simulator.
+The simulator is a mechanics simulator.
 After the user input a hamiltonian and the initial conditions of the system,
-the software can simulate the motion of the system,
+the simulator can simulate the motion of the system,
 graph the motion of it on the screen.
 If a vibrating system is being simulated,
-the software can also calculate the frequency domain of the motion using FFT after enough samples have been calculated out.
+the simulator can also calculate the frequency domain of the motion using FFT after enough samples have been calculated out.
 
-The software has the following advantages:
+The simulator has the following advantages:
 \begin{enumerate}
   \item Very small and fast.
   The simulator is rather simple but efficient.
@@ -151,9 +156,9 @@ The software has the following advantages:
   If advanced usage is not needed, a user without programming experience only needs a few minutes to learn to use it.
 \end{enumerate}
 
-The software can be used to study motions of hamiltonian systems,
+The simulator can be used to study motions of hamiltonian systems,
 learn classical theoretical mechanics,
-create animation image for presentation related to physics,
+create animation image for presentation related to physics or online physics courses,
 and create dataset of motions of a hamiltonian system.
 
 \section{List of symbols}
@@ -250,7 +255,15 @@ be the degree of freedom (DOF) of the system (it is actually 2 times DOF in our 
 \label{sec:ode_solver}
 
 \VerbatimFootnotes
-This ODE (Equation \ref{eq:ode}) can be solved numerically using the Runge--Kutta method\footnotemark
+This ODE (Equation \ref{eq:ode}) can be solved numerically using the Runge--Kutta method\footnote{
+  The algorithm can be expressed more briefly using Ruby programming language:
+  \begin{minted}{ruby}
+  dx = b.zip(a).each_with_object([]).sum do |(bj, aj), ary|
+    bj * ary.push(f.(t+aj.sum*dt, x+aj.zip(ary).sum{_1*_2}*dt)).last
+  end * dt
+  \end{minted}
+}
+
 \begin{equation}
   \Delta\mathbf x\approx\Delta t\sum_j^sb_j\mathbf K_j,
 \end{equation}
@@ -259,15 +272,6 @@ where $\mathbf K_j$ is defined recursively as \cite[p. 907]{press2007numerical}
   \mathbf K_j:=f\left(t+\Delta t\sum_k^ja_{j,k},\mathbf x+\Delta t\sum_k^ja_{j,k}\mathbf K_k\right).
 \end{equation}
 The smaller $\Delta t$ is, the more precise and the less efficient the solver is.
-
-\footnotetext{
-  The algorithm can be expressed more briefly using Ruby programming language:
-  \begin{minted}{ruby}
-  dx = b.zip(a).each_with_object([]).sum do |(bj, aj), ary|
-    bj * ary.push(f.(t+aj.sum*dt, x+aj.zip(ary).sum{_1*_2}*dt)).last
-  end * dt
-  \end{minted}
-}
 
 The order number $s$ and the coefficients $b_j$ and $a_{j,k}$
 are specific for different Runge--Kutta methods.
@@ -329,7 +333,7 @@ Under the circumstance of hamiltonian mechanics,
 the vector $\mathbf x\in\mathbb R^\iota$ can be separated into two vectors
 $\mathbf q\in\mathbb R^{\iota/2}$ and $\mathbf p\in\mathbb R^{\iota/2}$,
 which are respectively the \textbf{generalized coordinates} and \textbf{generalized momentum} of the system,
-so the components of $\mathbf x$ can be called \verb!q0!, \verb!q1!, \verb!p0!, \verb!p1!, etc..
+so the components of $\mathbf x$ can be called \mintinline{js}{q0}, \mintinline{js}{q1}, \mintinline{js}{p0}, \mintinline{js}{p1}, etc..
 
 Since the gradient $\nabla_{\mathbf x}\mathcal H$ can be calculated numerically easily,
 we can give the numerical form of $\mathbf f$ in Equation \ref{eq:ode} according to
@@ -343,7 +347,7 @@ and can thus solve Equation \ref{eq:ode} numerically according to the method des
 
 When we study the periodical motion of a dynamics system,
 it is usually interesting to study its frequency domain.
-Therefore, we want the program to be shipped with the ability
+Therefore, we want the simulator to be shipped with the ability
 to show the Fourier transformation (FT) of the motion
 (on an interval of time $\left[0,N\Delta t\right)$).
 Because we do this numerically, and $t$ is actually discrete,
@@ -382,9 +386,9 @@ is adopted because it fits with most cases.
   \label{fig:fft}
 \end{figure}
 
-\section{Libraries used by the program}
+\section{Libraries used by the simulator}
 
-Our program depends on some third-party libraries.
+Our simulator depends on some third-party libraries.
 
 The graphics library is used to show graphs on the screen.
 
@@ -402,9 +406,9 @@ Although rpg\_core.js is shipped with \href{https://tkool.jp/mv}{RPG Maker MV},
 which is not a free software,
 it is open-source \href{https://github.com/rpgtkoolmv/corescript}{on GitHub}.
 
-In rpg\_core.js, a \verb!Bitmap! object is used to store the info of a picture,
-and a \verb!Sprite! object is used to present the picture depicted by a \verb!Bitmap!.
-The coordinates info etc. are also in the \verb!Sprite! \cite{rmmvhelp}.
+In rpg\_core.js, a \mintinline{js}{Bitmap} object is used to store the info of a picture,
+and a \mintinline{js}{Sprite} object is used to present the picture depicted by a \mintinline{js}{Bitmap}.
+The coordinates info etc. are also in the \mintinline{js}{Sprite} \cite{rmmvhelp}.
 Figure \ref{fig:show_picture} shows how rpg\_core.js shows a picture.
 
 \begin{figure}[h]
@@ -432,11 +436,11 @@ Figure \ref{fig:show_picture} shows how rpg\_core.js shows a picture.
   \label{fig:show_picture}
 \end{figure}
 
-The \verb!x! and \verb!y! property of a \verb!Sprite! can be adjusted to move a picture.
+The \mintinline{js}{x} and \mintinline{js}{y} property of a \mintinline{js}{Sprite} can be adjusted to move a picture.
 
-rpg\_core.js also provides methods to fill a rectangular region on a \verb!Bitmap!
+rpg\_core.js also provides methods to fill a rectangular region on a \mintinline{js}{Bitmap}
 with a certain color.
-This enables us to set the color of pixels on a \verb!Bitmap! and can thus draw graphs.
+This enables us to set the color of pixels on a \mintinline{js}{Bitmap} and can thus draw graphs.
 
 \subsection{FFT library}
 \label{sec:fft}
@@ -457,7 +461,7 @@ and initial values $\mathbf q\left(0\right)$ and $\mathbf p\left(0\right)$.
 However, a person can hardly figure out the patterns in the motion
 by just looking at a bunch of $\left(t,\mathbf x\right)$ pairs.
 To make it easier to find out the patterns,
-the program should be capable of plotting a graph
+the simulator should be capable of plotting a graph
 according to the $\left(t,\mathbf x\right)$ pairs.
 
 To be more specific, for each component $y$ of $\mathbf x$,
@@ -473,14 +477,14 @@ scales like logarithmic scale.
 Since people often want to simulate a system for a long time,
 which makes the graph very wide,
 so the canvas should be much wider than the screen.
-Then we must make the canvas scroll as the program simulates the system.
+Then we must make the canvas scroll as the simulator simulates the system.
 
 Although nowadays computers can draw pictures on the screen very fast
 and can redraw it every $1/60$ seconds,
-the read-write operations to the \verb!Bitmap! is time-consuming.
+the read-write operations to the \mintinline{js}{Bitmap} is time-consuming.
 Therefore, here we implement a scroll algorithm similar to Carmack scroll algorithm.
 Using this method, the computer only need to change one pixel
-on the \verb!Bitmap! instead of tens of thousands of them
+on the \mintinline{js}{Bitmap} instead of tens of thousands of them
 every time when the ODE solver increments.
 
 The algorithm requires 2 sprites, respectively called sprite 1 and sprite 2,
@@ -561,6 +565,13 @@ This process is shown in Figure \ref{fig:switching}.
   \label{fig:switching}
 \end{figure}
 
+\begin{figure}
+  \centering
+  \includegraphics[width=0.9\linewidth]{console_panel.png}
+  \caption{The console panel of Chrome browser \cite{chromeconsole}}
+  \label{fig:console}
+\end{figure}
+
 \subsection{Presenting the frequency domain of the motion}
 
 In Section \ref{sec:theory_fft},
@@ -574,7 +585,7 @@ Because rpg\_core.js does not ship with a method drawing a straight line on the 
 we need to implement an algorithm to draw straight lines.
 Here Bresenham's line algorithm \cite{gaol2013bresenham} is adopted.
 
-\section{The program}
+\section{Guides for operating}
 \label{sec:program}
 
 When you open the \href{https://UlyssesZh.github.io/rpg/mechsimul2}{webpage},
@@ -602,13 +613,13 @@ and the initial conditions are
     \includegraphics[width=\linewidth]{default_p0_frequencies.png}
     \caption{The frequency domain of $p$ of the default model}
   \end{subfigure}
-  \caption{The screenshots of the program simulating the default model}
+  \caption{The screenshots of the simulator simulating the default model}
   \label{fig:default}
 \end{figure}
 
 The frequency domain calculator feature is enabled.
 After some time, when there have accumulated enough samples,
-the program will create buttons at the up-left corner of the screen
+the simulator will create buttons at the up-left corner of the screen
 clicking which will make it show the time domain to be FFTed
 and the calculated frequency domain.
 
@@ -618,23 +629,21 @@ and the line colored gray represents the imaginary part of the FFT result.
 
 Hit \LKeySpace ~to pause or resume the simulation.
 
-Figure \ref{fig:default} shows the graphics interface of the program.
+Figure \ref{fig:default} shows the graphics interface of the simulator.
 From the result of the simulation,
 it seems that we can indeed learn something about the pattern of the motion.
 The frequency domain is very clear.
 
-\subsection{Console operations and customization}
-\label{sec:customization}
+As described in Section \ref{sec:intro}, the simulator is highly customizable.
+You can customize the simulation by coding in the console\footnote{
+  For most browsers, hit \LKeyF{12} to have access to the console.
+  The interface of the console panel usually looks like Figure \ref{fig:console}.
+}.
 
-As described in Section \ref{sec:intro}, the program is highly customizable.
-You can customize the simulation by coding in the console\footnotemark.
+\subsection{Downloading the motion data}
 
-\footnotetext{For most browsers, hit \LKeyF{12} to have access to the console.}
-
-\paragraph{Download the motion data}
-
-The program will not record the history of the ODE solver by default.
-To ask the program to record the history, run the following codes.
+The simulator will not record the history of the ODE solver by default.
+To ask the simulator to record the history, run the following codes.
 
 \begin{minted}{js}
   rungeKutta.recordHistory = true;
@@ -648,25 +657,25 @@ and then run the following codes to download the simulated data.
   rungeKutta.downloadHistory(0, 30);
 \end{minted}
 
-Replace \verb!0! and \verb!30! with the ends of interval of time
+Replace \mintinline{js}{0} and \mintinline{js}{30} with the ends of interval of time
 during which your desired data was simulated out.
 Omitting the 2 parameters will make it download all data accumulated so far.
 
-\paragraph{Change the parameters of the default model}
+\subsection{Changing the parameters of the default model}
 
 For instance, now we want to study the pattern of parametric resonance.
 For a parametric vibration model, when $\gamma\approx2\omega$,
-the condition for it to reach parametric resonance is\footnotemark \cite[p. 82]{landau1976mechanics}
+the condition for it to reach parametric resonance is\footnote{
+  Precision to $\mathrm O\left(u\right)$.
+} \cite[p. 82]{landau1976mechanics}
 \begin{equation}
   \left|\gamma-2\omega\right|<\frac12\omega u.
 \end{equation}
 
-\footnotetext{Precision to $\mathrm O\left(u\right)$.}
-
 We want to study how the motion looks like when it reaches parametric resonance.
 We can let $f:=0$ to cancel the external force
 and let $\gamma:=21.3$ to make the system meet the condition of parametric resonance.
-Then, run \verb!restart()!.
+Then, run \mintinline{js}{restart()}.
 
 \begin{minted}{js}
   f = 0;
@@ -674,7 +683,7 @@ Then, run \verb!restart()!.
   restart();
 \end{minted}
 
-\paragraph{Change the initial conditions}
+\subsection{Changing the initial conditions}
 
 The initial conditions $\mathbf x\left(0\right)$ can be set to a customized one
 by running the following codes.
@@ -684,9 +693,9 @@ by running the following codes.
   restart();
 \end{minted}
 
-Change \verb![2, 0]! into any initial conditions you like.
+Change \mintinline{js}{[2, 0]} into any initial conditions you like.
 
-\paragraph{Change the scale}
+\subsection{Changing the scale}
 
 It can be found that the amplitude indeed grows in an exponential pattern as predicted by theorems.
 Since exponential growth is very fast, the graph soon exceeds the screen.
@@ -694,11 +703,13 @@ We can use logarithmic scale to prevent this.
 This can be done by changing $m_y$ using the following codes.
 
 \begin{minted}{js}
-  canvas.mappingY = y => 20 * log1p(abs(y)) * sign(y) + 384;
+  canvas.mappingY = y => 20 * log1p(abs(y)) * sign(y) + Graphics.height/2;
   restart();
 \end{minted}
 
 Now $m_y\left(y\right):=20\ln\left(1+\left|y\right|\right)\operatorname{sgn}y+h/2$.
+Note that in the codes, \mintinline{js}{Graphics.width} stands for $w$
+and \mintinline{js}{Graphics.height} stands for $h$.
 
 The result of the simulation of the parametric resonance can be seen in Figure \ref{fig:parametric}.
 It can be seen that the amplitude is indeed growing exponentially.
@@ -713,11 +724,11 @@ It can be seen that the amplitude is indeed growing exponentially.
     \includegraphics[width=\linewidth]{parametric_resonance_logarithmic.png}
     \caption{Using logarithmic scale to prevent the amplitude growing too fast}
   \end{subfigure}
-  \caption{The program simulating the parametric resonance}
+  \caption{The simulator simulating the parametric resonance}
   \label{fig:parametric}
 \end{figure}
 
-\paragraph{Disable analysis of frequency domain}
+\subsection{Disabling analysis of frequency domain}
 
 You can also disable the frequency domain analysis using the following codes.
 After running the codes, there will not be buttons appearing at the up-left corner
@@ -728,22 +739,22 @@ to indicate the availability of the frequency domain.
   restart();
 \end{minted}
 
-\paragraph{Advanced: draw the phase path}
+\subsection{Advanced: drawing the phase path}
 
 A phase path is the graph representing the motion of the phase point $\mathbf x$ \cite[p. 146]{landau1976mechanics}\cite[p. 68]{arnold1989mathmech}.
 
-The program has an API to allow the user to run custom codes as the ODE solver increments.
-To draw the phase path, first you need to create a \verb!Sprite! and a \verb!Bitmap!
+The simulator has an API to allow the user to run custom codes as the ODE solver increments.
+To draw the phase path, first you need to create a \mintinline{js}{Sprite} and a \mintinline{js}{Bitmap}
 by following the codes below.
 
 \begin{minted}{js}
   var phaseSprite = new Sprite();
-  phaseSprite.bitmap = new Bitmap(1024, 768);
+  phaseSprite.bitmap = new Bitmap(Graphics.width, Graphics.height);
   scene.addChild(phaseSprite);
 \end{minted}
 
-Then, change \verb!canvas.onTrace! to run custom codes when a new point is added,
-and \verb!restart()!.
+Then, change \mintinline{js}{canvas.onTrace} to run custom codes when a new point is added,
+and \mintinline{js}{restart()}.
 
 \begin{minted}{js}
   canvas.onTrace = (t, qp) => {
@@ -753,8 +764,8 @@ and \verb!restart()!.
   restart();
 \end{minted}
 
-If you want, you can hide the original canvas by running \verb!canvas.visible = false;!,
-and you can clear the phase path at any time by running \verb!phaseSprite.bitmap.clear();!.
+If you want, you can hide the original canvas by running \mintinline{js}{canvas.visible = false;},
+and you can clear the phase path at any time by running \mintinline{js}{phaseSprite.bitmap.clear();}.
 
 \begin{figure}
   \centering
@@ -765,14 +776,23 @@ and you can clear the phase path at any time by running \verb!phaseSprite.bitmap
 
 Figure \ref{fig:parametric_phase} shows the result of the codes above.
 
-\subsection{Other examples}
+The line should be continuous at the edge of each period of the phase path,
+but the phase point moves so fast that the simulator cannot trace it continuously.
+The discrete points seem to form curves across the phase path,
+as can be seen in Figure \ref{fig:parametric_phase}.
+What are the equations for them?
+It seems that the simulator can inspire us to ask such questions
+and encourage us to study something like this about physics.
 
-The default model and the typical customizations to it presented in Section \ref{sec:customization}
-are good examples of the application of the program.
+\section{Examples}
+\label{sec:examples}
+
+The default model and the typical customizations to it presented in Section \ref{sec:program}
+are good examples of the application of the simulator.
 
 Here are some other examples.
 
-\paragraph{Kepler's 2-body problem}
+\subsection{Kepler's 2-body problem}
 
 2-body problems are systems with $4$ DOF.
 The hamiltonian of the model to be simulated is
@@ -795,55 +815,65 @@ The hamiltonian of the model to be simulated is
     \includegraphics[width=\linewidth]{kepler_2_body_q0_frequencies.png}
     \caption{Frequencies of $q_0$}
   \end{subfigure}
-  \caption{The program simulating Kepler's 2-body problem}
+  \caption{The simulator simulating Kepler's 2-body problem}
   \label{fig:kepler}
 \end{figure}
 
 Run the following codes and you will get 2 stars move around each other.
 
 \begin{minted}{js}
-  canvas.n = 8; // There are 8 curves to be drawn on the canvas
+  // There are 8 curves to be drawn on the canvas
+  canvas.n = 8;
+  // Setting the hamiltonian of the system
   rungeKutta.func = canonicalEquation(4, (t, qp) => {
     let [x1, y1, x2, y2, px1, py1, px2, py2] = qp;
     return px1**2 + py1**2 + px2**2 + py2**2 - 500 / hypot(x1-x2, y1-y2);
   });
-  rungeKutta.initial = [-3, -3, 3, 3, 2, -3, -2, 3]; // Initial conditions
-  canvas.mappingY = y => 20 * y + 384;
-  canvas.colors = ["white", "yellow", "pink", "blue", // Colors for graph
+  // Setting the initial conditions of the system
+  rungeKutta.initial = [-3, -3, 3, 3, 2, -3, -2, 3];
+  // Setting the scale of the graph
+  canvas.mappingY = y => 20 * y + Graphics.height/2;
+  // Setting the colors for graphing; there are 8 curves and thus 8 colors
+  canvas.colors = ["white", "yellow", "pink", "blue",
                    "green", "purple", "red", "magenta"];
 
-  // Create the sprites and bitmaps for visualization
+  // Following codes creates the sprites and bitmaps for visualization
+  // (Using API provided by rpg_core.js, see [1] for help)
   var traceSprite = new Sprite();
   var star1 = new Sprite();
   var star2 = new Sprite();
   scene.addChild(traceSprite);
   scene.addChild(star1);
   scene.addChild(star2);
-  traceSprite.bitmap = new Bitmap(1024, 768);
+  traceSprite.bitmap = new Bitmap(Graphics.width, Graphics.height);
   star1.bitmap = star2.bitmap = new Bitmap(4, 4);
   star1.bitmap.fillAll('orange');
   star1.anchor.x = star1.anchor.y = 0.5;
   star2.anchor.x = star2.anchor.y = 0.5;
 
+  // Updating the state of the sprites when a new sample comes out
   canvas.onTrace = (t, qp) => {
-    [star1.x, star1.y, star2.x, star2.y] = // Set position of stars
+    // Setting the position of sprites of stars
+    [star1.x, star1.y, star2.x, star2.y] =
         qp.slice(0, 4).map(canvas.mappingY);
-    traceSprite.bitmap.setPixel(star1.x, star1.y, 'cyan'); // Draw trajectory
+    // Plotting the trajectory
+    traceSprite.bitmap.setPixel(star1.x, star1.y, 'cyan');
     traceSprite.bitmap.setPixel(star2.x, star2.y, 'cyan');
     return true;
   };
 
+  // Restarting to apply the changes
   restart();
 \end{minted}
 
 The simulated result is shown in Figure \ref{fig:kepler}.
 
-\paragraph{Adiabatic invariants}
+\subsection{Adiabatic invariants}
 
 The action variable of a periodic 1-dimensional system is an adiabatic invariant,
 which does not vary when the parameters in hamiltonian change slowly \cite[p. 298]{arnold1989mathmech}\cite[p. 156]{landau1976mechanics}.
 
-Here we can use the program to study the adiabatic invariant of the harmonic oscillator.
+Here we can use the simulator to study the adiabatic invariant of the harmonic oscillator.
 The hamiltonian is
 \begin{equation*}
   \mathcal H\left(t,q,p\right)=\frac{p^2}2+\omega\left(t\right)^2\frac{q^2}2,
@@ -860,17 +890,28 @@ We are going to make the canvas draw graph for $I$ and $\mathcal H$.
 Run the following codes.
 
 \begin{minted}{js}
-  var omega = t => 4 + 0.05 * t; // shoud change slowly
+  // The altering parameter omega mentioned above; it should change slowly
+  var omega = t => 4 + 0.05 * t;
+  // The hamiltonian of the system
   var hamiltonian = (t, qp) => qp[1]**2/2 + omega(t)**2 * qp[0]**2/2;
+  // Setting the hamiltonian of the system
   rungeKutta.func = canonicalEquation(1, hamiltonian);
-  canvas.n = 4; // There are 4 curves on the graph
-  canvas.getLabelString = i => 'qpHI'[i]; // The labels will be q, p, H, I
+  // There are 8 curves to be drawn on the canvas
+  canvas.n = 4;
+  // The labels of the curves will be q, p, H, I
+  canvas.getLabelString = i => 'qpHI'[i];
+  // The colors for the curves
   canvas.colors = ["white", "yellow", "pink", "blue"];
+  // Tracing the H and I data when a new sample comes out
   canvas.trace = function (t, data) {
+    // Calculating the hamiltonian at this time
     let h = hamiltonian(t, data);
-    data = data.concat([h, h / omega(t)]); // [q, p, h, h/omega]
-    return this.__proto__.trace.call(this, t, data); // calls old method
+    // To be drawn on the graph at this time: [q, p, h, h/omega]
+    data = data.concat([h, h / omega(t)]);
+    // Calling old method, a JavaScript trick
+    return this.__proto__.trace.call(this, t, data);
   };
+  // Restarting to apply the changes
   restart();
 \end{minted}
 
@@ -885,7 +926,7 @@ Figure \ref{fig:adiabatic} shows the result.
 As can be seen, the same as theoretically predicted,
 while $\omega$ and thus $\mathcal H$ changes slowly, $I$ does not vary.
 
-\paragraph{Scattered beam of particles}
+\subsection{Scattered beam of particles}
 
 Suppose there is a beam of identical particles being shot toward a central force field.
 Each of the particles of the beam has hamiltonian
@@ -895,41 +936,55 @@ Each of the particles of the beam has hamiltonian
 
 The beam will be scattered, and particles with different impact parameter will
 have different angle of scattering \cite[p. 49]{landau1976mechanics}.
-We want to study this phenomenon using the program.
+We want to study this phenomenon using the simulator.
 
 The simulation can be done using the codes below.
 Note that on low-performance devices, the simulation is slow
 because there are 30 motions to be simulated at the same time.
 
 \begin{minted}{js}
-  var n = 30; // The total number of particles in the beam
-  rungeKuttas = []; // The array of the n ODE solvers
+  // The total number of particles in the beam
+  var n = 30;
+  // The array of the n ODE solvers
+  rungeKuttas = [];
   for (let i = 0; i < n; i++) {
-    rungeKuttas[i] = RungeKutta.solveHamiltonian( // Create an ODE solver
-      2, [-20, (i - n/2)*0.3, 4, 0], Number.POSITIVE_INFINITY, null,
-      (t, qp) => {
+    // Create an ODE solver
+    rungeKuttas[i] = RungeKutta.solveHamiltonian(
+      // Parameters list:
+      2,                           // DOF
+      [-20, (i - n/2)*0.3, 4, 0],  // Initial conditions
+      Number.POSITIVE_INFINITY,    // Maximum time
+      null,                        // Canvas; null for no canvas
+      (t, qp) => {                 // The hamiltonian
         var [x, y, px, py] = qp;
         return px**2 + py**2 + 30/hypot(x,y);
       }
     );
   }
 
-  // Create the sprite and bitmap for visualization
+  // Create the sprite and bitmap for visualization (rpg_core.js API)
   var traceSprite = new Sprite();
   scene.addChild(traceSprite);
-  traceSprite.bitmap = new Bitmap(1024, 768);
+  traceSprite.bitmap = new Bitmap(Graphics.width, Graphics.height);
 
-  var my = y => 20 * y + 384;
+  // The scale to be used for graphing
+  var my = y => 20 * y + Graphics.height/2;
+  // This is the function to be called at each frame refreshing
   update = function () {
     for (let i = 0; i < n; i++) {
+      // Calculate the coordinates of the point to be plotted
       let xy = [0, 1].map(j => my(rungeKuttas[i].current[j]))
-      traceSprite.bitmap.setPixel(...xy, 'white'); // plot trajectory
-      rungeKuttas[i].update(); // increment ODE solvers
+      // Plotting the trajectory
+      traceSprite.bitmap.setPixel(...xy, 'white');
+      // Incrementing ODE solvers
+      rungeKuttas[i].update();
     }
   };
 
+  // Restarting to apply the changes
   restart();
-  canvas.visible = false; // hide the original canvas
+  // Hiding the original canvas
+  canvas.visible = false;
 \end{minted}
 
 \begin{figure}[h]
@@ -941,9 +996,19 @@ because there are 30 motions to be simulated at the same time.
 
 The result of the codes above can be seen in Figure \ref{fig:scatter}.
 
-\paragraph{Special relativity}
+The effect of scattering forms a graph rather beautiful.
+It can be seen that the envelope of the trajectories of the particles
+looks like a conic section, which is not thought about before we simulate it.
+Then, we can be curious about what is the equation for the envelope
+because it is meaningful as it indicates the safe place
+where the particles will not reach.
 
-Not only classical mechanics, the program can simulate special relativity mechanics
+Simple simulation like this can inspire us to study about physics.
+This is exactly one of the major usages of the simulator.
+
+\subsection{Special relativity}
+
+Not only classical mechanics, the simulator can simulate special relativity mechanics
 because relativity mechanics can be depicted by hamiltonian mechanics.
 Consider a relativity particle in a uniform gravitational field, which has hamiltonian \cite[p. 28]{landau2010fields}
 \begin{equation*}
@@ -967,6 +1032,9 @@ as predicted theoretically \cite[p. 24]{landau2010fields}.
 
 We have developed a convenient online software that can simulate hamiltonian mechanics.
 There are a lot of applications that can be done with it.
+
+We wrote the default model for illustrating the basic applications, mentioned in Section \ref{sec:program},
+and mentioned some other examples for proposing some further applications in Section \ref{sec:examples}.
 
 \bibliographystyle{abbrv}
 \bibliography{mechsimul}
