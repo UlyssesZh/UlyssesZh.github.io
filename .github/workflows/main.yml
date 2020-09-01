@@ -11,27 +11,16 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Set up Ruby
-        uses: ruby/setup-ruby@v1
+      - name: Cache
+        uses: actions/cache@v1
         with:
-          ruby-version: 2.7.1
-      - name: Setup GIT token
-        uses: fregante/setup-git-token@v1
+          path: vendor/bundle
+          key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-gems-
+      - name: Build and deploy Jekyll site
+        uses: helaili/jekyll-action@2.0.1
+        env:
+          JEKYLL_PAT: ${{ secrets.JEKYLL_PAT }}
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-      - name: Run the default task
-        run: |
-          gem install bundler
-          bundle install
-          mkdir _site
-          cd _site
-          git config --global user.name "Ulysses Zhan"
-          git config --global user.email "2938747508@qq.com"
-          git init
-          git remote add origin https://github.com/UlyssesZh/UlyssesZh.github.io.git
-          git pull origin master
-          cd ..
-          bundle exec jekyll build
-          cd _site
-          git commit -a -m "commit changes"
-          git push origin master
+          target_branch: master
