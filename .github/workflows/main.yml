@@ -18,9 +18,17 @@ jobs:
           key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
           restore-keys: |
             ${{ runner.os }}-gems-
-      - name: Build and deploy Jekyll site
-        uses: helaili/jekyll-action@2.0.1
+      - name: Setup GIT token
+        uses: fregante/setup-git-token@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - name: GIT config
+        run: |
+          git config --global user.name "Ulysses Zhan"
+          git config --global user.email "2938747508@qq.com"
+      - name: Deploy Jekyll
+        uses: helaili/jekyll-action@2.0.4
         env:
           JEKYLL_PAT: ${{ secrets.JEKYLL_PAT }}
         with:
-          target_branch: master
+          target_branch: 'master'
