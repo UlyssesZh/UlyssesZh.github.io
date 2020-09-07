@@ -95,6 +95,11 @@ There are a lot of applications that can be done with it.
 \section{Introduction}
 \label{sec:intro}
 
+Theoretical mechanics is a subject difficult to study.
+One can often find that he cannot find out what the motion of a mechanics system looks like,
+so he may probably want to see the graph of the motion.
+A software that can output the motion of a system as long as the mechanics system is defined is called a mechanics simulator.
+
 There have been a lot of mechanics simulators available on the Internet,
 but most of them have one of the following disadvantages:
 \begin{enumerate}
@@ -121,45 +126,13 @@ but most of them have one of the following disadvantages:
   This is not friendly to new users.
 \end{enumerate}
 
-Because of this, we created a simulator to solve the problems above.
-It is available on a
-\href{https://UlyssesZh.github.io/rpg/mechsimul2}{webpage}.
+Because of this, we wanted to create a simulator to solve the problems above.
+To make it convenient to use, it should be hosted on a webpage
+so that everyone with a browser can have access to it as long as he can access the Internet.
 
-The simulator is a mechanics simulator.
-After the user input a hamiltonian and the initial conditions of the system,
-the simulator can simulate the motion of the system,
-graph the motion of it on the screen.
-If a vibrating system is being simulated,
-the simulator can also calculate the frequency domain of the motion using FFT after enough samples have been calculated out.
-
-The simulator has the following advantages:
-\begin{enumerate}
-  \item Very small and fast.
-  The simulator is rather simple but efficient.
-  A user with a well-connected computer can start simulating mechanics in seconds without any preparation.
-
-  \item Very convenient.
-  Anyone with browser and Internet access can have access to the simulator without the requirement of downloading program files into the disk.
-  The simulator is based on HTML and the programs is written in JavaScript which is supported by almost all browsers.
-
-  \item Highly customizable.
-  Everything of the simulator can be customized at ease.
-  The simulated model, the parameters of the ODE solver, the way the simulator presents the system, etc. can all be customized.
-
-  \item Being able to output data.
-  The simulated data can be output to create mechanics datasets.
-  The created datasets can be used to study the pattern of a system or be analyzed by a third-party software.
-
-  \item Being easy to operate.
-  All that the user need to do to operate the system is to write simple JavaScript codes in the console and click on the screen.
-  The coding is very easy.
-  If advanced usage is not needed, a user without programming experience only needs a few minutes to learn to use it.
-\end{enumerate}
-
-The simulator can be used to study motions of hamiltonian systems,
-learn classical theoretical mechanics,
-create animation image for presentation related to physics or online physics courses,
-and create dataset of motions of a hamiltonian system.
+With such a simulator, one can study theoretical mechanics more conveniently.
+He can have perceptual congnition about specific mechanics systems.
+The simulator can also be used as animated presentation for physics education or lecture.
 
 \section{List of symbols}
 
@@ -339,6 +312,7 @@ Since the gradient $\nabla_{\mathbf x}\mathcal H$ can be calculated numerically 
 we can give the numerical form of $\mathbf f$ in Equation \ref{eq:ode} according to
 \begin{equation}
   \mathbf f\left(t,\mathbf x\right):=\boldsymbol\omega\nabla_{\mathbf x}\mathcal H
+  \label{eq:def_f}
 \end{equation}
 and can thus solve Equation \ref{eq:ode} numerically according to the method described in Section \ref{sec:ode_solver}.
 
@@ -784,6 +758,69 @@ What are the equations for them?
 It seems that the simulator can inspire us to ask such questions
 and encourage us to study something like this about physics.
 
+\subsection{Change the hamiltonian into a nonlinear oscillator}
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.9\linewidth]{nonlinear_frequency.png}
+  \caption{The frequency spectrum of a nonlinear oscillator (higher frequencies is not shown)}
+  \label{fig:nonlinear}
+\end{figure}
+
+The user can assign a function value to the variable \mintinline{js}{rungeKutta.func}
+to change the $\mathbf f$ in Equation \ref{eq:ode}.
+To create the $\mathbf f$ according to the hamiltonian using Equation \ref{eq:def_f},
+using the function \mintinline{js}{canonicalEquation},
+with the first argument be the DOF, and the second argument be the hamiltonian function.
+
+One example is to change the hamiltonian of the default model into that of a nonlinear oscillator
+\begin{equation*}
+  \mathcal H\left(t,q,p\right):=\frac{p^2}2+\frac{\omega_0^2q^2}2+\alpha q^3+\beta q^4
+\end{equation*}
+by running the following codes.
+Before applying the codes, if you have runned some codes above,
+refresh the webpage\footnote{
+  For most browsers, the shortcut of refreshing is to hit \LKeyF{5}.
+} to have a clean environment to prevent the modifications above affecting.
+
+\begin{minted}{js}
+  rungeKutta.func = canonicalEquation(1, (t, qp) => {
+    let [q, p] = qp;
+    return p**2/2 + omega0**2*q**2/2 + alpha*q**3 + beta*q**4;
+  });
+\end{minted}
+
+The parameters $\left(\omega_0,\alpha,\beta\right)$ should be defined.
+Assume that we take
+\begin{equation*}
+  \left(\omega_0,\alpha,\beta\right):=\left(10,-2,-3\right),
+\end{equation*}
+then we can run the following codes.
+
+\begin{minted}{js}
+  var omega0 = 10;
+  var alpha = -2;
+  var beta = -3;
+\end{minted}
+
+If we take the initial conditions as $\left(q,p\right)=\left(1,0\right)$ using the following codes,
+the amplitude is now taken as $b=1$.
+
+\begin{minted}{js}
+  rungeKutta.initial = [1, 0];
+\end{minted}
+
+We can use the simulator to verify the formula for calculating the frequency of the nonlinear oscillator \cite[p. 87]{landau1976mechanics}\footnote{
+  Precision to $\mathrm O\left(b^2\right)$.
+}
+\begin{equation*}
+  \omega=\omega_0+\left(\frac{3\beta}{2\omega_0}-\frac{15\alpha^2}{4\omega_0^3}\right)b^2=9.535.
+\end{equation*}
+
+The frequency spectrum is shown in Figure \ref{fig:nonlinear}.
+As can be seen, the frequency is roughly the theoretically predicted value $\frac\omega{2\pi}=1.518$,
+different from the linear one $\frac{\omega_0}{2\pi}=1.592$.
+
 \section{Examples}
 \label{sec:examples}
 
@@ -791,6 +828,8 @@ The default model and the typical customizations to it presented in Section \ref
 are good examples of the application of the simulator.
 
 Here are some other examples.
+The codes of the examples can also be seen on the
+\href{https://ulysseszh.github.io/rpg/mechsimul2/examples.html}{webpage}.
 
 \subsection{Kepler's 2-body problem}
 
@@ -868,12 +907,47 @@ Run the following codes and you will get 2 stars move around each other.
 
 The simulated result is shown in Figure \ref{fig:kepler}.
 
+If the user is curious, the hamiltonian or the initial conditions can be modified a little to create interesting graphs.
+
+The line \mintinline{js}{rungeKutta.initial = [-3, -3, 3, 3, 5, -2, -5, 2];}
+can be modified to apply different initial conditions.
+For different initial conditions, the trajectory can appear as a different shape.
+If we change \mintinline{js}{2, -3, -2, 3} into \mintinline{js}{5, -2, -5, 2},
+the trajectory is hyperbola as shown in Figure \ref{fig:distortion_kepler}.
+
+The line \mintinline{js}{return px1**2 + py1**2 + px2**2 + py2**2 - 500 / hypot(x1-x2, y1-y2);}
+can be modified to apply a different hamiltonian to the system.
+If you change \mintinline{js}{x1-x2} into \mintinline{js}{1.5*x1-x2},
+what you get is a chaotic motion as shown in Figure \ref{fig:distortion_kepler}.
+
+\begin{figure}[h]
+  \centering
+  \begin{subfigure}[b]{0.4\linewidth}
+    \includegraphics[width=\linewidth]{distortion_kepler.png}
+    \caption{The code \mintinline{js}{x1-x2} is changed into \mintinline{js}{1.5*x1-x2}}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.4\linewidth}
+    \includegraphics[width=\linewidth]{distortion2_kepler.png}
+    \caption{The code \mintinline{js}{x1-x2} is changed into \mintinline{js}{1.1*x1-x2}}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.6\linewidth}
+    \includegraphics[width=\linewidth]{distortion3_kepler.png}
+    \caption{The code \mintinline{js}{2, -3, -2, 3} is changed into \mintinline{js}{5, -2, -5, 2}}
+  \end{subfigure}
+  \caption{The Kepler's 2-body problem model is modified}
+  \label{fig:distortion_kepler}
+\end{figure}
+
 \subsection{Adiabatic invariants}
 
 The action variable of a periodic 1-dimensional system is an adiabatic invariant,
 which does not vary when the parameters in hamiltonian change slowly \cite[p. 298]{arnold1989mathmech}\cite[p. 156]{landau1976mechanics}.
 
-Here we can use the simulator to study the adiabatic invariant of the harmonic oscillator.
+A system related to adiabatic invariance is a little difficult to imagine.
+We want to use the simulator to show how adiabatic invariants work.
+The codes shown below can be modified to simulate other systems related to adiabatic invariance.
+
+Here the example adopted is the harmonic oscillator with its frequency altering slowly.
 The hamiltonian is
 \begin{equation*}
   \mathcal H\left(t,q,p\right)=\frac{p^2}2+\omega\left(t\right)^2\frac{q^2}2,
@@ -914,6 +988,9 @@ Run the following codes.
   // Restarting to apply the changes
   restart();
 \end{minted}
+
+The definition of the slowly altering parameter and the hamiltonian is marked with comments.
+Feel free to modify them to simulate other systems with adiabatic invariants.
 
 \begin{figure}[h]
   \centering
@@ -956,7 +1033,7 @@ because there are 30 motions to be simulated at the same time.
       Number.POSITIVE_INFINITY,    // Maximum time
       null,                        // Canvas; null for no canvas
       (t, qp) => {                 // The hamiltonian
-        var [x, y, px, py] = qp;
+        let [x, y, px, py] = qp;
         return px**2 + py**2 + 30/hypot(x,y);
       }
     );
@@ -994,6 +1071,20 @@ because there are 30 motions to be simulated at the same time.
   \label{fig:scatter}
 \end{figure}
 
+\begin{figure}[h]
+  \centering
+  \begin{subfigure}[b]{0.4\linewidth}
+    \includegraphics[width=\linewidth]{distortion_scatter.png}
+    \caption{The codes \mintinline{js}{4, 0} are replaced with \mintinline{js}{3, 0}, and the curves become more bending}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.5\linewidth}
+    \includegraphics[width=\linewidth]{distortion2_scatter.png}
+    \caption{The codes \mintinline{js}{30/hypot(x,y)} are replaced with \mintinline{js}{20/hypot(x,y)}, and the curves become less bending}
+  \end{subfigure}
+  \caption{The parameters of the model of scattered beam of particles is modified}
+  \label{fig:distortion_scatter}
+\end{figure}
+
 The result of the codes above can be seen in Figure \ref{fig:scatter}.
 
 The effect of scattering forms a graph rather beautiful.
@@ -1005,6 +1096,15 @@ where the particles will not reach.
 
 Simple simulation like this can inspire us to study about physics.
 This is exactly one of the major usages of the simulator.
+
+One can also study how the initial velocity of the beam of the particle and the field intensity affects the trajectories.
+We can use the simulator to verify that as the initial velocity decreases or the field intensity increases, the trajectories will be more bending.
+
+The line \mintinline{js}{[-20, (i - n/2)*0.3, 4, 0],} specifies the initial conditions for the \mintinline{js}{i}th particle,
+and the line \mintinline{js}{return px**2 + py**2 + 30/hypot(x,y);} specifies the hamiltonian of a particle.
+We can change the codes \mintinline{js}{4, 0} into \mintinline{js}{3, 0} to make trajectories more bending,
+and change the codes \mintinline{js}{30/hypot(x,y)} into \mintinline{js}{20/hypot(x,y)} to make trajectories less bending,
+as can be seen in Figure \ref{fig:distortion_scatter}.
 
 \subsection{Special relativity}
 
@@ -1033,8 +1133,47 @@ as predicted theoretically \cite[p. 24]{landau2010fields}.
 We have developed a convenient online software that can simulate hamiltonian mechanics.
 There are a lot of applications that can be done with it.
 
+The simulator is a mechanics simulator.
+After the user input a hamiltonian and the initial conditions of the system,
+the simulator can simulate the motion of the system,
+graph the motion of it on the screen.
+If a vibrating system is being simulated,
+the simulator can also calculate the frequency domain of the motion using FFT after enough samples have been calculated out.
+
+The simulator has the following advantages:
+\begin{enumerate}
+  \item Very small and fast.
+  The simulator is rather simple but efficient.
+  A user with a well-connected computer can start simulating mechanics in seconds without any preparation.
+
+  \item Very convenient.
+  Anyone with browser and Internet access can have access to the simulator without the requirement of downloading program files into the disk.
+  The simulator is based on HTML and the programs is written in JavaScript which is supported by almost all browsers.
+
+  \item Highly customizable.
+  Everything of the simulator can be customized at ease.
+  The simulated model, the parameters of the ODE solver, the way the simulator presents the system, etc. can all be customized.
+
+  \item Being able to output data.
+  The simulated data can be output to create mechanics datasets.
+  The created datasets can be used to study the pattern of a system or be analyzed by a third-party software.
+
+  \item Being easy to operate.
+  All that the user need to do to operate the system is to write simple JavaScript codes in the console and click on the screen.
+  The coding is very easy.
+  If advanced usage is not needed, a user without programming experience only needs a few minutes to learn to use it.
+\end{enumerate}
+
+The simulator can be used to study motions of hamiltonian systems,
+learn classical theoretical mechanics,
+create animation image for presentation related to physics or online physics courses,
+and create dataset of motions of a hamiltonian system.
+
 We wrote the default model for illustrating the basic applications, mentioned in Section \ref{sec:program},
 and mentioned some other examples for proposing some further applications in Section \ref{sec:examples}.
+
+It is available on a
+\href{https://UlyssesZh.github.io/rpg/mechsimul2}{webpage}.
 
 \bibliographystyle{abbrv}
 \bibliography{mechsimul}
