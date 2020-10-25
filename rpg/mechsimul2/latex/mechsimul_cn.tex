@@ -91,7 +91,7 @@
 \end{enumerate}
 
 所以,我想要创造一个能解决上述问题的模拟器.
-为了使它方便使用,它应当被挂载在一个网页上,
+为了使它便于使用,应当把它挂载在一个网页上,
 这样任何拥有浏览器的用户只要能访问互联网,就都能使用它.
 
 有了这样一个模拟器,人们就可以更方便地学习理论力学.
@@ -215,7 +215,7 @@ $\Delta t$越小,求解器就越精确而低效.
 阶数$s$和系数$b_j$与$a_{j,k}$
 是不同的Runge--Kutta方法特有的.
 这里, 3/8准则\cite[p. 138]{hairer2008solvingODE}被采用.
-它的系数在表 \ref{tab:3/8-rule} 中被展示.
+它的系数在表 \ref{tab:3/8-rule} 中展示.
 
 \begin{table}[h]
   \caption{Runge--Kutta方法3/8准则的系数}
@@ -337,7 +337,7 @@ ODE构建器和ODE求解器是我写的,
 
 该模拟器使用rpg\_core.js来绘制和显示图像.
 这是一个基于 \href{https://www.pixijs.com}{PixiJS} 的网页游戏引擎.
-虽然rpg\_core.js附属于非免费的软件\href{https://tkool.jp/mv}{RPG Maker MV},
+虽然rpg\_core.js附属于非免费的软件 \href{https://tkool.jp/mv}{RPG Maker MV},
 但它在 \href{https://github.com/rpgtkoolmv/corescript}{GitHub} 上开源.
 
 在rpg\_core.js中, \mintinline{js}{Bitmap}对象用于存储一幅图片的信息,
