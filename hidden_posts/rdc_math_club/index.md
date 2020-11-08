@@ -1,0 +1,28 @@
+---
+title: 2020 RDC 数学社资料
+date: 2020-09-01 00:00:00 Z
+layout: post
+categories: misc
+sitemap: false
+lang: cn
+---
+
+# 考试
+
+[考试](quiz_math_club.pdf)
+
+# 0 试题讲解
+
+[试题讲解](quiz_math_club_ans.pdf)
+
+# 1 集合
+
+![集合](sets.svg)
+
+# 2 实数
+
+![实数](real_numbers.svg)
+
+# 3 自然数
+
+![自然数](natural_numbers.svg)
