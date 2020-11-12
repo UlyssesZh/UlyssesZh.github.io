@@ -26,3 +26,9 @@ lang: cn
 # 3 自然数
 
 ![自然数](natural_numbers.svg)
+
+# 4 数列
+
+![数列](sequences_1.svg)
+
+![数列](sequences_2.svg)
