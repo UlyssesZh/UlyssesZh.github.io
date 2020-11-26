@@ -32,3 +32,7 @@ lang: cn
 ![数列](sequences_1.svg)
 
 ![数列](sequences_2.svg)
+
+# 5 函数极限
+
+![函数极限](functions_limits.svg)
