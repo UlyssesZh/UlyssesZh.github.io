@@ -36,3 +36,9 @@ lang: cn
 # 5 函数极限
 
 ![函数极限](functions_limits.svg)
+
+# 6 多项式
+
+# 7 导数
+
+![导数](derivatives.svg)
