@@ -42,3 +42,9 @@ lang: cn
 # 7 导数
 
 ![导数](derivatives.svg)
+
+# 8 线性方程
+
+# 9 指对函数
+
+![指对函数](exp_and_log.svg)
