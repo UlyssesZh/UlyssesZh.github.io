@@ -48,3 +48,9 @@ lang: cn
 # 9 指对函数
 
 ![指对函数](exp_and_log.svg)
+
+# 10 积分
+
+![积分](integrals_1.svg)
+
+![积分](integrals_2.svg)
