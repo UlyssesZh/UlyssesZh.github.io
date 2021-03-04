@@ -54,3 +54,9 @@ lang: cn
 ![积分](integrals_1.svg)
 
 ![积分](integrals_2.svg)
+
+[反常积分](https://www.bilibili.com/video/BV1St4y1U7jn?p=3&t=89m36s)
+
+# 11 抽象代数
+
+![抽象代数](abstract_algebra.svg)
