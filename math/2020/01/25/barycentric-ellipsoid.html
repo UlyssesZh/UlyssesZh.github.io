@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="google-site-verification" content="ZuV45Knwuwl49Nvh9UsDzniZ-3qy3bGhBPofLK3SZPw" /><!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+		new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5PX967D');</script>
+<!-- End Google Tag Manager -->
+<!-- Google Analytics -->
+<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'G-7TSJ5VM6YC', 'auto');
+	ga('send', 'pageview');
+</script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-7TSJ5VM6YC"></script>
+<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-7TSJ5VM6YC');
+</script>
+<!-- End Google Analytics -->
+<!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Hyperellipsoids in barycentric coordinates | Ulysses’ trip</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Hyperellipsoids in barycentric coordinates" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Some notations" />
+<meta property="og:description" content="Some notations" />
+<link rel="canonical" href="https://ulysseszh.github.io/math/2020/01/25/barycentric-ellipsoid.html" />
+<meta property="og:url" content="https://ulysseszh.github.io/math/2020/01/25/barycentric-ellipsoid.html" />
+<meta property="og:site_name" content="Ulysses’ trip" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-01-25T17:13:57+08:00" />
+<script type="application/ld+json">
+{"datePublished":"2020-01-25T17:13:57+08:00","description":"Some notations","url":"https://ulysseszh.github.io/math/2020/01/25/barycentric-ellipsoid.html","@type":"BlogPosting","dateModified":"2020-01-25T17:13:57+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://ulysseszh.github.io/math/2020/01/25/barycentric-ellipsoid.html"},"headline":"Hyperellipsoids in barycentric coordinates","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css">
+	<link rel="icon" type="image/x-icon" href="/favicon.ico?">
+	<!-- Gitalk begin -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+	<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+	<!-- Gitalk end --><link type="application/atom+xml" rel="alternate" href="https://ulysseszh.github.io/feed.xml" title="Ulysses' trip" /><script>
+MathJax = {
+	tex: {
+		inlineMath: [['$', '$'], ['\\(', '\\)']],
+		processEscapes: true,
+		tags: 'ams'
+	}
+};
+</script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+
+<!-- Added begin --><!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5PX967D"
+                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<!-- Added end --><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Ulysses&#39; trip</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">About</a><a class="page-link" href="/archives/">Archives</a><a class="page-link" href="/contact/">Contact</a><a class="page-link" href="/friends/">Friends</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+	<div class="wrapper">
+		<article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Hyperellipsoids in barycentric coordinates</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2020-01-25T17:13:57+08:00" itemprop="datePublished">Jan 25, 2020
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <h1 id="some-notations">Some notations</h1>
+
+<p>\begin{equation*}
+    S_n:=\left\{\mathbf a\in\mathbb R^{n}\middle|\sum_ja_j=1\right\}.
+\end{equation*}
+\begin{equation*}
+    \mathbf1:=\left(\begin{matrix}1\\\vdots\\1\end{matrix}\right).
+\end{equation*}
+\begin{equation*}
+    \mathbf v_1:=\left(\begin{matrix}
+        \\\mathbf v\\\\1
+    \end{matrix}\right).
+\end{equation*}
+\begin{equation*}
+    \mathbf M_1:=\left(\begin{matrix}
+        \\&amp;\mathbf M&amp;\\\\&amp;\mathbf1^{\mathrm T}
+    \end{matrix}\right).
+\end{equation*}</p>
+
+<h1 id="introduction-to-barycentric-coordinates">Introduction to barycentric coordinates</h1>
+
+<p>Let $\mathbf v_j$ be the vertices of a simplex in $\mathbb R^{n-1}$,
+then any point $\mathbf r\in\mathbb R^{n-1}$
+can be expressed by a tuple $\boldsymbol\lambda\in S_n$ such that
+$\mathbf r=\sum_j\lambda_j\mathbf v_j$.</p>
+
+<p>If regarding $\mathbf V$ as a $\left(n-1\right)\times n$ matrix
+whose $j$th column is $\mathbf v_j$, then we have
+$\mathbf r=\mathbf V\boldsymbol\lambda$.</p>
+
+<p>Along with the normalization condition $\sum_j\lambda_j=1$ or
+$\mathbf1^{\mathrm T}\boldsymbol\lambda=1$, we have
+$\mathbf r_1=\mathbf V_1
+\boldsymbol\lambda$,
+so
+\begin{equation}
+    \boldsymbol\lambda=\mathbf V_1^{-1}
+    \mathbf r_1.
+    \label{as Cartesian}
+\end{equation}</p>
+
+<p>Usually, due to the convenience, we select the center of the Cartesian
+coordinate system so properly that $\sum_j\mathbf v_j=\mathbf0$ or
+\begin{equation}
+    \mathbf V\mathbf1=\mathbf0.
+    \label{barycenter zero}
+\end{equation}</p>
+
+<h1 id="the-research-object">The research object</h1>
+
+<p>We are going to show that the equation
+\begin{equation}
+    \boldsymbol\lambda^{\mathrm T}\boldsymbol\lambda=1
+    \label{research object}
+\end{equation}
+depicts a hyperellipsoid whose center is $\mathbf0$ and
+its tangent hyperplane at $\mathbf v_j$ is parallel to the hyperplane
+that passes all $\mathbf v_k$ that $k\ne j$.</p>
+
+<h1 id="the-quadric">The quadric</h1>
+
+<p>We are going to rewrite Formula \ref{research object} in the form of
+a quadric of $\mathbf r$.</p>
+
+<p>Substitute Formula \ref{as Cartesian} into \ref{research object}, and
+then we can derive that
+\begin{equation}
+    1=\boldsymbol\lambda^{\mathrm T}\boldsymbol\lambda
+    =\left(\mathbf V_1^{-1}
+        \mathbf r_1\right)^{\mathrm T}
+        \left(\mathbf V_1^{-1}
+        \mathbf r_1\right)
+    =\mathbf r_1^{\mathrm T}
+        \left(\left(\mathbf V_1^{-1}
+        \right)^{\mathrm T}\mathbf V_1^{-1}
+        \right)\mathbf r_1.
+    \label{r quadric}
+\end{equation}
+Let
+\begin{equation}
+    \mathbf Q:=\left(\mathbf V_1^{-1}
+        \right)^{\mathrm T}\mathbf V_1^{-1}
+    =\left(\mathbf V_1
+        \mathbf V_1^{\mathrm T}\right)^{-1},
+    \label{Q def}
+\end{equation}
+and substitute Formula \ref{Q def} into \ref{r quadric},
+and then we can derive the quadric of $\mathbf r_1$
+\begin{equation}
+    \mathbf r_1^{\mathrm T}\mathbf Q\mathbf r_1=1.
+\end{equation}
+Note that besides $\mathbf r$, there is a $1$ in $\mathbf r_1$, so
+the quadric is a $2$nd-degree polynomial of $\mathbf r$,
+including quadratic terms, linear terms and a constant term.</p>
+
+<p>In order to show that the center of the quadric is a hyperellipsoid
+whose center is $\mathbf0$, we need to prove that the coefficients
+of the linear terms are all $0$,
+and the determinant of the coefficients is positive.</p>
+
+<h1 id="proving-that-the-center-of-the-quadric-is-mathbf0">Proving that the center of the quadric is $\mathbf0$</h1>
+
+<p>Note that $\mathbf Q=\left(\mathbf V_1\mathbf V_1^{\mathrm T}\right)^{-1}$,
+so
+\begin{equation}
+    \mathbf Q^{-1}=
+    \left(\begin{matrix}
+        \\&amp;\mathbf V&amp;\\\\1&amp;\cdots&amp;1
+    \end{matrix}\right)
+    \left(\begin{matrix}
+        &amp;&amp;&amp;1\\&amp;\mathbf V^{\mathrm T}&amp;&amp;\vdots\\&amp;&amp;&amp;1
+    \end{matrix}\right)=
+    \left(\begin{matrix}
+        \\&amp;\mathbf V\mathbf V^{\mathrm T}&amp;&amp;\mathbf V\mathbf1
+        \\\\&amp;\mathbf1^{\mathrm T}\mathbf V^{\mathrm T}&amp;&amp;n
+    \end{matrix}\right).
+    \label{Q^-1}
+\end{equation}
+Substitute Formula \ref{barycenter zero} into \ref{Q^-1},
+and then we can derive that
+\begin{equation*}
+    \mathbf Q=\left(\begin{matrix}
+        &amp;&amp;&amp;0\\&amp;\mathbf V\mathbf V^{\mathrm T}&amp;&amp;\vdots
+        \\&amp;&amp;&amp;0\\0&amp;\cdots&amp;0&amp;n
+    \end{matrix}\right)^{-1}=
+    \left(\begin{matrix}
+        &amp;&amp;&amp;0\\&amp;\mathbf W&amp;&amp;\vdots\\&amp;&amp;&amp;0\\0&amp;\cdots&amp;0&amp;\frac1n
+    \end{matrix}\right),
+\end{equation*}
+where $\mathbf W:=\left(\mathbf V\mathbf V^{\mathrm T}\right)^{-1}$,
+so
+\begin{equation*}
+    \mathbf r_1^{\mathrm T}\mathbf Q\mathbf r_1=
+    \mathbf r^{\mathrm T}\mathbf W\mathbf r+\frac1n.
+\end{equation*}
+The linear terms are all $0$, so the center of the quadric is $\mathbf0$.</p>
+
+<h1 id="proving-that-the-quadric-is-a-hyperellipsoid">Proving that the quadric is a hyperellipsoid</h1>
+
+<p>We need to show that determinant of the coefficients matrix is positive.</p>
+
+<p>Because $\mathbf Q=
+\left(\mathbf V_1^{-1}\right)^{\mathrm T}\mathbf V_1^{-1}$,
+we have
+\begin{equation*}
+    \left|\mathbf Q\right|=
+    \left|\mathbf V_1^{-1}\right|^2&gt;0.
+\end{equation*}</p>
+
+<h1 id="proving-that-the-its-tangent-hyperplane-at-mathbf-v_j-is-parallel-to-p_j">Proving that the its tangent hyperplane at $\mathbf v_j$ is parallel to $P_j$</h1>
+
+<p>Here $P_j$ is defined as the hyperplane that
+passes all $\mathbf v_k$ that $k\ne j$.</p>
+
+<p>The equation of the quadric is $F\left(\mathbf r\right)=0$,
+where the quadratic function
+\begin{equation*}
+    F\left(\mathbf r\right):=\mathbf r^{\mathrm T}\mathbf W\mathbf r
+    +\frac1n-1.
+\end{equation*}
+According to geometry, the normal vector of the quadric at $\mathbf v_j$
+is the gradient of $F$ at $\mathbf v_j$, which is
+\begin{equation*}
+    \boldsymbol\nu_j:=
+    \left.\frac{\partial F\left(\mathbf r\right)}{\partial\mathbf r}\right|
+    _{\mathbf r=\mathbf v_j}=
+    2\mathbf W\mathbf v_j.
+\end{equation*}</p>
+
+<p>Now consider the normal vector $\mathbf m_j$ of $P_j$. Assume that
+\begin{equation*}
+    P_j:n\mathbf m_j^{\mathrm T}\mathbf r+2=0.
+\end{equation*}
+The equation of $P_j$ should holds when $\mathbf r=\mathbf v_k$
+for all $k\ne j$, so we can derive $n-1$ linear equations with respect
+to $\mathbf m_j$
+\begin{equation}
+    \forall k\ne j:n\mathbf m_j^{\mathrm T}\mathbf v_k+2=0.
+    \label{equations for m}
+\end{equation}</p>
+
+<p>If we can show that
+\begin{equation}
+    \mathbf m_j=\boldsymbol\nu_j=2\mathbf W\mathbf v_j
+    \label{solution for m}
+\end{equation}
+is the solution to Formula \ref{equations for m},
+then we can say that the two hyperplane are parallel.
+Thus, we need to verify the equations derived from
+substituting Formula \ref{solution for m} into \ref{equations for m}
+\begin{equation*}
+    \forall k\ne j:n\mathbf v_j^{\mathrm T}\mathbf W\mathbf v_k+1=0,
+\end{equation*}
+which is to say that the $n\times n$ matrix
+\begin{equation*}
+    \mathbf P:=\mathbf V^{\mathrm T}\mathbf W\mathbf V=<br />
+    \mathbf V^{\mathrm T}\left(\mathbf V\mathbf V^{\mathrm T}\right)^{-1}
+    \mathbf V
+\end{equation*}
+is such a matrix that all of its components except those on its
+diagonal are $-\frac1n$.</p>
+
+<p>According to conclusions in matrix analysis,
+if we regard $\mathbf V^{\mathrm T}$ as $n-1$ $n$-dimensional vectors,
+then $\mathbf P$ is an orthogonal projection in $\mathbb R^n$ to
+the linear subspace whose basis is the $n-1$ vectors.</p>
+
+<p>Note that with Formula \ref{barycenter zero}, we can say that
+the subspace is just a hyperplane whose normal vector is $\mathbf1$.
+With the conclusion, we can easily write out the form of $\mathbf P$
+because we just need to write out one set of its basis $\mathbf B$.
+Writing out $\mathbf B$ only requires finding out $n-1$ linearly independent
+vectors that are perpendicular to $\mathbf1$.
+For example,
+\begin{equation*}
+    \mathbf B:=\left(\begin{matrix}
+        n-1&amp;-1&amp;-1&amp;\cdots&amp;-1\\-1&amp;n-1&amp;-1&amp;\cdots&amp;-1
+        \\-1&amp;-1&amp;n-1&amp;\cdots&amp;-1\\\vdots&amp;\vdots&amp;\vdots&amp;\ddots&amp;\vdots
+        \\-1&amp;-1&amp;-1&amp;\cdots&amp;n-1\\-1&amp;-1&amp;-1&amp;\cdots&amp;-1
+    \end{matrix}\right).
+\end{equation*}</p>
+
+<p>Then, we have
+\begin{equation*}
+    \mathbf P=\mathbf B\left(\mathbf B^{\mathrm T}\mathbf B\right)^{-1}
+    \mathbf B^{\mathrm T}.
+\end{equation*}
+After some calculation, we can derive that the components of $\mathbf P$
+are $1-\frac1n$ on the diagonal and $-\frac1n$ elsewhere,
+which is what we want to show.</p>
+
+<p>We have proved that the tangent hyperplane of the quadric
+at $\mathbf v_j$ is parallel to $P_j$.</p>
+
+  </div><a class="u-url" href="/math/2020/01/25/barycentric-ellipsoid.html" hidden></a>
+</article>
+<div id="gitalk-container"></div></div>
+</main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Ulysses&#39; trip</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Ulysses&#39; trip</li><li><a class="u-email" href="mailto:UlyssesZhan@gmail.com">UlyssesZhan@gmail.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://www.facebook.com/YouqiuZhan"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#facebook"></use></svg> <span class="username">YouqiuZhan</span></a></li><li><a href="https://github.com/UlyssesZh"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">UlyssesZh</span></a></li><li><a href="https://instagram.com/ulysseszhan"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#instagram"></use></svg> <span class="username">ulysseszhan</span></a></li><li><a href="https://www.pinterest.com/ulysseszhan"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#pinterest"></use></svg> <span class="username">ulysseszhan</span></a></li><li><a href="https://www.twitter.com/UlyssesZhan"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">UlyssesZhan</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Here we are at the awesome (awful) blog written by Ulysses Zhan!</p>
+        <!-- Added begin -->
+        <p align="right">&copy;&nbsp;2020 Ulysses Zhan</p>
+        <!-- Added end -->
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body><script>
+		const gitalk = new Gitalk({
+			clientID: '49611570ab5cf827576b',
+			clientSecret: '6dedc6014eb010990d395ae8aae632c7811dfeff',
+			repo: 'UlyssesZh.github.io',
+			owner: 'UlyssesZh',
+			admin: ['UlyssesZh'],
+			id: location.pathname,
+			distractionFreeMode: false,
+			language: document.documentElement.lang
+		})
+		gitalk.render('gitalk-container')
+	</script></html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<meta name="viewport" content="user-scalable=no">
+	<meta name="google-site-verification" content="ZuV45Knwuwl49Nvh9UsDzniZ-3qy3bGhBPofLK3SZPw" /><!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+		new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5PX967D');</script>
+<!-- End Google Tag Manager -->
+<!-- Google Analytics -->
+<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'G-7TSJ5VM6YC', 'auto');
+	ga('send', 'pageview');
+</script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-7TSJ5VM6YC"></script>
+<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-7TSJ5VM6YC');
+</script>
+<!-- End Google Analytics -->
+<!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Mechanics simulator | Ulysses’ trip</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Mechanics simulator" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Here we are at the awesome (awful) blog written by Ulysses Zhan!" />
+<meta property="og:description" content="Here we are at the awesome (awful) blog written by Ulysses Zhan!" />
+<link rel="canonical" href="https://ulysseszh.github.io/rpg/mechsimul2/" />
+<meta property="og:url" content="https://ulysseszh.github.io/rpg/mechsimul2/" />
+<meta property="og:site_name" content="Ulysses’ trip" />
+<script type="application/ld+json">
+{"description":"Here we are at the awesome (awful) blog written by Ulysses Zhan!","url":"https://ulysseszh.github.io/rpg/mechsimul2/","@type":"WebPage","headline":"Mechanics simulator","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link type="application/atom+xml" rel="alternate" href="https://ulysseszh.github.io/feed.xml" title="Ulysses' trip" />
+		<link rel="icon" href="/favicon.ico?" type="image/ico">
+		<link rel="apple-touch-icon" href="/favicon.ico?">
+	
+	
+	<title>Mechanics simulator</title>
+</head>
+<body style="background-color: black"><!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5PX967D"
+                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<script>
+(async function() {
+	const prefix = "https://cdn.jsdelivr.net/gh/rpgtkoolmv/corescript@v1.3b/";
+	let libs = ['pixi', 'pixi-tilemap', 'pixi-picture', 'fpsmeter', 'lz-string', 'iphone-inline-video.browser']
+	async function fetchMod(url) {
+		let files = await fetch(url).then(r => r.json());
+		files = files.map(file => fetch(prefix + file).then(r => r.text()));
+		return Promise.all(files);
+	}
+	function runScriptFromString(string) {
+		eval.call(window, string);
+	}
+	async function runScriptFromUrl(url) {
+		eval.call(window, await fetch(url).then(r => r.text()));
+	}
+	libs = libs.map(lib => fetch(prefix + 'js/libs/' + lib + '.js').then(r => r.text()));
+	libs = await Promise.all(libs);
+	libs = libs.join("\n");
+	runScriptFromString(libs);
+
+	let modules = await fetchMod(prefix + 'rpg_core.json').then(r => r.join("\n"));
+	runScriptFromString(modules);
+	await runScriptFromUrl('https://cdn.jsdelivr.net/npm/requirejs@2.3.6/require.js');
+await runScriptFromUrl('js/mechsimul.js');
+
+	await runScriptFromUrl('js/main.js');
+
+	window.onload();
+})();
+</script>
+</body>
+</html>

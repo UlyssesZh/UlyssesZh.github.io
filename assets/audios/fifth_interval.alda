@@ -1,0 +1,4 @@
+motif = e4 a f2 d4 g c2
+piano:
+V1: motif
+V2: (transpose 7) motif

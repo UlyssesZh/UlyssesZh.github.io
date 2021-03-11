@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="google-site-verification" content="ZuV45Knwuwl49Nvh9UsDzniZ-3qy3bGhBPofLK3SZPw" /><!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+		new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5PX967D');</script>
+<!-- End Google Tag Manager -->
+<!-- Google Analytics -->
+<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'G-7TSJ5VM6YC', 'auto');
+	ga('send', 'pageview');
+</script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-7TSJ5VM6YC"></script>
+<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-7TSJ5VM6YC');
+</script>
+<!-- End Google Analytics -->
+<!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Simulating a mechanical system using RGSS3 | Ulysses’ trip</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Simulating a mechanical system using RGSS3" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Our goal is to simulate a mechanical system according to its Hamiltonian $\mathcal H\left(\mathbf q,\mathbf p,t\right)$." />
+<meta property="og:description" content="Our goal is to simulate a mechanical system according to its Hamiltonian $\mathcal H\left(\mathbf q,\mathbf p,t\right)$." />
+<link rel="canonical" href="https://ulysseszh.github.io/physics/2020/04/28/simulation-rgss.html" />
+<meta property="og:url" content="https://ulysseszh.github.io/physics/2020/04/28/simulation-rgss.html" />
+<meta property="og:site_name" content="Ulysses’ trip" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-04-28T11:51:17+08:00" />
+<script type="application/ld+json">
+{"datePublished":"2020-04-28T11:51:17+08:00","description":"Our goal is to simulate a mechanical system according to its Hamiltonian $\\mathcal H\\left(\\mathbf q,\\mathbf p,t\\right)$.","url":"https://ulysseszh.github.io/physics/2020/04/28/simulation-rgss.html","@type":"BlogPosting","dateModified":"2020-04-28T11:51:17+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://ulysseszh.github.io/physics/2020/04/28/simulation-rgss.html"},"headline":"Simulating a mechanical system using RGSS3","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css">
+	<link rel="icon" type="image/x-icon" href="/favicon.ico?">
+	<!-- Gitalk begin -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+	<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+	<!-- Gitalk end --><link type="application/atom+xml" rel="alternate" href="https://ulysseszh.github.io/feed.xml" title="Ulysses' trip" /><script>
+MathJax = {
+	tex: {
+		inlineMath: [['$', '$'], ['\\(', '\\)']],
+		processEscapes: true,
+		tags: 'ams'
+	}
+};
+</script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+
+<!-- Added begin --><!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5PX967D"
+                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<!-- Added end --><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Ulysses&#39; trip</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">About</a><a class="page-link" href="/archives/">Archives</a><a class="page-link" href="/contact/">Contact</a><a class="page-link" href="/friends/">Friends</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+	<div class="wrapper">
+		<article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Simulating a mechanical system using RGSS3</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2020-04-28T11:51:17+08:00" itemprop="datePublished">Apr 28, 2020
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>Our goal is to simulate a mechanical system according to its Hamiltonian
+$\mathcal H\left(\mathbf q,\mathbf p,t\right)$.</p>
+
+<p>To utilize the canonical equations
+\begin{equation}
+    \frac{\mathrm d\mathbf q}{\mathrm dt}=
+    \frac{\partial\mathcal H}{\partial\mathbf p},\quad
+    \frac{\mathrm d\mathbf p}{\mathrm dt}=
+    -\frac{\partial\mathcal H}{\partial\mathbf p},
+    \label{canonical}
+\end{equation}
+we need to calculate the partial derivatives of $\mathcal H$.
+Here is a simple code to calculate partial derivatives.</p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">div</span> <span class="n">x0</span><span class="p">,</span> <span class="n">dx</span><span class="p">,</span> <span class="n">f</span>
+  <span class="n">f0</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="p">(</span><span class="n">x0</span><span class="p">)</span>
+  <span class="n">n</span> <span class="o">=</span> <span class="n">x0</span><span class="p">.</span><span class="nf">size</span>
+  <span class="no">Array</span><span class="p">.</span><span class="nf">new</span> <span class="n">n</span> <span class="k">do</span> <span class="o">|</span><span class="n">i</span><span class="o">|</span>
+    <span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="p">(</span><span class="n">x0</span> <span class="o">+</span> <span class="no">Vector</span><span class="p">.</span><span class="nf">basis</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span> <span class="o">*</span> <span class="n">dx</span><span class="p">)</span> <span class="o">-</span> <span class="n">f0</span><span class="p">)</span> <span class="o">/</span> <span class="n">dx</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div>
+<p>(RGSS do not have <code class="language-plaintext highlighter-rouge">matrix.rb</code>, you can copy one from
+the attached file below.)
+Here <code class="language-plaintext highlighter-rouge">x0</code> is a <code class="language-plaintext highlighter-rouge">Vector</code>, <code class="language-plaintext highlighter-rouge">f</code> is a <code class="language-plaintext highlighter-rouge">call</code>-able object as a function
+of vectors, <code class="language-plaintext highlighter-rouge">dx</code> is a small scalar which we are going to take <code class="language-plaintext highlighter-rouge">1e-6</code>.</p>
+
+<p>Let <code class="language-plaintext highlighter-rouge">x = Vector[*q, *p]</code>, and then Formula \ref{canonical} has the form
+\begin{equation}
+    \frac{\mathrm d\mathbf x}{\mathrm dt}=f\left(\mathbf x\right).
+\end{equation}
+To solve this equation numerically, we need to use a famous method
+called the (explicit) Runge–Kutta method.</p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">runge_kutta</span> <span class="n">initial</span><span class="p">,</span> <span class="n">max_t</span><span class="p">,</span> <span class="n">dt</span><span class="p">,</span> <span class="p">(</span><span class="o">*</span><span class="n">pyramid</span><span class="p">,</span> <span class="n">coefs</span><span class="p">),</span> <span class="n">func</span>
+  <span class="p">(</span><span class="mi">0</span><span class="o">..</span><span class="n">max_t</span><span class="p">).</span><span class="nf">step</span><span class="p">(</span><span class="n">dt</span><span class="p">).</span><span class="nf">reduce</span> <span class="n">initial</span> <span class="k">do</span> <span class="o">|</span><span class="n">ret</span><span class="p">,</span> <span class="n">t</span><span class="o">|</span>
+    <span class="vg">$canvas</span><span class="p">.</span><span class="nf">trace</span> <span class="n">t</span><span class="p">,</span> <span class="n">ret</span> <span class="k">if</span> <span class="vg">$canvas</span>
+    <span class="n">coefs</span><span class="p">.</span><span class="nf">zip</span><span class="p">(</span><span class="n">pyramid</span><span class="p">).</span><span class="nf">each_with_object</span><span class="p">([]).</span><span class="nf">sum</span> <span class="k">do</span> <span class="o">|</span><span class="p">(</span><span class="n">coef</span><span class="p">,</span> <span class="n">row</span><span class="p">),</span> <span class="n">ary</span><span class="o">|</span>
+      <span class="n">coef</span> <span class="o">*</span> <span class="n">ary</span><span class="p">.</span><span class="nf">push</span><span class="p">(</span><span class="n">func</span><span class="o">.</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">row</span><span class="p">.</span><span class="nf">inner</span><span class="p">(</span><span class="n">ary</span><span class="p">)</span> <span class="o">*</span> <span class="n">dt</span> <span class="o">+</span> <span class="n">ret</span><span class="p">)).</span><span class="nf">last</span>
+    <span class="k">end</span> <span class="o">*</span> <span class="n">dt</span> <span class="o">+</span> <span class="n">ret</span><span class="c1">#p(ret)</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div>
+<p>Note that Runge–Kutta is a family of methods. The argument
+<code class="language-plaintext highlighter-rouge">(*pyramid, coefs)</code> takes one of the following, each of which
+is a single Runge–Kutta method.</p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">FORWARD_EULER</span> <span class="o">=</span> <span class="p">[[],[</span><span class="mi">1</span><span class="p">]]</span>
+<span class="no">EXPLICIT_MIDPOINT</span> <span class="o">=</span> <span class="p">[[],[</span><span class="mi">1</span><span class="o">/</span><span class="mf">2.0</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]]</span>
+<span class="no">HEUN</span> <span class="o">=</span> <span class="p">[[],[</span><span class="mi">1</span><span class="p">],[</span><span class="mi">1</span><span class="o">/</span><span class="mf">2.0</span><span class="p">,</span><span class="mi">1</span><span class="o">/</span><span class="mf">2.0</span><span class="p">]]</span>
+<span class="no">RALSTON</span> <span class="o">=</span> <span class="p">[[],[</span><span class="mi">2</span><span class="o">/</span><span class="mf">3.0</span><span class="p">],[</span><span class="mi">1</span><span class="o">/</span><span class="mf">4.0</span><span class="p">,</span><span class="mi">3</span><span class="o">/</span><span class="mf">4.0</span><span class="p">]]</span>
+<span class="no">KUTTA_3RD</span> <span class="o">=</span> <span class="p">[[],[</span><span class="mi">1</span><span class="o">/</span><span class="mf">2.0</span><span class="p">],[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],[</span><span class="mi">1</span><span class="o">/</span><span class="mf">6.0</span><span class="p">,</span><span class="mi">2</span><span class="o">/</span><span class="mf">3.0</span><span class="p">,</span><span class="mi">1</span><span class="o">/</span><span class="mf">6.0</span><span class="p">]]</span>
+<span class="no">HEUN_3RD</span> <span class="o">=</span> <span class="p">[[],[</span><span class="mi">1</span><span class="o">/</span><span class="mf">3.0</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="o">/</span><span class="mf">3.0</span><span class="p">],[</span><span class="mi">1</span><span class="o">/</span><span class="mf">4.0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">3</span><span class="o">/</span><span class="mf">4.0</span><span class="p">]]</span>
+<span class="no">RALSTON_3RD</span> <span class="o">=</span> <span class="p">[[],[</span><span class="mi">1</span><span class="o">/</span><span class="mf">2.0</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">3</span><span class="o">/</span><span class="mf">4.0</span><span class="p">],[</span><span class="mi">2</span><span class="o">/</span><span class="mf">9.0</span><span class="p">,</span><span class="mi">1</span><span class="o">/</span><span class="mf">3.0</span><span class="p">,</span><span class="mi">4</span><span class="o">/</span><span class="mf">9.0</span><span class="p">]]</span>
+<span class="no">SSPRK3</span> <span class="o">=</span> <span class="p">[[],[</span><span class="mi">1</span><span class="p">],[</span><span class="mi">1</span><span class="o">/</span><span class="mf">4.0</span><span class="p">,</span><span class="mi">1</span><span class="o">/</span><span class="mf">4.0</span><span class="p">],[</span><span class="mi">1</span><span class="o">/</span><span class="mf">6.0</span><span class="p">,</span><span class="mi">1</span><span class="o">/</span><span class="mf">6.0</span><span class="p">,</span><span class="mi">2</span><span class="o">/</span><span class="mf">3.0</span><span class="p">]]</span>
+<span class="no">CLASSIC_4TH</span> <span class="o">=</span> <span class="p">[[],[</span><span class="mi">1</span><span class="o">/</span><span class="mf">2.0</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="o">/</span><span class="mf">2.0</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">1</span><span class="o">/</span><span class="mf">6.0</span><span class="p">,</span><span class="mi">1</span><span class="o">/</span><span class="mf">3.0</span><span class="p">,</span><span class="mi">1</span><span class="o">/</span><span class="mf">3.0</span><span class="p">,</span><span class="mi">1</span><span class="o">/</span><span class="mf">6.0</span><span class="p">]]</span>
+<span class="no">RALSTON_4TH</span> <span class="o">=</span> <span class="p">[[],[</span><span class="mf">0.4</span><span class="p">],[</span><span class="mf">0.29697761</span><span class="p">,</span><span class="mf">0.15875964</span><span class="p">],[</span><span class="mf">0.21810040</span><span class="p">,</span><span class="o">-</span><span class="mf">3.05096516</span><span class="p">,</span>
+    <span class="mf">3.83286476</span><span class="p">],[</span><span class="mf">0.17476028</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.55148066</span><span class="p">,</span> <span class="mf">1.20553560</span><span class="p">,</span> <span class="mf">0.17118478</span><span class="p">]]</span>
+<span class="no">THREE_EIGHTH_4TH</span> <span class="o">=</span> <span class="p">[[],[</span><span class="mi">1</span><span class="o">/</span><span class="mf">3.0</span><span class="p">],[</span><span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="mf">3.0</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">1</span><span class="o">/</span><span class="mf">8.0</span><span class="p">,</span><span class="mi">3</span><span class="o">/</span><span class="mf">8.0</span><span class="p">,</span><span class="mi">3</span><span class="o">/</span><span class="mf">8.0</span><span class="p">,</span><span class="mi">1</span><span class="o">/</span><span class="mf">8.0</span><span class="p">]]</span>
+</code></pre></div></div>
+<p>Here we are going to take <code class="language-plaintext highlighter-rouge">CLASSIC_4TH</code>.</p>
+
+<p>The <code class="language-plaintext highlighter-rouge">$canvas</code> appearing here is an object that is going to draw
+the result onto the screen.</p>
+
+<p>Here we also need to have some patches to get it work.</p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Float</span>
+  <span class="k">alias</span> <span class="n">ulysses20200426121236_add</span> <span class="o">+</span>
+  <span class="k">def</span> <span class="nf">+</span> <span class="n">other</span>
+    <span class="k">if</span> <span class="n">zero?</span> <span class="o">&amp;&amp;</span> <span class="p">[</span><span class="no">Vector</span><span class="p">,</span> <span class="no">Matrix</span><span class="p">].</span><span class="nf">any?</span> <span class="p">{</span> <span class="o">|</span><span class="n">c</span><span class="o">|</span> <span class="n">other</span><span class="p">.</span><span class="nf">is_a?</span> <span class="n">c</span> <span class="p">}</span>
+      <span class="n">other</span>
+    <span class="k">else</span>
+      <span class="n">ulysses20200426121236_add</span> <span class="n">other</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+<span class="k">module</span> <span class="nn">Enumerable</span>
+  <span class="k">def</span> <span class="nf">sum</span> <span class="n">init</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">block</span>
+    <span class="p">(</span><span class="n">block</span> <span class="p">?</span> <span class="n">map</span><span class="p">(</span><span class="o">&amp;</span><span class="n">block</span><span class="p">)</span> <span class="p">:</span> <span class="nb">self</span><span class="p">).</span><span class="nf">reduce</span> <span class="n">init</span><span class="p">,</span> <span class="p">:</span><span class="o">+</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+<span class="k">class</span> <span class="nc">Array</span>
+  <span class="k">def</span> <span class="nf">inner</span> <span class="n">other</span>
+    <span class="n">zip</span><span class="p">(</span><span class="n">other</span><span class="p">).</span><span class="nf">sum</span> <span class="p">{</span> <span class="o">|</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="o">|</span> <span class="n">a</span> <span class="o">*</span> <span class="n">b</span> <span class="p">}</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div>
+<p>(Again, note that this is Ruby 1.9.2.)</p>
+
+<p>Finally, just combine them up, and we can solve a Hamiltonian numerically.</p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">solve_hamiltonian</span> <span class="n">n</span><span class="p">,</span> <span class="n">qp0</span><span class="p">,</span> <span class="n">max_t</span><span class="p">,</span> <span class="n">dt</span><span class="p">,</span> <span class="n">hamiltonian</span>
+  <span class="n">runge_kutta</span> <span class="n">qp0</span><span class="p">,</span> <span class="n">max_t</span><span class="p">,</span> <span class="n">dt</span><span class="p">,</span> <span class="no">CLASSIC_4TH</span><span class="p">,</span> <span class="o">-&gt;</span><span class="n">t</span><span class="p">,</span> <span class="n">qp</span> <span class="k">do</span>
+    <span class="n">dqpdt</span> <span class="o">=</span> <span class="n">div</span> <span class="n">qp</span><span class="p">,</span> <span class="mf">1e-6</span><span class="p">,</span> <span class="o">-&gt;</span><span class="n">x</span> <span class="p">{</span> <span class="n">hamiltonian</span><span class="o">.</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span> <span class="p">}</span>
+    <span class="no">Vector</span><span class="p">[</span><span class="o">*</span><span class="n">dqpdt</span><span class="p">[</span><span class="n">n</span><span class="o">...</span><span class="n">n</span><span class="o">*</span><span class="mi">2</span><span class="p">],</span> <span class="o">*</span><span class="n">dqpdt</span><span class="p">[</span><span class="mi">0</span><span class="o">...</span><span class="n">n</span><span class="p">].</span><span class="nf">map</span><span class="p">(</span><span class="o">&amp;</span><span class="ss">:-@</span><span class="p">)]</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>For example, let’s simulate a double pendulum.</p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">solve_hamiltonian</span> <span class="mi">2</span><span class="p">,</span><span class="no">Vector</span><span class="p">[</span><span class="no">PI</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">],</span><span class="no">Float</span><span class="o">::</span><span class="no">INFINITY</span><span class="p">,</span><span class="mf">1e-3</span><span class="p">,</span>
+    <span class="o">-&gt;</span><span class="n">t</span><span class="p">,(</span><span class="n">q1</span><span class="p">,</span><span class="n">q2</span><span class="p">,</span><span class="n">p1</span><span class="p">,</span><span class="n">p2</span><span class="p">){</span><span class="n">p1</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="n">p2</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="mi">2</span><span class="o">+</span><span class="n">cos</span><span class="p">(</span><span class="n">q1</span><span class="o">-</span><span class="n">q2</span><span class="p">)</span><span class="o">*</span><span class="n">p1</span><span class="o">*</span><span class="n">p2</span><span class="o">-</span><span class="n">cos</span><span class="p">(</span><span class="n">q1</span><span class="p">)</span><span class="o">-</span><span class="n">cos</span><span class="p">(</span><span class="n">q2</span><span class="p">)}</span>
+</code></pre></div></div>
+<p><img src="/assets/images/double_pendulum.gif" alt="double_pendulum" /></p>
+
+<p>The codes are not complete in this post.
+See the <a href="/assets/codes/RungeKutta.rar">attached file</a> for details.
+You can open the project using
+<a href="https://store.steampowered.com/app/220700/RPG_Maker_VX_Ace/" target="_blank">RPG Maker VX Ace</a>.
+The <code class="language-plaintext highlighter-rouge">Game.exe</code> file is not the official <code class="language-plaintext highlighter-rouge">Game.exe</code> executable
+but the third-party improved version of it called
+<a href="http://cirno.blog/archives/290" target="_blank">RGD</a>
+(of version 1.3.2, while the latest till now is 1.5.1).</p>
+
+  </div><a class="u-url" href="/physics/2020/04/28/simulation-rgss.html" hidden></a>
+</article>
+<div id="gitalk-container"></div></div>
+</main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Ulysses&#39; trip</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Ulysses&#39; trip</li><li><a class="u-email" href="mailto:UlyssesZhan@gmail.com">UlyssesZhan@gmail.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://www.facebook.com/YouqiuZhan"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#facebook"></use></svg> <span class="username">YouqiuZhan</span></a></li><li><a href="https://github.com/UlyssesZh"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">UlyssesZh</span></a></li><li><a href="https://instagram.com/ulysseszhan"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#instagram"></use></svg> <span class="username">ulysseszhan</span></a></li><li><a href="https://www.pinterest.com/ulysseszhan"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#pinterest"></use></svg> <span class="username">ulysseszhan</span></a></li><li><a href="https://www.twitter.com/UlyssesZhan"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">UlyssesZhan</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Here we are at the awesome (awful) blog written by Ulysses Zhan!</p>
+        <!-- Added begin -->
+        <p align="right">&copy;&nbsp;2020 Ulysses Zhan</p>
+        <!-- Added end -->
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body><script>
+		const gitalk = new Gitalk({
+			clientID: '49611570ab5cf827576b',
+			clientSecret: '6dedc6014eb010990d395ae8aae632c7811dfeff',
+			repo: 'UlyssesZh.github.io',
+			owner: 'UlyssesZh',
+			admin: ['UlyssesZh'],
+			id: location.pathname,
+			distractionFreeMode: false,
+			language: document.documentElement.lang
+		})
+		gitalk.render('gitalk-container')
+	</script></html>

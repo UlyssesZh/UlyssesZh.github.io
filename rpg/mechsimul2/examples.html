@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="google-site-verification" content="ZuV45Knwuwl49Nvh9UsDzniZ-3qy3bGhBPofLK3SZPw" /><!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+		new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5PX967D');</script>
+<!-- End Google Tag Manager -->
+<!-- Google Analytics -->
+<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'G-7TSJ5VM6YC', 'auto');
+	ga('send', 'pageview');
+</script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-7TSJ5VM6YC"></script>
+<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-7TSJ5VM6YC');
+</script>
+<!-- End Google Analytics -->
+<!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Mechanics simulator examples | Ulysses’ trip</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Mechanics simulator examples" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Here we are at the awesome (awful) blog written by Ulysses Zhan!" />
+<meta property="og:description" content="Here we are at the awesome (awful) blog written by Ulysses Zhan!" />
+<link rel="canonical" href="https://ulysseszh.github.io/rpg/mechsimul2/examples.html" />
+<meta property="og:url" content="https://ulysseszh.github.io/rpg/mechsimul2/examples.html" />
+<meta property="og:site_name" content="Ulysses’ trip" />
+<script type="application/ld+json">
+{"description":"Here we are at the awesome (awful) blog written by Ulysses Zhan!","url":"https://ulysseszh.github.io/rpg/mechsimul2/examples.html","@type":"WebPage","headline":"Mechanics simulator examples","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css">
+	<link rel="icon" type="image/x-icon" href="/favicon.ico?">
+	<!-- Gitalk begin -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+	<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+	<!-- Gitalk end --><link type="application/atom+xml" rel="alternate" href="https://ulysseszh.github.io/feed.xml" title="Ulysses' trip" /><script>
+MathJax = {
+	tex: {
+		inlineMath: [['$', '$'], ['\\(', '\\)']],
+		processEscapes: true,
+		tags: 'ams'
+	}
+};
+</script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+
+<!-- Added begin --><!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5PX967D"
+                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<!-- Added end --><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Ulysses&#39; trip</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">About</a><a class="page-link" href="/archives/">Archives</a><a class="page-link" href="/contact/">Contact</a><a class="page-link" href="/friends/">Friends</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+	<div class="wrapper">
+		<h2 class="page-title">Mechanics simulator examples</h2><h2 id="keplers-2-body-problem">Kepler’s 2-body problem</h2>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// There are 8 curves to be drawn on the canvas</span>
+<span class="nx">canvas</span><span class="p">.</span><span class="nx">n</span> <span class="o">=</span> <span class="mi">8</span><span class="p">;</span>
+<span class="c1">// Setting the hamiltonian of the system</span>
+<span class="nx">rungeKutta</span><span class="p">.</span><span class="nx">func</span> <span class="o">=</span> <span class="nx">canonicalEquation</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="p">(</span><span class="nx">t</span><span class="p">,</span> <span class="nx">qp</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="p">[</span><span class="nx">x1</span><span class="p">,</span> <span class="nx">y1</span><span class="p">,</span> <span class="nx">x2</span><span class="p">,</span> <span class="nx">y2</span><span class="p">,</span> <span class="nx">px1</span><span class="p">,</span> <span class="nx">py1</span><span class="p">,</span> <span class="nx">px2</span><span class="p">,</span> <span class="nx">py2</span><span class="p">]</span> <span class="o">=</span> <span class="nx">qp</span><span class="p">;</span>
+  <span class="k">return</span> <span class="nx">px1</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="nx">py1</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="nx">px2</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="nx">py2</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">500</span> <span class="o">/</span> <span class="nx">hypot</span><span class="p">(</span><span class="nx">x1</span><span class="o">-</span><span class="nx">x2</span><span class="p">,</span> <span class="nx">y1</span><span class="o">-</span><span class="nx">y2</span><span class="p">);</span>
+<span class="p">});</span>
+<span class="c1">// Setting the initial conditions of the system</span>
+<span class="nx">rungeKutta</span><span class="p">.</span><span class="nx">initial</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">];</span>
+<span class="c1">// Setting the scale of the graph</span>
+<span class="nx">canvas</span><span class="p">.</span><span class="nx">mappingY</span> <span class="o">=</span> <span class="nx">y</span> <span class="o">=&gt;</span> <span class="mi">20</span> <span class="o">*</span> <span class="nx">y</span> <span class="o">+</span> <span class="nx">Graphics</span><span class="p">.</span><span class="nx">height</span><span class="o">/</span><span class="mi">2</span><span class="p">;</span>
+<span class="c1">// Setting the colors for graphing; there are 8 curves and thus 8 colors</span>
+<span class="nx">canvas</span><span class="p">.</span><span class="nx">colors</span> <span class="o">=</span> <span class="p">[</span><span class="dl">"</span><span class="s2">white</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">yellow</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">pink</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">blue</span><span class="dl">"</span><span class="p">,</span>
+                 <span class="dl">"</span><span class="s2">green</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">purple</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">red</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">magenta</span><span class="dl">"</span><span class="p">];</span>
+
+<span class="c1">// Following codes creates the sprites and bitmaps for visualization</span>
+<span class="c1">// (Using API provided by rpg_core.js, see [1] for help)</span>
+<span class="kd">var</span> <span class="nx">traceSprite</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Sprite</span><span class="p">();</span>
+<span class="kd">var</span> <span class="nx">star1</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Sprite</span><span class="p">();</span>
+<span class="kd">var</span> <span class="nx">star2</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Sprite</span><span class="p">();</span>
+<span class="nx">scene</span><span class="p">.</span><span class="nx">addChild</span><span class="p">(</span><span class="nx">traceSprite</span><span class="p">);</span>
+<span class="nx">scene</span><span class="p">.</span><span class="nx">addChild</span><span class="p">(</span><span class="nx">star1</span><span class="p">);</span>
+<span class="nx">scene</span><span class="p">.</span><span class="nx">addChild</span><span class="p">(</span><span class="nx">star2</span><span class="p">);</span>
+<span class="nx">traceSprite</span><span class="p">.</span><span class="nx">bitmap</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Bitmap</span><span class="p">(</span><span class="nx">Graphics</span><span class="p">.</span><span class="nx">width</span><span class="p">,</span> <span class="nx">Graphics</span><span class="p">.</span><span class="nx">height</span><span class="p">);</span>
+<span class="nx">star1</span><span class="p">.</span><span class="nx">bitmap</span> <span class="o">=</span> <span class="nx">star2</span><span class="p">.</span><span class="nx">bitmap</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Bitmap</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span>
+<span class="nx">star1</span><span class="p">.</span><span class="nx">bitmap</span><span class="p">.</span><span class="nx">fillAll</span><span class="p">(</span><span class="dl">'</span><span class="s1">orange</span><span class="dl">'</span><span class="p">);</span>
+<span class="nx">star1</span><span class="p">.</span><span class="nx">anchor</span><span class="p">.</span><span class="nx">x</span> <span class="o">=</span> <span class="nx">star1</span><span class="p">.</span><span class="nx">anchor</span><span class="p">.</span><span class="nx">y</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">;</span>
+<span class="nx">star2</span><span class="p">.</span><span class="nx">anchor</span><span class="p">.</span><span class="nx">x</span> <span class="o">=</span> <span class="nx">star2</span><span class="p">.</span><span class="nx">anchor</span><span class="p">.</span><span class="nx">y</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">;</span>
+
+<span class="c1">// Updating the state of the sprites when a new sample comes out</span>
+<span class="nx">canvas</span><span class="p">.</span><span class="nx">onTrace</span> <span class="o">=</span> <span class="p">(</span><span class="nx">t</span><span class="p">,</span> <span class="nx">qp</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="c1">// Setting the position of sprites of stars</span>
+  <span class="p">[</span><span class="nx">star1</span><span class="p">.</span><span class="nx">x</span><span class="p">,</span> <span class="nx">star1</span><span class="p">.</span><span class="nx">y</span><span class="p">,</span> <span class="nx">star2</span><span class="p">.</span><span class="nx">x</span><span class="p">,</span> <span class="nx">star2</span><span class="p">.</span><span class="nx">y</span><span class="p">]</span> <span class="o">=</span>
+      <span class="nx">qp</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">).</span><span class="nx">map</span><span class="p">(</span><span class="nx">canvas</span><span class="p">.</span><span class="nx">mappingY</span><span class="p">);</span>
+  <span class="c1">// Plotting the trajectory</span>
+  <span class="nx">traceSprite</span><span class="p">.</span><span class="nx">bitmap</span><span class="p">.</span><span class="nx">setPixel</span><span class="p">(</span><span class="nx">star1</span><span class="p">.</span><span class="nx">x</span><span class="p">,</span> <span class="nx">star1</span><span class="p">.</span><span class="nx">y</span><span class="p">,</span> <span class="dl">'</span><span class="s1">cyan</span><span class="dl">'</span><span class="p">);</span>
+  <span class="nx">traceSprite</span><span class="p">.</span><span class="nx">bitmap</span><span class="p">.</span><span class="nx">setPixel</span><span class="p">(</span><span class="nx">star2</span><span class="p">.</span><span class="nx">x</span><span class="p">,</span> <span class="nx">star2</span><span class="p">.</span><span class="nx">y</span><span class="p">,</span> <span class="dl">'</span><span class="s1">cyan</span><span class="dl">'</span><span class="p">);</span>
+  <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="c1">// Restarting to apply the changes</span>
+<span class="nx">restart</span><span class="p">();</span>
+</code></pre></div></div>
+<p><img src="latex/kepler_2_body_graph.png" alt="kepler_2_body_graph.png" />
+<img src="latex/kepler_2_body_trace.png" alt="kepler_2_body_trace.png" />
+<img src="latex/kepler_2_body_q0_frequencies.png" alt="kepler_2_body_q0_frequencies.png" /></p>
+
+<h2 id="adiabatic-invariants">Adiabatic invariants</h2>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// The altering parameter omega mentioned above; it should change slowly</span>
+<span class="kd">var</span> <span class="nx">omega</span> <span class="o">=</span> <span class="nx">t</span> <span class="o">=&gt;</span> <span class="mi">4</span> <span class="o">+</span> <span class="mf">0.05</span> <span class="o">*</span> <span class="nx">t</span><span class="p">;</span>
+<span class="c1">// The hamiltonian of the system</span>
+<span class="kd">var</span> <span class="nx">hamiltonian</span> <span class="o">=</span> <span class="p">(</span><span class="nx">t</span><span class="p">,</span> <span class="nx">qp</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">qp</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="mi">2</span> <span class="o">+</span> <span class="nx">omega</span><span class="p">(</span><span class="nx">t</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="nx">qp</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="mi">2</span><span class="p">;</span>
+<span class="c1">// Setting the hamiltonian of the system</span>
+<span class="nx">rungeKutta</span><span class="p">.</span><span class="nx">func</span> <span class="o">=</span> <span class="nx">canonicalEquation</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nx">hamiltonian</span><span class="p">);</span>
+<span class="c1">// There are 8 curves to be drawn on the canvas</span>
+<span class="nx">canvas</span><span class="p">.</span><span class="nx">n</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+<span class="c1">// The labels of the curves will be q, p, H, I</span>
+<span class="nx">canvas</span><span class="p">.</span><span class="nx">getLabelString</span> <span class="o">=</span> <span class="nx">i</span> <span class="o">=&gt;</span> <span class="dl">'</span><span class="s1">qpHI</span><span class="dl">'</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
+<span class="c1">// The colors for the curves</span>
+<span class="nx">canvas</span><span class="p">.</span><span class="nx">colors</span> <span class="o">=</span> <span class="p">[</span><span class="dl">"</span><span class="s2">white</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">yellow</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">pink</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">blue</span><span class="dl">"</span><span class="p">];</span>
+<span class="c1">// Tracing the H and I data when a new sample comes out</span>
+<span class="nx">canvas</span><span class="p">.</span><span class="nx">trace</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">t</span><span class="p">,</span> <span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// Calculating the hamiltonian at this time</span>
+  <span class="kd">let</span> <span class="nx">h</span> <span class="o">=</span> <span class="nx">hamiltonian</span><span class="p">(</span><span class="nx">t</span><span class="p">,</span> <span class="nx">data</span><span class="p">);</span>
+  <span class="c1">// To be drawn on the graph at this time: [q, p, h, h/omega]</span>
+  <span class="nx">data</span> <span class="o">=</span> <span class="nx">data</span><span class="p">.</span><span class="nx">concat</span><span class="p">([</span><span class="nx">h</span><span class="p">,</span> <span class="nx">h</span> <span class="o">/</span> <span class="nx">omega</span><span class="p">(</span><span class="nx">t</span><span class="p">)]);</span>
+  <span class="c1">// Calling old method, a JavaScript trick</span>
+  <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">__proto__</span><span class="p">.</span><span class="nx">trace</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="nx">t</span><span class="p">,</span> <span class="nx">data</span><span class="p">);</span>
+<span class="p">};</span>
+<span class="c1">// Restarting to apply the changes</span>
+<span class="nx">restart</span><span class="p">();</span>
+</code></pre></div></div>
+
+<p><img src="latex/adiabatic.png" alt="adiabatic.png" /></p>
+
+<h2 id="scattered-beam-of-particles">Scattered beam of particles</h2>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// The total number of particles in the beam</span>
+<span class="kd">var</span> <span class="nx">n</span> <span class="o">=</span> <span class="mi">30</span><span class="p">;</span>
+<span class="c1">// The array of the n ODE solvers</span>
+<span class="nx">rungeKuttas</span> <span class="o">=</span> <span class="p">[];</span>
+<span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">n</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// Create an ODE solver</span>
+  <span class="nx">rungeKuttas</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">=</span> <span class="nx">RungeKutta</span><span class="p">.</span><span class="nx">solveHamiltonian</span><span class="p">(</span>
+    <span class="c1">// Parameters list:</span>
+    <span class="mi">2</span><span class="p">,</span>                           <span class="c1">// DOF</span>
+    <span class="p">[</span><span class="o">-</span><span class="mi">20</span><span class="p">,</span> <span class="p">(</span><span class="nx">i</span> <span class="o">-</span> <span class="nx">n</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="mf">0.3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>  <span class="c1">// Initial conditions</span>
+    <span class="nb">Number</span><span class="p">.</span><span class="nx">POSITIVE_INFINITY</span><span class="p">,</span>    <span class="c1">// Maximum time</span>
+    <span class="kc">null</span><span class="p">,</span>                        <span class="c1">// Canvas; null for no canvas</span>
+    <span class="p">(</span><span class="nx">t</span><span class="p">,</span> <span class="nx">qp</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>                 <span class="c1">// The hamiltonian</span>
+      <span class="kd">let</span> <span class="p">[</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">,</span> <span class="nx">px</span><span class="p">,</span> <span class="nx">py</span><span class="p">]</span> <span class="o">=</span> <span class="nx">qp</span><span class="p">;</span>
+      <span class="k">return</span> <span class="nx">px</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="nx">py</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">30</span><span class="o">/</span><span class="nx">hypot</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span><span class="nx">y</span><span class="p">);</span>
+    <span class="p">}</span>
+  <span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">// Create the sprite and bitmap for visualization (rpg_core.js API)</span>
+<span class="kd">var</span> <span class="nx">traceSprite</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Sprite</span><span class="p">();</span>
+<span class="nx">scene</span><span class="p">.</span><span class="nx">addChild</span><span class="p">(</span><span class="nx">traceSprite</span><span class="p">);</span>
+<span class="nx">traceSprite</span><span class="p">.</span><span class="nx">bitmap</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Bitmap</span><span class="p">(</span><span class="nx">Graphics</span><span class="p">.</span><span class="nx">width</span><span class="p">,</span> <span class="nx">Graphics</span><span class="p">.</span><span class="nx">height</span><span class="p">);</span>
+
+<span class="c1">// The scale to be used for graphing</span>
+<span class="kd">var</span> <span class="nx">my</span> <span class="o">=</span> <span class="nx">y</span> <span class="o">=&gt;</span> <span class="mi">20</span> <span class="o">*</span> <span class="nx">y</span> <span class="o">+</span> <span class="nx">Graphics</span><span class="p">.</span><span class="nx">height</span><span class="o">/</span><span class="mi">2</span><span class="p">;</span>
+<span class="c1">// This is the function to be called at each frame refreshing</span>
+<span class="nx">update</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">n</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// Calculate the coordinates of the point to be plotted</span>
+    <span class="kd">let</span> <span class="nx">xy</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">].</span><span class="nx">map</span><span class="p">(</span><span class="nx">j</span> <span class="o">=&gt;</span> <span class="nx">my</span><span class="p">(</span><span class="nx">rungeKuttas</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">current</span><span class="p">[</span><span class="nx">j</span><span class="p">]))</span>
+    <span class="c1">// Plotting the trajectory</span>
+    <span class="nx">traceSprite</span><span class="p">.</span><span class="nx">bitmap</span><span class="p">.</span><span class="nx">setPixel</span><span class="p">(...</span><span class="nx">xy</span><span class="p">,</span> <span class="dl">'</span><span class="s1">white</span><span class="dl">'</span><span class="p">);</span>
+    <span class="c1">// Incrementing ODE solvers</span>
+    <span class="nx">rungeKuttas</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">update</span><span class="p">();</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="c1">// Restarting to apply the changes</span>
+<span class="nx">restart</span><span class="p">();</span>
+<span class="c1">// Hiding the original canvas</span>
+<span class="nx">canvas</span><span class="p">.</span><span class="nx">visible</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p><img src="latex/scatter.png" alt="scatter.png" /></p>
+
+<h2 id="special-relativity">Special relativity</h2>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">rungeKutta</span><span class="p">.</span><span class="nx">func</span> <span class="o">=</span> <span class="nx">canonicalEquation</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="p">(</span><span class="nx">t</span><span class="p">,</span> <span class="nx">qp</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">sqrt</span><span class="p">(</span><span class="nx">qp</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">10</span><span class="p">)</span> <span class="o">-</span> <span class="mf">0.8</span><span class="o">*</span><span class="nx">qp</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="nx">rungeKutta</span><span class="p">.</span><span class="nx">initial</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="o">-</span><span class="mi">10</span><span class="p">]</span>
+<span class="nx">canvas</span><span class="p">.</span><span class="nx">mappingX</span> <span class="o">=</span> <span class="nx">t</span> <span class="o">=&gt;</span> <span class="mi">10</span><span class="o">*</span><span class="nx">t</span>
+<span class="nx">restart</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p><img src="latex/relativity_gravity.png" alt="relativity_gravity.png" /></p>
+
+<div id="gitalk-container"></div></div>
+</main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Ulysses&#39; trip</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Ulysses&#39; trip</li><li><a class="u-email" href="mailto:UlyssesZhan@gmail.com">UlyssesZhan@gmail.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://www.facebook.com/YouqiuZhan"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#facebook"></use></svg> <span class="username">YouqiuZhan</span></a></li><li><a href="https://github.com/UlyssesZh"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">UlyssesZh</span></a></li><li><a href="https://instagram.com/ulysseszhan"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#instagram"></use></svg> <span class="username">ulysseszhan</span></a></li><li><a href="https://www.pinterest.com/ulysseszhan"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#pinterest"></use></svg> <span class="username">ulysseszhan</span></a></li><li><a href="https://www.twitter.com/UlyssesZhan"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">UlyssesZhan</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Here we are at the awesome (awful) blog written by Ulysses Zhan!</p>
+        <!-- Added begin -->
+        <p align="right">&copy;&nbsp;2020 Ulysses Zhan</p>
+        <!-- Added end -->
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body><script>
+		const gitalk = new Gitalk({
+			clientID: '49611570ab5cf827576b',
+			clientSecret: '6dedc6014eb010990d395ae8aae632c7811dfeff',
+			repo: 'UlyssesZh.github.io',
+			owner: 'UlyssesZh',
+			admin: ['UlyssesZh'],
+			id: location.pathname,
+			distractionFreeMode: false,
+			language: document.documentElement.lang
+		})
+		gitalk.render('gitalk-container')
+	</script></html>

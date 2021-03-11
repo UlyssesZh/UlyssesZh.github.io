@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="google-site-verification" content="ZuV45Knwuwl49Nvh9UsDzniZ-3qy3bGhBPofLK3SZPw" /><!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+		new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5PX967D');</script>
+<!-- End Google Tag Manager -->
+<!-- Google Analytics -->
+<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'G-7TSJ5VM6YC', 'auto');
+	ga('send', 'pageview');
+</script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-7TSJ5VM6YC"></script>
+<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-7TSJ5VM6YC');
+</script>
+<!-- End Google Analytics -->
+<!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Monkey-patching graciously | Ulysses’ trip</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Monkey-patching graciously" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="I am going to show how to monkey-patch graciously using Ruby." />
+<meta property="og:description" content="I am going to show how to monkey-patch graciously using Ruby." />
+<link rel="canonical" href="https://ulysseszh.github.io/programming/2020/02/09/ruby-patch-def.html" />
+<meta property="og:url" content="https://ulysseszh.github.io/programming/2020/02/09/ruby-patch-def.html" />
+<meta property="og:site_name" content="Ulysses’ trip" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-02-09T13:16:31+08:00" />
+<script type="application/ld+json">
+{"datePublished":"2020-02-09T13:16:31+08:00","description":"I am going to show how to monkey-patch graciously using Ruby.","url":"https://ulysseszh.github.io/programming/2020/02/09/ruby-patch-def.html","@type":"BlogPosting","dateModified":"2020-02-09T13:16:31+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://ulysseszh.github.io/programming/2020/02/09/ruby-patch-def.html"},"headline":"Monkey-patching graciously","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css">
+	<link rel="icon" type="image/x-icon" href="/favicon.ico?">
+	<!-- Gitalk begin -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+	<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+	<!-- Gitalk end --><link type="application/atom+xml" rel="alternate" href="https://ulysseszh.github.io/feed.xml" title="Ulysses' trip" /><script>
+MathJax = {
+	tex: {
+		inlineMath: [['$', '$'], ['\\(', '\\)']],
+		processEscapes: true,
+		tags: 'ams'
+	}
+};
+</script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+
+<!-- Added begin --><!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5PX967D"
+                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<!-- Added end --><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Ulysses&#39; trip</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">About</a><a class="page-link" href="/archives/">Archives</a><a class="page-link" href="/contact/">Contact</a><a class="page-link" href="/friends/">Friends</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+	<div class="wrapper">
+		<article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Monkey-patching graciously</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2020-02-09T13:16:31+08:00" itemprop="datePublished">Feb 9, 2020
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>I am going to show how to monkey-patch graciously using
+<a href="https://www.ruby-lang.org/" target="_blank">Ruby</a>.</p>
+
+<p>The original idea is to implement a method <code class="language-plaintext highlighter-rouge">Module#def_after</code> so that
+I can easily make something to be done after the original method.
+Like this:</p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Foo</span>
+  <span class="k">def</span> <span class="nf">bar</span>
+    <span class="nb">print</span> <span class="s1">'before'</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="k">class</span> <span class="nc">Foo</span>
+  <span class="n">def_after</span> <span class="ss">:bar</span> <span class="k">do</span>
+    <span class="nb">puts</span> <span class="s1">' &amp; after'</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="no">Foo</span><span class="p">.</span><span class="nf">new</span><span class="p">.</span><span class="nf">bar</span> <span class="c1"># =&gt; before &amp; after</span>
+</code></pre></div></div>
+<p>The implementation is a little easy:</p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Module</span>
+  <span class="k">def</span> <span class="nf">def_after</span> <span class="n">method_name</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">refine_block</span>
+    <span class="n">old</span> <span class="o">=</span> <span class="nb">instance_method</span> <span class="n">method_name</span>
+    <span class="n">define_method</span> <span class="n">method_name</span> <span class="k">do</span> <span class="o">|*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">opts</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">block</span><span class="o">|</span>
+      <span class="n">old</span><span class="p">.</span><span class="nf">bind_call</span> <span class="nb">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">opts</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">block</span>
+      <span class="n">refine_block</span><span class="o">.</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">opts</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">block</span><span class="p">)</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div>
+<p>However, there is a little problem. The <code class="language-plaintext highlighter-rouge">self</code> in <code class="language-plaintext highlighter-rouge">refine_block</code>
+depends on how and where <code class="language-plaintext highlighter-rouge">refine_block</code> is defined instead of
+just being the instance receiving the method.</p>
+
+<p>Since an instance method (<code class="language-plaintext highlighter-rouge">UnboundMethod</code> object) defined in a
+<code class="language-plaintext highlighter-rouge">Module</code> can <code class="language-plaintext highlighter-rouge">bind</code> any other object, we can use
+<code class="language-plaintext highlighter-rouge">Module#define_method</code> and send <code class="language-plaintext highlighter-rouge">refine_block</code> as a block parameter,
+and then bind the instance method to <code class="language-plaintext highlighter-rouge">self</code>:</p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Proc</span>
+  <span class="k">def</span> <span class="nf">bind</span> <span class="n">receiver</span>
+    <span class="no">Module</span><span class="p">.</span><span class="nf">new</span><span class="p">.</span><span class="nf">module_exec</span> <span class="nb">self</span> <span class="k">do</span> <span class="o">|</span><span class="n">block</span><span class="o">|</span>
+      <span class="nb">instance_method</span> <span class="n">define_method</span> <span class="ss">:_</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">block</span>
+    <span class="k">end</span><span class="p">.</span><span class="nf">bind</span> <span class="n">receiver</span>
+  <span class="k">end</span>
+  <span class="k">def</span> <span class="nf">bind_call</span> <span class="n">receiver</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">opts</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">block</span>
+    <span class="n">bind</span><span class="p">(</span><span class="n">receiver</span><span class="p">)</span><span class="o">.</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">opts</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">block</span><span class="p">)</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+<span class="k">class</span> <span class="nc">Module</span>
+  <span class="k">def</span> <span class="nf">def_after</span> <span class="n">method_name</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">refine_block</span>
+    <span class="n">old</span> <span class="o">=</span> <span class="nb">instance_method</span> <span class="n">method_name</span>
+    <span class="n">define_method</span> <span class="n">method_name</span> <span class="k">do</span> <span class="o">|*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">opts</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">block</span><span class="o">|</span>
+      <span class="n">old</span><span class="p">.</span><span class="nf">bind_call</span> <span class="nb">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">opts</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">block</span>
+      <span class="n">refine_block</span><span class="p">.</span><span class="nf">bind_call</span> <span class="nb">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">opts</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">block</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div>
+<p>The <code class="language-plaintext highlighter-rouge">self</code> can successfully be converted. You can test it yourself.</p>
+
+<p>Here is still a problem. When the new instance method is defined,
+its visibility is <code class="language-plaintext highlighter-rouge">public</code>, while the original visibility may be
+<code class="language-plaintext highlighter-rouge">private</code> or <code class="language-plaintext highlighter-rouge">protected</code>.</p>
+
+<p>Use the following means to get the visibility beforehand and set
+the visibility afterward:</p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Module</span>
+  <span class="k">def</span> <span class="nf">method_visibility</span> <span class="n">method_name</span>
+    <span class="sx">%i[public protected private]</span><span class="p">.</span><span class="nf">find</span> <span class="k">do</span> <span class="o">|</span><span class="n">visibility</span><span class="o">|</span>
+      <span class="nb">__send__</span> <span class="ss">:"</span><span class="si">#{</span><span class="n">visibility</span><span class="si">}</span><span class="ss">_method_defined?"</span><span class="p">,</span> <span class="n">method_name</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+  <span class="k">def</span> <span class="nf">def_after</span> <span class="n">method_name</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">refine_block</span>
+    <span class="n">visibility</span> <span class="o">=</span> <span class="n">method_visibility</span> <span class="n">method_name</span>
+    <span class="n">old</span> <span class="o">=</span> <span class="nb">instance_method</span> <span class="n">method_name</span>
+    <span class="n">define_method</span> <span class="n">method_name</span> <span class="k">do</span> <span class="o">|*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">opts</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">block</span><span class="o">|</span>
+      <span class="n">old</span><span class="p">.</span><span class="nf">bind_call</span> <span class="nb">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">opts</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">block</span>
+      <span class="n">refine_block</span><span class="p">.</span><span class="nf">bind_call</span> <span class="nb">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">opts</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">block</span>
+    <span class="k">end</span>
+    <span class="nb">__send__</span> <span class="n">visibility</span><span class="p">,</span> <span class="n">method_name</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div>
+<p>There can be some improvement. If we need to refine a singleton
+method, calling <code class="language-plaintext highlighter-rouge">def_after</code> on its <code class="language-plaintext highlighter-rouge">singleton_class</code> will lead to
+calling <code class="language-plaintext highlighter-rouge">obj.singleton_class.instance_method(sym).bind_call(obj, *)</code>,
+which is way too complex. The straightforward way to do it is to call
+<code class="language-plaintext highlighter-rouge">obj.method(sym).call(*)</code>.</p>
+
+<p>With this inspiration, we can implement <code class="language-plaintext highlighter-rouge">Object#def_after</code>:</p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Object</span>
+  <span class="k">def</span> <span class="nf">def_after</span> <span class="n">method_name</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">refine_block</span>
+    <span class="n">visibility</span> <span class="o">=</span> <span class="n">singleton_class</span><span class="p">.</span><span class="nf">method_visibility</span> <span class="n">method_name</span>
+    <span class="n">old</span> <span class="o">=</span> <span class="nb">method</span> <span class="n">method_name</span>
+    <span class="n">define_singleton_method</span> <span class="n">method_name</span> <span class="k">do</span> <span class="o">|*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">opts</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">block</span><span class="o">|</span>
+      <span class="n">old</span><span class="o">.</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">opts</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">block</span><span class="p">)</span>
+      <span class="n">refine_block</span><span class="p">.</span><span class="nf">bind_call</span> <span class="nb">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">opts</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">block</span>
+    <span class="k">end</span>
+    <span class="n">singleton_class</span><span class="p">.</span><span class="nf">__send__</span> <span class="n">visibility</span><span class="p">,</span> <span class="n">method_name</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div>
+<p>Then there comes a new problem. A <code class="language-plaintext highlighter-rouge">Module</code> also has singleton
+methods, while <code class="language-plaintext highlighter-rouge">Module#def_after</code> can only change its instance
+methods instead of its singleton methods.
+The way to solve this is to judge whether <code class="language-plaintext highlighter-rouge">is_a? Module</code> in
+<code class="language-plaintext highlighter-rouge">Object#def_after</code>, and add a keyword argument <code class="language-plaintext highlighter-rouge">singleton</code>:</p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Object</span>
+  <span class="k">def</span> <span class="nf">def_after</span> <span class="n">method_name</span><span class="p">,</span> <span class="ss">singleton: </span><span class="kp">false</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">refine_block</span>
+    <span class="n">singleton</span> <span class="o">||=</span> <span class="o">!</span><span class="nb">is_a?</span><span class="p">(</span><span class="no">Module</span><span class="p">)</span>
+    <span class="c1"># mod: the module containing the old method</span>
+    <span class="c1"># get_method: the method to get the Method/UnboundMethod obj</span>
+    <span class="c1"># def_method: the method to define a new method</span>
+    <span class="n">mod</span><span class="p">,</span> <span class="n">get_method</span><span class="p">,</span> <span class="n">def_method</span> <span class="o">=</span> <span class="n">singleton</span> <span class="p">?</span>
+        <span class="p">[</span><span class="n">singleton_class</span><span class="p">,</span> <span class="nb">method</span><span class="p">(</span><span class="ss">:method</span><span class="p">),</span> <span class="nb">method</span><span class="p">(</span><span class="ss">:define_singleton_method</span><span class="p">)]</span> <span class="p">:</span>
+        <span class="p">[</span><span class="nb">self</span><span class="p">,</span> <span class="nb">method</span><span class="p">(</span><span class="ss">:instance_method</span><span class="p">),</span> <span class="nb">method</span><span class="p">(</span><span class="ss">:define_method</span><span class="p">)]</span>
+    <span class="c1"># get visibility</span>
+    <span class="n">visibility</span> <span class="o">=</span> <span class="n">mod</span><span class="p">.</span><span class="nf">method_visibility</span> <span class="n">method_name</span>
+    <span class="c1"># get old</span>
+    <span class="n">old</span> <span class="o">=</span> <span class="n">get_method</span><span class="o">.</span><span class="p">(</span><span class="n">method_name</span><span class="p">)</span>
+    <span class="c1"># override</span>
+    <span class="n">def_method</span><span class="o">.</span><span class="p">(</span><span class="n">method_name</span><span class="p">)</span> <span class="k">do</span> <span class="o">|*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">opts</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">block</span><span class="o">|</span>
+      <span class="n">old</span> <span class="o">=</span> <span class="n">old</span><span class="p">.</span><span class="nf">bind</span> <span class="nb">self</span> <span class="k">unless</span> <span class="n">old</span><span class="p">.</span><span class="nf">is_a?</span> <span class="no">Method</span>
+      <span class="n">old</span><span class="o">.</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">opts</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">block</span><span class="p">)</span>
+      <span class="n">refine_block</span><span class="p">.</span><span class="nf">bind_call</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">opts</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">block</span>
+    <span class="k">end</span>
+    <span class="c1"># set visibility</span>
+    <span class="n">mod</span><span class="p">.</span><span class="nf">__send__</span> <span class="n">visibility</span><span class="p">,</span> <span class="n">method_name</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div>
+<p>What about parsing a callable object as an argument instead of
+through <code class="language-plaintext highlighter-rouge">refine_block</code>?
+Parsing a <code class="language-plaintext highlighter-rouge">Symbol</code> can also be useful. Like this:</p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Object</span><span class="p">.</span><span class="nf">def_after</span> <span class="ss">:display</span><span class="p">,</span> <span class="ss">:puts</span>
+</code></pre></div></div>
+<p>Then <code class="language-plaintext highlighter-rouge">Object#def_after</code> will be a little complex:</p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Object</span>
+  <span class="c1"># pat: when refine_block is nil, it is used to represent a refinement</span>
+  <span class="c1"># singleton: force singleton when self is a Module</span>
+  <span class="k">def</span> <span class="nf">def_after</span> <span class="n">method_name</span><span class="p">,</span> <span class="n">pat</span> <span class="o">=</span> <span class="kp">nil</span> <span class="p">,</span> <span class="ss">singleton: </span><span class="kp">false</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">refine_block</span>
+    <span class="n">singleton</span> <span class="o">||=</span> <span class="o">!</span><span class="nb">is_a?</span><span class="p">(</span><span class="no">Module</span><span class="p">)</span>
+    <span class="c1"># mod: the module containing the old method</span>
+    <span class="c1"># get_method: the method to get the Method/UnboundMethod obj</span>
+    <span class="c1"># def_method: the method to define a new method</span>
+    <span class="n">mod</span><span class="p">,</span> <span class="n">get_method</span><span class="p">,</span> <span class="n">def_method</span> <span class="o">=</span> <span class="n">singleton</span> <span class="p">?</span>
+        <span class="p">[</span><span class="n">singleton_class</span><span class="p">,</span> <span class="nb">method</span><span class="p">(</span><span class="ss">:method</span><span class="p">),</span> <span class="nb">method</span><span class="p">(</span><span class="ss">:define_singleton_method</span><span class="p">)]</span> <span class="p">:</span>
+        <span class="p">[</span><span class="nb">self</span><span class="p">,</span> <span class="nb">method</span><span class="p">(</span><span class="ss">:instance_method</span><span class="p">),</span> <span class="nb">method</span><span class="p">(</span><span class="ss">:define_method</span><span class="p">)]</span>
+    <span class="c1"># get visibility</span>
+    <span class="n">visibility</span> <span class="o">=</span> <span class="n">mod</span><span class="p">.</span><span class="nf">method_visibility</span> <span class="n">method_name</span>
+    <span class="c1"># get pat</span>
+    <span class="n">pat</span> <span class="o">=</span> <span class="n">refine_block</span> <span class="o">||</span> <span class="p">{</span>
+      <span class="ss">to_sym:  </span><span class="o">-&gt;</span><span class="n">symbol</span> <span class="p">{</span> <span class="n">get_method</span><span class="o">.</span><span class="p">(</span><span class="n">symbol</span><span class="p">.</span><span class="nf">to_sym</span><span class="p">)</span> <span class="p">},</span>
+      <span class="ss">to_proc: :to_proc</span><span class="p">.</span><span class="nf">to_proc</span><span class="p">,</span>
+      <span class="ss">call:    </span><span class="o">-&gt;</span><span class="n">callable</span> <span class="p">{</span> <span class="n">callable</span><span class="p">.</span><span class="nf">method</span> <span class="ss">:call</span> <span class="p">}</span>
+    <span class="p">}.</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">duck</span><span class="p">,</span> <span class="n">out</span><span class="o">|</span>
+      <span class="k">break</span> <span class="n">out</span><span class="o">.</span><span class="p">(</span><span class="n">pat</span><span class="p">)</span> <span class="k">if</span> <span class="n">pat</span><span class="p">.</span><span class="nf">respond_to?</span> <span class="n">duck</span>
+    <span class="k">end</span>
+    <span class="c1"># get old</span>
+    <span class="n">old</span> <span class="o">=</span> <span class="n">get_method</span><span class="o">.</span><span class="p">(</span><span class="n">method_name</span><span class="p">)</span>
+    <span class="c1"># override</span>
+    <span class="n">def_method</span><span class="o">.</span><span class="p">(</span><span class="n">method_name</span><span class="p">)</span> <span class="k">do</span> <span class="o">|*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">opts</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">block</span><span class="o">|</span>
+      <span class="c1"># bind old</span>
+      <span class="n">old</span> <span class="o">=</span> <span class="n">old</span><span class="p">.</span><span class="nf">bind</span> <span class="nb">self</span> <span class="k">unless</span> <span class="n">old</span><span class="p">.</span><span class="nf">is_a?</span> <span class="no">Method</span>
+      <span class="c1"># bind pat</span>
+      <span class="n">pat</span> <span class="o">=</span> <span class="n">pat</span><span class="p">.</span><span class="nf">bind</span> <span class="nb">self</span> <span class="k">unless</span> <span class="n">pat</span><span class="p">.</span><span class="nf">is_a?</span> <span class="no">Method</span>
+      <span class="c1"># call the new method</span>
+      <span class="n">old</span><span class="o">.</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">opts</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">block</span><span class="p">)</span>
+      <span class="n">pat</span><span class="o">.</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">opts</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">block</span><span class="p">)</span>
+    <span class="k">end</span>
+    <span class="c1"># set visibility</span>
+    <span class="n">mod</span><span class="p">.</span><span class="nf">__send__</span> <span class="n">visibility</span><span class="p">,</span> <span class="n">method_name</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div>
+<p>We are still not satisfied. We need to define a lot of methods like
+<code class="language-plaintext highlighter-rouge">def_after</code>, such as <code class="language-plaintext highlighter-rouge">def_before</code>, <code class="language-plaintext highlighter-rouge">def_if</code>…
+Maybe we should define <code class="language-plaintext highlighter-rouge">Object::def_</code> and use it like this:</p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Object</span>
+  <span class="c1"># use this binding to eval to avoid excessive local variables</span>
+  <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">class_binding</span>
+    <span class="nb">binding</span>
+  <span class="k">end</span>
+  <span class="p">{</span>
+    <span class="ss">after:  </span><span class="s1">'result = old.(*); pat.(*); result'</span><span class="p">,</span>
+    <span class="ss">after!: </span><span class="s1">'old.(*); pat.(*)'</span><span class="p">,</span>
+    <span class="ss">before: </span><span class="s1">'pat.(*); old.(*)'</span><span class="p">,</span>
+    <span class="ss">with:   </span><span class="s1">'pat.(old.(*), *)'</span><span class="p">,</span>
+    <span class="ss">chain:  </span><span class="s1">'pat.(old, *)'</span><span class="p">,</span>
+    <span class="ss">and:    </span><span class="s1">'old.(*) &amp;&amp; pat.(*)'</span><span class="p">,</span>
+    <span class="ss">or:     </span><span class="s1">'old.(*) || pat.(*)'</span><span class="p">,</span>
+    <span class="ss">if:     </span><span class="s1">'pat.(*) &amp;&amp; old.(*)'</span><span class="p">,</span>
+    <span class="ss">unless: </span><span class="s1">'pat.(*) || old.(*)'</span>
+  <span class="p">}.</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">sym</span><span class="p">,</span> <span class="n">code</span><span class="o">|</span>
+    <span class="n">str</span> <span class="o">=</span> <span class="s2">"def_(:</span><span class="si">#{</span><span class="n">sym</span><span class="si">}</span><span class="s2">) { |old, pat, *| </span><span class="si">#{</span><span class="n">code</span><span class="si">}</span><span class="s2"> }"</span>
+    <span class="n">str</span><span class="p">.</span><span class="nf">gsub!</span> <span class="p">?</span><span class="o">*</span><span class="p">,</span> <span class="s1">'*args, **opts, &amp;block'</span>
+    <span class="n">class_binding</span><span class="p">.</span><span class="nf">eval</span> <span class="n">str</span>
+  <span class="k">end</span>
+  <span class="n">singleton_class</span><span class="p">.</span><span class="nf">undef_method</span> <span class="ss">:def_</span><span class="p">,</span> <span class="p">:</span><span class="n">class_binding</span>
+<span class="k">end</span>
+</code></pre></div></div>
+<p>The main difficulty is to implement <code class="language-plaintext highlighter-rouge">Object::def_</code>.
+We can accomplish this just by editing the <code class="language-plaintext highlighter-rouge">Object#def_after</code> we
+defined before:</p>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Object</span>
+  <span class="c1"># the method is going to be undefined soon</span>
+  <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">def_</span> <span class="n">sym</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">def_block</span>
+    <span class="c1"># pat: when refine_block is nil, it is used to represent a refinement</span>
+    <span class="c1"># singleton: force singleton when self is a Module</span>
+    <span class="n">define_method</span> <span class="ss">:"def_</span><span class="si">#{</span><span class="n">sym</span><span class="si">}</span><span class="ss">"</span> <span class="k">do</span> <span class="o">|</span><span class="n">method_name</span><span class="p">,</span> <span class="n">pat</span> <span class="o">=</span> <span class="kp">nil</span><span class="p">,</span> <span class="ss">singleton: </span><span class="kp">false</span><span class="p">,</span>
+                                    <span class="o">&amp;</span><span class="n">refine_block</span><span class="o">|</span>
+      <span class="n">singleton</span> <span class="o">||=</span> <span class="o">!</span><span class="nb">is_a?</span><span class="p">(</span><span class="no">Module</span><span class="p">)</span>
+      <span class="c1"># mod: the module containing the old method</span>
+      <span class="c1"># get_method: the method to get the Method/UnboundMethod obj</span>
+      <span class="c1"># def_method: the method to define a new method</span>
+      <span class="n">mod</span><span class="p">,</span> <span class="n">get_method</span><span class="p">,</span> <span class="n">def_method</span> <span class="o">=</span> <span class="n">singleton</span> <span class="p">?</span>
+          <span class="p">[</span><span class="n">singleton_class</span><span class="p">,</span> <span class="nb">method</span><span class="p">(</span><span class="ss">:method</span><span class="p">),</span> <span class="nb">method</span><span class="p">(</span><span class="ss">:define_singleton_method</span><span class="p">)]</span> <span class="p">:</span>
+          <span class="p">[</span><span class="nb">self</span><span class="p">,</span> <span class="nb">method</span><span class="p">(</span><span class="ss">:instance_method</span><span class="p">),</span> <span class="nb">method</span><span class="p">(</span><span class="ss">:define_method</span><span class="p">)]</span>
+      <span class="c1"># get visibility</span>
+      <span class="n">visibility</span> <span class="o">=</span> <span class="n">mod</span><span class="p">.</span><span class="nf">method_visibility</span> <span class="n">method_name</span>
+      <span class="c1"># get pat</span>
+      <span class="n">pat</span> <span class="o">=</span> <span class="n">refine_block</span> <span class="o">||</span> <span class="p">{</span>
+        <span class="ss">to_sym:  </span><span class="o">-&gt;</span><span class="n">symbol</span> <span class="p">{</span> <span class="n">get_method</span><span class="o">.</span><span class="p">(</span><span class="n">symbol</span><span class="p">.</span><span class="nf">to_sym</span><span class="p">)</span> <span class="p">},</span>
+        <span class="ss">to_proc: :to_proc</span><span class="p">.</span><span class="nf">to_proc</span><span class="p">,</span>
+        <span class="ss">call:    </span><span class="o">-&gt;</span><span class="n">callable</span> <span class="p">{</span> <span class="n">callable</span><span class="p">.</span><span class="nf">method</span> <span class="ss">:call</span> <span class="p">}</span>
+      <span class="p">}.</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">duck</span><span class="p">,</span> <span class="n">out</span><span class="o">|</span>
+        <span class="k">break</span> <span class="n">out</span><span class="o">.</span><span class="p">(</span><span class="n">pat</span><span class="p">)</span> <span class="k">if</span> <span class="n">pat</span><span class="p">.</span><span class="nf">respond_to?</span> <span class="n">duck</span>
+      <span class="k">end</span>
+      <span class="c1"># get old</span>
+      <span class="n">old</span> <span class="o">=</span> <span class="n">get_method</span><span class="o">.</span><span class="p">(</span><span class="n">method_name</span><span class="p">)</span>
+      <span class="c1"># override</span>
+      <span class="n">def_method</span><span class="o">.</span><span class="p">(</span><span class="n">method_name</span><span class="p">)</span> <span class="k">do</span> <span class="o">|*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">opts</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">block</span><span class="o">|</span>
+        <span class="c1"># bind old</span>
+        <span class="n">old</span> <span class="o">=</span> <span class="n">old</span><span class="p">.</span><span class="nf">bind</span> <span class="nb">self</span> <span class="k">unless</span> <span class="n">old</span><span class="p">.</span><span class="nf">is_a?</span> <span class="no">Method</span>
+        <span class="c1"># bind pat</span>
+        <span class="n">pat</span> <span class="o">=</span> <span class="n">pat</span><span class="p">.</span><span class="nf">bind</span> <span class="nb">self</span> <span class="k">unless</span> <span class="n">pat</span><span class="p">.</span><span class="nf">is_a?</span> <span class="no">Method</span>
+        <span class="c1"># call the new method</span>
+        <span class="n">def_block</span><span class="o">.</span><span class="p">(</span><span class="n">old</span><span class="p">,</span> <span class="n">pat</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">opts</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">block</span><span class="p">)</span>
+      <span class="k">end</span>
+      <span class="c1"># set visibility</span>
+      <span class="n">mod</span><span class="p">.</span><span class="nf">__send__</span> <span class="n">visibility</span><span class="p">,</span> <span class="n">method_name</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div>
+<p>The final source code can be found <a href="/assets/codes/patch_def.rb">here</a>.</p>
+
+<p>The reason why I do not use <code class="language-plaintext highlighter-rouge">Module#refine</code> and <code class="language-plaintext highlighter-rouge">Module#using</code> is
+that they currently have too much limitations and even bugs.
+I have already found as many as two bugs
+(<a href="https://bugs.ruby-lang.org/issues/16107" target="_blank">#16107</a>
+and
+<a href="https://bugs.ruby-lang.org/issues/16617" target="_blank">#16617</a>).
+Although both of them have been fixed (or will be fixed),
+I cannot be sure that there will not be further and fatal bugs.
+I do not think these features are very reliable in recent Ruby versions.</p>
+
+  </div><a class="u-url" href="/programming/2020/02/09/ruby-patch-def.html" hidden></a>
+</article>
+<div id="gitalk-container"></div></div>
+</main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Ulysses&#39; trip</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Ulysses&#39; trip</li><li><a class="u-email" href="mailto:UlyssesZhan@gmail.com">UlyssesZhan@gmail.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://www.facebook.com/YouqiuZhan"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#facebook"></use></svg> <span class="username">YouqiuZhan</span></a></li><li><a href="https://github.com/UlyssesZh"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">UlyssesZh</span></a></li><li><a href="https://instagram.com/ulysseszhan"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#instagram"></use></svg> <span class="username">ulysseszhan</span></a></li><li><a href="https://www.pinterest.com/ulysseszhan"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#pinterest"></use></svg> <span class="username">ulysseszhan</span></a></li><li><a href="https://www.twitter.com/UlyssesZhan"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">UlyssesZhan</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Here we are at the awesome (awful) blog written by Ulysses Zhan!</p>
+        <!-- Added begin -->
+        <p align="right">&copy;&nbsp;2020 Ulysses Zhan</p>
+        <!-- Added end -->
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body><script>
+		const gitalk = new Gitalk({
+			clientID: '49611570ab5cf827576b',
+			clientSecret: '6dedc6014eb010990d395ae8aae632c7811dfeff',
+			repo: 'UlyssesZh.github.io',
+			owner: 'UlyssesZh',
+			admin: ['UlyssesZh'],
+			id: location.pathname,
+			distractionFreeMode: false,
+			language: document.documentElement.lang
+		})
+		gitalk.render('gitalk-container')
+	</script></html>

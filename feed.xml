@@ -1,0 +1,692 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="https://ulysseszh.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://ulysseszh.github.io/" rel="alternate" type="text/html" /><updated>2021-03-11T21:12:15+08:00</updated><id>https://ulysseszh.github.io/feed.xml</id><title type="html">Ulysses’ trip</title><subtitle>Here we are at the awesome (awful) blog written by Ulysses Zhan!</subtitle><entry><title type="html">New website for MOIS Project (club)</title><link href="https://ulysseszh.github.io/update/2020/08/21/mois-site.html" rel="alternate" type="text/html" title="New website for MOIS Project (club)" /><published>2020-08-21T15:28:16+08:00</published><updated>2020-08-21T15:28:16+08:00</updated><id>https://ulysseszh.github.io/update/2020/08/21/mois-site</id><content type="html" xml:base="https://ulysseszh.github.io/update/2020/08/21/mois-site.html">&lt;p&gt;I have built a &lt;a href=&quot;https://jdfzmois.github.io&quot; target=&quot;_blank&quot;&gt;website&lt;/a&gt;
+for our club called MOIS Project.
+It is a club related to music and band.&lt;/p&gt;</content><author><name></name></author><category term="update" /><category term="update" /><summary type="html">I have built a website for our club called MOIS Project. It is a club related to music and band.</summary></entry><entry><title type="html">My activities in 2020 JDFZ Summer Session</title><link href="https://ulysseszh.github.io/update/2020/07/28/rdcss-2020.html" rel="alternate" type="text/html" title="My activities in 2020 JDFZ Summer Session" /><published>2020-07-28T14:06:53+08:00</published><updated>2020-07-28T14:06:53+08:00</updated><id>https://ulysseszh.github.io/update/2020/07/28/rdcss-2020</id><content type="html" xml:base="https://ulysseszh.github.io/update/2020/07/28/rdcss-2020.html">&lt;p&gt;I am the lecturer of &lt;a href=&quot;https://www.bilibili.com/video/BV1r54y1S7rG&quot; target=&quot;_blank&quot;&gt;Newtonian mechanics&lt;/a&gt;
+(HIGHLY RECOMMENDED!),
+the assistant of &lt;a href=&quot;https://www.bilibili.com/video/BV1bZ4y1T7x9&quot; target=&quot;_blank&quot;&gt;Python &amp;amp; basic algorithms&lt;/a&gt;
+(the lecturers are memebers of &lt;a href=&quot;https://littleturings.github.io&quot; target=&quot;_blank&quot;&gt;Little Turings&lt;/a&gt;),
+and a student of &lt;a href=&quot;https://www.bilibili.com/video/BV1bK411J7Qj&quot; target=&quot;_blank&quot;&gt;Structural chemistry (inorganic chemistry)&lt;/a&gt;.
+The links are to the web pages (on Bilibili)
+where recorded videos can be watched online.&lt;/p&gt;
+
+&lt;p&gt;The courses are all in Chinese.&lt;/p&gt;
+
+&lt;p&gt;You can find all of the recorded videos of 2020 JDFZ Summer Session
+in &lt;a href=&quot;https://space.bilibili.com/226047082/favlist?fid=1021020682&quot; target=&quot;_blank&quot;&gt;this favorite list&lt;/a&gt;.
+Please like and collect the videos and share them with your friends.&lt;/p&gt;</content><author><name></name></author><category term="update" /><category term="update" /><summary type="html">I am the lecturer of Newtonian mechanics (HIGHLY RECOMMENDED!), the assistant of Python &amp;amp; basic algorithms (the lecturers are memebers of Little Turings), and a student of Structural chemistry (inorganic chemistry). The links are to the web pages (on Bilibili) where recorded videos can be watched online.</summary></entry><entry><title type="html">New website for Little Turings (club)</title><link href="https://ulysseszh.github.io/update/2020/07/05/little-turings-site.html" rel="alternate" type="text/html" title="New website for Little Turings (club)" /><published>2020-07-05T10:10:46+08:00</published><updated>2020-07-05T10:10:46+08:00</updated><id>https://ulysseszh.github.io/update/2020/07/05/little-turings-site</id><content type="html" xml:base="https://ulysseszh.github.io/update/2020/07/05/little-turings-site.html">&lt;p&gt;I, the president and one of the founders of Little Turings,
+created a &lt;a href=&quot;https://littleturings.github.io&quot; target=&quot;_blank&quot;&gt;website&lt;/a&gt;
+to distribute information about it.
+The website is bilingual (Chinese and English).&lt;/p&gt;
+
+&lt;p&gt;The website is currently incomplete.
+Some information is still at ulysseszh.github.io.
+I will gradually transfer it into the new site in the future.&lt;/p&gt;
+
+&lt;p&gt;If you are interested to be with us, you can follow
+&lt;a href=&quot;https://littleturings.github.io/m/add-yourself.html&quot; target=&quot;_blank&quot;&gt;these instructions&lt;/a&gt;.&lt;/p&gt;</content><author><name></name></author><category term="update" /><category term="update" /><summary type="html">I, the president and one of the founders of Little Turings, created a website to distribute information about it. The website is bilingual (Chinese and English).</summary></entry><entry><title type="html">Drawing a heart using Joukowsky transformation</title><link href="https://ulysseszh.github.io/math/2020/06/13/joukowsky-heart.html" rel="alternate" type="text/html" title="Drawing a heart using Joukowsky transformation" /><published>2020-06-13T16:19:58+08:00</published><updated>2020-06-13T16:19:58+08:00</updated><id>https://ulysseszh.github.io/math/2020/06/13/joukowsky-heart</id><content type="html" xml:base="https://ulysseszh.github.io/math/2020/06/13/joukowsky-heart.html">&lt;p&gt;Joukowsky transformation of a circle centered at $\left(1,1\right)$ of radius $1$
+is a curve resembling a heart.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/joukowsky_heart.png&quot; alt=&quot;Joukowsky heart&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;To be specific, it is
+\begin{equation*}
+    \left\{1+\mathrm i+\mathrm e^{\mathrm it}+
+    \frac1{1+\mathrm i+\mathrm e^{\mathrm it}}
+    \middle|t\in\left[0,2\pi\right)\right\}
+\end{equation*}
+on the complex plane.&lt;/p&gt;</content><author><name></name></author><category term="math" /><category term="complex" /><summary type="html">Joukowsky transformation of a circle centered at $\left(1,1\right)$ of radius $1$ is a curve resembling a heart.</summary></entry><entry><title type="html">Generalization of Euler–Lagrange equation</title><link href="https://ulysseszh.github.io/math/2020/05/31/high-dim-euler-eq.html" rel="alternate" type="text/html" title="Generalization of Euler–Lagrange equation" /><published>2020-05-31T12:53:17+08:00</published><updated>2020-05-31T12:53:17+08:00</updated><id>https://ulysseszh.github.io/math/2020/05/31/high-dim-euler-eq</id><content type="html" xml:base="https://ulysseszh.github.io/math/2020/05/31/high-dim-euler-eq.html">&lt;p&gt;$\Omega\in\mathbb R^m$ is a closed region.
+The variable $\mathbf f:\Omega\rightarrow\mathbb R^p$
+is an $n$ differentiable function with fixed boundary conditions on $\partial\Omega$.
+The function $\mathcal L$ is real-valued and has continuous first partial derivatives,
+and the $0$th to $n$th partial derivatives of $\mathbf f$ 
+and the independent variable $\mathbf x\in\Omega$ will be arguments of $\mathcal L$.
+Define a functional
+\begin{equation*}
+    I:=\mathbf f\mapsto\int_\Omega\mathcal L\left(\cdots\right)\mathrm dV,
+\end{equation*}
+where $\mathrm dV$ is the volume element in $\Omega$.
+Then the extremal of $I$ satisfies a set of PDEs with respect to $\mathbf f$.
+The set of PDEs consists of $p$ equations, the $i$th of which is
+\begin{equation}
+    \sum_{j=0}^n\sum_{\mu\in P_{j,m}}\left(-1\right)^j
+    \partial_\mu\frac{\partial\mathcal L}{\partial\left(\partial_\mu f_i\right)}=0,
+    \label{ret}
+\end{equation}
+where $P_{j,m}$ is the set of all (not necessarily strictly) ascending $j$-tuples in
+$\left\{1,\dots,m\right\}^j$, and
+\begin{equation*}
+    \partial_\mu:=\frac{\partial^{\operatorname{len}\mu}}{\prod_k\partial x_{\mu_k}}.
+\end{equation*}&lt;/p&gt;
+
+&lt;p&gt;Equation \ref{ret} is the Generalization of Euler–Lagrange equation.&lt;/p&gt;</content><author><name></name></author><category term="math" /><category term="calculus" /><summary type="html">$\Omega\in\mathbb R^m$ is a closed region. The variable $\mathbf f:\Omega\rightarrow\mathbb R^p$ is an $n$ differentiable function with fixed boundary conditions on $\partial\Omega$. The function $\mathcal L$ is real-valued and has continuous first partial derivatives, and the $0$th to $n$th partial derivatives of $\mathbf f$ and the independent variable $\mathbf x\in\Omega$ will be arguments of $\mathcal L$. Define a functional \begin{equation*} I:=\mathbf f\mapsto\int_\Omega\mathcal L\left(\cdots\right)\mathrm dV, \end{equation*} where $\mathrm dV$ is the volume element in $\Omega$. Then the extremal of $I$ satisfies a set of PDEs with respect to $\mathbf f$. The set of PDEs consists of $p$ equations, the $i$th of which is \begin{equation} \sum_{j=0}^n\sum_{\mu\in P_{j,m}}\left(-1\right)^j \partial_\mu\frac{\partial\mathcal L}{\partial\left(\partial_\mu f_i\right)}=0, \label{ret} \end{equation} where $P_{j,m}$ is the set of all (not necessarily strictly) ascending $j$-tuples in $\left\{1,\dots,m\right\}^j$, and \begin{equation*} \partial_\mu:=\frac{\partial^{\operatorname{len}\mu}}{\prod_k\partial x_{\mu_k}}. \end{equation*}</summary></entry><entry><title type="html">View of the world (physically rather than philosophically)</title><link href="https://ulysseszh.github.io/physics/2020/05/14/world-view.html" rel="alternate" type="text/html" title="View of the world (physically rather than philosophically)" /><published>2020-05-14T19:18:39+08:00</published><updated>2020-05-14T19:18:39+08:00</updated><id>https://ulysseszh.github.io/physics/2020/05/14/world-view</id><content type="html" xml:base="https://ulysseszh.github.io/physics/2020/05/14/world-view.html">&lt;h1 id=&quot;introduction&quot;&gt;Introduction&lt;/h1&gt;
+
+&lt;p&gt;Have you ever thought of how can we describe the basic
+principles of our world (or universe), especially
+in a physical or mathematical way?&lt;/p&gt;
+
+&lt;p&gt;The thought itself seems like a philosophical problem
+(and is actually thought over by philosophers for thousands
+of years). However, maybe it can be interesting to think
+it over in another perspective.&lt;/p&gt;
+
+&lt;p&gt;Note that most of the definitions used below are different
+from the popular definitions!&lt;/p&gt;
+
+&lt;h1 id=&quot;galilean-world&quot;&gt;Galilean world&lt;/h1&gt;
+
+&lt;p&gt;Here is the basic principle of the Galilean world:&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;Principle 1: The world is a Galilean structure with
+$3$-dimensional space and $1$-dimensional time.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Here is the definition of a Galilean structure.
+A &lt;em&gt;Galilean structure&lt;/em&gt; with $\chi$-dimensional space
+and $\iota$-dimensional time is a $3$-tuple
+$\left(\mathscr A,\tau,\rho\right)$ with the following
+principles:&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;$\mathscr A$ is a $\nu$-dimensional
+affine space associated with the vector space $\mathbb R^\nu$,
+where $\nu:=\chi+\iota$;&lt;/li&gt;
+  &lt;li&gt;$\tau:\mathbb R^\nu\rightarrow\mathbb R^\iota$
+is a linear mapping;&lt;/li&gt;
+  &lt;li&gt;For $a,b\in\mathscr A$ such that $\tau\left(a-b\right)=0$,
+the mapping $\rho$ satisfies
+$\rho\left(a,b\right)=\sqrt{\left(a-b\right)^2}$.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;To make the physical meanings of the above mathematical stuff
+clear, we&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;call $\mathscr A$ the &lt;em&gt;universe&lt;/em&gt; or a &lt;em&gt;Galilean space&lt;/em&gt;,&lt;/li&gt;
+  &lt;li&gt;call the points in the universe the &lt;em&gt;events&lt;/em&gt;,&lt;/li&gt;
+  &lt;li&gt;call $\tau$ the &lt;em&gt;time&lt;/em&gt;,&lt;/li&gt;
+  &lt;li&gt;say two events $a,b$ are &lt;em&gt;simultaneous&lt;/em&gt;
+iff $\tau\left(a-b\right)=0$,&lt;/li&gt;
+  &lt;li&gt;call $\rho\left(a,b\right)$ the
+&lt;em&gt;distance between simultaneous events $a,b$&lt;/em&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+&lt;p&gt;Here is the second principle of the Galilean world:&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;Principle 2 (Galileo’s principle of relativity):
+Laws of nature remain the same under Galilean transformation.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Here is the definition of a Galilean transformation.
+An affine transformation $g$ over the Galilean space $\mathscr A$
+is called a &lt;em&gt;Galilean transformation&lt;/em&gt;
+iff both of the following are satisfied:&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;$\forall a,b\in\mathscr A:
+\tau\left(a-b\right)=\tau\left(ga-gb\right)$
+(preservation of intervals of time),&lt;/li&gt;
+  &lt;li&gt;$\forall a,b\in\mathscr A:
+\tau\left(a-b\right)=0\Rightarrow
+\rho\left(a,b\right)=\rho\left(ga,gb\right)$
+(preservation of distance between simultaneous events).&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Galilean transformations form a group (why?) called
+the &lt;em&gt;Galilean group&lt;/em&gt;, which is an
+$\left(\iota+\frac{\chi\left(\chi+3\right)}2\right)$-dimensional
+Lie group (why?).&lt;/p&gt;
+
+&lt;hr /&gt;
+&lt;p&gt;\begin{align*}
+\mathscr A&amp;amp;:=\mathbb R^\nu,\\&lt;br /&gt;
+\tau&amp;amp;:=\left(t,x\right)\mapsto t,\\&lt;br /&gt;
+\rho&amp;amp;:=\left(a,b\right)\mapsto\sqrt{\left(a-b\right)^2}
+\end{align*}
+is a Galilean structure (why?).
+Here $\mathscr A$ is called the &lt;em&gt;Galilean coordinate space&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;The following transformations on the Galilean coordinate space
+are Galilean transformations (why?):&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;$\left(t,x\right)\mapsto\left(t,x+vt\right)$,
+where $v\in\mathbb R^\chi$ (&lt;em&gt;uniform motion&lt;/em&gt;),&lt;/li&gt;
+  &lt;li&gt;$\left(t,x\right)\mapsto\left(t+s,x+d\right)$,
+where $s\in\mathbb R^\iota$ and $d\in\mathbb R^\chi$
+(&lt;em&gt;translation&lt;/em&gt;),&lt;/li&gt;
+  &lt;li&gt;$\left(t,x\right)\mapsto\left(t,Gx\right)$,
+where $G\in\mathrm O\left(\chi\right)$
+(&lt;em&gt;rotation&lt;/em&gt;).&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Every Galilean transformation of the Galilean coordinate space
+can be represented uniquely as the composition of a rotation,
+a translation, and a uniform motion (why?).&lt;/p&gt;
+
+&lt;p&gt;All Galilean spaces with the same dimensions
+are isomorphic to each other (why?).&lt;/p&gt;
+
+&lt;hr /&gt;
+&lt;p&gt;In fact, the two principles above are not enough to
+build up the whole classical mechanics.
+We need to define motion, velocity, and acceleration
+in our $3$-$1$ universe, and use the third principle&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;Principle 3 (Newton’s principle of determinacy):
+The motion is uniquely determined by initial positions
+and initial velocities.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;to conclude that the motion can be depicted by
+&lt;em&gt;Hamilton’s principle&lt;/em&gt;
+\begin{equation*}
+    \delta\int\mathcal L\left(q,\dot q,t\right)=0
+\end{equation*}
+(why?), which leads to &lt;em&gt;Euler–Lagrange equation&lt;/em&gt;
+\begin{equation*}
+    \frac{\mathrm d}{\mathrm dt}
+    \frac{\partial\mathcal L}{\partial\dot q}=
+    \frac{\partial\mathcal L}{\partial q}
+\end{equation*}
+(why?).&lt;/p&gt;
+
+&lt;p&gt;According to Principle 2, for a closed system,
+its Euler–Lagrange equation should
+remain unchanged after a Galilean transformation
+(in a specific coordinate system, which in most cases is
+the Cartesian coordinate system utilized by
+Galilean coordinate space) acts on it,
+from which we can see that the universe is
+&lt;em&gt;time-homogeneous&lt;/em&gt; (invariance under time translation),
+&lt;em&gt;space-homogeneous&lt;/em&gt; (invariance under space translation),
+and &lt;em&gt;space-isotropic&lt;/em&gt; (invariance under space rotation).&lt;/p&gt;
+
+&lt;p&gt;The rest
+(deriving the &lt;em&gt;Lagrangian&lt;/em&gt; for some typical mechanical systems,
+and solving them) is just the normal classical mechanics,
+and is not related to the topic today.&lt;/p&gt;
+
+&lt;h1 id=&quot;einsteinian-world&quot;&gt;Einsteinian world&lt;/h1&gt;
+
+&lt;p&gt;We can build up the Einsteinian world similarly as we have
+done for the Galilean world.&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;Principle 1: The world is an Einsteinian structure
+with $3$-dimensional space and $1$-dimensional time.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Here is the definition of an Einsteinian structure.
+An &lt;em&gt;Einsteinian structure&lt;/em&gt; with $\chi$-dimensional space
+and $\iota$-dimensional time is a $4$-tuple
+$\left(\mathscr A,\tau,\sigma,\rho\right)$
+with the following principles:&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;$\mathscr A$ is a $\nu$-dimensional affine space
+associated with the vector space $\mathbb R^\nu$,
+where $\nu:=\chi+\iota$;&lt;/li&gt;
+  &lt;li&gt;$\tau:\mathbb R^\nu\rightarrow\mathbb R^\iota$
+and $\sigma:\mathbb R^\nu\rightarrow\mathbb R^\chi$
+are linear mappings;&lt;/li&gt;
+  &lt;li&gt;The linear mapping $a\mapsto\left(\tau\left(a\right),
+\sigma\left(a\right)\right):
+\mathbb R^\nu\rightarrow\mathbb R^\nu$ has full rank;&lt;/li&gt;
+  &lt;li&gt;$\forall a,b\in\mathscr A:\rho\left(a,b\right)=
+\sqrt{\tau\left(a-b\right)^2-\sigma\left(a-b\right)^2}$.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;To make the physical meanings of the above mathematical
+stuff clear, we&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;call $\mathscr A$ the &lt;em&gt;universe&lt;/em&gt; or an &lt;em&gt;Einsteinian space&lt;/em&gt;,&lt;/li&gt;
+  &lt;li&gt;call the points in the universe the &lt;em&gt;events&lt;/em&gt;,&lt;/li&gt;
+  &lt;li&gt;call $\tau$ the &lt;em&gt;time&lt;/em&gt;,&lt;/li&gt;
+  &lt;li&gt;call $\sigma$ the &lt;em&gt;space&lt;/em&gt;,&lt;/li&gt;
+  &lt;li&gt;call $\rho\left(a,b\right)$ the
+&lt;em&gt;spacetime interval between events $a,b$&lt;/em&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+&lt;p&gt;Here is the second principle of the Einsteinian world:&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;Principle 2 (Einstein’s principle of relativity):
+Laws of nature remain the same under
+extended Poincaré transformation.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Here is the definition of a Poincaré transformation.
+An affine transformation $g$ over the Einsteinian space
+$\mathscr A$ is called a &lt;em&gt;Poincaré transformation&lt;/em&gt;
+iff $\forall a,b\in\mathscr A:
+\rho\left(a,b\right)=\rho\left(ga,gb\right)$.
+Well, the definition is much simpler than that of
+Galilean transformation.&lt;/p&gt;
+
+&lt;p&gt;Poincaré transformations form a group (why?)
+called the &lt;em&gt;Poincaré group&lt;/em&gt;, which is a
+$\frac{\nu\left(\nu+1\right)}2$-dimensional Lie group (why?).&lt;/p&gt;
+
+&lt;hr /&gt;
+&lt;p&gt;\begin{align*}
+    \mathscr A&amp;amp;:=\mathbb R^\nu,\\&lt;br /&gt;
+    \tau&amp;amp;:=\left(ct,x\right)\mapsto t,\\&lt;br /&gt;
+    \sigma&amp;amp;:=\left(ct,x\right)\mapsto x,\\&lt;br /&gt;
+    \rho&amp;amp;:=\left(a,b\right)\mapsto
+    \sqrt{\tau\left(a-b\right)^2-\sigma\left(a-b\right)^2}
+\end{align*}
+is an Einsteinian structure (why?), where the constant
+$c\in\mathbb R$ is called the &lt;em&gt;speed of light&lt;/em&gt;.
+Here $\mathscr A$ is called the &lt;em&gt;Minkowski space&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;The following transformations on the Minkowski space are
+Poincaré transformations (why?):&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;$a\mapsto a+d$, where $d\in\mathbb R^\nu$ (&lt;em&gt;translation&lt;/em&gt;),&lt;/li&gt;
+  &lt;li&gt;$a\mapsto Ga$, where $G\in\mathrm O\left(\iota,\chi\right)$
+is an indefinite orthogonal matrix (&lt;em&gt;rotation&lt;/em&gt;).&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Every Poincaré transformation of the Minkowski space can be
+represented uniquely as the composition of a translation
+and a rotation (why?).&lt;/p&gt;
+
+&lt;p&gt;All Einsteinian spaces with the same dimensions are isomorphic
+to each other (why?).&lt;/p&gt;
+
+&lt;hr /&gt;
+&lt;p&gt;The rest is just the same as what we have done with
+Galilean world.
+You can find that the Einsteinian world is also
+space-homogeneous, time-homogeneous, and space-isotropic.
+Further more, it is time-isotropic.&lt;/p&gt;
+
+&lt;h1 id=&quot;aristotelian-world-imagination&quot;&gt;Aristotelian world (imagination)&lt;/h1&gt;
+
+&lt;p&gt;Although the Aristotelian world is not real, we can
+think of what it may look like.&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;Principle 1: The world is an Aristotelian structure
+with $3$-dimensional space and $1$-dimensional time.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;According to Aristotle’s theory about the natural place,
+the world has something like a “center”,
+so the world cannot be space-homogeneous.
+However, he admits the invariance of natural laws over time,
+so the world is still time-homogeneous.
+It may be also reasonable to assume that
+the world is space-isotropic.&lt;/p&gt;
+
+&lt;p&gt;Thus, our definition of the Aristotelian structure
+should be non-affine, and the Aristotelian transformations
+should be composed of rotation and time translation.&lt;/p&gt;
+
+&lt;p&gt;However, although the space is non-affine, the time is affine.
+This makes it tricky to mix space and time together into
+an “$\mathscr A$”.
+However, there is a workaround. We can define the universe
+still an affine space, while give it an origin.
+Since this origin only add limitations to space transformation
+instead of time transformation, we can make it
+an $\iota$-dimensional affine subspace instead of a single point.&lt;/p&gt;
+
+&lt;p&gt;Here is the definition of an Aristotelian structure.
+An &lt;em&gt;Aristotelian structure&lt;/em&gt; with $\chi$-dimensional
+space and $\iota$-dimensional time is a $4$-tuple
+$\left(\mathscr A,\tau,o,\rho\right)$ with the following
+principles:&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;$\mathscr A$ is a $\nu$-dimensional affine space
+associated with the vector space $\mathbb R^\nu$,
+where $\nu:=\chi+\iota$;&lt;/li&gt;
+  &lt;li&gt;$\tau:\mathbb R^\nu\rightarrow\mathbb R^\iota$
+is a linear mapping;&lt;/li&gt;
+  &lt;li&gt;$o$ is an $\iota$-dimensional affine subspace of $\mathscr A$;&lt;/li&gt;
+  &lt;li&gt;For $a,b\in\mathscr A$ such that $\tau\left(a-b\right)=0$,
+the mapping $\rho$ satisfies $\rho\left(a,b\right)=
+\sqrt{\left(a-b\right)^2}$.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;To make the physical meanings of the above mathematical stuff
+clear, we&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;call $\mathscr A$ the &lt;em&gt;universe&lt;/em&gt; or an &lt;em&gt;Aristotelian space&lt;/em&gt;,&lt;/li&gt;
+  &lt;li&gt;call the points in the universe the &lt;em&gt;events&lt;/em&gt;,&lt;/li&gt;
+  &lt;li&gt;call $\tau$ the &lt;em&gt;time&lt;/em&gt;,&lt;/li&gt;
+  &lt;li&gt;call $o$ the &lt;em&gt;center&lt;/em&gt; of space,&lt;/li&gt;
+  &lt;li&gt;say two events $a,b$ are &lt;em&gt;simultaneous&lt;/em&gt;
+iff $\tau\left(a-b\right)=0$,&lt;/li&gt;
+  &lt;li&gt;call $\rho\left(a,b\right)$ the
+&lt;em&gt;distance between simultaneous events $a,b$&lt;/em&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+&lt;p&gt;Then the task is to define the Aristotelian transformations.&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;Principle 2: Laws of nature remain the same under
+Aristotelian transformation.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Here is the definition of an Aristotelian transformation.
+An affine transformation $g$ over the Aristotelian space
+$\mathscr A$ is called an &lt;em&gt;Aristotelian transformation&lt;/em&gt;
+iff all of the following are satisfied:&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;$\forall a,b\in\mathscr A:
+\tau\left(a-b\right)=\tau\left(ga-gb\right)$,&lt;/li&gt;
+  &lt;li&gt;$\forall a,b\in\mathscr A:
+\tau\left(a-b\right)=0\Rightarrow
+\rho\left(a,b\right)=\rho\left(ga,gb\right)$.&lt;/li&gt;
+  &lt;li&gt;$\forall a\in o:ga\in o$.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Notice the third condition, which makes it different from
+a Galilean transformation.&lt;/p&gt;
+
+&lt;p&gt;Aristotelian transformations from a group (why?) called
+the &lt;em&gt;Aristotelian group&lt;/em&gt;, which is an
+$\left(\iota+\frac{\chi\left(\chi-1\right)}2\right)$-dimensional
+Lie group (why?).&lt;/p&gt;
+
+&lt;hr /&gt;
+&lt;p&gt;\begin{align*}
+    \mathscr A&amp;amp;:=\mathbb R^\nu,\\&lt;br /&gt;
+    \tau&amp;amp;:=\left(t,x\right)\mapsto t,\\&lt;br /&gt;
+    o&amp;amp;:=\mathbb R^\iota\times\left\{0\right\},\\&lt;br /&gt;
+    \rho&amp;amp;:=\left(a,b\right)\mapsto\sqrt{\left(a-b\right)^2}
+\end{align*}
+is an Aristotelian structure (why?). Here $\mathscr A$
+is called the &lt;em&gt;Aristotelian coordinate space&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;The following transformations on the Aristotelian coordinate
+space are Aristotelian transformations (why?):&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;$\left(t,x\right)\mapsto\left(t+s,x\right)$,
+where $s\in\mathbb R^\iota$ (&lt;em&gt;time translation&lt;/em&gt;),&lt;/li&gt;
+  &lt;li&gt;$\left(t,x\right)\mapsto\left(t,Gx\right)$,
+where $G\in\mathrm O\left(\chi\right)$ (&lt;em&gt;rotation&lt;/em&gt;).&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Every Aristotelian transformation of the Aristotelian
+coordinate space can be represented uniquely as
+the composition of a time translation and a rotation (why?).&lt;/p&gt;
+
+&lt;p&gt;All Aristotelian spaces with the same dimensions are isomorphic
+to each other (why?).&lt;/p&gt;
+
+&lt;hr /&gt;
+&lt;p&gt;After building up the Aristotle world, how can we develop
+the mechanics here?
+Maybe it can be interesting.&lt;/p&gt;
+
+&lt;h1 id=&quot;other-imaginations&quot;&gt;Other imaginations&lt;/h1&gt;
+
+&lt;p&gt;Here are some other imaginations of a world:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;What about a space-anistropic universe?&lt;/li&gt;
+  &lt;li&gt;What about defining the spacetime interval by
+multiplying space interval and time interval?&lt;/li&gt;
+  &lt;li&gt;What about a time-heterogeneous universe?&lt;/li&gt;
+  &lt;li&gt;What about making laws of nature unchanged
+under uniform acceleration?&lt;/li&gt;
+  &lt;li&gt;What about…&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;These can be materials for science fiction
+(novels or video games).&lt;/p&gt;</content><author><name></name></author><category term="physics" /><category term="imagination" /><category term="long paper" /><summary type="html">Introduction</summary></entry><entry><title type="html">Simulating a mechanical system using rpg_core.js</title><link href="https://ulysseszh.github.io/physics/2020/05/14/simulation-rpgmv.html" rel="alternate" type="text/html" title="Simulating a mechanical system using rpg_core.js" /><published>2020-05-14T00:57:39+08:00</published><updated>2020-05-14T00:57:39+08:00</updated><id>https://ulysseszh.github.io/physics/2020/05/14/simulation-rpgmv</id><content type="html" xml:base="https://ulysseszh.github.io/physics/2020/05/14/simulation-rpgmv.html">&lt;p&gt;This post is the continuation of
+&lt;a href=&quot;/physics/2020/04/28/simulation-rgss.html&quot;&gt;the last post&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;If you visit &lt;a href=&quot;/rpg/mechsimul/&quot;&gt;the page&lt;/a&gt; I have just created,
+you may find the simulation of a mechanical system.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/rpgmv_simul.png&quot; alt=&quot;Result of simulation&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;It is currently
+\begin{equation*}
+    \mathcal H=p_1^2+p_2^2-\cos q_1-\cos q_2-
+    \cos\left(q_1-q_2\right)
+\end{equation*}
+depicting two pendulum coupled with a spring,&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/spring_coupled_pendulum.png&quot; alt=&quot;Spring-coupled pendulums&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;which is a classical example of non-linearly coupled system.&lt;/p&gt;
+
+&lt;p&gt;The pattern of the oscillation can be analyzed using
+discrete Fourier transformation, whose result can be found by
+clicking the buttons in the up-left corner
+(after the simulator has detected a period).&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/rpgmv_simul_fft.png&quot; alt=&quot;Result of DFT&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Hitting the space bar can make the simulation pause.&lt;/p&gt;
+
+&lt;p&gt;If you want to use it to simulate other mechanical systems,
+you can study &lt;a href=&quot;/rpg/mechsimul/js/mechsimul.js&quot;&gt;the codes&lt;/a&gt; I wrote
+and write your own codes in the console.&lt;/p&gt;
+
+&lt;p&gt;By the way, the
+&lt;a href=&quot;https://github.com/UlyssesZh/OpenRGSS/&quot; target=&quot;_blank&quot;&gt;OpenRGSS&lt;/a&gt;
+version of the simulator is open-source
+&lt;a href=&quot;https://github.com/UlyssesZh/mechsimul/&quot; target=&quot;_blank&quot;&gt;here&lt;/a&gt;.
+Please star the repo if you like it.&lt;/p&gt;</content><author><name></name></author><category term="physics" /><category term="javascript" /><category term="rgss" /><category term="hamiltonian" /><category term="calculus" /><summary type="html">This post is the continuation of the last post.</summary></entry><entry><title type="html">Simulating a mechanical system using RGSS3</title><link href="https://ulysseszh.github.io/physics/2020/04/28/simulation-rgss.html" rel="alternate" type="text/html" title="Simulating a mechanical system using RGSS3" /><published>2020-04-28T11:51:17+08:00</published><updated>2020-04-28T11:51:17+08:00</updated><id>https://ulysseszh.github.io/physics/2020/04/28/simulation-rgss</id><content type="html" xml:base="https://ulysseszh.github.io/physics/2020/04/28/simulation-rgss.html">&lt;p&gt;Our goal is to simulate a mechanical system according to its Hamiltonian
+$\mathcal H\left(\mathbf q,\mathbf p,t\right)$.&lt;/p&gt;
+
+&lt;p&gt;To utilize the canonical equations
+\begin{equation}
+    \frac{\mathrm d\mathbf q}{\mathrm dt}=
+    \frac{\partial\mathcal H}{\partial\mathbf p},\quad
+    \frac{\mathrm d\mathbf p}{\mathrm dt}=
+    -\frac{\partial\mathcal H}{\partial\mathbf p},
+    \label{canonical}
+\end{equation}
+we need to calculate the partial derivatives of $\mathcal H$.
+Here is a simple code to calculate partial derivatives.&lt;/p&gt;
+&lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dx&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;f0&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;size&lt;/span&gt;
+  &lt;span class=&quot;no&quot;&gt;Array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x0&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Vector&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;basis&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dx&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;f0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dx&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;(RGSS do not have &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;matrix.rb&lt;/code&gt;, you can copy one from
+the attached file below.)
+Here &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;x0&lt;/code&gt; is a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Vector&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;f&lt;/code&gt; is a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;call&lt;/code&gt;-able object as a function
+of vectors, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;dx&lt;/code&gt; is a small scalar which we are going to take &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;1e-6&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Let &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;x = Vector[*q, *p]&lt;/code&gt;, and then Formula \ref{canonical} has the form
+\begin{equation}
+    \frac{\mathrm d\mathbf x}{\mathrm dt}=f\left(\mathbf x\right).
+\end{equation}
+To solve this equation numerically, we need to use a famous method
+called the (explicit) Runge–Kutta method.&lt;/p&gt;
+&lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;runge_kutta&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;initial&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;max_t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pyramid&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;coefs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;func&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;..&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;max_t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;step&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;reduce&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;initial&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ret&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;
+    &lt;span class=&quot;vg&quot;&gt;$canvas&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;trace&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ret&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;vg&quot;&gt;$canvas&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;coefs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;zip&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pyramid&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;each_with_object&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([]).&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;sum&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;coef&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;row&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ary&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;coef&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ary&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;push&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;func&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;row&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;inner&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ary&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dt&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ret&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)).&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;last&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dt&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ret&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;#p(ret)&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Note that Runge–Kutta is a family of methods. The argument
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;(*pyramid, coefs)&lt;/code&gt; takes one of the following, each of which
+is a single Runge–Kutta method.&lt;/p&gt;
+&lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;no&quot;&gt;FORWARD_EULER&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[[],[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]]&lt;/span&gt;
+&lt;span class=&quot;no&quot;&gt;EXPLICIT_MIDPOINT&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[[],[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;2.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]]&lt;/span&gt;
+&lt;span class=&quot;no&quot;&gt;HEUN&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[[],[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;2.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;2.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]]&lt;/span&gt;
+&lt;span class=&quot;no&quot;&gt;RALSTON&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[[],[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;3.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;4.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;4.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]]&lt;/span&gt;
+&lt;span class=&quot;no&quot;&gt;KUTTA_3RD&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[[],[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;2.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],[&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;6.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;3.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;6.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]]&lt;/span&gt;
+&lt;span class=&quot;no&quot;&gt;HEUN_3RD&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[[],[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;3.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;3.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;4.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;4.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]]&lt;/span&gt;
+&lt;span class=&quot;no&quot;&gt;RALSTON_3RD&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[[],[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;2.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;4.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;9.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;3.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;9.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]]&lt;/span&gt;
+&lt;span class=&quot;no&quot;&gt;SSPRK3&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[[],[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;4.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;4.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;6.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;6.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;3.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]]&lt;/span&gt;
+&lt;span class=&quot;no&quot;&gt;CLASSIC_4TH&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[[],[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;2.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;2.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;6.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;3.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;3.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;6.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]]&lt;/span&gt;
+&lt;span class=&quot;no&quot;&gt;RALSTON_4TH&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[[],[&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],[&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.29697761&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.15875964&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],[&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.21810040&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;3.05096516&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;mf&quot;&gt;3.83286476&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],[&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.17476028&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.55148066&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;1.20553560&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;0.17118478&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]]&lt;/span&gt;
+&lt;span class=&quot;no&quot;&gt;THREE_EIGHTH_4TH&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[[],[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;3.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],[&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;3.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;8.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;8.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;8.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;8.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Here we are going to take &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;CLASSIC_4TH&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;The &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$canvas&lt;/code&gt; appearing here is an object that is going to draw
+the result onto the screen.&lt;/p&gt;
+
+&lt;p&gt;Here we also need to have some patches to get it work.&lt;/p&gt;
+&lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Float&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;alias&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ulysses20200426121236_add&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;other&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;zero?&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Vector&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Matrix&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;any?&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;other&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;is_a?&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;c&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;other&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;ulysses20200426121236_add&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;other&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;module&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;Enumerable&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;sum&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;init&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;block&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;block&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;block&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;reduce&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;init&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Array&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;inner&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;other&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;zip&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;other&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;sum&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;(Again, note that this is Ruby 1.9.2.)&lt;/p&gt;
+
+&lt;p&gt;Finally, just combine them up, and we can solve a Hamiltonian numerically.&lt;/p&gt;
+&lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;solve_hamiltonian&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;qp0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;max_t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;hamiltonian&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;runge_kutta&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;qp0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;max_t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;CLASSIC_4TH&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;qp&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;dqpdt&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;qp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;1e-6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;hamiltonian&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;no&quot;&gt;Vector&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dqpdt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dqpdt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:-@&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)]&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;For example, let’s simulate a double pendulum.&lt;/p&gt;
+&lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;solve_hamiltonian&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Vector&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;PI&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Float&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;INFINITY&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;1e-3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;q1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;q2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;p1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;p2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;p1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;**&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;p2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;**&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cos&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;q1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;q2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;p1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;p2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cos&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;q1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cos&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;q2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/double_pendulum.gif&quot; alt=&quot;double_pendulum&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The codes are not complete in this post.
+See the &lt;a href=&quot;/assets/codes/RungeKutta.rar&quot;&gt;attached file&lt;/a&gt; for details.
+You can open the project using
+&lt;a href=&quot;https://store.steampowered.com/app/220700/RPG_Maker_VX_Ace/&quot; target=&quot;_blank&quot;&gt;RPG Maker VX Ace&lt;/a&gt;.
+The &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Game.exe&lt;/code&gt; file is not the official &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Game.exe&lt;/code&gt; executable
+but the third-party improved version of it called
+&lt;a href=&quot;http://cirno.blog/archives/290&quot; target=&quot;_blank&quot;&gt;RGD&lt;/a&gt;
+(of version 1.3.2, while the latest till now is 1.5.1).&lt;/p&gt;</content><author><name></name></author><category term="physics" /><category term="ruby" /><category term="rgss" /><category term="hamiltonian" /><category term="calculus" /><summary type="html">Our goal is to simulate a mechanical system according to its Hamiltonian $\mathcal H\left(\mathbf q,\mathbf p,t\right)$.</summary></entry><entry><title type="html">Writing a DSL with commands split by space</title><link href="https://ulysseszh.github.io/programming/2020/04/27/space-split-dsl.html" rel="alternate" type="text/html" title="Writing a DSL with commands split by space" /><published>2020-04-27T20:39:39+08:00</published><updated>2020-04-27T20:39:39+08:00</updated><id>https://ulysseszh.github.io/programming/2020/04/27/space-split-dsl</id><content type="html" xml:base="https://ulysseszh.github.io/programming/2020/04/27/space-split-dsl.html">&lt;p&gt;We want to have a DSL where we can write statements separated with space.
+Like this:&lt;/p&gt;
+&lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;no&quot;&gt;Robot&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;d&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;f&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;g&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;h&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;run&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;outputs&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Go to a
+Go to b
+Go to c
+Go to d
+Go to e
+Go to f
+Go to g
+Go to h
+Go to i
+Go to j
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Since separating by space means method invocation in Ruby,
+we need to hack into &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;method_missing&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;I am just posting the codes and will not give it further explanation.
+Look into the details yourself.&lt;/p&gt;
+
+&lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Robot&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;attr_accessor&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:movements&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;initialize&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;block&lt;/span&gt;
+    &lt;span class=&quot;vi&quot;&gt;@movements&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;
+    &lt;span class=&quot;vi&quot;&gt;@last_length&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
+    &lt;span class=&quot;nb&quot;&gt;instance_eval&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;block&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;block&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;rearrange&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;method_missing&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;size&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;when&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;rearrange&lt;/span&gt;
+      &lt;span class=&quot;vi&quot;&gt;@movements&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;push&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;result&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Movement&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;new&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+      &lt;span class=&quot;vi&quot;&gt;@last_length&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;result&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;when&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+      &lt;span class=&quot;vi&quot;&gt;@movements&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;push&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;result&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Movement&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;new&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+      &lt;span class=&quot;vi&quot;&gt;@last_length&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;result&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;super&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;rearrange&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;last_movements&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;vi&quot;&gt;@movements&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;last&lt;/span&gt; &lt;span class=&quot;vi&quot;&gt;@last_length&lt;/span&gt;
+    &lt;span class=&quot;vi&quot;&gt;@movements&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;vi&quot;&gt;@movements&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;size&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;vi&quot;&gt;@last_length&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;..&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;last_movements&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;reverse&lt;/span&gt;
+    &lt;span class=&quot;vi&quot;&gt;@last_length&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;run&lt;/span&gt;
+    &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;vi&quot;&gt;@movements&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Movement&lt;/span&gt;
+    &lt;span class=&quot;nb&quot;&gt;attr_accessor&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:target&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;initialize&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;target&lt;/span&gt;
+      &lt;span class=&quot;vi&quot;&gt;@target&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;target&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;to_s&lt;/span&gt;
+      &lt;span class=&quot;s2&quot;&gt;&quot;Go to &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#@target&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Similar tricks are used in my other Ruby project &lt;a href=&quot;/doc/alda-rb/&quot;&gt;alda-rb&lt;/a&gt;.
+The codes can be found
+&lt;a href=&quot;https://github.com/UlyssesZh/alda-rb&quot; target=&quot;_blank&quot;&gt;on GitHub&lt;/a&gt;.&lt;/p&gt;</content><author><name></name></author><category term="programming" /><category term="ruby" /><category term="meta programming" /><summary type="html">We want to have a DSL where we can write statements separated with space. Like this: Robot.new do a b c d e f g h i j end.run outputs Go to a Go to b Go to c Go to d Go to e Go to f Go to g Go to h Go to i Go to j</summary></entry><entry><title type="html">Running Jekyll myself</title><link href="https://ulysseszh.github.io/programming/2020/04/14/run-jekyll-myself.html" rel="alternate" type="text/html" title="Running Jekyll myself" /><published>2020-04-14T14:22:15+08:00</published><updated>2020-04-14T14:22:15+08:00</updated><id>https://ulysseszh.github.io/programming/2020/04/14/run-jekyll-myself</id><content type="html" xml:base="https://ulysseszh.github.io/programming/2020/04/14/run-jekyll-myself.html">&lt;p&gt;It is an annoying thing that I cannot add custom plugins
+if &lt;a href=&quot;https://pages.github.com/&quot; target=&quot;_blank&quot;&gt;GitHub pages&lt;/a&gt;
+runs &lt;a href=&quot;https://jekyllrb.com/&quot; target=&quot;_blank&quot;&gt;Jekyll&lt;/a&gt; for me.&lt;/p&gt;
+
+&lt;p&gt;Thus, I need to build the site myself and let GitHub pages to
+present my built site.&lt;/p&gt;
+
+&lt;p&gt;Note that GitHub pages serving personal users cannot
+present the site deployed in &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;docs&lt;/code&gt; dir of &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;master&lt;/code&gt; branch
+or in root of &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gh-pages&lt;/code&gt; branch, so I need to put my Jekyll source
+in the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;development&lt;/code&gt; branch, and push the built site to the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;master&lt;/code&gt;
+branch when I think it is ready to be published.&lt;/p&gt;
+
+&lt;p&gt;I have written a script to do it for me:&lt;/p&gt;
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;MESSAGE&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$1&lt;/span&gt;
+
+&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Committing...&quot;&lt;/span&gt;
+git commit &lt;span class=&quot;nt&quot;&gt;-m&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$MESSAGE&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--author&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$AUTHOR&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
+
+&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Backing up...&quot;&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;mv &lt;/span&gt;_site/.git git_backup
+
+&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Building...&quot;&lt;/span&gt;
+jekyll build &lt;span class=&quot;nt&quot;&gt;--quiet&lt;/span&gt;
+
+&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Restoring...&quot;&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;mv &lt;/span&gt;git_backup/.git _site
+&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;_site
+
+&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Pushing...&quot;&lt;/span&gt;
+git add &lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;**&lt;/span&gt;/&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;
+git commit &lt;span class=&quot;nt&quot;&gt;-m&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$MESSAGE&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--author&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$AUTHOR&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
+git push &lt;span class=&quot;nt&quot;&gt;--set-upstream&lt;/span&gt; origin master
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;where &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;AUTHOR&lt;/code&gt; is your name and email in the format &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;name &amp;lt;email&amp;gt;&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Before that, I need to initialize the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_site&lt;/code&gt; dir as a git repo:&lt;/p&gt;
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;site_
+git init
+git remote add origin &lt;span class=&quot;nv&quot;&gt;$REMOTE_URL&lt;/span&gt;
+git add &lt;span class=&quot;nt&quot;&gt;-f&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;**&lt;/span&gt;/&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;
+git commit &lt;span class=&quot;nt&quot;&gt;-m&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;initial commit&quot;&lt;/span&gt;
+git push &lt;span class=&quot;nt&quot;&gt;-f&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--set-upstream&lt;/span&gt; origin master
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;where &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;REMOTE_URL&lt;/code&gt; is the GitHub url of the repo of your site.&lt;/p&gt;</content><author><name></name></author><category term="programming" /><category term="jekyll" /><summary type="html">It is an annoying thing that I cannot add custom plugins if GitHub pages runs Jekyll for me.</summary></entry></feed>
