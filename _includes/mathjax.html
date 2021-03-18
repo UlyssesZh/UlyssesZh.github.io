@@ -3,8 +3,15 @@ MathJax = {
 	tex: {
 		inlineMath: [['$', '$'], ['\\(', '\\)']],
 		processEscapes: true,
-		tags: 'ams'
-	}
+		tags: 'ams',
+		packages: {'[+]': ['ams']},
+		autoload: {
+			mhchem: ['mhchem'],
+			braket: ['braket'],
+			newcommand: ['newcommand']
+		}
+	},
+	loader: {load: ['[tex]/ams']}
 };
 </script>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
