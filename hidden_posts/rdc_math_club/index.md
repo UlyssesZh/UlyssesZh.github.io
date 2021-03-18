@@ -64,3 +64,7 @@ lang: cn
 # 12 矩阵
 
 ![矩阵](matrices.svg)
+
+# 13 外测度
+
+![外测度](outer_measure.svg)
