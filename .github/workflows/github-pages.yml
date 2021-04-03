@@ -18,6 +18,9 @@ jobs:
           key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
           restore-keys: |
             ${{ runner.os }}-gems-
+      - name: Update bundler
+        run: |
+          gem install bundler:2.2.6
       - name: GIT config
         run: |
           git config --global user.name "Ulysses Zhan"

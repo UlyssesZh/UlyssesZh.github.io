@@ -14,8 +14,5 @@ install_if -> { RUBY_PLATFORM =~ /mingw|mswin|java/ } do
 	gem 'tzinfo-data'
 end
 gem 'faraday'
-gem 'rubocop'
-gem 'rubocop-rspec'
-gem 'rubocop-performance'
 gem 'wdm', install_if: Gem.win_platform?
 gem 'webrick', install_if: RUBY_VERSION >= '3.0.0'
