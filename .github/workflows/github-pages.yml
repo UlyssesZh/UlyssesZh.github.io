@@ -11,23 +11,10 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Cache
-        uses: actions/cache@v1
-        with:
-          path: vendor/bundle
-          key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-gems-
-      - name: Update bundler
-        run: |
-          sudo gem update bundler
-      - name: GIT config
-        run: |
-          git config --global user.name "Ulysses Zhan"
-          git config --global user.email "2938747508@qq.com"
       - name: Deploy Jekyll
-        uses: helaili/jekyll-action@2.0.4
-        env:
-          JEKYLL_PAT: ${{ secrets.JEKYLL_PAT }}
+        uses: fabacab/jekyll-builder-for-github-pages-action@master
         with:
-          target_branch: 'master'
+          secret_gh_pages_api_token: ${{ secrets.JEKYLL_PAT }}
+          pre_build_commands: gem install bundler
+          git_committer_email: 2938747508@qq.com
+          git_committer_name: Ulysses Zhan
