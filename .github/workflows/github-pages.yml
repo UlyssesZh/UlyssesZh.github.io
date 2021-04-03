@@ -1,0 +1,30 @@
+name: Deploy to master
+
+on:
+  push:
+    branches:
+      - development
+
+jobs:
+  github-pages:
+    runs-on: windows-2019
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Cache
+        uses: actions/cache@v1
+        with:
+          path: vendor/bundle
+          key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-gems-
+      - name: GIT config
+        run: |
+          git config --global user.name "Ulysses Zhan"
+          git config --global user.email "2938747508@qq.com"
+      - name: Deploy Jekyll
+        uses: helaili/jekyll-action@2.0.4
+        env:
+          JEKYLL_PAT: ${{ secrets.JEKYLL_PAT }}
+        with:
+          target_branch: 'master'

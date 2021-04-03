@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: "en" }}">
+<head>
+	<meta charset="UTF-8">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<meta name="viewport" content="user-scalable=no">
+	<meta name="google-site-verification" content="{{ site.google_verification }}" />
+	{%- include google_analytics_head.html -%}
+	{%- seo -%}
+	{%- feed_meta -%}
+	{%- if jekyll.environment == 'production' and site.google_analytics -%}
+		{%- include google-analytics.html -%}
+	{%- endif -%}
+	{% if page.icon == "common" %}
+		<link rel="icon" href="../common/icon/icon.png" type="image/png">
+		<link rel="apple-touch-icon" href="../common/icon/icon.png">
+	{% elsif page.icon == "custom" %}
+		<link rel="icon" href="icon/icon.png" type="image/png">
+		<link rel="apple-touch-icon" href="icon/icon.png">
+	{% else %}
+		<link rel="icon" href="/favicon.ico?" type="image/ico">
+		<link rel="apple-touch-icon" href="/favicon.ico?">
+	{% endif %}
+	{% if page.font == "common" %}
+		<link rel="stylesheet" type="text/css" href="../common/fonts/gamefont.css">
+	{% elsif page.font == "custom" %}
+		<link rel="stylesheet" type="text/css" href="fonts/gamefont.css">
+	{% endif %}
+	<title>{{ page.title }}</title>
+</head>
+<body style="background-color: black">
+{%- include google_analytics_body.html -%}
+<script>
+(async function() {
+	const prefix = "https://cdn.jsdelivr.net/gh/rpgtkoolmv/corescript@v1.3b/";
+	let libs = ['pixi', 'pixi-tilemap', 'pixi-picture', 'fpsmeter', 'lz-string', 'iphone-inline-video.browser']
+	async function fetchMod(url) {
+		let files = await fetch(url).then(r => r.json());
+		files = files.map(file => fetch(prefix + file).then(r => r.text()));
+		return Promise.all(files);
+	}
+	function runScriptFromString(string) {
+		eval.call(window, string);
+	}
+	async function runScriptFromUrl(url) {
+		eval.call(window, await fetch(url).then(r => r.text()));
+	}
+	libs = libs.map(lib => fetch(prefix + 'js/libs/' + lib + '.js').then(r => r.text()));
+	libs = await Promise.all(libs);
+	libs = libs.join("\n");
+	runScriptFromString(libs);
+{% if page.scripts == "common" %}
+	let modules = await fetch(prefix + 'modules.json').then(r => r.json());
+	modules = modules.map(mod => fetchMod(prefix + mod + '.json'));
+	modules = await Promise.all(modules);
+	modules = modules.flatMap(e => e.join("\n")).join("\n");
+	runScriptFromString(modules);
+	await runScriptFromUrl('js/plugins.js');
+	{{ content }}
+	await runScriptFromUrl(prefix + 'js/main.js');
+{% else %}
+	let modules = await fetchMod(prefix + 'rpg_core.json').then(r => r.join("\n"));
+	runScriptFromString(modules);
+	{{ content }}
+	await runScriptFromUrl('js/main.js');
+{% endif %}
+	document.body.lastChild.onload = window.onload;
+})();
+</script>
+</body>
+</html>

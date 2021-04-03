@@ -1,0 +1,4 @@
+motif = c4 c g g a a g2
+piano:
+V1: o4 motif motif
+V2: o5 motif
