@@ -20,7 +20,7 @@ jobs:
             ${{ runner.os }}-gems-
       - name: Update bundler
         run: |
-          sudo gem install bundler:2.2.6
+          sudo gem update bundler
       - name: GIT config
         run: |
           git config --global user.name "Ulysses Zhan"
