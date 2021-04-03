@@ -59,14 +59,15 @@
 	await runScriptFromUrl('js/plugins.js');
 	{{ content }}
 	await runScriptFromUrl(prefix + 'js/main.js');
+	document.body.lastChild.onload = window.onload;
 {% else %}
 	let modules = await fetchMod(prefix + 'rpg_core.json').then(r => r.join("\n"));
 	runScriptFromString(modules);
 	{{ content }}
 	await runScriptFromUrl('js/main.js');
+	onload();
 {% endif %}
-	document.body.lastChild.onload = window.onload;
-})();
+)();
 </script>
 </body>
 </html>
