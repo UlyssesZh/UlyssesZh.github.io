@@ -24,4 +24,4 @@ jobs:
           pre_build_commands: |
             git config --global user.email "2938747508@qq.com"
             git config --global user.name "Ulysses Zhan"
-            sudo gem install bundler 
+            gem install bundler 
