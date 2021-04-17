@@ -9,7 +9,7 @@ var $plugins = [
 		"status": true,
 		"name": "RTP",
 		"parameters": {
-			"RTPPath": "http://121.5.5.108/rmmv_materials/"
+			"RTPPath": "https://cdn.jsdelivr.net/gh/UlyssesZh/rmmv_materials@master/"
 		}
 	},
 	{

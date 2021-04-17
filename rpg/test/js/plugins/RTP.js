@@ -85,4 +85,11 @@ ULYSSES_PLUGINS.register(1);
 		if (useRTP(url)) url = path + url;
 		oldHtml5AudioSetup.call(this, url);
 	};
+
+	var oldBitmapRequestImage = Bitmap.prototype._requestImage;
+	Bitmap.prototype._requestImage = function(url) {
+		oldBitmapRequestImage.call(this, url);
+		if (this._image) this._image.crossOrigin = 'anonymous';
+	}
+	
 })();
