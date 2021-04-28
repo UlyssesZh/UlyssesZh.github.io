@@ -81,17 +81,24 @@
 \maketitle
 
 \begin{abstract}
-We have developed convenient online software that can simulate hamiltonian mechanics.
-Users can see the motion of a system as long as he tells the simulator
-the hamiltonian of the system and the initial conditions of it.
-The simulator can also analyze the oscillation pattern of an oscillator
-by using FFT to derive the frequency domain of the motion.
+In order to conveniently simulate hamiltonian systems,
+I have developed online software that can simulate hamiltonian mechanics.
+Users can see the motion of a system as long as
+he tells the simulator the hamiltonian of the system and the initial conditions of it.
+The simulator can be customized to draw the graph of generalized coordinates and generalized momenta w.r.t.\ time,
+the shape of the motion (if the generalized coordinates have any geometric meaning),
+and the phase path.
+The simulator can also analyze the oscillation pattern of an oscillator by using FFT to derive the frequency domain of the motion,
+presenting a graph of the spectrum.
+Not limited to classical mechanics, because of the extendibility of hamiltonian mechanics,
+the simulator can also simulate special relativity.
 The simulator is small and fast and is convenient and easy to operate and customize.
-The user interface is simple (a graphics interface for simple basic operations
-and a console interface for other operations).
-The simulator can also output data of the simulated system to create datasets
-for other potential usages.
-There are a lot of applications that can be done with it.
+The user interface is simple (a graphics interface for simple basic operations and a console interface for other operations).
+The simulator can also output data of the simulated system to create datasets for other potential usages.
+There are a lot of applications that can be done with it:
+it can simulate typical models like parametric resonance,
+non-linear oscillators, Kepler's 2-body problem, adiabatic invariants,
+scattered beam of particles, and special relativity.
 \end{abstract}
 
 \keywords{hamiltonian, simulation, mechanics, visualization}
@@ -146,8 +153,8 @@ Note that if a symbol has domain $A\rightarrow B$,
 which means a function from set $A$ to set $B$,
 then it can sometimes represent the value of the function
 and lies in the domain $B$.
-In other words, if it says that $f:A\rightarrow B$ is a function w.r.t. $x$,
-then $f$ can be a abbreviation of $f\left(x\right)$.
+In other words, if it says that $f:A\rightarrow B$ is a function w.r.t.\ $x$,
+then $f$ can be a abbreviation of $f\!\left(x\right)$.
 
 We always assume that functions we encounter have good enough properties as long as we need to use this property.
 
@@ -171,11 +178,11 @@ They are not included the the list of symbols, but their specific meanings are e
     \hline
     $t$ & $\mathbb R$ & Time\\
     $\Delta t$ & $\mathbb R^+$ & The increment step of the ODE solver & $\SI{5e-4}{}$\\
-    $\iota$ & $\left\{2\zeta\middle|\zeta\in\mathbb Z^+\right\}$ & The dimension of the vector in the ODE\\
-    $\mathbf x$ & $\mathbb R\rightarrow\mathbb R^\iota$ & The state of a system w.r.t. $t$ & $\left(\mathbf q,\mathbf p\right)$\\
-    $\mathbf q$ & $\mathbb R\rightarrow\mathbb R^{\iota/2}$ & Generalized coordinates w.r.t. $t$\\
-    $\mathbf p$ & $\mathbb R\rightarrow\mathbb R^{\iota/2}$ & Generalized momentum w.r.t. $t$\\
-    $\mathcal H$ & $\mathbb R\times\mathbb R^\iota\rightarrow\mathbb R$ & Hamiltonian w.r.t. $\left(t,\mathbf x\right)$\\
+    $\iota$ & $\left\{2\zeta\,\middle|\,\zeta\in\mathbb Z^+\right\}$ & The dimension of the vector in the ODE\\
+    $\mathbf x$ & $\mathbb R\rightarrow\mathbb R^\iota$ & The state of a system w.r.t.\ $t$ & $\left(\mathbf q,\mathbf p\right)$\\
+    $\mathbf q$ & $\mathbb R\rightarrow\mathbb R^{\iota/2}$ & Generalized coordinates w.r.t.\ $t$\\
+    $\mathbf p$ & $\mathbb R\rightarrow\mathbb R^{\iota/2}$ & Generalized momentum w.r.t.\ $t$\\
+    $\mathcal H$ & $\mathbb R\times\mathbb R^\iota\rightarrow\mathbb R$ & Hamiltonian w.r.t.\ $\left(t,\mathbf x\right)$\\
     $\boldsymbol\omega$ & $\mathbb R^{\iota\times\iota}$ & A matrix to make symplectic gradients & $\left[\begin{matrix}
       \mathbf O & \mathbf I_{\iota/2}\\
       -\mathbf I_{\iota/2} & \mathbf O
@@ -201,13 +208,13 @@ They are not included the the list of symbols, but their specific meanings are e
     \hline
     $\dot f$ & Complete derivative\tablefootnote{
       \label{fn:complete}Complete derivative means that:
-      if $f$ is a function w.r.t. $g$, and $g$ is a function w.r.t. $t$,
-      then $\dot f$ denotes $\frac{\mathrm d}{\mathrm dt}f\left(g\left(t\right)\right)$.
-    } of $f$ w.r.t. $t$ & $\frac{\mathrm df}{\mathrm dt}$\\
+      if $f$ is a function w.r.t.\ $g$, and $g$ is a function w.r.t.\ $t$,
+      then $\dot f$ denotes $\frac{\mathrm d}{\mathrm dt}f\!\left(g\!\left(t\right)\right)$.
+    } of $f$ w.r.t.\ $t$ & $\frac{\mathrm df}{\mathrm dt}$\\
     $\Delta f$ & Complete change\tablefootnote{
       Complete change is similar to complete derivative. See Footnote \ref{fn:complete}. 
-    } in $f$ when $t$ becomes $t+\Delta t$ & $f\left(t+\Delta t\right)-f\left(t\right)$\\
-    $\sum_j^nr_j$ & Sum of $n$ numbers w.r.t. index $j$\tablefootnote{
+    } in $f$ when $t$ becomes $t+\Delta t$ & $f\!\left(t+\Delta t\right)-f\!\left(t\right)$\\
+    $\sum_j^nr_j$ & Sum of $n$ numbers w.r.t.\ index $j$\tablefootnote{
       By conventions in computer science, indices start from $0$ instead of $1$.
       The convention will be followed in the article.
     } & $\sum_{j=0}^{n-1}r_j$\\
@@ -224,7 +231,7 @@ They are not included the the list of symbols, but their specific meanings are e
 
 A dynamics system's motion can be predicted using some ordinary differential equations (ODE) in form of
 \begin{equation}
-  \dot{\mathbf x}=\mathbf f\left(t,\mathbf x\right),
+  \dot{\mathbf x}=\mathbf f\!\left(t,\mathbf x\right),
   \label{eq:ode}
 \end{equation}
 where $\mathbf f:\mathbb R\times\mathbb R^\iota\mapsto\mathbb R^\iota$
@@ -250,7 +257,7 @@ This ODE (Equation \ref{eq:ode}) can be solved numerically using the Runge--Kutt
 \end{equation}
 where $\mathbf K_j$ is defined recursively as \cite[p. 907]{press2007numerical}
 \begin{equation}
-  \mathbf K_j:=f\left(t+\Delta t\sum_k^ja_{j,k},\mathbf x+\Delta t\sum_k^ja_{j,k}\mathbf K_k\right).
+  \mathbf K_j:=f\!\left(t+\Delta t\sum_k^ja_{j,k},\mathbf x+\Delta t\sum_k^ja_{j,k}\mathbf K_k\right).
 \end{equation}
 The smaller $\Delta t$ is, the more precise and the less efficient the solver is.
 
@@ -281,7 +288,7 @@ let $\mathbf x\leftarrow\mathbf x+\Delta\mathbf x$ and $t\leftarrow t+\Delta t$.
 
 The ODE solver can give the numerical value of $\mathbf x$ at any $t$
 as long as the numerical form of $\mathbf f$
-and a initial value $\mathbf x\left(0\right)$
+and a initial value $\mathbf x\!\left(0\right)$
 is given.
 
 \subsection{Constructing ODE}
@@ -294,7 +301,7 @@ Here the hamiltonian method is adopted.
 
 The hamiltonian mechanics states that, for some dynamics system,
 there exists a function
-$\mathcal H:\mathbb R^\iota\times\mathbb R\rightarrow\mathbb R:\left(t,\mathbf x\right)\mapsto\mathcal H\left(t,\mathbf x\right)$
+$\mathcal H:\mathbb R^\iota\times\mathbb R\rightarrow\mathbb R:\left(t,\mathbf x\right)\mapsto\mathcal H\!\left(t,\mathbf x\right)$
 such that the motion of the system satisfy the equation
 called \textbf{canonical equation}\footnote{
   The canonical equation is usually denoted as
@@ -308,7 +315,7 @@ called \textbf{canonical equation}\footnote{
 \begin{equation}
   \dot{\mathbf x}=\boldsymbol\omega\nabla_{\mathbf x}\mathcal H,
 \end{equation}
-where $\boldsymbol\omega\nabla_{\mathbf x}$ denotes the \textbf{symplectic gradient} w.r.t. $\mathbf x$.
+where $\boldsymbol\omega\nabla_{\mathbf x}$ denotes the \textbf{symplectic gradient} w.r.t.\ $\mathbf x$.
 
 Under the circumstance of hamiltonian mechanics,
 the vector $\mathbf x\in\mathbb R^\iota$ can be separated into two vectors
@@ -319,7 +326,7 @@ so the components of $\mathbf x$ can be called \mintinline{js}{q0}, \mintinline{
 Since the gradient $\nabla_{\mathbf x}\mathcal H$ can be calculated numerically easily,
 we can give the numerical form of $\mathbf f$ in Equation \ref{eq:ode} according to
 \begin{equation}
-  \mathbf f\left(t,\mathbf x\right):=\boldsymbol\omega\nabla_{\mathbf x}\mathcal H
+  \mathbf f\!\left(t,\mathbf x\right):=\boldsymbol\omega\nabla_{\mathbf x}\mathcal H
   \label{eq:def_f}
 \end{equation}
 and can thus solve Equation \ref{eq:ode} numerically according to the method described in Section \ref{sec:ode_solver}.
@@ -345,7 +352,7 @@ There are various window functions candidates,
 each of which have its unique application scenes.
 Here the Hamming window function \cite{harris1978ft}
 \begin{equation}
-  W\left(\zeta\right):=\frac{25}{46}-\frac{21}{46}\cos\left(2\pi\zeta\right)
+  W\!\left(\zeta\right):=\frac{25}{46}-\frac{21}{46}\cos\!\left(2\pi\zeta\right)
   \label{eq:hamming}
 \end{equation}
 is adopted because it fits with most cases.
@@ -353,13 +360,13 @@ is adopted because it fits with most cases.
 \begin{figure}[h]
   \centering
   \begin{tikzpicture}
-    \node[left] at (-1,-1) {$y\left(t\right)$};
+    \node[left] at (-1,-1) {$y\!\left(t\right)$};
     \fill[green!40!white] (0,-0.5) rectangle +(4,-1);
     \node[below,text=green!50!black] at (2,-1.5) {$\left[0,N\Delta t\right)$};
     \draw[thick,domain=0:10,samples=200,variable=\x] plot ({\x},{0.5*sin(600*\x)-1});
-    \node[left] at (-1,-3) {$W\left(\frac t{N\Delta t}\right)y\left(t\right)$};
+    \node[left] at (-1,-3) {$W\!\left(\frac t{N\Delta t}\right)y\!\left(t\right)$};
     \draw[thick,domain=0:4,samples=80,variable=\x] plot ({\x},{(25/46-21/46*cos(360*\x/4))*0.5*sin(600*\x)-3});
-    \node[left] at (-1,-4.5) {$\mathcal F\left\{t\mapsto W\left(\frac t{N\Delta t}\right)y\left(t\right)\right\}\left(s\right)$};
+    \node[left] at (-1,-4.5) {$\mathcal F\!\left\{t\mapsto W\!\left(\frac t{N\Delta t}\right)y\!\left(t\right)\right\}\!\left(s\right)$};
     \draw[thick,domain=2:2.25,samples=200,variable=\x] plot ({\x},{0.5*sin(1440*\x)-4.5});
     \draw[thick] (0,-4.5) -- (2,-4.5);
     \draw[thick] (2.25,-4.5) -- (4,-4.5);
@@ -438,7 +445,7 @@ According to the theories described in Section \ref{sec:theory},
 a program can be designed to give
 the generalized coordinates $\mathbf q$ and generalized momentum $\mathbf p$ at any $t$
 according to the input hamiltonian $\mathcal H$
-and initial values $\mathbf q\left(0\right)$ and $\mathbf p\left(0\right)$.
+and initial values $\mathbf q\!\left(0\right)$ and $\mathbf p\!\left(0\right)$.
 
 However, a person can hardly figure out the patterns in the motion
 by just looking at a bunch of $\left(t,\mathbf x\right)$ pairs.
@@ -448,7 +455,7 @@ according to the $\left(t,\mathbf x\right)$ pairs.
 
 To be more specific, for each component $y$ of $\mathbf x$,
 on the $\xi$-$\eta$ plane (the canvas),
-the point $\left(m_t\left(t\right),m_y\left(y\right)\right)$ should be plotted.
+the point $\left(m_t\!\left(t\right),m_y\!\left(y\right)\right)$ should be plotted.
 The introduction of $m_t$ and $m_y$ is because the coordinates on the canvas
 are in pixel, which is a small unit.
 Another purpose of $m_t$ and $m_y$ is to make it possible to use nonlinear
@@ -495,9 +502,9 @@ where $w$ and $h$ are also the width and height of the graphics screen.
 
 When the ODE solver increments,
 sprite 1 and sprite 2 move left by $\Delta m_t$.
-Now, the coordinates of sprite 1 are $\left(w-\left(m_t\left(t\right)\mathbin\%w\right),0\right)$,
-and the coordinates of sprite 2 are $\left(-\left(m_t\left(t\right)\mathbin\%w\right),0\right)$.
-Fill the pixel at $\left(m_t\left(t\right)\mathbin\%w,m_y\left(y\right)\right)$
+Now, the coordinates of sprite 1 are $\left(w-\left(m_t\!\left(t\right)\mathbin\%w\right),0\right)$,
+and the coordinates of sprite 2 are $\left(-\left(m_t\!\left(t\right)\mathbin\%w\right),0\right)$.
+Fill the pixel at $\left(m_t\!\left(t\right)\mathbin\%w,m_y\!\left(y\right)\right)$
 on the bitmap of sprite 1.
 This process is shown in Figure \ref{fig:scrolling}.
 
@@ -574,7 +581,7 @@ When you open the \href{https://UlyssesZh.github.io/rpg/mechsimul2}{webpage},
 it will start simulating the default model,
 which is a 1-dimensional vibration with parametric vibration \cite[p. 82]{landau1976mechanics} and alternating external force \cite[p. 61]{landau1976mechanics}
 \begin{equation}
-  \mathcal H\left(t,q,p\right)=\frac{p^2}2+\omega^2\left(1+u\cos\left(\gamma t\right)\right)\frac{q^2}2-fq\cos\left(\kappa t+\beta\right),
+  \mathcal H\!\left(t,q,p\right)=\frac{p^2}2+\omega^2\left(1+u\cos\!\left(\gamma t\right)\right)\frac{q^2}2-fq\cos\!\left(\kappa t+\beta\right),
 \end{equation}
 where
 \begin{equation*}
@@ -667,7 +674,7 @@ Then, run \mintinline{js}{restart()}.
 
 \subsection{Changing the initial conditions}
 
-The initial conditions $\mathbf x\left(0\right)$ can be set to a customized one
+The initial conditions $\mathbf x\!\left(0\right)$ can be set to a customized one
 by running the following codes.
 
 \begin{minted}{js}
@@ -689,7 +696,7 @@ This can be done by changing $m_y$ using the following codes.
   restart();
 \end{minted}
 
-Now $m_y\left(y\right):=20\ln\left(1+\left|y\right|\right)\operatorname{sgn}y+h/2$.
+Now $m_y\!\left(y\right):=20\ln\left(1+\left|y\right|\right)\operatorname{sgn}y+h/2$.
 Note that in the codes, \mintinline{js}{Graphics.width} stands for $w$
 and \mintinline{js}{Graphics.height} stands for $h$.
 
@@ -783,7 +790,7 @@ with the first argument be the DOF, and the second argument be the hamiltonian f
 
 One example is to change the hamiltonian of the default model into that of a nonlinear oscillator
 \begin{equation*}
-  \mathcal H\left(t,q,p\right):=\frac{p^2}2+\frac{\omega_0^2q^2}2+\alpha q^3+\beta q^4
+  \mathcal H\!\left(t,q,p\right):=\frac{p^2}2+\frac{\omega_0^2q^2}2+\alpha q^3+\beta q^4
 \end{equation*}
 by running the following codes.
 Before applying the codes, if you have runned some codes above,
@@ -819,7 +826,7 @@ the amplitude is now taken as $b=1$.
 \end{minted}
 
 We can use the simulator to verify the formula for calculating the frequency of the nonlinear oscillator \cite[p. 87]{landau1976mechanics}\footnote{
-  Precision to $\mathrm O\left(b^2\right)$.
+  Precision to $\mathrm O\!\left(b^2\right)$.
 }
 \begin{equation*}
   \omega=\omega_0+\left(\frac{3\beta}{2\omega_0}-\frac{15\alpha^2}{4\omega_0^3}\right)b^2=9.535.
@@ -844,7 +851,7 @@ The codes of the examples can also be seen on the
 2-body problems are systems with $4$ DOF.
 The hamiltonian of the model to be simulated is
 \begin{equation*}
-  \mathcal H\left(t,q_0,q_1,q_2,q_3,p_0,p_1,p_2,p_3\right):=
+  \mathcal H\!\left(t,q_0,q_1,q_2,q_3,p_0,p_1,p_2,p_3\right):=
   p_0^2+p_1^2+p_2^3+p_3^2-\frac{500}{\sqrt{\left(q_0-q_2\right)^2+\left(q_1-q_3\right)^2}}.
 \end{equation*}
 
@@ -958,9 +965,9 @@ The codes shown below can be modified to simulate other systems related to adiab
 Here the example adopted is the harmonic oscillator with its frequency altering slowly.
 The hamiltonian is
 \begin{equation*}
-  \mathcal H\left(t,q,p\right)=\frac{p^2}2+\omega\left(t\right)^2\frac{q^2}2,
+  \mathcal H\left(t,q,p\right)=\frac{p^2}2+\omega\!\left(t\right)^2\frac{q^2}2,
 \end{equation*}
-where $\omega\left(t\right):=4+0.05t$ changes slowly w.r.t. $t$.
+where $\omega\!\left(t\right):=4+0.05t$ changes slowly w.r.t.\ $t$.
 
 By the definition of the action variable,
 we can derive that the action variable for the harmonic oscillator is \cite[p. 300]{arnold1989mathmech}\cite[p. 157]{landau1976mechanics}
@@ -1016,7 +1023,7 @@ while $\omega$ and thus $\mathcal H$ changes slowly, $I$ does not vary.
 Suppose there is a beam of identical particles being shot toward a central force field.
 Each of the particles of the beam has hamiltonian
 \begin{equation*}
-  \mathcal H\left(t,q_0,q_1,p_0,p_1\right)=p_0^2+p_1^2+\frac{30}{\sqrt{q_0^2+q_1^2}}.
+  \mathcal H\!\left(t,q_0,q_1,p_0,p_1\right)=p_0^2+p_1^2+\frac{30}{\sqrt{q_0^2+q_1^2}}.
 \end{equation*}
 
 The beam will be scattered, and particles with different impact parameter will
@@ -1118,9 +1125,10 @@ as can be seen in Figure \ref{fig:distortion_scatter}.
 
 Not only classical mechanics, the simulator can simulate special relativity mechanics
 because relativity mechanics can be depicted by hamiltonian mechanics.
-Consider a relativity particle in a uniform gravitational field, which has hamiltonian \cite[p. 28]{landau2010fields}
+Consider a relativistic particle exerted on by a uniform force,
+which has hamiltonian \cite[p. 28]{landau2010fields}
 \begin{equation*}
-  \mathcal H\left(t,q,p\right):=\sqrt{p^2+10}-0.8q
+  \mathcal H\!\left(t,q,p\right):=\sqrt{p^2+10}-0.8q
 \end{equation*}
 and initial conditions $\left(q,p\right)=\left(-10,-10\right)$.
 
@@ -1188,6 +1196,7 @@ It is available on a
 \bibliographystyle{abbrv}
 \bibliography{mechsimul}
 
+\begin{comment}
 \newpage
 
 \addcontentsline{toc}{section}{Acknowledgements}
@@ -1200,5 +1209,6 @@ he proposed me some ideas on the functions of the simulator
 like the FFT analysis.
 
 I want to thank my parents for their supporting me spiritually when I stuck on my study.
+\end{comment}
 
 \end{document}
