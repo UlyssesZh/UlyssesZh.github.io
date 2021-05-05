@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: "en" }}">
+<head>
+	<meta charset="UTF-8">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta name="google-site-verification" content="{{ site.google_verification }}" />
+	{%- include google_analytics_head.html -%}
+	{%- seo -%}
+	{%- feed_meta -%}
+	{%- if jekyll.environment == 'production' and site.google_analytics -%}
+		{%- include google-analytics.html -%}
+	{%- endif -%}
+	<link rel="icon" href="/favicon.ico?" type="image/ico">
+	<link rel="apple-touch-icon" href="/favicon.ico?">
+	<title>{{ page.title }}</title>
+
+	<!-- reveal.js -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.0.2/dist/reset.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.0.2/dist/reveal.css">
+	<link rel="stylesheet" href="{{ page.theme | default: "https://cdn.jsdelivr.net/npm/reveal.js@4.0.2/dist/theme/simple.css" }}" id="theme">
+	<link rel="stylesheet" href="{{ page.highlight_theme | default: "https://cdn.jsdelivr.net/npm/reveal.js@4.0.2/plugin/highlight/monokai.css" }}" id="highlight-theme">
+	{%- include mathjax.html -%}
+</head>
+<body>
+	<div class="reveal">
+		<div class="slides">
+			{{ content }}
+		</div>
+	</div>
+	<script src="https://cdn.jsdelivr.net/npm/reveal.js@4.0.2/dist/reveal.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/reveal.js@4.0.2/plugin/notes/notes.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/reveal.js@4.0.2/plugin/search/search.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/reveal.js@4.0.2/plugin/markdown/markdown.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/reveal.js@4.0.2/plugin/highlight/highlight.js"></script>
+	<script>
+		Reveal.initialize({
+			controls: true,
+			progress: true,
+			center: true,
+			hash: true,
+			plugins: [RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight]
+		});
+	</script>
+</body>
+</html>

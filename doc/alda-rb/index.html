@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>RDoc Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+  var index_rel_prefix = "./";
+</script>
+
+<script src="./js/navigation.js" defer></script>
+<script src="./js/search.js" defer></script>
+<script src="./js/search_index.js" defer></script>
+<script src="./js/searcher.js" defer></script>
+<script src="./js/darkfish.js" defer></script>
+
+<link href="./css/fonts.css" rel="stylesheet">
+<link href="./css/rdoc.css" rel="stylesheet">
+
+
+
+
+<body id="top" role="document" class="file">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="./index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="./table_of_contents.html#pages">Pages</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  <div id="project-metadata">
+    <div id="fileindex-section" class="nav-section">
+  <h3>Pages</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./CODE_OF_CONDUCT_md.html">CODE_OF_CONDUCT</a>
+  
+    <li><a href="./LICENSE_txt.html">LICENSE</a>
+  
+    <li><a href="./README_md.html">README</a>
+  
+  </ul>
+</div>
+
+    <div id="classindex-section" class="nav-section">
+  <h3>Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./Alda.html">Alda</a>
+  
+    <li><a href="./Alda/AtMarker.html">Alda::AtMarker</a>
+  
+    <li><a href="./Alda/Chord.html">Alda::Chord</a>
+  
+    <li><a href="./Alda/CommandLineError.html">Alda::CommandLineError</a>
+  
+    <li><a href="./Alda/Cram.html">Alda::Cram</a>
+  
+    <li><a href="./Alda/Event.html">Alda::Event</a>
+  
+    <li><a href="./Alda/EventContainer.html">Alda::EventContainer</a>
+  
+    <li><a href="./Alda/EventList.html">Alda::EventList</a>
+  
+    <li><a href="./Alda/GetVariable.html">Alda::GetVariable</a>
+  
+    <li><a href="./Alda/InlineLisp.html">Alda::InlineLisp</a>
+  
+    <li><a href="./Alda/LispIdentifier.html">Alda::LispIdentifier</a>
+  
+    <li><a href="./Alda/Marker.html">Alda::Marker</a>
+  
+    <li><a href="./Alda/Note.html">Alda::Note</a>
+  
+    <li><a href="./Alda/Octave.html">Alda::Octave</a>
+  
+    <li><a href="./Alda/OrderError.html">Alda::OrderError</a>
+  
+    <li><a href="./Alda/Part.html">Alda::Part</a>
+  
+    <li><a href="./Alda/REPL.html">Alda::REPL</a>
+  
+    <li><a href="./Alda/REPL/TempScore.html">Alda::REPL::TempScore</a>
+  
+    <li><a href="./Alda/Rest.html">Alda::Rest</a>
+  
+    <li><a href="./Alda/Score.html">Alda::Score</a>
+  
+    <li><a href="./Alda/Sequence.html">Alda::Sequence</a>
+  
+    <li><a href="./Alda/Sequence/RefineFlatten.html">Alda::Sequence::RefineFlatten</a>
+  
+    <li><a href="./Alda/SetVariable.html">Alda::SetVariable</a>
+  
+    <li><a href="./Alda/Voice.html">Alda::Voice</a>
+  
+    <li><a href="./Array.html">Array</a>
+  
+    <li><a href="./FalseClass.html">FalseClass</a>
+  
+    <li><a href="./Hash.html">Hash</a>
+  
+    <li><a href="./Kernel.html">Kernel</a>
+  
+    <li><a href="./NilClass.html">NilClass</a>
+  
+    <li><a href="./Numeric.html">Numeric</a>
+  
+    <li><a href="./Proc.html">Proc</a>
+  
+    <li><a href="./Range.html">Range</a>
+  
+    <li><a href="./String.html">String</a>
+  
+    <li><a href="./StringIO.html">StringIO</a>
+  
+    <li><a href="./Symbol.html">Symbol</a>
+  
+    <li><a href="./TrueClass.html">TrueClass</a>
+  
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main">
+
+
+<h1 id="label-alda-rb">alda-rb<span><a href="#label-alda-rb">&para;</a> <a href="#top">&uarr;</a></span></h1>
+
+<p>A Ruby library for live-coding music with <a href="https://alda.io/">Alda</a>. Also provides an alda DSL in Ruby.</p>
+
+<h2 id="label-Installation">Installation<span><a href="#label-Installation">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p>Add this line to your application&#39;s Gemfile:</p>
+
+<pre class="ruby"><span class="ruby-identifier">gem</span> <span class="ruby-string">&#39;alda-rb&#39;</span>
+</pre>
+
+<p>And then execute:</p>
+
+<pre>$ bundle install</pre>
+
+<p>Or install it yourself as:</p>
+
+<pre>$ gem install alda-rb</pre>
+
+<h2 id="label-Usage">Usage<span><a href="#label-Usage">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p><a href="https://github.com/alda-lang/alda#Installation">Install Alda</a>, and try the following Ruby codes yourself:</p>
+
+<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">&#39;alda-rb&#39;</span>
+
+<span class="ruby-constant">Alda</span>.<span class="ruby-identifier">up</span> <span class="ruby-keyword">if</span> <span class="ruby-constant">Alda</span>.<span class="ruby-identifier">down?</span>
+<span class="ruby-identifier">puts</span> <span class="ruby-constant">Alda</span>.<span class="ruby-identifier">version</span>
+
+<span class="ruby-identifier">score</span> = <span class="ruby-constant">Alda</span><span class="ruby-operator">::</span><span class="ruby-constant">Score</span>.<span class="ruby-identifier">new</span> { <span class="ruby-identifier">o4</span>; <span class="ruby-identifier">c4</span><span class="ruby-operator">/</span><span class="ruby-identifier">e</span><span class="ruby-operator">/</span><span class="ruby-identifier">g</span>; <span class="ruby-operator">-</span><span class="ruby-identifier">d8</span>; <span class="ruby-identifier">r8_16</span>; <span class="ruby-operator">+</span><span class="ruby-identifier">f4</span>; <span class="ruby-identifier">o5</span>; <span class="ruby-identifier">c2</span> }
+
+<span class="ruby-constant">Alda</span><span class="ruby-operator">::</span><span class="ruby-constant">Score</span>.<span class="ruby-identifier">new</span> <span class="ruby-keyword">do</span>
+  <span class="ruby-identifier">piano_</span>
+  <span class="ruby-identifier">quant</span> <span class="ruby-value">200</span>
+  <span class="ruby-identifier">v1</span>
+  <span class="ruby-value">5</span>.<span class="ruby-identifier">times</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">t</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">transpose</span> <span class="ruby-identifier">t</span>
+    <span class="ruby-identifier">import</span> <span class="ruby-identifier">score</span>
+    <span class="ruby-identifier">note</span> <span class="ruby-identifier">midi_note</span>(<span class="ruby-value">30</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">t</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">t</span>), <span class="ruby-identifier">duration</span>(<span class="ruby-identifier">note_length</span> <span class="ruby-value">1</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">v2</span>; <span class="ruby-identifier">o6</span>
+  <span class="ruby-identifier">motif</span> = <span class="ruby-operator">-&gt;</span> { <span class="ruby-identifier">c200ms</span>; <span class="ruby-identifier">d500ms</span> }
+  <span class="ruby-value">8</span>.<span class="ruby-identifier">times</span> { <span class="ruby-identifier">motif</span> <span class="ruby-operator">*</span> <span class="ruby-value">2</span>; <span class="ruby-identifier">e400ms_4</span>; <span class="ruby-identifier">t4</span> { <span class="ruby-identifier">a</span>; <span class="ruby-identifier">b</span>; <span class="ruby-identifier">c</span> } }
+  <span class="ruby-identifier">_ended</span>
+  
+  <span class="ruby-identifier">violin_</span>
+  <span class="ruby-identifier">__ended</span>
+  <span class="ruby-operator">-&gt;</span><span class="ruby-identifier">i</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">c2</span>; <span class="ruby-identifier">d4</span>; <span class="ruby-identifier">e2_4</span>; <span class="ruby-identifier">e2</span>; <span class="ruby-identifier">d4</span>; <span class="ruby-identifier">c2_4</span>; <span class="ruby-identifier">c2</span>; <span class="ruby-identifier">e4</span>; <span class="ruby-identifier">d2</span>
+    <span class="ruby-identifier">i</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span> <span class="ruby-operator">?</span> (<span class="ruby-identifier">c4</span>; <span class="ruby-identifier">d1_2</span>) <span class="ruby-operator">:</span> (<span class="ruby-identifier">d4</span>; <span class="ruby-identifier">c1_2</span>)
+  <span class="ruby-keyword">end</span> <span class="ruby-operator">*</span> <span class="ruby-value">2</span>
+
+<span class="ruby-keyword">end</span>.<span class="ruby-identifier">play</span>
+</pre>
+
+<h2 id="label-Development">Development<span><a href="#label-Development">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p>After checking out the repo, run <code>bin/setup</code> to install dependencies. Then, run <code>rake test</code> to run the tests. You can also run <code>bin/console</code> for an interactive prompt that will allow you to experiment.</p>
+
+<p>To install this gem onto your local machine, run <code>bundle exec rake install</code>. To release a new version, update the version number in <code>version.rb</code>, and then run <code>bundle exec rake release</code>, which will create a git tag for the version, push git commits and tags, and push the <code>.gem</code> file to <a href="https://rubygems.org">rubygems.org</a>.</p>
+
+<h2 id="label-Contributing">Contributing<span><a href="#label-Contributing">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p>Bug reports and pull requests are welcome on GitHub at <a href="https://github.com/UlyssesZh/alda-rb">github.com/UlyssesZh/alda-rb</a>. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the <a href="CODE_OF_CONDUCT_md.html">code of conduct</a>.</p>
+
+<h2 id="label-License">License<span><a href="#label-License">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p>The gem is available as open source under the terms of the <a href="https://opensource.org/licenses/MIT">MIT License</a>.</p>
+
+<h2 id="label-Code+of+Conduct">Code of Conduct<span><a href="#label-Code+of+Conduct">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p>Everyone interacting in the alda-rb project&#39;s codebases, issue trackers, chat rooms and mailing lists is expected to follow the <a href="CODE_OF_CONDUCT_md.html">code of conduct</a>.</p>
+
+
+</main>
+
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="https://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.2.1.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+
