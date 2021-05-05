@@ -1,6 +1,6 @@
 ---
 title: New website for Little Turings (club)
-date: 2020-07-05 10:10:46 +0800
+date: 2020-07-05 10:10:46 +08:00
 categories:
 - update
 tags:

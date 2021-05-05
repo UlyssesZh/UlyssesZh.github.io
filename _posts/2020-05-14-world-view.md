@@ -1,6 +1,6 @@
 ---
 title: View of the world (physically rather than philosophically)
-date: 2020-05-14 19:18:39 +0800
+date: 2020-05-14 19:18:39 +08:00
 categories:
 - physics
 tags:

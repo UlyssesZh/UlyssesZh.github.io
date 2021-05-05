@@ -1,6 +1,6 @@
 ---
 title: Running Jekyll myself
-date: 2020-04-14 14:22:15 +0800
+date: 2020-04-14 14:22:15 +08:00
 categories:
 - programming
 tags:

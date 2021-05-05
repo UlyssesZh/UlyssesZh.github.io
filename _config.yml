@@ -5,6 +5,9 @@ collections:
   posts:
     title: Posts
     output: true
+  uploads:
+    title: Uploads
+    output: true
 email: UlyssesZhan@gmail.com
 description: Here we are at the awesome (awful) blog written by Ulysses Zhan!
 copyright: 2020 Ulysses Zhan
@@ -26,9 +29,9 @@ exclude:
 - README.md
 - Gemfile
 - Gemfile.lock
-- .git/
-- .idea/
-- .rubocop.yml
+- ".git/"
+- ".idea/"
+- ".rubocop.yml"
 - publish.sh
 measurement_id: G-7TSJ5VM6YC
 google_verification: ZuV45Knwuwl49Nvh9UsDzniZ-3qy3bGhBPofLK3SZPw
