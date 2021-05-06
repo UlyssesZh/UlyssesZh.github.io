@@ -1,6 +1,6 @@
 ---
 title: The concentration change of gas in reversible reactions
-date: 2020-04-12 10:00:01 +0800
+date: 2020-04-12 10:00:01 +08:00
 categories:
 - chemistry
 tags:

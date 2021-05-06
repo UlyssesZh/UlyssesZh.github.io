@@ -1,6 +1,6 @@
 ---
 title: Drawing a heart using Joukowsky transformation
-date: 2020-06-13 16:19:58 +0800
+date: 2020-06-13 16:19:58 +08:00
 categories:
 - math
 tags:

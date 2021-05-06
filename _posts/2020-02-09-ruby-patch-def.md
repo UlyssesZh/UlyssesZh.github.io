@@ -1,13 +1,13 @@
 ---
 title: Monkey-patching graciously
-date: 2020-02-09 05:16:31 Z
+date: 2020-02-09 13:16:31 +08:00
 categories:
 - programming
-layout: post
 tags:
 - ruby
 - meta programming
 - long paper
+layout: post
 ---
 
 I am going to show how to monkey-patch graciously using

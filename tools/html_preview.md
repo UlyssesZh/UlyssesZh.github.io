@@ -1,6 +1,6 @@
 ---
-layout: tool
 title: HTML preview
+layout: tool
 ---
 
 <script src="https://cdn.jsdelivr.net/npm/autosize@4.0.2/dist/autosize.min.js"></script>

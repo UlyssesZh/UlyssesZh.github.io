@@ -1,6 +1,6 @@
 ---
 title: The structure of a basic RM game
-date: 2020-04-08 09:28:05 +0800
+date: 2020-04-08 09:28:05 +08:00
 categories:
 - programming
 tags:

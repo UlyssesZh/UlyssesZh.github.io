@@ -1,6 +1,6 @@
 ---
-layout: my_page
 title: Mechanics simulator examples
+layout: my_page
 ---
 
 ## Kepler’s 2-body problem

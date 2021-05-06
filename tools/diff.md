@@ -1,6 +1,6 @@
 ---
-layout: tool
 title: Diff
+layout: tool
 ---
 
 <script src="https://cdn.jsdelivr.net/npm/diff_match_patch@0.1.1/lib/diff_match_patch.js"></script>

@@ -1,6 +1,6 @@
 ---
 title: Writing a DSL with commands split by space
-date: 2020-04-27 20:39:39 +0800
+date: 2020-04-27 20:39:39 +08:00
 categories:
 - programming
 tags:
