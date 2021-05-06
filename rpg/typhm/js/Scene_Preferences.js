@@ -1,4 +1,4 @@
-window.preferences = {offset: 0.0};
+window.preferences = {offset: 0.0, playRate: 1.0};
 
 function Scene_Preferences() {
 	this.initialize.apply(this, arguments);

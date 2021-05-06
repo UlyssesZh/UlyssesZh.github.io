@@ -145,7 +145,7 @@ Scene_BrowseFiles.prototype._refreshPreview = async function () {
 			this._preview.bitmap.drawText(`Beatmap author: ${beatmap.beatmapAuthor}`, 0, 80, Graphics.width, 40);
 			this._preview.bitmap.drawText(`Difficulty: ${beatmap.difficulty}`, 0, 120, Graphics.width, 40);
 			this._preview.bitmap.drawText(`Length: ${length}ms`, 0, 160, Graphics.width, 40);
-			this._preview.bitmap.drawText(`Objects count: ${beatmap.notesCount}`, 0, 200, Graphics.width, 40);
+			this._preview.bitmap.drawText(`Notes count: ${beatmap.notesCount}`, 0, 200, Graphics.width, 40);
 		});
 	} else {
 		this._preview.bitmap.clear();

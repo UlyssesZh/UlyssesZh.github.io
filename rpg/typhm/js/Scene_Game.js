@@ -12,8 +12,6 @@ Scene_Game.prototype.initialize = function (musicUrl, beatmapUrl) {
 };
 
 Scene_Game.prototype.start = function () {
-	console.log(this._musicUrl, this._beatmapUrl);
-
 	this._loading = new Sprite(new Bitmap(120, TyphmConstants.TEXT_HEIGHT));
 	this._center(this._loading, 300);
 	this._loading.bitmap.drawText('Loading...', 0, 0, 120, TyphmConstants.TEXT_HEIGHT, 'white');
@@ -57,7 +55,7 @@ Scene_Game.prototype.start = function () {
 	this.addChild(this._line1);
 
 	this._line2 = new Sprite();
-	this._line2.width = 1024;
+	this._line2.width = Graphics.width;
 	this._line2.anchor.y = 0.5;
 	this._center(this._line2, Graphics.height * 3/4);
 	this.addChild(this._line2);
@@ -143,12 +141,11 @@ Scene_Game.prototype.start = function () {
 	window.addEventListener('blur', this._blurEventListener);
 
 	this._loadingFinished = false;
+	this._offsetWizard = false;
 	this._onLoad();
 
 	this._shouldRestart = false;
 	this._shouldBack = false;
-
-	this._offsetWizard = false;
 };
 
 Scene_Game.prototype.update = function () {
@@ -296,8 +293,9 @@ Scene_Game.prototype._resume = function () {
 	if (!this._ended) {
 		if (this._hasMusic) {
 			this._audioPlayer.play(false, this._lastPos/1000);
+			this._audioPlayer.pitch = preferences.playRate;
 		} else {
-			this._starting = performance.now() - this._lastPos;
+			this._starting = performance.now() - this._lastPos/preferences.playRate;
 		}
 	}
 };
@@ -324,19 +322,22 @@ Scene_Game.prototype._onKeydown = function (event) {
 					if (this._inaccuraciesArray) {
 						this._inaccuraciesArray.push(now - event.time);
 					}
-					inaccuracy = (now - event.time) / this._inaccuracyTolerance;
-					this._beatmap.clearObject(event, TyphmUtils.getRgbFromHue(2*Math.PI*inaccuracy));
+					inaccuracy = (now - event.time)/preferences.playRate / this._inaccuracyTolerance;
+					const color = TyphmUtils.getRgbFromHue(2*Math.PI*inaccuracy);
+					this._beatmap.clearObject(event, color);
 					this._unclearedEvents.splice(i, 1);
 					this._score += Math.round(1000*(Math.cos(Math.PI*inaccuracy)+1));
 					this._updateScore();
 					this._combo++;
 					this._updateCombo();
 					this._createInaccuracyIndicator(inaccuracy);
+					this._createHitEffect(event, color);
 					hit = true;
 					break;
 				}
 			}
 			if (!hit) {
+				this._createWrongNote(key, now);
 				this._combo = 0;
 				this._updateCombo();
 				this._score -= 500;
@@ -354,6 +355,20 @@ Scene_Game.prototype._updateScore = function () {
 Scene_Game.prototype._updateCombo = function () {
 	this._comboSprite.bitmap.clear();
 	this._comboSprite.bitmap.drawText(this._combo, 0, 0, 128, TyphmConstants.TEXT_HEIGHT, 'left');
+	if (this._combo > 0 && this._combo % 25 === 0) {
+		const comboIndicator = new Sprite(new Bitmap(512, 128));
+		comboIndicator.bitmap.fontSize = 108;
+		comboIndicator.bitmap.textColor = 'gray';
+		comboIndicator.bitmap.drawText(this._combo, 0, 0, 512, 128, 'center');
+		comboIndicator.anchor.y = 0.5;
+		this._center(comboIndicator, Graphics.height / 2);
+		this.addChild(comboIndicator);
+		comboIndicator.update = () => {
+			comboIndicator.opacity *= 0.95;
+			if (comboIndicator.opacity <= 5)
+				this.removeChild(comboIndicator);
+		};
+	}
 };
 
 Scene_Game.prototype._now = function () {
@@ -363,7 +378,7 @@ Scene_Game.prototype._now = function () {
 		else
 			return this._audioPlayer.seek()*1000 + preferences.offset;
 	} else {
-		return performance.now() - this._starting;
+		return (performance.now() - this._starting) * preferences.playRate;
 	}
 };
 
@@ -374,12 +389,42 @@ Scene_Game.prototype._createInaccuracyIndicator = function (inaccuracy) {
 	inaccuracyIndicator.x = this._inaccuracyBar.x + 
 			this._inaccuracyBar.width/2 * inaccuracy;
 	inaccuracyIndicator.y = this._inaccuracyBar.y;
-	inaccuracyIndicator.counter = 0;
 	this.addChild(inaccuracyIndicator);
 	inaccuracyIndicator.update = () => {
 		inaccuracyIndicator.opacity -= 0.5;
 		if (inaccuracyIndicator.opacity <= 0)
 			this.removeChild(inaccuracyIndicator);
+	};
+};
+
+Scene_Game.prototype._createHitEffect = function (event, color) {
+	const hitEffect = new Sprite(new Bitmap(32, 32));
+	hitEffect.bitmap.fillAll(color);
+	hitEffect.anchor.x = 0.5;
+	hitEffect.anchor.y = 0.5;
+	hitEffect.x = event.x;
+	hitEffect.y = this._line1.y - event.y;
+	this.addChild(hitEffect);
+	hitEffect.update = () => {
+		hitEffect.opacity *= 0.9;
+		if (hitEffect.opacity <= 5)
+			this.removeChild(hitEffect);
+	};
+};
+
+Scene_Game.prototype._createWrongNote = function (key, time) {
+	const wrongNote = new Sprite(new Bitmap(32, 32));
+	wrongNote.bitmap.textColor = 'red';
+	wrongNote.bitmap.drawText(key, 0, 0, 32, 32, 'center');
+	wrongNote.anchor.x = 0.5;
+	wrongNote.anchor.y = 0.5;
+	wrongNote.x = this._getXFromTime(time);
+	wrongNote.y = this._line1.y - 100 + Math.random() * 200;
+	this.addChild(wrongNote);
+	wrongNote.update = () => {
+		wrongNote.opacity *= 0.9;
+		if (wrongNote.opacity <= 5)
+			this.removeChild(wrongNote);
 	};
 };
 
