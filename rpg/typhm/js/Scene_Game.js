@@ -151,7 +151,7 @@ Scene_Game.prototype.start = function () {
 Scene_Game.prototype.update = function () {
 	if (!this._paused && !this._ended) {
 		const now = this._now();
-		this._progressIndicator.x = Graphics.width*(now-this._beatmap.start)/this._length;
+		this._progressIndicator.x = Graphics.width*Math.min((now-this._beatmap.start)/this._length,1);
 		this._judgeLine.x = this._getXFromTime(now);
 		this._judgeLine.y = this._line1.y;
 		let i = 0;

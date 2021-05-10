@@ -28,6 +28,23 @@ Select "Browse store" in the game and type in the filename of the beatmap found 
 You may publish your own beatmaps through sending a pull request for that repo.
 Feel free to publish new beatmaps!
 
+Since most pieces of music used by beatmaps are specified using URL
+whose domain is different from ulysseszh.github.io,
+and it does not allow ulysseszh.github.io to get access to resources on it,
+you may meet problems when trying to play such beatmaps according to the
+[same-origin policy](https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy).
+To circumvent this problem, you have to install plugins to modify the browser
+you use to force it to allow accessing to resources from various origins.
+One of the recommendations is
+[Moesif Origin & CORS Changer](https://chrome.google.com/webstore/detail/moesif-origin-cors-change/digfbfaphojjndkpccljibejjbppifbc)
+(a chrome extension).
+Note that forcing Cross-Origin Resources Sharing (CORS) can
+make your computer potentially vulnerable to network attacks,
+so only enable forcing CORS
+when you trust the source of the music for the beatmap you are playing
+and disable forcing CORS after you finish playing.
+See the [notice in typhm_store](https://github.com/UlyssesZh/typhm_store#why-cannot-i-play-a-beatmap).
+
 ### Playing through selecting from history
 
 (The feature is under development.)
