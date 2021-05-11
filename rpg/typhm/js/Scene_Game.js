@@ -119,6 +119,14 @@ Scene_Game.prototype.start = function () {
 	this._progressIndicator.anchor.x = 1;
 	this.addChild(this._progressIndicator);
 
+	if (preferences.autoPlay) {
+		this._autoPlayIndicator = new Sprite(new Bitmap(256, TyphmConstants.TEXT_HEIGHT));
+		this._autoPlayIndicator.anchor.y = 0.5;
+		this._autoPlayIndicator.y = Graphics.height / 2;
+		this._autoPlayIndicator.bitmap.drawText('Auto-playing', 0, 0, 256, TyphmConstants.TEXT_HEIGHT);
+		this.addChild(this._autoPlayIndicator);
+	}
+
 	this._beatmap = new Beatmap(this._beatmapUrl);
 
 	this._hasMusic = !!this._musicUrl;
@@ -140,6 +148,8 @@ Scene_Game.prototype.start = function () {
 	this._blurEventListener = this._onBlur.bind(this);
 	window.addEventListener('blur', this._blurEventListener);
 
+	this._resumingCountdown = null;
+
 	this._loadingFinished = false;
 	this._offsetWizard = false;
 	this._onLoad();
@@ -149,7 +159,7 @@ Scene_Game.prototype.start = function () {
 };
 
 Scene_Game.prototype.update = function () {
-	if (!this._paused && !this._ended) {
+	if (!this._resumingCountdown && !this._paused && !this._ended) {
 		const now = this._now();
 		this._progressIndicator.x = Graphics.width*Math.min((now-this._beatmap.start)/this._length,1);
 		this._judgeLine.x = this._getXFromTime(now);
@@ -162,8 +172,16 @@ Scene_Game.prototype.update = function () {
 			if (now < event.time)
 				break;
 			if (event.key) {
-				if (now >= event.time + this._inaccuracyTolerance) {
-					this._beatmap.clearObject(event, 'gray');
+				if (preferences.autoPlay && now >= event.time) {
+					this._beatmap.clearNote(event, 'red');
+					this._createHitEffect(event, 'red');
+					this._combo++;
+					this._updateCombo();
+					this._score += 2000;
+					this._updateScore();
+					this._unclearedEvents.splice(i, 1);
+				} else if (now >= event.time + this._inaccuracyTolerance) {
+					this._beatmap.clearNote(event, 'gray');
 					this._combo = 0;
 					this._updateCombo();
 					this._unclearedEvents.splice(i, 1);
@@ -278,6 +296,8 @@ Scene_Game.prototype._pause = function () {
 		this._paused = true;
 		this._setButtonsVisible(true);
 		this._activeEnding = true;
+		if (this._resumingCountdown)
+			this.removeChild(this._resumingCountdown);
 		if (this._hasMusic) {
 			this._audioPlayer.stop();
 			this._audioPlayer.addStopListener(this._onStop.bind(this));
@@ -291,14 +311,22 @@ Scene_Game.prototype._resume = function () {
 	this._paused = false;
 	this._setButtonsVisible(false);
 	if (!this._ended) {
-		if (this._hasMusic) {
-			this._audioPlayer.play(false, this._lastPos/1000);
-			this._audioPlayer.pitch = preferences.playRate;
-		} else {
-			this._starting = performance.now() - this._lastPos/preferences.playRate;
-		}
+		if (preferences.countdown)
+			this._resumingCountdown = new Scene_Game.Sprite_ResumingCountdown(this);
+		else
+			this.actualResume();
 	}
 };
+
+Scene_Game.prototype.actualResume = function () {
+	this._resumingCountdown = null;
+	if (this._hasMusic) {
+		this._audioPlayer.play(false, this._lastPos/1000);
+		this._audioPlayer.pitch = preferences.playRate;
+	} else {
+		this._starting = performance.now() - this._lastPos/preferences.playRate;
+	}
+}
 
 Scene_Game.prototype._onKeydown = function (event) {
 	if (event.key ==='Escape') {
@@ -309,14 +337,14 @@ Scene_Game.prototype._onKeydown = function (event) {
 		} else if (event.key === 'b') {
 			this._shouldBack = true;
 		}
-	} else {
+	} else if (!preferences.autoPlay) {
 		const now = this._now();
 		const key = TyphmUtils.parseKey(event.key);
 		if (key && !this._ended) {
 			let hit = false;
 			for (let i = 0; i < this._unclearedEvents.length; i++) {
 				const event = this._unclearedEvents[i];
-				if (now <= event.time - this._inaccuracyTolerance)
+				if (now <= event.time - this._inaccuracyTolerance*preferences.playRate)
 					break;
 				else if (key === event.event) {
 					if (this._inaccuraciesArray) {
@@ -324,7 +352,7 @@ Scene_Game.prototype._onKeydown = function (event) {
 					}
 					inaccuracy = (now - event.time)/preferences.playRate / this._inaccuracyTolerance;
 					const color = TyphmUtils.getRgbFromHue(2*Math.PI*inaccuracy);
-					this._beatmap.clearObject(event, color);
+					this._beatmap.clearNote(event, color);
 					this._unclearedEvents.splice(i, 1);
 					this._score += Math.round(1000*(Math.cos(Math.PI*inaccuracy)+1));
 					this._updateScore();
@@ -364,7 +392,7 @@ Scene_Game.prototype._updateCombo = function () {
 		this._center(comboIndicator, Graphics.height / 2);
 		this.addChild(comboIndicator);
 		comboIndicator.update = () => {
-			comboIndicator.opacity *= 0.95;
+			comboIndicator.opacity *= 0.95**(60/Graphics._fpsMeter.fps);
 			if (comboIndicator.opacity <= 5)
 				this.removeChild(comboIndicator);
 		};
@@ -373,12 +401,17 @@ Scene_Game.prototype._updateCombo = function () {
 
 Scene_Game.prototype._now = function () {
 	if (this._hasMusic) {
-		if (this._paused)
+		if (this._resumingCountdown)
+			return this._lastPos;
+		else if (this._paused)
 			return this._lastPos + preferences.offset;
 		else
-			return this._audioPlayer.seek()*1000 + preferences.offset;
+			return this._audioPlayer.seek()*1000 + preferences.offset*preferences.playRate;
 	} else {
-		return (performance.now() - this._starting) * preferences.playRate;
+		if (this._resumingCountdown || this._paused)
+			return this._lastPos;
+		else
+			return (performance.now() - this._starting) * preferences.playRate;
 	}
 };
 
@@ -391,7 +424,7 @@ Scene_Game.prototype._createInaccuracyIndicator = function (inaccuracy) {
 	inaccuracyIndicator.y = this._inaccuracyBar.y;
 	this.addChild(inaccuracyIndicator);
 	inaccuracyIndicator.update = () => {
-		inaccuracyIndicator.opacity -= 0.5;
+		inaccuracyIndicator.opacity -= 0.5*60/Graphics._fpsMeter.fps;
 		if (inaccuracyIndicator.opacity <= 0)
 			this.removeChild(inaccuracyIndicator);
 	};
@@ -406,7 +439,7 @@ Scene_Game.prototype._createHitEffect = function (event, color) {
 	hitEffect.y = this._line1.y - event.y;
 	this.addChild(hitEffect);
 	hitEffect.update = () => {
-		hitEffect.opacity *= 0.9;
+		hitEffect.opacity *= 0.9**(60/Graphics._fpsMeter.fps);
 		if (hitEffect.opacity <= 5)
 			this.removeChild(hitEffect);
 	};
@@ -422,7 +455,7 @@ Scene_Game.prototype._createWrongNote = function (key, time) {
 	wrongNote.y = this._line1.y - 100 + Math.random() * 200;
 	this.addChild(wrongNote);
 	wrongNote.update = () => {
-		wrongNote.opacity *= 0.9;
+		wrongNote.opacity *= 0.9**(60/Graphics._fpsMeter.fps);
 		if (wrongNote.opacity <= 5)
 			this.removeChild(wrongNote);
 	};
@@ -475,4 +508,38 @@ Scene_Game.prototype._finish = function () {
 	if (this._inaccuraciesArray)
 		preferences.offset -= this._inaccuraciesArray.reduce((a, b) => a + b) / this._inaccuraciesArray.length;
 	this._pause();
+};
+
+Scene_Game.Sprite_ResumingCountdown = function () {
+	this.initialize.apply(this, arguments);
+};
+
+Scene_Game.Sprite_ResumingCountdown.prototype = Object.create(Sprite.prototype);
+Scene_Game.Sprite_ResumingCountdown.prototype.constructor = Scene_Game.Sprite_ResumingCountdown;
+
+Scene_Game.Sprite_ResumingCountdown.prototype.initialize = function (scene) {
+	Sprite.prototype.initialize.call(this, new Bitmap(32, 32));
+	this.anchor.x = 1;
+	this.anchor.y = 0.5;
+	this.x = Graphics.width;
+	this.y = Graphics.height / 2;
+	this._countdown = 3;
+	this._lastCountdown = null;
+	this._scene = scene;
+	this._scene.addChild(this);
+};
+
+Scene_Game.Sprite_ResumingCountdown.prototype.update = function () {
+	const countdown = Math.ceil(this._countdown);
+	if (countdown === 0) {
+		this._scene.removeChild(this);
+		this._scene.actualResume();
+		return;
+	}
+	if (this._lastCountdown !== countdown) {
+		this.bitmap.clear();
+		this.bitmap.drawText(Math.ceil(this._countdown), 0, 0, 32, 32, 'right');
+		this._lastCountdown = countdown;
+	}
+	this._countdown -= 1 / Graphics._fpsMeter.fps;
 };

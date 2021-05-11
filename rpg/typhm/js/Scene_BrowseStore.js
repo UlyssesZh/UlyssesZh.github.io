@@ -83,7 +83,7 @@ Scene_BrowseStore.prototype._setupInputStyle = function () {
 		position: absolute;
 		top: ${Graphics._canvas.offsetTop + TyphmConstants.TEXT_HEIGHT*7}px;
 		left: ${Graphics._canvas.offsetLeft}px;
-		width: ${Graphics.width}px;
+		width: ${Graphics.width-4}px;
 		height: ${TyphmConstants.TEXT_HEIGHT}px;
 		font-family: GameFont;
 		color: rgba(255,255,255,1);

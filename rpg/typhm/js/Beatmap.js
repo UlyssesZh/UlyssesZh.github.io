@@ -56,7 +56,7 @@ Beatmap.prototype.drawLines = function () {
 		if (event.key) {
 			event.x = lastX + (now - lastTime) / millisecondsPerPixel;
 			event.y = event.parameter;
-			this._drawObject(event);
+			this._drawNote(event);
 		} else if (eventType === 'millisecondsPerPixel') {
 			lastX += (now - lastTime) / millisecondsPerPixel;
 			lastTime = now;
@@ -73,12 +73,12 @@ Beatmap.prototype.drawLines = function () {
 	}
 };
 
-Beatmap.prototype.clearObject = function (event, color) {
+Beatmap.prototype.clearNote = function (event, color) {
 	this.lines[event.lineno].textColor = color;
-	this._drawObject(event);
+	this._drawNote(event);
 };
 
-Beatmap.prototype._drawObject = function (event) {
+Beatmap.prototype._drawNote = function (event) {
 	this.lines[event.lineno].drawText(event.key,
 			event.x-16, -event.y+TyphmConstants.LINES_HEIGHT/2-16, 32, 32, 'center');
 };
