@@ -5,6 +5,7 @@ function TyphmConstants() {
 TyphmConstants.LINES_HEIGHT = 512;
 TyphmConstants.TEXT_HEIGHT = 40;
 TyphmConstants.LEFT_MARGIN =  16;
+TyphmConstants.PREFERENCES_MARGIN = 128;
 TyphmConstants.DEFAULT_MILLISECONDS_PER_PIXEL = 10.0;
 TyphmConstants.DEFAULT_INACCURACY_TOLERANCE = 200.0;
 TyphmConstants.KEYS = new Set();

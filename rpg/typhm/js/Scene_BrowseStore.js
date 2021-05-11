@@ -15,11 +15,13 @@ Scene_BrowseStore.prototype.start = function () {
 			768, TyphmConstants.TEXT_HEIGHT, 'center');
 	this.addChild(this._prompt);
 
-	this._input = document.createElement('input');
-	this._input.type = 'text';
-	this._input.placeholder = "Filename without extension";
-	this._setupInputStyle();
-	document.body.appendChild(this._input);
+	this._input = new TyphmInput();
+	this._input.setType('text');
+	this._input.setPlaceholder('Filename without extension');
+	this._input.y = TyphmConstants.TEXT_HEIGHT*7
+	this._input.width = Graphics.width;
+	this._input.setTextAlign('center');
+	this._input.refresh();
 	this._input.focus();
 
 	this._ok = new Button(new Bitmap(256, TyphmConstants.TEXT_HEIGHT),
@@ -41,14 +43,12 @@ Scene_BrowseStore.prototype.start = function () {
 
 	this._keydownEventListener = this._onKeydown.bind(this);
 	document.addEventListener('keydown', this._keydownEventListener);
-	this._resizeEventListener = this._setupInputStyle.bind(this);
-	window.addEventListener('resize', this._resizeEventListener);
 };
 
 Scene_BrowseStore.prototype.update = function () {
 	if (this._shouldOk) {
 		window.scene = new Scene_Game(null,
-				`https://cdn.jsdelivr.net/gh/UlyssesZh/typhm_store@master/${this._input.value}.typhm`);
+				`https://cdn.jsdelivr.net/gh/UlyssesZh/typhm_store@master/${this._input.value()}.typhm`);
 	} else if (this._shouldBack) {
 		window.scene = new Scene_Title();
 	}
@@ -57,8 +57,7 @@ Scene_BrowseStore.prototype.update = function () {
 
 Scene_BrowseStore.prototype.stop = function () {
 	document.removeEventListener('keydown', this._keydownEventListener);
-	window.removeEventListener('resize', this._resizeEventListener);
-	document.body.removeChild(this._input);
+	this._input.destroy();
 };
 
 Scene_BrowseStore.prototype._onKeydown = function (event) {
@@ -67,27 +66,4 @@ Scene_BrowseStore.prototype._onKeydown = function (event) {
 	} else if (event.key === 'Escape') {
 		this._shouldBack = true;
 	}
-};
-
-Scene_BrowseStore.prototype._onResize = function (event) {
-	this._setupInputStyle();
-};
-
-Scene_BrowseStore.prototype._setupInputStyle = function () {
-	this._input.style = `
-		background-color: rgba(0,0,0,0);
-		border: none;
-		outline: 0;
-		box-shadow: none;
-		font-size: 28px;
-		position: absolute;
-		top: ${Graphics._canvas.offsetTop + TyphmConstants.TEXT_HEIGHT*7}px;
-		left: ${Graphics._canvas.offsetLeft}px;
-		width: ${Graphics.width-4}px;
-		height: ${TyphmConstants.TEXT_HEIGHT}px;
-		font-family: GameFont;
-		color: rgba(255,255,255,1);
-		text-align: center;
-		z-index: 10;
-	`;
 };

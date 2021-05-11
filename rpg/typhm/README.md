@@ -64,6 +64,9 @@ Just feel the rhythm by your heart and hit the spacebar.
 After you finish playing the beatmap, the game will adjust the offset automatically for you.
 If you are not satisfied with the new offset, you can repeat these steps.
 
+Alternatively, you can set the offset without using the offset wizard.
+You can directly set it in the preferences.
+
 Note that after you refresh the webpage, the set offset will be cleared,
 and you will need to set it again.
 
