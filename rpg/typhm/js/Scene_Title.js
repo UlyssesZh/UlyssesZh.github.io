@@ -6,10 +6,10 @@ Scene_Title.prototype = Object.create(Scene_Base.prototype);
 Scene_Title.prototype.constructor = Scene_Title;
 
 Scene_Title.prototype.start = function () {
-	this._title = new Sprite(new Bitmap(150, 54));
+	this._title = new Sprite(new Bitmap(150, 60));
 	this._center(this._title, 200);
 	this._title.bitmap.fontSize = 50;
-	this._title.bitmap.drawText('Typhm', 0, 0, 150, 54, 'center');
+	this._title.bitmap.drawText('Typhm', 0, 0, 150, 60, 'center');
 	this.addChild(this._title);
 
 	this._files = new Button(new Bitmap(256, TyphmConstants.TEXT_HEIGHT),
@@ -50,6 +50,7 @@ Scene_Title.prototype.start = function () {
 };
 
 Scene_Title.prototype._onKeydown = function (event) {
+	KeyboardWindow.createHitEffect(event.key, 'white');
 	if (event.key === 'f') {
 		this._shouldGotoFiles = true;
 	} else if (event.key === 's') {

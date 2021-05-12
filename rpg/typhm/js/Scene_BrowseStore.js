@@ -61,6 +61,7 @@ Scene_BrowseStore.prototype.stop = function () {
 };
 
 Scene_BrowseStore.prototype._onKeydown = function (event) {
+	KeyboardWindow.createHitEffect(event.key, 'white');
 	if (event.key === 'Enter') {
 		this._shouldOk = true;
 	} else if (event.key === 'Escape') {

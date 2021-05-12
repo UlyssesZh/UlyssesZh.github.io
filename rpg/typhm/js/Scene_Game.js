@@ -61,7 +61,7 @@ Scene_Game.prototype.start = function () {
 	this.addChild(this._line2);
 
 	this._judgeLine = new Sprite(new Bitmap(1, 256));
-	this._judgeLine.bitmap.fillAll('gray');
+	this._judgeLine.bitmap.fillAll('white');
 	this._judgeLine.anchor.y = 0.5;
 	this._judgeLine.visible = false;
 	this.addChild(this._judgeLine);
@@ -180,7 +180,7 @@ Scene_Game.prototype.update = function () {
 					this._score += 2000;
 					this._updateScore();
 					this._unclearedEvents.splice(i, 1);
-				} else if (now >= event.time + this._inaccuracyTolerance) {
+				} else if (now >= event.time + this._inaccuracyTolerance*preferences.playRate) {
 					this._beatmap.clearNote(event, 'gray');
 					this._combo = 0;
 					this._updateCombo();
@@ -332,6 +332,7 @@ Scene_Game.prototype._onKeydown = function (event) {
 	if (event.key ==='Escape') {
 		this._pause();
 	} else if (this._paused) {
+		KeyboardWindow.createHitEffect(event.key, 'white');
 		if (event.key === 'r') {
 			this._shouldRestart = true;
 		} else if (event.key === 'b') {
@@ -444,6 +445,7 @@ Scene_Game.prototype._createHitEffect = function (event, color) {
 		if (hitEffect.opacity <= 5)
 			this.removeChild(hitEffect);
 	};
+	KeyboardWindow.createHitEffect(event.key, color);
 };
 
 Scene_Game.prototype._createWrongNote = function (key, time) {
@@ -519,11 +521,12 @@ Scene_Game.Sprite_ResumingCountdown.prototype = Object.create(Sprite.prototype);
 Scene_Game.Sprite_ResumingCountdown.prototype.constructor = Scene_Game.Sprite_ResumingCountdown;
 
 Scene_Game.Sprite_ResumingCountdown.prototype.initialize = function (scene) {
-	Sprite.prototype.initialize.call(this, new Bitmap(32, 32));
-	this.anchor.x = 1;
+	Sprite.prototype.initialize.call(this, new Bitmap(256, 512));
+	this.anchor.x = 0.5;
 	this.anchor.y = 0.5;
-	this.x = Graphics.width;
+	this.x = Graphics.width / 2;
 	this.y = Graphics.height / 2;
+	this.bitmap.fontSize = 200;
 	this._countdown = 3;
 	this._lastCountdown = null;
 	this._scene = scene;
@@ -539,7 +542,7 @@ Scene_Game.Sprite_ResumingCountdown.prototype.update = function () {
 	}
 	if (this._lastCountdown !== countdown) {
 		this.bitmap.clear();
-		this.bitmap.drawText(Math.ceil(this._countdown), 0, 0, 32, 32, 'right');
+		this.bitmap.drawText(Math.ceil(this._countdown), 0, 0, 256, 512, 'center');
 		this._lastCountdown = countdown;
 	}
 	this._countdown -= 1 / Graphics._fpsMeter.fps;

@@ -66,16 +66,28 @@ Scene_Preferences.prototype.start = function () {
 	this._countdownInput.y = TyphmConstants.TEXT_HEIGHT * 5;
 	this.addChild(this._countdownInput);
 
+	this._keyboardWindow = new Sprite(new Bitmap(256, TyphmConstants.TEXT_HEIGHT));
+	this._keyboardWindow.x = TyphmConstants.PREFERENCES_MARGIN;
+	this._keyboardWindow.y = TyphmConstants.TEXT_HEIGHT * 6;
+	this._keyboardWindow.bitmap.drawText('Keyboard window', 0, 0, 256, TyphmConstants.TEXT_HEIGHT);
+	this.addChild(this._keyboardWindow);
+
+	this._keyboardWindowInput = new Switch(KeyboardWindow.exists());
+	this._keyboardWindowInput.anchor.x = 1;
+	this._keyboardWindowInput.x = Graphics.width - TyphmConstants.PREFERENCES_MARGIN;
+	this._keyboardWindowInput.y = TyphmConstants.TEXT_HEIGHT * 6;
+	this.addChild(this._keyboardWindowInput);
+
 	this._ok = new Button(new Bitmap(256, TyphmConstants.TEXT_HEIGHT),
 			() => { this._shouldOk = true; });
-	this._center(this._ok, TyphmConstants.TEXT_HEIGHT*7);
+	this._center(this._ok, TyphmConstants.TEXT_HEIGHT*8);
 	this._ok.bitmap.drawText('OK (\\n)', 0, 0,
 			256, TyphmConstants.TEXT_HEIGHT, 'center');
 	this.addChild(this._ok);
 
 	this._back = new Button(new Bitmap(256, TyphmConstants.TEXT_HEIGHT),
 			() => { this._shouldBack = true; });
-	this._center(this._back, TyphmConstants.TEXT_HEIGHT*8);
+	this._center(this._back, TyphmConstants.TEXT_HEIGHT*9);
 	this._back.bitmap.drawText('Back (Esc)', 0, 0,
 			256, TyphmConstants.TEXT_HEIGHT, 'center');
 	this.addChild(this._back);
@@ -93,6 +105,7 @@ Scene_Preferences.prototype.update = function () {
 		preferences.playRate = parseFloat(this._playRateInput.value());
 		preferences.autoPlay = this._autoPlayInput.value;
 		preferences.countdown = this._countdownInput.value;
+		KeyboardWindow.set(this._keyboardWindowInput.value);
 		window.scene = new Scene_Title();
 	} else if (this._shouldBack) {
 		window.scene = new Scene_Title();
@@ -107,6 +120,8 @@ Scene_Preferences.prototype.stop = function () {
 };
 
 Scene_Preferences.prototype._onKeydown = function (event) {
+	if (window.keyboardWindow)
+		window.keyboardWindow.createHitEffect(event.key, 'white');
 	if (event.key === 'Enter') {
 		this._shouldOk = true;
 	} else if (event.key === 'Escape') {

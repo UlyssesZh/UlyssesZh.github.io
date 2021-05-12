@@ -112,6 +112,7 @@ Scene_BrowseFiles.prototype.stop = function () {
 };
 
 Scene_BrowseFiles.prototype._onKeydown = function (event) {
+	KeyboardWindow.createHitEffect(event.key, 'white');
 	if (event.key === 'a') {
 		this._shouldUploadAudio = true;
 	} else if (event.key === 'b') {
