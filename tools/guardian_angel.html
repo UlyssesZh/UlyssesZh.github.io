@@ -17,94 +17,94 @@ layout: tool
 <button id="clear" onclick="clearGame()" disabled="true">Clear</button>
 
 <script>
-	function numberOfDerangements(n) {
-		if (n == 0)
-			return 1;
-		let nFactorial = 1;
-		for (let i = n; i > 0; i--)
-			nFactorial *= i;
-		return Math.round(nFactorial / Math.E);
-	}
-	function derange(array) {
-		let n = array.length;
-		if (n == 1)
-			return undefined;
-		let options = numberOfDerangements(n);
-		let picked = Math.floor(Math.random() * options);
-		const result = Array(n);
-		const undetermined = Array.from(result.keys());
-		const pool = Array.from(undetermined);
-		while (n > 0) {
+function numberOfDerangements(n) {
+	if (n == 0)
+		return 1;
+	let nFactorial = 1;
+	for (let i = n; i > 0; i--)
+		nFactorial *= i;
+	return Math.round(nFactorial / Math.E);
+}
+function derange(array) {
+	let n = array.length;
+	if (n == 1)
+		return undefined;
+	let options = numberOfDerangements(n);
+	let picked = Math.floor(Math.random() * options);
+	const result = Array(n);
+	const undetermined = Array.from(result.keys());
+	const pool = Array.from(undetermined);
+	while (n > 0) {
+		n--;
+		const category = Math.floor(picked / options * n);
+		picked -= category * options / n;
+		options = (options + (n % 2 ? -1 : 1)) / (n + 1);
+		result[undetermined.pop()] = array[pool.length > 1 ? pool.splice(category, 1, pool.pop()) : pool.pop()];
+		if (picked >= options) {
 			n--;
-			const category = Math.floor(picked / options * n);
-			picked -= category * options / n;
+			picked -= options;
 			options = (options + (n % 2 ? -1 : 1)) / (n + 1);
-			result[undetermined.pop()] = array[pool.length > 1 ? pool.splice(category, 1, pool.pop()) : pool.pop()];
-			if (picked >= options) {
-				n--;
-				picked -= options;
-				options = (options + (n % 2 ? -1 : 1)) / (n + 1);
-				result[undetermined.splice(category, 1)] = array[pool.splice(category, 1)];
-			}
+			result[undetermined.splice(category, 1)] = array[pool.splice(category, 1)];
 		}
-		return result;
 	}
-	const input = document.getElementById('input');
-	const previousButton = document.getElementById('previous');
-	const nextButton = document.getElementById('next');
-	const showHideButton = document.getElementById('showHide');
-	const clearButton = document.getElementById('clear');
-	const guardian = document.getElementById('guardian');
-	const guarded = document.getElementById('guarded');
-	let showing = false;
-	let game = {};
-	input.addEventListener("keydown", event => {
-		if (event.ctrlKey && event.key === "Enter") {
-			startGame();
-		}
-	});
-	function startGame() {
-		game.participants = input.value.split(';');
-		game.n = game.participants.length;
-		game.guarded = derange(game.participants);
-		showHideButton.disabled = false;
-		clearButton.disabled = false;
-		showing = false;
-		game.index = 0;
-		refresh();
+	return result;
+}
+const input = document.getElementById('input');
+const previousButton = document.getElementById('previous');
+const nextButton = document.getElementById('next');
+const showHideButton = document.getElementById('showHide');
+const clearButton = document.getElementById('clear');
+const guardian = document.getElementById('guardian');
+const guarded = document.getElementById('guarded');
+let showing = false;
+let game = {};
+input.addEventListener("keydown", event => {
+	if (event.ctrlKey && event.key === "Enter") {
+		startGame();
 	}
-	function previous() {
-		game.index--;
-		showing = false;
-		refresh();
-	}
-	function next() {
-		game.index++;
-		showing = false;
-		refresh();
-	}
-	function clearGame() {
-		game = {};
-		previousButton.disabled = true;
-		nextButton.disabled = true;
-		showHideButton.disabled = true;
-		clearButton.disabled = true;
-		guardian.innerHTML = '';
+});
+function startGame() {
+	game.participants = input.value.split(';');
+	game.n = game.participants.length;
+	game.guarded = derange(game.participants);
+	showHideButton.disabled = false;
+	clearButton.disabled = false;
+	showing = false;
+	game.index = 0;
+	refresh();
+}
+function previous() {
+	game.index--;
+	showing = false;
+	refresh();
+}
+function next() {
+	game.index++;
+	showing = false;
+	refresh();
+}
+function clearGame() {
+	game = {};
+	previousButton.disabled = true;
+	nextButton.disabled = true;
+	showHideButton.disabled = true;
+	clearButton.disabled = true;
+	guardian.innerHTML = '';
+	guarded.innerHTML = '';
+	showing = false;
+}
+function showHide() {
+	showing = !showing;
+	refresh();
+}
+function refresh() {
+	previousButton.disabled = (game.index == 0);
+	nextButton.disabled = (game.index == game.n - 1);
+	guardian.innerHTML = game.participants[game.index];
+	if (showing) {
+		guarded.innerHTML = game.guarded[game.index];
+	} else {
 		guarded.innerHTML = '';
-		showing = false;
 	}
-	function showHide() {
-		showing = !showing;
-		refresh();
-	}
-	function refresh() {
-		previousButton.disabled = (game.index == 0);
-		nextButton.disabled = (game.index == game.n - 1);
-		guardian.innerHTML = game.participants[game.index];
-		if (showing) {
-			guarded.innerHTML = game.guarded[game.index];
-		} else {
-			guarded.innerHTML = '';
-		}
-	}
+}
 </script>
