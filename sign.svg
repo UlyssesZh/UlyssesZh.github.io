@@ -12,8 +12,8 @@
    version="1.1"
    sodipodi:docname="sign.svg"
    inkscape:version="1.0.2-2 (e86c870879, 2021-01-15)"
-   width="64"
-   height="36">
+   width="128"
+   height="72">
   <metadata
      id="metadata67">
     <rdf:RDF>
@@ -39,9 +39,9 @@
      inkscape:window-height="1057"
      id="namedview65"
      showgrid="false"
-     inkscape:zoom="1"
-     inkscape:cx="55.025608"
-     inkscape:cy="18.723139"
+     inkscape:zoom="4.0686031"
+     inkscape:cx="102.12311"
+     inkscape:cy="-32.147188"
      inkscape:window-x="-8"
      inkscape:window-y="441"
      inkscape:window-maximized="1"
@@ -105,7 +105,7 @@
        papercolor="#FFFFFF"
        rulecolor="#00000000"
        id="g56"
-       transform="matrix(0.26134507,0,0,0.26134507,-1.0287149,-9.904029)">
+       transform="matrix(0.34340061,0,0,0.34340061,25.488489,6.8293216)">
       <path
          class="write-flat-pen"
          transform="translate(-432.895,-2042.498)"
