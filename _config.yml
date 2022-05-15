@@ -10,7 +10,7 @@ collections:
     output: true
 email: UlyssesZhan@gmail.com
 description: Here we are at the awesome (awful) blog written by Ulysses Zhan!
-copyright: 2020 Ulysses Zhan
+copyright: 2022 Ulysses Zhan
 baseurl: ''
 url: https://UlyssesZh.github.io
 header_pages:

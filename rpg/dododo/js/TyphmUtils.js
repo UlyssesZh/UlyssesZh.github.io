@@ -41,30 +41,115 @@ TyphmUtils.parseDigit = function (digitString) {
 	if (charCode >= 97 && charCode < 123) // a--z
 		return charCode - 97 + 10;
 	return null;
-}
+};
 
 TyphmUtils.isDigit = function (string) {
 	if (string.length !== 1)
 		return false;
 	const charCode = string.charCodeAt(0);
 	return charCode >= 48 && charCode < 58 || charCode >= 97 && charCode < 123;
-}
+};
 
 TyphmUtils.isArabicDigit = function (string) {
 	if (string.length !== 1)
 		return false;
 	const charCode = string.charCodeAt(0);
 	return charCode >= 48 && charCode < 58;
-}
+};
 
 TyphmUtils.isCapitalized = function (string) {
 	const charCode = string.charCodeAt(0);
 	return charCode >= 65 && charCode < 91;
-}
+};
+
+TyphmUtils.fromRGBAToHex = function () {
+	return '#' + Array.from(arguments, x => Math.round(x * 0xff).toString(16).padStart(2, '0')).join('');
+};
 
 Array.prototype.last = function () {
 	return this[this.length - 1];
-}
+};
+
+String.prototype.red = function () {
+	return parseInt(this.substring(1, 3), 16) / 255;
+};
+
+String.prototype.green = function () {
+	return parseInt(this.substring(3, 5), 16) / 255;
+};
+
+String.prototype.blue = function () {
+	return parseInt(this.substring(5, 7), 16) / 255;
+};
+
+String.prototype.alpha = function () {
+	return parseInt(this.substring(7, 9), 16) / 255 || 1;
+};
+
+const oldInitialize = Bitmap.prototype.initialize;
+Bitmap.prototype.initialize = function (width, height) {
+	oldInitialize.apply(this, arguments);
+	this.fontSize = preferences.fontSize;
+	this.outlineWidth = 0;
+	this.textColor = preferences.textColor;
+};
+
+Graphics._requestFullScreen = function() {
+	var element = document.documentElement;
+	if (element.requestFullscreen) {
+		element.requestFullscreen();
+	} else if (element.mozRequestFullScreen) {
+		element.mozRequestFullScreen();
+	} else if (element.webkitRequestFullScreen) {
+		element.webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);
+	} else if (element.msRequestFullscreen) {
+		element.msRequestFullscreen();
+	}
+};
+
+WebAudio.clearBufferPool = function () {
+	WebAudio._bufferPool = {};
+};
+
+WebAudio.clearBufferPool();
+
+WebAudio.prototype._onXhrLoad = function(xhr) {
+	let array = xhr.response;
+	if(Decrypter.hasEncryptedAudio) array = Decrypter.decryptArrayBuffer(array);
+	this._readLoopComments(new Uint8Array(array));
+	WebAudio._context.decodeAudioData(array, buffer => {
+		WebAudio._bufferPool[this._url] = {'buffer': buffer, loopLength: this._loopLength, loopStart: this._loopStart, sampleRate: this._sampleRate};
+		this._processBuffer(buffer);
+	});
+};
+
+WebAudio.prototype._processBuffer = function (buffer) {
+	this._buffer = buffer;
+	this._totalTime = buffer.duration;
+	if (this._loopLength > 0 && this._sampleRate > 0) {
+		this._loopStart /= this._sampleRate;
+		this._loopLength /= this._sampleRate;
+	} else {
+		this._loopStart = 0;
+		this._loopLength = this._totalTime;
+	}
+	this._onLoad();
+};
+
+const oldLoad = WebAudio.prototype._load;
+WebAudio.prototype._load = function(url) {
+	if (WebAudio._context && WebAudio._bufferPool[url]) {
+		const {buffer, loopLength, loopStart, sampleRate} = WebAudio._bufferPool[url];
+		setTimeout(() => {
+			this._loopLength = loopLength;
+			this._loopStart = loopStart;
+			this._sampleRate = sampleRate;
+			this._processBuffer(buffer)
+		});
+	} else {
+		oldLoad.apply(this, arguments);
+	}
+};
 
 WebAudio.prototype._createEndTimer = function() {
 	if (this._sourceNode && !this._sourceNode.loop) {
@@ -91,3 +176,19 @@ WebAudio.prototype.clear = function() {
 WebAudio.prototype.addFinishListener = function(listner) {
 	this._finishListeners.push(listner);
 };
+
+math.import({
+	if: (...arguments) => {
+		for (let i = 0; i < arguments.length; i += 2) {
+			if (i === arguments.length - 1) {
+				return arguments[i];
+			} else if (arguments[i]) {
+				return arguments[i + 1];
+			}
+		}
+	}
+});
+window.frac = math.fraction.bind(math);
+window.fracmath = math.create({number: 'Fraction'});
+window.fraceval = fracmath.evaluate.bind(fracmath);
+window.matheval = math.evaluate.bind(math);
