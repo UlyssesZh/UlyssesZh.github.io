@@ -10,6 +10,7 @@ Here are some of my friends (ordered lexicographically):
 - [IamI](https://iami.town){:target="_blank" title="II"},
 - [Invwindy](https://cirno.blog){:target="_blank" title="⑨姐姐"},
 - [Lanza](https://lanzainc.xyz){:target="_blank" title="lanza"},
+- [Misaka13514](https://atri.tk){:target="_blank" title="欠陥電気"}
 - [Silent](https://not-hentai.com){:target="_blank" title="静寂之夜"},
 - [Taroxd](https://taroxd.github.io){:target="_blank" title="状元"},
 
