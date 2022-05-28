@@ -55,6 +55,9 @@ Strings["en-US"] = {
 	"markE": "E",
 	"markF": "F",
 	"fullCombo": "FC",
+	"viewRecording": "Watch replay",
+	"saveRecording": "Save replay",
+	"uploadRecording": "Upload replay",
 	
 	// preferences: gameplay
 	"gameplay": "Gameplay",
@@ -93,6 +96,7 @@ Strings["en-US"] = {
 	"unconnectedBeamsLength": "Length of unconnected note beams",
 	"barlinesHeight": "Height of barlines",
 	"hitEffectRadius": "Radius of hit effects",
+	"distanceBetweenLines": "Distance between beatmap rows",
 	
 	// preferences: colors
 	"colors": "Colors",
@@ -133,6 +137,7 @@ Strings["en-US"] = {
 	"import": "Import JSON file as preferences",
 	"importFailure": "Failed to import due to %s",
 	"github": "Go to the GitHub repo of Dododo",
+	"discord": "Join the Discord server of Dododo",
 	
 	// hit sounds
 	"agogoBells": 'Agogo bells',
@@ -177,6 +182,7 @@ Strings["zh-CN"] = {
 	// browse files
 	"uploadAudio": "上传音频文件",
 	"uploadBeatmap": "上传谱面文件",
+	"uploadRecording": "上传回放",
 	"noBeatmapWarning": "请先上传谱面文件",
 	"title": "曲目",
 	"musicAuthor": "曲师",
@@ -208,6 +214,8 @@ Strings["zh-CN"] = {
 	"markE": "戊",
 	"markF": "拉",
 	"fullCombo": "全连",
+	"viewRecording": "看回放",
+	"saveRecording": "保存回放",
 	
 	// preferences: gameplay
 	"gameplay": "游戏",
@@ -246,6 +254,7 @@ Strings["zh-CN"] = {
 	"unconnectedBeamsLength": "孤符杠的长度",
 	"barlinesHeight": "小节线的长度",
 	"hitEffectRadius": "打击效果的半径",
+	"distanceBetweenLines": "谱面行间距",
 	
 	// preferences: colors
 	"colors": "颜色",
@@ -286,6 +295,7 @@ Strings["zh-CN"] = {
 	"import": "导入设置",
 	"importFailure": "导入失败, 由于 %s",
 	"github": "打开 Dododo 的 GitHub 仓库",
+	"discord": "加入 Dododo 的 Discord 服务器",
 	
 	// hit sounds
 	"agogoBells": '阿哥哥铃',
@@ -330,6 +340,7 @@ Strings["zh-TW"] = {
 	// browse files
 	"uploadAudio": "上載音頻文件",
 	"uploadBeatmap": "上載譜面文件",
+	"uploadRecording": "上載回放",
 	"noBeatmapWarning": "請先上載譜面文件",
 	"title": "曲目",
 	"musicAuthor": "曲師",
@@ -361,6 +372,8 @@ Strings["zh-TW"] = {
 	"markE": "戊",
 	"markF": "拉",
 	"fullCombo": "全連",
+	"viewRecording": "看回放",
+	"saveRecording": "保存回放",
 	
 	// preferences: gameplay
 	"gameplay": "遊戲",
@@ -399,6 +412,7 @@ Strings["zh-TW"] = {
 	"unconnectedBeamsLength": "孤符槓的長度",
 	"barlinesHeight": "小節線的長度",
 	"hitEffectRadius": "打擊效果的半徑",
+	"distanceBetweenLines": "譜面行間距",
 	
 	// preferences: colors
 	"colors": "顏色",
@@ -439,6 +453,7 @@ Strings["zh-TW"] = {
 	"import": "導入設置",
 	"importFailure": "導入失敗, 由於 %s",
 	"github": "打開 Dododo 的 GitHub 倉庫",
+	"discord": "加入 Dododo 的 Discord 服務器",
 	
 	// hit sounds
 	"agogoBells": '阿哥哥鈴',
