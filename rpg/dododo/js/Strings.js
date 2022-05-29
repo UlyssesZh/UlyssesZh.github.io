@@ -5,7 +5,7 @@ function Strings() {
 Strings.LANGUAGES = {
 	"en-US": "English (United States)",
 	"zh-CN": "中文 (中国)",
-	"zh-TW": "中文 (台灣)"
+	"zh-TW": "中文 (臺灣)"
 };
 
 Strings["en-US"] = {
@@ -39,7 +39,6 @@ Strings["en-US"] = {
 	// in-game
 	"quitGame": "Back",
 	"restartGame": "Restart",
-	"autoPlaying": "Auto-playing",
 	"perfect": "Perfect",
 	"good": "Good",
 	"bad": "Bad",
@@ -59,18 +58,34 @@ Strings["en-US"] = {
 	"saveRecording": "Save replay",
 	"uploadRecording": "Upload replay",
 	
+	// in-game display of modifiers
+	"inGame_playRate": "%fx speed",
+	"inGame_autoPlay": "Auto-play",
+	"inGame_noBad": "No-bad",
+	"inGame_noExcess": "No-excess",
+	"inGame_judgeWindow": "%fx judge",
+	"inGame_autoCompleteHold": "Auto-hold",
+	
+	// preferences: modifiers
+	"modifiers": "Modifiers",
+	"playRate": "Play rate (speed of music)",
+	"autoPlay": "Auto-play",
+	"noBad": "No-bad mode",
+	"noExcess": "No-excess mode",
+	"judgeWindow": "Judge window (smaller is stricter)",
+	"autoCompleteHolds": "Automatically hold for hold notes",
+	
 	// preferences: gameplay
 	"gameplay": "Gameplay",
 	"offset": "Offset (in ms)",
 	"offsetWizard": "Offset wizard",
-	"playRate": "Play rate (speed of music)",
-	"autoPlay": "Auto-play",
 	"countdown": "Show countdown before resuming",
 	"autoRestartGood": "Automatically restart when failing to AP",
 	"autoRestartMiss": "Automatically restart when failing to FC",
 	"F7Pause": "Press F7 to pause",
 	"backtickRestart": "Press backtick to restart",
 	"autoPause": "Automatically pause when losing focus",
+	"recordVisual": "Record visual preferences to replay",
 	
 	// preferences: visual
 	"visual": "Visual",
@@ -81,6 +96,11 @@ Strings["en-US"] = {
 	"flashWarningMiss": "Warn by flash the screen at combo breaks",
 	"showInaccuracyData": "Show inaccuracy data",
 	"comboPopupInterval": "Interval of combo popups (set 0 to disable)",
+	"fadeIn": "Fade-in (ratio to resolution, 0 to disable)",
+	"fadeOut": "Fade-out (ratio to resolution, 0 to disable)",
+	"reverseVoices": "Reverse voices",
+	"mirror": "Mirror (flip horizontally)",
+	"showKeyboard": "Show keyboard pressings",
 	
 	// preferences: geometry
 	"geometry": "Geometry",
@@ -136,6 +156,7 @@ Strings["en-US"] = {
 	"export": "Export preferences as JSON file",
 	"import": "Import JSON file as preferences",
 	"importFailure": "Failed to import due to %s",
+	"wiki": "Go to the wiki of Dododo",
 	"github": "Go to the GitHub repo of Dododo",
 	"discord": "Join the Discord server of Dododo",
 	
@@ -198,7 +219,6 @@ Strings["zh-CN"] = {
 	// in-game
 	"quitGame": "返回",
 	"restartGame": "重开",
-	"autoPlaying": "自动",
 	"perfect": "完美",
 	"good": "好",
 	"bad": "坏",
@@ -217,18 +237,34 @@ Strings["zh-CN"] = {
 	"viewRecording": "看回放",
 	"saveRecording": "保存回放",
 	
+	// in-game display of modifiers
+	"inGame_playRate": "%fx 速",
+	"inGame_autoPlay": "自动",
+	"inGame_noBad": "无坏",
+	"inGame_noExcess": "无多余",
+	"inGame_judgeWindow": "%fx 判",
+	"inGame_autoCompleteHold": "自动长押",
+	
+	// preferences: modifiers
+	"modifiers": "模式",
+	"playRate": "倍速",
+	"autoPlay": "自动",
+	"noBad": "无坏模式",
+	"noExcess": "无多余模式",
+	"judgeWindow": "判定区间 (越小越严格)",
+	"autoCompleteHolds": "自动长押",
+	
 	// preferences: gameplay
 	"gameplay": "游戏",
 	"offset": "音频延迟 (毫秒)",
 	"offsetWizard": "调延迟工具",
-	"playRate": "倍速",
-	"autoPlay": "自动",
 	"countdown": "继续前倒计时",
 	"autoRestartGood": "全完美失败时自动重开",
 	"autoRestartMiss": "全连失败时自动重开",
 	"F7Pause": "按 F7 暂停",
 	"backtickRestart": "按反引号重开",
 	"autoPause": "失焦时自动暂停",
+	"recordVisual": "在回放中记录视觉设置",
 	
 	// preferences: visual
 	"visual": "视觉",
@@ -239,6 +275,11 @@ Strings["zh-CN"] = {
 	"flashWarningMiss": "断连时闪屏警告",
 	"showInaccuracyData": "显示误差数据",
 	"comboPopupInterval": "连击数弹出间隔 (0 为不弹出)",
+	"fadeIn": "上隐距离 (0 为不上隐)",
+	"fadeOut": "下隐距离 (0 为不下隐)",
+	"reverseVoices": "声部反转",
+	"mirror": "镜像 (左右反转)",
+	"showKeyboard": "显示按键情况",
 	
 	// preferences: geometry
 	"geometry": "几何",
@@ -294,6 +335,7 @@ Strings["zh-CN"] = {
 	"export": "导出设置为文件",
 	"import": "导入设置",
 	"importFailure": "导入失败, 由于 %s",
+	"wiki": "打开 Dododo 的 wiki (英文网页)",
 	"github": "打开 Dododo 的 GitHub 仓库",
 	"discord": "加入 Dododo 的 Discord 服务器",
 	
@@ -335,7 +377,7 @@ Strings["zh-TW"] = {
 	"browseFiles": "瀏覽文件",
 	"browseStore": "瀏覽商店",
 	"browseHistory": "瀏覽歷史",
-	"preferences": "設置",
+	"preferences": "設定",
 	
 	// browse files
 	"uploadAudio": "上載音頻文件",
@@ -356,7 +398,6 @@ Strings["zh-TW"] = {
 	// in-game
 	"quitGame": "返回",
 	"restartGame": "重開",
-	"autoPlaying": "自動",
 	"perfect": "完美",
 	"good": "好",
 	"bad": "壞",
@@ -375,18 +416,34 @@ Strings["zh-TW"] = {
 	"viewRecording": "看回放",
 	"saveRecording": "保存回放",
 	
+	// in-game display of modifiers
+	"inGame_playRate": "%fx 速",
+	"inGame_autoPlay": "自動",
+	"inGame_noBad": "無壞",
+	"inGame_noExcess": "無多餘",
+	"inGame_judgeWindow": "%fx 判",
+	"inGame_autoCompleteHold": "自動長押",
+	
+	// preferences: modifiers
+	"modifiers": "模式",
+	"playRate": "倍速",
+	"autoPlay": "自動",
+	"noBad": "無壞模式",
+	"noExcess": "無多餘模式",
+	"judgeWindow": "判定區間 (越小越嚴格)",
+	"autoCompleteHolds": "自動長押",
+	
 	// preferences: gameplay
 	"gameplay": "遊戲",
 	"offset": "音頻延遲 (毫秒)",
 	"offsetWizard": "調延遲工具",
-	"playRate": "倍速",
-	"autoPlay": "自動",
 	"countdown": "繼續前倒計時",
 	"autoRestartGood": "全完美失敗時自動重開",
 	"autoRestartMiss": "全連失敗時自動重開",
 	"F7Pause": "按 F7 暫停",
 	"backtickRestart": "按反引號重開",
 	"autoPause": "失焦時自動暫停",
+	"recordVisual": "在回放中記錄視覺設定",
 	
 	// preferences: visual
 	"visual": "視覺",
@@ -397,6 +454,11 @@ Strings["zh-TW"] = {
 	"flashWarningMiss": "斷連時閃屏警告",
 	"showInaccuracyData": "顯示誤差數據",
 	"comboPopupInterval": "連擊數彈出間隔 (0 為不彈出)",
+	"fadeIn": "上隱距離 (0 爲不上隱)",
+	"fadeOut": "下隱距離 (0 爲不下隱)",
+	"reverseVoices": "聲部反轉",
+	"mirror": "鏡像 (左右反轉)",
+	"showKeyboard": "顯示按鍵情況",
 	
 	// preferences: geometry
 	"geometry": "幾何",
@@ -446,12 +508,13 @@ Strings["zh-TW"] = {
 	// preferences: system
 	"system": "系統",
 	"language": "語言",
-	"save": "在網頁存儲中存儲設置",
-	"reset": "將所有設置項重設為默認狀態",
-	"confirmReset": "將所有設置項重設為默認狀態?",
-	"export": "導出設置為文件",
-	"import": "導入設置",
+	"save": "在網頁存儲中存儲設定",
+	"reset": "將所有設定項重設為默認狀態",
+	"confirmReset": "將所有設定項重設為默認狀態?",
+	"export": "導出設定為文件",
+	"import": "導入設定",
 	"importFailure": "導入失敗, 由於 %s",
+	"wiki": "打開 Dododo 的 wiki (英文網頁)",
 	"github": "打開 Dododo 的 GitHub 倉庫",
 	"discord": "加入 Dododo 的 Discord 服務器",
 	
