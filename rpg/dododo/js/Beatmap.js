@@ -16,9 +16,9 @@ Beatmap.prototype.load = async function () {
 		if (head[i].length > 2)
 			head[i] = [head[i][0], head[i].slice(1).join(': ')];
 		else if (head[i].length === 1)
-			head[i][1] = ''
+			head[i][1] = '';
 	}
-	const dataLineno = head.length + 2;
+	const dataLineno = head.length + 1;
 	head = Object.fromEntries(head);
 	data = data.split('\n');
 	this.title = head.title || '';
@@ -49,9 +49,9 @@ Beatmap.prototype.parse = function (data, dataLineno) {
 			let [name, ...parameters] = line.split(' ');
 			let i = 0;
 			for (; i < parameters.length && parameters[i][0] !== '#'; i++);
-			this.events.push({"event": name.toLowerCase(), "parameters": parameters.slice(0, i)});
+			this.events.push({"event": name.toLowerCase(), "parameters": parameters.slice(0, i), "lineno": lineno + dataLineno});
 		} else if (line === '') { // new line
-			this.events.push({"event": "line", "voices": voices});
+			this.events.push({"event": "line", "voices": voices, "lineno": lineno + dataLineno});
 			voices = [];
 		} else { // voice
 			voices.push([]);
@@ -68,7 +68,7 @@ Beatmap.prototype.parse = function (data, dataLineno) {
 					continue;
 				}
 				if (line[position] === '|') { // barline
-					voices.last().push({"event": "barline"});
+					voices.last().push({"event": "barline", "lineno": lineno + dataLineno, "column": position + 1});
 					position++;
 					continue;
 				}
@@ -78,7 +78,7 @@ Beatmap.prototype.parse = function (data, dataLineno) {
 				}
 				
 				// start parsing a note here!
-				const noteEvent = {"event": "note"};
+				const noteEvent = {"event": "note", "lineno": lineno + dataLineno, "column": position + 1};
 				
 				// note length
 				if (TyphmUtils.isDigit(line[position])) {
@@ -109,6 +109,13 @@ Beatmap.prototype.parse = function (data, dataLineno) {
 				} else
 					noteEvent.hold = false;
 				
+				// big
+				if (line[position] === '*') {
+					noteEvent.big = true;
+					position++;
+				} else
+					noteEvent.big = false;
+				
 				// tie
 				if (line[position] === '~') {
 					noteEvent.tie = true;
@@ -126,7 +133,7 @@ Beatmap.prototype.parse = function (data, dataLineno) {
 						throw new BeatmapError(lineno + dataLineno, position + 1, 'excess right parentheses');
 					}
 					const group = voices.pop();
-					const groupEvent = {"event": "group", "notes": group};
+					const groupEvent = {"event": "group", "notes": group, "lineno": lineno + dataLineno, "column": position + 1};
 					if (TyphmUtils.isDigit(line[position])) {
 						groupEvent.ratio1 = TyphmUtils.parseDigit(line[position]);
 						position++;
@@ -155,9 +162,31 @@ Beatmap.prototype.parse = function (data, dataLineno) {
 	}
 }
 
-Beatmap.prototype.drawLines = function () {
+Beatmap.prototype._createBigNoteHalo = function () {
+	const r = preferences.headsRadius*2;
+	this._bigNoteHalo = new Bitmap(r*2, r*2);
+	const context = this._bigNoteHalo._context;
+	context.save();
+	const gradient = context.createRadialGradient(r, r, 0, r, r, r);
+	gradient.addColorStop(0.5, preferences.notesColor);
+	gradient.addColorStop(1, preferences.notesColor + '00');
+	context.fillStyle = gradient;
+	context.beginPath();
+	context.arc(r, r, r, 0, 2*Math.PI);
+	context.fill();
+	context.globalCompositeOperation = 'destination-out';
+	context.beginPath();
+	context.arc(r, r, r/2, 0, 2*Math.PI);
+	context.fill();
+	context.restore();
+	this._bigNoteHalo._setDirty();
+};
+
+Beatmap.prototype.drawLines = function (reverseVoices) {
+	this._createBigNoteHalo();
 	this.lines = [new Bitmap(Graphics.width, TyphmConstants.LINES_HEIGHT)];
 	this.notes = [];
+	this.barlines = [];
 	let lastLineNotes = [];
 	let lastLineEndTime = this.offset;
 	let lastBPM = undefined;
@@ -243,6 +272,8 @@ Beatmap.prototype.drawLines = function () {
 			case 'alpha':
 			case 'width':
 			case 'height':
+			case 'note_x':
+			case 'hit_x':
 				const property = event.event + 'Formula'
 				const expression = math.parse(event.parameters.join(' ')).compile();
 				(line.fakeJudgeLines ? line.fakeJudgeLines.last() : line)[property] =
@@ -274,6 +305,8 @@ Beatmap.prototype.drawLines = function () {
 				line.alphaFormula ||= x => 1;
 				line.widthFormula ||= x => 1;
 				line.heightFormula ||= x => line.voicesNumber * preferences.voicesHeight;
+				line.note_xFormula ||= line.space_xFormula;
+				line.hit_xFormula ||= line.note_xFormula;
 				if (line.BPMMarkers) {
 					for (let i = 0; i < line.BPMMarkers.length; i++) {
 						const {length, dots, bpm, position} = line.BPMMarkers[i];
@@ -290,9 +323,11 @@ Beatmap.prototype.drawLines = function () {
 					if (i > 0)
 						for (let j = 0; j < voices[i].length; j++)
 							this._calculateLengthRecursive(voices[i][j]);
-					const y = y0+preferences.voicesHeight*i;
+					let y = y0+preferences.voicesHeight*i;
+					if (reverseVoices)
+						y = TyphmConstants.LINES_HEIGHT - y;
 					this.drawStaffLine(line, y);
-					lastLineNotes[i] = this.drawVoiceAndGetLastNote(line, voices[i], y, lastLineNotes[i]);
+					lastLineNotes[i] = this.drawVoiceAndGetLastNote(line, voices[i], i === 0, y, lastLineNotes[i]);
 				}
 				line.endTime = line.startTime + line.totalLength.valueOf() * line.millisecondsPerWhole;
 				lastLineEndTime = line.endTime;
@@ -306,17 +341,18 @@ Beatmap.prototype.drawLines = function () {
 
 Beatmap.prototype.drawStaffLine = function (bitmap, y) {
 	bitmap.fillRect(0, y, Graphics.width, 1, preferences.auxiliariesColor);
-}
+};
 
-Beatmap.prototype.drawVoiceAndGetLastNote = function (bitmap, voice, y, lastNote) {
+Beatmap.prototype.denormalizeX = function (normalizedX) {
+	return normalizedX * (Graphics.width - preferences.margin*2) + preferences.margin;
+};
+
+Beatmap.prototype.drawVoiceAndGetLastNote = function (bitmap, voice, isFirstVoice, y, lastNote) {
 	bitmap.totalTime = bitmap.totalLength.valueOf() * bitmap.millisecondsPerWhole;
 	let timeLengthPassed = frac(0);
 	for (let i = 0; i < voice.length; i++) {
 		const event = voice[i];
-		event.x = bitmap.space_xFormula(timeLengthPassed.div(bitmap.totalLength)) * (Graphics.width - preferences.margin*2) + preferences.margin;
-		event.xEnd = bitmap.space_xFormula(timeLengthPassed.add(event.trueLength).div(bitmap.totalLength)) * (Graphics.width - preferences.margin*2) + preferences.margin;
-		event.time = bitmap.startTime + bitmap.timeFormula(timeLengthPassed.div(bitmap.totalLength)) * bitmap.totalTime;
-		event.timeEnd = bitmap.startTime + bitmap.timeFormula(timeLengthPassed.add(event.trueLength).div(bitmap.totalLength)) * bitmap.totalTime;
+		this.setupNoteXAndTime(bitmap, event, timeLengthPassed);
 		const lastTie = lastNote && lastNote.tie;
 		if (event.event === "note") {
 			if (lastTie) {
@@ -337,10 +373,18 @@ Beatmap.prototype.drawVoiceAndGetLastNote = function (bitmap, voice, y, lastNote
 				const firstNote = this.getFirstNoteRecursive(event);
 				firstNote.tiedNote = lastNote;
 				firstNote.multiplicity = lastNote.multiplicity;
+				firstNote.big = false;
 			}
-			lastNote = this.drawGroupAndGetLastNoteRecursive(bitmap, event, y, lastNote,
+			lastNote = this.drawGroupAndGetLastNoteRecursive(bitmap, isFirstVoice, event, y, lastNote,
 					i === 0, i === voice.length - 1, this.getGroupHeightRecursive(event), timeLengthPassed, 1);
 		} else if (event.event === 'barline') {
+			if (isFirstVoice) {
+				this.barlines.push({
+					"time": event.time,
+					"x": event.x,
+					"lineno": bitmap.lineno
+				});
+			}
 			this.drawBarline(bitmap, event.x);
 		}
 		timeLengthPassed = timeLengthPassed.add(event.trueLength);
@@ -370,6 +414,7 @@ Beatmap.prototype.getGroupHeightRecursive = function (group) {
 Beatmap.prototype.drawIndividualNote = function (bitmap, note, y, shouldHit) {
 	if (!shouldHit) {
 		note.multiplicity = note.tiedNote.multiplicity;
+		note.big = false;
 	}
 	if (note.multiplicity === 0) {
 		this.drawRest(bitmap, note, y);
@@ -387,8 +432,8 @@ Beatmap.prototype.recordHitEvent = function (lineno, note, y, shouldHit) {
 	if (shouldHit) {
 		note.hitEvents = [];
 		for (let i = 0; i < note.multiplicity; i++) {
-			const hitEvent = {"x": note.x, "y": y+i*preferences.headsRadius*2, "xEnd": note.xEnd, "time": note.time, "timeEnd": note.timeEnd,
-				"hold": note.hold, "solid": note.length > 1, "lineno": lineno};
+			const hitEvent = {"x": note.x, "hitX": note.hitX, "y": y+i*preferences.headsRadius*2, "xEnd": note.xEnd, "time": note.time, "timeEnd": note.timeEnd,
+				"big": note.big, "hold": note.hold, "solid": note.length > 1, "lineno": lineno};
 			note.hitEvents.push(hitEvent);
 			this.notes.push(hitEvent);
 		}
@@ -469,7 +514,8 @@ Beatmap.prototype.drawNoteHeadsAndDots = function (bitmap, note, y, shouldHit) {
 	}
 	context.restore();
 	for (let i = 0; i < note.multiplicity; i++) {
-		this.drawNoteHead(bitmap, note.x, y + i*preferences.headsRadius*2, note.length > 1, shouldHit ? preferences.notesColor : preferences.auxiliariesColor);
+		this.drawNoteHead(bitmap, note.x, y + i*preferences.headsRadius*2, note.length > 1,
+			note.big, shouldHit ? preferences.notesColor : preferences.auxiliariesColor);
 	}
 };
 
@@ -533,15 +579,26 @@ Beatmap.prototype.drawTie = function (bitmap, x1, x2, y) {
 	bitmap._setDirty();
 };
 
-Beatmap.prototype.drawGroupAndGetLastNoteRecursive = function (bitmap, group, y, lastNote, isFirst, isLast, height, lengthStart, previousEvent, nextEvent, layer) {
+Beatmap.prototype.getTimeFromPosition = function (bitmap, position) {
+	return bitmap.timeFormula(position) * bitmap.totalTime + bitmap.startTime;
+};
+
+Beatmap.prototype.setupNoteXAndTime = function (bitmap, event, timeLengthPassed) {
+	const position = timeLengthPassed.div(bitmap.totalLength);
+	const positionEnd = timeLengthPassed.add(event.trueLength).div(bitmap.totalLength);
+	event.x = this.denormalizeX(bitmap.note_xFormula(position));
+	event.xEnd = this.denormalizeX(bitmap.note_xFormula(positionEnd));
+	event.hitX = this.denormalizeX(bitmap.hit_xFormula(position));
+	event.time = this.getTimeFromPosition(bitmap, position);
+	event.timeEnd = this.getTimeFromPosition(bitmap, positionEnd);
+};
+
+Beatmap.prototype.drawGroupAndGetLastNoteRecursive = function (bitmap, isFirstVoice, group, y, lastNote, isFirst, isLast, height, lengthStart, previousEvent, nextEvent, layer) {
 	const notes = group.notes;
 	let timeLengthPassed = lengthStart;
 	for (let i = 0; i < notes.length; i++) {
 		const event = notes[i];
-		event.x = bitmap.space_xFormula(timeLengthPassed.div(bitmap.totalLength)) * (Graphics.width-2*preferences.margin) + preferences.margin;
-		event.xEnd = bitmap.space_xFormula(timeLengthPassed.add(event.trueLength).div(bitmap.totalLength)) * (Graphics.width-2*preferences.margin) + preferences.margin;
-		event.time = bitmap.timeFormula(timeLengthPassed.div(bitmap.totalLength)) * bitmap.totalTime + bitmap.startTime;
-		event.timeEnd = bitmap.timeFormula(timeLengthPassed.add(event.trueLength).div(bitmap.totalLength)) * bitmap.totalTime + bitmap.startTime;
+		this.setupNoteXAndTime(bitmap, event, timeLengthPassed);
 		const lastTie = lastNote && lastNote.tie;
 		let previousIndex = i - 1;
 		while (notes[previousIndex] && notes[previousIndex].event === "barline") {
@@ -573,10 +630,13 @@ Beatmap.prototype.drawGroupAndGetLastNoteRecursive = function (bitmap, group, y,
 				const firstNote = this.getFirstNoteRecursive(event);
 				firstNote.tiedNote = lastNote;
 				firstNote.multiplicity = lastNote.multiplicity;
+				firstNote.big = false;
 			}
-			lastNote = this.drawGroupAndGetLastNoteRecursive(bitmap, event, y, lastNote,
+			lastNote = this.drawGroupAndGetLastNoteRecursive(bitmap, isFirstVoice, event, y, lastNote,
 				i === 0, isLast && i === notes.length - 1, height, timeLengthPassed, previousNote, nextNote, layer + 1);
 		} else if (event.event === 'barline') {
+			if (isFirstVoice)
+				this.barlines.push({"time": event.time, "x": event.x, "lineno": bitmap.lineno});
 			this.drawBarline(bitmap, event.x);
 		}
 		timeLengthPassed = timeLengthPassed.add(event.trueLength);
@@ -640,9 +700,9 @@ Beatmap.prototype.trackHoldTo = function (now, xNow, hitEvent, judge, lineno) {
 	context.lineTo(xNow, y);
 	context.lineWidth = preferences.holdWidth;
 	let color;
-	if (judge === 'perfect')
+	if (judge === Scene_Game.PERFECT)
 		color = preferences.perfectColor;
-	else if (judge === 'good')
+	else if (judge === Scene_Game.GOOD)
 		color = preferences.goodColor;
 	context.strokeStyle = color;
 	context.stroke();
@@ -718,6 +778,7 @@ Beatmap.prototype.drawUnconnectedBeams = function (bitmap, note, y, height, begi
 Beatmap.prototype.drawBeamedNote = function (bitmap, note, y, previous, next, shouldHit, height, timeLengthPassed) {
 	if (!shouldHit) {
 		note.multiplicity = note.tiedNote.multiplicity;
+		note.big = false;
 	}
 	if (note.multiplicity === 0) {
 		this.drawRest(bitmap, note, y);
@@ -824,17 +885,22 @@ Beatmap.prototype.drawRest = function (bitmap, note, y) {
 	bitmap._setDirty();
 }
 
-Beatmap.prototype.drawNoteHead = function (bitmap, x, y, solid, color) {
+Beatmap.prototype.drawNoteHead = function (bitmap, x, y, solid, big, color) {
 	const context = bitmap._context;
+	const r = preferences.headsRadius;
 	context.save();
 	context.fillStyle = color;
 	context.strokeStyle = color;
 	context.lineWidth = 2;
 	context.beginPath();
-	context.arc(x, y, preferences.headsRadius, -Math.PI/2, Math.PI*1.5);
+	context.arc(x, y, r, -Math.PI/2, Math.PI*1.5);
 	context.stroke();
 	if (solid)
 		context.fill();
+	if (big) {
+		context.globalCompositeOperation = 'destination-over';
+		context.drawImage(this._bigNoteHalo._canvas, 0, 0, 4*r, 4*r, x - 2*r, y - 2*r, 4*r, 4*r);
+	}
 	context.restore();
 	bitmap._setDirty();
 };
@@ -897,5 +963,5 @@ Beatmap.prototype.drawBPM = function (bitmap, beatNote, dots, bpm, position) {
 };
 
 Beatmap.prototype.clearNote = function (event, judge) {
-	this.drawNoteHead(this.lines[event.lineno], event.x, event.y, event.solid, preferences[judge + 'Color']);
+	this.drawNoteHead(this.lines[event.lineno], event.x, event.y, event.solid, false, Scene_Game.getColorFromJudge(judge));
 };

@@ -27,6 +27,11 @@ Scene_Game.VISUALS = [
 	'mirror',
 	'showKeyboard'
 ];
+Scene_Game.PERFECT = 3;
+Scene_Game.GOOD = 2;
+Scene_Game.BAD = 1;
+Scene_Game.MISS = 0;
+Scene_Game.EXCEESS = -1;
 
 Scene_Game.prototype.initialize = function (musicUrl, beatmapUrl, recording) {
 	Scene_Base.prototype.initialize.call(this);
@@ -72,10 +77,10 @@ Scene_Game.prototype.start = function () {
 	this._createSaveRecordingButton();
 	this._createModifiersListSprite();
 	if (this._visuals.flashWarningGood)
-		this._createFlashBitmap('good');
+		this._createFlashBitmap(Scene_Game.GOOD);
 	if (this._visuals.flashWarningMiss) {
-		this._createFlashBitmap('bad');
-		this._createFlashBitmap('miss');
+		this._createFlashBitmap(Scene_Game.BAD);
+		this._createFlashBitmap(Scene_Game.MISS);
 		this._createFlashBitmap('excess');
 	}
 	if (this._visuals.TPSIndicator)
@@ -84,11 +89,7 @@ Scene_Game.prototype.start = function () {
 	this._beatmap = new Beatmap(this._beatmapUrl);
 	this._hasMusic = !!this._musicUrl;
 	this._ended = false;
-	this._perfectNumber = 0;
-	this._goodNumber = 0;
-	this._badNumber = 0;
-	this._missNumber = 0;
-	this._excessNumber = 0;
+	this._initializeJudgeCounters();
 	this._combo = 0;
 	this._maxCombo = 0;
 	this._holdings = [];
@@ -104,6 +105,24 @@ Scene_Game.prototype.start = function () {
 	this._shouldRestart = false;
 	this._shouldBack = false;
 	this._shouldReplay = false;
+};
+
+Scene_Game.prototype._initializeJudgeCounters = function () {
+	this._perfectNumber = 0;
+	this._goodNumber = 0;
+	this._badNumber = 0;
+	this._missNumber = 0;
+	this._excessNumber = 0;
+	
+	this._perfectMeasures = 0;
+	this._goodMeasures = 0;
+	this._badMeasures = 0;
+	this._missMeasures = 0;
+	
+	this._perfectBig = 0;
+	this._goodBig = 0;
+	this._badBig = 0;
+	this._missBig = 0;
 };
 
 Scene_Game.prototype._setUpRecording = function () {
@@ -189,6 +208,10 @@ Scene_Game.prototype._createTwoLines = function () {
 	this._line2.anchor.y = 0.5;
 	this._center(this._line2, (Graphics.height + preferences.distanceBetweenLines)/2);
 	this._nextBeatmapLayer.addChild(this._line2);
+	if (this._visuals.mirror) {
+		this._line1.scale.x = -1;
+		this._line2.scale.x = -1;
+	}
 };
 
 Scene_Game.prototype._createJudgeLineSprite = function () {
@@ -274,7 +297,7 @@ Scene_Game.prototype._createComboSprite = function () {
 };
 
 Scene_Game.prototype._createKeyboardSprite = function () {
-	this._keyboardSprite = new Sprite(new Bitmap(256, preferences.textHeight));
+	this._keyboardSprite = new Sprite(new Bitmap(512, preferences.textHeight));
 	this._keyboardSprite.y = Graphics.height - 2*preferences.textHeight;
 	this._keyboardSprite.visible = false;
 	this._HUDLayer.addChild(this._keyboardSprite);
@@ -398,7 +421,7 @@ Scene_Game.prototype._createTPSIndicatorSprite = function () {
 Scene_Game.prototype._createFlashBitmap = function (judge) {
 	this._flashBitmaps ||= {};
 	this._flashBitmaps[judge] = new Bitmap(Graphics.width, Graphics.height);
-	this._flashBitmaps[judge].fillAll(preferences[judge + 'Color']);
+	this._flashBitmaps[judge].fillAll(Scene_Game.getColorFromJudge(judge));
 };
 
 Scene_Game.prototype._flashWarn = function (judge) {
@@ -462,6 +485,8 @@ Scene_Game.prototype._updateJudgeLine = function (now) {
 	const lengthPosition = this._getLengthPositionFromTime(now);
 	const line = this._line1.bitmap;
 	this._judgeLine.x = this._getXFromLengthPosition(lengthPosition);
+	if (this._visuals.mirror)
+		this._judgeLine.x = Graphics.width - this._judgeLine.x;
 	if (this._visuals.judgeLinePerformances) {
 		this._judgeLine.y = this._line1.y - line.space_yFormula(lengthPosition);
 		this._judgeLine.scale.x = line.widthFormula(lengthPosition);
@@ -474,6 +499,8 @@ Scene_Game.prototype._updateJudgeLine = function (now) {
 			const judgeLine = this._fakeJudgeLines[i];
 			const set = line.fakeJudgeLines[i];
 			judgeLine.x = preferences.margin + set.space_xFormula(lengthPosition) * (Graphics.width - 2*preferences.margin);
+			if (this._visuals.mirror)
+				judgeLine.x = Graphics.width - judgeLine.x;
 			judgeLine.y = this._line1.y - set.space_yFormula(lengthPosition);
 			judgeLine.scale.x = set.widthFormula(lengthPosition);
 			judgeLine.scale.y = set.heightFormula(lengthPosition);
@@ -541,36 +568,48 @@ Scene_Game.prototype._autoPlayUpdateAndProcessMiss = function (now) {
 
 Scene_Game.prototype._missHit = function () {
 	const event = this._unclearedEvents.shift();
-	this._beatmap.clearNote(event, 'miss');
+	this._refreshMeasureStateAfterClearing(event, Scene_Game.MISS);
+	this._onDestinedMiss();
+	this._missClear(event);
+};
+
+Scene_Game.prototype._missClear = function (event) {
+	this._beatmap.clearNote(event, Scene_Game.MISS);
 	this._missNumber++;
+	if (event.big)
+		this._missBig++;
 	this._combo = 0;
-	if (this._visuals.flashWarningMiss)
-		this._flashWarn('miss')
-	if (this._isRecording && (preferences.autoRestartGood || preferences.autoRestartMiss))
-		this._shouldRestart = true;
 	this._updateCombo();
 	this._updateScore();
+};
+
+Scene_Game.getColorFromJudge = function (judge) {
+	if (judge === Scene_Game.PERFECT)
+		return preferences.perfectColor;
+	else if (judge === Scene_Game.GOOD)
+		return preferences.goodColor;
+	else if (judge === Scene_Game.BAD)
+		return preferences.badColor;
+	else if (judge === Scene_Game.MISS)
+		return preferences.missColor;
+	else if (judge === Scene_Game.EXCEESS)
+		return preferences.excessColor;
 };
 
 Scene_Game.prototype._updateHoldings = function (now) {
 	for (let i = 0; i < this._holdings.length; i++) {
 		const {event, judge} = this._holdings[i];
 		if (now >= event.timeEnd) {
-			this._beatmap.clearNote(event, judge);
-			if (judge === 'perfect') {
-				this._perfectNumber++;
+			if (judge === Scene_Game.PERFECT) {
+				this._perfectClear(event);
 			} else {
-				this._goodNumber++;
-				if (this._isRecording && preferences.autoRestartGood)
-					this._shouldRestart = true;
+				this._goodClear(event);
 			}
-			this._combo++;
-			this._updateScore();
-			this._updateCombo();
 			this._holdings.shift();
 			i--;
 		} else {
-			this._beatmap.trackHoldTo(now, this._judgeLine.x, event, judge, this._line1Index);
+			const xNow = this._visuals.mirror ? Graphics.width - this._judgeLine.x : this._judgeLine.x;
+			this._beatmap.trackHoldTo(now, xNow, event, judge, this._line1Index);
 		}
 	}
 };
@@ -598,6 +637,8 @@ Scene_Game.prototype._changeSceneIfShould = function () {
 		window.scene = this._offsetWizard ? new Scene_Preferences() : new Scene_Title();
 	if (this._shouldReplay)
 		window.scene = new Scene_Game(this._musicUrl, this._beatmapUrl, this._newRecording);
+	if (this._shouldError)
+		window.scene = new Scene_Error(this._error);
 };
 
 Scene_Game.prototype._finishIfShould = function (now) {
@@ -618,7 +659,7 @@ Scene_Game.prototype._finishIfShould = function (now) {
 
 Scene_Game.prototype._updateKeyboard = function () {
 	this._keyboardSprite.bitmap.clear();
-	this._keyboardSprite.bitmap.drawText(Object.keys(this._pressings).join(''), 0, 0,
+	this._keyboardSprite.bitmap.drawText(Object.keys(this._pressings).join(' '), 0, 0,
 		this._keyboardSprite.width, preferences.textHeight, 'left');
 };
 
@@ -689,6 +730,7 @@ Scene_Game.prototype._setUpNewLine = function () {
 };
 
 Scene_Game.prototype.stop = function () {
+	Scene_Base.prototype.stop.call(this);
 	if (this._audioPlayer) {
 		this._audioPlayer.stop();
 		this._audioPlayer.clear();
@@ -701,8 +743,17 @@ Scene_Game.prototype.stop = function () {
 };
 
 Scene_Game.prototype._onLoad = async function () {
-	await this._beatmap.load();
-	this._beatmap.drawLines();
+	try {
+		await this._beatmap.load();
+	} catch (e) {
+		if (e instanceof TypeError || e instanceof BeatmapError) {
+			this._error = e;
+			this._shouldError = true;
+			return;
+		} else
+			throw e;
+	}
+	this._beatmap.drawLines(this._visuals.reverseVoices);
 	if (!this._hasMusic && this._beatmap.audioUrl) {
 		this._hasMusic = true;
 		this._musicUrl = this._beatmap.audioUrl;
@@ -711,10 +762,13 @@ Scene_Game.prototype._onLoad = async function () {
 	this._inaccuraciesArray = [];
 	this._lastPos = this._beatmap.start;
 	this._makeTitle();
-	this._updateScore();
-	this._updateCombo();
 	this._unclearedEvents = [...this._beatmap.notes];
 	this._unclearedHitSounds = [...this._beatmap.notes];
+	this._unclearedMeasures = this._beatmap.barlines.map(barline => barline.time);
+	this._currentMeasureJudge = Scene_Game.PERFECT;
+	this._totalBig = this._beatmap.notes.reduce((bigCount, event) => bigCount + (event.big ? 1 : 0), 0);
+	this._updateScore();
+	this._updateCombo();
 	if (this._hasMusic) {
 		this._audioPlayer = new WebAudio(this._musicUrl);
 		this._audioPlayer.addLoadListener(() => {
@@ -818,9 +872,10 @@ Scene_Game.prototype._resume = function () {
 	this._paused = false;
 	if (!this._ended) {
 		this._setButtonsVisible(false);
-		if (preferences.countdown)
+		if (preferences.countdown) {
 			this._resumingCountdown = new Scene_Game.Sprite_ResumingCountdown(this);
-		else
+			this._overHUDLayer.addChild(this._resumingCountdown);
+		} else
 			this.actualResume();
 	} else {
 		this.actualResume();
@@ -828,6 +883,7 @@ Scene_Game.prototype._resume = function () {
 };
 
 Scene_Game.prototype.actualResume = function () {
+	this._overHUDLayer.removeChild(this._resumingCountdown);
 	this._resumingCountdown = null;
 	if (!this._ended)
 		this._judgeLine.visible = true;
@@ -930,54 +986,91 @@ Scene_Game.prototype._playHitSound = function () {
 
 Scene_Game.prototype._perfectHit = function () {
 	const event = this._unclearedEvents.shift();
+	this._refreshMeasureStateAfterClearing(event, Scene_Game.PERFECT);
 	if (this._hitSoundEnabled() && !preferences.hitSoundWithMusic)
 		this._playHitSound();
 	if (event.hold) {
-		this._holdings.push({'event': event, judge: 'perfect'});
+		this._holdings.push({'event': event, judge: Scene_Game.PERFECT});
 		this._holdings.sort((a, b) => a.timeEnd - b.timeEnd);
 	} else {
-		this._beatmap.clearNote(event, 'perfect');
-		this._perfectNumber++;
-		this._combo++;
-		this._updateScore();
-		this._updateCombo();
+		this._perfectClear(event);
 	}
-	this._createHitEffect(event, 'perfect');
+	this._createHitEffect(event, Scene_Game.PERFECT);
+};
+
+Scene_Game.prototype._perfectClear = function (event) {
+	this._beatmap.clearNote(event, Scene_Game.PERFECT);
+	this._perfectNumber++;
+	this._combo++;
+	if (event.big)
+		this._perfectBig++;
+	this._updateScore();
+	this._updateCombo();
 };
 
 Scene_Game.prototype._goodHit = function () {
 	const event = this._unclearedEvents.shift();
+	this._refreshMeasureStateAfterClearing(event, Scene_Game.GOOD);
 	if (this._hitSoundEnabled() && !preferences.hitSoundWithMusic)
 		this._playHitSound();
-	if (this._visuals.flashWarningGood)
-		this._flashWarn('good')
+	this._onDestinedGood();
 	if (event.hold) {
-		this._holdings.push({'event': event, judge: 'good'});
+		this._holdings.push({'event': event, judge: Scene_Game.GOOD});
 		this._holdings.sort((a, b) => a.timeEnd - b.timeEnd);
 	} else {
-		this._beatmap.clearNote(event, 'good');
-		this._goodNumber++;
-		this._combo++;
-		if (this._isRecording && preferences.autoRestartGood)
-			this._shouldRestart = true;
-		this._updateScore();
-		this._updateCombo();
+		this._goodClear(event);
 	}
-	this._createHitEffect(event, 'good');
+	this._createHitEffect(event, Scene_Game.GOOD);
+};
+
+Scene_Game.prototype._onDestinedGood = function () {
+	if (this._visuals.flashWarningGood)
+		this._flashWarn(Scene_Game.GOOD)
+	if (this._isRecording && preferences.autoRestartGood)
+		this._shouldRestart = true;
+};
+
+Scene_Game.prototype._goodClear = function (event) {
+	this._beatmap.clearNote(event, Scene_Game.GOOD);
+	this._goodNumber++;
+	this._combo++;
+	if (event.big)
+		this._goodBig++;
+	this._updateScore();
+	this._updateCombo();
+};
+
+Scene_Game.prototype._refreshMeasureStateAfterClearing = function (event, judge) {
+	while (this._unclearedMeasures.length > 0) {
+		if (event.time >= this._unclearedMeasures[0])
+			this._clearMeasure();
+	}
+	this._currentMeasureJudge = Math.min(judge, this._currentMeasureJudge);
 };
 
 Scene_Game.prototype._badHit = function () {
 	const event = this._unclearedEvents.shift();
-	this._badNumber++;
+	this._refreshMeasureStateAfterClearing(event, Scene_Game.BAD);
+	this._onDestinedBad();
+	this._badClear(event);
+	this._createHitEffect(event, Scene_Game.BAD);
+};
+
+Scene_Game.prototype._onDestinedBad = function () {
 	if (this._visuals.flashWarningMiss)
-		this._flashWarn('bad')
+		this._flashWarn(Scene_Game.BAD)
 	if (this._isRecording && (preferences.autoRestartGood || preferences.autoRestartMiss))
 		this._shouldRestart = true;
+};
+
+Scene_Game.prototype._badClear = function (event) {
+	this._badNumber++;
+	if (event.big)
+		this._badBig++;
 	this._combo = 0;
 	this._updateScore();
 	this._updateCombo();
-	this._beatmap.clearNote(event, 'bad');
-	this._createHitEffect(event, 'bad');
+	this._beatmap.clearNote(event, Scene_Game.BAD);
 };
 
 Scene_Game.prototype._processHit = function (now) {
@@ -989,11 +1082,11 @@ Scene_Game.prototype._processHit = function (now) {
 			if (now >= event.time - this._missBoundary() * this._modifiers.judgeWindow) {
 				const inaccuracy = now - event.time;
 				const judge = this._getJudgeFromInaccuracy(inaccuracy);
-				if (judge === 'perfect')
+				if (judge === Scene_Game.PERFECT)
 					this._perfectHit();
-				else if (judge === 'good')
+				else if (judge === Scene_Game.GOOD)
 					this._goodHit();
-				else if (judge === 'bad' && !this._modifiers.noBad)
+				else if (judge === Scene_Game.BAD && !this._modifiers.noBad)
 					this._badHit();
 				else {
 					this._missHit();
@@ -1025,30 +1118,29 @@ Scene_Game.prototype._processLoosen = function (now) {
 	if (!this._modifiers.autoCompleteHolds && Object.keys(this._pressings).length < this._holdings.length) {
 		const {event, judge} = this._holdings.shift();
 		if (now < event.timeEnd - this._goodTolerance * this._modifiers.judgeWindow) {
-			this._beatmap.clearNote(event, 'miss');
-			this._missNumber++;
-			this._combo = 0;
-			if (this._isRecording && (preferences.autoRestartGood || preferences.autoRestartMiss))
-				this._shouldRestart = true;
-			if (this._visuals.flashWarningMiss)
-				this._flashWarn('miss');
-		} else if (judge === 'perfect') {
-			this._beatmap.clearNote(event, 'perfect');
-			this._perfectNumber++;
-			this._combo++;
-		} else if (judge === 'good') {
-			this._beatmap.clearNote(event, 'good');
-			this._goodNumber++;
-			this._combo++;
+			this._onDestinedMiss();
+			this._missClear(event);
+		} else if (judge === Scene_Game.PERFECT) {
+			this._perfectClear(event);
+		} else if (judge === Scene_Game.GOOD) {
+			this._goodClear(event);
 		}
-		this._updateScore();
-		this._updateCombo();
 	}
+};
+
+Scene_Game.prototype._onDestinedMiss = function () {
+	if (this._isRecording && (preferences.autoRestartGood || preferences.autoRestartMiss))
+		this._shouldRestart = true;
+	if (this._visuals.flashWarningMiss)
+		this._flashWarn(Scene_Game.MISS);
 };
 
 Scene_Game.prototype._updateScore = function () {
 	this._scoreSprite.bitmap.clear();
-	this._score = Math.floor((this._perfectNumber + this._goodNumber/4 - this._excessNumber)*1000000/this._beatmap.notes.length);
+	this._score = Math.floor(500000 * (
+		((this._perfectNumber+this._perfectBig) + (this._goodNumber+this._goodBig)/4 - this._excessNumber)/(this._beatmap.notes.length+this._totalBig) + // 准度分
+		(this._perfectMeasures + this._goodMeasures/2) / this._beatmap.barlines.length // 连击分
+	));
 	this._scoreSprite.bitmap.textColor = this._getScoreColor();
 	this._scoreSprite.bitmap.drawText(this._score, 0, 0, this._scoreSprite.width, preferences.textHeight, 'right');
 	if (!this._unclearedEvents || this._unclearedEvents.length === this._beatmap.notes.length)
@@ -1128,7 +1220,7 @@ Scene_Game.prototype._createInaccuracyIndicator = function (inaccuracy) {
 	};
 	if (this._visuals.showInaccuracyData) {
 		this._inaccuracyDataSprite.bitmap.clear();
-		this._inaccuracyDataSprite.bitmap.textColor = preferences[this._getJudgeFromInaccuracy(inaccuracy) + 'Color'];
+		this._inaccuracyDataSprite.bitmap.textColor = Scene_Game.getColorFromJudge(this._getJudgeFromInaccuracy(inaccuracy));
 		this._inaccuracyDataSprite.bitmap.drawText(sprintf('%+.0fms', inaccuracy), 0, 0,
 			this._inaccuracyDataSprite.width, preferences.textHeight, 'center');
 	}
@@ -1137,22 +1229,24 @@ Scene_Game.prototype._createInaccuracyIndicator = function (inaccuracy) {
 Scene_Game.prototype._getJudgeFromInaccuracy = function (inaccuracy) {
 	const absInaccuracy = Math.abs(inaccuracy);
 	if (absInaccuracy <= this._perfectTolerance * this._modifiers.judgeWindow)
-		return 'perfect';
+		return Scene_Game.PERFECT;
 	if (absInaccuracy <= this._goodTolerance * this._modifiers.judgeWindow)
-		return 'good';
+		return Scene_Game.GOOD;
 	if (absInaccuracy <= this._badTolerance * this._modifiers.judgeWindow)
-		return 'bad';
-	return 'miss';
+		return Scene_Game.BAD;
+	return Scene_Game.MISS;
 };
 
 Scene_Game.prototype._createHitEffect = function (event, judge) {
 	const r = preferences.hitEffectRadius;
 	const hitEffect = new Sprite(new Bitmap(2*r, 2*r));
-	const color = preferences[judge + 'Color'];
+	const color = Scene_Game.getColorFromJudge(judge);
 	hitEffect.bitmap.drawCircle(r, r, preferences.headsRadius, color);
 	hitEffect.anchor.x = 0.5;
 	hitEffect.anchor.y = 0.5;
-	hitEffect.x = event.x;
+	hitEffect.x = event.hitX;
+	if (this._visuals.mirror)
+		hitEffect.x = Graphics.width - hitEffect.x;
 	const line = this._line1Index === event.lineno ? this._line1 : this._line2;
 	hitEffect.y = line.y - TyphmConstants.LINES_HEIGHT / 2 + event.y;
 	this._hitEffectLayer.addChild(hitEffect);
@@ -1230,6 +1324,8 @@ Scene_Game.prototype._finish = function () {
 		this._keyboardSprite.visible = false;
 	if (this._visuals.TPSIndicator)
 		this._TPSIndicator.visible = false;
+	if (this._visuals.showInaccuracyData)
+		this._inaccuracyDataSprite.visible = false;
 	if (this._offsetWizard && this._inaccuraciesArray.length > 0)
 		preferences.offset -= math.mean(this._inaccuraciesArray);
 	if (this._inaccuraciesArray.length > 0)
@@ -1249,7 +1345,7 @@ Scene_Game.prototype._drawInaccuraciesDistribution = function () {
 	const n = TyphmConstants.INACCURACIES_DISTRIBUTION_PIECES;
 	const points = new Array(n).fill(0);
 	for (let i = 0; i < n; i++) {
-		const x = (i/n - 0.5)*6;
+		const x = (i/(n-1) - 0.5)*6;
 		for (let j = 0; j < this._inaccuraciesArray.length; j++) {
 			const z = (this._inaccuraciesArray[j] - mu) / sigma
 			points[i] += 1 / (1 + (z-x)**2 / twoS2);
@@ -1264,33 +1360,55 @@ Scene_Game.prototype._drawInaccuraciesDistribution = function () {
 	context.strokeStyle = preferences.textColor;
 	context.fillStyle = preferences.textColor + '80';
 	context.beginPath();
-	context.moveTo(0, height);
 	for (let i = 0; i < n; i++)
-		context.lineTo(width*i/n, height*(1-points[i]/peak));
-	context.lineTo(width, height);
+		context[i === 0 ? 'moveTo' : 'lineTo'](width*i/(n-1), height*(1-points[i]/peak));
 	context.stroke();
+	context.lineTo(width, height);
+	context.lineTo(0, height);
 	context.fill();
 	context.restore();
 	this._inaccuraciesDistribution.bitmap.drawText(sprintf('μ=%+.0fms', mu), width-256, 0, 256, preferences.textHeight, 'right');
 	this._inaccuraciesDistribution.bitmap.drawText(sprintf('σ=%.0fms', sigma), width-256, preferences.textHeight, 256, preferences.textHeight, 'right');
 };
 
+Scene_Game.prototype._clearMeasure = function () {
+	if (this._currentMeasureJudge === Scene_Game.PERFECT)
+		this._perfectMeasures++;
+	else if (this._currentMeasureJudge === Scene_Game.GOOD)
+		this._goodMeasures++;
+	else if (this._currentMeasureJudge === Scene_Game.BAD)
+		this._badMeasures++;
+	else if (this._currentMeasureJudge === Scene_Game.MISS)
+		this._missMeasures++;
+	this._unclearedMeasures.shift();
+	this._currentMeasureJudge = Scene_Game.PERFECT;
+};
+
 Scene_Game.prototype._drawSummary = function () {
+	this._clearMeasure();
+	this._updateScore();
 	this._markSprite.bitmap.fontSize = 108;
 	this._markSprite.bitmap.textColor = this._getScoreColor();
-	this._markSprite.bitmap.drawText(this._getMark(), 0, 0, this._markSprite.width, this._markSprite.height, 'center');
+	this._markSprite.bitmap.drawText(this._getMark(),
+		0, 0, this._markSprite.width, this._markSprite.height, 'center');
 	this._summarySprite.bitmap.textColor = preferences.perfectColor;
-	this._summarySprite.bitmap.drawText(`${Strings.perfect}: ${this._perfectNumber}`, 0, 0, this._summarySprite.bitmap.width, preferences.textHeight, 'left');
+	this._summarySprite.bitmap.drawText(`${Strings.perfect}: ${this._perfectNumber} (${this._perfectMeasures})`,
+		0, 0, this._summarySprite.bitmap.width, preferences.textHeight, 'left');
 	this._summarySprite.bitmap.textColor = preferences.goodColor;
-	this._summarySprite.bitmap.drawText(`${Strings.good}: ${this._goodNumber}`, 0, preferences.textHeight, this._summarySprite.bitmap.width, preferences.textHeight, 'left');
+	this._summarySprite.bitmap.drawText(`${Strings.good}: ${this._goodNumber} (${this._goodMeasures})`,
+		0, preferences.textHeight, this._summarySprite.bitmap.width, preferences.textHeight, 'left');
 	this._summarySprite.bitmap.textColor = preferences.badColor;
-	this._summarySprite.bitmap.drawText(`${Strings.bad}: ${this._badNumber}`, 0, preferences.textHeight*2, this._summarySprite.bitmap.width, preferences.textHeight, 'left');
+	this._summarySprite.bitmap.drawText(`${Strings.bad}: ${this._badNumber} (${this._badMeasures})`,
+		0, preferences.textHeight*2, this._summarySprite.bitmap.width, preferences.textHeight, 'left');
 	this._summarySprite.bitmap.textColor = preferences.missColor;
-	this._summarySprite.bitmap.drawText(`${Strings.miss}: ${this._missNumber}`, 0, preferences.textHeight*3, this._summarySprite.bitmap.width, preferences.textHeight, 'left');
+	this._summarySprite.bitmap.drawText(`${Strings.miss}: ${this._missNumber} (${this._missMeasures})`,
+		0, preferences.textHeight*3, this._summarySprite.bitmap.width, preferences.textHeight, 'left');
 	this._summarySprite.bitmap.textColor = preferences.excessColor;
-	this._summarySprite.bitmap.drawText(`${Strings.excess}: ${this._excessNumber}`, 0, preferences.textHeight*4, this._summarySprite.bitmap.width, preferences.textHeight, 'left');
+	this._summarySprite.bitmap.drawText(`${Strings.excess}: ${this._excessNumber}`,
+		0, preferences.textHeight*4, this._summarySprite.bitmap.width, preferences.textHeight, 'left');
 	this._summarySprite.bitmap.textColor = 'white';
-	this._summarySprite.bitmap.drawText(`${Strings.maxCombo}: ${this._maxCombo}`, 0, preferences.textHeight*5, this._summarySprite.bitmap.width, preferences.textHeight, 'left');
+	this._summarySprite.bitmap.drawText(`${Strings.maxCombo}: ${this._maxCombo}`,
+		0, preferences.textHeight*5, this._summarySprite.bitmap.width, preferences.textHeight, 'left');
 	this._drawInaccuraciesDistribution();
 };
 
@@ -1329,7 +1447,6 @@ Scene_Game.Sprite_ResumingCountdown.prototype.initialize = function (scene) {
 	this.y = Graphics.height / 2;
 	this.bitmap.fontSize = preferences.fontSize*8;
 	this._scene = scene;
-	this._scene.addChild(this);
 	const maxCount = 3;
 	for (let i = 0; i <= maxCount; i++) {
 		setTimeout(sprite => sprite._countTo(i), (maxCount - i)*1000, this);
@@ -1338,7 +1455,6 @@ Scene_Game.Sprite_ResumingCountdown.prototype.initialize = function (scene) {
 
 Scene_Game.Sprite_ResumingCountdown.prototype._countTo = function (n) {
 	if (n === 0) {
-		this._scene.removeChild(this);
 		this._scene.actualResume();
 	} else {
 		this.bitmap.clear();
