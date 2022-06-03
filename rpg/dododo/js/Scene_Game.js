@@ -234,6 +234,7 @@ Scene_Game.prototype._destroyFakeJudgeLines = function () {
 	for (let i = 0; i < this._fakeJudgeLines.length; i++) {
 		this._judgeLineLayer.removeChild(this._fakeJudgeLines[i]);
 	}
+	this._fakeJudgeLines = [];
 };
 
 Scene_Game.prototype._createFakeJudgeLines = function () {
@@ -489,10 +490,8 @@ Scene_Game.prototype._updateProgress = function (now) {
 Scene_Game.prototype._updateJudgeLine = function (now) {
 	const lengthPosition = this._getLengthPositionFromTime(now);
 	const line = this._line1.bitmap;
-	this._judgeLine.x = this._getXFromLengthPosition(lengthPosition);
-	if (this._visuals.mirror)
-		this._judgeLine.x = Graphics.width - this._judgeLine.x;
 	if (this._visuals.judgeLinePerformances) {
+		this._judgeLine.x = this._getXFromLengthPosition(lengthPosition);
 		this._judgeLine.y = this._line1.y - line.space_yFormula(lengthPosition);
 		this._judgeLine.scale.x = line.widthFormula(lengthPosition);
 		this._judgeLine.scale.y = line.heightFormula(lengthPosition);
@@ -515,9 +514,12 @@ Scene_Game.prototype._updateJudgeLine = function (now) {
 				set.blueFormula(lengthPosition), set.alphaFormula(lengthPosition)));
 		}
 	} else {
+		this._judgeLine.x = this._getNoteXFromLengthPosition(lengthPosition);
 		this._judgeLine.y = this._line1.y;
 		this._judgeLine.scale.y = line.voicesNumber * preferences.voicesHeight;
 	}
+	if (this._visuals.mirror)
+		this._judgeLine.x = Graphics.width - this._judgeLine.x;
 	if (this._visuals.fadeIn) {
 		this._fadeInMask.y = this._line1.y;
 		this._fadeInMask.x = this._judgeLine.x;
@@ -602,20 +604,23 @@ Scene_Game.getColorFromJudge = function (judge) {
 };
 
 Scene_Game.prototype._updateHoldings = function (now) {
-	for (let i = 0; i < this._holdings.length; i++) {
-		const {event, judge} = this._holdings[i];
+	while (this._holdings.length > 0) {
+		const {event, judge} = this._holdings[0];
 		if (now >= event.timeEnd) {
 			if (judge === Scene_Game.PERFECT) {
 				this._perfectClear(event);
-			} else {
+			} else if (judge === Scene_Game.GOOD) {
 				this._goodClear(event);
 			}
 			this._holdings.shift();
-			i--;
 		} else {
-			const xNow = this._visuals.mirror ? Graphics.width - this._judgeLine.x : this._judgeLine.x;
-			this._beatmap.trackHoldTo(now, xNow, event, judge, this._line1Index);
+			break;
 		}
+	}
+	for (let i = 0; i < this._holdings.length; i++) {
+		const {event, judge} = this._holdings[i];
+		const xNow = this._visuals.mirror ? Graphics.width - this._judgeLine.x : this._judgeLine.x;
+		this._beatmap.trackHoldTo(now, xNow, event, judge, this._line1Index);
 	}
 };
 
@@ -1000,7 +1005,7 @@ Scene_Game.prototype._perfectHit = function () {
 		this._playHitSound();
 	if (event.hold) {
 		this._holdings.push({'event': event, judge: Scene_Game.PERFECT});
-		this._holdings.sort((a, b) => a.timeEnd - b.timeEnd);
+		this._holdings.sort((a, b) => a.event.timeEnd - b.event.timeEnd);
 	} else {
 		this._perfectClear(event);
 	}
@@ -1025,7 +1030,7 @@ Scene_Game.prototype._goodHit = function () {
 	this._onDestinedGood();
 	if (event.hold) {
 		this._holdings.push({'event': event, judge: Scene_Game.GOOD});
-		this._holdings.sort((a, b) => a.timeEnd - b.timeEnd);
+		this._holdings.sort((a, b) => a.event.timeEnd - b.event.timeEnd);
 	} else {
 		this._goodClear(event);
 	}
@@ -1286,7 +1291,7 @@ Scene_Game.prototype._createWrongNote = function (time) {
 	wrongNote.bitmap.drawCircle(16, 16, preferences.headsRadius, preferences.excessColor);
 	wrongNote.anchor.x = 0.5;
 	wrongNote.anchor.y = 0.5;
-	wrongNote.x = this._getXFromTime(time);
+	wrongNote.x = this._getNoteXFromTime(time);
 	wrongNote.y = this._line1.y;
 	this._beatmapLayer.addChild(wrongNote);
 	wrongNote.update = () => {
@@ -1321,8 +1326,17 @@ Scene_Game.prototype._getXFromLengthPosition = function (lengthPosition) {
 		return preferences.margin + this._line1.bitmap.space_xFormula(lengthPosition) * (Graphics.width - 2*preferences.margin);
 };
 
+Scene_Game.prototype._getNoteXFromLengthPosition = function (lengthPosition) {
+	if (this._line1 && this._line1.bitmap)
+		return preferences.margin + this._line1.bitmap.note_xFormula(lengthPosition) * (Graphics.width - 2*preferences.margin);
+};
+
 Scene_Game.prototype._getXFromTime = function (time) {
 	return this._getXFromLengthPosition(this._getLengthPositionFromTime(time));
+};
+
+Scene_Game.prototype._getNoteXFromTime = function (time) {
+	return this._getNoteXFromLengthPosition(this._getLengthPositionFromTime(time));
 };
 
 Scene_Game.prototype._setButtonsVisible = function (visibility) {
