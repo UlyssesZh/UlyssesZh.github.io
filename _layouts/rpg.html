@@ -10,8 +10,8 @@
 	{%- seo title=false -%}
 	{%- feed_meta -%}
 	{% if page.icon == "common" %}
-		<link rel="icon" href="https://cdn.jsdelivr.net/gh/UlyssesZh/rmmv_materials@master/icon/icon.png" type="image/png">
-		<link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/UlyssesZh/rmmv_materials@master/icon/icon.png">
+		<link rel="icon" href="https://fastly.jsdelivr.net/gh/UlyssesZh/rmmv_materials@master/icon/icon.png" type="image/png">
+		<link rel="apple-touch-icon" href="https://fastly.jsdelivr.net/gh/UlyssesZh/rmmv_materials@master/icon/icon.png">
 	{% elsif page.icon == "custom" %}
 		<link rel="icon" href="icon/icon.ico" type="image/ico">
 		<link rel="apple-touch-icon" href="icon/icon.ico">
@@ -20,7 +20,7 @@
 		<link rel="apple-touch-icon" href="/favicon.ico?">
 	{% endif %}
 	{% if page.font == "common" %}
-		<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/UlyssesZh/rmmv_materials@master/fonts/gamefont.css">
+		<link rel="stylesheet" type="text/css" href="https://fastly.jsdelivr.net/gh/UlyssesZh/rmmv_materials@master/fonts/gamefont.css">
 	{% elsif page.font == "custom" %}
 		<link rel="stylesheet" type="text/css" href="fonts/gamefont.css">
 	{% endif %}
@@ -30,7 +30,7 @@
 {%- include google_analytics_body.html -%}
 <script>
 (async function() {
-	const prefix = "https://cdn.jsdelivr.net/gh/rpgtkoolmv/corescript@v1.3b/";
+	const prefix = "https://fastly.jsdelivr.net/gh/rpgtkoolmv/corescript@v1.3b/";
 	let libs = ['pixi', 'pixi-tilemap', 'pixi-picture', 'fpsmeter', 'lz-string', 'iphone-inline-video.browser']
 	async function fetchMod(url) {
 		let files = await fetch(url).then(r => r.json());
