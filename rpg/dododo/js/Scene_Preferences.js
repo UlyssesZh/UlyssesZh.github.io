@@ -363,6 +363,12 @@ Scene_Preferences.PREFERENCES_PAGES = [
 				}
 			},
 			{
+				name: 'useWebGL',
+				type: 'boolean',
+				args: {
+				}
+			},
+			{
 				name: 'showFPS',
 				type: 'button',
 				args: {
@@ -445,6 +451,12 @@ Scene_Preferences.PREFERENCES_PAGES = [
 				}
 			},
 			{
+				name: 'countdownBeats',
+				type: 'boolean',
+				args: {
+				}
+			},
+			{
 				name: 'musicVolume',
 				type: 'number',
 				args: {
@@ -478,12 +490,6 @@ Scene_Preferences.PREFERENCES_PAGES = [
 				type: 'select',
 				args: {
 					selectItems: Object.entries(Strings.LANGUAGES)
-				}
-			},
-			{
-				name: 'save',
-				type: 'boolean',
-				args: {
 				}
 			},
 			{
@@ -585,14 +591,15 @@ Scene_Preferences.DEFAULT_PREFERENCES = {
 	backgroundColor: '#000000',
 	graphicsWidth: 1024,
 	graphicsHeight: 768,
+	useWebGL: true,
 	enableHitSound: true,
 	hitSound: 'snare_drum_1.ogg',
 	hitSoundWithMusic: false,
+	countdownBeats: false,
 	musicVolume: 1.0,
 	hitSoundVolume: 2.0,
 	masterVolume: 1.0,
 	language: navigator.languages.find(lang => Strings[lang]) || 'en-US',
-	save: false
 };
 
 Scene_Preferences.prototype = Object.create(Scene_Base.prototype);
@@ -748,11 +755,7 @@ Scene_Preferences.prototype._applySettings = function () {
 			}
 		}
 	}
-	if (preferences.save) {
-		localStorage.setItem('preferences', LZString.compressToBase64(this._getPreferencesJSON()));
-	} else if (localStorage.getItem('preferences')) {
-		localStorage.removeItem('preferences');
-	}
+	localStorage.setItem('preferences', LZString.compressToBase64(this._getPreferencesJSON()));
 };
 
 Scene_Preferences.prototype._previousPage = function () {
@@ -869,7 +872,14 @@ Scene_Preferences.prototype._loadPreferences = function () {
 			}
 		}
 	}
-}
+};
+
+Scene_Preferences.loadPreferencesFromStorage = function () {
+	const string = localStorage.getItem('preferences');
+	if (string)
+		Object.assign(preferences, JSON.parse(LZString.decompressFromBase64(string)));
+};
 
 window.preferences = {};
 Object.assign(preferences, Scene_Preferences.DEFAULT_PREFERENCES);
+Scene_Preferences.loadPreferencesFromStorage();
