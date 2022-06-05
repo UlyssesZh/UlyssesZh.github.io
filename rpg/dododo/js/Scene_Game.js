@@ -567,14 +567,14 @@ Scene_Game.prototype._updateTPSIndicator = function (now) {
 };
 
 Scene_Game.prototype._updateHitSoundWithMusic = function (now) {
+	const offsetNow = now - preferences.offset * this._modifiers.playRate;
 	while (this._unclearedHitSounds.length > 0) {
 		const event = this._unclearedHitSounds[0];
-		const offsetNow = now - preferences.offset * this._modifiers.playRate;
 		if (offsetNow >= event.time - TyphmConstants.HIT_SOUND_ADVANCE*this._modifiers.playRate) {
 			if (offsetNow <= event.time + this._perfectTolerance) {
 				setTimeout(() => this._playHitSound(), (event.time - offsetNow)/this._modifiers.playRate);
 			}
-			this._unclearedHitSounds.splice(0, 1);
+			this._unclearedHitSounds.shift();
 		} else
 			break;
 	}
@@ -706,16 +706,16 @@ Scene_Game.prototype._updateKeyboard = function () {
 Scene_Game.prototype.update = function () {
 	const now = this._now();
 	this._updateProgress(now);
-	if (!this._paused && !this._ended) {
-		if (this._visuals.showKeyboard)
+	if (!this._ended) {
+		if (this._visuals.showKeyboard && !this._modifiers.autoPlay)
 			this._updateKeyboard();
-		if (!this._resumingCountdown) {
+		if (!this._paused && !this._resumingCountdown) {
 			if (!this._isRecording)
 				this._updateRecordingApply(now);
 			this._updateJudgeLine(now);
 			if (this._visuals.TPSIndicator)
 				this._updateTPSIndicator(now);
-			if (this._hitSoundEnabled() && (this._modifiers.autoPlay || preferences.hitSoundWithMusic))
+			if (this._hitSoundWithMusic())
 				this._updateHitSoundWithMusic(now);
 			this._autoPlayUpdateAndProcessMiss(now);
 			this._updateHoldings(now);
@@ -805,11 +805,7 @@ Scene_Game.prototype._onLoad = async function () {
 	this._inaccuraciesArray = [];
 	this._lastPos = this._beatmap.start;
 	this._makeTitle();
-	this._unclearedEvents = [...this._beatmap.notes];
-	this._unclearedHitSounds = [...this._beatmap.notes];
-	this._unclearedMeasures = this._beatmap.barlines.map(barline => barline.time);
-	this._currentMeasureJudge = Scene_Game.PERFECT;
-	this._totalBig = this._beatmap.notes.reduce((bigCount, event) => bigCount + (event.big ? 1 : 0), 0);
+	this._preprocessHitEvents();
 	this._updateScore();
 	this._updateCombo();
 	if (this._hasMusic) {
@@ -824,6 +820,26 @@ Scene_Game.prototype._onLoad = async function () {
 		this._length = this._unclearedEvents.last().timeEnd - this._beatmap.start;
 		this._postLoadingAudio();
 	}
+};
+
+Scene_Game.prototype._preprocessHitEvents = function () {
+	this._unclearedEvents = [...this._beatmap.notes];
+	this._unclearedHitSounds = [...this._beatmap.notes];
+	this._totalMeasures = 0;
+	this._totalNotes = this._unclearedEvents.length;
+	for (let i = 0, j = 0; i < this._beatmap.barlines.length && j < this._totalNotes; i++, j++) {
+		const barlineTime = this._beatmap.barlines[i].time;
+		if (barlineTime <= this._unclearedEvents[j].time)
+			continue;
+		while (j < this._totalNotes - 1 && this._unclearedEvents[j + 1].time < barlineTime) {
+			this._unclearedEvents[j].isLastInMeasure = false;
+			j++;
+		}
+		this._unclearedEvents[j].isLastInMeasure = true;
+		this._totalMeasures++;
+	}
+	this._currentMeasureJudge = Scene_Game.PERFECT;
+	this._totalBig = this._beatmap.notes.reduce((bigCount, event) => bigCount + (event.big ? 1 : 0), 0);
 };
 
 Scene_Game.prototype._makeTitle = function () {
@@ -897,21 +913,31 @@ Scene_Game.prototype._postLoadingAudio = function () {
 
 Scene_Game.prototype._onBlur = function () {
 	if (preferences.autoPause && !this._paused && !this._ended)
-		this._pause();
+		this._actualPause();
+	if (!this._ended && this._isRecording) {
+		for (const key in this._pressings)
+			delete this._pressings[key];
+	}
 };
 
 Scene_Game.prototype._pause = function () {
 	if (this._paused) {
 		this._resume();
 	} else if (!this._musicEnded) {
-		this._lastPos = this._now();
-		this._paused = true;
-		this._setButtonsVisible(true);
-		if (this._resumingCountdown)
-			this._overHUDLayer.removeChild(this._resumingCountdown);
-		if (this._hasMusic)
-			this._audioPlayer.stop();
+		this._actualPause();
 	}
+};
+
+Scene_Game.prototype._actualPause = function () {
+	this._lastPos = this._now();
+	this._paused = true;
+	this._setButtonsVisible(true);
+	if (this._isRecording)
+		this._lastPressings = {...this._pressings};
+	if (this._resumingCountdown)
+		this._overHUDLayer.removeChild(this._resumingCountdown);
+	if (this._hasMusic)
+		this._audioPlayer.stop();
 };
 
 Scene_Game.prototype._resume = function () {
@@ -924,6 +950,17 @@ Scene_Game.prototype._resume = function () {
 			this._createResumingCountdown();
 		} else
 			this.actualResume();
+		if (this._isRecording) {
+			for (const key in this._lastPressings) {
+				if (!this._pressings[key])
+					this._processAndRecordLoosen(this._lastPos, key);
+			}
+			for (const key in this._pressings) {
+				if (!this._lastPressings[key])
+					this._processAndRecordHit(this._lastPos, key);
+			}
+			this._lastPressings = null;
+		}
 	} else {
 		this.actualResume();
 	}
@@ -973,7 +1010,8 @@ Scene_Game.prototype._onKeydown = function (event) {
 	} else if (!event.ctrlKey && !event.altKey && !event.metaKey && TyphmConstants.HITTABLE_KEYS.includes(key)) {
 		if (this._pressings[key])
 			return;
-		this._pressings[key] = true;
+		if (this._isRecording)
+			this._pressings[key] = true;
 		if (preferences.backtickRestart && key === '`') {
 			this._shouldRestart = true;
 		} else if (this._restart.visible) {
@@ -988,11 +1026,8 @@ Scene_Game.prototype._onKeydown = function (event) {
 					this._saveRecording();
 				}
 			}
-		} else if (!this._modifiers.autoPlay && this._isRecording) {
-			const now = this._now();
-			this._processHit(now);
-			this._newRecording.hit.push({time: now, key: key});
-		}
+		} else if (!this._modifiers.autoPlay && this._isRecording)
+			this._processAndRecordHit(this._now(), key);
 	}
 };
 
@@ -1000,12 +1035,10 @@ Scene_Game.prototype._onKeyup = function (event) {
 	if (!this._loadingFinished)
 		return;
 	const key = event.key === ' ' ? 'Spacebar' : event.key;
-	delete this._pressings[key];
-	if (!this._paused && !this._modifiers.autoPlay && this._isRecording) {
-		const now = this._now();
-		this._processLoosen(now);
-		this._newRecording.loosen.push({time: now, key: key});
-	}
+	if (this._isRecording)
+		delete this._pressings[key];
+	if (!this._paused && !this._modifiers.autoPlay && this._isRecording)
+		this._processAndRecordLoosen(this._now(), key);
 };
 
 Scene_Game.prototype._onTouchEnd = function (event) {
@@ -1017,11 +1050,19 @@ Scene_Game.prototype._onTouchEnd = function (event) {
 	}
 	if (!this._paused && !this._modifiers.autoPlay && this._isRecording) {
 		const now = this._now();
-		for (let i = 0; i < changedTouches.length; i++) {
-			this._processLoosen(now);
-			this._newRecording.loosen.push({time: now, key: changedTouches.item(i).identifier});
-		}
+		for (let i = 0; i < changedTouches.length; i++)
+			this._processAndRecordLoosen(now, changedTouches.item(i).identifier);
 	}
+};
+
+Scene_Game.prototype._processAndRecordLoosen = function (time, key) {
+	this._processLoosen(time);
+	this._newRecording.loosen.push({'time': time, 'key': key});
+};
+
+Scene_Game.prototype._processAndRecordHit = function (time, key) {
+	this._processHit(time);
+	this._newRecording.hit.push({'time': time, 'key': key});
 };
 
 Scene_Game.prototype._onTouchStart = function (event) {
@@ -1043,15 +1084,17 @@ Scene_Game.prototype._onTouchStart = function (event) {
 			}
 		}
 		const now = this._now();
-		for (let i = 0; i < identifiers.length; i++) {
-			this._processHit(now);
-			this._newRecording.hit.push({time: now, key: identifiers[i]});
-		}
+		for (let i = 0; i < identifiers.length; i++)
+			this._processAndRecordHit(now, identifiers[i]);
 	}
 };
 
 Scene_Game.prototype._hitSoundEnabled = function () {
 	return !!(preferences.enableHitSound && !this._offsetWizard);
+};
+
+Scene_Game.prototype._hitSoundWithMusic = function () {
+	return this._hitSoundEnabled() && (this._modifiers.autoPlay || preferences.hitSoundWithMusic);
 };
 
 Scene_Game.prototype._playHitSound = function () {
@@ -1121,9 +1164,9 @@ Scene_Game.prototype._goodClear = function (event) {
 };
 
 Scene_Game.prototype._refreshMeasureStateAfterHitting = function (event, judge) {
-	while (this._unclearedMeasures.length > 0 && event.time >= this._unclearedMeasures[0])
-		this._clearMeasure();
 	this._currentMeasureJudge = Math.min(judge, this._currentMeasureJudge);
+	if (event.isLastInMeasure)
+		this._clearMeasure();
 };
 
 Scene_Game.prototype._badHit = function () {
@@ -1220,19 +1263,19 @@ Scene_Game.prototype._updateScore = function () {
 	if (this._visuals.subtractScore) {
 		this._score = Math.floor(500000 * (
 			(
-				this._beatmap.notes.length+this._totalBig-this._goodNumber-this._badNumber-this._missNumber-this._goodBig-this._badBig-this._missBig +
+				this._totalNotes+this._totalBig-this._goodNumber-this._badNumber-this._missNumber-this._goodBig-this._badBig-this._missBig +
 				(this._goodNumber+this._goodBig)/4 - this._excessNumber
-			) / (this._beatmap.notes.length + this._totalBig) + (
-				this._beatmap.barlines.length-this._goodMeasures-this._badMeasures-this._missMeasures + this._goodMeasures/2
-			) / this._beatmap.barlines.length
+			) / (this._totalNotes + this._totalBig) + (
+				this._totalMeasures-this._goodMeasures-this._badMeasures-this._missMeasures + this._goodMeasures/2
+			) / this._totalMeasures
 		));
 	} else {
 		this._score = Math.floor(500000 * (
 			(
 				this._perfectNumber+this._perfectBig + (this._goodNumber+this._goodBig)/4 - this._excessNumber
-			) / (this._beatmap.notes.length + this._totalBig) + (
+			) / (this._totalNotes + this._totalBig) + (
 				this._perfectMeasures + this._goodMeasures/2
-			) / this._beatmap.barlines.length
+			) / this._totalMeasures
 		));
 	}
 	this._scoreSprite.bitmap.textColor = this._getScoreColor();
@@ -1485,7 +1528,6 @@ Scene_Game.prototype._clearMeasure = function () {
 		this._badMeasures++;
 	else if (this._currentMeasureJudge === Scene_Game.MISS)
 		this._missMeasures++;
-	this._unclearedMeasures.shift();
 	this._currentMeasureJudge = Scene_Game.PERFECT;
 };
 
@@ -1506,7 +1548,6 @@ Scene_Game.prototype._missNumberString = function () {
 };
 
 Scene_Game.prototype._drawSummary = function () {
-	this._clearMeasure();
 	this._updateScore();
 	this._markSprite.bitmap.fontSize = 108;
 	this._markSprite.bitmap.textColor = this._getScoreColor();
@@ -1570,28 +1611,42 @@ Scene_Game.Sprite_ResumingCountdown.prototype.initialize = function (scene, mill
 	this._scene = scene;
 	this._start = performance.now();
 	const maxCount = 3;
+	const actualResumingTimeout = maxCount*1000;
 	for (let i = 0; i <= maxCount; i++) {
 		setTimeout(() => this._countTo(i), (maxCount - i)*1000);
 	}
 	if (millisecondsPerWhole) {
-		let time = maxCount * 1000 - beatsOffset + preferences.offset;
+		let time = actualResumingTimeout - beatsOffset + preferences.offset;
 		const millisecondsPerQuarter = millisecondsPerWhole / 4;
 		while (true) {
 			time -= millisecondsPerQuarter;
 			if (time < 0)
 				break;
-			if (time < maxCount*1000) {
-				setTimeout(() => {
-					if (window.scene === this.parent.parent)
-						this._scene._playHitSound();
-				}, time);
-			}
+			if (time < actualResumingTimeout)
+				setTimeout(this._playHitSound.bind(this), time);
+		}
+	}
+	if (this._scene._hitSoundWithMusic()) {
+		const unclearedHitSounds = this._scene._unclearedHitSounds;
+		const offsetNow = this._scene._lastPos - preferences.offset * this._scene._modifiers.playRate;
+		while (unclearedHitSounds.length > 0) {
+			const event = unclearedHitSounds[0];
+			if (offsetNow >= event.time - TyphmConstants.HIT_SOUND_ADVANCE*this._scene._modifiers.playRate) {
+				setTimeout(this._playHitSound.bind(this), (event.time - offsetNow)/this._scene._modifiers.playRate + actualResumingTimeout);
+				unclearedHitSounds.shift();
+			} else
+				break;
 		}
 	}
 };
 
+Scene_Game.Sprite_ResumingCountdown.prototype._playHitSound = function () {
+	if (this.parent && window.scene === this.parent.parent)
+		this._scene._playHitSound();
+};
+
 Scene_Game.Sprite_ResumingCountdown.prototype._countTo = function (n) {
-	if (scene !== this.parent.parent)
+	if (!this.parent || scene !== this.parent.parent)
 		return;
 	if (n === 0) {
 		this._scene.actualResume();
