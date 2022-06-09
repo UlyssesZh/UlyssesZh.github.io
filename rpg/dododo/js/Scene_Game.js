@@ -712,7 +712,6 @@ Scene_Game.prototype.update = function () {
 		if (!this._paused && !this._resumingCountdown) {
 			if (!this._isRecording)
 				this._updateRecordingApply(now);
-			this._updateJudgeLine(now);
 			if (this._visuals.TPSIndicator)
 				this._updateTPSIndicator(now);
 			if (this._hitSoundWithMusic())
@@ -722,6 +721,7 @@ Scene_Game.prototype.update = function () {
 			if (now >= this._line1.bitmap.endTime)
 				this._switchLine();
 			this._finishIfShould(now);
+			this._updateJudgeLine(now);
 		}
 	}
 	this._changeSceneIfShould();
@@ -1007,7 +1007,7 @@ Scene_Game.prototype._onKeydown = function (event) {
 	if (!this._loadingFinished)
 		return;
 	const key = event.key === ' ' ? 'Spacebar' : event.key;
-	if (key === 'Escape' || key === 'F7' && preferences.F7Pause) {
+	if (key === 'Escape' || key === 'F8' && preferences.F7Pause) {
 		this._pause();
 	} else if (!event.ctrlKey && !event.altKey && !event.metaKey && TyphmConstants.HITTABLE_KEYS.includes(key)) {
 		if (this._pressings[key])
