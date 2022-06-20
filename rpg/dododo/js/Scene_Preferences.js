@@ -30,7 +30,7 @@ Scene_Preferences.PREFERENCES_PAGES = [
 				args: {}
 			},
 			{
-				name: 'judgeWindow',
+				name: 'judgementWindow',
 				type: 'number',
 				args: {
 					min: 0,
@@ -116,7 +116,7 @@ Scene_Preferences.PREFERENCES_PAGES = [
 				}
 			},
 			{
-				name: 'judgeLinePerformances',
+				name: 'judgementLinePerformances',
 				type: 'boolean',
 				args: {
 				}
@@ -268,7 +268,7 @@ Scene_Preferences.PREFERENCES_PAGES = [
 				}
 			},
 			{
-				name: 'barlinesHeight',
+				name: 'barLinesHeight',
 				type: 'number',
 				args: {
 					min: 0
@@ -282,7 +282,7 @@ Scene_Preferences.PREFERENCES_PAGES = [
 				}
 			},
 			{
-				name: 'distanceBetweenLines',
+				name: 'distanceBetweenRows',
 				type: 'number',
 				args: {
 					min: 0
@@ -545,12 +545,19 @@ Scene_Preferences.PREFERENCES_PAGES = [
 	}
 ];
 
+Scene_Preferences.DEFAULT_ALIASES = {
+	judgeWindow: 'judgementWindow',
+	judgeLinePerformances: 'judgementLinePerformances',
+	barlinesHeight: 'barLinesHeight',
+	distanceBetweenLines: 'distanceBetweenRows'
+};
+
 Scene_Preferences.DEFAULT_PREFERENCES = {
 	playRate: 1.0,
 	autoPlay: false,
 	noBad: false,
 	noExcess: false,
-	judgeWindow: 1.0,
+	judgementWindow: 1.0,
 	autoCompleteHolds: false,
 	offset: 0.0,
 	countdown: true,
@@ -562,7 +569,7 @@ Scene_Preferences.DEFAULT_PREFERENCES = {
 	recordVisual: true,
 	FCAPIndicator: true,
 	TPSIndicator: true,
-	judgeLinePerformances: true,
+	judgementLinePerformances: true,
 	flashWarningGood: false,
 	flashWarningMiss: true,
 	showInaccuracyData: true,
@@ -584,9 +591,9 @@ Scene_Preferences.DEFAULT_PREFERENCES = {
 	beamsWidth: 6,
 	beamsSpacing: 4,
 	unconnectedBeamsLength: 20,
-	barlinesHeight: 256,
+	barLinesHeight: 256,
 	hitEffectRadius: 32,
-	distanceBetweenLines: 300,
+	distanceBetweenRows: 300,
 	notesColor: '#ffffff',
 	auxiliariesColor: '#4c4c4c',
 	perfectColor: '#ffff00',

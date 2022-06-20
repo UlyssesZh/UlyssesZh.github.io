@@ -67,7 +67,7 @@ Strings["en-US"] = {
 	"inGame_autoPlay": "Auto-play",
 	"inGame_noBad": "No-bad",
 	"inGame_noExcess": "No-excess",
-	"inGame_judgeWindow": "%fx judge",
+	"inGame_judgementWindow": "%fx judge",
 	"inGame_autoCompleteHolds": "Auto-hold",
 	
 	// preferences: modifiers
@@ -76,7 +76,7 @@ Strings["en-US"] = {
 	"autoPlay": "Auto-play",
 	"noBad": "No-bad mode",
 	"noExcess": "No-excess mode",
-	"judgeWindow": "Judgement window (smaller is stricter)",
+	"judgementWindow": "Judgement window (smaller is stricter)",
 	"autoCompleteHolds": "Automatically hold for hold notes",
 	
 	// preferences: gameplay
@@ -95,7 +95,7 @@ Strings["en-US"] = {
 	"visual": "Visual",
 	"FCAPIndicator": "Full combo / all perfect indicator",
 	"TPSIndicator": "Taps per second indicator",
-	"judgeLinePerformances": "Enable ornamental judgement line effects",
+	"judgementLinePerformances": "Enable ornamental judgement line effects",
 	"flashWarningGood": "Warn by flash the screen at good hits",
 	"flashWarningMiss": "Warn by flash the screen at combo breaks",
 	"showInaccuracyData": "Show inaccuracy data",
@@ -120,14 +120,14 @@ Strings["en-US"] = {
 	"beamsWidth": "Thickness of note beams",
 	"beamsSpacing": "Spacing between note beams",
 	"unconnectedBeamsLength": "Length of unconnected note beams",
-	"barlinesHeight": "Height of barlines",
+	"barLinesHeight": "Height of bar lines",
 	"hitEffectRadius": "Radius of hit effects",
-	"distanceBetweenLines": "Distance between beatmap rows",
+	"distanceBetweenRows": "Distance between beatmap rows",
 	
 	// preferences: colors
 	"colors": "Colors",
 	"notesColor": "Color of notes",
-	"auxiliariesColor": "Color of auxiliaries (barlines etc)",
+	"auxiliariesColor": "Color of auxiliaries (bar lines etc)",
 	"perfectColor": "Color of perfect hits",
 	"goodColor": "Color of good hits",
 	"badColor": "Color of bad hits",
@@ -253,7 +253,7 @@ Strings["zh-CN"] = {
 	"inGame_autoPlay": "自动",
 	"inGame_noBad": "无坏",
 	"inGame_noExcess": "无多余",
-	"inGame_judgeWindow": "%fx 判",
+	"inGame_judgementWindow": "%fx 判",
 	"inGame_autoCompleteHolds": "自动长押",
 	
 	// preferences: modifiers
@@ -262,7 +262,7 @@ Strings["zh-CN"] = {
 	"autoPlay": "自动",
 	"noBad": "无坏模式",
 	"noExcess": "无多余模式",
-	"judgeWindow": "判定区间 (越小越严格)",
+	"judgementWindow": "判定区间 (越小越严格)",
 	"autoCompleteHolds": "自动长押",
 	
 	// preferences: gameplay
@@ -281,7 +281,7 @@ Strings["zh-CN"] = {
 	"visual": "视觉",
 	"FCAPIndicator": "全连/全完美指示器",
 	"TPSIndicator": "每秒点击数指示器",
-	"judgeLinePerformances": "启用装饰性判定线演出",
+	"judgementLinePerformances": "启用装饰性判定线演出",
 	"flashWarningGood": "爆好时闪屏警告",
 	"flashWarningMiss": "断连时闪屏警告",
 	"showInaccuracyData": "显示误差数据",
@@ -306,9 +306,9 @@ Strings["zh-CN"] = {
 	"beamsWidth": "符杠的粗细度",
 	"beamsSpacing": "符杠的间距",
 	"unconnectedBeamsLength": "孤符杠的长度",
-	"barlinesHeight": "小节线的长度",
+	"barLinesHeight": "小节线的长度",
 	"hitEffectRadius": "打击效果的半径",
-	"distanceBetweenLines": "谱面行间距",
+	"distanceBetweenRows": "谱面行间距",
 	
 	// preferences: colors
 	"colors": "颜色",
@@ -439,7 +439,7 @@ Strings["zh-TW"] = {
 	"inGame_autoPlay": "自動",
 	"inGame_noBad": "無壞",
 	"inGame_noExcess": "無多餘",
-	"inGame_judgeWindow": "%fx 判",
+	"inGame_judgementWindow": "%fx 判",
 	"inGame_autoCompleteHolds": "自動長押",
 	
 	// preferences: modifiers
@@ -448,7 +448,7 @@ Strings["zh-TW"] = {
 	"autoPlay": "自動",
 	"noBad": "無壞模式",
 	"noExcess": "無多餘模式",
-	"judgeWindow": "判定區間 (越小越嚴格)",
+	"judgementWindow": "判定區間 (越小越嚴格)",
 	"autoCompleteHolds": "自動長押",
 	
 	// preferences: gameplay
@@ -467,7 +467,7 @@ Strings["zh-TW"] = {
 	"visual": "視覺",
 	"FCAPIndicator": "全連/全完美指示器",
 	"TPSIndicator": "每秒點擊數指示器",
-	"judgeLinePerformances": "啟用裝飾性判定線演出",
+	"judgementLinePerformances": "啟用裝飾性判定線演出",
 	"flashWarningGood": "爆好時閃屏警告",
 	"flashWarningMiss": "斷連時閃屏警告",
 	"showInaccuracyData": "顯示誤差數據",
@@ -492,9 +492,9 @@ Strings["zh-TW"] = {
 	"beamsWidth": "符槓的粗細度",
 	"beamsSpacing": "符槓的間距",
 	"unconnectedBeamsLength": "孤符槓的長度",
-	"barlinesHeight": "小節線的長度",
+	"barLinesHeight": "小節線的長度",
 	"hitEffectRadius": "打擊效果的半徑",
-	"distanceBetweenLines": "譜面行間距",
+	"distanceBetweenRows": "譜面行間距",
 	
 	// preferences: colors
 	"colors": "顏色",
@@ -538,7 +538,7 @@ Strings["zh-TW"] = {
 	"importFailure": "導入失敗, 由於 %s",
 	"wiki": "打開 Dododo 的 wiki (英文網頁)",
 	"github": "打開 Dododo 的 GitHub 倉庫",
-	"discord": "加入 Dododo 的 Discord 服務器",
+	"discord": "加入 Dododo 的 Discord 伺服器",
 	
 	// hit sounds
 	"agogoBells": '阿哥哥鈴',
@@ -625,7 +625,7 @@ Strings["ja-JP"] = {
 	"inGame_autoPlay": "オートプレイ",
 	"inGame_noBad": "No-bad",
 	"inGame_noExcess": "No-excess",
-	"inGame_judgeWindow": "%fx 判",
+	"inGame_judgementWindow": "%fx 判",
 	"inGame_autoCompleteHolds": "Auto-hold",
 	
 	// preferences: modifiers
@@ -634,7 +634,7 @@ Strings["ja-JP"] = {
 	"autoPlay": "オートプレイ",
 	"noBad": "No-Bad モード",
 	"noExcess": "No-excess モード",
-	"judgeWindow": "判定幅 (小さいほど厳しい)",
+	"judgementWindow": "判定幅 (小さいほど厳しい)",
 	"autoCompleteHolds": "Hold ノートを自動的にコンボする",
 	
 	// preferences: gameplay
@@ -653,7 +653,7 @@ Strings["ja-JP"] = {
 	"visual": "ビジュアル",
 	"FCAPIndicator": "Full combo / all perfect インジケータ",
 	"TPSIndicator": "Taps per second インジケータ",
-	"judgeLinePerformances": "装飾的な判定ライン効果を有効にする",
+	"judgementLinePerformances": "装飾的な判定ライン効果を有効にする",
 	"flashWarningGood": "Good ヒットで画面をフラッシュして警告する",
 	"flashWarningMiss": "コンボブレイク時に画面をフラッシュして警告する",
 	"showInaccuracyData": "不正確なデータを表示する",
@@ -678,9 +678,9 @@ Strings["ja-JP"] = {
 	"beamsWidth": "ビームの幅",
 	"beamsSpacing": "ビームの間隔",
 	"unconnectedBeamsLength": "孤立ビームの長さ",
-	"barlinesHeight": "小節線の長さ",
+	"barLinesHeight": "小節線の長さ",
 	"hitEffectRadius": "ヒット効果の半径",
-	"distanceBetweenLines": "譜面の行間隔",
+	"distanceBetweenRows": "譜面の行間隔",
 	
 	// preferences: colors
 	"colors": "色",

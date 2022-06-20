@@ -66,6 +66,13 @@ TyphmUtils.fromRGBAToHex = function () {
 	return '#' + Array.from(arguments, x => Math.round(x * 0xff).toString(16).padStart(2, '0')).join('');
 };
 
+Object.fromKeysAndValues = function (keys, values) {
+	const result = {};
+	for (let i = 0; i < keys.length; i++)
+		result[keys[i]] = values[i];
+	return result;
+};
+
 const oldSwitchStretchMode = Graphics._switchStretchMode;
 Graphics._switchStretchMode = function() {
 	oldSwitchStretchMode.apply(this, arguments);
@@ -118,9 +125,7 @@ TouchInput._onTouchStart = function(event) {
 			TouchInput._preventDefault(event);
 		}
 	}
-	if (window.cordova || window.navigator.standalone) {
-		TouchInput._preventDefault(event);
-	}
+	TouchInput._preventDefault(event);
 };
 
 TouchInput._preventDefault = function (event) {
@@ -146,6 +151,14 @@ String.prototype.blue = function () {
 
 String.prototype.alpha = function () {
 	return parseInt(this.substring(7, 9), 16) / 255 || 1;
+};
+
+String.prototype.capitalizeFirstLetter = function () {
+	return this.length <= 1 ? this.toUpperCase() : this[0].toUpperCase() + this.slice(1);
+};
+
+String.prototype.fromSnakeToCamel = function () {
+	return this.length <= 1 ? this : this[0] + this.split('_').map(s => s.capitalizeFirstLetter()).join().slice(1);
 };
 
 const oldInitialize = Bitmap.prototype.initialize;
@@ -255,3 +268,32 @@ window.fracmath = math.create({number: 'Fraction'});
 window.fraceval = fracmath.evaluate.bind(fracmath);
 window.matheval = math.evaluate.bind(math);
 window.numre = (...arguments) => Number(math.re(math.evaluate(...arguments)))
+
+TyphmUtils.generateFunctionFromFormula = function (formula, environments, xAcceptor, parameters) {
+	parameters ||= [];
+	const environment = {};
+	for (const e of environments)
+		Object.defineProperties(environment, Object.getOwnPropertyDescriptors(e));
+	const expression = math.parse(formula).compile();
+	return (x, ...param) => {
+		if (xAcceptor)
+			xAcceptor.currentX = x;
+		return Number(math.re(expression.evaluate({
+			...environment,
+			'x': Number(x),
+			...Object.fromKeysAndValues(parameters, param.map(a => Number(a)))
+		})));
+	};
+};
+
+TyphmUtils.generateFunctionFromFormulaWithoutX = function (formula, environments, parameters) {
+	parameters ||= [];
+	const environment = {};
+	for (const e of environments)
+		Object.defineProperties(environment, Object.getOwnPropertyDescriptors(e));
+	const expression = math.parse(formula).compile();
+	return (...param) => Number(math.re(expression.evaluate({
+		...environment,
+		...Object.fromKeysAndValues(parameters, param.map(a => Number(a)))
+	})));
+};
