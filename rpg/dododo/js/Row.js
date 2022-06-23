@@ -35,91 +35,10 @@ Row.prototype.initialize = function (beatmap, index) {
 	this.judgementLine = new JudgementLine(this);
 };
 
-Row.prototype.applyControlSentence = function (control, parameters, lastEnv) {
-	while (this._beatmap.aliases[control])
-		control = this._beatmap.aliases[control];
-	if (control === 'bpm') {
-		this.setUpBPM(parameters, lastEnv);
-	} else if (control === 'ms_per_whole') {
-		this.millisecondsPerWhole = parseFloat(parameters[0]);
-	} else if (control === 'perfect' || control === 'good' || control === 'bad') {
-		this[control] = parseFloat(parameters[0]);
-	} else if (control === 'fake_judgement_line') {
-		this.fakeJudgementLines ||= [];
-		this.fakeJudgementLines.push(new JudgementLine(this));
-	} else if (control.startsWith('judgement_line_')) {
-		this.setJudgementLineAttribute(control.slice('judgement_line_'.length), parameters);
-	} else if (control === 'note_x' || control === 'hit_x' || control === 'bar_line_x' || control === 'time') {
-		this[control.fromSnakeToCamel() + 'Formula'] = this.generateFunction(parameters);
-	} else if (control === 'let') {
-		this._beatmap.letExpression(parameters[0], parameters.slice(1).join(' '));
-	} else if (control === 'def') {
-		this._beatmap.defExpression(parameters[0], parameters[1].split(','), parameters.slice(2).join(' '));
-	} else if (control === 'var') {
-		this._beatmap.varExpression(parameters[0], parameters.slice(1).join(' '));
-	} else if (control === 'fun') {
-		this._beatmap.funExpression(parameters[0], parameters[1].split(','), parameters.slice(2).join(' '));
-	}
-};
-
-Row.prototype.generateFunction = function (formulaParts) {
-	return TyphmUtils.generateFunctionFromFormula(formulaParts.join(' '), this._beatmap.getEnvironments(), this._beatmap);
-};
-
 Row.prototype.setXFormulasIfHasnt = function () {
 	this.noteXFormula ||= this.judgementLine.xFormula;
 	this.hitXFormula ||= this.noteXFormula;
 	this.barLineXFormula ||= this.noteXFormula;
-};
-
-Row.prototype.setJudgementLineAttribute = function (attribute, parameters) {
-	(this.fakeJudgementLines ? this.fakeJudgementLines.last() : this.judgementLine).setAttribute(attribute, parameters);
-};
-
-Row.prototype.setUpBPM = function (BPMData, lastEnv) {
-	let normalizationDenominator = 0;
-	const positions = [frac(0)];
-	const durations = [0];
-	this.BPMMarkers = [];
-	
-	for (let i = 0; i < BPMData.length; i += 3) {
-		const beatNote = BPMData[i];
-		const length = TyphmUtils.parseDigit(beatNote[0]);
-		const dots = beatNote.length - 1;
-		const bpm = BPMData[i + 1];
-		const position = frac(BPMData[i + 2] || 0);
-		this.BPMMarkers.push({'length': length, 'dots': dots, 'bpm': bpm, 'position': position});
-		if (i === 0 && position.compare(0) <= 0) {
-			lastEnv.BPM = bpm;
-			lastEnv.beatLength = length;
-			lastEnv.beatDots = dots;
-			continue;
-		}
-		const beatTrueLength = Beatmap.TRUE_LENGTH_CALC({'length': lastEnv.beatLength, 'dots': lastEnv.beatDots});
-		const duration = numre('bignumber((position-lastPosition)/trueLength)/lastBPM',
-			{'lastBPM':lastEnv.BPM,'trueLength':beatTrueLength,'position':position,'lastPosition':positions.last()||0});
-		durations.push(normalizationDenominator = normalizationDenominator + duration);
-		positions.push(position);
-		lastEnv.BPM = bpm;
-		lastEnv.beatLength = length;
-		lastEnv.beatDots = dots;
-	}
-	const beatTrueLength = Beatmap.TRUE_LENGTH_CALC({'length': lastEnv.beatLength, 'dots': lastEnv.beatDots});
-	const duration = numre('bignumber((position-lastPosition)/trueLength)/lastBPM',
-		{'lastBPM':lastEnv.BPM,'trueLength':beatTrueLength,'position':frac(1),'lastPosition':positions.last()||0});
-	durations.push(normalizationDenominator = normalizationDenominator + duration);
-	positions.push(frac(1));
-	this.millisecondsPerWhole = 60000*Number(normalizationDenominator);
-	
-	this.timeFormula = x => {
-		let i = 0;
-		for (; i < positions.length-1; i++) {
-			if (Number(x) <= Number(positions[i+1]))
-				break;
-		}
-		return numre('((d2 - d1)*(x - p1)/(p2 - p1) + d1)/d',
-			{'x':Number(x),p1:Number(positions[i]),p2:Number(positions[i+1]),d1:durations[i],d2:durations[i+1],d:normalizationDenominator});
-	};
 };
 
 Row.prototype.drawBPM = function (beatNote, dots, bpm, position) {
