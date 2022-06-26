@@ -182,7 +182,18 @@ Beatmap.prototype.hasKeyword = function (keyword) {
 	return !!this.controlSentenceApplications[keyword];
 };
 
-Beatmap.prototype.drawRows = function (reverseVoices) {
+Beatmap.prototype.setMirror = function (mirror, mirrorLowerRow) {
+	if (mirror) {
+		for (const row of this.rows)
+			row.mirror = true;
+	}
+	if (mirrorLowerRow) {
+		for (let i = 1; i < this.rows.length; i += 2)
+			this.rows[i].mirror = !this.rows[i].mirror;
+	}
+};
+
+Beatmap.prototype.prepare = function () {
 	Row.prepare();
 	this.currentX = 0;
 	this.controlSentenceApplications = {...ControlSentence.DEFAULT_APPLICATIONS};
@@ -190,7 +201,12 @@ Beatmap.prototype.drawRows = function (reverseVoices) {
 		this.defineKeywordAlias(alias, original);
 	this.expressions = {};
 	this.expressionsWithoutX = {};
-	this.setUpDefaultPreferencesAliases();
+	this.setUpExpressionsWithoutXFrom(preferences);
+	this.setUpExpressionsWithoutXFrom(Object.fromEntries(
+		Object.entries(Scene_Preferences.DEFAULT_ALIASES).map(([alias, original]) => [alias, preferences[original]])));
+};
+
+Beatmap.prototype.drawRows = function (reverseVoices) {
 	this.rows = [new Row(this, 0)];
 	this.notes = [];
 	this.barLines = [];
@@ -203,47 +219,57 @@ Beatmap.prototype.drawRows = function (reverseVoices) {
 		millisecondsPerWhole: 2000
 	};
 	const controlSentenceStack = [];
+	let returned = false;
 	for (let i = 0; i < this.events.length; i++) {
 		const event = this.events[i];
 		const row = this.rows.last();
-		switch (event.event) {
-			case 'control':
-				const callers = [{lineno: event.lineno, caller: 'main'}];
-				if (!this.hasKeyword(event.keyword)) {
-					throw new BeatmapRuntimeError(`keyword not found: ${event.keyword}`, callers);
-				}
-				const controlSentence = new ControlSentence(event.keyword, event.parameters, event.lineno, this);
-				controlSentence.lastEnv = lastEnv;
-				let isInBlock = false;
-				let blockOwner = controlSentenceStack.last();
-				if (blockOwner) {
-					isInBlock = true;
-					blockOwner.addToBlock(controlSentence);
-					if (!blockOwner.hasOpenBlock) {
-						controlSentenceStack.pop();
-						if (controlSentenceStack.length === 0) {
-							blockOwner.applyTo(row, callers);
-						}
+		if (event.event === 'control' && !returned) {
+			const callers = [{lineno: event.lineno, caller: 'main'}];
+			const blockOwner = controlSentenceStack.last();
+			if (!this.hasKeyword(event.keyword) && (!blockOwner || event.keyword !== 'END' && !blockOwner.blockSeparators.includes(event.keyword))) {
+				throw new BeatmapRuntimeError(`keyword not found: ${event.keyword}`, callers);
+			}
+			const controlSentence = new ControlSentence(event.keyword, event.parameters, event.lineno, this);
+			controlSentence.lastEnv = lastEnv;
+			let isInBlock = false;
+			let result;
+			if (blockOwner) {
+				isInBlock = true;
+				blockOwner.addToBlock(controlSentence);
+				if (!blockOwner.hasOpenBlock) {
+					controlSentenceStack.pop();
+					if (controlSentenceStack.length === 0) {
+						result = blockOwner.applyTo(row, callers);
 					}
 				}
-				if (controlSentence.hasOpenBlock) {
-					controlSentenceStack.push(controlSentence);
-				} else if (!isInBlock) {
-					controlSentence.applyTo(row, callers);
-				}
-				break;
-			case 'row':
-				row.finalSetUp(event.voices, reverseVoices, lastEnv);
-				this.rows.push(new Row(this, this.rows.length));
+			}
+			if (controlSentence.hasOpenBlock) {
+				controlSentenceStack.push(controlSentence);
+			} else if (!isInBlock) {
+				result = controlSentence.applyTo(row, callers);
+			}
+			if (result && result.signal === 'break') {
+				throw new BeatmapRuntimeError(`BREAK: misplaced or too deep`, result.callers);
+			} else if (result && result.signal === 'return') {
+				returned = true;
+			}
+		} else if (event.event === 'row') {
+			const blockOwner = controlSentenceStack.last();
+			if (blockOwner) {
+				throw new BeatmapRuntimeError(`${blockOwner.keyword}: missing END`, [{lineno: blockOwner.lineno, caller: 'main'}]);
+			}
+			row.finalSetUp(event.voices, reverseVoices, lastEnv);
+			this.rows.push(new Row(this, this.rows.length));
+			returned = false;
 		}
 	}
 	this.notes.sort((n1, n2) => n1.time - n2.time);
 };
 
-Beatmap.prototype.setUpDefaultPreferencesAliases = function () {
-	for (const alias in Scene_Preferences.DEFAULT_ALIASES) {
-		Object.defineProperty(this.expressionsWithoutX, alias, {
-			get: () => preferences[Scene_Preferences.DEFAULT_ALIASES[alias]],
+Beatmap.prototype.setUpExpressionsWithoutXFrom = function (object) {
+	for (const identifier in object) {
+		Object.defineProperty(this.expressionsWithoutX, identifier, {
+			get: () => object[identifier],
 			configurable: true,
 			enumerable: true
 		});
@@ -251,11 +277,11 @@ Beatmap.prototype.setUpDefaultPreferencesAliases = function () {
 };
 
 Beatmap.prototype.getEnvironments = function () {
-	return [preferences, this.expressions, this.expressionsWithoutX];
+	return [this.expressions, this.expressionsWithoutX];
 };
 
 Beatmap.prototype.getEnvironmentsWithoutX = function () {
-	return [preferences, this.expressionsWithoutX]
+	return [this.expressionsWithoutX]
 };
 
 Beatmap.prototype.deleteExpression = function (name) {
@@ -269,28 +295,28 @@ Beatmap.prototype.deleteExpression = function (name) {
 // with x, function: def
 // without x, variable: var
 // with x, function: fun
-Beatmap.prototype.letExpression = function (name, expression) {
-	this.deleteExpression(name);
+Beatmap.prototype.letExpression = function (identifier, expression) {
 	const formula = TyphmUtils.generateFunctionFromFormula(expression, this.getEnvironments(), null);
-	Object.setPropertyWithGetter(this.expressions, name, formula(this.currentX));
+	this.deleteExpression(identifier);
+	Object.setPropertyWithGetter(this.expressions, identifier, formula(this.currentX));
 };
 
-Beatmap.prototype.defExpression = function (name, arguments, expression) {
-	this.deleteExpression(name);
+Beatmap.prototype.defExpression = function (identifier, arguments, expression) {
 	const formula = TyphmUtils.generateFunctionFromFormula(expression, this.getEnvironments(), null, arguments);
-	Object.setPropertyWithGetter(this.expressions, name, (...args) => formula(this.currentX, ...args));
+	this.deleteExpression(identifier);
+	Object.setPropertyWithGetter(this.expressions, identifier, (...args) => formula(this.currentX, ...args));
 };
 
-Beatmap.prototype.varExpression = function (name, expression) {
-	this.deleteExpression(name);
-	const value = TyphmUtils.generateFunctionFromFormulaWithoutX(expression, this.getEnvironmentsWithoutX())()
-	Object.setPropertyWithGetter(this.expressionsWithoutX, name, value);
+Beatmap.prototype.varExpression = function (identifier, expression) {
+	const value = TyphmUtils.generateFunctionFromFormulaWithoutX(expression, this.getEnvironmentsWithoutX())();
+	this.deleteExpression(identifier);
+	Object.setPropertyWithGetter(this.expressionsWithoutX, identifier, value);
 };
 
-Beatmap.prototype.funExpression = function (name, arguments, expression) {
-	this.deleteExpression(name);
+Beatmap.prototype.funExpression = function (identifier, arguments, expression) {
 	const formula = TyphmUtils.generateFunctionFromFormulaWithoutX(expression, this.getEnvironmentsWithoutX(), arguments);
-	Object.setPropertyWithGetter(this.expressionsWithoutX, name, (...args) => formula(...args));
+	this.deleteExpression(identifier);
+	Object.setPropertyWithGetter(this.expressionsWithoutX, identifier, formula);
 };
 
 Beatmap.prototype.recordHitEvent = function (rowIndex, note, y, shouldHit) {

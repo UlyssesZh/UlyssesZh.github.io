@@ -104,6 +104,7 @@ Strings["en-US"] = {
 	"fadeOut": "Fade-out (ratio to resolution, 0 to disable)",
 	"reverseVoices": "Reverse voices",
 	"mirror": "Mirror (flip horizontally)",
+	"mirrorLowerRow": "Mirror the lower row",
 	"showKeyboard": "Show keyboard pressings",
 	"subtractScore": "Subtract instead of adding score",
 	"numbersHUD": "Show numbers of perfect hits etc. in-game",
@@ -126,7 +127,7 @@ Strings["en-US"] = {
 	
 	// preferences: colors
 	"colors": "Colors",
-	"notesColor": "Color of notes",
+	"notesColor": "Color of hit notes",
 	"auxiliariesColor": "Color of auxiliaries (bar lines etc)",
 	"perfectColor": "Color of perfect hits",
 	"goodColor": "Color of good hits",
@@ -290,6 +291,7 @@ Strings["zh-CN"] = {
 	"fadeOut": "下隐距离 (与分辨率的比值, 0 为不下隐)",
 	"reverseVoices": "声部反转",
 	"mirror": "镜像 (左右反转)",
+	"mirrorLowerRow": "镜像下方的行",
 	"showKeyboard": "显示按键情况",
 	"subtractScore": "从满分减分代替从零分加分",
 	"numbersHUD": "在游戏中显示完美等的数量",
@@ -312,7 +314,7 @@ Strings["zh-CN"] = {
 	
 	// preferences: colors
 	"colors": "颜色",
-	"notesColor": "符头的颜色",
+	"notesColor": "打击音符的颜色",
 	"auxiliariesColor": "辅助物件 (小节线等) 的颜色",
 	"perfectColor": "完美的颜色",
 	"goodColor": "好的颜色",
@@ -476,6 +478,7 @@ Strings["zh-TW"] = {
 	"fadeOut": "下隱距離 (與分辨率的比值, 0 爲不下隱)",
 	"reverseVoices": "聲部反轉",
 	"mirror": "鏡像 (左右反轉)",
+	"mirrorLowerRow": "鏡像下方的行",
 	"showKeyboard": "顯示按鍵情況",
 	"subtractScore": "從滿分減分代替從零分加分",
 	"numbersHUD": "在遊戲中顯示完美等的數量",
@@ -498,7 +501,7 @@ Strings["zh-TW"] = {
 	
 	// preferences: colors
 	"colors": "顏色",
-	"notesColor": "符頭的顏色",
+	"notesColor": "打擊音符的顏色",
 	"auxiliariesColor": "輔助物件 (小節線等) 的顏色",
 	"perfectColor": "完美的顏色",
 	"goodColor": "好的顏色",
