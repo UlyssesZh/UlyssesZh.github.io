@@ -2,6 +2,24 @@ function Row () {
 	this.initialize.apply(this, arguments);
 }
 
+Row.RELATED_EXPRESSIONS = {
+	rowIndex: function () {
+		return this.index;
+	},
+	isUpper: function () {
+		return this.index % 2 === 0;
+	},
+	isLower: function () {
+		return this.index % 2 === 1;
+	},
+	judgementLineLabels: function () {
+		return Object.keys(this.judgementLineLabels);
+	},
+	textLabels: function () {
+		return Object.keys(this.textLabels);
+	}
+};
+
 Row.prepare = function () {
 	this._createBigNoteHalo();
 	this.ROWS_HEIGHT = Graphics.height + preferences.distanceBetweenRows;
@@ -34,6 +52,12 @@ Row.prototype.initialize = function (beatmap, index) {
 	this.mirror = false;
 	this.timeFormula = x => Number(x);
 	this.judgementLine = new JudgementLine(this);
+	this.currentJudgementLine = this.judgementLine;
+	this.fakeJudgementLines = [];
+	this.texts = [];
+	this.textLabels = {};
+	this.currentText = null;
+	this.judgementLineLabels = {};
 };
 
 Row.prototype.setXFormulasIfHasnt = function () {
@@ -694,4 +718,32 @@ Row.prototype.trackHold = function (x, xNow, y, judge) {
 	context.stroke();
 	context.restore();
 	this._bitmap._setDirty();
+};
+
+Row.prototype.setCurrentJudgementLineByLabel = function (label) {
+	const index = this.judgementLineLabels[label];
+	if (index !== undefined) {
+		this.currentJudgementLine = this.fakeJudgementLines[index];
+	} else {
+		this.judgementLineLabels[label] = this.fakeJudgementLines.length;
+		this.addFakeJudgementLineWithoutLabel();
+	}
+};
+
+Row.prototype.addFakeJudgementLineWithoutLabel = function () {
+	this.fakeJudgementLines.push(this.currentJudgementLine = new JudgementLine(this))
+};
+
+Row.prototype.setCurrentTextByLabel = function (label) {
+	const index = this.textLabels[label];
+	if (index !== undefined) {
+		this.currentText = this.texts[index];
+	} else {
+		this.textLabels[label] = this.texts.length;
+		this.addTextWithoutLabel();
+	}
+};
+
+Row.prototype.addTextWithoutLabel = function () {
+	this.texts.push(this.currentText = new InGameText(this))
 };

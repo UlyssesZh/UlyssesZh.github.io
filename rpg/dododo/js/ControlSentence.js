@@ -26,7 +26,7 @@ ControlSentence.DEFAULT_ALIASES = {
 ControlSentence.BLOCK_SEPARATORS = {
 	IF: ['ELSE', 'ELSE_IF'],
 	WHILE: [],
-	//FOR: [],
+	FOR: [],
 	//TRY: ['RESCUE'],
 	PROCEDURE: [],
 	//SCHEDULE: []
@@ -144,36 +144,53 @@ ControlSentence.DEFAULT_APPLICATIONS.BPM = function (row, callers) {
 };
 
 ControlSentence.DEFAULT_APPLICATIONS.MS_PER_WHOLE = function (row, callers) {
-	const input = this.parameters[0];
-	row.millisecondsPerWhole = parseFloat(input);
-	if (!row.millisecondsPerWhole) {
-		this.throwRuntimeError(`MS_PER_WHOLE: invalid number: ${input}`, callers);
-	} else if (row.millisecondsPerWhole <= 0) {
-		this.throwRuntimeError(`MS_PER_WHOLE: cannot be zero or negative: ${input}`, callers);
+	row.millisecondsPerWhole = Number(math.re(TyphmUtils.generateFunctionFromFormulaWithoutX(this.parameters.join(' '), this._beatmap.getEnvironmentsWithoutX())()));
+	if (row.millisecondsPerWhole <= 0) {
+		this.throwRuntimeError(`MS_PER_WHOLE: cannot be zero or negative: ${row.millisecondsPerWhole}`, callers);
 	}
 };
 
 for (const judge of ['perfect', 'good', 'bad']) {
 	const keyword = judge.toUpperCase();
 	ControlSentence.DEFAULT_APPLICATIONS[keyword] = function (row, callers) {
-		const judgementWindowRadiusString = this.parameters[0];
-		row[judge] = parseFloat(judgementWindowRadiusString);
-		if (!row[judge]) {
-			this.throwRuntimeError(`${keyword}: invalid number: ${judgementWindowRadiusString}`, callers);
-		} else if (row[judge] < 0) {
-			this.throwRuntimeError(`${keyword}: judgement window radius is negative: ${judgementWindowRadiusString}`, callers);
+		row[judge] = Number(math.re(TyphmUtils.generateFunctionFromFormulaWithoutX(this.parameters.join(' '), this._beatmap.getEnvironmentsWithoutX())()));
+		if (row[judge] < 0) {
+			this.throwRuntimeError(`${keyword}: judgement window radius is negative: ${row[judge]}`, callers);
 		}
 	};
 }
 
 ControlSentence.DEFAULT_APPLICATIONS.FAKE_JUDGEMENT_LINE = function (row, callers) {
-	row.fakeJudgementLines ||= [];
-	row.fakeJudgementLines.push(new JudgementLine(row));
+	if (this.parameters.length > 0) {
+		const label = TyphmUtils.generateFunctionFromFormulaWithoutX(this.parameters.join(' '), this._beatmap.getEnvironmentsWithoutX())();
+		row.setCurrentJudgementLineByLabel(label);
+	} else {
+		row.addFakeJudgementLineWithoutLabel();
+	}
 };
 
-for (const attr of ['x', 'y', 'width', 'height', 'red', 'green', 'blue', 'alpha', 'blend_mode']) {
+ControlSentence.DEFAULT_APPLICATIONS.GENUINE_JUDGEMENT_LINE = function (row, callers) {
+	row.currentJudgementLine = row.judgementLine;
+};
+
+ControlSentence.DEFAULT_APPLICATIONS.TEXT = function (row, callers) {
+	if (this.parameters.length > 0) {
+		const label = TyphmUtils.generateFunctionFromFormulaWithoutX(this.parameters.join(' '), this._beatmap.getEnvironmentsWithoutX())();
+		row.setCurrentTextByLabel(label);
+	} else {
+		row.addTextWithoutLabel();
+	}
+};
+
+for (const attr of ['x', 'y', 'z', 'anchor_x', 'anchor_y', 'rotation', 'width', 'height', 'red', 'green', 'blue', 'alpha', 'blend_mode']) {
 	ControlSentence.DEFAULT_APPLICATIONS['JUDGEMENT_LINE_' + attr.toUpperCase()] = function (row, callers) {
-		(row.fakeJudgementLines ? row.fakeJudgementLines.last() : row.judgementLine).setAttribute(attr, this.parameters);
+		row.currentJudgementLine.setAttribute(attr, this.parameters);
+	};
+}
+
+for (const attr of ['x', 'y', 'z', 'anchor_x', 'anchor_y', 'rotation', 'scale_x', 'scale_y', 'red', 'green', 'blue', 'alpha', 'text', 'blend_mode']) {
+	ControlSentence.DEFAULT_APPLICATIONS['TEXT_' + attr.toUpperCase()] = function (row, callers) {
+		row.currentText.setAttribute(attr, this.parameters);
 	};
 }
 
@@ -315,6 +332,39 @@ ControlSentence.DEFAULT_APPLICATIONS.WHILE = function (row, callers) {
 			} else {
 				return {signal: 'break', layer: result.layer - 1, callers: result.callers};
 			}
+		}
+	}
+};
+
+ControlSentence.DEFAULT_APPLICATIONS.FOR = function (row, callers) {
+	const [identifierValue, identifierIndex] = this.parameters[0].split(',');
+	if (!ControlSentence.checkIdentifier(identifierValue))
+		this.throwRuntimeError(`FOR: invalid identifier: ${identifierValue}`, callers);
+	if (identifierIndex && !ControlSentence.checkIdentifier(identifierValue))
+		this.throwRuntimeError(`FOR: invalid identifier: ${identifierIndex}`, callers);
+	const iteratedString = this.parameters.slice(1).join(' ');
+	const iterated = TyphmUtils.generateFunctionFromFormulaWithoutX(iteratedString, this._beatmap.getEnvironmentsWithoutX())();
+	if (typeof iterated.forEach !== 'function')
+		this.throwRuntimeError(`FOR: cannot iterate over a non-iterable object: ${iteratedString}`, callers);
+	let result;
+	try {
+		iterated.forEach((item, index, _) => {
+			this._beatmap.deleteExpression(identifierValue);
+			Object.setPropertyWithGetter(this._beatmap.expressionsWithoutX, identifierValue, item);
+			if (identifierIndex) {
+				this._beatmap.deleteExpression(identifierIndex);
+				Object.setPropertyWithGetter(this._beatmap.expressionsWithoutX, identifierIndex, index);
+			}
+			result = ControlSentence.executeBlock(this.blocks[0], row, callers);
+			if (result && result.signal === 'break') {
+				const error = new Error();
+				Object.assign(error, result);
+				throw error;
+			}
+		});
+	} catch (e) {
+		if (e.signal === 'break' && e.layer !== 0) {
+			return {signal: 'break', layer: e.layer - 1, callers: e.callers};
 		}
 	}
 };

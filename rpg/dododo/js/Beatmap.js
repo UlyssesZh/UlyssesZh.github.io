@@ -44,9 +44,17 @@ Beatmap.prototype.load = async function () {
 Beatmap.prototype.parse = function (data, dataLineno) {
 	this.events = [];
 	let voices = [];
+	let isCommented = false;
 	for (let lineno = 0; lineno < data.length; lineno++) {
 		let line = data[lineno].trimStart();
+		if (isCommented) {
+			if (line === '=end')
+				isCommented = false;
+			continue;
+		}
 		if (line[0] === '#') { // comments
+		} else if (line === '=begin') {
+			isCommented = true;
 		} else if (/[A-Z_].*/y.test(line)) { // control sentence
 			if (voices.length > 0) {
 				this.events.push({"event": "row", "voices": voices, "lineno": lineno + dataLineno});
@@ -196,6 +204,7 @@ Beatmap.prototype.setMirror = function (mirror, mirrorLowerRow) {
 Beatmap.prototype.prepare = function () {
 	Row.prepare();
 	this.currentX = 0;
+	this.currentRow = null;
 	this.controlSentenceApplications = {...ControlSentence.DEFAULT_APPLICATIONS};
 	for (const [alias, original] of Object.entries(ControlSentence.DEFAULT_ALIASES))
 		this.defineKeywordAlias(alias, original);
@@ -204,6 +213,7 @@ Beatmap.prototype.prepare = function () {
 	this.setUpExpressionsWithoutXFrom(preferences);
 	this.setUpExpressionsWithoutXFrom(Object.fromEntries(
 		Object.entries(Scene_Preferences.DEFAULT_ALIASES).map(([alias, original]) => [alias, preferences[original]])));
+	this.setUpRowRelatedExpressions();
 };
 
 Beatmap.prototype.drawRows = function (reverseVoices) {
@@ -223,7 +233,7 @@ Beatmap.prototype.drawRows = function (reverseVoices) {
 	let returned = false;
 	for (let i = 0; i < this.events.length; i++) {
 		const event = this.events[i];
-		const row = this.rows.last();
+		const row = this.currentRow = this.rows.last();
 		if (event.event === 'control' && !returned) {
 			const blockOwner = controlSentenceStack.last();
 			const controlSentence = new ControlSentence(event.keyword, event.parameters, event.lineno, this);
@@ -273,6 +283,16 @@ Beatmap.prototype.setUpExpressionsWithoutXFrom = function (object) {
 			configurable: true,
 			enumerable: true
 		});
+	}
+};
+
+Beatmap.prototype.setUpRowRelatedExpressions = function () {
+	for (const identifier in Row.RELATED_EXPRESSIONS) {
+		Object.defineProperty(this.expressionsWithoutX, identifier, {
+			get: () => Row.RELATED_EXPRESSIONS[identifier].call(this.currentRow),
+			configurable: true,
+			enumerable: true
+		})
 	}
 };
 
