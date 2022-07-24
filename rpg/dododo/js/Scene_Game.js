@@ -5,9 +5,10 @@ function Scene_Game() {
 Scene_Game.prototype = Object.create(Scene_Base.prototype);
 Scene_Game.prototype.constructor = Scene_Game;
 
-Scene_Game.prototype.initialize = function (musicUrl, beatmapUrl, recording) {
+Scene_Game.prototype.initialize = function (musicUrl, beatmapUrl, recording, retryCount) {
 	Scene_Base.prototype.initialize.call(this);
 	this._level = new Level(this, musicUrl, beatmapUrl, recording);
+	this.retryCount = retryCount;
 };
 
 Scene_Game.prototype.start = function () {
@@ -764,7 +765,7 @@ Scene_Game.prototype.actualResume = function () {
 	this._resumingCountdown = null;
 	if (!this._ended)
 		this._judgementLine.visible = true;
-	if (this._hasMusic) {
+	if (this._level.hasMusic) {
 		if (!this.audioPlayer.isPlaying()) {
 			this.audioPlayer.pitch = this._level.modifiers.playRate;
 			this.audioPlayer.play(false,
