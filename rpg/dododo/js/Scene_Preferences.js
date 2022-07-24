@@ -20,6 +20,11 @@ Scene_Preferences.PREFERENCES_PAGES = [
 				args: {}
 			},
 			{
+				name: 'noFail',
+				type: 'boolean',
+				args: {}
+			},
+			{
 				name: 'noBad',
 				type: 'boolean',
 				args: {}
@@ -64,6 +69,11 @@ Scene_Preferences.PREFERENCES_PAGES = [
 			},
 			{
 				name: 'countdown',
+				type: 'boolean',
+				args: {}
+			},
+			{
+				name: 'autoRestartFail',
 				type: 'boolean',
 				args: {}
 			},
@@ -342,6 +352,12 @@ Scene_Preferences.PREFERENCES_PAGES = [
 				}
 			},
 			{
+				name: 'hpColor',
+				type: 'color',
+				args: {
+				}
+			},
+			{
 				name: 'textColor',
 				type: 'color',
 				args: {
@@ -561,6 +577,7 @@ Scene_Preferences.DEFAULT_ALIASES = {
 Scene_Preferences.DEFAULT_PREFERENCES = {
 	playRate: 1.0,
 	autoPlay: false,
+	noFail: false,
 	noBad: false,
 	noExcess: false,
 	judgementWindow: 1.0,
@@ -608,6 +625,7 @@ Scene_Preferences.DEFAULT_PREFERENCES = {
 	badColor: '#008000',
 	missColor: '#ff0000',
 	excessColor: '#ff0000',
+	hpColor: '#ffffff',
 	textColor: '#ffffff',
 	backgroundColor: '#000000',
 	graphicsWidth: 1024,

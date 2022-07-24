@@ -58,6 +58,7 @@ Strings["en-US"] = {
 	"markD": "D",
 	"markE": "E",
 	"markF": "F",
+	"markG": "G",
 	"fullCombo": "FC",
 	"viewRecording": "Watch replay",
 	"saveRecording": "Save replay",
@@ -65,6 +66,7 @@ Strings["en-US"] = {
 	// in-game display of modifiers
 	"inGame_playRate": "%fx speed",
 	"inGame_autoPlay": "Auto-play",
+	"inGame_noFail": "No-fail",
 	"inGame_noBad": "No-bad",
 	"inGame_noExcess": "No-excess",
 	"inGame_judgementWindow": "%fx judge",
@@ -73,7 +75,8 @@ Strings["en-US"] = {
 	// preferences: modifiers
 	"modifiers": "Modifiers",
 	"playRate": "Play rate (speed of music)",
-	"autoPlay": "Auto-play",
+	"autoPlay": "Auto-play mode",
+	"noFail": "Never-fail mode",
 	"noBad": "No-bad mode",
 	"noExcess": "No-excess mode",
 	"judgementWindow": "Judgement window (smaller is stricter)",
@@ -84,6 +87,7 @@ Strings["en-US"] = {
 	"offset": "Offset (in ms)",
 	"offsetWizard": "Offset wizard",
 	"countdown": "Show countdown before resuming",
+	"autoRestartFail": "Automatically restart when failing",
 	"autoRestartGood": "Automatically restart when failing to AP",
 	"autoRestartMiss": "Automatically restart when failing to FC",
 	"F8Pause": "Press F8 to pause",
@@ -134,6 +138,7 @@ Strings["en-US"] = {
 	"badColor": "Color of bad hits",
 	"missColor": "Color of missed hits",
 	"excessColor": "Color of excess hits",
+	"hpColor": "Color of HP bar",
 	"textColor": "Color of foreground (texts etc)",
 	"backgroundColor": "Color of background",
 	
@@ -245,6 +250,7 @@ Strings["zh-CN"] = {
 	"markD": "丁",
 	"markE": "戊",
 	"markF": "拉",
+	"markG": "败",
 	"fullCombo": "全连",
 	"viewRecording": "看回放",
 	"saveRecording": "保存回放",
@@ -252,6 +258,7 @@ Strings["zh-CN"] = {
 	// in-game display of modifiers
 	"inGame_playRate": "%fx 速",
 	"inGame_autoPlay": "自动",
+	"inGame_noFail": "不败",
 	"inGame_noBad": "无坏",
 	"inGame_noExcess": "无多余",
 	"inGame_judgementWindow": "%fx 判",
@@ -261,6 +268,7 @@ Strings["zh-CN"] = {
 	"modifiers": "模式",
 	"playRate": "倍速",
 	"autoPlay": "自动",
+	"noFail": "不败模式",
 	"noBad": "无坏模式",
 	"noExcess": "无多余模式",
 	"judgementWindow": "判定区间 (越小越严格)",
@@ -271,6 +279,7 @@ Strings["zh-CN"] = {
 	"offset": "音频延迟 (毫秒)",
 	"offsetWizard": "调延迟工具",
 	"countdown": "继续前倒计时",
+	"autoRestartFail": "失败自动重开",
 	"autoRestartGood": "全完美失败时自动重开",
 	"autoRestartMiss": "全连失败时自动重开",
 	"F8Pause": "按 F8 暂停",
@@ -321,6 +330,7 @@ Strings["zh-CN"] = {
 	"badColor": "坏的颜色",
 	"missColor": "漏失的颜色",
 	"excessColor": "多余的颜色",
+	"hpColor": "血条的颜色",
 	"textColor": "前景色 (应用于文字等)",
 	"backgroundColor": "背景色",
 	
@@ -358,7 +368,7 @@ Strings["zh-CN"] = {
 	
 	// hit sounds
 	"agogoBells": '阿哥哥铃',
-	"bassDrum": '低音鼓',
+	"bassDrum": '大鼓',
 	"bellTree": '树铃',
 	"cabasa": "铁沙铃",
 	"castanets": "响板",
@@ -432,6 +442,7 @@ Strings["zh-TW"] = {
 	"markD": "丁",
 	"markE": "戊",
 	"markF": "拉",
+	"markG": "敗",
 	"fullCombo": "全連",
 	"viewRecording": "看回放",
 	"saveRecording": "保存回放",
@@ -439,6 +450,7 @@ Strings["zh-TW"] = {
 	// in-game display of modifiers
 	"inGame_playRate": "%fx 速",
 	"inGame_autoPlay": "自動",
+	"inGame_noFail": "不敗",
 	"inGame_noBad": "無壞",
 	"inGame_noExcess": "無多餘",
 	"inGame_judgementWindow": "%fx 判",
@@ -448,6 +460,7 @@ Strings["zh-TW"] = {
 	"modifiers": "模式",
 	"playRate": "倍速",
 	"autoPlay": "自動",
+	"noFail": "不敗模式",
 	"noBad": "無壞模式",
 	"noExcess": "無多餘模式",
 	"judgementWindow": "判定區間 (越小越嚴格)",
@@ -458,6 +471,7 @@ Strings["zh-TW"] = {
 	"offset": "音頻延遲 (毫秒)",
 	"offsetWizard": "調延遲工具",
 	"countdown": "繼續前倒計時",
+	"autoRestartFail": "失敗自動重開",
 	"autoRestartGood": "全完美失敗時自動重開",
 	"autoRestartMiss": "全連失敗時自動重開",
 	"F8Pause": "按 F8 暫停",
@@ -508,6 +522,7 @@ Strings["zh-TW"] = {
 	"badColor": "壞的顏色",
 	"missColor": "漏失的顏色",
 	"excessColor": "多餘的顏色",
+	"hpColor": "血條的顏色",
 	"textColor": "前景色 (應用於文字等)",
 	"backgroundColor": "背景色",
 	
@@ -545,7 +560,7 @@ Strings["zh-TW"] = {
 	
 	// hit sounds
 	"agogoBells": '阿哥哥鈴',
-	"bassDrum": '低音鼓',
+	"bassDrum": '大鼓',
 	"bellTree": '樹鈴',
 	"cabasa": "鐵沙鈴",
 	"castanets": "響板",
