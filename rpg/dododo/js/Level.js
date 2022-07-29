@@ -108,7 +108,9 @@ Level.prototype.initialize = function (scene, musicUrl, beatmapUrl, recording) {
 };
 
 Level.prototype.newScene = function () {
-	return new Scene_Game(this._musicUrl, this._beatmapUrl, this._scene.isRecording ? undefined : this.newRecording, this._scene.retryCount + 1)
+	const recording = this._scene.isRecording ? undefined : this.newRecording;
+	const retryCount = this._scene.isRecording ? this._scene.retryCount + 1 : this._scene.retryCount;
+	return new Scene_Game(this._musicUrl, this._beatmapUrl, recording, retryCount);
 };
 
 Level.prototype.newReplayScene = function () {
@@ -117,6 +119,16 @@ Level.prototype.newReplayScene = function () {
 
 Level.prototype.progress = function (now) {
 	return (now - this._beatmap.start) / this._length;
+};
+
+Level.prototype.cutUnclearedEvents = function () {
+	const now = this._beatmap.start;
+	while (this._unclearedEvents.length > 0 && this._unclearedEvents[0].time < now) {
+		const event = this._unclearedEvents.shift();
+		this._refreshMeasureStateAfterHitting(event, Level.MISS);
+		this._missClear(event);
+		this._unclearedHitSounds.shift();
+	}
 };
 
 Level.prototype._setUpRecording = function () {
@@ -182,7 +194,7 @@ Level.prototype.row1Bitmap = function () {
 };
 
 Level.prototype.row2Bitmap = function () {
-	return this._row2.getBitmap();
+	return this._row2 && this._row2.getBitmap();
 };
 
 Level.prototype.loadBeatmap = async function () {
@@ -245,7 +257,10 @@ Level.prototype.loadAudio = function () {
 };
 
 Level.prototype._postLoadingAudio = function () {
-	[this._row1, this._row2] = this._beatmap.rows;
+	const now = this.initialNow();
+	const index = this._beatmap.rows.findIndex(row => row.endTime > now);
+	this._row1 = this._beatmap.rows[index];
+	this._row2 = this._beatmap.rows[index + 1];
 	this._scene.postLoadingAudio();
 };
 
@@ -289,6 +304,15 @@ Level.prototype.getInstantaneousMillisecondsPerWholeAndBeatOffset = function (no
 	return [millisecondsPerWhole, beatOffset];
 };
 
+Level.prototype.modifiersListString = function () {
+	const modifiersTexts = [];
+	for (const modifier in this.modifiers) {
+		if (this.modifiers[modifier] !== Scene_Preferences.DEFAULT_PREFERENCES[modifier])
+			modifiersTexts.push(sprintf(Strings['inGame_' + modifier], this.modifiers[modifier]));
+	}
+	return modifiersTexts.join(', ');
+};
+
 Level.prototype._processAndRecordLoosen = function (time, key) {
 	this._processLoosen(time);
 	this.newRecording.loosen.push({'time': time, 'key': key});
@@ -311,7 +335,7 @@ Level.prototype.autoPlayUpdateAndProcessMiss = function (now) {
 	while (this._unclearedEvents.length > 0) {
 		const event = this._unclearedEvents[0];
 		if (now >= event.time) {
-			if (this.modifiers.autoPlay && now <= event.time + this.perfectTolerance * this.modifiers.judgementWindow) {
+			if (this.modifiers.autoPlay) {// && now <= event.time + this.perfectTolerance * this.modifiers.judgementWindow) {
 				this._perfectHit();
 				if (this.visuals.TPSIndicator)
 					this._hitsLastSecond.push(now);
@@ -769,24 +793,33 @@ Level.prototype.switchRow = function () {
 
 Level.prototype.setUpMirror = function (row1Sprite, row2Sprite) {
 	row1Sprite.scale.x = this._row1.mirror ? -1 : 1;
-	row2Sprite.scale.x = this._row2.mirror ? -1 : 1;
+	if (this._row2)
+		row2Sprite.scale.x = this._row2.mirror ? -1 : 1;
+};
+
+Level.prototype.hasRowsLeft = function () {
+	return this._row1 !== undefined;
 };
 
 Level.prototype.setUpNewRow = function () {
 	const row = this._row1;
+	this._beatmap.currentRow = row;
 	const rowLengthInMilliseconds = row.endTime - row.startTime;
 	if (row.perfect)
-		this.perfectTolerance = row.perfect * rowLengthInMilliseconds;
+		this.perfectWindowRatio = row.perfect;
 	else
-		this.perfectTolerance ||= TyphmConstants.DEFAULT_PERFECT * rowLengthInMilliseconds;
+		this.perfectWindowRatio ||= TyphmConstants.DEFAULT_PERFECT;
 	if (row.good)
-		this.goodTolerance = row.good * rowLengthInMilliseconds;
+		this.goodWindowRatio = row.good;
 	else
-		this.goodTolerance ||= TyphmConstants.DEFAULT_GOOD * rowLengthInMilliseconds;
+		this.goodWindowRatio ||= TyphmConstants.DEFAULT_GOOD;
 	if (row.bad)
-		this.badTolerance = row.bad * rowLengthInMilliseconds;
+		this.badWindowRatio = row.bad;
 	else
-		this.badTolerance ||= TyphmConstants.DEFAULT_BAD * rowLengthInMilliseconds;
+		this.badWindowRatio ||= TyphmConstants.DEFAULT_BAD;
+	this.perfectTolerance = this.perfectWindowRatio * rowLengthInMilliseconds;
+	this.goodTolerance = this.goodWindowRatio * rowLengthInMilliseconds;
+	this.badTolerance = this.badWindowRatio * rowLengthInMilliseconds;
 	if (row.perfectHp !== undefined)
 		this.perfectHp = row.perfectHp;
 	else if (this.perfectHp === undefined)

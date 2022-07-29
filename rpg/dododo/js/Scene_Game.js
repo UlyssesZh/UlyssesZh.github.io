@@ -52,6 +52,7 @@ Scene_Game.prototype.start = function () {
 	if (this._level.visuals.numbersHUD)
 		this._createNumbersHUD();
 	this._createHpBar();
+	this._createRetryCounter();
 	
 	this._fakeJudgementLines = [];
 	this._texts = [];
@@ -96,6 +97,16 @@ Scene_Game.prototype._createLayers = function () {
 	this.addChild(this._overHUDLayer = new Sprite());
 	this.addChild(this._summaryLayer = new Sprite());
 	this.addChild(this._screenEffectLayer = new Sprite());
+};
+
+Scene_Game.prototype._createRetryCounter = function () {
+	this._retryCounter = new Sprite(new Bitmap(Graphics.width / 2, preferences.textHeight));
+	this._retryCounter.bitmap.drawText(sprintf(Strings.retryCounter, this.retryCount), 0, 0, this._retryCounter.width, preferences.textHeight, 'right');
+	this._retryCounter.x = Graphics.width - this._retryCounter.width;
+	this._retryCounter.anchor.y = 0.5;
+	this._retryCounter.y = Graphics.height / 2;
+	if (this.retryCount > 0)
+		this._HUDLayer.addChild(this._retryCounter);
 };
 
 Scene_Game.prototype._createFadeInMask = function () {
@@ -322,12 +333,7 @@ Scene_Game.prototype._createModifiersListSprite = function () {
 	this._modifiersListSprite = new Sprite(new Bitmap(Graphics.width, preferences.textHeight));
 	this._modifiersListSprite.anchor.y = 0.5;
 	this._modifiersListSprite.y = Graphics.height / 2;
-	const modifiersTexts = [];
-	for (const modifier in this._modifiers) {
-		if (this._modifiers[modifier] !== Scene_Preferences.DEFAULT_PREFERENCES[modifier])
-			modifiersTexts.push(sprintf(Strings['inGame_' + modifier], this._modifiers[modifier]));
-	}
-	this._modifiersListSprite.bitmap.drawText(modifiersTexts.join(', '), 0, 0,
+	this._modifiersListSprite.bitmap.drawText(this._level.modifiersListString(), 0, 0,
 		this._modifiersListSprite.width, preferences.textHeight, 'left');
 	this._modifiersListSprite.visible = false;
 	this._summaryLayer.addChild(this._modifiersListSprite);
@@ -440,6 +446,8 @@ Scene_Game.prototype._updateProgress = function (now) {
 
 Scene_Game.prototype._updateJudgementLine = function (now) {
 	const row = this._level._row1;
+	if (row === undefined)
+		return;
 	if (this._resumingCountdown)
 		now -= this._resumingCountdown.remaining * this._level.modifiers.playRate;
 	if (now < row.startTime)
@@ -453,7 +461,7 @@ Scene_Game.prototype._updateJudgementLine = function (now) {
 			row.texts[i].applyToSprite(this._texts[i], lengthPosition, this._row1Sprite.y, row.mirror);
 		this._judgementLineLayer.children.sort((a, b) => a.zIndex - b.zIndex);
 	} else {
-		this._judgementLine.x = this._getNoteXFromLengthPosition(lengthPosition);
+		this._judgementLine.x = this._level._getNoteXFromLengthPosition(lengthPosition);
 		if (row.mirror)
 			this._judgementLine.x = Graphics.width - this._judgementLine.x;
 		this._judgementLine.y = this._row1Sprite.y;
@@ -488,8 +496,10 @@ Scene_Game.prototype._switchRow = function () {
 	this._level.switchRow();
 	this._row2Sprite.bitmap = this._level.row2Bitmap();
 	this._beatmapLayer.addChild(this._row1Sprite);
-	this._nextBeatmapLayer.addChild(this._row2Sprite);
-	this._setUpNewRow();
+	if (this._row2Sprite.bitmap)
+		this._nextBeatmapLayer.addChild(this._row2Sprite);
+	if (this._level.hasRowsLeft())
+		this._setUpNewRow();
 };
 
 Scene_Game.prototype._changeSceneIfShould = function () {
@@ -689,13 +699,24 @@ Scene_Game.prototype._makeHUDsVisible = function () {
 		this._numbersHUD.refresh();
 	}
 	this._hpBar.visible = true;
+	const start = performance.now();
+	this._retryCounter.update = () => {
+		this._retryCounter.opacity = 255 * (1 - (performance.now() - start) / 1000);
+		if (this._retryCounter.opacity <= 0)
+			this._HUDLayer.removeChild(this._retryCounter);
+	};
 };
 
 Scene_Game.prototype.postLoadingAudio = function () {
 	this._makeHUDsVisible();
 	this._row1Sprite.bitmap = this._level.row1Bitmap();
 	this._row2Sprite.bitmap = this._level.row2Bitmap();
+	if (this._level._row1.index % 2 === 1) {
+		this._row1Sprite.y = Graphics.height - this._row1Sprite.y;
+		this._row2Sprite.y = Graphics.height - this._row2Sprite.y;
+	}
 	this._loadingFinished = true;
+	this._level.cutUnclearedEvents();
 	this._setUpNewRow();
 	this._resume();
 };
@@ -742,11 +763,11 @@ Scene_Game.prototype._resume = function () {
 		if (this.isRecording) {
 			for (const key in this._lastPressings) {
 				if (!this._pressings[key])
-					this._processAndRecordLoosen(this._lastPos, key);
+					this._level._processAndRecordLoosen(this._lastPos, key);
 			}
 			for (const key in this._pressings) {
 				if (!this._lastPressings[key])
-					this._processAndRecordHit(this._lastPos, key);
+					this._level._processAndRecordHit(this._lastPos, key);
 			}
 			this._lastPressings = null;
 		}
