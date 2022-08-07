@@ -146,8 +146,8 @@ Scene_Game.prototype._createTwoRows = function () {
 Scene_Game.prototype._createJudgementLineSprite = function () {
 	this._judgementLine = new Sprite(new Bitmap(1, 1));
 	this._judgementLine.bitmap.fillAll('white');
-	this._judgementLine.visible = false;
 	this._judgementLineLayer.addChild(this._judgementLine);
+	this._judgementLineLayer.visible = false;
 };
 
 Scene_Game.prototype._destroyFakeJudgementLines = function () {
@@ -454,11 +454,20 @@ Scene_Game.prototype._updateJudgementLine = function (now) {
 		return;
 	const lengthPosition = this._level._getLengthPositionFromTime(now);
 	if (this._level.visuals.judgementLinePerformances) {
-		row.judgementLine.applyToSprite(this._judgementLine, lengthPosition, this._row1Sprite.y, row.mirror);
-		for (let i = 0; i < this._fakeJudgementLines.length; i++)
-			row.fakeJudgementLines[i].applyToSprite(this._fakeJudgementLines[i], lengthPosition, this._row1Sprite.y, row.mirror);
-		for (let i = 0; i < this._texts.length; i++)
-			row.texts[i].applyToSprite(this._texts[i], lengthPosition, this._row1Sprite.y, row.mirror);
+		try {
+			row.judgementLine.applyToSprite(this._judgementLine, lengthPosition, this._row1Sprite.y, row.mirror);
+			for (let i = 0; i < this._fakeJudgementLines.length; i++)
+				row.fakeJudgementLines[i].applyToSprite(this._fakeJudgementLines[i], lengthPosition, this._row1Sprite.y, row.mirror);
+			for (let i = 0; i < this._texts.length; i++)
+				row.texts[i].applyToSprite(this._texts[i], lengthPosition, this._row1Sprite.y, row.mirror);
+		} catch (e) {
+			if (e instanceof BeatmapExpressionError) {
+				this._shouldError = true;
+				this._error = e;
+			} else {
+				console.error(e);
+			}
+		}
 		this._judgementLineLayer.children.sort((a, b) => a.zIndex - b.zIndex);
 	} else {
 		this._judgementLine.x = this._level._getNoteXFromLengthPosition(lengthPosition);
@@ -623,7 +632,7 @@ Scene_Game.prototype._onLoad = async function () {
 	try {
 		await this._level.loadBeatmap();
 	} catch (e) {
-		if (e instanceof TypeError || e instanceof BeatmapError) {
+		if (e instanceof TypeError || e instanceof BeatmapError || e instanceof BeatmapRuntimeError || e instanceof BeatmapExpressionError) {
 			this._error = e;
 			this._shouldError = true;
 			return;
@@ -756,6 +765,7 @@ Scene_Game.prototype._resume = function () {
 	this._paused = false;
 	if (!this._ended) {
 		this._setButtonsVisible(false);
+		this._judgementLineLayer.visible = true;
 		if (preferences.countdown) {
 			this._createResumingCountdown();
 		} else
@@ -784,8 +794,6 @@ Scene_Game.prototype._createResumingCountdown = function () {
 Scene_Game.prototype.actualResume = function () {
 	this._overHUDLayer.removeChild(this._resumingCountdown);
 	this._resumingCountdown = null;
-	if (!this._ended)
-		this._judgementLine.visible = true;
 	if (this._level.hasMusic) {
 		if (!this.audioPlayer.isPlaying()) {
 			this.audioPlayer.pitch = this._level.modifiers.playRate;
@@ -1034,7 +1042,7 @@ Scene_Game.prototype._finish = function () {
 	this._drawSummary();
 	if (this._level.isFC())
 		this._fullCombo.visible = true;
-	this._judgementLine.visible = false;
+	this._judgementLineLayer.visible = false;
 	this._row1Sprite.visible = false;
 	this._row2Sprite.visible = false;
 	if (this._level.visuals.showKeyboard)
