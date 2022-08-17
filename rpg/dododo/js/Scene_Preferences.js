@@ -107,6 +107,11 @@ Scene_Preferences.PREFERENCES_PAGES = [
 				type: 'boolean',
 				args: {
 				}
+			},
+			{
+				name: 'pseWarning',
+				type: 'boolean',
+				args: {}
 			}
 		]
 	},
@@ -546,14 +551,14 @@ Scene_Preferences.PREFERENCES_PAGES = [
 				name: 'wiki',
 				type: 'button',
 				args: {
-					onclick: () => { open('https://github.com/UlyssesZh/dododo/wiki'); }
+					onclick: () => { open('https://github.com/dododogame/dododo/wiki'); }
 				}
 			},
 			{
 				name: 'github',
 				type: 'button',
 				args: {
-					onclick: () => { open('https://github.com/UlyssesZh/dododo'); }
+					onclick: () => { open('https://github.com/dododogame/dododo'); }
 				}
 			},
 			{
@@ -590,6 +595,7 @@ Scene_Preferences.DEFAULT_PREFERENCES = {
 	backtickRestart: true,
 	autoPause: true,
 	recordVisual: true,
+	pseWarning: true,
 	FCAPIndicator: true,
 	TPSIndicator: true,
 	judgementLinePerformances: true,
