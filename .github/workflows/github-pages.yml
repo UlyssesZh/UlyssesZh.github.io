@@ -9,9 +9,9 @@ jobs:
   github-pages:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
-      - uses: actions/cache@v2
+      - uses: actions/cache@v3
         with:
           path: vendor/bundle
           key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile') }}
@@ -22,6 +22,6 @@ jobs:
         with:
           token: ${{ secrets.JEKYLL_PAT }}
           pre_build_commands: |
-            git config --global user.email "2938747508@qq.com"
+            git config --global user.email "ulysseszhan@gmail.com"
             git config --global user.name "Ulysses Zhan"
             gem install bundler 
