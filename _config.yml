@@ -1,6 +1,6 @@
 ---
 title: Ulysses' trip
-timezone: Asia/Shanghai
+timezone: America/Los_Angeles
 collections:
   posts:
     title: Posts
@@ -8,7 +8,7 @@ collections:
   uploads:
     title: Uploads
     output: true
-email: UlyssesZhan@gmail.com
+email: ulysseszhan@gmail.com
 tagline: Somewhere with strange thoughts
 description: Here we are at the awesome (awful) blog written by Ulysses Zhan!
 copyright: 2022 Ulysses Zhan
@@ -45,6 +45,7 @@ github_username: UlyssesZh
 facebook_username: YouqiuZhan
 instagram_username: ulysseszhan
 pinterest_username: ulysseszhan
+flickr_username: UlyssesZhan
 jekyll-archives:
   enabled: all
   layout: archive
