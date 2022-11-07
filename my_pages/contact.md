@@ -22,7 +22,7 @@ Available:
 * [WhatsApp](https://wa.me/qr/AWJXLNDNIBM3G1)
 * [LINE](https://line.me/ti/p/UORDWHwDyR)
 * [Skype](https://join.skype.com/invite/qJ1LIuNb3UQv)
-* [SnapChat](https://snapchat.com/add/ulysseszhan)
+* [Snapchat](https://snapchat.com/add/ulysseszhan)
 * [GroupMe](https://groupme.com/contact/106459805/ZE5oVxdV)
 * [StackExchange](https://stackexchange.com/users/14182367)
 * [Tinder](https://tinder.com/@ulysseszhan)
