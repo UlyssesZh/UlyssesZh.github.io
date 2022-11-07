@@ -14,9 +14,11 @@ is a curve resembling a heart.
 ![Joukowsky heart](/assets/images/joukowsky_heart.png)
 
 To be specific, it is
-\begin{equation\*}
-    \left\\{1+\mathrm i+\mathrm e^{\mathrm it}+
+
+$$
+    \left\{1+\mathrm i+\mathrm e^{\mathrm it}+
     \frac1{1+\mathrm i+\mathrm e^{\mathrm it}}
-    \middle|t\in\left[0,2\pi\right)\right\\}
-\end{equation\*}
+    \,\middle|\,t\in\left[0,2\pi\right)\right\}
+$$
+
 on the complex plane.

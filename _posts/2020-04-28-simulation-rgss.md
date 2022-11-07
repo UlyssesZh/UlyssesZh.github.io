@@ -12,9 +12,11 @@ layout: post
 ---
 
 Our goal is to simulate a mechanical system according to its Hamiltonian
-$\mathcal H\left(\mathbf q,\mathbf p,t\right)$.
+$\mathcal H\\!\left(\mathbf q,\mathbf p,t\right)$.
 
 To utilize the canonical equations
+
+$$
 \begin{equation}
     \frac{\mathrm d\mathbf q}{\mathrm dt}=
     \frac{\partial\mathcal H}{\partial\mathbf p},\quad
@@ -22,6 +24,8 @@ To utilize the canonical equations
     -\frac{\partial\mathcal H}{\partial\mathbf p},
     \label{canonical}
 \end{equation}
+$$
+
 we need to calculate the partial derivatives of $\mathcal H$.
 Here is a simple code to calculate partial derivatives.
 ```ruby
@@ -39,9 +43,13 @@ Here `x0` is a `Vector`, `f` is a `call`-able object as a function
 of vectors, `dx` is a small scalar which we are going to take `1e-6`.
 
 Let `x = Vector[*q, *p]`, and then Formula \ref{canonical} has the form
+
+$$
 \begin{equation}
-    \frac{\mathrm d\mathbf x}{\mathrm dt}=f\left(\mathbf x\right).
+    \frac{\mathrm d\mathbf x}{\mathrm dt}=f\!\left(\mathbf x\right).
 \end{equation}
+$$
+
 To solve this equation numerically, we need to use a famous method
 called the (explicit) Runge--Kutta method.
 ```ruby

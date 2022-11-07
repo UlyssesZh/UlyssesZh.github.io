@@ -8,14 +8,14 @@ tags:
 layout: post
 ---
 
-Consider the function $y=f\left(\mathbf x\right)$, where the domain
+Consider the function $y=f\\!\left(\mathbf x\right)$, where the domain
 $D\subseteq\mathbb R^n$, and the function is differentiable
 everywhere.
 
 According to some well-known theories, we can derive that
 the normal vector of the graph of the function at
-$\left(\mathbf x_0,f\left(\mathbf x_0\right)\right)$ is
-$\left(\nabla f\left(\mathbf x_0\right),-1\right)$.
+$\left(\mathbf x_0,f\\!\left(\mathbf x_0\right)\right)$ is
+$\left(\nabla f\\!\left(\mathbf x_0\right),-1\right)$.
 
 This gives us an idea that, in fact a conservative field
 consists of normal vectors of its potential function

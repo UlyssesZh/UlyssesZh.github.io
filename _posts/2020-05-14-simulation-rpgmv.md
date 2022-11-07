@@ -20,10 +20,12 @@ you may find the simulation of a mechanical system.
 ![Result of simulation](/assets/images/rpgmv_simul.png)
 
 It is currently
-\begin{equation\*}
+
+$$
     \mathcal H=p_1^2+p_2^2-\cos q_1-\cos q_2-
-    \cos\left(q_1-q_2\right)
-\end{equation\*}
+    \cos\!\left(q_1-q_2\right)
+$$
+
 depicting two pendulum coupled with a spring,
 
 ![Spring-coupled pendulums](/assets/images/spring_coupled_pendulum.png)

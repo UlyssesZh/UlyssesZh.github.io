@@ -1,4 +1,4 @@
-{%- unless layout.no_gitalk or page.no_gitalk -%}
+{%- unless layout.no_gitalk or page.no_gitalk or jekyll.environment != 'production' -%}
 	<script>
 		const gitalk = new Gitalk({
 			clientID: '49611570ab5cf827576b',

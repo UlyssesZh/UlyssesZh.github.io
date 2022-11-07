@@ -39,9 +39,9 @@ affine space associated with the vector space $\mathbb R^\nu$,
 where $\nu:=\chi+\iota$;
 2. $\tau:\mathbb R^\nu\rightarrow\mathbb R^\iota$
 is a linear mapping;
-3. For $a,b\in\mathscr A$ such that $\tau\left(a-b\right)=0$,
+3. For $a,b\in\mathscr A$ such that $\tau\\!\left(a-b\right)=0$,
 the mapping $\rho$ satisfies
-$\rho\left(a,b\right)=\sqrt{\left(a-b\right)^2}$.
+$\rho\\!\left(a,b\right)=\sqrt{\left(a-b\right)^2}$.
 
 To make the physical meanings of the above mathematical stuff
 clear, we
@@ -49,8 +49,8 @@ clear, we
 - call the points in the universe the *events*,
 - call $\tau$ the *time*,
 - say two events $a,b$ are *simultaneous*
-iff $\tau\left(a-b\right)=0$,
-- call $\rho\left(a,b\right)$ the
+iff $\tau\\!\left(a-b\right)=0$,
+- call $\rho\\!\left(a,b\right)$ the
 *distance between simultaneous events $a,b$*.
 
 ---
@@ -63,11 +63,11 @@ An affine transformation $g$ over the Galilean space $\mathscr A$
 is called a *Galilean transformation*
 iff both of the following are satisfied:
 1. $\forall a,b\in\mathscr A:
-\tau\left(a-b\right)=\tau\left(ga-gb\right)$
+\tau\\!\left(a-b\right)=\tau\\!\left(ga-gb\right)$
 (preservation of intervals of time),
 2. $\forall a,b\in\mathscr A:
-\tau\left(a-b\right)=0\Rightarrow
-\rho\left(a,b\right)=\rho\left(ga,gb\right)$
+\tau\\!\left(a-b\right)=0\Rightarrow
+\rho\\!\left(a,b\right)=\rho\\!\left(ga,gb\right)$
 (preservation of distance between simultaneous events).
 
 Galilean transformations form a group (why?) called
@@ -76,11 +76,15 @@ $\left(\iota+\frac{\chi\left(\chi+3\right)}2\right)$-dimensional
 Lie group (why?).
 
 ---
-\begin{align\*}
-\mathscr A&:=\mathbb R^\nu,\\\\\
-\tau&:=\left(t,x\right)\mapsto t,\\\\\
+
+$$
+\begin{align*}
+\mathscr A&:=\mathbb R^\nu,\\
+\tau&:=\left(t,x\right)\mapsto t,\\
 \rho&:=\left(a,b\right)\mapsto\sqrt{\left(a-b\right)^2}
-\end{align\*}
+\end{align*}
+$$
+
 is a Galilean structure (why?).
 Here $\mathscr A$ is called the *Galilean coordinate space*.
 
@@ -113,15 +117,19 @@ in our $3$-$1$ universe, and use the third principle
 
 to conclude that the motion can be depicted by
 *Hamilton's principle*
-\begin{equation\*}
-    \delta\int\mathcal L\left(q,\dot q,t\right)=0
-\end{equation\*}
+
+$$
+    \delta\int\mathcal L\!\left(q,\dot q,t\right)=0
+$$
+
 (why?), which leads to *Euler--Lagrange equation*
-\begin{equation\*}
+
+$$
     \frac{\mathrm d}{\mathrm dt}
     \frac{\partial\mathcal L}{\partial\dot q}=
     \frac{\partial\mathcal L}{\partial q}
-\end{equation\*}
+$$
+
 (why?).
 
 According to Principle 2, for a closed system,
@@ -158,10 +166,10 @@ where $\nu:=\chi+\iota$;
 2. $\tau:\mathbb R^\nu\rightarrow\mathbb R^\iota$
 and $\sigma:\mathbb R^\nu\rightarrow\mathbb R^\chi$
 are linear mappings;
-3. The linear mapping $a\mapsto\left(\tau\left(a\right),
-\sigma\left(a\right)\right):
+3. The linear mapping $a\mapsto\left(\tau\\!\left(a\right),
+\sigma\\!\left(a\right)\right):
 \mathbb R^\nu\rightarrow\mathbb R^\nu$ has full rank;
-4. $\forall a,b\in\mathscr A:\rho\left(a,b\right)=
+4. $\forall a,b\in\mathscr A:\rho\\!\left(a,b\right)=
 \sqrt{\tau\left(a-b\right)^2-\sigma\left(a-b\right)^2}$.
 
 To make the physical meanings of the above mathematical
@@ -170,7 +178,7 @@ stuff clear, we
 - call the points in the universe the *events*,
 - call $\tau$ the *time*,
 - call $\sigma$ the *space*,
-- call $\rho\left(a,b\right)$ the
+- call $\rho\\!\left(a,b\right)$ the
 *spacetime interval between events $a,b$*.
 
 ---
@@ -183,7 +191,7 @@ Here is the definition of a Poincaré transformation.
 An affine transformation $g$ over the Einsteinian space
 $\mathscr A$ is called a *Poincaré transformation*
 iff $\forall a,b\in\mathscr A:
-\rho\left(a,b\right)=\rho\left(ga,gb\right)$.
+\rho\\!\left(a,b\right)=\rho\\!\left(ga,gb\right)$.
 Well, the definition is much simpler than that of
 Galilean transformation.
 
@@ -192,13 +200,17 @@ called the *Poincaré group*, which is a
 $\frac{\nu\left(\nu+1\right)}2$-dimensional Lie group (why?).
 
 ---
-\begin{align\*}
-    \mathscr A&:=\mathbb R^\nu,\\\\\
-    \tau&:=\left(ct,x\right)\mapsto t,\\\\\
-    \sigma&:=\left(ct,x\right)\mapsto x,\\\\\
+
+$$
+\begin{align*}
+    \mathscr A&:=\mathbb R^\nu,\\
+    \tau&:=\left(ct,x\right)\mapsto t,\\
+    \sigma&:=\left(ct,x\right)\mapsto x,\\
     \rho&:=\left(a,b\right)\mapsto
-    \sqrt{\tau\left(a-b\right)^2-\sigma\left(a-b\right)^2}
-\end{align\*}
+    \sqrt{\tau\!\left(a-b\right)^2-\sigma\!\left(a-b\right)^2}
+\end{align*}
+$$
+
 is an Einsteinian structure (why?), where the constant
 $c\in\mathbb R$ is called the *speed of light*.
 Here $\mathscr A$ is called the *Minkowski space*.
@@ -206,7 +218,7 @@ Here $\mathscr A$ is called the *Minkowski space*.
 The following transformations on the Minkowski space are
 Poincaré transformations (why?):
 1. $a\mapsto a+d$, where $d\in\mathbb R^\nu$ (*translation*),
-2. $a\mapsto Ga$, where $G\in\mathrm O\left(\iota,\chi\right)$
+2. $a\mapsto Ga$, where $G\in\mathrm O\\!\left(\iota,\chi\right)$
 is an indefinite orthogonal matrix (*rotation*).
 
 Every Poincaré transformation of the Minkowski space can be
@@ -262,8 +274,8 @@ where $\nu:=\chi+\iota$;
 2. $\tau:\mathbb R^\nu\rightarrow\mathbb R^\iota$
 is a linear mapping;
 3. $o$ is an $\iota$-dimensional affine subspace of $\mathscr A$;
-4. For $a,b\in\mathscr A$ such that $\tau\left(a-b\right)=0$,
-the mapping $\rho$ satisfies $\rho\left(a,b\right)=
+4. For $a,b\in\mathscr A$ such that $\tau\\!\left(a-b\right)=0$,
+the mapping $\rho$ satisfies $\rho\\!\left(a,b\right)=
 \sqrt{\left(a-b\right)^2}$.
 
 To make the physical meanings of the above mathematical stuff
@@ -273,8 +285,8 @@ clear, we
 - call $\tau$ the *time*,
 - call $o$ the *center* of space,
 - say two events $a,b$ are *simultaneous*
-iff $\tau\left(a-b\right)=0$,
-- call $\rho\left(a,b\right)$ the
+iff $\tau\\!\left(a-b\right)=0$,
+- call $\rho\\!\left(a,b\right)$ the
 *distance between simultaneous events $a,b$*.
 
 ---
@@ -287,10 +299,10 @@ An affine transformation $g$ over the Aristotelian space
 $\mathscr A$ is called an *Aristotelian transformation*
 iff all of the following are satisfied:
 1. $\forall a,b\in\mathscr A:
-\tau\left(a-b\right)=\tau\left(ga-gb\right)$,
+\tau\\!\left(a-b\right)=\tau\\!\left(ga-gb\right)$,
 2. $\forall a,b\in\mathscr A:
-\tau\left(a-b\right)=0\Rightarrow
-\rho\left(a,b\right)=\rho\left(ga,gb\right)$.
+\tau\\!\left(a-b\right)=0\Rightarrow
+\rho\\!\left(a,b\right)=\rho\\!\left(ga,gb\right)$.
 3. $\forall a\in o:ga\in o$.
 
 Notice the third condition, which makes it different from
@@ -302,12 +314,16 @@ $\left(\iota+\frac{\chi\left(\chi-1\right)}2\right)$-dimensional
 Lie group (why?).
 
 ---
-\begin{align\*}
-    \mathscr A&:=\mathbb R^\nu,\\\\\
-    \tau&:=\left(t,x\right)\mapsto t,\\\\\
-    o&:=\mathbb R^\iota\times\left\\{0\right\\},\\\\\
+
+$$
+\begin{align*}
+    \mathscr A&:=\mathbb R^\nu,\\
+    \tau&:=\left(t,x\right)\mapsto t,\\
+    o&:=\mathbb R^\iota\times\left\{0\right\},\\
     \rho&:=\left(a,b\right)\mapsto\sqrt{\left(a-b\right)^2}
-\end{align\*}
+\end{align*}
+$$
+
 is an Aristotelian structure (why?). Here $\mathscr A$
 is called the *Aristotelian coordinate space*.
 
@@ -316,7 +332,7 @@ space are Aristotelian transformations (why?):
 1. $\left(t,x\right)\mapsto\left(t+s,x\right)$,
 where $s\in\mathbb R^\iota$ (*time translation*),
 2. $\left(t,x\right)\mapsto\left(t,Gx\right)$,
-where $G\in\mathrm O\left(\chi\right)$ (*rotation*).
+where $G\in\mathrm O\\!\left(\chi\right)$ (*rotation*).
 
 Every Aristotelian transformation of the Aristotelian
 coordinate space can be represented uniquely as
