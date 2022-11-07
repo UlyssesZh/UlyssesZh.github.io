@@ -30,6 +30,8 @@ Available:
 * [LinkedIn](https://linkedin.com/in/%E6%9C%89%E4%B8%98-%E8%A9%B9-7715a4155)
 * [QQ](https://qm.qq.com/cgi-bin/qm/qr?k=-u9lqfGgG0FoZjI-LJoFUtzJzBq2KMfa) (2938747508)
 * [知乎](https://zhihu.com/people/ulysseszhan)
+* [Internet Archive](https://archive.org/details/@ulysseszhan)
+* [Matrix](https://matrix.to/#/@ulysseszhan:matrix.org)
 
 Inactive:
 
