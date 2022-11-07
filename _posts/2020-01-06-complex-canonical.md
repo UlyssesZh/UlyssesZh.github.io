@@ -1,6 +1,6 @@
 ---
 title: Use complex numbers as canonical variables
-date: 2020-01-05 22:09:47 -08:00
+date: 2020-01-06 14:09:47 +08:00
 categories:
 - physics
 tags:

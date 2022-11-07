@@ -1,6 +1,6 @@
 ---
 title: Normal vectors of a scalar field
-date: 2020-03-03 04:56:59 -08:00
+date: 2020-03-03 20:56:59 +08:00
 categories:
 - math
 tags:

@@ -1,6 +1,6 @@
 ---
 title: Hyperellipsoids in barycentric coordinates
-date: 2020-01-25 01:13:57 -08:00
+date: 2020-01-25 17:13:57 +08:00
 categories:
 - math
 tags:

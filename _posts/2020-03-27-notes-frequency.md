@@ -1,6 +1,6 @@
 ---
 title: The frequency assignment of musical notes
-date: 2020-03-27 00:31:55 -07:00
+date: 2020-03-27 15:31:55 +08:00
 categories:
 - music
 tags:
