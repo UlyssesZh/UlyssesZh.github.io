@@ -1,6 +1,6 @@
 ---
 title: Solving linear homogeneous ODE with constant coefficients
-date: 2022-11-06 16:42:48 -08:00
+date: 2022-11-06 16:42:48 -0800
 categories:
 - math
 tags:
@@ -14,7 +14,7 @@ layout: post
 
 *This article is translated from a
 Chinese [article](https://zhuanlan.zhihu.com/p/60752992){:target="_blank"} on my Zhihu account.
-The original article was posted at 2019-04-05 22:46 +08:00.*
+The original article was posted at 2019-04-05 22:46 +0800.*
 
 *Notice*: Because this article was written very early,
 there are many mistakes and inappropriate notations.

@@ -1,6 +1,6 @@
 ---
 title: Generalization of Euler–Lagrange equation
-date: 2020-05-31 12:53:17 +08:00
+date: 2020-05-31 12:53:17 +0800
 categories:
 - math
 tags:

@@ -1,6 +1,6 @@
 ---
 title: I created a community rhythm game called Dododo
-date: 2022-05-23 16:49:27 +08:00
+date: 2022-05-23 16:49:27 +0800
 categories:
 - update
 tags:

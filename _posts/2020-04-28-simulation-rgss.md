@@ -1,6 +1,6 @@
 ---
 title: Simulating a mechanical system using RGSS3
-date: 2020-04-28 11:51:17 +08:00
+date: 2020-04-28 11:51:17 +0800
 categories:
 - physics
 tags:

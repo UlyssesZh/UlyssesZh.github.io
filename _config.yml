@@ -26,7 +26,6 @@ header_pages:
 theme: minima
 minima:
   date_format: "%b %-d, %Y"
-  detailed_date_format: "%F %T %z"
 future: true
 plugins:
 - jekyll-feed

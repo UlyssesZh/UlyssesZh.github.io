@@ -1,6 +1,6 @@
 ---
 title: Mapping from Kepler problem to free particle on 3-sphere
-date: 2022-11-07 16:12:09 -08:00
+date: 2022-11-07 16:12:09 -0800
 categories:
 - physics
 tags:
@@ -14,7 +14,7 @@ layout: post
 Background: the professor said in class that he know there is a way to transform the Kepler problem into the system of a free particle on a 3-sphere,
 but he did not know what is the explicit form of the mapping
 and asked us to try to research and find out the mapping.
-The original letter was sent at 2022-10-13 21:56 -07:00.*
+The original letter was sent at 2022-10-13 21:56 -0700.*
 
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: Simulating a mechanical system using rpg_core.js
-date: 2020-05-14 00:57:39 +08:00
+date: 2020-05-14 00:57:39 +0800
 categories:
 - physics
 tags:
