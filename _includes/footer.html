@@ -7,6 +7,7 @@
 
     <div class="footer-col-wrapper">
       <div class="footer-col footer-col-1">
+        <p>{{- site.description | escape -}}</p>
         <ul class="contact-list">
           <li class="p-name">
             {%- if site.author -%}
@@ -26,10 +27,8 @@
       </div>
 
       <div class="footer-col footer-col-3">
-        <p>{{- site.description | escape -}}</p>
-        <!-- Added begin -->
-        <p align="right">{{- site.copyright | escape -}}</p>
-        <!-- Added end -->
+        {% include copyright.html %}
+        <p>Last update of the website was at {{ "now" | date: "%F %T %z" }}.</p>
       </div>
     </div>
 

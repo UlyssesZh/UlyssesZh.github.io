@@ -1,7 +1,7 @@
 ---
 title: Ulysses' trip
 author: UlyssesZhan
-#timezone: America/Los_Angeles
+timezone: America/Los_Angeles
 collections:
   posts:
     title: Posts
@@ -12,7 +12,6 @@ collections:
 email: ulysseszhan@gmail.com
 tagline: Somewhere with strange thoughts
 description: Here we are at the awesome (awful) blog written by UlyssesZhan!
-copyright: CC-BY-4.0 license
 baseurl: ''
 url: https://UlyssesZh.github.io
 markdown: kramdown
@@ -32,6 +31,7 @@ plugins:
 - jekyll-sitemap
 - jekyll-archives
 exclude:
+- LICENSE
 - LICENSE.md
 - README.md
 - Gemfile
