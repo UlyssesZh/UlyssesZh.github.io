@@ -14,7 +14,7 @@ layout: post
 
 *This article is translated from a
 Chinese [article](https://zhuanlan.zhihu.com/p/60752992){:target="_blank"} on my Zhihu account.
-The original article was posted at 2019-04-05 22:46 +0800.*
+The original article was posted at 2019-04-05 22:46 +08:00.*
 
 *Notice*: Because this article was written very early,
 there are many mistakes and inappropriate notations.

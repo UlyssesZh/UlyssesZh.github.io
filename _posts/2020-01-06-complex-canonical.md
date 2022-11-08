@@ -4,6 +4,8 @@ date: 2020-01-06 14:09:47 +08:00
 categories:
 - physics
 tags:
+- classical mechanics
+- canonical transformation
 - hamiltonian
 - complex
 - long paper

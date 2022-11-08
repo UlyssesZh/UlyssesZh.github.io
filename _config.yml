@@ -1,5 +1,6 @@
 ---
 title: Ulysses' trip
+author: UlyssesZhan
 timezone: America/Los_Angeles
 collections:
   posts:
@@ -10,8 +11,8 @@ collections:
     output: true
 email: ulysseszhan@gmail.com
 tagline: Somewhere with strange thoughts
-description: Here we are at the awesome (awful) blog written by Ulysses Zhan!
-copyright: 2022 Ulysses Zhan
+description: Here we are at the awesome (awful) blog written by UlyssesZhan!
+copyright: CC-BY-4.0 license
 baseurl: ''
 url: https://UlyssesZh.github.io
 markdown: kramdown
@@ -23,6 +24,9 @@ header_pages:
 - my_pages/contact.md
 - my_pages/friends.md
 theme: minima
+minima:
+  date_format: "%b %-d, %Y"
+  detailed_date_format: "%F %T %z"
 future: true
 plugins:
 - jekyll-feed
