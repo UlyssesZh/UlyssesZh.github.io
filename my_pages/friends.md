@@ -13,6 +13,7 @@ Here are some of my friends (ordered lexicographically):
 - [Misaka13514](https://atri.tk){:target="_blank" title="欠陥電気"},
 - [Silent](https://not-hentai.com){:target="_blank" title="静寂之夜"},
 - [Taroxd](https://taroxd.github.io){:target="_blank" title="状元"},
+- [Xiang](https://orashshi.github.io){:target="_blank" title="Orash"},
 
 and
 - You.
