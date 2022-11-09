@@ -6,6 +6,7 @@ categories:
 tags:
 - elementary geometry
 - trigonometry
+- from zhihu
 layout: post
 ---
 

@@ -8,7 +8,7 @@ tags:
 - linear algebra
 - combinatorics
 - long paper
-- from Zhihu
+- from zhihu
 layout: post
 ---
 

@@ -5,7 +5,7 @@ categories:
 - physics
 tags:
 - calculus
-- from Zhihu
+- from zhihu
 layout: post
 ---
 
