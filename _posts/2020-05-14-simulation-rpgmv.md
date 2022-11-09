@@ -28,7 +28,7 @@ $$
 
 depicting two pendulum coupled with a spring,
 
-![Spring-coupled pendulums](/assets/images/spring_coupled_pendulum.png)
+![Spring-coupled pendulums](/assets/images/spring_coupled_pendulum.png){:.dark-adaptive}
 
 which is a classical example of non-linearly coupled system.
 

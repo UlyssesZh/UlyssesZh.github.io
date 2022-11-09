@@ -1,20 +1,30 @@
 @charset "utf-8";
-// Modified begin
+
 $base-font-family: "Times New Roman", 宋体 !default;
-// Modified end
 $base-font-size:   16px !default;
 $base-font-weight: 400 !default;
 $small-font-size:  $base-font-size * 0.875 !default;
 $base-line-height: 1.5 !default;
 $spacing-unit:     30px !default;
-// Modified begin
+
 $text-color:       #665e7b !default;
 $background-color: #fefbf1 !default;
 $brand-color:      #db3168 !default;
-// Modified end
+$kbd-border-color: #cccccc !default;
+$kbd-color: #333333 !default;
+$kbd-background-color: #f7f7f7 !default;
+
 $grey-color:       #828282 !default;
 $grey-color-light: lighten($grey-color, 40%) !default;
 $grey-color-dark:  darken($grey-color, 25%) !default;
+
+$text-color-dark: #8c84a1 !default;
+$background-color-dark: #0e0b01 !default;
+$brand-color-dark: #ce245b !default;
+$kbd-border-color-dark: #333333 !default;
+$kbd-color-dark: #cccccc !default;
+$kbd-background-color-dark: #080808 !default;
+
 $table-text-align: left !default;
 $content-width:    800px !default;
 $on-palm:          600px !default;
@@ -32,3 +42,5 @@ $on-laptop:        800px !default;
   "minima/layout",
   "minima/syntax-highlighting"
 ;
+
+@import "my-theme";
