@@ -7,6 +7,14 @@ tags:
 - imagination
 - long paper
 layout: post
+excerpt: 'The view of the world... Physically!
+In this article, I tried to use mathematical language to describe models of the physical world.
+A view of the world should include:
+a space (actually spacetime) with some mathematical structure on it (whose points are events in the world),
+a symmetry principle describing the symmetry of the world,
+and a motion law to describe the physics and dynamics of the world.
+This article proposed models for Galilean, Einsteinian, and even Aristotelian worlds.
+Can you come up with even other worlds?'
 ---
 
 # Introduction

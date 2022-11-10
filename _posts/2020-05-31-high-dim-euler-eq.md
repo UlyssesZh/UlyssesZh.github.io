@@ -1,18 +1,21 @@
 ---
-title: Generalization of Euler–Lagrange equation
+title: Generalization of Euler--Lagrange equation
 date: 2020-05-31 12:53:17 +0800
 categories:
 - math
 tags:
 - calculus
 layout: post
+excerpt: 'We may generalize Euler--Lagrange equation to higher dimensional optimization problems:
+find a function defined inside a region to extremize a functional defined as an integral over that region,
+with the constraint that the value of the function is fixed on the boundary of the region.'
 ---
 
 $\Omega\in\mathbb R^m$ is a closed region.
 The variable $\mathbf f:\Omega\rightarrow\mathbb R^p$
 is an $n$ differentiable function with fixed boundary conditions on $\partial\Omega$.
 The function $\mathcal L$ is real-valued and has continuous first partial derivatives,
-and the $0$th to $n$th partial derivatives of $\mathbf f$ 
+and the $0$th to $n$th partial derivatives of $\mathbf f$
 and the independent variable $\mathbf x\in\Omega$ will be arguments of $\mathcal L$.
 Define a functional
 

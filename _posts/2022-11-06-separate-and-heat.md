@@ -5,8 +5,18 @@ categories:
 - physics
 tags:
 - calculus
+- number sequence
 - from zhihu
 layout: post
+excerpt: 'To heat an object with hot water,
+if we divide the water into more parts and use each part to heat the object one after another,
+the final temperature will be higher.
+If the number of parts tends to infinity, then the final temperature will tend to the limit
+$T+\mathrm e^{-\frac C{C_0}}\left(T_0-T\right)$,
+where $T$ is the initial temperature of the object,
+$T_0$ is the temperature of the hot water,
+$C$ is the heat capacity of the object,
+and $C_0$ is the heat capacity of the hot water.'
 ---
 
 *This article is translated from a

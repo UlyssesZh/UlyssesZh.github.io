@@ -2,6 +2,7 @@
 title: Ulysses' trip
 author: UlyssesZhan
 timezone: America/Los_Angeles
+lang: en-US
 collections:
   posts:
     title: Posts
@@ -14,6 +15,7 @@ tagline: Somewhere with strange thoughts
 description: Here we are at the awesome (awful) blog written by UlyssesZhan!
 baseurl: ''
 url: https://UlyssesZh.github.io
+show_excerpts: true
 markdown: kramdown
 kramdown:
   auto_ids: true

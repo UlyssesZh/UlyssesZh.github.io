@@ -10,6 +10,11 @@ tags:
 - long paper
 - from zhihu
 layout: post
+excerpt: 'By using power series,
+we can prove that the problem of solving linear homogeneous ODE with constant coefficients
+can be reduced to the problem of solving a polynomial with those coefficients.
+This article illustrates this point in detail,
+but it uses a very awful notation...'
 ---
 
 *This article is translated from a

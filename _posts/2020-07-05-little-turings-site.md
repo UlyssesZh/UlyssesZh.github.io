@@ -6,6 +6,10 @@ categories:
 tags:
 - update
 layout: post
+excerpt: 'I, the president and one of the founders of Little Turings,
+created a [website](https://littleturings.github.io){:target="_blank"}
+to distribute information about it.
+The website is bilingual (Chinese and English).'
 ---
 
 I, the president and one of the founders of Little Turings,

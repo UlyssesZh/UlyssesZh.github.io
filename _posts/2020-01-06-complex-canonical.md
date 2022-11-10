@@ -10,6 +10,25 @@ tags:
 - complex
 - long paper
 layout: post
+excerpt: 'In this article, I try exploring an idea:
+using complex numbers to combine pairs of canonical variables into complex variables:
+$\mathbf c:=\alpha\mathbf q+\mathrm i\beta\mathbf p$.
+It turns out that we can write canonical equations
+$\frac{\mathrm d\mathbf c}{\mathrm dt}=-2\mathrm i\alpha\beta\frac{\partial\mathcal H}{\partial\mathbf c^\*}$,
+Poisson brackets
+$\left\\{f,g\right\\}=-2\mathrm i\alpha\beta
+\left(\frac{\partial f}{\partial\mathbf c}\cdot
+\frac{\partial g}{\partial\mathbf c^\*}-
+\frac{\partial f}{\partial\mathbf c^\*}\cdot
+\frac{\partial g}{\partial\mathbf c}\right)$,
+and canonical transformations
+$\frac{\partial\mathbf c^\*}{\partial\mathbf c''^\*}=
+\frac{\partial\mathbf c''}{\partial\mathbf c},
+\frac{\partial\mathbf c}{\partial\mathbf c''^\*}=
+-\frac{\partial\mathbf c''}{\partial\mathbf c^\*}$
+in these complex numbers.
+Finally, I show two examples of using them in real problems:
+a free particle, and a harmonic oscillator.'
 ---
 
 # Introduction
@@ -138,7 +157,7 @@ $$
 \begin{equation}
     \frac{\mathrm d\mathbf c}{\mathrm dt}=
     -2\mathrm i\alpha\beta
-    \frac{\partial\mathcal H}{\partial\mathbf c^\*}.
+    \frac{\partial\mathcal H}{\partial\mathbf c^*}.
     \label{new canonical eq}
 \end{equation}
 $$

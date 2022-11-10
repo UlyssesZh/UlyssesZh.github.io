@@ -8,6 +8,14 @@ tags:
 - trigonometry
 - from zhihu
 layout: post
+excerpt: 'Suppose $P$ is a point on the circle $\odot C$.
+When is the sum of distances from $P$ to two edges of $\angle O$ extremal?
+It turns out to be related to angle bisectors
+(the intersections of $\odot C$ and the bisector of $\angle O$ or its adjacent supplementary angle are extremals), while the edge cases
+(at the intersections of $\odot C$ and edges of $\angle O$) are a little tricky:
+we need to use the bisectors to divide the plane into four quadrants,
+pick the two quadrants where the line intersecting $\odot C$ at $P$ lies,
+translate the region to make it center at $C$, and see whether $P$ is inside the translated region.'
 ---
 
 *This article is translated (while omitting some tedious calculations) from a

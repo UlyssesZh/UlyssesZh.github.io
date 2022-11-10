@@ -8,6 +8,9 @@ tags:
 - javascript
 - rgss
 layout: post
+excerpt: 'In this article, I present minimal examples of a RM game.
+They only illustrate the basic concepts of how a RM game is structured
+and what is the running logic of it.'
 ---
 
 [RPG Maker (RM)](https://tkool.jp/){:target="_blank"}

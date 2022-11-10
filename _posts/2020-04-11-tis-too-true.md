@@ -6,6 +6,7 @@ categories:
 tags:
 - snippet
 layout: post
+excerpt: ''
 ---
 
 O, \'tis too true!

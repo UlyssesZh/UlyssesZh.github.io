@@ -7,6 +7,12 @@ tags:
 - ruby
 - meta programming
 layout: post
+excerpt: 'DSL means domain-specific language.
+Ruby is a powerful script language in terms of building DSLs (as sublanguages of Ruby).
+In this article, I implemented my idea of a DSL with commands split by space.
+For example, you may just write `a b c` to run the commands `a`, `b`, and `c` one after another!
+This trick is heavily applied in my project [alda-rb](/doc/alda-rb).
+How do I achieve this?'
 ---
 
 We want to have a DSL where we can write statements separated with space.

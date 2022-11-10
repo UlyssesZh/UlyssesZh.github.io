@@ -8,6 +8,9 @@ tags:
 - number sequence
 - long paper
 layout: post
+excerpt: 'This article explores the concept which I call the frequency assignment,
+which is a mapping from $N$ (the set of notes) to $\mathbb R^+$ (the set of frequencies).
+Concepts such as octaves, intervals, and equal temperaments are introduced.'
 ---
 
 # The notes
@@ -23,7 +26,7 @@ $$
 $$
 
 Our goal is to define a *frequency assignment*, which is a mapping
-$f:N\rightarrow\mathbb R$, whose meaning is the frequency (in Hz)
+$f:N\rightarrow\mathbb R^+$, whose meaning is the frequency (in Hz)
 of the sound of a note.
 
 It is a natural idea to define a sequence

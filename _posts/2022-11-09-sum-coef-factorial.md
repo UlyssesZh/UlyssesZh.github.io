@@ -8,6 +8,9 @@ tags:
 - number sequence
 - from zhihu
 layout: post
+excerpt: 'The function $\left(1-z\right)^{n+1}\sum_{k=1}^\infty k^nz^k$ is a polynomial of degree $n$ w.r.t. $z$,
+and the sum of its coefficients is $n!$.
+This turns out to be properties of Eulerian numbers.'
 ---
 
 *This article is translated from a
@@ -38,7 +41,7 @@ $$\begin{align*}
 &=\frac{f_{n+1}\!\left(z\right)}{z\,\left(1-z\right)^{n+2}}.&\square
 \end{align*}$$
 
-**Definition 2**.
+**Definition 2** (Eulerian numbers).
 
 $$\left<\begin{matrix}n\\k\end{matrix}\right>:=\sum_{j=0}^{k+1}\left(-1\right)^j\binom{n+1}j\left(k-j+1\right)^n.$$
 

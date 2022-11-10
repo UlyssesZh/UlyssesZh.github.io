@@ -7,6 +7,11 @@ tags:
 - linear algebra
 - long paper
 layout: post
+excerpt: 'In this article, I introduce the barycentric coordinates:
+it is an elegant way to represent geometric shapes related to a simplex.
+By using it, given a simplex, we can construct a hyperellipsoid with the properties:
+its surface passes every vertex of the simplex,
+and its tangent hyperplane at each vertex is parallel to the hyperplane containing all other vertices.'
 ---
 
 # Some notations

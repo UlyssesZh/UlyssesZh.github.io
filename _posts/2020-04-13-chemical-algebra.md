@@ -6,6 +6,12 @@ categories:
 tags:
 - linear algebra
 layout: post
+excerpt: 'Regarding balancing chemical equations,
+actually we are trying to find a non-trivial linear combination of some chemicals to get zero.
+The interesting thing is that the coefficients can only be integers ($\mathbb Z$),
+which is not a field, so the algebraic structure of chemicals is not linear space.
+They actually live in a free $\mathbb Z$-module.
+See how I formalize this idea in mathematical language.'
 ---
 
 When we are writing reaction equations,

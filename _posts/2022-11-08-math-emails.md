@@ -8,6 +8,7 @@ tags:
 - ruby
 - tex
 layout: post
+excerpt: 'After some comparison among solutions, I use KaTeX to typeset math in my emails.'
 ---
 
 After I become a university student,
