@@ -13,6 +13,8 @@ collections:
 email: ulysseszhan@gmail.com
 tagline: Somewhere with strange thoughts
 description: Here we are at the awesome (awful) blog written by UlyssesZhan!
+locale: en_US
+logo: '/assets/images/logos/78(.png'
 baseurl: ''
 url: https://UlyssesZh.github.io
 show_excerpts: true
@@ -55,6 +57,12 @@ facebook_username: YouqiuZhan
 instagram_username: ulysseszhan
 pinterest_username: ulysseszhan
 flickr_username: UlyssesZhan
+defaults:
+  - scope:
+      path: ""
+    values:
+      image: /assets/images/logos/78(.png
+seo_paginator_message: "Page %<current>s/%<total>s - "
 jekyll-archives:
   enabled: all
   layout: archive
