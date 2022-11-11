@@ -17,6 +17,7 @@ locale: en_US
 logo: '/assets/images/logos/78(.png'
 baseurl: ''
 url: https://UlyssesZh.github.io
+domain: ulysseszh.github.io
 show_excerpts: true
 markdown: kramdown
 kramdown:
