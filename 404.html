@@ -5,20 +5,69 @@ no_gitalk: true
 ---
 
 <style type="text/css" media="screen">
-  .container {
-    margin: 10px auto;
-    max-width: 600px;
-    text-align: center;
-  }
-  h1 {
-    margin: 30px 0;
-    font-size: 4em;
-    line-height: 1;
-    letter-spacing: -1px;
-  }
+	.container {
+		margin: 10px auto;
+		max-width: 600px;
+		text-align: center;
+	}
+	h1 {
+		margin: 30px 0;
+		font-size: 4em;
+		line-height: 1;
+		letter-spacing: -1px;
+	}
 </style>
 
 <div class="container">
-  <h1>404</h1>
-  <p>The requested page could not be found.</p>
+	<h1>404</h1>
+	<p>The requested page could not be found.</p>
+	<p><strong>Did you mean <a id="four-oh-four-suggestion" href="/">/</a>?</strong></p>
 </div>
+
+<script>
+(async () => {
+	const a = document.getElementById('four-oh-four-suggestion');
+	if (!a) return;
+	let xml;
+	try {
+		const xmlString = await fetch('/sitemap.xml').then(r => r.text());
+		xml = new DOMParser().parseFromString(xmlString, "text/xml");
+	} catch (e) {
+		console.log(e);
+		return;
+	}
+	function editDistance(a, b) {
+		const lenA = a.length;
+		const lenB = b.length;
+		const d = [];
+		for (let i = 0; i <= lenA; i++) {
+			d[i] = [i];
+		}
+		for (let j = 0; j <= lenB; j++) {
+			d[0][j] = j;
+		}
+		for (let i = 1; i <= lenA; i++) {
+			for (let j = 1; j <= lenB; j++) {
+				const insertion = d[i][j - 1] + 1;
+				const deletion = d[i - 1][j] + 1;
+				const replacement = d[i - 1][j - 1] + (a[i - 1] === b[j - 1] ? 0 : 1);
+				d[i][j] = Math.min(insertion, deletion, replacement);
+			}
+		}
+		return d[lenA][lenB];
+	}
+	const urls = Array.from(xml.querySelectorAll('urlset > url > loc')).map(e => e.textContent);
+	let min = Infinity;
+	let suggestion = location.origin;
+	for (const url of urls) {
+		const dist = editDistance(url, location.href);
+		if (dist < min) {
+			min = dist;
+			suggestion = url;
+		}
+	}
+	suggestion = new URL(suggestion);
+	a.href = suggestion.href;
+	a.innerHTML = suggestion.pathname;
+})();
+</script>
