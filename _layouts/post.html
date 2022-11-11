@@ -4,7 +4,7 @@ layout: default
 <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">{{ page.title | markdownify }}</h1>
+    <h1 class="post-title p-name" itemprop="name headline">{{ page.title | markdownify_no_p }}</h1>
     <p class="post-meta">
       <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
         {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
@@ -16,7 +16,7 @@ layout: default
       <details class="post-meta">
         <summary>About this post</summary>
         <ul>
-          <li>Title: {{ page.title | markdownify }}</li>
+          <li>Title: {{ page.title | markdownify_no_p }}</li>
           <li>Author: {{ page.author | default: site.author }}</li>
           {% assign year = page.date | date: "%Y" %}
           {% assign month = page.date | date: "%m" %}
@@ -36,7 +36,7 @@ layout: default
             {% endfor %}
           </li>
           <li>Excerpt:
-            {{ page.excerpt }}
+            {{ page.excerpt | markdownify_no_p }}
           </li>
           <li><a href="https://github.com/UlyssesZh/UlyssesZh.github.io/blob/development/{{ page.path }}?plain=1" target="_blank">View source</a></li>
           <li><a href="https://github.com/UlyssesZh/UlyssesZh.github.io/commits/development/{{ page.path }}" target="_blank">View history</a></li>

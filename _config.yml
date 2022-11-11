@@ -58,12 +58,12 @@ flickr_username: UlyssesZhan
 jekyll-archives:
   enabled: all
   layout: archive
-  layouts:
-    year: year-archive
-    month: month-archive
-    day: day-archive
-    category: tag-category-archive
-    tag: tag-category-archive
+  titles:
+    year: "Archive of posts in %Y"
+    month: "Archive of posts in %b, %Y"
+    day: "Archive of posts on %b %-d, %Y"
+    tag: 'Archive of posts with tag "%s"'
+    category: 'Archive of posts in category "%s"'
   permalinks:
     year: "/archives/:year/"
     month: "/archives/:year/:month/"

@@ -7,13 +7,13 @@
     <span class="post-meta">{{ post.date | date: date_format }}</span>
     <h3>
       <a class="post-link" href="{{ post.url | relative_url }}">
-        {{ post.title| markdownify }}
+        {{ post.title | markdownify_no_p }}
       </a>
     </h3>
 
     {%- if site.show_excerpts -%}
       {% if post.excerpt and post.excerpt != "" %}
-        <p>{{ post.excerpt | markdownify }}</p>
+        {{ post.excerpt | markdownify }}
       {% endif %}
       <ul>
         <li>Categories:
