@@ -21,7 +21,10 @@
 		window.dataLayer = window.dataLayer || [];
 		function gtag(){dataLayer.push(arguments);}
 		gtag('js', new Date());
-		gtag('config', '{{ site.measurement_id }}');
+		gtag('config', '{{ site.measurement_id }}', {
+			cookie_domain: '{{ site.domain }}',
+			cookie_flags: 'SameSite=None;Secure'
+		});
 	</script>
 	<!-- End Google Analytics -->
 {%- endif -%}
