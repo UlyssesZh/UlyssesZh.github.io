@@ -1,5 +1,7 @@
+{% assign posts = include.posts | default: paginator.posts %}
+{% include paginator-navigator.html %}
 <ul class="post-list">
-  {%- for post in include.posts -%}
+  {%- for post in posts -%}
   <li>
     {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
     <span class="post-meta">{{ post.date | date: date_format }}</span>
@@ -14,18 +16,19 @@
         <p>{{ post.excerpt | markdownify }}</p>
       {% endif %}
       <ul>
-            <li>Categories:
-              {% for category in post.categories %}
-              <a href="/archives/category/{{ category | slugify }}">{{ category }}</a>{% unless forloop.last %}, {% endunless -%}
-              {% endfor %}
-            </li>
-            <li>Tags:
-              {% for tag in post.tags %}
-              <a href="/archives/tag/{{ tag | slugify }}">{{ tag }}</a>{% unless forloop.last %}, {% endunless -%}
-              {% endfor %}
-            </li>
+        <li>Categories:
+          {% for category in post.categories %}
+          <a href="/archives/category/{{ category | slugify }}">{{ category }}</a>{% unless forloop.last %}, {% endunless -%}
+          {% endfor %}
+        </li>
+        <li>Tags:
+          {% for tag in post.tags %}
+          <a href="/archives/tag/{{ tag | slugify }}">{{ tag }}</a>{% unless forloop.last %}, {% endunless -%}
+          {% endfor %}
+        </li>
       </ul>
     {%- endif -%}
   </li>
   {%- endfor -%}
 </ul>
+{% include paginator-navigator.html %}

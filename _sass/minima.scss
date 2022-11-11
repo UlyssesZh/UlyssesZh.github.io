@@ -13,6 +13,11 @@ $brand-color:      #db3168 !default;
 $kbd-border-color: #cccccc !default;
 $kbd-color: #333333 !default;
 $kbd-background-color: #f7f7f7 !default;
+$pager-border-color: #665e7b !default;
+$pager-color: #665e7b !default;
+$pager-selected-color: #fefbf1 !default;
+$pager-background-color: #fefbf1 !default;
+$pager-selected-background-color: #f1b4b4 !default;
 
 $grey-color:       #828282 !default;
 $grey-color-light: lighten($grey-color, 40%) !default;
@@ -24,6 +29,9 @@ $brand-color-dark: #ce245b !default;
 $kbd-border-color-dark: #333333 !default;
 $kbd-color-dark: #cccccc !default;
 $kbd-background-color-dark: #080808 !default;
+$pager-border-color-dark: #8c84a1 !default;
+$pager-background-color-dark: #0e0b01 !default;
+$pager-selected-background-color-dark: #b21b4b !default;
 
 $table-text-align: left !default;
 $content-width:    800px !default;

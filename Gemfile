@@ -8,6 +8,7 @@ group :jekyll_plugins do
 	gem 'jekyll-archives'
 	gem 'jekyll-feed'
 	gem 'jekyll-sitemap'
+	gem 'jekyll-paginate-v2'
 end
 install_if -> { RUBY_PLATFORM =~ /mingw|mswin|java/ } do
 	gem 'tzinfo', '~> 1.2'

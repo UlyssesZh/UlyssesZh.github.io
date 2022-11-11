@@ -29,6 +29,21 @@ kbd {
 	text-shadow: 0 1px 0 #fff;
 }
 
+ul.pager {
+	text-align: center;
+	list-style: none;
+}
+ul.pager li {
+	display: inline;
+	padding: 5px;
+	background-color: $pager-background-color;
+	&.selected {
+		a {
+			font-weight: bold;
+		}
+	}
+}
+
 .highlight {
 	.k {
 		color: $text-color

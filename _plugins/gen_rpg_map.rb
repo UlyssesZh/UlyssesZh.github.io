@@ -4,14 +4,14 @@ require 'jekyll'
 require 'json'
 
 module Jekyll
-	class RPGMapGenerator < Generator
+	class UlyssesZhan::RPGMapGenerator < Generator
 		safe true
 		def generate site
 			Dir.chdir 'rpg'
 			site.config['rpg-map']['enabled'].each do |dist|
 				result = { dist => {} }
 				build result[dist], Dir.new(dist)
-				site.pages.push RPGMapJSON.new site, dist, result
+				site.pages.push UlyssesZhan::RPGMapJSON.new site, dist, result
 			end
 			Dir.chdir '..'
 		end
@@ -25,7 +25,7 @@ module Jekyll
 			end
 		end
 	end
-	class RPGMapJSON < Page
+	class UlyssesZhan::RPGMapJSON < Page
 		def initialize site, dist, hash
 			@site = site
 			@base = site.source

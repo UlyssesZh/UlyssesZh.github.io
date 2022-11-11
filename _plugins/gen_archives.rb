@@ -3,24 +3,15 @@
 require 'jekyll-archives'
 
 module Jekyll
-	class ArchivesPageGenerator < Generator
+	class UlyssesZhan::ArchivesPageGenerator < Generator
 		safe true
 		priority :low
 		def generate site
-			archives = site.config['archives']
-			structure = {}
-			archives.each do |archive|
-				dir = URL.unescape_path(archive.url).gsub /^\//, ''
-				current = structure
-				dir.split(?/).tap(&:shift).each do |subdir|
-					current = current[subdir] ||= {}
-				end
-				current['index.html'] = 'f'
-			end
-			site.pages.push ArchivesPage.new site, structure
+			structure = UlyssesZhan::ArchiveUtils.archives_structure site
+			site.pages.push UlyssesZhan::ArchivesPage.new site, structure
 		end
 	end
-	class ArchivesPage < Page
+	class UlyssesZhan::ArchivesPage < Page
 		def initialize site, archives
 			@site = site
 			@base = site.source
