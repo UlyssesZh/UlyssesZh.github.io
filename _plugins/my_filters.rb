@@ -1,5 +1,8 @@
 # frozen_string_literal: true
 
+module Jekyll::UlyssesZhan
+end
+
 module Jekyll
 	module UlyssesZhan::Filters
 		def markdownify_no_p input

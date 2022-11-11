@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
-require 'jekyll-archives'
+module Jekyll::UlyssesZhan
+end
 
 module Jekyll
 	class UlyssesZhan::ArchivesPageGenerator < Generator

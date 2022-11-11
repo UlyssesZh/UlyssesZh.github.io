@@ -1,7 +1,9 @@
 # frozen_string_literal: true
 
-require 'jekyll'
 require 'json'
+
+module Jekyll::UlyssesZhan
+end
 
 module Jekyll
 	class UlyssesZhan::RPGMapGenerator < Generator

@@ -1,5 +1,8 @@
 # frozen_string_literal: true
 
+module Jekyll::UlyssesZhan
+end
+
 module Jekyll
 	class UlyssesZhan::ArchivePaginationGenerator < Generator
 		LOG = false

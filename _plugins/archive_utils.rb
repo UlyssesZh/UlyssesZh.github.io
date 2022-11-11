@@ -2,6 +2,9 @@
 
 require 'jekyll-archives'
 
+module Jekyll::UlyssesZhan
+end
+
 module Jekyll
 	module UlyssesZhan::ArchiveUtils
 		module_function
