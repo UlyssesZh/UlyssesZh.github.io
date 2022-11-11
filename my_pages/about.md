@@ -4,7 +4,9 @@ permalink: "/about/"
 layout: my_page
 ---
 
-Here is the blog written by me, Ulysses Zhan (a.k.a. UlyssesZhan, 有丘直方).
+Here is the blog written by me,
+UlyssesZhan (pronunciation: [juː\'lɪsiːz\'ʈ͡ʂán]),
+a.k.a. 有丘直方 (pronunciation: [jou̯˨˩˨t͡ɕjou̯˥ʈ͡ʂʐ̩˨˥faŋ˥]).
 I share interesting thoughts of mine here.
 
 I am interested in physics, programming, and mathematics.
