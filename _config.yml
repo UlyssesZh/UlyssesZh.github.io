@@ -62,7 +62,11 @@ defaults:
   - scope:
       path: ""
     values:
-      image: /assets/images/logos/78(.png
+      image:
+        path: /assets/images/logos/78(.png
+        width: 64
+        height: 64
+        alt: '78('
 seo_paginator_message: "Page %<current>s/%<total>s - "
 jekyll-archives:
   enabled: all
