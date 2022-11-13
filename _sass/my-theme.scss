@@ -56,7 +56,7 @@ hr {
 	//background: $hr-background-color;
 
 	&:before {
-		//content: "♥";
+		content: "\2665";
 		color: $hr-background-color;
 		display: inline-block;
 		position: absolute;
