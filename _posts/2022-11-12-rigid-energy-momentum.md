@@ -7,6 +7,7 @@ tags:
 - rigid body
 - linear algebra
 - classical mechanics
+- from zhihu
 layout: post
 excerpt: 'In this article, we will find that the inertia matrix naturally appears
 when we calculate the kinetic energy $T$ or the angular momentum $\mathbf M$ of a rigid body.

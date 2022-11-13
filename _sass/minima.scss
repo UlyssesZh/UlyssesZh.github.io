@@ -19,6 +19,10 @@ $pager-selected-color: #fefbf1 !default;
 $pager-background-color: #fefbf1 !default;
 $pager-selected-background-color: #f1b4b4 !default;
 $hr-background-color: #ffc2d5 !default;
+$search-color: #883e6b !default;
+$search-focus-color: #db5568 !default;
+$search-border-color: #ff92a5 !default;
+$search-background-color: #fff !default;
 
 $grey-color:       #828282 !default;
 $grey-color-light: lighten($grey-color, 40%) !default;
@@ -26,7 +30,7 @@ $grey-color-dark:  darken($grey-color, 25%) !default;
 
 $text-color-dark: #8c84a1 !default;
 $background-color-dark: #0e0b01 !default;
-$brand-color-dark: #ce245b !default;
+$brand-color-dark: #de346b !default;
 $kbd-border-color-dark: #333333 !default;
 $kbd-color-dark: #cccccc !default;
 $kbd-background-color-dark: #080808 !default;
@@ -34,6 +38,10 @@ $pager-border-color-dark: #8c84a1 !default;
 $pager-background-color-dark: #0e0b01 !default;
 $pager-selected-background-color-dark: #b21b4b !default;
 $hr-background-color-dark: #3d0013 !default;
+$search-color-dark: #aa2436 !default;
+$search-focus-color-dark: #c177a3 !default;
+$search-border-color-dark: #9d1113 !default;
+$search-background-color-dark: #000 !default;
 
 $table-text-align: left !default;
 $content-width:    800px !default;

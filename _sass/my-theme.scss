@@ -45,7 +45,6 @@ ul.pager li {
 }
 
 hr {
-
 	border: 0;
 	height: 2px;
 	width: 50%;
@@ -68,6 +67,37 @@ hr {
 	}
 }
 
+.search-form {
+	width: 100%;
+	position: relative;
+	display: flex;
+	padding-bottom: 30px
+}
+.search-text {
+	width: 100%;
+	border: 1px solid $search-border-color;
+	border-right: none;
+	padding: 5px;
+	height: 20px;
+	border-radius: 5px 0 0 5px;
+	outline: none;
+	color: $search-color;
+	background-color: $search-background-color;
+	&:focus {
+		color: $search-focus-color;
+	}
+}
+.search-submit {
+	width: 90px;
+	height: 32px;
+	border: 1px solid $search-border-color;
+	background: $search-border-color;
+	text-align: center;
+	color: $search-background-color;
+	border-radius: 0 5px 5px 0;
+	cursor: pointer;
+	font-size: 16px;
+}
 .highlight {
 	.k {
 		color: $text-color
@@ -128,7 +158,7 @@ code {
 		color: $brand-color-dark;
 
 		&:visited {
-			color: lighten($brand-color-dark, 15%);
+			color: darken($brand-color-dark, 15%);
 		}
 
 		&:hover {
@@ -209,5 +239,19 @@ code {
 			color: $hr-background-color-dark;
 			//border: 2px solid $hr-background-color-dark;
 		}
+	}
+
+	.search-text {
+		border: 1px solid $search-border-color-dark;
+		color: $search-color-dark;
+		background-color: $search-background-color-dark;
+		&:focus {
+			color: $search-focus-color-dark;
+		}
+	}
+	.search-submit {
+		border: 1px solid $search-border-color-dark;
+		background: $search-border-color-dark;
+		color: $search-background-color-dark;
 	}
 }
