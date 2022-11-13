@@ -36,7 +36,6 @@ ul.pager {
 ul.pager li {
 	display: inline;
 	padding: 5px;
-	background-color: $pager-background-color;
 	&.selected {
 		a {
 			font-weight: bold;
@@ -52,7 +51,6 @@ hr {
 	margin: 30px auto;
 	overflow: visible;
 	background-image: linear-gradient(to right, rgba($hr-background-color, 0), rgba($hr-background-color, 1), rgba($hr-background-color, 0));
-	//background: $hr-background-color;
 
 	&:before {
 		content: "\2665";
@@ -237,7 +235,6 @@ code {
 		background-image: linear-gradient(to right, rgba($hr-background-color-dark, 0), rgba($hr-background-color-dark, 1), rgba($hr-background-color-dark, 0));
 		&:before {
 			color: $hr-background-color-dark;
-			//border: 2px solid $hr-background-color-dark;
 		}
 	}
 
@@ -255,3 +252,5 @@ code {
 		color: $search-background-color-dark;
 	}
 }
+
+@import "gitalk";

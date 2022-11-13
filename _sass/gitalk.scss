@@ -1,0 +1,754 @@
+// converted from https://github.com/gitalk/gitalk/blob/ca06b9ff87e2bbc5553b86cd3bc5dcff9b0e8152/src/style/index.styl
+
+/* variables */
+$gt-color-main: #e86195 !default;
+$gt-color-sub: #a1a1a1 !default;
+$gt-color-loader: #999999 !default;
+$gt-color-error: #ff3860 !default;
+$gt-color-hr: #E9E9E9 !default;
+$gt-color-input: #000 !default;
+$gt-color-input-placeholder: #999 !default;
+$gt-color-input-border: rgba(0, 0, 0, 0.1) !default;
+$gt-color-input-bg: #f6f6f6 !default;
+$gt-color-comment-bg: #fef9f6 !default;
+$gt-color-comment-adminbg: #fef9f6 !default;
+$gt-color-comment-txt: #333333 !default;
+$gt-color-link-active: #333333 !default;
+$gt-color-btn: #ffffff !default;
+$gt-color-popbg: #ffffff !default;
+
+$gt-color-main-dark: #e86195 !default;
+$gt-color-sub-dark: #5e5e5e !default;
+$gt-color-loader-dark: #666666 !default;
+$gt-color-error-dark: #ff3860 !default;
+$gt-color-hr-dark: #161616 !default;
+$gt-color-input-dark: #fff !default;
+$gt-color-input-placeholder-dark: #666 !default;
+$gt-color-input-border-dark: rgba(1, 1, 1, 0.1) !default;
+$gt-color-input-bg-dark: #292929 !default;
+$gt-color-comment-bg-dark: #292421 !default;
+$gt-color-comment-adminbg-dark: #292421 !default;
+$gt-color-comment-txt-dark: #cccccc !default;
+$gt-color-link-active-dark: #cccccc !default;
+$gt-color-btn-dark: #000000 !default;
+$gt-color-popbg-dark: #000000 !default;
+
+$gt-size-base: 16px !default;
+$gt-size-border-radius: 5px !default;
+$gt-breakpoint-mobile: 479px !default;
+$gt-mask-z-index: 9999 !default;
+
+/* functions & mixins */
+@mixin clearfix() {
+  &:before, 
+  &:after  {
+    content: " ";
+    display: table;
+  }&:after  {
+    clear: both;
+  }
+}
+
+// https://css-tricks.com/snippets/sass/px-to-em-functions/
+@function em($pixels, $context: $gt-size-base) {
+	@if (unitless($pixels)) {
+		$pixels: $pixels * 1px;
+	}
+
+	@if (unitless($context)) {
+		$context: $context * 1px;
+	}
+
+	@return $pixels / $context * 1em;
+}
+
+@mixin mobile() {
+  @media (max-width: $gt-breakpoint-mobile) {
+    @content;
+  }
+}
+/* variables - calculated */
+$gt-size-loader-dot: em(6px) !default;
+$gt-size-loader: em(28px) !default;
+$gt-size-avatar: em(50px) !default;
+$gt-size-avatar-mobi: em(32px) !default;
+
+/* styles */
+.gt-container {
+  box-sizing: border-box;
+  * {
+    box-sizing: border-box;
+  }
+  font-size: $gt-size-base;
+  a {
+    color: $gt-color-main;&:hover {
+      color: lighten($gt-color-main, 20%);
+      border-color: lighten($gt-color-main, 20%);
+    }&.is--active {
+      color: $gt-color-link-active;
+      cursor: default !important;&:hover {
+        color: $gt-color-link-active;
+      }
+    }
+  }.hide {
+    display: none !important;
+  }.gt-svg {
+    display: inline-block;
+    width: em(16px);
+    height: em(16px);
+    vertical-align: sub;
+    svg {
+      width: 100%;
+      height: 100%;
+      fill: $gt-color-main;
+    }
+  }.gt-ico {
+    display: inline-block;&-text {
+      margin-left: em(5px);
+    }&-github {
+      width: 100%;
+      height: 100%;.gt-svg {
+        width: 100%;
+        height: 100%;
+      }
+      svg {
+        fill: inherit;
+      }
+    }
+  }
+  /* loader */
+  .gt-spinner {
+    position: relative;&::before {
+      content: '';
+      box-sizing: border-box;
+      position: absolute;
+      top: 3px;
+      width: em(12px);
+      height: em(12px);
+      margin-top: em(-3px);
+      margin-left: em(-6px);
+      border-radius: 50%;
+      border: 1px solid $gt-color-btn;
+      border-top-color: $gt-color-main;
+      animation: gt-kf-rotate 0.6s linear infinite;
+    }
+  }.gt-loader {
+    position: relative;
+    border: 1px solid $gt-color-loader;
+    animation: ease gt-kf-rotate 1.5s infinite;
+    display: inline-block;
+    font-style: normal;
+    width: $gt-size-loader;
+    height: $gt-size-loader;
+
+    line-height: $gt-size-loader;
+    border-radius: 50%;&:before {
+      content: '';
+      position: absolute;
+      display: block;
+      top: 0;
+      left: 50%;
+      margin-top: -($gt-size-loader-dot / 2);
+      margin-left: -($gt-size-loader-dot / 2);
+      width: $gt-size-loader-dot;
+      height: $gt-size-loader-dot;
+      background-color: $gt-color-loader;
+      border-radius: 50%;
+    }
+  }.gt-avatar {
+    display: inline-block;
+    width: $gt-size-avatar;
+    height: $gt-size-avatar;
+    @include mobile() {
+      width: $gt-size-avatar-mobi;
+      height: $gt-size-avatar-mobi;
+    };
+    img {
+      width: 100%;
+      height: auto;
+      border-radius: 3px;
+    }&-github {
+      width: $gt-size-avatar - em(2px);
+      height: $gt-size-avatar - em(2px);
+      cursor: pointer;
+      @include mobile() {
+        width: $gt-size-avatar-mobi - em(2px);
+        height: $gt-size-avatar-mobi - em(2px);
+      };
+    }
+  }.gt-btn {
+    padding: em(12px) em(20px);
+    display: inline-block;
+    line-height: 1;
+    text-decoration: none;
+    white-space: nowrap;
+    cursor: pointer;
+    border: 1px solid $gt-color-main;
+    border-radius: $gt-size-border-radius;
+    background-color: $gt-color-main;
+    color: $gt-color-btn;
+    outline: none;
+    font-size: em(12px);&-text {
+      font-weight: 400;
+    }&-loading {
+      position: relative;
+      margin-left: em(8px);
+      display: inline-block;
+      width: em(12px);
+      height: em(16px);
+      vertical-align: top;
+    }&.is--disable {
+      cursor: not-allowed;
+      opacity: 0.5;
+    }&-login {
+      margin-right: 0;
+    }&-preview {
+      background-color: $gt-color-btn;
+      color: $gt-color-main;&:hover {
+        background-color: darken($gt-color-btn, 5%);
+        border-color: lighten($gt-color-main, 20%);
+      }
+    }&-public {
+      &:hover {
+        background-color: lighten($gt-color-main, 20%);
+        border-color: lighten($gt-color-main, 20%);
+      }
+    }&-loadmore {
+      
+    }
+  }
+
+
+  /* error */
+  .gt-error {
+    text-align: center;
+    margin: em(10px);
+    color: $gt-color-error;
+  }
+
+  /* initing */
+  .gt-initing {
+    padding: em(20px) 0;
+    text-align: center;&-text {
+      margin: em(10px) auto;
+      font-size: 92%;
+    }
+  }
+
+  /* no int */
+  .gt-no-init {
+    padding: em(20px) 0;
+    text-align: center;
+  }
+
+  /* link */
+  .gt-link {
+    border-bottom: 1px dotted $gt-color-main;&-counts, &-project {
+      text-decoration: none;
+    }
+  }
+
+  /* meta */
+  .gt-meta {
+    margin: em(20px) 0;
+    padding: em(16px) 0;
+    position: relative;
+    border-bottom: 1px solid $gt-color-hr;
+    font-size: em(16px);
+    position: relative;
+    z-index: 10;
+    @include clearfix();
+  }
+  .gt-counts {
+    margin: 0 em(10px) 0 0;
+  }
+  .gt-user {
+    float: right;
+    margin: 0;
+    font-size: 92%;
+	&-pic {
+      width: 16px;
+      height: 16px;
+      vertical-align: top;
+      margin-right: em(8px);
+    }
+	&-inner {
+      display: inline-block;
+      cursor: pointer;
+    }
+	.gt-ico {
+      margin: 0 0 0 em(5px);
+      svg {
+        fill: inherit;
+      }
+    }
+	.is--poping {
+      .gt-ico {
+        svg {
+          fill: $gt-color-main;
+        }
+      }
+    }
+  }
+  .gt-version {
+    color: $gt-color-sub;
+    margin-left: em(6px);
+  }
+  .gt-copyright {
+    margin: 0 em(15px) em(8px);
+    border-top: 1px solid $gt-color-hr;
+    padding-top: em(8px);
+  }
+
+  /* popup */
+  .gt-popup {
+    position: absolute;
+    right: 0;
+    top: em(38px);
+    background: $gt-color-popbg;
+    display: inline-block;
+    border: 1px solid $gt-color-hr;
+    padding: em(10px) 0;
+    font-size: em(14px);
+    letter-spacing: 0.5px;
+	.gt-action {
+      cursor: pointer;
+      display: block;
+      margin: em(8px) 0;
+      padding: 0 em(18px);
+      position: relative;
+      text-decoration: none;
+	  &.is--active {
+        &:before {
+          content: '';
+          width: em(4px);
+          height: em(4px);
+          background: $gt-color-main;
+          position: absolute;
+          left: em(8px);
+          top: em(7px);
+        }
+      }
+    }
+  }
+  /* header */
+  .gt-header {
+    position: relative;
+    display: flex;
+	&-comment {
+      flex: 1;
+      margin-left: em(20px);
+      @include mobile() {
+        margin-left: em(14px);
+      };
+    }
+	&-textarea {
+		color: $gt-color-input;
+		&::placeholder {
+			color: $gt-color-input-placeholder;
+		}
+      padding: em(12px);
+      display: block;
+      box-sizing: border-box;
+      width: 100%;
+      min-height: em(82px);
+      max-height: em(240px);
+      border-radius: $gt-size-border-radius;
+      border: 1px solid $gt-color-input-border;
+      font-size: em(14px);
+      word-wrap: break-word;
+      resize: vertical;
+      background-color: $gt-color-input-bg;
+      outline: none;
+      transition: all 0s ease;
+      &:hover { // changed from 0.25s to 0s
+        background-color: lighten($gt-color-input-bg, 50%);
+      }
+    }
+	&-preview {
+      padding: em(12px);
+      border-radius: $gt-size-border-radius;
+      border: 1px solid $gt-color-input-border;
+      background-color: $gt-color-input-bg;
+    }
+	&-controls {
+      position: relative;
+      margin: em(12px) 0 0;
+      @include clearfix();
+      @include mobile() {
+        margin: 0;
+      };&-tip {
+        font-size: em(14px);
+        color: $gt-color-main;
+        text-decoration: none;
+        vertical-align: sub;
+        @include mobile() {
+          display: none;
+        };
+      }.gt-btn {
+        float: right;
+        margin-left: em(20px);
+        @include mobile() {
+          float: none;
+          width: 100%;
+          margin: em(12px) 0 0;
+        };
+      }
+    }
+  }&:after {
+    content: '';
+    position: fixed;
+    bottom: 100%;
+    left: 0;
+    right: 0;
+    top: 0;
+    opacity: 0;
+  }&.gt-input-focused {
+    position: relative;&:after {
+      content: '';
+      position: fixed;
+      bottom: 0%;
+      left: 0;
+      right: 0;
+      top: 0;
+      background: #000;
+      opacity: 0.6;
+      transition: opacity 0s, bottom 0s; // changed opacity transition from 0.3s to 0s
+      z-index: $gt-mask-z-index;
+    }.gt-header-comment {
+      z-index: $gt-mask-z-index + 1;
+    }
+  }
+
+  /* comments */.gt-comments {
+    padding-top: em(20px);&-null {
+      text-align: center;
+    }&-controls {
+      margin: em(20px) 0;
+      text-align: center;
+    }
+  }
+
+  /* comment */.gt-comment {
+    position: relative;
+    padding: em(10px) 0;
+    display: flex;&-content {
+      flex: 1;
+      margin-left: em(20px);
+      padding: em(12px) em(16px);
+      background-color: $gt-color-comment-bg;
+      overflow: auto;
+      transition: all ease 0s;
+	  &:hover { // changed from 0.25s to 0s
+        //box-shadow: 0 em(10px) em(60px) 0 darken($gt-color-comment-bg, 2%);
+      }
+      @include mobile() {
+        margin-left: em(14px);
+        padding: em(10px) em(12px);
+      };
+    }&-header {
+      margin-bottom: em(8px);
+      font-size: em(14px);
+      position: relative;
+    }&-block-1 {
+      float: right;
+      height: em(22px);
+      width: em(32px);
+    }&-block-2 {
+      float: right;
+      height: em(22px);
+      width: em(64px);
+    }&-username {
+      font-weight: 500;
+      color: $gt-color-main;
+      text-decoration: none;&:hover {
+        text-decoration: underline;
+      }
+    }&-text {
+      margin-left: em(8px);
+      color: $gt-color-sub;
+    }&-date {
+      margin-left: em(8px);
+      color: $gt-color-sub;
+    }&-like, &-edit, &-reply {
+      position: absolute;
+      height: em(22px);&:hover {
+        cursor: pointer;
+      }
+    }&-like {
+      top: 0;
+      right: em(32px);
+    }&-edit, &-reply {
+      top: 0;
+      right: 0;
+    }&-body {
+      color: $gt-color-comment-txt !important;.email-hidden-toggle a {
+        display: inline-block;
+        height: 12px;
+        padding: 0 9px;
+        font-size: 12px;
+        font-weight: 600;
+        line-height: 6px;
+        color: #444d56;
+        text-decoration: none;
+        vertical-align: middle;
+        background: #dfe2e5;
+        border-radius: 1px;&:hover {
+          background-color: #c6cbd1;
+        }
+      }.email-hidden-reply {
+        display: none;
+        white-space: pre-wrap;.email-signature-reply {
+          padding: 0 15px;
+          margin: 15px 0;
+          color: #586069;
+          border-left: 4px solid #dfe2e5;
+        }
+      }.email-hidden-reply.expanded {
+        display: block;
+      }
+    }&-admin {
+      .gt-comment-content {
+        background-color: $gt-color-comment-adminbg;
+      }
+    }
+  }
+}
+
+@-webkit-keyframes gt-kf-rotate {
+  0% {
+    transform: rotate(0);
+  }100% {
+    transform: rotate(360deg);
+  }
+}
+
+@-moz-keyframes gt-kf-rotate {
+  0% {
+    transform: rotate(0);
+  }100% {
+    transform: rotate(360deg);
+  }
+}
+
+@-ms-keyframes gt-kf-rotate {
+  0% {
+    transform: rotate(0);
+  }100% {
+    transform: rotate(360deg);
+  }
+}
+
+@-o-keyframes gt-kf-rotate {
+  0% {
+    transform: rotate(0);
+  }100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes gt-kf-rotate {
+  0% {
+    transform: rotate(0);
+  }100% {
+    transform: rotate(360deg);
+  }
+}
+
+@include darkMode {
+	/* styles */
+		.gt-container {
+			a {
+				color: $gt-color-main-dark;
+	
+				&:hover {
+					color: lighten($gt-color-main-dark, 20%);
+					border-color: lighten($gt-color-main-dark, 20%);
+				}
+	
+				&.is--active {
+					color: $gt-color-link-active-dark;
+	
+					&:hover {
+						color: $gt-color-link-active-dark;
+					}
+				}
+			}
+			.gt-svg {
+				svg {
+					fill: $gt-color-main-dark;
+				}
+			}
+	
+	
+			/* loader */
+			.gt-spinner {
+	
+				&::before {
+					border: 1px solid $gt-color-btn-dark;
+					border-top-color: $gt-color-main-dark;
+				}
+			}
+	
+			.gt-loader {
+				border: 1px solid $gt-color-loader-dark;
+				&:before {
+					background-color: $gt-color-loader-dark;
+				}
+			}
+	
+			.gt-btn {
+				border: 1px solid $gt-color-main-dark;
+				background-color: $gt-color-main-dark;
+				color: $gt-color-btn-dark;
+	
+				&-preview {
+					background-color: $gt-color-btn-dark;
+					color: $gt-color-main-dark;
+	
+					&:hover {
+						background-color: darken($gt-color-btn-dark, 5%);
+						border-color: lighten($gt-color-main-dark, 20%);
+					}
+				}
+	
+				&-public {
+					&:hover {
+						background-color: lighten($gt-color-main-dark, 20%);
+						border-color: lighten($gt-color-main-dark, 20%);
+					}
+				}
+			}
+	
+	
+			/* error */
+			.gt-error {
+				color: $gt-color-error-dark;
+			}
+
+			/* link */
+			.gt-link {
+				border-bottom: 1px dotted $gt-color-main-dark;
+			}
+	
+			/* meta */
+			.gt-meta {
+				border-bottom: 1px solid $gt-color-hr-dark;
+			}
+	
+			.gt-user {
+				.is--poping {
+					.gt-ico {
+						svg {
+							fill: $gt-color-main-dark;
+						}
+					}
+				}
+			}
+	
+			.gt-version {
+				color: $gt-color-sub-dark;
+			}
+	
+			.gt-copyright {
+				border-top: 1px solid $gt-color-hr-dark;
+			}
+	
+			/* popup */
+			.gt-popup {
+				background: $gt-color-popbg-dark;
+				border: 1px solid $gt-color-hr-dark;
+	
+				.gt-action {
+					&.is--active {
+						&:before {
+							background: $gt-color-main-dark;
+						}
+					}
+				}
+			}
+	
+			/* header */
+			.gt-header {
+	
+				&-textarea {
+					color: $gt-color-input-dark;
+					&::placeholder {
+						color: $gt-color-input-placeholder-dark;
+					}
+					border: 1px solid $gt-color-input-border-dark;
+					background-color: $gt-color-input-bg-dark;
+					&:hover {
+						background-color: lighten($gt-color-input-bg-dark, 10%);
+					}
+				}
+	
+				&-preview {
+					border: 1px solid $gt-color-input-border-dark;
+					background-color: $gt-color-input-bg-dark;
+				}
+	
+				&-controls {
+					&-tip {
+						color: $gt-color-main-dark;
+					}
+				}
+			}
+
+			&.gt-input-focused {
+	
+				&:after {
+					background: #fff;
+				}
+			}
+	
+			/* comment */
+			.gt-comment {
+				&-content {
+					background-color: $gt-color-comment-bg-dark;
+					&:hover {
+						//box-shadow: 0 em(10px) em(60px) 0 darken($gt-color-comment-bg-dark, 2%);
+					}
+				}
+	
+				&-username {
+					color: $gt-color-main-dark;
+				}
+	
+				&-text {
+					color: $gt-color-sub-dark;
+				}
+	
+				&-date {
+					color: $gt-color-sub-dark;
+				}
+	
+				&-body {
+					color: $gt-color-comment-txt-dark !important;
+	
+					.email-hidden-toggle a {
+						color: #a9b2bb;
+						background: #1a1d20;
+	
+						&:hover {
+							background-color: #2e3339;
+						}
+					}
+	
+					.email-hidden-reply {
+	
+						.email-signature-reply {
+							color: #969ea7;
+							border-left: 4px solid #1a1d20;
+						}
+					}
+				}
+	
+				&-admin {
+					.gt-comment-content {
+						background-color: $gt-color-comment-adminbg-dark;
+					}
+				}
+			}
+		}
+}
