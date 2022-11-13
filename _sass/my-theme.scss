@@ -44,6 +44,30 @@ ul.pager li {
 	}
 }
 
+hr {
+
+	border: 0;
+	height: 2px;
+	width: 50%;
+	position: relative;
+	margin: 30px auto;
+	overflow: visible;
+	background-image: linear-gradient(to right, rgba($hr-background-color, 0), rgba($hr-background-color, 1), rgba($hr-background-color, 0));
+	//background: $hr-background-color;
+
+	&:before {
+		//content: "♥";
+		color: $hr-background-color;
+		display: inline-block;
+		position: absolute;
+		top: 0px;
+		left: 50%;
+		margin: 0 0 0 -3px;
+		font-size: 15px;
+		line-height: 0;
+	}
+}
+
 .highlight {
 	.k {
 		color: $text-color
@@ -177,5 +201,13 @@ code {
 
 	.site-footer {
 		border-top: 1px solid $grey-color-dark;
+	}
+
+	hr {
+		background-image: linear-gradient(to right, rgba($hr-background-color-dark, 0), rgba($hr-background-color-dark, 1), rgba($hr-background-color-dark, 0));
+		&:before {
+			color: $hr-background-color-dark;
+			//border: 2px solid $hr-background-color-dark;
+		}
 	}
 }
