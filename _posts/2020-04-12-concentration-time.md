@@ -5,6 +5,7 @@ categories:
 - chemistry
 tags:
 - calculus
+- ode
 - chemical reaction
 - long paper
 layout: post

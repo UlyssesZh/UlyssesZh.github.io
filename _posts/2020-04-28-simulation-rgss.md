@@ -8,6 +8,7 @@ tags:
 - rgss
 - hamiltonian
 - calculus
+- ode
 layout: post
 excerpt: 'Hamiltonian mechanics gives us a good way to simulate mechanical systems as long as we can get its Hamiltonian and its initial conditions.
 I implemented this simulation in RGSS3, the game scripting system shipped with RPG Maker VX Ace.'

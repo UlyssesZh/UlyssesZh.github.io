@@ -7,6 +7,7 @@ tags:
 - calculus
 - linear algebra
 - combinatorics
+- ode
 - long paper
 - from zhihu
 layout: post
