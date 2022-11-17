@@ -6,11 +6,12 @@ categories:
 tags:
 - from zhihu
 layout: post
-excerpt: 'To illustrate the concept about non-uniform elements,
-we study a simple problem: suppose a uniform heavy elastic rope has mass $m$, original length $L_0$, and stiffness $k$,
-and find the mass distribution and length of it when hung vertically.
-We can use the element method to solve this problem, but the elements are non-uniform in terms of length.
-The elements add up to get the total length $L=\frac{mg}{2k}+L_0$.'
+excerpt: 'In the vacuum, inside a fixed ring of radius $R$ with fixed charge $Q$ uniformly distributed,
+there is a point charge with charge $q$ and mass $m$ moving in the plane of the ring due tue the electrostatic force.
+It moves in the small region around the center of the ring, and the motion is periodic along a closed curve.
+The area of the region enclosed by the curve is $S$.
+Denote the distance from the center to the point charge as $r$, and $r\ll R$.
+Find the magnetic induction $B$ at the center of the ring.'
 ---
 
 *This article is translated from a
