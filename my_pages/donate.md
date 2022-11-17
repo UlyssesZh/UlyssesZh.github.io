@@ -4,8 +4,16 @@ permalink: "/donate/"
 layout: my_page
 ---
 
-If you like my blog,
-You can invite me to drink a cup of coffee by scanning
-the following QR code with Alipay:
+<!--
+# [Cash App](https://cash.app/$UlyssesZhan){:target="_blank"}
 
-![Invite me to drink coffee](/assets/images/donate.png)
+{% include donate/cash-app.svg %}
+-->
+
+# [Alipay](https://qr.alipay.com/fkx19104meksotcpxrt3qeb){:target="_blank"}
+
+{% include donate/alipay.svg %}
+
+# [WeChat](wxp://f2f6uscqtGWWpvPL9ExIDJhbs_HEXE0axuOlfBRcNpOBctU){:target="_blank"}
+
+{% include donate/wechat.svg %}

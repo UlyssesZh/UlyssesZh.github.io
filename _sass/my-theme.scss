@@ -96,6 +96,11 @@ hr {
 	cursor: pointer;
 	font-size: 16px;
 }
+
+.qrcode {
+	fill: $text-color;
+}
+
 .highlight {
 	.k {
 		color: $text-color
@@ -250,6 +255,10 @@ code {
 		border: 1px solid $search-border-color-dark;
 		background: $search-border-color-dark;
 		color: $search-background-color-dark;
+	}
+
+	.qrcode {
+		fill: $text-color-dark;
 	}
 }
 

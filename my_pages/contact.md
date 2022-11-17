@@ -13,6 +13,7 @@ Active:
 * [Reddit](https://reddit.com/u/UlyssesZhan)
 * [Steam](https://steamcommunity.com/id/ulysseszhan)
 * [Bilibili](https://space.bilibili.com/226047082)
+* [Cash App](https://cash.app/$UlyssesZhan)
 
 Available:
 
@@ -45,3 +46,4 @@ Inactive:
 * [SoundCloud](https://soundcloud.com/ulysseszhan)
 * [Pixiv](https://pixiv.net/users/28889180)
 * [Flickr](https://flickr.com/photos/UlyssesZhan)
+* [CodePen](https://codepen.io/UlyssesZhan)
