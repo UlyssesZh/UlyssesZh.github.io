@@ -34,6 +34,8 @@ Available:
 * [Internet Archive](https://archive.org/details/@ulysseszhan)
 * [Matrix](https://matrix.to/#/@ulysseszhan:matrix.org)
 * [GitLab](https://gitlab.com/UlyssesZhan)
+* [PayPal](https://paypal.me/youqiuzhan)
+* [Venmo](https://venmo.com/UlyssesZhan)
 
 Inactive:
 
