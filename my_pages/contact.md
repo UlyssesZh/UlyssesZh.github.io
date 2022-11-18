@@ -33,6 +33,7 @@ Available:
 * [知乎](https://zhihu.com/people/ulysseszhan)
 * [Internet Archive](https://archive.org/details/@ulysseszhan)
 * [Matrix](https://matrix.to/#/@ulysseszhan:matrix.org)
+* [GitLab](https://gitlab.com/UlyssesZhan)
 
 Inactive:
 
@@ -47,3 +48,4 @@ Inactive:
 * [Pixiv](https://pixiv.net/users/28889180)
 * [Flickr](https://flickr.com/photos/UlyssesZhan)
 * [CodePen](https://codepen.io/UlyssesZhan)
+* [Postman](https://postman.com/ulysseszhan)
