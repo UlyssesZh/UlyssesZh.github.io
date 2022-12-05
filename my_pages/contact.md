@@ -9,7 +9,7 @@ Active:
 * [Discord](https://discordapp.com/users/586808226058862623) (UlyssesZhan#0326)
 * [Telegram](https://t.me/UlyssesZhan) (UlyssesZhan)
 * [GitHub](https://github.com/UlyssesZh) (UlyssesZh)
-* [YouTube](https://youtube.com/channel/UCxjWz3Y1M21K555FlAN1oYQ)
+* [YouTube](https://youtube.com/@ulysseszhan) (ulysseszhan)
 * [Reddit](https://reddit.com/u/UlyssesZhan) (UlyssesZhan)
 * [Steam](https://steamcommunity.com/id/ulysseszhan) (ulysseszhan)
 * [Bilibili](https://space.bilibili.com/226047082)
