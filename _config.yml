@@ -22,6 +22,7 @@ show_excerpts: true
 markdown: kramdown
 kramdown:
   auto_ids: true
+debugging_gitalk: false
 header_pages:
 - my_pages/about.md
 - my_pages/archives.html

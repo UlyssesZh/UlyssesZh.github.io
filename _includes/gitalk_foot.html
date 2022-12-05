@@ -1,15 +1,22 @@
-{%- unless layout.no_gitalk or page.no_gitalk or jekyll.environment != 'production' -%}
+{%- unless layout.no_gitalk -%}{%- unless page.no_gitalk -%}{%- if jekyll.environment == 'production' or site.debugging_gitalk -%}
 	<script>
+		let gitalkId = location.pathname;
+		if (gitalkId.endsWith('/index.html')) {
+			gitalkId = gitalkId.substring(0, gitalkId.length - 'index.html'.length);
+		}
+		if (/\/page\/\d+\/$/.test(gitalkId)) {
+			gitalkId = gitalkId.replace(/\/page\/\d+\/$/, '/');
+		}
 		const gitalk = new Gitalk({
 			clientID: '49611570ab5cf827576b',
 			clientSecret: '6dedc6014eb010990d395ae8aae632c7811dfeff',
 			repo: 'UlyssesZh.github.io',
 			owner: 'UlyssesZh',
 			admin: ['UlyssesZh'],
-			id: location.pathname,
+			id: gitalkId,
 			distractionFreeMode: false,
 			language: document.documentElement.lang
 		})
 		gitalk.render('gitalk-container')
 	</script>
-{%- endunless -%}
+{%- endif -%}{%- endunless -%}{%- endunless -%}
