@@ -18,10 +18,10 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-gems-
       
-      - uses: helaili/jekyll-action@v2
+      - uses: UlyssesZh/jekyll-action@master
         with:
           token: ${{ secrets.JEKYLL_PAT }}
           pre_build_commands: |
-            git config --global user.email "ulysseszhan@gmail.com"
+            git config --global user.email "ulysseszhan@pm.me"
             git config --global user.name "Ulysses Zhan"
             gem install bundler 
