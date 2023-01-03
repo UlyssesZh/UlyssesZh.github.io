@@ -3,6 +3,7 @@
 source 'https://rubygems.org/'
 
 gem 'jekyll', '~> 4'
+gem 'jekyll-sass-converter', '< 3' # https://github.com/helaili/jekyll-action/issues/150
 gem 'minima'
 group :jekyll_plugins do
 	gem 'jekyll-archives'
