@@ -36,6 +36,7 @@ Available:
 * [GitLab](https://gitlab.com/UlyssesZhan) (UlyssesZhan)
 * [PayPal](https://paypal.me/youqiuzhan) (youqiuzhan)
 * [Venmo](https://venmo.com/UlyssesZhan) (UlyssesZhan)
+* [MEGA](https://mega.nz/C!DOw1hIgb)
 
 Inactive:
 
