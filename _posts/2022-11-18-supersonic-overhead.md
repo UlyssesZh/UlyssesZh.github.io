@@ -1,5 +1,5 @@
 ---
-title: 'When a supersonic airplane fly over your head'
+title: 'When a supersonic airplane flies over your head'
 date: 2022-11-18 14:11:10 -0800
 categories:
 - physics
@@ -8,7 +8,7 @@ tags:
 layout: post
 excerpt: 'Suppose a supersonic airplane has Mach number $M$.
 It flies horizontally.
-At some time, it fly past over your head at height $h$.
+At some time, it flies past over your head at height $h$.
 Then, the distance between you and it when you have just heard it is $Mh$.'
 ---
 
@@ -22,10 +22,10 @@ The original article was posted at 2020-02-17 18:49 +0800.*
 
 Suppose a supersonic airplane has Mach number $M$ (Mach number is the speed divided by sound speed).
 It flies horizontally.
-At some time, it fly past over your head at height $h$.
+At some time, it flies past over your head at height $h$.
 What is the distance between you and it when you have just heard it?
 
-Suppose the time when the airplane fly past over your head is $t=0$;
+Suppose the time when the airplane flies past over your head is $t=0$;
 the sound speed is $v$.
 Then, the motion of the airplane is
 

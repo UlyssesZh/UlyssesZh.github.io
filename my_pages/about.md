@@ -9,6 +9,16 @@ UlyssesZhan (pronunciation: [juː\'lɪsiːz\'ʈ͡ʂán]),
 a.k.a. 有丘直方 (pronunciation: [jou̯˨˩˨t͡ɕjou̯˥ʈ͡ʂʐ̩˨˥faŋ˥]).
 I share interesting thoughts of mine here.
 
+Some of my basic (and improbably changing) information:
+
+- Gender: **male**;
+sex: **male**;
+orientation: **heterosexual**;
+pronouns: **he/him/his**.
+- Birthday: **2003-09-07T10:41+08:00**.
+- Nationality: **Chinese**.
+- Hometown: **Shanghai**.
+
 I am interested in physics, programming, and mathematics.
 I am also interested in other academic fields such as economics, linguistics, etc.
 although I have not studied them seriously.

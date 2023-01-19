@@ -8,6 +8,10 @@ layout: my_page
 
 <p style="text-align: center">{% include donate/cash-app.svg %}</p>
 
+# [Zelle](enroll.zellepay.com/qr-codes?data=eyJuYW1lIjoiWU9VUUlVIiwidG9rZW4iOiI4MDU4MjU4NDA3IiwiYWN0aW9uIjoicGF5bWVudCJ9){:target="_blank"}
+
+<p style="text-align: center">{% include donate/zelle.svg %}</p>
+
 # [PayPal](https://paypal.me/youqiuzhan){:target="_blank"}
 
 <p style="text-align: center">{% include donate/paypal.svg %}</p>

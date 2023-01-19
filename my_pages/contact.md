@@ -4,6 +4,18 @@ permalink: "/contact/"
 layout: my_page
 ---
 
+Basic:
+
+* Mailing address: PO BOX 12146, SANTA BARBARA CA 93107
+* E-mail addresses:
+  * Personal: [ulysseszhan@gmail.com](mailto:ulysseszhan@gmail.com)
+  * School: [youqiu@ucsb.edu](mailto:youqiu@ucsb.edu)
+  * For accounts: [ulysseszhan@pm.me](mailto:ulysseszhan@pm.me)
+  * Bot: [ulysseszhan@qq.com](mailto:ulysseszhan@qq.com)
+* Phone numbers:
+  * Old: +86 159-0178-4907
+  * New: +1 (805) 825-8407
+
 Active:
 
 * [Discord](https://discordapp.com/users/586808226058862623) (UlyssesZhan#0326)
@@ -37,6 +49,9 @@ Available:
 * [PayPal](https://paypal.me/youqiuzhan) (youqiuzhan)
 * [Venmo](https://venmo.com/UlyssesZhan) (UlyssesZhan)
 * [MEGA](https://mega.nz/C!DOw1hIgb)
+* [Session](https://getsession.org/download) (053a1db4f9acead86f348991668e76b04771e840503972ebf74d6b7d23cb767471)
+* [Signal](https://signal.org/install) ((805) 825-8407)
+* [Zelle](enroll.zellepay.com/qr-codes?data=eyJuYW1lIjoiWU9VUUlVIiwidG9rZW4iOiI4MDU4MjU4NDA3IiwiYWN0aW9uIjoicGF5bWVudCJ9)
 
 Inactive:
 
