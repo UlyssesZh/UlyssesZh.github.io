@@ -4,7 +4,7 @@ permalink: "/friends/"
 layout: my_page
 ---
 
-Here are some of my friends (ordered lexicographically):
+Here are some of my friends' websites (ordered lexicographically):
 - [Esphas](https://icefla.me){:target="_blank" title="浴巾"},
 - [Hyrious](https://hyrious.me){:target="_blank" title="喵喵喵"},
 - [IamI](https://iami.town){:target="_blank" title="II"},
@@ -14,6 +14,7 @@ Here are some of my friends (ordered lexicographically):
 - [Silent](https://not-hentai.com){:target="_blank" title="静寂之夜"},
 - [Taroxd](https://taroxd.github.io){:target="_blank" title="状元"},
 - [Xiang](https://orashshi.github.io){:target="_blank" title="Orash"},
+- [后马勒音乐文库](https://musiknachmahler.xyz){:target="_blank" title="Jiewei"},
 
 and
 - You.
