@@ -13,7 +13,12 @@
 
     {%- if site.show_excerpts -%}
       {% if post.excerpt and post.excerpt != "" %}
-        {{ post.excerpt | markdownify }}
+        <p>
+          {% if post.image %}
+            <img src="{{ post.image }}" style="float: right; padding-left: 12px; padding-bottom: 12px" width="64">
+          {% endif %}
+          {{ post.excerpt | markdownify_no_p }}
+        </p>
       {% endif %}
       <ul>
         <li>Categories:

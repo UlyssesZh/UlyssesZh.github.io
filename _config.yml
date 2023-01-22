@@ -46,7 +46,7 @@ exclude:
 - ".git/"
 - ".idea/"
 - ".rubocop.yml"
-- publish.sh
+- "assets/images/covers/*.txt"
 measurement_id: G-7TSJ5VM6YC
 webmaster_verifications:
   google: ZuV45Knwuwl49Nvh9UsDzniZ-3qy3bGhBPofLK3SZPw
@@ -59,15 +59,7 @@ facebook_username: YouqiuZhan
 instagram_username: ulysseszhan
 pinterest_username: ulysseszhan
 flickr_username: UlyssesZhan
-defaults:
-  - scope:
-      path: ""
-    values:
-      image:
-        path: /assets/images/logos/78(.png
-        width: 64
-        height: 64
-        alt: '78('
+covers_path: "/assets/images/covers/"
 seo_paginator_message: "Page %<current>s/%<total>s - "
 jekyll-archives:
   enabled: all

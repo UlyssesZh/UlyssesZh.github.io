@@ -16,30 +16,35 @@ layout: default
       <details class="post-meta">
         <summary>About this post</summary>
         <ul>
-          <li>Title: {{ page.title | markdownify_no_p }}</li>
-          <li>Author: {{ page.author | default: site.author }}</li>
-          {% assign year = page.date | date: "%Y" %}
-          {% assign month = page.date | date: "%m" %}
-          {% assign day = page.date | date: "%d" %}
-          <li>Date:
-            <a href="/archives/{{ year }}">{{ year }}</a>-<a href="/archives/{{ year }}/{{ month }}">{{ month }}</a>-<a href="/archives/{{ year }}/{{ month }}/{{ day }}">{{ day }}</a>
-            {{ page.date | date: "%T %z" }}
+          <li><strong>Title:</strong> {{ page.title | markdownify_no_p }}</li>
+          <li><strong>Author:</strong> {{ page.author | default: site.author }}</li>
+          <li><strong>Date:</strong>
+            {% assign year = page.date | date: "%Y" %}
+            {% assign month = page.date | date: "%m" %}
+            {% assign day = page.date | date: "%d" %}
+            <a href="/archives/{{ year }}">{{ year }}</a>-<a href="/archives/{{ year }}/{{ month }}">{{ month }}</a>-<a href="/archives/{{ year }}/{{ month }}/{{ day }}">{{ day }}</a>T{{ page.date | date: "%T%z" }}
           </li>
-          <li>Categories:
+          <li><strong>Categories:</strong>
             {% for category in page.categories %}
               <a href="/archives/category/{{ category | slugify }}">{{ category }}</a>{% unless forloop.last %}, {% endunless -%}
             {% endfor %}
           </li>
-          <li>Tags:
+          <li><strong>Tags:</strong>
             {% for tag in page.tags %}
               <a href="/archives/tag/{{ tag | slugify }}">{{ tag }}</a>{% unless forloop.last %}, {% endunless -%}
             {% endfor %}
           </li>
-          <li>Excerpt:
+          <li><strong>Excerpt:</strong>
             {{ page.excerpt | markdownify_no_p }}
           </li>
-          <li><a href="https://github.com/UlyssesZh/UlyssesZh.github.io/blob/development/{{ page.path }}?plain=1" target="_blank">View source</a></li>
-          <li><a href="https://github.com/UlyssesZh/UlyssesZh.github.io/commits/development/{{ page.path }}" target="_blank">View history</a></li>
+          {% if page.image %}
+            <li><strong>Cover:</strong>
+              <a href="{{ page.image }}" target="_blank"><img src="{{ page.image }}" width="16"></a>
+              (<a href="https://github.com/UlyssesZh/UlyssesZh.github.io/blob/development{{ page.image | replace: '.png', '.txt' }}" target="_blank">prompts</a>)
+            </li>
+          {% endif %}
+          <li><strong><a href="https://github.com/UlyssesZh/UlyssesZh.github.io/blob/development/{{ page.path }}?plain=1" target="_blank">View source</a></strong></li>
+          <li><strong><a href="https://github.com/UlyssesZh/UlyssesZh.github.io/commits/development/{{ page.path }}" target="_blank">View history</a></strong></li>
         </ul>
       </details>
     </p>
@@ -47,6 +52,9 @@ layout: default
 
   <div class="post-content e-content" itemprop="articleBody">
     {{ content }}
+    {% if page.image %}
+      <p style="text-align: center"><img src="{{ page.image }}"></p>
+    {% endif %}
   </div>
 
   {%- if site.disqus.shortname -%}

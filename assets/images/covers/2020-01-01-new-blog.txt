@@ -1,0 +1,3 @@
+masterpiece, best quality, detailed, 1girl, {{infant}}, swaddling clothes, pink clothes, detailed background, {{white bed}}, lie on bed, in bedroom, smiling, curious eyes, cute, {{{bird view}}}
+Negative prompt: lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry, nsfw
+Steps: 28, Sampler: Euler a, CFG scale: 11, Seed: 2061300733, Size: 512x512, Model hash: e6e8e1fc

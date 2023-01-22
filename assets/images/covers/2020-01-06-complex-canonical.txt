@@ -1,0 +1,3 @@
+masterpiece, best quality, detailed, 1girl, in classroom, detailed background, sunny, thinking, books on desk, touching chin with hand, sitting in front of desk, looking outside of window, school uniform, bow tie
+Negative prompt: lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry, nsfw, bad geometry
+Steps: 28, Sampler: Euler a, CFG scale: 11, Seed: 3899453997, Size: 512x512, Model hash: e6e8e1fc
