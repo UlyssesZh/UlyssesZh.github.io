@@ -1,19 +1,19 @@
 ---
-title: 'Snippet: O, ''tis too true!'
+title: 'Snippet: O, &rsquo;tis too true!'
 date: 2020-04-11 16:34:42 +0800
 categories:
 - literature
 tags:
 - snippet
 layout: post
-excerpt: ''
+excerpt: 'O, &rsquo;tis too true!'
 ---
 
-O, \'tis too true!
+O, &rsquo;tis too true!
 
 How smart a lash that speech doth give my conscience!
 
-The harlot\'s cheek, beautied with plastering art,
+The harlot's cheek, beautied with plastering art,
 
 Is not more ugly to the thing that helps it
 

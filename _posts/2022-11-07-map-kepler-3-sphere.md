@@ -20,7 +20,7 @@ and $p_0:=\sqrt{-2mE}$.'
 ---
 
 *This article is adapted from the letter that I wrote to my professor of classical mechanics.
-Background: the professor said in class that he know there is a way to transform the Kepler problem into the system of a free particle on a 3-sphere,
+Background: the professor said in class that he knew there is a way to transform the Kepler problem into the system of a free particle on a 3-sphere,
 but he did not know what is the explicit form of the mapping
 and asked us to try to research and find out the mapping.
 The original letter was sent at 2022-10-13 21:56 -0700.*
