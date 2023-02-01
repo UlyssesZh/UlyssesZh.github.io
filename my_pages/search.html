@@ -11,17 +11,18 @@ no_gitalk: true
 <script>
 	window.store = {
 	{% for post in site.posts %}
-	"{{ post.url | slugify }}": {
-		"title": "{{ post.title | markdownify_no_p | strip_newlines | replace: "\", "\\\" | replace: '"', '\"' }}",
-		{%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-		"date": "{{ post.date | date: date_format }}",
-		"excerpt": "{{ post.excerpt | markdownify_no_p | strip_newlines | replace: "\", "\\\" | replace: '"', '\"' }}",
-		"content": {{ post.content | strip_html | strip_newlines | jsonify }},
-		"tags": {{ post.tags | jsonify }},
-		"categories": {{ post.categories | jsonify }},
-		"url": "{{ post.url }}"
-	}
-	{% unless forloop.last %}, {% endunless %}
+		"{{ post.url | slugify }}": {
+			"title": "{{ post.title | markdownify_no_p | strip_newlines | replace: "\", "\\\" | replace: '"', '\"' }}",
+			{%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+			"date": "{{ post.date | date: date_format }}",
+			"excerpt": "{{ post.excerpt | markdownify_no_p | strip_newlines | replace: "\", "\\\" | replace: '"', '\"' }}",
+			"content": {{ post.content | strip_html | strip_newlines | jsonify }},
+			"tags": {{ post.tags | jsonify }},
+			"categories": {{ post.categories | jsonify }},
+			"url": "{{ post.url }}",
+			"image": "{{ post.image }}"
+		}
+		{% unless forloop.last %}, {% endunless %}
 	{% endfor %}
   };
 </script>
@@ -38,7 +39,7 @@ function displaySearchResults(results, store) {
 			var item = store[results[i].ref];
 			appendString += '<li><span class="post-meta">' + item.date + '</span>';
 			appendString += '<h3><a class="post-link" href="' + item.url + '">' + item.title + '</a></h3>';
-			appendString += '<p>' + item.excerpt + '</p>';
+			appendString += '<p>' + `<img src="${item.image}" style="float: right; padding-left: 12px; padding-bottom: 6px" width="64">` + item.excerpt + '</p>';
 			appendString += '<ul><li>Categories: ' + item.categories.map(cat => `<a href="/archives/category/${cat.replace(/ /g, '-')}">${cat}</a>`).join(", ") + '</li>';
 			appendString += '<li>Tags: ' + item.tags.map(tag => `<a href="/archives/tag/${tag.replace(/ /g, '-')}">${tag}</a>`).join(", ") + '</li></ul></li>';
 		}
