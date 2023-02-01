@@ -7,6 +7,7 @@ tags:
 - classical mechanics
 - canonical transformation
 - letter
+- kepler problem
 layout: post
 excerpt: 'There is a canonical transform of the Kepler problem which is the same as
 the problem of motion of a free particle on 3-sphere.
