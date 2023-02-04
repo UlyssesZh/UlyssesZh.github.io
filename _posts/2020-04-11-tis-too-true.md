@@ -5,6 +5,7 @@ categories:
 - literature
 tags:
 - snippet
+- chinese
 layout: post
 excerpt: 'O, &rsquo;tis too true!'
 ---
