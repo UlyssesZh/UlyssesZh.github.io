@@ -219,6 +219,10 @@ code {
 	}
 
 	.site-nav {
+		@include media-query($on-palm) {
+			background-color: $background-color-dark;
+			border: 1px solid $grey-color-dark;
+		}
 		.page-link {
 			color: $text-color-dark;
 		}
