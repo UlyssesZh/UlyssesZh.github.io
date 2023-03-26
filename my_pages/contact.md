@@ -26,6 +26,7 @@ Active:
 * [Steam](https://steamcommunity.com/id/ulysseszhan) (ulysseszhan)
 * [Bilibili](https://space.bilibili.com/226047082)
 * [Cash App](https://cash.app/$UlyssesZhan) (UlyssesZhan)
+* [Zelle](enroll.zellepay.com/qr-codes?data=eyJuYW1lIjoiWU9VUUlVIiwidG9rZW4iOiI4MDU4MjU4NDA3IiwiYWN0aW9uIjoicGF5bWVudCJ9)
 
 Available:
 
@@ -51,7 +52,7 @@ Available:
 * [MEGA](https://mega.nz/C!DOw1hIgb)
 * [Session](https://getsession.org/download) (053a1db4f9acead86f348991668e76b04771e840503972ebf74d6b7d23cb767471)
 * [Signal](https://signal.org/install) ((805) 825-8407)
-* [Zelle](enroll.zellepay.com/qr-codes?data=eyJuYW1lIjoiWU9VUUlVIiwidG9rZW4iOiI4MDU4MjU4NDA3IiwiYWN0aW9uIjoicGF5bWVudCJ9)
+* [BeReal.](https://bere.al/ulysseszhan) (ulysseszhan)
 
 Inactive:
 

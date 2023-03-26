@@ -8,6 +8,12 @@ $darkMode: true; // whether detect dark mode
 	}
 }
 
+.center {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
 kbd {
 	margin: 0px 0.1em;
 	padding: 0.1em 0.6em;

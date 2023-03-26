@@ -9,3 +9,5 @@ vendor
 .idea
 git_backup
 .rubocop.yml
+
+.vscode
