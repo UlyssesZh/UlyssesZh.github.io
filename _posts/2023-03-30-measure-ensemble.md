@@ -1,6 +1,6 @@
 ---
-title: 'A measure-theoretic formulation of statistical ensembles'
-date: 2023-02-15 15:03:33 -0800
+title: 'A measure-theoretic formulation of statistical ensembles (part 1)'
+date: 2023-03-30 21:49:51 -0700
 categories:
 - physics
 tags:
@@ -152,25 +152,47 @@ a non-trivial vector subspace.
 ---
 
 In general, it is not necessarily possible to decompose a topology as a product of two topologies.
-However, it is always possible for locally convex topological vector spaces.
-We can always decompose the topology of a topological vector space as the product
+However, it is always possible for locally convex Hausdorff TVSs.
+We can always decompose the topology of a locally convex Hausdorff TVS as the product
 of the topologies on a pair of its complementary vector subspaces, one of which is finite-dimensional.
-The complete statement is given by the following theorem:
+This is true because every finite-dimensional subspace in such a space is topologically complemented.
+The complete statement is the following:
 
-*Theorem.*
-Let $\vec W$ be a locally convex topological vector space.
+Let $\vec W$ be a locally convex Hausdorff TVS.
 For any finite-dimensional subspace $\vec W^\parallel$ of $\vec W$,
-we can find a complementary subspace $\vec W^\perp$ of $\vec W$ such that
+there is a complement $\vec W^\perp$ of it such that
 the topology $\tau\\!\left(\vec W\right)$ is the product topology of
 $\tau\\!\left(\vec W^\parallel\right)$ and $\tau\\!\left(\vec W^\perp\right)$.
 
-<details markdown="1">
-<summary>Proof</summary>
+This decomposition is also valid for affine spaces.
+If an affine space $W$ is associated with a locally convex Hausdorff TVS $\vec W$,
+then for any finite-dimensional vector subspace $\vec W^\parallel$ of $\vec W$,
+we can topologically decompose $W$ into $W^\perp+\vec W^\parallel$.
 
-*Proof.*
+Because the product topology of subspace topologies is the same as
+the subspace topology of the product topology,
+we can also decompose $E^\perp+\vec W^\parallel$
+as the product topological space of $E^\perp$ and $\vec W^\parallel$
+if $E^\perp\subseteq W^\perp$.
 
+Such decompositions are useful because they allow us to disintegrate Borel measures.
+If we already have a &sigma;-finite Borel measure on $E^\perp+\vec W^\parallel$
+and we can define a &sigma;-finite Borel measure on $\vec W^\parallel$,
+then we can define a measure on $E^\perp$ by the disintegrating,
+and we guarantees that the disintegration is also &sigma;-finite and Borel.
 
-</details>
+---
+
+When I want to use multi-index notations, I will use "$\bullet$" to denote the indices.
+For example,
+
+$$\Sigma\alpha_\bullet:=\sum_\bullet\alpha_\bullet.$$
+
+$$\alpha_\bullet\beta_\bullet:=\sum_\bullet\alpha_\bullet\beta_\bullet.$$
+
+$$\alpha_\bullet^{\beta_\bullet}:=\prod_\bullet\alpha_\bullet^{\beta_\bullet}.$$
+
+$$\alpha_\bullet!:=\prod_\bullet\alpha_\bullet!.$$
 
 # Extensive quantities and macrostates
 
@@ -269,6 +291,10 @@ It may seem surprising, but actually differentials are evitable in our mathemati
 if you do not require intensive variables to be well-defined inside the system itself
 (actually, they are indeed not well-defined except when you have
 a system in thermal equilibrium and take the thermaldynamic limit).
+
+If we have to use differentials, we can use the Gateaux derivative.
+It is general enough to be defined on any locally convex TVS,
+and it is intuitive when it is linear and continuous.
 
 Although differential structure is not necessary,
 there is an inevitable structure on the space of extensive quantities.
@@ -577,10 +603,13 @@ Suppose that we postulate a family of states $p_t^\circ$ of the thermal system
 labeld by different $t$'s, and call them the possible equilibrium states.
 Then, we can have the following two equations:
 
-$$\begin{cases}
+$$\begin{equation}
+\label{eq: fundamental equation before}
+\begin{cases}
 S^\circ=S\!\left[p_t^\circ\right],\\
 \varepsilon^\circ=\varepsilon\!\left[p_t^\circ\right].
-\end{cases}$$
+\end{cases}
+\end{equation}$$
 
 By cancelling out the $t$ in the two equations (which may be impossible but assumed to be possible),
 we can get the fundamental equation in this form:
@@ -597,10 +626,10 @@ so that we can possibly take the differential of $S^\circ$ and write something s
 
 $$\mathrm dS^\circ=i\!\left(\varepsilon^\circ\right)(\mathrm d\varepsilon^\circ),$$
 
-where $i\\!\left(\varepsilon^\circ\right)\in\vec W'$ is a continuous linear functional,
-then we can define $i\\!\left(\varepsilon^\circ\right)$ to be the **intensive quantities**
+where $i^\circ\\!\left(\varepsilon^\circ\right)\in\vec W'$ is a continuous linear functional,
+then we can define $i^\circ\\!\left(\varepsilon^\circ\right)$ to be the **intensive quantities**
 at $\varepsilon^\circ$.
-A proper comparison with differential geometry is that we may analogly call $i$
+A proper comparison with differential geometry is that we may analogly call $i^\circ$
 be a covector field on $E^\circ$ defined as the differential of the scalar field $S^\circ$.
 
 However, as I have said before, I did not postulate there to be any differential structure on $E^\circ$,
@@ -1116,7 +1145,7 @@ Therefore, we can define a thermally composite system
 as a contraction of the product thermal system.
 Denote the projection map of the contracting as $\pi:W\to W^\perp:(e_1,e_2)\mapsto e$.
 (From now on in this section, composite systems refer to thermally composite system.
-I will introduce non-thermally composite systems later,
+I will introduce non-thermally composite systems later (in part 2),
 which describe non-thermal contacts between subsystems and are more complicated.)
 
 Besides being the contraction of the product thermal system,
@@ -1324,7 +1353,7 @@ $\square$
 Besides, because $\vec\rho$ is a linear isomorphism
 from $\vec W^{\parallel(1)}$ to $\vec W^{\parallel(2)}$,
 the map $i\_1\mapsto i\_1\circ\vec\rho^{-1}$ is a linear isomorphism
-from $\vec W^{\parallel\prime(1)}$ to $\vec W^{\parallel\prime(2)}$.
+from $\vec W^{\parallel(1)\prime}$ to $\vec W^{\parallel(2)\prime}$.
 The inverse of this isomorphism is $i\_2\mapsto i\_2\circ\vec\rho$.
 
 As we know, $i\_1$ and $i\_2$ are actually intensive quantities.
@@ -1463,7 +1492,7 @@ Those assumptions are very strong, so we do not want to assume them.
 Without those assumptions, we still have a well-constructed $W^{\perp(1)}$ and $\pi^{(1)}$
 so that $W^{\parallel(1)}_e$ are preimages of points in $W^{\perp(1)}$ under $\pi$.
 Then, we can use similar tricks as Equation \ref{eq: linear op on affine} to define
-the action of any continuous linear functional $i\_1\in\vec W^{\parallel\prime(1)}$
+the action of any continuous linear functional $i\_1\in\vec W^{\parallel(1)\prime}$
 on a point $e_1\in W^{(1)}$ as
 
 $$i_1\!\left(e_1\right):=i_1\!\left(e_1-\pi^{(1)}\!\left(e_1\right)\right).$$
@@ -1479,7 +1508,7 @@ then we have
 
 $$i_1\!\left(e_1\right)=i_2\!\left(e_2\right),$$
 
-where $i_1\in\vec W^{\parallel\prime(1)}$ and $i_2\in\vec W^{\parallel\prime(2)}$
+where $i_1\in\vec W^{\parallel(1)\prime}$ and $i_2\in\vec W^{\parallel(2)\prime}$
 are anticonsistent to each other.
 
 *Example.*
@@ -1619,13 +1648,11 @@ $W^{\perp(1)}\times W^{\perp(2)}$ to $W^{\perp\perp}$.
 
 Now that we have defined many affine spaces and vector spaces,
 here is a diagram of the relation between (some of) them
-(powered by [quiver](https://q.uiver.app){:target="_blank"},
-which [does not support dark theme yet](https://github.com/varkor/quiver/issues/147){:target="_blank"},
-so be prepared to get blind if you are used to dark themes):
+(powered by [quiver](https://q.uiver.app){:target="_blank"}):
 
 <details>
 <summary>Diagrarm</summary>
-<iframe class="quiver-embed" src="https://q.uiver.app/?q=WzAsMTEsWzIsMCwiVyJdLFswLDIsIldeeygxKX0iXSxbNCwyLCJXXnsoMil9Il0sWzAsNCwiV157XFxwZXJwKDEpfSJdLFs0LDQsIldee1xccGVycCgyKX0iXSxbMCw2LCJcXHZlYyBXXntcXHBhcmFsbGVsKDEpfSJdLFs0LDYsIlxcdmVjIFdee1xccGFyYWxsZWwoMil9Il0sWzIsOCwiXFx2ZWMgV15cXHBhcmFsbGVsIl0sWzIsMTAsIldeXFxwZXJwIl0sWzEsMTEsIlxcdmVjIFdee1xccGVycFxccGFyYWxsZWx9Il0sWzMsMTEsIldee1xccGVycFxccGVycH0iXSxbMSwyLCJcXHRpbWVzIiwyLHsiY3VydmUiOi00LCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzEsNCwiXFx0aW1lcyIsMCx7ImN1cnZlIjo1LCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzMsMiwiXFx0aW1lcyIsMCx7ImN1cnZlIjo1LCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzMsNCwiXFx0aW1lcyIsMCx7ImN1cnZlIjo1LCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzksMTAsIisiLDIseyJjdXJ2ZSI6LTEsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbNSw2LCJcXHZlY1xccmhvIiwyLHsiY3VydmUiOjMsInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImJhcnJlZCJ9fX1dLFs3LDUsIlxcdmVjIGNeeygxKX0iLDAseyJjdXJ2ZSI6LTEsInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImJhcnJlZCJ9fX1dLFs3LDYsIlxcdmVjIGNeeygyKX0iLDIseyJjdXJ2ZSI6MSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiYmFycmVkIn19fV0sWzcsOCwiKyIsMCx7ImN1cnZlIjo0LCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzQsNiwiKyIsMix7ImN1cnZlIjotMiwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFszLDUsIisiLDAseyJjdXJ2ZSI6Miwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFs1LDYsIlxcdGltZXMvKyIsMCx7InN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbMCw4LCJcXHBpIiwwLHsiY3VydmUiOi01fV0sWzUsOSwiXFx2ZWNcXHBpIiwyLHsiY3VydmUiOjMsInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImJhcnJlZCJ9fX1dLFs2LDksIlxcdmVjXFxwaSIsMCx7ImN1cnZlIjotNSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiYmFycmVkIn19fV0sWzEsMywiXFxwaV57KDEpfSJdLFsyLDQsIlxccGleeygyKX0iXSxbMTEsMCwiIiwwLHsibGV2ZWwiOjF9XSxbMTIsOCwiXFxwaSIsMCx7ImN1cnZlIjoxLCJsZXZlbCI6MSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiYmFycmVkIn19fV0sWzEzLDgsIlxccGkiLDAseyJjdXJ2ZSI6LTEsImxldmVsIjoxLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJiYXJyZWQifX19XSxbMTQsMTAsIlxccGkiLDIseyJjdXJ2ZSI6LTMsImxldmVsIjoxLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJiYXJyZWQifX19XSxbMTUsOCwiIiwyLHsibGV2ZWwiOjF9XSxbMTksMCwiIiwwLHsiY3VydmUiOi0zLCJsZXZlbCI6MX1dLFsyMCwyLCIiLDIseyJjdXJ2ZSI6MywibGV2ZWwiOjF9XSxbMjEsMSwiIiwyLHsiY3VydmUiOi0zLCJsZXZlbCI6MX1dLFsyMiw5LCJcXHZlY1xccGkiLDIseyJjdXJ2ZSI6NCwibGV2ZWwiOjF9XV0=&embed" style="border-radius: 8px; border: none; width: 100%; aspect-ratio: 1/2"></iframe>
+<iframe class="quiver-embed dark-adaptive" src="https://q.uiver.app/?q=WzAsMTEsWzIsMCwiVyJdLFswLDIsIldeeygxKX0iXSxbNCwyLCJXXnsoMil9Il0sWzAsNCwiV157XFxwZXJwKDEpfSJdLFs0LDQsIldee1xccGVycCgyKX0iXSxbMCw2LCJcXHZlYyBXXntcXHBhcmFsbGVsKDEpfSJdLFs0LDYsIlxcdmVjIFdee1xccGFyYWxsZWwoMil9Il0sWzIsOCwiXFx2ZWMgV15cXHBhcmFsbGVsIl0sWzIsMTAsIldeXFxwZXJwIl0sWzEsMTEsIlxcdmVjIFdee1xccGVycFxccGFyYWxsZWx9Il0sWzMsMTEsIldee1xccGVycFxccGVycH0iXSxbMSwyLCJcXHRpbWVzIiwyLHsiY3VydmUiOi00LCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzEsNCwiXFx0aW1lcyIsMCx7ImN1cnZlIjo1LCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzMsMiwiXFx0aW1lcyIsMCx7ImN1cnZlIjo1LCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzMsNCwiXFx0aW1lcyIsMCx7ImN1cnZlIjo1LCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzksMTAsIisiLDIseyJjdXJ2ZSI6LTEsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbNSw2LCJcXHZlY1xccmhvIiwyLHsiY3VydmUiOjMsInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImJhcnJlZCJ9fX1dLFs3LDUsIlxcdmVjIGNeeygxKX0iLDAseyJjdXJ2ZSI6LTEsInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImJhcnJlZCJ9fX1dLFs3LDYsIlxcdmVjIGNeeygyKX0iLDIseyJjdXJ2ZSI6MSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiYmFycmVkIn19fV0sWzcsOCwiKyIsMCx7ImN1cnZlIjo0LCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzQsNiwiKyIsMix7ImN1cnZlIjotMiwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFszLDUsIisiLDAseyJjdXJ2ZSI6Miwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFs1LDYsIlxcdGltZXMvKyIsMCx7InN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbMCw4LCJcXHBpIiwwLHsiY3VydmUiOi01fV0sWzUsOSwiXFx2ZWNcXHBpIiwyLHsiY3VydmUiOjMsInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImJhcnJlZCJ9fX1dLFs2LDksIlxcdmVjXFxwaSIsMCx7ImN1cnZlIjotNSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiYmFycmVkIn19fV0sWzEsMywiXFxwaV57KDEpfSJdLFsyLDQsIlxccGleeygyKX0iXSxbMTEsMCwiIiwwLHsibGV2ZWwiOjF9XSxbMTIsOCwiXFxwaSIsMCx7ImN1cnZlIjoxLCJsZXZlbCI6MSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiYmFycmVkIn19fV0sWzEzLDgsIlxccGkiLDAseyJjdXJ2ZSI6LTEsImxldmVsIjoxLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJiYXJyZWQifX19XSxbMTQsMTAsIlxccGkiLDIseyJjdXJ2ZSI6LTMsImxldmVsIjoxLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJiYXJyZWQifX19XSxbMTUsOCwiIiwyLHsibGV2ZWwiOjF9XSxbMTksMCwiIiwwLHsiY3VydmUiOi0zLCJsZXZlbCI6MX1dLFsyMCwyLCIiLDIseyJjdXJ2ZSI6MywibGV2ZWwiOjF9XSxbMjEsMSwiIiwyLHsiY3VydmUiOi0zLCJsZXZlbCI6MX1dLFsyMiw5LCJcXHZlY1xccGkiLDIseyJjdXJ2ZSI6NCwibGV2ZWwiOjF9XV0=&embed" style="border-radius: 8px; border: none; width: 100%; aspect-ratio: 1/2"></iframe>
 </details>
 
 *Example.*
@@ -1670,16 +1697,20 @@ $$\ln\mu_{e+s}\!\left(M_{e+s}\right)=i(s)+\ln\mu_e\!\left(M_e\right).$$
 ---
 
 An important notice is that $\vec W^\parallel$ must be finite-dimensional
-because a metrizable topological vector space with a non-trivial &sigma;-finite
+because a metrizable TVS with a non-trivial &sigma;-finite
 translationally quasi-invariant Borel measure must be finite-dimensional
 ([Feldman, 1966](https://doi.org/10.2307/2035076){:target="_blank"}).
+
+We can then define the
+non-trivial &sigma;-finite translationally invariant Borel measure on $\vec W^\parallel$,
+denoted as $\lambda^\parallel$.
+It is unique up to a positive constant factor.
 
 ---
 
 We may construct an affine subspace $W^\perp$ for the bath
 so that every point in $W$ can be uniquely decomposed into the sum of a point in $W^\perp$
-and a vector in $\vec W^\parallel$
-(in other words, $W^\perp$ is associated with a complement of $\vec W^\parallel$).
+and a vector in $\vec W^\parallel$.
 Then, we have a projection map $\pi:W\to W^\perp$
 so that for any $e\in W$ we have $e-\pi(e)\in\vec W^\parallel$.
 Then, obviously, $\mu_e\\!\left(M_e\right)$ must be in the form
@@ -1692,69 +1723,18 @@ $$\begin{equation}
 where $f:W^\perp\to\mathbb R^+$ is some function.
 The eplicit formula of $f$ is $f(e):=\mu_e\\!\left(M_e\right)$.
 
----
+Further, we may require that $W^\perp$ is associated with a topological complement of $\vec W^\parallel$
+(this is because $\vec W$ is locally convex and Hausdorff and $\vec W^\parallel$ is finite-dimensional).
+Then, by the mathematical tools that were introduced in the beginning,
+we can disintegrate the measure $\lambda$ w.r.t. $\lambda^\parallel$ to get a measure $\lambda^\perp$ on $W^\perp$
+(it is the same for any element in $\vec W^\parallel$ because $\lambda$ is
+$\vec W^\parallel$-translationally invariant).
+Then, $\lambda$ is the product measure of $\lambda^\perp$ and $\lambda^\parallel$.
+In other words, for any measurable function $f:E\to\mathbb R$, we have
 
-Now that we have defined the projection $\pi$, it is useful to consider $E^\perp:=\pi(E)$.
-Obviously, we have $E=E^\perp+\vec W^\parallel$.
-
-We can also define a topology on $E^\perp$ as $\tau\\!\left(E^\perp\right):=\pi(\tau(E))$,
-and we can verify that this indeed is a topology.
-The usefulness of $E^\perp$ is embodied by the following theorem:
-
-<!--
-*Theorem.*
-Suppose $(\mathcal E,\mathcal M)$ is a $\left(\vec W^\parallel,i\right)$-bath,
-then the topology $\tau(E)$ contains the product (in the sense of Minkowski sum)
-topology of $\tau\\!\left(E^\perp\right)$ and $\tau\\!\left(\vec W^\parallel\right)$.
-In other words,
-
-$$\forall A\in\tau\!\left(E^\perp\right),B\in\tau\!\left(\vec W^\parallel\right):A+B\in\tau(E).$$
-
-<details markdown="1">
-<summary>Proof</summary>
-
-Because $A\in\tau\\!\left(E^\perp\right)$,
-by the definition of $\tau\\!\left(E^\perp\right)$, there exists some $C\in\tau(E)$
-such that $A=\pi(C)$.
-Because any union of open sets is an open set, the set
-
-$$A+\vec W^\parallel=\bigcup_{s\in\vec W^\parallel}\left(C+s\right)\in\tau(E).$$
-
-Because $B\in\tau\\!\left(\vec W^\parallel\right)$,
-by the definition of subspace topology, there exists some $D\in\tau\\!\left(\vec W\right)$
-such that $D\cap\vec W^\parallel=B$.
-Because any union of open sets is an open set, the set
-
-$$B+\vec W^\perp=\bigcup_{s\in\vec W^\perp}\left(D+s\right)\in\tau\!\left(\vec W\right),$$
-
-where $\vec W^\perp$ is the vector space that $W^\perp$ is associated with.
-Therefore, because the $\tau(W)$ is inherited from $\tau\\!\left(\vec W\right)$
-and because $\tau(E)$ is a subspace topology of $\tau(W)$, we have for any $e\in W^\perp$,
-
-$$E^\perp+B=\left(e+B+\vec W^\perp\right)\cap E\in\tau(E).$$
-
-Therefore, because the intersect of two open sets is an open set,
-
-$$A+B=\left(A+\vec W^\parallel\right)\cap\left(E^\perp+B\right)\in\tau(E).$$
-
-Therefore, $\tau(E)$ contains the product topology of
-$\tau\\!\left(E^\perp\right)$ and $\tau\\!\left(\vec W^\parallel\right)$.
-$\square$
-
-</details>
--->
-Then, we can treat $E$ as the product topological space of $E^\perp$ and $\vec W^\parallel$.
-Here is a useful property of baths:
-
-*Theorem.*
-Suppose $(\mathcal E,\mathcal M)$ is a $\left(\vec W^\parallel,i\right)$-bath,
-then there exists a translationally invariant Borel measure $\lambda^\parallel$ on $\vec W^\parallel$
-and a
-
-<details markdown="1">
-<summary>Proof</summary>
-
-</details>
+$$\int_Ef\,\mathrm d\lambda=
+\int_{e\in E^\perp}\int_{s\in\vec W^\parallel}f\!\left(e+s\right)
+\mathrm d\lambda^\perp\!\left(e\right)\mathrm d\lambda^\parallel\!\left(s\right).$$
 
 # Thermal ensembles
 
@@ -1762,15 +1742,18 @@ Different from microcanonical ensembles,
 **thermal ensemble**s are ensembles where the system we study is in thermal contact with a bath.
 For example, canonical ensembles and grand canonical ensembles are thermal ensembles.
 There are also non-thermal ensembles,
-which will be introduced later after we introduce non-thermal contacts.
+which will be introduced later after we introduce non-thermal contacts (in part 2).
 
 The thermal ensemble of a thermal system
 is the ensemble of the composite system of the system in question (subsystem 1) and
 a $\left(\vec W^{\parallel(2)},-i\circ\rho^{-1}\right)$-bath (subsystem 2),
-where $i\in\vec W^{\parallel\prime(1)}$ is a parameter, with an extra requirement:
+where $i\in\vec W^{\parallel(1)\prime}$ is a parameter, with an extra requirement:
 
-$$\forall s_2\in\vec W^{\parallel(2)},A\in\sigma(E):
-\lambda^\perp\!\left(\pi\!\left(A+s_2\right)\right)=\lambda^\perp\!\left(\pi\!\left(A\right)\right).$$
+$$\begin{equation}
+\label{eq: W2 translationally invariant}
+\forall s_2\in\vec W^{\parallel(2)},A\in\sigma(E):
+\lambda^\perp\!\left(\pi\!\left(A+s_2\right)\right)=\lambda^\perp\!\left(\pi\!\left(A\right)\right).
+\end{equation}$$
 
 The physical meaning of $i$ is the intensive variables
 that the system is fixed at by contacting the bath.
@@ -1781,10 +1764,22 @@ It is called that because we will see that the only important thing
 that distinguishes different thermal ensembles is the choice of $\vec W^{\parallel(1)}$,
 and the choices of $\pi,\lambda^\perp,W^{\perp(1)},W^{\perp(2)}$ are not important.
 
+*Definition.*
+The **compositie system for the $\vec W^{\parallel(1)}$-ensemble**
+of the system $\left(\mathcal E^{(1)},\mathcal M^{(1)}\right)$ is the composite system
+of $\left(\mathcal E^{(1)},\mathcal M^{(1)}\right)$ and $\left(\mathcal E^{(2)},\mathcal M^{(2)}\right)$,
+where
+
+- $\left(\mathcal E^{(2)},\mathcal M^{(2)}\right)$
+is a $\left(\vec W^{\parallel(2)},-i\circ\rho^{-1}\right)$-bath,
+where $i\in\vec W^{\parallel(1)\prime}$ is a parameter called the **fixed intensive quantities**;
+- Equation \ref{eq: W2 translationally invariant} holds.
+
 ---
 
-From the properties of a bath, we can derive a useful property of $\lambda^{\parallel(1)}_e$:
+From the properties of a bath, we can derive a useful property of $\lambda^{\parallel(1)}_e$.
 
+<!--
 *Theorem.*
 In the composite system for the $\vec W^{\parallel(1)}$-ensemble,
 for $e,e'\in E^\perp$, if $e'-e\in\vec W^{\perp\parallel}$,
@@ -1959,6 +1954,14 @@ Also, note that the value of the function $f(e)$ here is not uniquely determined
 It can be multiplied by an arbitrary function that is only related to $\pi^\perp(e)$.
 Also, it can be modified arbitrarily on any set of points in $E^\perp$
 that has zero $\lambda^\perp$ measure.
+-->
+
+Because $\lambda^{\parallel(1)}_e$ is the pullback of $\lambda^{\parallel(2)}_e$ under $\rho_e$,
+but $\lambda^{\parallel(2)}_e$ is just the same $\lambda^{\parallel(2)}$ for all $e$
+(although $\lambda^{\parallel(2)}_e$ is defined on $W^{\parallel(2)}_e$ but
+$\lambda^{\parallel(2)}$ is defined on $\vec W^{\parallel(2)}$),
+we have $\lambda^{\parallel(1)}_e$ is the same as long as $W^{\parallel(1)}_e$ is the same.
+This means that we are able to be consistent with different compositing slices of our subsystem.
 
 ---
 
@@ -1983,14 +1986,270 @@ Substitute this into Equation \ref{eq: slice marginal state}, and we get that
 the equilibrium state $p^{\parallel\circ(1)}_e$ on the compositing slice
 $$\left(\mathcal E^{\parallel(1)}_e,\mathcal M^{\parallel(1)}_e\right)$$ is
 
-$$\begin{align*}
+$$\begin{align}
 p^{\parallel\circ(1)}_e\!\left(e_1,m_1\right)
-&\propto\mu^{(2)}_{\rho_e(e_1)}\!\left(M^{(2)}_{\rho_e(e_1)}\right)\\
+&\propto\mu^{(2)}_{\rho_e(e_1)}\!\left(M^{(2)}_{\rho_e(e_1)}\right)
+\nonumber\\
 &=f\!\left(\pi^{(2)}\!\left(\rho_e\!\left(e_1\right)\right)\right)
-\mathrm e^{\left(-i\circ\vec\rho^{-1}\right)\left(\rho_e(e_1)-\pi^{(2)}(\rho_e(e_1))\right)}\\
+\mathrm e^{\left(-i\circ\vec\rho^{-1}\right)\left(\rho_e(e_1)-\pi^{(2)}(\rho_e(e_1))\right)}
+\nonumber\\
 &\propto\mathrm e^{-i(e_1)}.
-\end{align*}$$
+\label{eq: p^(1) propto e^-i(e1)}
+\end{align}$$
 
 Here we utilized Equation \ref{eq: Omega of bath} and the fact that for any $e_1\in W^{\parallel(1)}_e$,
 $\pi^{(2)}\\!\left(\rho_e(e_1)\right)=\pi^{(2)}\\!\left(W^{\parallel(2)}_e\right)$
 is the same and is only related to $e$.
+Note that we have already illustrated that
+$\lambda^{\parallel(1)}_e$ is the same as long as $W^{\parallel(1)}_e$ is the same,
+so we can normalize $p^{\parallel\circ(1)}_e$ to get the same state
+as long as $W^{\parallel(1)}_e$ is the same,
+avoiding any inconsistency.
+
+Before we proceed to normalize $p^{\parallel\circ(1)}_e$,
+I would like to talk about what is just enough information to determine $\lambda^{\parallel(1)}_e$.
+First, we need to know how different $e$ can still make $W^{\parallel(1)}_e$ the same.
+We already know that $W^\perp$ is just $W^{\perp\perp}+\vec W^{\perp\parallel}$,
+and the component in $\vec W^{\perp\parallel}$ does not affect
+$W^{\parallel(1)}_e$ and $W^{\parallel(2)}_e$, so we only need to know no more than $\pi^\perp(e)$.
+Then, because $W^{\perp\perp}$ is isomorphic to $W^{\perp(1)}\times W^{\perp(2)}$
+but the corresponding change in $W^{\perp(2)}$ does not affect $W^{\parallel(1)}_e$,
+we only need to know the component
+$\pi^{(1)}\\!\left(e_1\right)=\pi^{(1)}\\!\left(\pi^{-1}(e)\right)$,
+where $e_1$ is just the $e_1$ in Equation \ref{eq: p^(1) propto e^-i(e1)}.
+The space $W^{\parallel(1)}_e$ is just $\pi^{(1)-1}\\!\left(e_1\right)$.
+
+Besides these information (components of $e$) is useless, there is other useless information.
+I have previously mentioned that
+the choices of $\lambda^\perp$, $\lambda^{\perp(2)}$ etc. are also irrelevant.
+We can see this by noting that $\lambda^{\parallel(1)}$ is always
+the non-trivial translationally invariant &sigma;-finite Borel measure on $W^{\parallel(1)}_e$,
+which is unique up to a constant postive factor (and exists because it is finite-dimensional).
+This is not related to the choices of $\lambda^\perp$, $\lambda^{\perp(2)}$ etc.
+By this, we reduced the only thing that we need to care about into three ones
+$\lambda^{(1)}$, $\lambda^{\perp(1)}$, and $\lambda^{\parallel(1)}$,
+and their relation is given by the following:
+
+$$\int_{E^{(1)}}f\,\mathrm d\lambda^{(1)}=
+\int_{e_1\in E^{\perp(1)}}\mathrm d\lambda^{\perp(1)}\!\left(e_1\right)
+\int_{s_1\in\vec E^{\parallel(1)}_{e_1}}
+f\!\left(e_1+s_1\right)\mathrm d\lambda^{\parallel(1)}\!\left(s_1\right),$$
+
+where $E^{\perp(1)}:=\pi^{(1)}\\!\left(E^{(1)}\right)$ and
+$\vec E^{\parallel(1)}_{e_1}:=\left(E^{(1)}-e_1\right)\cap\vec W^{\parallel(1)}$
+is the region of $s_1\in\vec W^{\parallel(1)}$ in which $e_1+s_1$ is in $E^{(1)}$.
+
+Next, what we need to do is to normalize Equation \ref{eq: p^(1) propto e^-i(e1)}.
+The denominator in the normalization factor, which we could call the **partition function**
+$Z:\bigsqcup_{e_1\in E^{\perp(1)}}I^{(1)}_{e_1}\to\mathbb R$, is
+
+$$\begin{align*}
+Z\!\left(e_1,i\right)&:=\int_{s_1\in\vec E^{\parallel(1)}_{e_1}}
+\int_{m_1\in M^{(1)}_{e_1+s_1}}
+\mathrm e^{-i\left(s_1\right)}\,\mathrm d\lambda^{\parallel(1)}\!\left(s_1\right)
+\mathrm d\mu^{(1)}_{e_1+s_1}\!\left(m_1\right)\\
+&=\int_{s_1\in\vec E^{\parallel(1)}_{e_1}}
+\Omega^{(1)}\!\left(e_1+s_1\right)
+\mathrm e^{-i\left(s_1\right)}\,\mathrm d\lambda^{\parallel(1)}\!\left(s_1\right),
+\end{align*}$$
+
+where $I\_{e\_1}\subseteq\vec W^{\parallel(1)\prime}$
+is the region of $i$ in which the integral converges.
+It is possible that $I\_{e\_1}=\varnothing$ for all $e\_1\in E^{\perp(1)}$,
+and in this case the thermal ensemble is not defined.
+
+---
+
+Because we have got rid of arguments about the bath and the composite system,
+we can now define the partition function without the "$(1)$" superscript:
+
+$$Z\!\left(e,i\right)=\int_{s\in\vec E^{\parallel}_e}
+\Omega\!\left(e+s\right)
+\mathrm e^{-i\left(s\right)}\,\mathrm d\lambda^{\parallel}\!\left(s\right),\quad
+e\in E^\perp,\quad i\in I_e\subseteq\vec W^{\parallel\prime}.$$
+
+By looking at the definition,
+we may see that the partition function is just the partial Laplace transform of $\Omega$.
+
+Note that the partition function is unique only up to a positive constant factor
+because we can choose another $\lambda^\parallel$ by multiplying a positive constant factor.
+
+The partition function has very good properties.
+
+*Theorem.*
+For any $e\in E^\perp$, $I_e$ is convex.
+
+<details markdown="1">
+<summary>Proof</summary>
+
+*Proof.*
+Suppose $i,i'\in I_e$.
+The functional $i'-i$ defines a hyperplane $H:=\operatorname{Ker}\\!\left(i'-i\right)$.
+The hyperplane separate $\vec W^\parallel$ into two half-spaces $H^+$ and $H^-$ defined as
+
+$$H^\pm:=\left\{s\in\vec W^\parallel\,\middle|\,i'\!\left(s\right)-i\!\left(s\right)\gtrless0\right\}.$$
+
+By definition, $Z\\!\left(e,i\right)$ and $Z\\!\left[e,i'\right]$ both converge.
+Let $t\in\left[0,1\right]$, and we have
+
+$$\begin{align*}
+Z\!\left(e,i+t\left(i'-i\right)\right)
+&=\left(\int_{s\in\vec E^{\parallel}_e\cap H^+}+\int_{s\in\vec E^{\parallel}_e\cap H^-}\right)
+\Omega\!\left(e+s\right)
+\mathrm e^{-i(s)-t(i'(s)-i(s))}\,\mathrm d\lambda^{\parallel}\!\left(s\right)\\
+&\le\int_{s\in\vec E^{\parallel}_e\cap H^+}\Omega\!\left(e+s\right)
+\mathrm e^{-i(s)}\,\mathrm d\lambda^{\parallel}\!\left(s\right)
++\int_{s\in\vec E^{\parallel}_e\cap H^-}\Omega\!\left(e+s\right)
+\mathrm e^{-i'(s)}\,\mathrm d\lambda^{\parallel}\!\left(s\right)\\
+&<\infty.
+\end{align*}$$
+
+Therefore, $Z\!\left[e,i+t\left(i'-i\right)\right]$ converges.
+$\square$
+
+</details>
+
+Being convex is good because it means that $I_e$ is not too shattered.
+It is connected, and its interior $\operatorname{Int}I_e$ and closure $\operatorname{Cl}I_e$
+look very much like $I_e$ itself.
+Also, every point in $I_e$ is a limit point of $I_e$.
+This makes it possible to talk about the limits and derivatives of $Z\\!\left(e,i\right)$ w.r.t. $i$.
+
+Since $I_e$ is a region in a finite-dimensional space $\vec W^{\parallel\prime}$,
+we may define the derivatives w.r.t. $i$ in terms of partial derivatives to components of $i$.
+To define the components of $i$, we need first a basis on $\vec W^\parallel$,
+which sets a coordinate system
+although actually we should finally derive coordinate-independent conclusions.
+
+Suppose we have a basis on $\vec W^\parallel$.
+Then, for any $s\in\vec W^\parallel$, we can write its components as $s_\bullet$,
+and for any $i\in\vec W^{\parallel\prime}$, we can write its components as $i_\bullet$.
+The subscript "$\bullet$" here can act as dummy indices (for multi-index notation).
+For example, we can write $i(s)=i_\bullet s_\bullet$.
+I do not use superscript and subscript to distinguish vectors and linear functionals
+because it is just for multi-index notation
+and because I am going to use them to label multi-index objects
+that are neither vectors nor linear functionals.
+
+*Theorem.*
+For any $e\in E^\perp$, $Z\\!\left(e,i\right)$ is $C^\infty$ w.r.t. $i$ on $\operatorname{Int}I_e$.
+
+<details markdown="1">
+<summary>Proof</summary>
+
+*Proof.*
+By the definition of the interior of a region,
+for any $i\in\operatorname{Int}I_e$ and any $p\in\vec W^{\parallel\prime}$,
+there exists $\delta_{i,p}>0$ such that $i+\delta_{i,p}p\in I_e$.
+
+By Leibniz's integral rule, the partial derivatives of $Z\\!\left(e,i\right)$ w.r.t. $i$
+(if existing) are given by
+
+$$\begin{align*}
+\frac{\partial^{\Sigma\alpha_\bullet}Z\!\left(e,i\right)}{\partial^{\alpha_\bullet}i_\bullet}
+&=\int_{s\in\vec E^{\parallel}_e}
+\Omega\!\left(e+s\right)\left(-s_\bullet\right)^{\alpha_\bullet}
+\mathrm e^{-i\left(s\right)}\,\mathrm d\lambda^{\parallel}\!\left(s\right)\\
+&\le\int_{s\in\vec E^{\parallel}_e}
+\Omega\!\left(e+s\right)\left|s_\bullet\right|^{\alpha_\bullet}
+\mathrm e^{-i\left(s\right)}\,\mathrm d\lambda^{\parallel}\!\left(s\right)
+\end{align*}$$
+
+where $\alpha_\bullet$ is some natural numbers indexed by $\bullet$.
+Now we just need to prove that this integral converges for any $i\in\operatorname{Int}I_e$.
+
+Because of the inequality
+
+$$a\ln x-bx\le a\left(\ln\frac ab-1\right),\quad a,b,x>0,$$
+
+where the equality holds when $x=a/b$, we have
+
+$$\left|s_\bullet\right|^{\alpha_\bullet}
+\le\left(\frac{\alpha_\bullet}{\mathrm eb}\right)^{\alpha_\bullet}\mathrm e^{b\Sigma\left|s_\bullet\right|},
+\quad b>0$$
+
+There are $2^{\dim\vec W^\parallel}$ orthants in $\vec W^\parallel$.
+We can label each of them by a string $\sigma_\bullet$ of $\pm1$ of length $\dim\vec W^\parallel$.
+Then, each orthant can be denoted as $O_\sigma$.
+Then, we have
+
+$$\forall s\in O_\sigma:\sigma_\bullet s_\bullet=\Sigma\left|s_\bullet\right|.$$
+
+Therefore,
+
+$$\forall s\in O_\sigma:\left|s_\bullet\right|^{\alpha_\bullet}
+\le\left(\frac{\alpha_\bullet}{\mathrm eb}\right)^{\alpha_\bullet}\mathrm e^{b\sigma_\bullet s_\bullet},
+\quad b>0.$$
+
+Let $b:=\delta_{i,-\sigma}$, where $\sigma:s\mapsto\sigma_\bullet s_\bullet$ is a linear functional.
+Then,
+
+$$\forall s\in O_\sigma:\left|s_\bullet\right|^{\alpha_\bullet}\mathrm e^{-i(s)}
+\le\left(\frac{\alpha_\bullet}{\mathrm e\delta_{i,-\sigma}}\right)^{\alpha_\bullet}
+\mathrm e^{-\left(i-\delta_{i,-\sigma}\sigma\right)(s)}.$$
+
+Because $i-\delta_{i,-\sigma}\sigma\in I_e$, we have
+
+$$\frac{\partial^{\Sigma\alpha_\bullet}Z\!\left(e,i\right)}{\partial^{\alpha_\bullet}i_\bullet}
+\le\sum_\sigma\left(\frac{\alpha_\bullet}{\mathrm e\delta_{i,-\sigma}}\right)^{\alpha_\bullet}
+\int_{s\in\vec E^{\parallel}_e\cap O_\sigma}\Omega\!\left(e+s\right)
+\mathrm e^{-\left(i-\delta_{i,-\sigma}\sigma\right)(s)}\,
+\mathrm d\lambda^{\parallel}\!\left(s\right)<\infty.$$
+
+Therefore, the partial derivatives exist.
+$\square$
+
+</details>
+
+---
+
+The next step is to find the macroscopic quantities.
+The equilibrium states are
+
+$$p_e^{\parallel\circ}\!\left(e,m\right)
+=\frac{\mathrm e^{-i\left(e\right)}}{\mathrm Z\!\left(\pi(e),i\right)}.$$
+
+where $\mathrm Z\!\left(e\right)$ is the partition function.
+Here the role of $e$ becomes the label parameter in Equation \ref{eq: fundamental equation before}.
+The measured value of extensive quantities under equilibrium is then
+
+$$\begin{align*}
+\varepsilon^\circ
+&=\frac1{Z\!\left(e,i\right)}\int_{s\in\vec E^{\parallel}_e}
+\left(e+s\right)\mathrm e^{-i\left(s\right)}
+\Omega\!\left(e+s\right)\mathrm d\lambda^{\parallel}\!\left(s\right)\\
+&=e+\frac1{Z\!\left(e,i\right)}\int_{s\in\vec E^{\parallel}_e}
+s\mathrm e^{-i\left(s\right)}
+\Omega\!\left(e+s\right)\mathrm d\lambda^{\parallel}\!\left(s\right)\\
+&=e+\frac{\partial\ln Z\!\left(e,i\right)}{\partial i}.
+\end{align*}$$
+
+The entropy under equilibrium is then
+
+$$\begin{align*}
+S^\circ
+&=\int_{s\in\vec E^{\parallel}_e}
+\frac{\mathrm e^{-i(s)}}{Z\!\left(e,i\right)}\ln\frac{\mathrm e^{-i(s)}}{Z\!\left(e,i\right)}
+\Omega\!\left(e+s\right)\mathrm d\lambda^{\parallel}\!\left(s\right)\\
+&=-\frac1{Z\!\left(e,i\right)}\int_{s\in\vec E^{\parallel}_e}
+i\!\left(s\right)\mathrm e^{-i\left(s\right)}
+\Omega\!\left(e+s\right)\mathrm d\lambda^{\parallel}\!\left(s\right)
+-\ln Z\!\left(e,i\right)\\
+&=-i\!\left(\frac{\partial\ln Z\!\left(e,i\right)}{\partial i}\right)-\ln Z\!\left(e,i\right).
+\end{align*}$$
+
+By this two equations, we can eliminate the parameter $e$ and get the fundamental equation
+in the form of Equation \ref{eq: fundamental equation}:
+
+$$S^\circ=i\!\left(\varepsilon^\circ\right)-\ln Z\!\left(\pi\!\left(\varepsilon^\circ\right),i\right).$$
+
+We can see that $S^\circ$ decouples into two terms,
+one of which is only related to the $\vec W^\parallel$ component of $\varepsilon^\circ$,
+and the other of which is only related to the $W^\perp$ component of $\varepsilon^\circ$.
+What is good is that we have a good notion of derivative w.r.t. the first term,
+and it is $i$.
+Therefore, the intensive quantities corresponding to change of extensive quantities
+in the subspace $\vec W^\parallel$ is well defined and is constant $i$,
+which is just what we have been calling the fixed intensive quantities.
+The other components of the intensive quantities are not guaranteed to be well-defined
+because $Z\\!\left(\cdot,i\right)$ is not guaranteed to have good enough properties.

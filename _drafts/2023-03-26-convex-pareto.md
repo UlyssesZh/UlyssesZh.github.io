@@ -1,6 +1,6 @@
 ---
 title: 'The Pareto set of spatial preference relations is the convex hull of ideal points'
-date: 2023-03-25 16:03:46 -0700
+date: 2023-03-26 16:03:46 -0700
 categories:
 - economics
 tags:
@@ -41,7 +41,25 @@ and $\overline{ab}:=\left\\{a+t\left(b-a\right)\middle|\,t\in\left[0,1\right]\ri
 is the line segment connecting $a$ and $b$.
 
 *Proof.*
-The forward direction is straightforward given the strict convexity of $P$.
+To prove the forward direction, first assume $x\in\overline{ab}$.
+Then, we have
+
+$$\|x-a\|+\|x-b\|=\|a-b\|.$$
+
+Suppose there is a point $y$ in the intersection of the two balls.
+This means that
+
+$$\|y-a\|<\|x-a\|,\quad\|y-b\|<\|x-b\|.$$
+
+Add the two inequalities together, we have
+
+$$\|x-a\|+\|x-b\|>\|y-a\|+\|y-b\|.$$
+
+On the other hand, we have the triangle inequality
+
+$$\|y-a\|+\|y-b\|\ge\|a-b\|=\|x-a\|+\|x-b\|.$$
+
+Therefore, we proved the forward direction by contradiction.
 
 To prove the backward direction, first assume that $x\notin\overline{ab}$.
 Then, by the strict convexity, we have
