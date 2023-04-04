@@ -60,6 +60,7 @@ instagram_username: ulysseszhan
 pinterest_username: ulysseszhan
 flickr_username: UlyssesZhan
 covers_path: "/assets/images/covers/"
+figures_path: "/assets/images/figures/"
 seo_paginator_message: "Page %<current>s/%<total>s - "
 jekyll-archives:
   enabled: all

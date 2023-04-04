@@ -6,7 +6,7 @@ categories:
 tags:
 - functional analysis
 - preference relation
-- Pareto efficiency
+- pareto efficiency
 layout: post
 excerpt: 'The spatial preference relation is the preference relation over a metric space
 where points nearer to the ideal point are preferred.
@@ -124,4 +124,4 @@ and the intersection of the two balls is empty.
 
 \end{document}
 -->
-![Cases where the intersection is empty or non-empty](/assets/images/intersecting_balls.svg){:.dark-adaptive style="width: 100%;"}
+![Cases where the intersection is empty or non-empty]({{page.figure}}intersecting_balls.svg){:.dark-adaptive style="width: 100%;"}

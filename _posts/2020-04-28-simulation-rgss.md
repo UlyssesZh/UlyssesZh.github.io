@@ -127,12 +127,12 @@ For example, let's simulate a double pendulum.
 solve_hamiltonian 2,Vector[PI/2,0.0,0.0,0.0],Float::INFINITY,1e-3,
     ->t,(q1,q2,p1,p2){p1**2+p2**2/2+cos(q1-q2)*p1*p2-cos(q1)-cos(q2)}
 ```
-![double_pendulum](/assets/images/double_pendulum.gif)
+![double_pendulum]({{page.figure}}double_pendulum.gif)
 
 The codes are not complete in this post.
 See the [attached file](/assets/codes/RungeKutta.rar) for details.
 You can open the project using
-[RPG Maker VX Ace](https://store.steampowered.com/app/220700/RPG_Maker_VX_Ace/){:target="_blank"}.
+[RPG Maker VX Ace](https://store.steampowered.com/app/220700/RPG_Maker_VX_Ace){:target="_blank"}.
 The `Game.exe` file is not the official `Game.exe` executable
 but the third-party improved version of it called
 [RGD](http://cirno.blog/archives/290){:target="_blank"}

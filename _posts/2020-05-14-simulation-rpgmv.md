@@ -21,7 +21,7 @@ This post is the continuation of
 If you visit [the page](/rpg/mechsimul/) I have just created,
 you may find the simulation of a mechanical system.
 
-![Result of simulation](/assets/images/rpgmv_simul.png)
+![Result of simulation]({{page.figure}}rpgmv_simul.png)
 
 It is currently
 
@@ -32,7 +32,7 @@ $$
 
 depicting two pendulum coupled with a spring,
 
-![Spring-coupled pendulums](/assets/images/spring_coupled_pendulum.png){:.dark-adaptive}
+![Spring-coupled pendulums]({{page.figure}}spring_coupled_pendulum.png){:.dark-adaptive}
 
 which is a classical example of non-linearly coupled system.
 
@@ -41,7 +41,7 @@ discrete Fourier transformation, whose result can be found by
 clicking the buttons in the up-left corner
 (after the simulator has detected a period).
 
-![Result of DFT](/assets/images/rpgmv_simul_fft.png)
+![Result of DFT]({{page.figure}}rpgmv_simul_fft.png)
 
 Hitting the space bar can make the simulation pause.
 

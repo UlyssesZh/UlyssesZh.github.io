@@ -157,6 +157,12 @@ code {
 	color: $text-color
 }
 
+blockquote {
+	font-style: initial;
+	font-size: initial;
+	letter-spacing: initial;
+}
+
 @include darkMode {
 	body {
 		color: $text-color-dark;

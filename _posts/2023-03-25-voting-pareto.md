@@ -6,7 +6,7 @@ categories:
 tags:
 - voting system
 - preference relation
-- Pareto efficiency
+- pareto efficiency
 layout: post
 excerpt: 'There is a very neat relation between the core
 (the set of proposals that defeats every proposal)
@@ -160,4 +160,4 @@ Then we can find the core easily by the conclusion above:
 
 \end{document}
 -->
-![The core of the example](/assets/images/five_voting_core.svg){:.dark-adaptive .center}
+![The core of the example]({{page.figure}}five_voting_core.svg){:.dark-adaptive .center}

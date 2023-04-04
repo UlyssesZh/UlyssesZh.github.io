@@ -1,4 +1,5 @@
 ---
+lang: zh-CN
 title: '手纸本'
 date: 2023-02-03 15:57:53 -0800
 categories:

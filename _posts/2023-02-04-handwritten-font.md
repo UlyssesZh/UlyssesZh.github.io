@@ -123,7 +123,7 @@ all uppercase letters (both English and Greek) have the same position of bottom 
 
 For other details, look at this image:
 
-![Handwritten letters](/assets/images/letters.svg){:.dark-adaptive}
+![Handwritten letters]({{page.figure}}letters.svg){:.dark-adaptive}
 
 # Roman and italic
 

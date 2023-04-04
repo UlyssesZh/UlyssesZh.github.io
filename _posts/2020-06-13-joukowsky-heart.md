@@ -13,7 +13,7 @@ is a curve resembling a heart.'
 Joukowsky transformation of a circle centered at $\left(1,1\right)$ of radius $1$
 is a curve resembling a heart.
 
-![Joukowsky heart](/assets/images/joukowsky_heart.png)
+![Joukowsky heart]({{page.figure}}joukowsky_heart.png)
 
 To be specific, it is
 

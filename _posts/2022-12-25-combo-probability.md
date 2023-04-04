@@ -414,7 +414,7 @@ and then substitute $X:=1-Y$.
 
 Here are some plots of the probability distribution of max combo $k$ when $n=50$:
 
-![n=50](/assets/images/combo_probability_finite_distribution_50.png){:.dark-adaptive}
+![n=50]({{page.figure}}finite_distribution_50.png){:.dark-adaptive}
 
 The plots are intuitive as they show that one has higher probability to get a higher max combo
 when they have a higher success rate.
@@ -422,7 +422,7 @@ when they have a higher success rate.
 There is a suspicious jump in $P_{n,k}(Y)$ near $k=n/2$ when $Y$ is close to $1$.
 We can look at it closer:
 
-![n=50](/assets/images/combo_probability_finite_distribution_50_2.png){:.dark-adaptive}
+![n=50]({{page.figure}}finite_distribution_50_2.png){:.dark-adaptive}
 
 In the zoomed-in plot, we can also see a jump in first derivative (w.r.t. $k$) of $P_{n,k}(Y)$ near $k=n/3$.
 Actually, the jumps can be modeled in later sections when we talk about the case when $n\to\infty$.
@@ -1239,11 +1239,11 @@ y^{s\kappa}\left(\ln y^{s\kappa-1}\right)^{s-2}
 
 Here are plots of the function $f(y,\kappa)$ whose expression is given by Equation \ref{eq: f}:
 
-![infinite](/assets/images/combo_probability_infinite_distribution.png){:.dark-adaptive}
+![infinite]({{page.figure}}infinite_distribution.png){:.dark-adaptive}
 
 We can compare it with a plot of the distributions when $n$ is finite (say, $100$), and we may see that they are very close:
 
-![infinite 2](/assets/images/combo_probability_infinite_distribution_2.png){:.dark-adaptive}
+![infinite 2]({{page.figure}}infinite_distribution_2.png){:.dark-adaptive}
 
 We have not investigated the asymptotic behavior of the error
 if we approximate the distribution with finite $n$ by the distribution with infinite $n$,
@@ -1411,7 +1411,7 @@ so slowly that I almost did not believe that when I did the numerical calculatio
 
 The plot:
 
-![mean](/assets/images/combo_probability_mean.png){:.dark-adaptive}
+![mean]({{page.figure}}mean.png){:.dark-adaptive}
 
 We should also be able to find other statistical quantities like the median, the mode, the variance, etc.,
 but they seem do not have closed forms.
