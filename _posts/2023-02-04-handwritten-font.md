@@ -37,7 +37,7 @@ This article is written also for giving some warn and advice to those who
 **read letters arbitrarily without actually recognizing them
 and thus even mislead others (unintentionally)**.
 
-# List of different styles
+## List of different styles
 
 Here is a full list of different styles **except for their bold counterparts**:
 
@@ -54,7 +54,7 @@ Here is a full list of different styles **except for their bold counterparts**:
 
 We are **not** going to distinguish all the letters and all the styles.
 
-# Some principles
+## Some principles
 
 I will try to find a handwriting style that satisfies the following conditions
 (in descending order of importance):
@@ -125,9 +125,9 @@ For other details, look at this image:
 
 ![Handwritten letters]({{page.figure}}letters.svg){:.dark-adaptive}
 
-# Roman and italic
+## Roman and italic
 
-## *A*, *a*, *alpha*
+### *A*, *a*, *alpha*
 
 In italic style, the slanted line in the right side of *A* is nearly vertical.
 Actually, in the italic style of uppercase letters,
@@ -137,7 +137,7 @@ To write conveniently, use the single-story glyph of *a* even for its roman styl
 
 The difference of the glyph of *alpha* and that of *a* should be noticeable.
 
-## *C*, *c*, *sigma*
+### *C*, *c*, *sigma*
 
 *C* and *c* are tricky because it is very hard to distinguish roman and italic styles for them,
 but we have to because they are very commonly used.
@@ -166,7 +166,7 @@ but they need to be distinguished from each other.
 I want to talk about *sigma* here because in Greek, its final form $\varsigma$ looks very similar to *c*.
 Just do not use that glyph for *sigma*.
 
-## *e*
+### *e*
 
 It is important to distinguish the roman and italic styles of *e*
 because we may use $\mathrm e$ for the base of natural logarithm
@@ -176,20 +176,20 @@ At the turning point of the stroke at the center-right of the glyph,
 the roman style of *e* is sharp while the italic style is round.
 This detail is enough to distinguish them.
 
-## *f*
+### *f*
 
 The roman style of *f* is not a descender
 while the italic style is a descender.
 Also, the italic style of *f* has a left-tail in the bottom.
 
-## *g*
+### *g*
 
 To make writing convenient, the roman style of *g* uses the single-story glyph.
 It would make it hard to distinguish it from the italic style,
 but we may write descender of the italic style of *g* in a exaggerated way
 to distinguish them.
 
-## *1*, *I*, *l*
+### *1*, *I*, *l*
 
 Here we are at the only extreme case where multiple graphemes share the same glyph:
 *1*, roman style of *I*, and roman style of *l*.
@@ -203,12 +203,12 @@ and look like small turnings.
 
 A small sharpe turning may be added at the top of *1* to distinguish it from *l*.
 
-## *i*, *iota*
+### *i*, *iota*
 
 The italic style of *i* has two tails (one left-tail in the middle and one right-tail in the bottom).
 It looks exactly the same as *iota* except for the dot at the top.
 
-## *K*, *k*, *kappa*
+### *K*, *k*, *kappa*
 
 In both the roman and italic styles of *K*,
 the endpoint of the stroke branch of *K* at the top-right is approximately at the same level
@@ -228,7 +228,7 @@ to distinguish from *K* and *k*.
 The endpoint of the stroke branch of *kappa* at the top-right is approximately at the same level
 as the top endpoint of the vertical line at the left.
 
-## *M*, *mu*
+### *M*, *mu*
 
 In the italic style of *M*, the bottom is wider than the top,
 while in the roman style, the top is as wide as the bottom.
@@ -237,7 +237,7 @@ Write *M* in four strokes to distinguish it from *mu*.
 As for *mu*, note that the bottom-left corner is a descender,
 while other parts are not.
 
-## *0*, *O*, *o*
+### *0*, *O*, *o*
 
 These are the most cursed characters, even more than *1*, *I*, and *l*.
 They are so cursed that I refuse to distinguish the roman style of *O* and *o* from the italic style,
@@ -247,7 +247,7 @@ The digit *0* is narrower than *O* and *o*.
 
 Just avoid using *omicron* because it is indistinguishable from *o*.
 
-## *p*, *rho*
+### *p*, *rho*
 
 Write the italic style of *p* in two strokes,
 and it has two left-tails, one at the top-left and one at the bottom-left.
@@ -255,14 +255,14 @@ and it has two left-tails, one at the top-left and one at the bottom-left.
 Write *rho* in one stroke.
 Starting the stroke from below the baseline (at the bottom of the descender) is recommended.
 
-## *Q*, *q*
+### *Q*, *q*
 
 In the italic style of *Q*, the last stroke looks like a tilde.
 It is straight for the roman style.
 
 The italic style of *q* has a sharp right-tail in the bottom.
 
-## *r*, *u*, *v*, *gamma*, *nu*, *Upsilon*, *upsilon*
+### *r*, *u*, *v*, *gamma*, *nu*, *Upsilon*, *upsilon*
 
 OK, this is important.
 
@@ -295,14 +295,14 @@ The letter *upsilon* is not commonly used.
 If it is used, its bottom is round instead of being sharp,
 to distinguish it from the italic style of *v*.
 
-## *S*, *s*
+### *S*, *s*
 
 They are cursed, but not as cursed as *O* and *o*.
 
 In the italic style of *S* and *s*, the bottom-left is to the left of the top-left.
 In the roman style, the bottom-left and the top-left are aligned instead.
 
-## *t*, *tau*
+### *t*, *tau*
 
 The roman style of *t* is a straight cross (no curvy strokes)
 to distinguish it from the italic style.
@@ -315,14 +315,14 @@ there should not be a ligature.
 The bottom of *tau* may be either turing to the right or stopping just straightly.
 I prefer it turning to the right.
 
-## *U*
+### *U*
 
 To distinguish from cup (the symbol for set union),
 add a vertical line at the right of the glyph
 (for both the roman and italic styles),
 but the italic style of it does not have a tail.
 
-## *W*, *w*, *omega*
+### *W*, *w*, *omega*
 
 Just like how many people mistakenly recognize *nu* as *v*,
 many people also mistakenly recognize *omega* as *w*.
@@ -336,7 +336,7 @@ For both roman and italic styles, the top of *W* is wider than the bottom.
 There is a right-tail at the top-left of *omega*.
 The bottom of *omega* is round instead of being sharp.
 
-## *X*, *x*, *chi*
+### *X*, *x*, *chi*
 
 There are not as many people who mistakenly recognize *chi* as *x* as there are for *nu* and *omega*,
 but there are still many.
@@ -360,7 +360,7 @@ The top-left of *chi* has a left-tail, and the bottom-right has a right-tail.
 The bottom-left of *chi* has a right-tail (**!**), which is the main feature to distinguish it from *x*.
 Also, note that *chi* is a descender, and the intersection of the two strokes is at the baseline.
 
-## *Y*, *y*
+### *Y*, *y*
 
 Write *Y* in three strokes.
 
@@ -369,7 +369,7 @@ both of which are straight.
 The italic style of *y* is the the same as the italic style of *u*
 but the tail at the bottom-right is changed into a descender like that of *g*.
 
-## *2*, *Z*, *z*
+### *2*, *Z*, *z*
 
 Some people add a short stroke in the middle of *z* (I used to do that)
 or add a descender at the bottom like that of *g*
@@ -382,7 +382,7 @@ but the top is a little bit offset to the left of the bottom in the italic style
 
 The bottom of the italic style of *z* is written like a tilde.
 
-## *epsilon*
+### *epsilon*
 
 In Greek, there are two glyphs for *epsilon*,
 one of which is called the lunate epsilon or the uncial epsilon $\epsilon$,
@@ -392,20 +392,20 @@ and the other $\varepsilon$ does not have a name but I like to call it varepsilo
 Use varepsilon. Never use the lunate epsilon
 because it confuses with the set membership symbol.
 
-## *Theta*, *theta*
+### *Theta*, *theta*
 
 Write *Theta* as wide as *O*, and do not make the stroke in the middle touch either side.
 Tilt *theta* a bit.
 Because we do not use italic uppercase Greek letters and roman lowercase Greek letters,
 *Theta* and *theta* should be distinguishable enough.
 
-## *Lambda*, *Omega*
+### *Lambda*, *Omega*
 
 I have never imagined someone would write *Omega* that looks very similar to *Lambda*,
 but there are people like that.
 They are very different! OK?
 
-## *Phi*, *phi*
+### *Phi*, *phi*
 
 In Greek, there are two glyphs for *phi*,
 the loopy / open one $\varphi$ or the stroked / closed one $\phi$.
@@ -415,7 +415,7 @@ Some sources say that we should use the stroked one for the golden ratio.
 Just forget about that.
 I never use the letter to represent the golden ratio.
 
-## *Psi*, *psi*
+### *Psi*, *psi*
 
 The tops of the two strokes of *Psi* are at the same level.
 
@@ -423,7 +423,7 @@ The top of the middle stroke of *psi* is a little bit higher than the top of the
 There is a left-tail at the top-left of *psi*.
 There is a left-tail at the bottom (decender) of *psi* (**!**).
 
-# Blackboard
+## Blackboard
 
 We only need to write blackboard style for uppercase English letters.
 Generally, we just add one or two strokes to the roman style of the letters
@@ -438,32 +438,32 @@ next to the leftmost part of the curve.
 
 There are some special letters as well as some exceptions to the general rules listed below.
 
-## *A*
+### *A*
 
 Add a stroke next to the leftmost stroke.
 
-## *J*
+### *J*
 
 It does not contain a vertical stroke, but we regard the right part of the stroke as one vertical troke.
 
-## *S*
+### *S*
 
 Add two short vertical strokes to the inner of the leftmost part curve and the rightmost part curve.
 
-## *W*
+### *W*
 
 It would be strange if we only add one additional stroke.
 I want to add two to make it looks like double *V* (actually, it indeed should be).
 
-## *Y*
+### *Y*
 
 Add a stroke next to the to-left stroke and a stroke next to the bottom stroke.
 
-## *Z*
+### *Z*
 
 Add a stroke next to the middle part of the stroke.
 
-# Calligraphic and script
+## Calligraphic and script
 
 Different from roman style,
 some uppercase letters in calligraphic and script styles are descenders.
@@ -474,7 +474,7 @@ but I do not.
 As for details, I am tired of explaining for each letter.
 Just look at the image before.
 
-# Fraktur
+## Fraktur
 
 This is the most tricky style.
 You may think it is hard to write in Fraktur style when you look at how $\LaTeX$'s default typeface renders it.

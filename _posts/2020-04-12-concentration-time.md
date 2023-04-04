@@ -17,7 +17,7 @@ a natural question to ask is how the concentration of each gas changes w.r.t. ti
 In this article, I will answer this question by proposing a general approach to solve it.'
 ---
 
-# Introduction
+## Introduction
 
 A reversible elementary reaction takes place inside a closed,
 highly thermally conductive container of constant volume,
@@ -34,7 +34,7 @@ Use square brackets to denote concentrations.
 Our goal is to find $\left\[X_k\right]$ and $\left\[Y_k\right]$
 as functions with respect to time $t$.
 
-# The approach
+## The approach
 
 It is easy to write out the rate equations
 
@@ -154,7 +154,7 @@ $$
 
 as the answer.
 
-# Properties of $F$
+## Properties of $F$
 
 As we all know, here exists a state where the system is in
 chemical equilibrium.
@@ -215,7 +215,7 @@ However, only mathematicians believe in such coincidences.
 However, if $n=2$, it can be proved that the equation can be reduced
 into a rational one.
 
-# Example
+## Example
 
 The closed container that is highly thermally conductive is
 in a certain temperature environment,

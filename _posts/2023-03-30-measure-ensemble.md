@@ -26,7 +26,7 @@ the canonical ensemble, and the grand canonical ensemble,
 but there are actually other possible ensembles that are potentially useful.
 Therefore, I feel it necessary to try to have a mathematical formulation.
 
-# Mathematical tools and notations
+## Mathematical tools and notations
 
 Suppose $(\Omega,\sigma(\Omega),P)$ is a probability space.
 Suppose $W$ is an affine space.
@@ -194,7 +194,7 @@ $$\alpha_\bullet^{\beta_\bullet}:=\prod_\bullet\alpha_\bullet^{\beta_\bullet}.$$
 
 $$\alpha_\bullet!:=\prod_\bullet\alpha_\bullet!.$$
 
-# Extensive quantities and macrostates
+## Extensive quantities and macrostates
 
 First, I need to point out that the most central state function of a thermal system
 is not its energy, but its entropy.
@@ -368,7 +368,7 @@ Physically we may think of this as the extensive quantities of the system of Ein
 with $\hbar\omega=1$.
 The two dimensions of $W$ are energy and number of particles.
 
-# Thermal systems and the number of microstates
+## Thermal systems and the number of microstates
 
 Remember I said above that, in statistical mechanics,
 $U,V,N$ restrict what microstates are possible for a thermal system.
@@ -499,7 +499,7 @@ $$\mu(A):=\iint\limits_{(e,m)\in A}\mathrm d\mu_e(m)\,\mathrm d\lambda(e).$$
 The uniqueness of $\mu$ is guaranteed by the &sigma;-finiteness of $\lambda$ and $\mu_e$.
 The expression $\mu(A)$ is called the **number of microstates** in $A$.
 
-# States and the entropy
+## States and the entropy
 
 Here is a central idea in statistical ensembles:
 a **state** is a probability distribution on the microstates of a thermal system.
@@ -635,7 +635,7 @@ be a covector field on $E^\circ$ defined as the differential of the scalar field
 However, as I have said before, I did not postulate there to be any differential structure on $E^\circ$,
 so the intensive quantities should not be generally defined in this way.
 
-# Slicing
+## Slicing
 
 A good notion about thermal systems is that we can get new thermal systems from existing ones
 (although they are physically essentially the same system,
@@ -709,7 +709,7 @@ and in this case we may freely change our units because it only affects the entr
 In the example of a system of ideal gas,
 we may slice the space of extensive quantities to the slice $V=1$ to fix the volume.
 
-# Isolations and the microcanonical ensemble
+## Isolations and the microcanonical ensemble
 
 Here is a special type of slicing.
 Because a single point is an (zero-dimensional) affine subspace, it may form a slicing.
@@ -863,7 +863,7 @@ $$S^\circ=\ln\!\left(\frac1{h^{3N}N!}V^NS_{3N-1}\!\left(\sqrt{2mU}\right)\right)
 where $S_n(r)$ is the surface area of an $n$-sphere with radius $r$, which is proportional to $r^n$.
 Taking its derivative w.r.t. $U,V,N$ and taking the thermodynamic limit will recover familiar results.
 
-# Contracting
+## Contracting
 
 I have previously mentioned that the other way of deriving a new system out of an existing one
 is called contracting.
@@ -1054,7 +1054,7 @@ so we can find the equilibrium state of an isolation of a contraction.
 Then, it is the equilibrium state of a contraction of a slice.
 Then, by the contractional pullback, it is the equilibrium state of a slice.
 
-# Thermal contact
+## Thermal contact
 
 Composite systems are systems that are composed of other systems.
 This is a useful concept because it allows us to treat multiple systems as a whole.
@@ -1661,7 +1661,7 @@ we may have
 
 $$\pi^\perp\!\left(\frac U2,\frac U2,N_1,N_2\right)=\left(0,0,N_1,N_2\right).$$
 
-# Baths
+## Baths
 
 **Bath**s are a special class of thermal systems.
 They are systems that have some of their intensive quantities well-defined and constant.
@@ -1736,7 +1736,7 @@ $$\int_Ef\,\mathrm d\lambda=
 \int_{e\in E^\perp}\int_{s\in\vec W^\parallel}f\!\left(e+s\right)
 \mathrm d\lambda^\perp\!\left(e\right)\mathrm d\lambda^\parallel\!\left(s\right).$$
 
-# Thermal ensembles
+## Thermal ensembles
 
 Different from microcanonical ensembles,
 **thermal ensemble**s are ensembles where the system we study is in thermal contact with a bath.

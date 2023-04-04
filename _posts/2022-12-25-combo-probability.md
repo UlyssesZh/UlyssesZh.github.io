@@ -14,7 +14,7 @@ what is the probability distribution of your max combo in the rhythm game chart?
 I considered the problem seriously!'
 ---
 
-# Introduction
+## Introduction
 
 As a rhythm game player, I often wonder what my max combo will be in my next play.
 This is a rather unpredictable outcome, and what I can do is to try to conclude a probability distribution of my max combo.
@@ -40,7 +40,7 @@ f(y,\kappa):=\lim_{n\to\infty}\left(n+1\right)P_{n,\kappa n}\!\left(y^{\frac1n}\
 
 What is the expression of $f(y,\kappa)$?
 
-# Notation
+## Notation
 
 Notation for integer range: $a\ldots b$ denotes the integer range defined by the ends $a$ (inclusive) and $b$ (exclusive),
 or in other words $\left\\{a,a+1,\ldots,b-1\right\\}$.
@@ -50,12 +50,12 @@ The operator $\ldots$ has a lower precedence than $+$ and $-$ but a higher prece
 The notation $a\,..b$ denotes the inclusive integer range $\left\\{a,a+1,\ldots,b\right\\}$.
 It is defined to be empty if $a>b$.
 
-# The case for finite $n$
+## The case for finite $n$
 
 A natural approach to find $P_{n,k}$ is to try to find a recurrence relation of $P_{n,k}$ for different $n$ and $k$,
 and then use a dynamic programming (DP) algorithm to compute $P_{n,k}$ for any given $n$ and $k$.
 
-## The first DP approach
+### The first DP approach
 
 For a rhythm game player, the most straightforward way of finding $k$ for a given bit string
 is to track the *current combo*, and update the max combo when the current combo is greater than the previous max combo.
@@ -149,8 +149,8 @@ Here is an implementation in Ruby.
 In the code, `dp[k][r]` means $P_{n,k,r}$ in the $n$th iteration.
 
 ```ruby
-# Returns an array of size m+1,
-# with the k-th element being the probability P_{m,k}.
+## Returns an array of size m+1,
+## with the k-th element being the probability P_{m,k}.
 def combo m
   (1..m).each_with_object [[1]] do |n, dp|
     dp[n] = [0]*n + [Y * dp[n-1][n-1]] # n = k > 0
@@ -167,7 +167,7 @@ end
 
 Because of the three nested loops, the time complexity of the DP algorithm is $O\\!\left(n^3\right)$.
 
-## The second DP approach
+### The second DP approach
 
 Here is an alternative way to use DP to solve the problem.
 Instead of building a DP table with the $k,r$ indices, we can build a DP table with the $n,k$ indices.
@@ -309,8 +309,8 @@ Y^n,&n=k\ge0,\\
 Then, we can write the program to calculate $P_{n,k}$:
 
 ```ruby
-# Returns an array of size m+1,
-# with the k-th element being the probability P_{m,k}.
+## Returns an array of size m+1,
+## with the k-th element being the probability P_{m,k}.
 def combo m
   (1..m).each_with_object [[1]] do |n, dp|
     dp[n] = (1..n-1).each_with_object [(1-Y)**n] do |k, dpn|
@@ -323,7 +323,7 @@ end
 
 This algorithm has the same (asymptotic) space and time complexity as the previous one.
 
-## Polynomial coefficients
+### Polynomial coefficients
 
 We have wrote programmes to calculate probabilities $P_{n,k}(Y)$ based on given $Y$,
 which we assumed to be a float number.
@@ -356,8 +356,8 @@ Then, use arrays to store the coefficients of the polynomial $P_{n,k}(Y)$,
 and we can write the program to calculate the coefficients:
 
 ```ruby
-# Returns a nested array of size m+1 times m+1,
-# with the j-th element of the k-th element being the coefficient of Y^j in P_{m,k}(Y).
+## Returns a nested array of size m+1 times m+1,
+## with the j-th element of the k-th element being the coefficient of Y^j in P_{m,k}(Y).
 def combo_pc m
   (1..m).each_with_object [[[1]]] do |n, dp|
     dp[n] = Array.new(n+1) { Array.new n+1, 0 }
@@ -410,7 +410,7 @@ because of the limited precision of floating numbers.
 If $Y$ is closer to $1$, we can first find the coefficients of $P_{n,k}(1-X)$
 and then substitute $X:=1-Y$.
 
-## Plots of the probability distributions
+### Plots of the probability distributions
 
 Here are some plots of the probability distribution of max combo $k$ when $n=50$:
 
@@ -427,7 +427,7 @@ We can look at it closer:
 In the zoomed-in plot, we can also see a jump in first derivative (w.r.t. $k$) of $P_{n,k}(Y)$ near $k=n/3$.
 Actually, the jumps can be modeled in later sections when we talk about the case when $n\to\infty$.
 
-# The case when $n\to\infty$
+## The case when $n\to\infty$
 
 A natural approach is to try substituting Equation \ref{eq: dp2} into Equation \ref{eq: f def}
 to get a function w.r.t. the unknown function $f(y,\kappa)$.
@@ -561,7 +561,7 @@ $$\begin{equation}
 Equation \ref{eq: main} and \ref{eq: normalization}
 are the equations that we are going to utilize to get the expression for $g(y,\kappa)$.
 
-## The case $\kappa\in\left(\frac12,1\right)$
+### The case $\kappa\in\left(\frac12,1\right)$
 
 In this case, we have
 
@@ -664,7 +664,7 @@ g_1(y,\kappa)=-\ln y\left(2+\ln y^{\kappa-1}\right)y^{\kappa-1}.
 
 We can substitute it into Equation \ref{eq: main 1/2<kappa<1} to verify that it is indeed the solution.
 
-## The case $\kappa\in\left(\frac13,\frac12\right)$
+### The case $\kappa\in\left(\frac13,\frac12\right)$
 
 In this case, we have
 
@@ -745,7 +745,7 @@ g_2(y,\kappa)=-\ln y\left(
 
 On may verify that this is indeed the solution by substituting it into Equation \ref{eq: main 1/3<kappa<1/2}.
 
-## The case $\kappa\in\left(\frac14,\frac13\right)$
+### The case $\kappa\in\left(\frac14,\frac13\right)$
 
 By using very similar methods but after very tedious calculation, the solution is
 
@@ -761,7 +761,7 @@ g_3(y,\kappa)&:=g\!\left(y,\kappa\in\left(\frac14,\frac13\right)\right)\\
 \right).
 \end{split}\end{equation}$$
 
-## Other cases
+### Other cases
 
 After seeing Equation \ref{eq: g1}, \ref{eq: g2}, and \ref{eq: g3},
 one may guess the form of solution for other cases.
@@ -1156,7 +1156,7 @@ $$\begin{equation}
 
 (the formula is also applicable to $q=1$).
 
-## Edge cases
+### Edge cases
 
 Now we have covered almost all cases.
 The only cases that we have not covered are the cases when $\kappa=\frac1q$, where $q\in2\ldots\infty$.
@@ -1206,7 +1206,7 @@ However, because the domain of $g$ does not include $\kappa=0$ by definition,
 so we do not need to consider this case.
 By some mathematical analysis techniques, one may prove that the limit of $g$ as $\kappa\to0^+$ is $0$.
 
-## The solution
+### The solution
 
 Substitute Equation \ref{eq: gq} into Equation \ref{eq: select q}, and we have
 
@@ -1235,7 +1235,7 @@ y^{s\kappa}\left(\ln y^{s\kappa-1}\right)^{s-2}
 \end{cases}
 \end{equation}$$
 
-## Plots of the probability density functions
+### Plots of the probability density functions
 
 Here are plots of the function $f(y,\kappa)$ whose expression is given by Equation \ref{eq: f}:
 
@@ -1250,7 +1250,7 @@ if we approximate the distribution with finite $n$ by the distribution with infi
 but we may expect that the error is small enough for applicational uses
 when $n$ is a usual note count in a rhythm game chart (usually at least $500$).
 
-## Moments
+### Moments
 
 It may be interesting to calculate the
 [moments](https://en.wikipedia.org/wiki/Moment_(mathematics)){:target="_blank"} of the distribution.
@@ -1416,7 +1416,7 @@ The plot:
 We should also be able to find other statistical quantities like the median, the mode, the variance, etc.,
 but they seem do not have closed forms.
 
-# Some interesting observations
+## Some interesting observations
 
 The probability distribution of $\kappa$ seems to tend to be a uniform distribution plus a Dirac $\delta$ distribution
 when $y$ is very close to $1$.
@@ -1508,7 +1508,7 @@ It has an elementary expression on $\left[\frac12,1\right)$:
 $$y_0\!\left(\kappa\in\left[\frac12,1\right)\right)
 =\exp\frac{-2\kappa+1+\sqrt{2\kappa^2-2\kappa+1}}{\kappa\left(\kappa-1\right)}.$$
 
-# Some applications
+## Some applications
 
 In [Phigros](https://pigeon-games.com){:target="_blank"},
 one should combo at least $60\\%$ of the notes to get a white V

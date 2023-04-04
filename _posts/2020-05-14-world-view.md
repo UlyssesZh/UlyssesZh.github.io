@@ -17,7 +17,7 @@ This article proposed models for Galilean, Einsteinian, and even Aristotelian wo
 Can you come up with even other worlds?'
 ---
 
-# Introduction
+## Introduction
 
 Have you ever thought of how can we describe the basic
 principles of our world (or universe), especially
@@ -31,7 +31,7 @@ it over in another perspective.
 Note that most of the definitions used below are different
 from the popular definitions!
 
-# Galilean world
+## Galilean world
 
 Here is the basic principle of the Galilean world:
 > Principle 1: The world is a Galilean structure with
@@ -156,7 +156,7 @@ The rest
 and solving them) is just the normal classical mechanics,
 and is not related to the topic today.
 
-# Einsteinian world
+## Einsteinian world
 
 We can build up the Einsteinian world similarly as we have
 done for the Galilean world.
@@ -243,7 +243,7 @@ You can find that the Einsteinian world is also
 space-homogeneous, time-homogeneous, and space-isotropic.
 Further more, it is time-isotropic.
 
-# Aristotelian world (imagination)
+## Aristotelian world (imagination)
 
 Although the Aristotelian world is not real, we can
 think of what it may look like.
@@ -354,7 +354,7 @@ After building up the Aristotle world, how can we develop
 the mechanics here?
 Maybe it can be interesting.
 
-# Other imaginations
+## Other imaginations
 
 Here are some other imaginations of a world:
 - What about a space-anistropic universe?

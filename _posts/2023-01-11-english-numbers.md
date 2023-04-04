@@ -19,7 +19,7 @@ There are 14 syllables while the original number has only 4 digits.
 This makes it very tedious to read numbers in English.
 Thus, I want to invent a better way to read numbers!
 
-# Single-digit numbers
+## Single-digit numbers
 
 First, let's improve the first few numbers in English. They are
 
@@ -82,7 +82,7 @@ which makes it easier to sight-read.
 - The words are pretty distinguishable by their pronunciations
 so that they do not confuse when being said in a noisy environment.
 
-# Positive integers smaller than 1000
+## Positive integers smaller than 1000
 
 In English, the suffix *-ty* is used to get multiples of ten.
 This suffix will sound too similar to *tee* (3) in our improved words for digits.
@@ -155,7 +155,7 @@ considering that now every digit only has one syllable.
 | 42 | foota-tue | foo-tue |
 | 255 | tueha-fahta-fah | tue-fah-fah |
 
-# Integers starting from 1000
+## Integers starting from 1000
 
 For numbers larger than 1000, just use how English deal with them,
 but use *thou*, *mill*, *bill*, etc. to replace the multi-syllable words
@@ -173,7 +173,7 @@ Another way to do this is just reading digits.
 because they coincide with existing English words and are hard to remember (for foreigners),
 but I cannot come up with a better idea.)
 
-# Decimals
+## Decimals
 
 For decimals, just use how English deal with them.
 Use *dot* instead of *point* to tell the decimal point
@@ -186,7 +186,7 @@ to pronounce it faster.
 | 3.14 | tee dot wah-foo |
 | 520.1314 | fahha-tueta dot wah-tee-wah-foo |
 
-# Negative numbers
+## Negative numbers
 
 For negative numbers, add *ne* (from the word *negative*),
 pronounced as /neɪ/, before the number.
@@ -195,7 +195,7 @@ pronounced as /neɪ/, before the number.
 |---|---|---|
 | -100 | ne wahha | /ˈneɪˈwɑːhə/ |
 
-# Fractions
+## Fractions
 
 English use ordinal numerals to represent fractions,
 which is very non-intuitive and sometimes ambiguous.
@@ -219,7 +219,7 @@ pronounced as /sɪ/.
 | $\frac{114}{514}$ | wahha-wahta-foo ci fahha-wahta-foo |
 | $-\frac12$ | ne wah ci fah |
 
-# Scientific notation
+## Scientific notation
 
 How do you read $1.234\times10^{-8}$?
 
@@ -233,7 +233,7 @@ I propose that we write the number as 1.234e-8, and just pronounce how it looks
 |---|---|
 | 1.234e-8 | wah dot tue-tee-foo ee ne tay |
 
-# Ordinal numerals
+## Ordinal numerals
 
 English uses the suffixes *-th*, *-st*, *-nd*, and *-rd* to represent ordinal numerals,
 which is actually a disaster...
@@ -311,7 +311,7 @@ Sometimes, we may use *firstly* instead of *first* when it is used as an adverb
 I would like to just replace *firstly*, *secondly*, etc.
 with *ra wah*, *ra tue*, etc.
 
-# Numerical prefixes
+## Numerical prefixes
 
 Here is another mess with English: numerical prefixes.
 Just look at how many

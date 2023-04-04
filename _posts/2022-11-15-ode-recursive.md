@@ -13,7 +13,7 @@ we can get the solution of the ODE $x''\\!\left(t\right)=f\\!\left(x\\!\left(t\r
 with initial conditions $x\\!\left(t_0\right)=C$ as the limit of the sequence of functions.'
 ---
 
-# The method
+## The method
 
 Suppose we have an ODE (with initial conditions)
 
@@ -43,7 +43,7 @@ Then, if the sequence $\left(x_n'\right)$ converges uniformly on $\left\[t-\vare
 then the sequence $\left(x_n\right)$ converges uniformly to a function $x$ on $\left\[t-\varepsilon,t+\varepsilon\right\]$,
 which is the unique solution to Equation \ref{eq: ode}.
 
-# Proof
+## Proof
 
 The proof is easy. Note from Equation \ref{eq: xn+1} that
 
@@ -51,7 +51,7 @@ $$x_{n+1}'\!\left(t\right)=f\!\left(x_n\!\left(t\right),t\right).$$
 
 Then, take the limit $n\to\infty$. By the uniform convergence, we recovers Equation \ref{eq: ode}.
 
-# An example
+## An example
 
 Suppose $f\\!\left(x,t\right):=x$ and $t_0:=0$, then
 
@@ -66,7 +66,7 @@ which means that the unique solution to $x'\\!\left(t\right)=x\\!\left(t\right)$
 with initial condition $x\\!\left(0\right)=C$ is $x\\!\left(t\right)=C\mathrm e^t$,
 expectedly.
 
-# Approximation
+## Approximation
 
 This method is good because integration is sometimes much easier than solving ODE.
 We can use integration to get functions that are close to the exact solution.

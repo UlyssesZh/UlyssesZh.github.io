@@ -14,7 +14,7 @@ its surface passes every vertex of the simplex,
 and its tangent hyperplane at each vertex is parallel to the hyperplane containing all other vertices.'
 ---
 
-# Some notations
+## Some notations
 
 $$
     S_n:=\left\{\mathbf a\in\mathbb R^{n}\,\middle|\,\sum_ja_j=1\right\}.
@@ -36,7 +36,7 @@ $$
     \end{matrix}\right).
 $$
 
-# Introduction to barycentric coordinates
+## Introduction to barycentric coordinates
 
 Let $\mathbf v_j$ be the vertices of a simplex in $\mathbb R^{n-1}$,
 then any point $\mathbf r\in\mathbb R^{n-1}$
@@ -71,7 +71,7 @@ $$
 \end{equation}
 $$
 
-# The research object
+## The research object
 
 We are going to show that the equation
 
@@ -86,7 +86,7 @@ depicts a hyperellipsoid whose center is $\mathbf0$ and
 its tangent hyperplane at $\mathbf v_j$ is parallel to the hyperplane
 that passes all $\mathbf v_k$ that $k\ne j$.
 
-# The quadric
+## The quadric
 
 We are going to rewrite Formula \ref{research object} in the form of
 a quadric of $\mathbf r$.
@@ -139,7 +139,7 @@ whose center is $\mathbf0$, we need to prove that the coefficients
 of the linear terms are all $0$,
 and the determinant of the coefficients is positive.
 
-# Proving that the center of the quadric is $\mathbf0$
+## Proving that the center of the quadric is $\mathbf0$
 
 Note that $\mathbf Q=\left(\mathbf V_1\mathbf V_1^{\mathrm T}\right)^{-1}$,
 so
@@ -184,7 +184,7 @@ $$
 
 The linear terms are all $0$, so the center of the quadric is $\mathbf0$.
 
-# Proving that the quadric is a hyperellipsoid
+## Proving that the quadric is a hyperellipsoid
 
 We need to show that determinant of the coefficients matrix is positive.
 
@@ -197,7 +197,7 @@ $$
     \left|\mathbf V_1^{-1}\right|^2>0.
 $$
 
-# Proving that the its tangent hyperplane at $\mathbf v_j$ is parallel to $P_j$
+## Proving that the its tangent hyperplane at $\mathbf v_j$ is parallel to $P_j$
 
 Here $P_j$ is defined as the hyperplane that
 passes all $\mathbf v_k$ that $k\ne j$.

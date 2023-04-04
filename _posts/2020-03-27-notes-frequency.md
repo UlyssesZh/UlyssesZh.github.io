@@ -13,7 +13,7 @@ which is a mapping from $N$ (the set of notes) to $\mathbb R^+$ (the set of freq
 Concepts such as octaves, intervals, and equal temperaments are introduced.'
 ---
 
-# The notes
+## The notes
 
 First, let's define what is a *note*.
 
@@ -37,7 +37,7 @@ $$
 
 It makes sense that the sequence is in strictly increasing order.
 
-# The octaves
+## The octaves
 
 Now, let's think about a *musical interval*. At this stage, a
 musical interval can be defined as an unordered pair of notes.
@@ -139,7 +139,7 @@ $$
 
 which is an elegant arithmetic progression.
 
-# The octave group
+## The octave group
 
 Note that here "group" is the group concept in algebra.
 
@@ -201,7 +201,7 @@ an *octave group*.
 The octave group has a musical meaning which
 we should take a further look at musical intervals to find out.
 
-# The musical intervals
+## The musical intervals
 
 Taking Formula \ref{p_freq_def}, people find that although
 it is sometimes subjective whether a musical interval sounds
@@ -279,7 +279,7 @@ $$
 
 Thus, wonderful! Let's take $n:=12$.
 
-# The $12$-tone equal temperament
+## The $12$-tone equal temperament
 
 The $12$-tone equal temperament is the most popular
 frequency assignment used nowadays. It is defined as
@@ -331,7 +331,7 @@ which is standardized as ISO 16 and known as
 [A440](https://en.wikipedia.org/wiki/
 A440_(pitch_standard)){:target="_blank"}.
 
-# Why $\frac 7{12}$
+## Why $\frac 7{12}$
 
 People think if the ratio of two frequencies is a simple
 rational number, then the interval of the two notes is harmonic.

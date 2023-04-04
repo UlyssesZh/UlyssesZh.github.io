@@ -31,7 +31,7 @@ Finally, I show two examples of using them in real problems:
 a free particle, and a harmonic oscillator.'
 ---
 
-# Introduction
+## Introduction
 
 In Hamiltonian physics, if we let
 
@@ -54,7 +54,7 @@ with respect to the complex variable that we have just defined.
 Note that if you do not care about the units, it is recommended to let
 $\alpha=\beta=\frac1{\sqrt2}$ due to the convenience.
 
-# Hamiltonian
+## Hamiltonian
 
 In this way,
 the Hamiltonian is a function of real value with respect to a complex vector.
@@ -110,7 +110,7 @@ $$
 \end{equation}
 $$
 
-# Canonical equations
+## Canonical equations
 
 Now we may be curious about what will the canonical equations
 
@@ -166,7 +166,7 @@ The new canonical equations are a set of $s$ ODEs of $1$st degree,
 and there should be only $s$ (instead of $2s$) arbitrary constants
 in the solution.
 
-# Poisson bracket
+## Poisson bracket
 
 The Poisson bracket $\left\\{\cdot,\cdot\right\\}$ can be defined just as usual:
 
@@ -205,7 +205,7 @@ $$
 \end{equation}
 $$
 
-# Canonical transformation
+## Canonical transformation
 
 Consider some kind of transformation
 $\mathbf c'=\mathbf c'\\!\left(\mathbf c\right)$
@@ -274,7 +274,7 @@ $$
     \left\{f,g\right\}_{\mathbf c}=\left\{f,g\right\}_{\mathbf c'}.
 $$
 
-# Phase space
+## Phase space
 
 With the introduction of the complex variable $\mathbf c$,
 the phase space becomes the vector space of $\mathbf c$,
@@ -284,9 +284,9 @@ I have not learned differential geometry about complex manifold,
 so maybe there is some awesome extensions that can be made in the phase space,
 while I will not be able to find them out...
 
-# Some examples
+## Some examples
 
-## Free particle
+### Free particle
 
 The Hamiltonian of a free particle is
 
@@ -310,7 +310,7 @@ $$
 
 where $\mathbf c\_0$ is $3$ arbitrary complex constants.
 
-## Harmonic oscillator
+### Harmonic oscillator
 
 The Hamiltonian of a harmonic oscillator is
 

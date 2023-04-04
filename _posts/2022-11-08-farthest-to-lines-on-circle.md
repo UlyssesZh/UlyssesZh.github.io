@@ -55,7 +55,7 @@ $$\left|d\right|=\left|d_1\right|+\left|d_2\right|$$
 
 Now, we discuss case by case.
 
-## Case 1: $d_1$ and $d_2$ have the same sign
+### Case 1: $d_1$ and $d_2$ have the same sign
 
 In this case, $P$ is on the same "side" of $l_1$ and $l_2$,
 i.e. $P$ is in the interior of the adjacent supplementary angle of $\angle O$.
@@ -111,7 +111,7 @@ whose intersection with $\odot C$ is $P$
 (there are two such intersection points, corresponding to $n$ being even and odd respectively,
 and $d$ takes maximal and minimal values respectively).
 
-## Case 2: $d_1$ and $d_2$ have different signs
+### Case 2: $d_1$ and $d_2$ have different signs
 
 Now, $P$ are on different "sides" of $l_1$ and $l_2$,
 i.e. $P$ is in the interior of $\angle O$ or its opposite angle.
@@ -158,7 +158,7 @@ whose intersection with $\odot C$ is $P$
 (there are two such intersection points, corresponding to $n$ being even and odd respectively,
 and $d$ takes maximal and minimal values respectively).
 
-## Case 3: $d_1=0$ or $d_2=0$
+### Case 3: $d_1=0$ or $d_2=0$
 
 In this case, $P$ is on either $l_1$ or $l_2$.
 
@@ -168,12 +168,12 @@ the number of cases is reduced to finite.
 To avoid confusion, we denote $\theta$ now $\theta_0$.
 Now, $d_1$ and $d_2$ are functions of $\theta$, while $\theta_0$ is the $\theta$ at which $d_2=0$.
 
-### Subcase 1: $d_1=0$
+#### Subcase 1: $d_1=0$
 
 Obviously, in this case, when $\theta=\theta_0$, the sum of distances from $P$ to $l_1$ and $l_2$ takes minimal.
 This case occurs only when $l_1,l_2,\odot C$ intersect at the same point.
 
-### Subcase 2: $d_1\neq 0$
+#### Subcase 2: $d_1\neq 0$
 
 Then, according to the property of continuous functions,
 in some neighborhood of $\theta_0$, $d_1\ne0$.
@@ -253,7 +253,7 @@ when $P$ is moving near the tangent point.
 If it is in the interior, then the case is identical to Case 2;
 if it is in the exterior, then the case is identical to Case 1.
 
-## Summary
+### Summary
 
 We finally got the method of determining whether the point $P$ on $\odot C$ has the extremal sum of distances to $l_1$ and $l_2$:
 
