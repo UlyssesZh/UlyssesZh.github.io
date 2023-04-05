@@ -32,21 +32,28 @@ theme: minima
 minima:
   date_format: "%b %-d, %Y"
 future: true
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      toc: true
 plugins:
-- jekyll-feed
-- jekyll-sitemap
-- jekyll-archives
-- jekyll-paginate-v2
+  - jekyll-archives
+  - jekyll-feed
+  - jekyll-paginate-v2
+  - jekyll-sitemap
+  - jekyll-toc
 exclude:
-- LICENSE
-- LICENSE.md
-- README.md
-- Gemfile
-- Gemfile.lock
-- ".git/"
-- ".idea/"
-- ".rubocop.yml"
-- "assets/images/covers/*.txt"
+  - LICENSE
+  - LICENSE.md
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - ".git/"
+  - ".idea/"
+  - ".rubocop.yml"
+  - "assets/images/covers/*.txt"
 measurement_id: G-7TSJ5VM6YC
 webmaster_verifications:
   google: ZuV45Knwuwl49Nvh9UsDzniZ-3qy3bGhBPofLK3SZPw
@@ -90,4 +97,4 @@ pagination:
     after: 2
 rpg-map:
   enabled:
-  - test
+    - test

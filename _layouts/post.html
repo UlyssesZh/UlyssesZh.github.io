@@ -10,9 +10,6 @@ layout: default
         {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
         {{ page.date | date: date_format }}
       </time>
-      {%- if page.author -%}
-        • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">{{ page.author }}</span></span>
-      {%- endif -%}
       <details class="post-meta">
         <summary>About this post</summary>
         <ul>
@@ -47,11 +44,17 @@ layout: default
           <li><strong><a href="https://github.com/UlyssesZh/UlyssesZh.github.io/commits/development/{{ page.path }}" target="_blank">View history</a></strong></li>
         </ul>
       </details>
+      <details class="post-meta">
+        <summary>
+          Table of contents
+        </summary>
+          {{ content | toc_only }}
+      </details>
     </p>
   </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    {{ content }}
+    {{ content | inject_anchors }}
     {% if page.image %}
       <p style="text-align: center"><img src="{{ page.image }}"></p>
     {% endif %}
