@@ -31,6 +31,7 @@ $$
 
 we need to calculate the partial derivatives of $\mathcal H$.
 Here is a simple code to calculate partial derivatives.
+
 ```ruby
 def div x0, dx, f
   f0 = f.(x0)
@@ -40,6 +41,7 @@ def div x0, dx, f
   end
 end
 ```
+
 (RGSS do not have `matrix.rb`, you can copy one from
 the attached file below.)
 Here `x0` is a `Vector`, `f` is a `call`-able object as a function
@@ -55,6 +57,7 @@ $$
 
 To solve this equation numerically, we need to use a famous method
 called the (explicit) Runge--Kutta method.
+
 ```ruby
 def runge_kutta initial, max_t, dt, (*pyramid, coefs), func
   (0..max_t).step(dt).reduce initial do |ret, t|
@@ -65,9 +68,11 @@ def runge_kutta initial, max_t, dt, (*pyramid, coefs), func
   end
 end
 ```
+
 Note that Runge--Kutta is a family of methods. The argument
 `(*pyramid, coefs)` takes one of the following, each of which
 is a single Runge--Kutta method.
+
 ```ruby
 FORWARD_EULER = [[],[1]]
 EXPLICIT_MIDPOINT = [[],[1/2.0],[0,1]]
@@ -82,12 +87,14 @@ RALSTON_4TH = [[],[0.4],[0.29697761,0.15875964],[0.21810040,-3.05096516,
     3.83286476],[0.17476028, -0.55148066, 1.20553560, 0.17118478]]
 THREE_EIGHTH_4TH = [[],[1/3.0],[-1/3.0,1],[1,-1,1],[1/8.0,3/8.0,3/8.0,1/8.0]]
 ```
+
 Here we are going to take `CLASSIC_4TH`.
 
 The `$canvas` appearing here is an object that is going to draw
 the result onto the screen.
 
 Here we also need to have some patches to get it work.
+
 ```ruby
 class Float
   alias ulysses20200426121236_add +
@@ -110,9 +117,11 @@ class Array
   end
 end
 ```
+
 (Again, note that this is Ruby 1.9.2.)
 
 Finally, just combine them up, and we can solve a Hamiltonian numerically.
+
 ```ruby
 def solve_hamiltonian n, qp0, max_t, dt, hamiltonian
   runge_kutta qp0, max_t, dt, CLASSIC_4TH, ->t, qp do
@@ -123,10 +132,12 @@ end
 ```
 
 For example, let's simulate a double pendulum.
+
 ```ruby
 solve_hamiltonian 2,Vector[PI/2,0.0,0.0,0.0],Float::INFINITY,1e-3,
     ->t,(q1,q2,p1,p2){p1**2+p2**2/2+cos(q1-q2)*p1*p2-cos(q1)-cos(q2)}
 ```
+
 ![double_pendulum]({{page.figure}}double_pendulum.gif)
 
 The codes are not complete in this post.

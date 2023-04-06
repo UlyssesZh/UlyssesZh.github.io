@@ -94,12 +94,13 @@ and the previous max combo is already $k$.
 Therefore, the previous state is $(n-1,k,r-1)$, and the probability of the transition is $Y$.
 3. If $r=k$, this means the max combo may (or may not) have been updated.
 In either case, the previous final combo is $r-1=k-1$.
-  - If the max combo is updated, the previous max combo must be $k-1$
-  because it must not be less than the previous final combo $k-1$
-  and must be less than the new max combo $k$.
-  Therefore, the previous state is $(n-1,k-1,k-1)$, and the probability of the transition is $Y$.
-  - If the max combo is not updated, the previous max combo is the same as the new one, which is $k$.
-  Therefore, the previous state is $(n-1,k,k-1)$, and the probability of the transition is $Y$.
+
+- If the max combo is updated, the previous max combo must be $k-1$
+because it must not be less than the previous final combo $k-1$
+and must be less than the new max combo $k$.
+Therefore, the previous state is $(n-1,k-1,k-1)$, and the probability of the transition is $Y$.
+- If the max combo is not updated, the previous max combo is the same as the new one, which is $k$.
+Therefore, the previous state is $(n-1,k,k-1)$, and the probability of the transition is $Y$.
 
 Therefore, we can write a recurrence relation that is valid when $n>k>0$:
 

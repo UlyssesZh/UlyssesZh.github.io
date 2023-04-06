@@ -26,6 +26,7 @@ in the `development` branch, and push the built site to the `master`
 branch when I think it is ready to be published.
 
 I have written a script to do it for me:
+
 ```shell
 MESSAGE=$1
 
@@ -47,9 +48,11 @@ git add -- **/*
 git commit -m "$MESSAGE" --author "$AUTHOR"
 git push --set-upstream origin master
 ```
+
 where `AUTHOR` is your name and email in the format `name <email>`.
 
 Before that, I need to initialize the `_site` dir as a git repo:
+
 ```shell
 cd site_
 git init
@@ -58,4 +61,5 @@ git add -f -- **/*
 git commit -m "initial commit"
 git push -f --set-upstream origin master
 ```
+
 where `REMOTE_URL` is the GitHub url of the repo of your site.

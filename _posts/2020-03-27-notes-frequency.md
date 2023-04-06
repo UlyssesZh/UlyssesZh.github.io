@@ -50,17 +50,20 @@ In other words, the musical interval of $\nu_a$ and $\nu_b$ is
 extremely harmonic if $f_b=2f_a$. In fact, it is so harmonic that
 if the two notes are played simultaneously, a person tend to
 think there is only one note being played:
+
 <audio controls>
     <source src="/assets/audios/octave_interval.mp3"
     type="audio/mpeg">
 (Your browser does not support the audio element.)
 </audio>
-```
+
+```alda
 motif = c4 c g g a a g2
 piano:
 V1: o4 motif motif
 V2: o5 motif
 ```
+
 The audio above is an illustration for octave intervals.
 As can be heard, the first part of the audio is played in
 octave intervals while the second part is played in single notes.
@@ -254,7 +257,7 @@ consisting of $\nu_a$ and $\nu_b$ sounds very harmonic:
 (Your browser does not support the audio element.)
 </audio>
 
-```
+```alda
 motif = e4 a f2 d4 g c2
 piano:
 V1: motif

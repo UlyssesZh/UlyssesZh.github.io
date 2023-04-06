@@ -17,6 +17,7 @@ How do I achieve this?'
 
 We want to have a DSL where we can write statements separated with space.
 Like this:
+
 ```ruby
 Robot.new do
   a b c
@@ -25,8 +26,10 @@ Robot.new do
   j
 end.run
 ```
+
 outputs
-```
+
+```plain
 Go to a
 Go to b
 Go to c

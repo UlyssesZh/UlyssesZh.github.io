@@ -21,6 +21,7 @@ I am going to show how to monkey-patch graciously using
 The original idea is to implement a method `Module#def_after` so that
 I can easily make something to be done after the original method.
 Like this:
+
 ```ruby
 class Foo
   def bar
@@ -36,7 +37,9 @@ end
 
 Foo.new.bar # => before & after
 ```
+
 The implementation is a little easy:
+
 ```ruby
 class Module
   def def_after method_name, &refine_block
@@ -48,6 +51,7 @@ class Module
   end
 end
 ```
+
 However, there is a little problem. The `self` in `refine_block`
 depends on how and where `refine_block` is defined instead of
 just being the instance receiving the method.
@@ -56,6 +60,7 @@ Since an instance method (`UnboundMethod` object) defined in a
 `Module` can `bind` any other object, we can use
 `Module#define_method` and send `refine_block` as a block parameter,
 and then bind the instance method to `self`:
+
 ```ruby
 class Proc
   def bind receiver
@@ -77,6 +82,7 @@ class Module
   end
 end
 ```
+
 The `self` can successfully be converted. You can test it yourself.
 
 Here is still a problem. When the new instance method is defined,
@@ -85,6 +91,7 @@ its visibility is `public`, while the original visibility may be
 
 Use the following means to get the visibility beforehand and set
 the visibility afterward:
+
 ```ruby
 class Module
   def method_visibility method_name
@@ -103,6 +110,7 @@ class Module
   end
 end
 ```
+
 There can be some improvement. If we need to refine a singleton
 method, calling `def_after` on its `singleton_class` will lead to
 calling `obj.singleton_class.instance_method(sym).bind_call(obj, *)`,
@@ -110,6 +118,7 @@ which is way too complex. The straightforward way to do it is to call
 `obj.method(sym).call(*)`.
 
 With this inspiration, we can implement `Object#def_after`:
+
 ```ruby
 class Object
   def def_after method_name, &refine_block
@@ -123,11 +132,13 @@ class Object
   end
 end
 ```
+
 Then there comes a new problem. A `Module` also has singleton
 methods, while `Module#def_after` can only change its instance
 methods instead of its singleton methods.
 The way to solve this is to judge whether `is_a? Module` in
 `Object#def_after`, and add a keyword argument `singleton`:
+
 ```ruby
 class Object
   def def_after method_name, singleton: false, &refine_block
@@ -153,13 +164,17 @@ class Object
   end
 end
 ```
+
 What about parsing a callable object as an argument instead of
 through `refine_block`?
 Parsing a `Symbol` can also be useful. Like this:
+
 ```ruby
 Object.def_after :display, :puts
 ```
+
 Then `Object#def_after` will be a little complex:
+
 ```ruby
 class Object
   # pat: when refine_block is nil, it is used to represent a refinement
@@ -199,9 +214,11 @@ class Object
   end
 end
 ```
+
 We are still not satisfied. We need to define a lot of methods like
 `def_after`, such as `def_before`, `def_if`...
 Maybe we should define `Object::def_` and use it like this:
+
 ```ruby
 class Object
   # use this binding to eval to avoid excessive local variables
@@ -226,9 +243,11 @@ class Object
   singleton_class.undef_method :def_, :class_binding
 end
 ```
+
 The main difficulty is to implement `Object::def_`.
 We can accomplish this just by editing the `Object#def_after` we
 defined before:
+
 ```ruby
 class Object
   # the method is going to be undefined soon
@@ -271,6 +290,7 @@ class Object
   end
 end
 ```
+
 The final source code can be found [here](/assets/codes/patch_def.rb).
 
 The reason why I do not use `Module#refine` and `Module#using` is

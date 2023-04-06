@@ -30,6 +30,7 @@ In most cases, when I say RGSS, I mean RGSS, RGSS2, and RGSS3.
 RGSS is in Ruby and rpg_core.js is in Javascript.
 
 The scripts of a basic RGSS game look like
+
 ```ruby
 def start
   # some codes
@@ -45,7 +46,9 @@ loop do
   Graphics.update
 end
 ```
+
 The scripts of a basic rpg_core.js game look like
+
 ```javascript
 function start() {
     // some codes

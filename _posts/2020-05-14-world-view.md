@@ -42,6 +42,7 @@ A *Galilean structure* with $\chi$-dimensional space
 and $\iota$-dimensional time is a $3$-tuple
 $\left(\mathscr A,\tau,\rho\right)$ with the following
 principles:
+
 1. $\mathscr A$ is a $\nu$-dimensional
 affine space associated with the vector space $\mathbb R^\nu$,
 where $\nu:=\chi+\iota$;
@@ -53,6 +54,7 @@ $\rho\\!\left(a,b\right)=\sqrt{\left(a-b\right)^2}$.
 
 To make the physical meanings of the above mathematical stuff
 clear, we
+
 - call $\mathscr A$ the *universe* or a *Galilean space*,
 - call the points in the universe the *events*,
 - call $\tau$ the *time*,
@@ -70,6 +72,7 @@ Here is the definition of a Galilean transformation.
 An affine transformation $g$ over the Galilean space $\mathscr A$
 is called a *Galilean transformation*
 iff both of the following are satisfied:
+
 1. $\forall a,b\in\mathscr A:
 \tau\\!\left(a-b\right)=\tau\\!\left(ga-gb\right)$
 (preservation of intervals of time),
@@ -98,6 +101,7 @@ Here $\mathscr A$ is called the *Galilean coordinate space*.
 
 The following transformations on the Galilean coordinate space
 are Galilean transformations (why?):
+
 1. $\left(t,x\right)\mapsto\left(t,x+vt\right)$,
 where $v\in\mathbb R^\chi$ (*uniform motion*),
 2. $\left(t,x\right)\mapsto\left(t+s,x+d\right)$,
@@ -168,6 +172,7 @@ An *Einsteinian structure* with $\chi$-dimensional space
 and $\iota$-dimensional time is a $4$-tuple
 $\left(\mathscr A,\tau,\sigma,\rho\right)$
 with the following principles:
+
 1. $\mathscr A$ is a $\nu$-dimensional affine space
 associated with the vector space $\mathbb R^\nu$,
 where $\nu:=\chi+\iota$;
@@ -182,6 +187,7 @@ are linear mappings;
 
 To make the physical meanings of the above mathematical
 stuff clear, we
+
 - call $\mathscr A$ the *universe* or an *Einsteinian space*,
 - call the points in the universe the *events*,
 - call $\tau$ the *time*,
@@ -225,6 +231,7 @@ Here $\mathscr A$ is called the *Minkowski space*.
 
 The following transformations on the Minkowski space are
 Poincaré transformations (why?):
+
 1. $a\mapsto a+d$, where $d\in\mathbb R^\nu$ (*translation*),
 2. $a\mapsto Ga$, where $G\in\mathrm O\\!\left(\iota,\chi\right)$
 is an indefinite orthogonal matrix (*rotation*).
@@ -247,8 +254,9 @@ Further more, it is time-isotropic.
 
 Although the Aristotelian world is not real, we can
 think of what it may look like.
+
 > Principle 1: The world is an Aristotelian structure
-> with $3$-dimensional space and $1$-dimensional time.
+with $3$-dimensional space and $1$-dimensional time.
 
 According to Aristotle's theory about the natural place,
 the world has something like a "center",
@@ -276,6 +284,7 @@ An *Aristotelian structure* with $\chi$-dimensional
 space and $\iota$-dimensional time is a $4$-tuple
 $\left(\mathscr A,\tau,o,\rho\right)$ with the following
 principles:
+
 1. $\mathscr A$ is a $\nu$-dimensional affine space
 associated with the vector space $\mathbb R^\nu$,
 where $\nu:=\chi+\iota$;
@@ -288,6 +297,7 @@ the mapping $\rho$ satisfies $\rho\\!\left(a,b\right)=
 
 To make the physical meanings of the above mathematical stuff
 clear, we
+
 - call $\mathscr A$ the *universe* or an *Aristotelian space*,
 - call the points in the universe the *events*,
 - call $\tau$ the *time*,
@@ -306,6 +316,7 @@ Here is the definition of an Aristotelian transformation.
 An affine transformation $g$ over the Aristotelian space
 $\mathscr A$ is called an *Aristotelian transformation*
 iff all of the following are satisfied:
+
 1. $\forall a,b\in\mathscr A:
 \tau\\!\left(a-b\right)=\tau\\!\left(ga-gb\right)$,
 2. $\forall a,b\in\mathscr A:
@@ -337,6 +348,7 @@ is called the *Aristotelian coordinate space*.
 
 The following transformations on the Aristotelian coordinate
 space are Aristotelian transformations (why?):
+
 1. $\left(t,x\right)\mapsto\left(t+s,x\right)$,
 where $s\in\mathbb R^\iota$ (*time translation*),
 2. $\left(t,x\right)\mapsto\left(t,Gx\right)$,
@@ -357,6 +369,7 @@ Maybe it can be interesting.
 ## Other imaginations
 
 Here are some other imaginations of a world:
+
 - What about a space-anistropic universe?
 - What about defining the spacetime interval by
 multiplying space interval and time interval?
