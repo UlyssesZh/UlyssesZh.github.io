@@ -1145,7 +1145,8 @@ Therefore, we can define a thermally composite system
 as a contraction of the product thermal system.
 Denote the projection map of the contracting as $\pi:W\to W^\perp:(e_1,e_2)\mapsto e$.
 (From now on in this section, composite systems refer to thermally composite system.
-I will introduce non-thermally composite systems later (in part 2),
+I will introduce non-thermally composite systems later
+(in [part 2]({% post_url 2023-05-01-measure-ensemble-2 %})),
 which describe non-thermal contacts between subsystems and are more complicated.)
 
 Besides being the contraction of the product thermal system,
@@ -1742,11 +1743,12 @@ Different from microcanonical ensembles,
 **thermal ensemble**s are ensembles where the system we study is in thermal contact with a bath.
 For example, canonical ensembles and grand canonical ensembles are thermal ensembles.
 There are also non-thermal ensembles,
-which will be introduced later after we introduce non-thermal contacts (in part 2).
+which will be introduced later after we introduce non-thermal contacts
+(in [part 2]({% post_url 2023-05-01-measure-ensemble-2 %})).
 
 The thermal ensemble of a thermal system
 is the ensemble of the composite system of the system in question (subsystem 1) and
-a $\left(\vec W^{\parallel(2)},-i\circ\rho^{-1}\right)$-bath (subsystem 2),
+a $\left(\vec W^{\parallel(2)},-i\circ\vec\rho^{-1}\right)$-bath (subsystem 2),
 where $i\in\vec W^{\parallel(1)\prime}$ is a parameter, with an extra requirement:
 
 $$\begin{equation}
@@ -1765,13 +1767,13 @@ that distinguishes different thermal ensembles is the choice of $\vec W^{\parall
 and the choices of $\pi,\lambda^\perp,W^{\perp(1)},W^{\perp(2)}$ are not important.
 
 *Definition.*
-The **compositie system for the $\vec W^{\parallel(1)}$-ensemble**
+The **composite system for the $\vec W^{\parallel(1)}$-ensemble**
 of the system $\left(\mathcal E^{(1)},\mathcal M^{(1)}\right)$ is the composite system
 of $\left(\mathcal E^{(1)},\mathcal M^{(1)}\right)$ and $\left(\mathcal E^{(2)},\mathcal M^{(2)}\right)$,
 where
 
 - $\left(\mathcal E^{(2)},\mathcal M^{(2)}\right)$
-is a $\left(\vec W^{\parallel(2)},-i\circ\rho^{-1}\right)$-bath,
+is a $\left(\vec W^{\parallel(2)},-i\circ\vec\rho^{-1}\right)$-bath,
 where $i\in\vec W^{\parallel(1)\prime}$ is a parameter called the **fixed intensive quantities**;
 - Equation \ref{eq: W2 translationally invariant} holds.
 
@@ -2207,9 +2209,9 @@ The next step is to find the macroscopic quantities.
 The equilibrium states are
 
 $$p_e^{\parallel\circ}\!\left(e,m\right)
-=\frac{\mathrm e^{-i\left(e\right)}}{\mathrm Z\!\left(\pi(e),i\right)}.$$
+=\frac{\mathrm e^{-i\left(e\right)}}{Z\!\left(\pi(e),i\right)}.$$
 
-where $\mathrm Z\!\left(e\right)$ is the partition function.
+where $Z$ is the partition function.
 Here the role of $e$ becomes the label parameter in Equation \ref{eq: fundamental equation before}.
 The measured value of extensive quantities under equilibrium is then
 
@@ -2234,14 +2236,14 @@ S^\circ
 &=-\frac1{Z\!\left(e,i\right)}\int_{s\in\vec E^{\parallel}_e}
 i\!\left(s\right)\mathrm e^{-i\left(s\right)}
 \Omega\!\left(e+s\right)\mathrm d\lambda^{\parallel}\!\left(s\right)
--\ln Z\!\left(e,i\right)\\
-&=-i\!\left(\frac{\partial\ln Z\!\left(e,i\right)}{\partial i}\right)-\ln Z\!\left(e,i\right).
++\ln Z\!\left(e,i\right)\\
+&=-i\!\left(\frac{\partial\ln Z\!\left(e,i\right)}{\partial i}\right)+\ln Z\!\left(e,i\right).
 \end{align*}$$
 
 By this two equations, we can eliminate the parameter $e$ and get the fundamental equation
 in the form of Equation \ref{eq: fundamental equation}:
 
-$$S^\circ=i\!\left(\varepsilon^\circ\right)-\ln Z\!\left(\pi\!\left(\varepsilon^\circ\right),i\right).$$
+$$S^\circ=i\!\left(\varepsilon^\circ\right)+\ln Z\!\left(\pi\!\left(\varepsilon^\circ\right),i\right).$$
 
 We can see that $S^\circ$ decouples into two terms,
 one of which is only related to the $\vec W^\parallel$ component of $\varepsilon^\circ$,
@@ -2253,3 +2255,7 @@ in the subspace $\vec W^\parallel$ is well defined and is constant $i$,
 which is just what we have been calling the fixed intensive quantities.
 The other components of the intensive quantities are not guaranteed to be well-defined
 because $Z\\!\left(\cdot,i\right)$ is not guaranteed to have good enough properties.
+
+---
+
+*This articled is continued in [part 2]({% post_url 2023-05-01-measure-ensemble-2 %}).*
