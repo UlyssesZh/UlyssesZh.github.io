@@ -111,56 +111,93 @@ hr {
 	.k {
 		color: $text-color
 	}
-
 	.o {
 		color: $text-color
 	}
-
 	.ge {
 		color: $text-color
 	}
-
 	.gs {
 		color: $text-color
 	}
-
 	.kc {
 		color: $text-color
 	}
-
 	.kd {
 		color: $text-color
 	}
-
 	.kp {
 		color: $text-color
 	}
-
 	.kr {
 		color: $text-color
 	}
-
 	.ow {
 		color: $text-color
 	}
-
 	.py {
 		color: $text-color
 	}
-
 	.p {
 		color: $text-color
 	}
 }
 
 code {
-	color: $text-color
+	color: $text-color;
+	font-size: inherit;
 }
 
 blockquote {
 	font-style: initial;
 	font-size: initial;
 	letter-spacing: initial;
+}
+
+.language-ruby {
+	tab-size: 2;
+}
+.language-javascript {
+	tab-size: 4;
+}
+
+.highlight pre {
+	padding-left: 0;
+	padding-top: 0;
+	padding-bottom: 0;
+}
+.rouge-table {
+	border: none;
+	margin: 0;
+	tbody {
+		border: none;
+		tr {
+			background: none !important;
+			border: none;
+			td {
+				padding: 8px 12px;
+				border: none;
+				pre {
+					border: none;
+					padding: 0;
+					margin: 0;
+				}
+			}
+		}
+	}
+}
+.rouge-gutter {
+	position: sticky;
+	left: 0;
+	color: $lineno-color;
+	text-align: right;
+	background: $lineno-background-color;
+	pre {
+		background: transparent;
+	}
+}
+.rouge-code {
+	width: 100%;
 }
 
 @include darkMode {

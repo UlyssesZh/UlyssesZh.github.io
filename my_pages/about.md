@@ -35,9 +35,8 @@ available [here](https://github.com/UlyssesZh/drawings){:target="_blank"}.
 This blog may be updated at an extremely low frequency because
 I may be busy.
 If you want to prompt me to update my blog
-(which is a really rare occasion),
-you can crazily click on the background of the page.
-I will receive that message after you do that. (Really?)
+(which is a really rare occasion), [contact me](/contact).
+I will be happy if I know there are people interested in my blog!
 
 Note that if the browser tells you that my site is trying to run
 some dangerous scripts, it is just loading necessary scripts for

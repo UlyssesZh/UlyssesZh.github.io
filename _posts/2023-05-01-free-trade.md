@@ -41,7 +41,7 @@ $$\textstyle
 
 According to the fundamental theorem of welfare economics,
 $T$ and $Q$ is Pareto optimal under market equilibrium.
-We asdsume that this case happens at the stationary point of the social benefit,
+We assume that this case happens at the stationary point of the social benefit,
 and the social benefit is the sum of the profit of every agent.
 We can then get the equations
 

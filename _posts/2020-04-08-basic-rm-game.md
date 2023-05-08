@@ -33,17 +33,17 @@ The scripts of a basic RGSS game look like
 
 ```ruby
 def start
-  # some codes
+	# some codes
 end
 def update
-  # some codes
+	# some codes
 end
 
 start
 loop do
-  update
-  Input.update
-  Graphics.update
+	update
+	Input.update
+	Graphics.update
 end
 ```
 
@@ -51,10 +51,10 @@ The scripts of a basic rpg_core.js game look like
 
 ```javascript
 function start() {
-    // some codes
+	// some codes
 }
 function update() {
-    // some codes
+	// some codes
 }
 
 Graphics.initialize(816, 624, 'webgl');
@@ -69,21 +69,21 @@ var currentTime;
 window.scene = new Stage();
 start();
 function performUpdate() {
-    Graphics.tickStart();
-    var newTime = performance.now();
-    if (currentTime === undefined) currentTime = newTime;
-    var fTime = ((newTime - currentTime) / 1000).clamp(0, 0.25);
-    currentTime = newTime;
-    accumulator += fTime;
-    while (accumulator >= deltaTime) {
-        Input.update();
-        TouchInput.update();
-        update();
-        accumulator -= deltaTime;
-    }
-    Graphics.render(window.scene);
-    requestAnimationFrame(performUpdate);
-    Graphics.tickEnd();
+	Graphics.tickStart();
+	var newTime = performance.now();
+	if (currentTime === undefined) currentTime = newTime;
+	var fTime = ((newTime - currentTime) / 1000).clamp(0, 0.25);
+	currentTime = newTime;
+	accumulator += fTime;
+	while (accumulator >= deltaTime) {
+		Input.update();
+		TouchInput.update();
+		update();
+		accumulator -= deltaTime;
+	}
+	Graphics.render(window.scene);
+	requestAnimationFrame(performUpdate);
+	Graphics.tickEnd();
 }
 performUpdate();
 ```

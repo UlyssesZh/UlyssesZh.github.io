@@ -23,6 +23,8 @@ $search-color: #883e6b !default;
 $search-focus-color: #db5568 !default;
 $search-border-color: #ff92a5 !default;
 $search-background-color: #fff !default;
+$lineno-color: #bbb !default;
+$lineno-background-color: #eeeef0 !default;
 
 $grey-color:       #828282 !default;
 $grey-color-light: lighten($grey-color, 40%) !default;
@@ -48,17 +50,13 @@ $content-width:    800px !default;
 $on-palm:          600px !default;
 $on-laptop:        800px !default;
 @mixin media-query($device) {
-  @media screen and (max-width: $device) {
-    @content;
-  }
+	@media screen and (max-width: $device) {
+		@content;
+	}
 }
 @mixin relative-font-size($ratio) {
-  font-size: $base-font-size * $ratio;
+	font-size: $base-font-size * $ratio;
 }
-@import
-  "minima/base",
-  "minima/layout",
-  "minima/syntax-highlighting"
-;
+@import "minima/base", "minima/layout", "minima/syntax-highlighting";
 
 @import "my-theme";

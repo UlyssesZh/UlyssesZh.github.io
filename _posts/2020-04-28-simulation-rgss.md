@@ -34,11 +34,11 @@ Here is a simple code to calculate partial derivatives.
 
 ```ruby
 def div x0, dx, f
-  f0 = f.(x0)
-  n = x0.size
-  Array.new n do |i|
-    (f.(x0 + Vector.basis(n, i) * dx) - f0) / dx
-  end
+	f0 = f.(x0)
+	n = x0.size
+	Array.new n do |i|
+		(f.(x0 + Vector.basis(n, i) * dx) - f0) / dx
+	end
 end
 ```
 
@@ -60,12 +60,12 @@ called the (explicit) Runge--Kutta method.
 
 ```ruby
 def runge_kutta initial, max_t, dt, (*pyramid, coefs), func
-  (0..max_t).step(dt).reduce initial do |ret, t|
-    $canvas.trace t, ret if $canvas
-    coefs.zip(pyramid).each_with_object([]).sum do |(coef, row), ary|
-      coef * ary.push(func.(t, row.inner(ary) * dt + ret)).last
-    end * dt + ret#p(ret)
-  end
+	(0..max_t).step(dt).reduce initial do |ret, t|
+		$canvas.trace t, ret if $canvas
+		coefs.zip(pyramid).each_with_object([]).sum do |(coef, row), ary|
+			coef * ary.push(func.(t, row.inner(ary) * dt + ret)).last
+		end * dt + ret#p(ret)
+	end
 end
 ```
 
@@ -84,7 +84,7 @@ RALSTON_3RD = [[],[1/2.0],[0,3/4.0],[2/9.0,1/3.0,4/9.0]]
 SSPRK3 = [[],[1],[1/4.0,1/4.0],[1/6.0,1/6.0,2/3.0]]
 CLASSIC_4TH = [[],[1/2.0],[0,1/2.0],[0,0,1],[1/6.0,1/3.0,1/3.0,1/6.0]]
 RALSTON_4TH = [[],[0.4],[0.29697761,0.15875964],[0.21810040,-3.05096516,
-    3.83286476],[0.17476028, -0.55148066, 1.20553560, 0.17118478]]
+		3.83286476],[0.17476028, -0.55148066, 1.20553560, 0.17118478]]
 THREE_EIGHTH_4TH = [[],[1/3.0],[-1/3.0,1],[1,-1,1],[1/8.0,3/8.0,3/8.0,1/8.0]]
 ```
 
@@ -97,24 +97,24 @@ Here we also need to have some patches to get it work.
 
 ```ruby
 class Float
-  alias ulysses20200426121236_add +
-  def + other
-    if zero? && [Vector, Matrix].any? { |c| other.is_a? c }
-      other
-    else
-      ulysses20200426121236_add other
-    end
-  end
+	alias ulysses20200426121236_add +
+	def + other
+		if zero? && [Vector, Matrix].any? { |c| other.is_a? c }
+			other
+		else
+			ulysses20200426121236_add other
+		end
+	end
 end
 module Enumerable
-  def sum init = 0, &block
-    (block ? map(&block) : self).reduce init, :+
-  end
+	def sum init = 0, &block
+		(block ? map(&block) : self).reduce init, :+
+	end
 end
 class Array
-  def inner other
-    zip(other).sum { |a, b| a * b }
-  end
+	def inner other
+		zip(other).sum { |a, b| a * b }
+	end
 end
 ```
 
@@ -124,10 +124,10 @@ Finally, just combine them up, and we can solve a Hamiltonian numerically.
 
 ```ruby
 def solve_hamiltonian n, qp0, max_t, dt, hamiltonian
-  runge_kutta qp0, max_t, dt, CLASSIC_4TH, ->t, qp do
-    dqpdt = div qp, 1e-6, ->x { hamiltonian.(t, x) }
-    Vector[*dqpdt[n...n*2], *dqpdt[0...n].map(&:-@)]
-  end
+	runge_kutta qp0, max_t, dt, CLASSIC_4TH, ->t, qp do
+		dqpdt = div qp, 1e-6, ->x { hamiltonian.(t, x) }
+		Vector[*dqpdt[n...n*2], *dqpdt[0...n].map(&:-@)]
+	end
 end
 ```
 
@@ -135,7 +135,7 @@ For example, let's simulate a double pendulum.
 
 ```ruby
 solve_hamiltonian 2,Vector[PI/2,0.0,0.0,0.0],Float::INFINITY,1e-3,
-    ->t,(q1,q2,p1,p2){p1**2+p2**2/2+cos(q1-q2)*p1*p2-cos(q1)-cos(q2)}
+		->t,(q1,q2,p1,p2){p1**2+p2**2/2+cos(q1-q2)*p1*p2-cos(q1)-cos(q2)}
 ```
 
 ![double_pendulum]({{page.figure}}double_pendulum.gif)

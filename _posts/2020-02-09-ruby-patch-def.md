@@ -24,15 +24,15 @@ Like this:
 
 ```ruby
 class Foo
-  def bar
-    print 'before'
-  end
+	def bar
+		print 'before'
+	end
 end
 
 class Foo
-  def_after :bar do
-    puts ' & after'
-  end
+	def_after :bar do
+		puts ' & after'
+	end
 end
 
 Foo.new.bar # => before & after
@@ -42,13 +42,13 @@ The implementation is a little easy:
 
 ```ruby
 class Module
-  def def_after method_name, &refine_block
-    old = instance_method method_name
-    define_method method_name do |*args, **opts, &block|
-      old.bind_call self, *args, **opts, &block
-      refine_block.(*args, **opts, &block)
-    end
-  end
+	def def_after method_name, &refine_block
+		old = instance_method method_name
+		define_method method_name do |*args, **opts, &block|
+			old.bind_call self, *args, **opts, &block
+			refine_block.(*args, **opts, &block)
+		end
+	end
 end
 ```
 
@@ -63,23 +63,23 @@ and then bind the instance method to `self`:
 
 ```ruby
 class Proc
-  def bind receiver
-    Module.new.module_exec self do |block|
-      instance_method define_method :_, &block
-    end.bind receiver
-  end
-  def bind_call receiver, *args, **opts, &block
-    bind(receiver).(*args, **opts, &block)
-  end
+	def bind receiver
+		Module.new.module_exec self do |block|
+			instance_method define_method :_, &block
+		end.bind receiver
+	end
+	def bind_call receiver, *args, **opts, &block
+		bind(receiver).(*args, **opts, &block)
+	end
 end
 class Module
-  def def_after method_name, &refine_block
-    old = instance_method method_name
-    define_method method_name do |*args, **opts, &block|
-      old.bind_call self, *args, **opts, &block
-      refine_block.bind_call self, *args, **opts, &block
-    end
-  end
+	def def_after method_name, &refine_block
+		old = instance_method method_name
+		define_method method_name do |*args, **opts, &block|
+			old.bind_call self, *args, **opts, &block
+			refine_block.bind_call self, *args, **opts, &block
+		end
+	end
 end
 ```
 
@@ -94,20 +94,20 @@ the visibility afterward:
 
 ```ruby
 class Module
-  def method_visibility method_name
-    %i[public protected private].find do |visibility|
-      __send__ :"#{visibility}_method_defined?", method_name
-    end
-  end
-  def def_after method_name, &refine_block
-    visibility = method_visibility method_name
-    old = instance_method method_name
-    define_method method_name do |*args, **opts, &block|
-      old.bind_call self, *args, **opts, &block
-      refine_block.bind_call self, *args, **opts, &block
-    end
-    __send__ visibility, method_name
-  end
+	def method_visibility method_name
+		%i[public protected private].find do |visibility|
+			__send__ :"#{visibility}_method_defined?", method_name
+		end
+	end
+	def def_after method_name, &refine_block
+		visibility = method_visibility method_name
+		old = instance_method method_name
+		define_method method_name do |*args, **opts, &block|
+			old.bind_call self, *args, **opts, &block
+			refine_block.bind_call self, *args, **opts, &block
+		end
+		__send__ visibility, method_name
+	end
 end
 ```
 
@@ -121,15 +121,15 @@ With this inspiration, we can implement `Object#def_after`:
 
 ```ruby
 class Object
-  def def_after method_name, &refine_block
-    visibility = singleton_class.method_visibility method_name
-    old = method method_name
-    define_singleton_method method_name do |*args, **opts, &block|
-      old.(*args, **opts, &block)
-      refine_block.bind_call self, *args, **opts, &block
-    end
-    singleton_class.__send__ visibility, method_name
-  end
+	def def_after method_name, &refine_block
+		visibility = singleton_class.method_visibility method_name
+		old = method method_name
+		define_singleton_method method_name do |*args, **opts, &block|
+			old.(*args, **opts, &block)
+			refine_block.bind_call self, *args, **opts, &block
+		end
+		singleton_class.__send__ visibility, method_name
+	end
 end
 ```
 
@@ -141,27 +141,27 @@ The way to solve this is to judge whether `is_a? Module` in
 
 ```ruby
 class Object
-  def def_after method_name, singleton: false, &refine_block
-    singleton ||= !is_a?(Module)
-    # mod: the module containing the old method
-    # get_method: the method to get the Method/UnboundMethod obj
-    # def_method: the method to define a new method
-    mod, get_method, def_method = singleton ?
-        [singleton_class, method(:method), method(:define_singleton_method)] :
-        [self, method(:instance_method), method(:define_method)]
-    # get visibility
-    visibility = mod.method_visibility method_name
-    # get old
-    old = get_method.(method_name)
-    # override
-    def_method.(method_name) do |*args, **opts, &block|
-      old = old.bind self unless old.is_a? Method
-      old.(*args, **opts, &block)
-      refine_block.bind_call *args, **opts, &block
-    end
-    # set visibility
-    mod.__send__ visibility, method_name
-  end
+	def def_after method_name, singleton: false, &refine_block
+		singleton ||= !is_a?(Module)
+		# mod: the module containing the old method
+		# get_method: the method to get the Method/UnboundMethod obj
+		# def_method: the method to define a new method
+		mod, get_method, def_method = singleton ?
+				[singleton_class, method(:method), method(:define_singleton_method)] :
+				[self, method(:instance_method), method(:define_method)]
+		# get visibility
+		visibility = mod.method_visibility method_name
+		# get old
+		old = get_method.(method_name)
+		# override
+		def_method.(method_name) do |*args, **opts, &block|
+			old = old.bind self unless old.is_a? Method
+			old.(*args, **opts, &block)
+			refine_block.bind_call *args, **opts, &block
+		end
+		# set visibility
+		mod.__send__ visibility, method_name
+	end
 end
 ```
 
@@ -177,41 +177,41 @@ Then `Object#def_after` will be a little complex:
 
 ```ruby
 class Object
-  # pat: when refine_block is nil, it is used to represent a refinement
-  # singleton: force singleton when self is a Module
-  def def_after method_name, pat = nil , singleton: false, &refine_block
-    singleton ||= !is_a?(Module)
-    # mod: the module containing the old method
-    # get_method: the method to get the Method/UnboundMethod obj
-    # def_method: the method to define a new method
-    mod, get_method, def_method = singleton ?
-        [singleton_class, method(:method), method(:define_singleton_method)] :
-        [self, method(:instance_method), method(:define_method)]
-    # get visibility
-    visibility = mod.method_visibility method_name
-    # get pat
-    pat = refine_block || {
-      to_sym:  ->symbol { get_method.(symbol.to_sym) },
-      to_proc: :to_proc.to_proc,
-      call:    ->callable { callable.method :call }
-    }.each do |duck, out|
-      break out.(pat) if pat.respond_to? duck
-    end
-    # get old
-    old = get_method.(method_name)
-    # override
-    def_method.(method_name) do |*args, **opts, &block|
-      # bind old
-      old = old.bind self unless old.is_a? Method
-      # bind pat
-      pat = pat.bind self unless pat.is_a? Method
-      # call the new method
-      old.(*args, **opts, &block)
-      pat.(*args, **opts, &block)
-    end
-    # set visibility
-    mod.__send__ visibility, method_name
-  end
+	# pat: when refine_block is nil, it is used to represent a refinement
+	# singleton: force singleton when self is a Module
+	def def_after method_name, pat = nil , singleton: false, &refine_block
+		singleton ||= !is_a?(Module)
+		# mod: the module containing the old method
+		# get_method: the method to get the Method/UnboundMethod obj
+		# def_method: the method to define a new method
+		mod, get_method, def_method = singleton ?
+				[singleton_class, method(:method), method(:define_singleton_method)] :
+				[self, method(:instance_method), method(:define_method)]
+		# get visibility
+		visibility = mod.method_visibility method_name
+		# get pat
+		pat = refine_block || {
+			to_sym:  ->symbol { get_method.(symbol.to_sym) },
+			to_proc: :to_proc.to_proc,
+			call:    ->callable { callable.method :call }
+		}.each do |duck, out|
+			break out.(pat) if pat.respond_to? duck
+		end
+		# get old
+		old = get_method.(method_name)
+		# override
+		def_method.(method_name) do |*args, **opts, &block|
+			# bind old
+			old = old.bind self unless old.is_a? Method
+			# bind pat
+			pat = pat.bind self unless pat.is_a? Method
+			# call the new method
+			old.(*args, **opts, &block)
+			pat.(*args, **opts, &block)
+		end
+		# set visibility
+		mod.__send__ visibility, method_name
+	end
 end
 ```
 
@@ -221,26 +221,26 @@ Maybe we should define `Object::def_` and use it like this:
 
 ```ruby
 class Object
-  # use this binding to eval to avoid excessive local variables
-  def self.class_binding
-    binding
-  end
-  {
-    after:  'result = old.(*); pat.(*); result',
-    after!: 'old.(*); pat.(*)',
-    before: 'pat.(*); old.(*)',
-    with:   'pat.(old.(*), *)',
-    chain:  'pat.(old, *)',
-    and:    'old.(*) && pat.(*)',
-    or:     'old.(*) || pat.(*)',
-    if:     'pat.(*) && old.(*)',
-    unless: 'pat.(*) || old.(*)'
-  }.each do |sym, code|
-    str = "def_(:#{sym}) { |old, pat, *| #{code} }"
-    str.gsub! ?*, '*args, **opts, &block'
-    class_binding.eval str
-  end
-  singleton_class.undef_method :def_, :class_binding
+	# use this binding to eval to avoid excessive local variables
+	def self.class_binding
+		binding
+	end
+	{
+		after:  'result = old.(*); pat.(*); result',
+		after!: 'old.(*); pat.(*)',
+		before: 'pat.(*); old.(*)',
+		with:   'pat.(old.(*), *)',
+		chain:  'pat.(old, *)',
+		and:    'old.(*) && pat.(*)',
+		or:     'old.(*) || pat.(*)',
+		if:     'pat.(*) && old.(*)',
+		unless: 'pat.(*) || old.(*)'
+	}.each do |sym, code|
+		str = "def_(:#{sym}) { |old, pat, *| #{code} }"
+		str.gsub! ?*, '*args, **opts, &block'
+		class_binding.eval str
+	end
+	singleton_class.undef_method :def_, :class_binding
 end
 ```
 
@@ -250,44 +250,44 @@ defined before:
 
 ```ruby
 class Object
-  # the method is going to be undefined soon
-  def self.def_ sym, &def_block
-    # pat: when refine_block is nil, it is used to represent a refinement
-    # singleton: force singleton when self is a Module
-    define_method :"def_#{sym}" do |method_name, pat = nil, singleton: false,
-                                    &refine_block|
-      singleton ||= !is_a?(Module)
-      # mod: the module containing the old method
-      # get_method: the method to get the Method/UnboundMethod obj
-      # def_method: the method to define a new method
-      mod, get_method, def_method = singleton ?
-          [singleton_class, method(:method), method(:define_singleton_method)] :
-          [self, method(:instance_method), method(:define_method)]
-      # get visibility
-      visibility = mod.method_visibility method_name
-      # get pat
-      pat = refine_block || {
-        to_sym:  ->symbol { get_method.(symbol.to_sym) },
-        to_proc: :to_proc.to_proc,
-        call:    ->callable { callable.method :call }
-      }.each do |duck, out|
-        break out.(pat) if pat.respond_to? duck
-      end
-      # get old
-      old = get_method.(method_name)
-      # override
-      def_method.(method_name) do |*args, **opts, &block|
-        # bind old
-        old = old.bind self unless old.is_a? Method
-        # bind pat
-        pat = pat.bind self unless pat.is_a? Method
-        # call the new method
-        def_block.(old, pat, *args, **opts, &block)
-      end
-      # set visibility
-      mod.__send__ visibility, method_name
-    end
-  end
+	# the method is going to be undefined soon
+	def self.def_ sym, &def_block
+		# pat: when refine_block is nil, it is used to represent a refinement
+		# singleton: force singleton when self is a Module
+		define_method :"def_#{sym}" do |method_name, pat = nil, singleton: false,
+		                                &refine_block|
+			singleton ||= !is_a?(Module)
+			# mod: the module containing the old method
+			# get_method: the method to get the Method/UnboundMethod obj
+			# def_method: the method to define a new method
+			mod, get_method, def_method = singleton ?
+					[singleton_class, method(:method), method(:define_singleton_method)] :
+					[self, method(:instance_method), method(:define_method)]
+			# get visibility
+			visibility = mod.method_visibility method_name
+			# get pat
+			pat = refine_block || {
+				to_sym:  ->symbol { get_method.(symbol.to_sym) },
+				to_proc: :to_proc.to_proc,
+				call:    ->callable { callable.method :call }
+			}.each do |duck, out|
+				break out.(pat) if pat.respond_to? duck
+			end
+			# get old
+			old = get_method.(method_name)
+			# override
+			def_method.(method_name) do |*args, **opts, &block|
+				# bind old
+				old = old.bind self unless old.is_a? Method
+				# bind pat
+				pat = pat.bind self unless pat.is_a? Method
+				# call the new method
+				def_block.(old, pat, *args, **opts, &block)
+			end
+			# set visibility
+			mod.__send__ visibility, method_name
+		end
+	end
 end
 ```
 

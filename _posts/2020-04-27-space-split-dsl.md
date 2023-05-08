@@ -20,10 +20,10 @@ Like this:
 
 ```ruby
 Robot.new do
-  a b c
-  d e
-  f g h i
-  j
+	a b c
+	d e
+	f g h i
+	j
 end.run
 ```
 
@@ -50,45 +50,45 @@ Look into the details yourself.
 
 ```ruby
 class Robot
-  attr_accessor :movements
-  def initialize &block
-    @movements = []
-    @last_length = 0
-    instance_eval &block if block
-    rearrange
-  end
-  def method_missing name, *args
-    case args.size
-    when 0
-      rearrange
-      @movements.push result = Movement.new(name)
-      @last_length += 1
-      result
-    when 1
-      @movements.push result = Movement.new(name)
-      @last_length += 1
-      result
-    else
-      super
-    end
-  end
-  def rearrange
-    last_movements = @movements.last @last_length
-    @movements[@movements.size - @last_length..] = last_movements.reverse
-    @last_length = 0
-  end
-  def run
-    puts @movements
-  end
-  class Movement
-    attr_accessor :target
-    def initialize target
-      @target = target
-    end
-    def to_s
-      "Go to #@target"
-    end
-  end
+	attr_accessor :movements
+	def initialize &block
+		@movements = []
+		@last_length = 0
+		instance_eval &block if block
+		rearrange
+	end
+	def method_missing name, *args
+		case args.size
+		when 0
+			rearrange
+			@movements.push result = Movement.new(name)
+			@last_length += 1
+			result
+		when 1
+			@movements.push result = Movement.new(name)
+			@last_length += 1
+			result
+		else
+			super
+		end
+	end
+	def rearrange
+		last_movements = @movements.last @last_length
+		@movements[@movements.size - @last_length..] = last_movements.reverse
+		@last_length = 0
+	end
+	def run
+		puts @movements
+	end
+	class Movement
+		attr_accessor :target
+		def initialize target
+			@target = target
+		end
+		def to_s
+			"Go to #@target"
+		end
+	end
 end
 ```
 

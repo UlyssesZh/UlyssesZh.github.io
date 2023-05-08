@@ -153,16 +153,16 @@ In the code, `dp[k][r]` means $P_{n,k,r}$ in the $n$th iteration.
 ## Returns an array of size m+1,
 ## with the k-th element being the probability P_{m,k}.
 def combo m
-  (1..m).each_with_object [[1]] do |n, dp|
-    dp[n] = [0]*n + [Y * dp[n-1][n-1]] # n = k > 0
-    (n-1).downto 1 do |k| # n > k > 0
-      dpk0 = (1-Y) * dp[k].sum
-      dp[k][k] = Y * (dp[k-1][k-1] + dp[k][k-1])        # n > k = r > 0
-      (k-1).downto(1) { |r| dp[k][r] = Y * dp[k][r-1] } # n > k > r > 0
-      dp[k][0] = dpk0                                   # n > k > r = 0
-    end
-    dp[0][0] *= 1-Y # n > k = r = 0
-  end.map &:sum
+	(1..m).each_with_object [[1]] do |n, dp|
+		dp[n] = [0]*n + [Y * dp[n-1][n-1]] # n = k > 0
+		(n-1).downto 1 do |k| # n > k > 0
+			dpk0 = (1-Y) * dp[k].sum
+			dp[k][k] = Y * (dp[k-1][k-1] + dp[k][k-1])        # n > k = r > 0
+			(k-1).downto(1) { |r| dp[k][r] = Y * dp[k][r-1] } # n > k > r > 0
+			dp[k][0] = dpk0                                   # n > k > r = 0
+		end
+		dp[0][0] *= 1-Y # n > k = r = 0
+	end.map &:sum
 end
 ```
 
@@ -313,12 +313,12 @@ Then, we can write the program to calculate $P_{n,k}$:
 ## Returns an array of size m+1,
 ## with the k-th element being the probability P_{m,k}.
 def combo m
-  (1..m).each_with_object [[1]] do |n, dp|
-    dp[n] = (1..n-1).each_with_object [(1-Y)**n] do |k, dpn|
-      dpn[k] = (1-Y) * (Y**k * (0..[k, n-k-1].min).sum { dp[n-k-1][_1] } + (0..[k-1, n-k-1].min).sum { Y**_1 * dp[n-_1-1][k] })
-    end
-    dp[n][n] = Y**n
-  end.last
+	(1..m).each_with_object [[1]] do |n, dp|
+		dp[n] = (1..n-1).each_with_object [(1-Y)**n] do |k, dpn|
+			dpn[k] = (1-Y) * (Y**k * (0..[k, n-k-1].min).sum { dp[n-k-1][_1] } + (0..[k-1, n-k-1].min).sum { Y**_1 * dp[n-_1-1][k] })
+		end
+		dp[n][n] = Y**n
+	end.last
 end
 ```
 
@@ -360,36 +360,36 @@ and we can write the program to calculate the coefficients:
 ## Returns a nested array of size m+1 times m+1,
 ## with the j-th element of the k-th element being the coefficient of Y^j in P_{m,k}(Y).
 def combo_pc m
-  (1..m).each_with_object [[[1]]] do |n, dp|
-    dp[n] = Array.new(n+1) { Array.new n+1, 0 }
+	(1..m).each_with_object [[[1]]] do |n, dp|
+		dp[n] = Array.new(n+1) { Array.new n+1, 0 }
 
-    # dp[n][0] = (1-Y)**n
-    0.upto(n-1) { dp[n][0][_1] = dp[n-1][0][_1] } # will be multiplied by 1-Y later
+		# dp[n][0] = (1-Y)**n
+		0.upto(n-1) { dp[n][0][_1] = dp[n-1][0][_1] } # will be multiplied by 1-Y later
 
-    1.upto n/2-1 do |k|
-      # dp[n][k] = (1-Y) * (Y**k * (0..k).sum { |j| dp[n-k-1][j] } + (0..k-1).sum { |r| Y**r * dp[n-r-1][k] })
-      0.upto(k) { |j| 0.upto(n-k-1) { dp[n][k][_1+k] += dp[n-k-1][j][_1] } }
-      0.upto(k-1) { |r| 0.upto(n-r-1) { dp[n][k][_1+r] += dp[n-r-1][k][_1] } }
-    end
+		1.upto n/2-1 do |k|
+			# dp[n][k] = (1-Y) * (Y**k * (0..k).sum { |j| dp[n-k-1][j] } + (0..k-1).sum { |r| Y**r * dp[n-r-1][k] })
+			0.upto(k) { |j| 0.upto(n-k-1) { dp[n][k][_1+k] += dp[n-k-1][j][_1] } }
+			0.upto(k-1) { |r| 0.upto(n-r-1) { dp[n][k][_1+r] += dp[n-r-1][k][_1] } }
+		end
 
-    if n % 2 == 1
-      k = n/2
-      # dp[n][k] = (1-Y) * (Y**k + (0..k-1).sum { |r| Y**r * dp[n-r-1][k] })
-      dp[n][k][k] = 1
-      0.upto(k-1) { |r| 0.upto(n-r-1) { dp[n][k][_1+r] += dp[n-r-1][k][_1] } }
-    end
+		if n % 2 == 1
+			k = n/2
+			# dp[n][k] = (1-Y) * (Y**k + (0..k-1).sum { |r| Y**r * dp[n-r-1][k] })
+			dp[n][k][k] = 1
+			0.upto(k-1) { |r| 0.upto(n-r-1) { dp[n][k][_1+r] += dp[n-r-1][k][_1] } }
+		end
 
-    ((n+1)/2).upto n-1 do |k|
-      # dp[n][k] = (1-Y) * (Y**k + (0..n-k-1).sum { |r| Y**r * dp[n-r-1][k] })
-      dp[n][k][k] = 1
-      0.upto(n-k-1) { |r| 0.upto(n-r-1) { dp[n][k][_1+r] += dp[n-r-1][k][_1] } }
-    end
+		((n+1)/2).upto n-1 do |k|
+			# dp[n][k] = (1-Y) * (Y**k + (0..n-k-1).sum { |r| Y**r * dp[n-r-1][k] })
+			dp[n][k][k] = 1
+			0.upto(n-k-1) { |r| 0.upto(n-r-1) { dp[n][k][_1+r] += dp[n-r-1][k][_1] } }
+		end
 
-    0.upto(n-1) { |k| n.downto(1) { dp[n][k][_1] -= dp[n][k][_1-1] } } # multiply by 1-Y
-    
-    # dp[n][n] = Y**n
-    dp[n][n][n] = 1
-  end.last
+		0.upto(n-1) { |k| n.downto(1) { dp[n][k][_1] -= dp[n][k][_1-1] } } # multiply by 1-Y
+		
+		# dp[n][n] = Y**n
+		dp[n][n][n] = 1
+	end.last
 end
 ```
 
