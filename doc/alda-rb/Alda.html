@@ -21,8 +21,6 @@
 <link href="./css/rdoc.css" rel="stylesheet">
 
 
-
-
 <body id="top" role="document" class="module">
 <nav role="navigation">
   <div id="project-navigation">
@@ -62,22 +60,19 @@
     
     
     
-    <!-- Method Quickref -->
+    
+<!-- Method Quickref -->
 <div id="method-list-section" class="nav-section">
   <h3>Methods</h3>
 
   <ul class="link-list" role="directory">
-    
     <li ><a href="#method-c-5B-5D">::[]</a>
-    
     <li ><a href="#method-c-clear_options">::clear_options</a>
-    
+    <li ><a href="#method-c-deduce_generation">::deduce_generation</a>
     <li ><a href="#method-c-down-3F">::down?</a>
-    
-    <li ><a href="#method-c-repl">::repl</a>
-    
+    <li ><a href="#method-c-pipe">::pipe</a>
+    <li ><a href="#method-c-processes">::processes</a>
     <li ><a href="#method-c-up-3F">::up?</a>
-    
   </ul>
 </div>
 
@@ -95,22 +90,18 @@
 
   </section>
 
-  
   <section id="5Buntitled-5D" class="documentation-section">
-    
 
-    
 
-    
     <section class="constants-list">
       <header>
         <h3>Constants</h3>
       </header>
       <dl>
-      
         <dt id="COMMANDS">COMMANDS
-        
-        <dd><p>The array of available subcommands of alda executable.</p>
+        <dd><p>The <a href="Hash.html"><code>Hash</code></a> of available commands. The symbols of commands are keys and each value is an <a href="Array.html"><code>Array</code></a> of generations where the command is available.</p>
+        <dt id="COMMANDS_FOR_VERSIONS">COMMANDS_FOR_VERSIONS
+        <dd><p>The available subcommands of alda executable. This is a <a href="Hash.html"><code>Hash</code></a>, with keys being possible values of <a href="Alda.html#attribute-c-generation"><code>::generation</code></a>, and values being an <a href="Array.html"><code>Array</code></a> of symbols of the available commands of that generation.</p>
 
 <p><a href="Alda.html"><code>Alda</code></a> is able to invoke <code>alda</code> at the command line. The subcommand is the name of the method invoked upon <a href="Alda.html"><code>Alda</code></a>.</p>
 
@@ -126,27 +117,30 @@
 <span class="ruby-comment"># =&gt; &quot;{\&quot;chord-mode\&quot;:false,\&quot;current-instruments\&quot;:...}\n&quot;</span>
 </pre>
 
-<p>The available commands are: <code>help</code>, <code>update</code>, <code>repl</code>, <code>up</code>, <code>start_server</code>, <code>init</code>, <code>down</code>, <code>stop_server</code>, <code>downup</code>, <code>restart_server</code>, <code>list</code>, <code>status</code>, <code>version</code>, <code>play</code>, <code>stop</code>, <code>parse</code>, <code>instruments</code>, and <code>export</code>.</p>
-        
-      
+<p>The available commands are:</p>
+<ul><li>
+<p>If <a href="Alda.html#attribute-c-generation"><code>::generation</code></a> is <code>:v1</code>: <code>help</code>, <code>update</code>, <code>repl</code>, <code>up</code>, <code>start_server</code>, <code>init</code>, <code>down</code>, <code>stop_server</code>, <code>downup</code>, <code>restart_server</code>, <code>list</code>, <code>status</code>, <code>version</code>, <code>play</code>, <code>stop</code>, <code>parse</code>, <code>instruments</code>, and <code>export</code>.</p>
+</li><li>
+<p>If <a href="Alda.html#attribute-c-generation"><code>::generation</code></a> is <code>:v2</code>: <code>doctor</code>, <code>export</code>, <code>help</code>, <code>import</code>, <code>instruments</code>, <code>parse</code>, <code>play</code>, <code>ps</code>, <code>repl</code>, <code>shutdown</code>, <code>stop</code>, <code>telemetry</code>, <code>update</code>, and <code>version</code>.</p>
+</li></ul>
+
+<p>Trying to run a command that is not support by the current generation set by <a href="Alda.html#attribute-c-generation"><code>::generation</code></a> will raise an <a href="Alda/GenerationError.html"><code>Alda::GenerationError</code></a>.</p>
+        <dt id="GENERATIONS">GENERATIONS
+        <dd><p>The <a href="Array.html"><code>Array</code></a> of possible values of <a href="Alda.html#attribute-c-generation"><code>::generation</code></a>. It is just the array <code>[:v1, :v2]</code></p>
+
+<p>You can use <code>:v1?</code> and <code>:v2?</code> to get whether the current generation is <code>:v1</code> or <code>:v2</code>. For example, <code>Alda.v1?</code> is the same as <code>Alda.generation == :v1</code>. You can also use <code>:v1!</code> and <code>:v2!</code> to set the generation to <code>:v1</code> or <code>:v2</code>. For example, <code>Alda.v1!</code> is the same as <code>Alda.generation = :v1</code>.</p>
         <dt id="VERSION">VERSION
-        
         <dd><p>The version number of alda-rb.</p>
 
 <p>The same as that in alda-rb gem spec.</p>
-        
-      
       </dl>
     </section>
-    
 
-    
     <section class="attribute-method-details" class="method-section">
       <header>
         <h3>Attributes</h3>
       </header>
 
-      
       <div id="attribute-c-executable" class="method-detail">
         <div class="method-heading attribute-method-heading">
           <span class="method-name">executable</span><span
@@ -154,14 +148,21 @@
         </div>
 
         <div class="method-description">
-        
         <p>The path to the <code>alda</code> executable.</p>
 
 <p>The default value is <code>&quot;alda&quot;</code>, which will depend on your <code>PATH</code>.</p>
-        
         </div>
       </div>
-      
+      <div id="attribute-c-generation" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">generation</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        <p>The major version of the <code>alda</code> command used. Possible values: <code>:v1</code> or <code>:v2</code> (i.e. one of the values in <a href="Alda.html#GENERATIONS"><code>Alda::GENERATIONS</code></a>). If you try to specify it to values other than those, an ArgumentError will be raised. This affects several things due to some incompatible changes from Alda 1 to Alda 2. You may use <a href="Alda.html#method-c-deduce_generation"><code>::deduce_generation</code></a> to automatically set it, or use v1! or v2! to set it in a shorter way.</p>
+        </div>
+      </div>
       <div id="attribute-c-options" class="method-detail">
         <div class="method-heading attribute-method-heading">
           <span class="method-name">options</span><span
@@ -169,219 +170,243 @@
         </div>
 
         <div class="method-description">
-        
         <p>The commandline options set using <a href="Alda.html#method-c-5B-5D"><code>::[]</code></a>. Not the subcommand options. Clear it using <a href="Alda.html#method-c-clear_options"><code>::clear_options</code></a>.</p>
-        
         </div>
       </div>
-      
     </section>
-    
 
-    
+
      <section id="public-class-5Buntitled-5D-method-details" class="method-section">
        <header>
          <h3>Public Class Methods</h3>
        </header>
 
-    
       <div id="method-c-5B-5D" class="method-detail ">
-        
-        
-        <div class="method-heading">
-          <span class="method-callseq">
-            Alda[**opts] &rarr; self
-          </span>
-          
-          <span class="method-click-advice">click to toggle source</span>
-          
+        <div class="method-header">
+          <div class="method-heading">
+            <span class="method-callseq">
+              Alda[**opts] &rarr; self
+            </span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
         </div>
-        
-        
 
         <div class="method-description">
-          
           <p>Sets the options of alda command. Not the subcommand options.</p>
 
-<pre class="ruby"><span class="ruby-constant">Alda</span>[<span class="ruby-value">port:</span> <span class="ruby-value">1108</span>].<span class="ruby-identifier">up</span> <span class="ruby-comment"># =&gt; &quot;[1108] ...&quot;</span>
+<pre class="ruby"><span class="ruby-comment"># This example only works for Alda 1.</span>
+<span class="ruby-constant">Alda</span>[<span class="ruby-value">port:</span> <span class="ruby-value">1108</span>].<span class="ruby-identifier">up</span> <span class="ruby-comment"># =&gt; &quot;[1108] ...&quot;</span>
 <span class="ruby-constant">Alda</span>.<span class="ruby-identifier">status</span> <span class="ruby-comment"># =&gt; &quot;[1108] ...&quot;</span>
 </pre>
 
 <p>Further set options will be merged. The options can be seen by <a href="Alda.html#attribute-c-options"><code>::options</code></a>. To clear them, use <a href="Alda.html#method-c-clear_options"><code>::clear_options</code></a>.</p>
-          
-          
 
-          
           <div class="method-source-code" id="5B-5D-source">
-            <pre><span class="ruby-comment"># File lib/alda-rb/commandline.rb, line 100</span>
+            <pre><span class="ruby-comment"># File lib/alda-rb/commandline.rb, line 139</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">[]</span> <span class="ruby-operator">**</span><span class="ruby-identifier">opts</span>
   <span class="ruby-ivar">@options</span>.<span class="ruby-identifier">merge!</span> <span class="ruby-identifier">opts</span>
   <span class="ruby-keyword">self</span>
 <span class="ruby-keyword">end</span></pre>
           </div>
-          
         </div>
 
-        
 
-        
       </div>
 
-    
       <div id="method-c-clear_options" class="method-detail ">
-        
-        
-        <div class="method-heading">
-          <span class="method-callseq">
-            clear_options() &rarr; nil
-          </span>
-          
-          <span class="method-click-advice">click to toggle source</span>
-          
+        <div class="method-header">
+          <div class="method-heading">
+            <span class="method-callseq">
+              clear_options() &rarr; nil
+            </span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
         </div>
-        
-        
 
         <div class="method-description">
-          
           <p>Clears the command line options. Makes <a href="Alda.html#attribute-c-options"><code>::options</code></a> an empty <a href="Array.html"><code>Array</code></a>.</p>
-          
-          
 
-          
           <div class="method-source-code" id="clear_options-source">
-            <pre><span class="ruby-comment"># File lib/alda-rb/commandline.rb, line 111</span>
+            <pre><span class="ruby-comment"># File lib/alda-rb/commandline.rb, line 150</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">clear_options</span>
   <span class="ruby-ivar">@options</span>.<span class="ruby-identifier">clear</span>
 <span class="ruby-keyword">end</span></pre>
           </div>
-          
         </div>
 
-        
 
-        
       </div>
 
-    
+      <div id="method-c-deduce_generation" class="method-detail ">
+        <div class="method-header">
+          <div class="method-heading">
+            <span class="method-callseq">
+              deduce_generation &rarr; one of Alda::GENERATIONS
+            </span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+        </div>
+
+        <div class="method-description">
+          <p>Deduce the generation of Alda being used by running <code>alda version</code> in command line, and then set <a href="Alda.html#attribute-c-generation"><code>::generation</code></a> accordingly.</p>
+
+          <div class="method-source-code" id="deduce_generation-source">
+            <pre><span class="ruby-comment"># File lib/alda-rb/commandline.rb, line 238</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deduce_generation</span>
+  <span class="ruby-regexp">/(?&lt;major&gt;\d+)\.(?&lt;minor&gt;\d+)\.(?&lt;patch&gt;\d+)/</span> <span class="ruby-operator">=~</span> <span class="ruby-constant">Alda</span>.<span class="ruby-identifier">version</span>
+  <span class="ruby-ivar">@generation</span> = <span class="ruby-identifier">major</span> <span class="ruby-operator">==</span> <span class="ruby-string">&#39;1&#39;</span> <span class="ruby-operator">?</span> <span class="ruby-value">:v1</span> <span class="ruby-operator">:</span> <span class="ruby-value">:v2</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
       <div id="method-c-down-3F" class="method-detail ">
-        
-        
-        <div class="method-heading">
-          <span class="method-callseq">
-            down? &rarr; true or false
-          </span>
-          
-          <span class="method-click-advice">click to toggle source</span>
-          
+        <div class="method-header">
+          <div class="method-heading">
+            <span class="method-callseq">
+              down? &rarr; true or false
+            </span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
         </div>
-        
-        
 
         <div class="method-description">
-          
-          <p>Whether the alda server is down.</p>
-          
-          
+          <p>Whether the alda server is down. Always returns false if <a href="Alda.html#attribute-c-generation"><code>::generation</code></a> is <code>:v2</code>.</p>
 
-          
           <div class="method-source-code" id="down-3F-source">
-            <pre><span class="ruby-comment"># File lib/alda-rb/commandline.rb, line 133</span>
+            <pre><span class="ruby-comment"># File lib/alda-rb/commandline.rb, line 228</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">down?</span>
-  <span class="ruby-identifier">status</span>.<span class="ruby-identifier">include?</span> <span class="ruby-string">&#39;down&#39;</span>
+  <span class="ruby-operator">!</span><span class="ruby-constant">Alda</span>.<span class="ruby-identifier">v2?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-constant">Alda</span>.<span class="ruby-identifier">status</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-string">&#39;down&#39;</span>)
 <span class="ruby-keyword">end</span></pre>
           </div>
-          
         </div>
 
-        
 
-        
       </div>
 
-    
-      <div id="method-c-repl" class="method-detail ">
-        
-        
-        <div class="method-heading">
-          <span class="method-callseq">
-            repl() &rarr; nil
-          </span>
-          
-          <span class="method-click-advice">click to toggle source</span>
-          
+      <div id="method-c-pipe" class="method-detail ">
+        <div class="method-header">
+          <div class="method-heading">
+            <span class="method-callseq">
+              pipe(command, *args, **opts) &rarr; IO
+            </span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          <div class="method-heading">
+            <span class="method-callseq">
+              pipe(command, *args, **opts) { |io| ... } &rarr; Object
+            </span>
+          </div>
         </div>
-        
-        
 
         <div class="method-description">
-          
-          <p>Start a <a href="Alda/REPL.html"><code>REPL</code></a> session.</p>
-          
-          
+          <p>Runs <code>alda</code> in command line as a child process and returns the pipe IO or pass the IO to the block. See <a href="Alda.html#COMMANDS_FOR_VERSIONS"><code>COMMANDS_FOR_VERSIONS</code></a> for an explanation of <code>args</code> and <code>opts</code>.</p>
 
-          
-          <div class="method-source-code" id="repl-source">
-            <pre><span class="ruby-comment"># File lib/alda-rb/repl.rb, line 12</span>
-<span class="ruby-keyword">def</span> <span class="ruby-constant">Alda</span>.<span class="ruby-identifier ruby-title">repl</span>
-  <span class="ruby-constant">Alda</span><span class="ruby-operator">::</span><span class="ruby-constant">REPL</span>.<span class="ruby-identifier">new</span>.<span class="ruby-identifier">run</span>
+          <div class="method-source-code" id="pipe-source">
+            <pre><span class="ruby-comment"># File lib/alda-rb/commandline.rb, line 167</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">pipe</span> <span class="ruby-identifier">command</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>, <span class="ruby-operator">**</span><span class="ruby-identifier">opts</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>
+  <span class="ruby-identifier">add_option</span> = <span class="ruby-operator">-&gt;</span>((<span class="ruby-identifier">key</span>, <span class="ruby-identifier">val</span>)) <span class="ruby-keyword">do</span>
+    <span class="ruby-keyword">next</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">val</span>
+    <span class="ruby-identifier">args</span>.<span class="ruby-identifier">push</span> <span class="ruby-node">&quot;--#{Alda::Utils.snake_to_slug key}&quot;</span>
+    <span class="ruby-identifier">args</span>.<span class="ruby-identifier">push</span> <span class="ruby-identifier">val</span>.<span class="ruby-identifier">to_s</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">val</span> <span class="ruby-operator">==</span> <span class="ruby-keyword">true</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-comment"># executable</span>
+  <span class="ruby-identifier">args</span>.<span class="ruby-identifier">unshift</span> <span class="ruby-constant">Alda</span>.<span class="ruby-identifier">executable</span>
+  <span class="ruby-identifier">args</span>.<span class="ruby-identifier">map!</span> <span class="ruby-operator">&amp;</span><span class="ruby-value">:to_s</span>
+  <span class="ruby-comment"># options</span>
+  <span class="ruby-constant">Alda</span>.<span class="ruby-identifier">options</span>.<span class="ruby-identifier">each</span> <span class="ruby-operator">&amp;</span><span class="ruby-identifier">add_option</span>
+  <span class="ruby-comment"># subcommand</span>
+  <span class="ruby-identifier">args</span>.<span class="ruby-identifier">push</span> <span class="ruby-identifier">command</span>.<span class="ruby-identifier">to_s</span>
+  <span class="ruby-comment"># subcommand options</span>
+  <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">each</span> <span class="ruby-operator">&amp;</span><span class="ruby-identifier">add_option</span>
+  <span class="ruby-comment"># subprocess</span>
+  <span class="ruby-identifier">spawn_options</span> = <span class="ruby-constant">Alda</span><span class="ruby-operator">::</span><span class="ruby-constant">Utils</span>.<span class="ruby-identifier">win_platform?</span> <span class="ruby-operator">?</span> { <span class="ruby-value">new_pgroup:</span> <span class="ruby-keyword">true</span> } <span class="ruby-operator">:</span> { <span class="ruby-value">pgroup:</span> <span class="ruby-keyword">true</span> }
+  <span class="ruby-constant">IO</span>.<span class="ruby-identifier">popen</span> <span class="ruby-identifier">args</span>, <span class="ruby-operator">**</span><span class="ruby-identifier">spawn_options</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>
 <span class="ruby-keyword">end</span></pre>
           </div>
-          
         </div>
 
-        
 
-        
       </div>
 
-    
+      <div id="method-c-processes" class="method-detail ">
+        <div class="method-header">
+          <div class="method-heading">
+            <span class="method-callseq">
+              processes() &rarr; Array
+            </span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+        </div>
+
+        <div class="method-description">
+          <p>Returns a <a href="Array.html"><code>Array</code></a> of details about running Alda processes. Only available for Alda 2. Each element in the <a href="Array.html"><code>Array</code></a> is a <a href="Hash.html"><code>Hash</code></a>, and each <a href="Hash.html"><code>Hash</code></a> has the following keys:</p>
+<ul><li>
+<p><code>:id</code>: the player-id of the process, a three-letter <a href="String.html"><code>String</code></a>.</p>
+</li><li>
+<p><code>:port</code>: the port number of the process, an Integer.</p>
+</li><li>
+<p><code>:state</code>: the state of the process, a <a href="Symbol.html"><code>Symbol</code></a> (may be <code>nil</code>, <code>:ready</code>, <code>:active</code> etc.).</p>
+</li><li>
+<p><code>:expiry</code>: a human-readable description of expiry time of the process, a <a href="String.html"><code>String</code></a> (may be <code>nil</code>).</p>
+</li><li>
+<p><code>:type</code>: the type of the process, a <a href="Symbol.html"><code>Symbol</code></a> (may be <code>:player</code> or <code>:repl_server</code>).</p>
+</li></ul>
+
+          <div class="method-source-code" id="processes-source">
+            <pre><span class="ruby-comment"># File lib/alda-rb/commandline.rb, line 200</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">processes</span>
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">GenerationError</span>.<span class="ruby-identifier">new</span> [<span class="ruby-value">:v2</span>] <span class="ruby-keyword">if</span> <span class="ruby-identifier">v1?</span>
+  <span class="ruby-constant">Alda</span>.<span class="ruby-identifier">ps</span>.<span class="ruby-identifier">lines</span>(<span class="ruby-value">chomp:</span> <span class="ruby-keyword">true</span>)[<span class="ruby-value">1</span><span class="ruby-operator">..</span>].<span class="ruby-identifier">map</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">id</span>, <span class="ruby-identifier">port</span>, <span class="ruby-identifier">state</span>, <span class="ruby-identifier">expiry</span>, <span class="ruby-identifier">type</span> = <span class="ruby-identifier">line</span>.<span class="ruby-identifier">split</span> <span class="ruby-value">?\t</span>
+    <span class="ruby-identifier">port</span> = <span class="ruby-identifier">port</span>.<span class="ruby-identifier">to_i</span>
+    <span class="ruby-identifier">state</span> = <span class="ruby-identifier">state</span> <span class="ruby-operator">==</span> <span class="ruby-value">?-</span> <span class="ruby-operator">?</span> <span class="ruby-keyword">nil</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">state</span>.<span class="ruby-identifier">to_sym</span>
+    <span class="ruby-identifier">expiry</span> = <span class="ruby-keyword">nil</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">expiry</span> <span class="ruby-operator">==</span> <span class="ruby-value">?-</span>
+    <span class="ruby-identifier">type</span> = <span class="ruby-constant">Alda</span><span class="ruby-operator">::</span><span class="ruby-constant">Utils</span>.<span class="ruby-identifier">slug_to_snake</span> <span class="ruby-identifier">type</span>
+    { <span class="ruby-value">id:</span> <span class="ruby-identifier">id</span>, <span class="ruby-value">port:</span> <span class="ruby-identifier">port</span>, <span class="ruby-value">state:</span> <span class="ruby-identifier">state</span>, <span class="ruby-value">expiry:</span> <span class="ruby-identifier">expiry</span>, <span class="ruby-value">type:</span> <span class="ruby-identifier">type</span> }
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
+
+
+      </div>
+
       <div id="method-c-up-3F" class="method-detail ">
-        
-        
-        <div class="method-heading">
-          <span class="method-callseq">
-            up?() &rarr; true or false
-          </span>
-          
-          <span class="method-click-advice">click to toggle source</span>
-          
+        <div class="method-header">
+          <div class="method-heading">
+            <span class="method-callseq">
+              up?() &rarr; true or false
+            </span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
         </div>
-        
-        
 
         <div class="method-description">
-          
-          <p>Whether the alda server is up.</p>
-          
-          
+          <p>Whether the alda server is up. Always returns true if <a href="Alda.html#attribute-c-generation"><code>::generation</code></a> is <code>:v2</code>.</p>
 
-          
           <div class="method-source-code" id="up-3F-source">
-            <pre><span class="ruby-comment"># File lib/alda-rb/commandline.rb, line 124</span>
+            <pre><span class="ruby-comment"># File lib/alda-rb/commandline.rb, line 218</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">up?</span>
-  <span class="ruby-identifier">status</span>.<span class="ruby-identifier">include?</span> <span class="ruby-string">&#39;up&#39;</span>
+  <span class="ruby-constant">Alda</span>.<span class="ruby-identifier">v2?</span> <span class="ruby-operator">||</span> <span class="ruby-constant">Alda</span>.<span class="ruby-identifier">status</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-string">&#39;up&#39;</span>)
 <span class="ruby-keyword">end</span></pre>
           </div>
-          
         </div>
 
-        
 
-        
       </div>
 
-    
     </section>
-  
-  </section>
 
+  </section>
 </main>
 
 
 <footer id="validator-badges" role="contentinfo">
   <p><a href="https://validator.w3.org/check/referer">Validate</a>
-  <p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.2.1.
+  <p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.5.0.
   <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
 </footer>
 

@@ -21,8 +21,6 @@
 <link href="./css/rdoc.css" rel="stylesheet">
 
 
-
-
 <body id="top" role="document" class="file">
 <nav role="navigation">
   <div id="project-navigation">
@@ -59,30 +57,39 @@
 <div class="nav-section">
   <h3>Table of Contents</h3>
 
+
+
   <ul class="link-list" role="directory">
-    <li><a href="#label-alda-rb">alda-rb</a>
-    <li><a href="#label-Installation">Installation</a>
-    <li><a href="#label-Usage">Usage</a>
-    <li><a href="#label-Development">Development</a>
-    <li><a href="#label-Contributing">Contributing</a>
-    <li><a href="#label-License">License</a>
-    <li><a href="#label-Code+of+Conduct">Code of Conduct</a>
+              <li>
+            <details open>
+              <summary>      <a href="#label-alda-rb">alda-rb</a>
+</summary>
+              <ul class="link-list" role="directory">
+                          <li>      <a href="#label-Installation">Installation</a>
+          <li>      <a href="#label-Usage">Usage</a>
+          <li>      <a href="#label-Development">Development</a>
+          <li>      <a href="#label-Contributing">Contributing</a>
+          <li>      <a href="#label-License">License</a>
+          <li>      <a href="#label-Code+of+Conduct">Code of Conduct</a>
+
+              </ul>
+            </details>
+          </li>
+
   </ul>
 </div>
 
 
   <div id="project-metadata">
-    <div id="fileindex-section" class="nav-section">
+    
+<div id="fileindex-section" class="nav-section">
   <h3>Pages</h3>
 
   <ul class="link-list">
-  
+    <li><a href="./CHANGELOG_md.html">CHANGELOG</a>
     <li><a href="./CODE_OF_CONDUCT_md.html">CODE_OF_CONDUCT</a>
-  
     <li><a href="./LICENSE_txt.html">LICENSE</a>
-  
     <li><a href="./README_md.html">README</a>
-  
   </ul>
 </div>
 
@@ -93,11 +100,13 @@
 
 <h1 id="label-alda-rb">alda-rb<span><a href="#label-alda-rb">&para;</a> <a href="#top">&uarr;</a></span></h1>
 
+<p><a href="https://badge.fury.io/rb/alda-rb"><img src="https://badge.fury.io/rb/alda-rb.svg"></a></p>
+
 <p>A Ruby library for live-coding music with <a href="https://alda.io/">Alda</a>. Also provides an alda DSL in Ruby.</p>
 
 <h2 id="label-Installation">Installation<span><a href="#label-Installation">&para;</a> <a href="#top">&uarr;</a></span></h2>
 
-<p>Add this line to your application&#39;s Gemfile:</p>
+<p>Add this line to your application’s Gemfile:</p>
 
 <pre class="ruby"><span class="ruby-identifier">gem</span> <span class="ruby-string">&#39;alda-rb&#39;</span>
 </pre>
@@ -112,7 +121,7 @@
 
 <h2 id="label-Usage">Usage<span><a href="#label-Usage">&para;</a> <a href="#top">&uarr;</a></span></h2>
 
-<p><a href="https://github.com/alda-lang/alda#Installation">Install Alda</a>, and try the following Ruby codes yourself:</p>
+<p><a href="https://alda.io/install">Install Alda</a>, and try the following Ruby codes yourself:</p>
 
 <pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">&#39;alda-rb&#39;</span>
 
@@ -145,6 +154,38 @@
 <span class="ruby-keyword">end</span>.<span class="ruby-identifier">play</span>
 </pre>
 
+<p>There is also an interactive mode. You can run it by running <code>alda-irb</code> in your command line if you installed the gem. Run <code>bundle exec alda-irb</code> instead if you installed it using the bundler.</p>
+
+<pre>$ alda-irb
+&gt; p processes.last
+{:id=&gt;&quot;dus&quot;, :port=&gt;34317, :state=&gt;nil, :expiry=&gt;nil, :type=&gt;:repl_server}
+&gt; piano_; c d e f
+piano: [c d e f]
+&gt; 5.times do
+.   c
+&gt;   end
+c c c c c
+&gt; score_text
+piano: [c d e f]
+c c c c c
+&gt; play
+Playing...
+&gt; save &#39;temp.alda&#39;
+&gt; puts `cat temp.alda`
+piano: [c d e f]
+c c c c c
+&gt; system &#39;rm temp.alda&#39;
+&gt; exit</pre>
+
+<p>You can also use it to programmatically communicate with the nREPL server:</p>
+
+<pre class="ruby"><span class="ruby-identifier">repl</span> = <span class="ruby-constant">Alda</span><span class="ruby-operator">::</span><span class="ruby-constant">REPL</span>.<span class="ruby-identifier">new</span>
+<span class="ruby-identifier">repl</span>.<span class="ruby-identifier">message</span> <span class="ruby-value">:eval_and_play</span>, <span class="ruby-value">code:</span> <span class="ruby-string">&#39;piano: c d e f&#39;</span> <span class="ruby-comment"># =&gt; nil</span>
+<span class="ruby-identifier">repl</span>.<span class="ruby-identifier">message</span> <span class="ruby-value">:eval_and_play</span>, <span class="ruby-value">code:</span> <span class="ruby-string">&#39;g a b &gt; c&#39;</span> <span class="ruby-comment"># =&gt; nil</span>
+<span class="ruby-identifier">repl</span>.<span class="ruby-identifier">message</span> <span class="ruby-value">:score_text</span> <span class="ruby-comment"># =&gt; &quot;piano: [c d e f]\ng a b &gt; c\n&quot;</span>
+<span class="ruby-identifier">repl</span>.<span class="ruby-identifier">message</span> <span class="ruby-value">:eval_and_play</span>, <span class="ruby-value">code:</span> <span class="ruby-string">&#39;this will cause an error&#39;</span> <span class="ruby-comment"># (raises Alda::NREPLServerError)</span>
+</pre>
+
 <h2 id="label-Development">Development<span><a href="#label-Development">&para;</a> <a href="#top">&uarr;</a></span></h2>
 
 <p>After checking out the repo, run <code>bin/setup</code> to install dependencies. Then, run <code>rake test</code> to run the tests. You can also run <code>bin/console</code> for an interactive prompt that will allow you to experiment.</p>
@@ -153,7 +194,7 @@
 
 <h2 id="label-Contributing">Contributing<span><a href="#label-Contributing">&para;</a> <a href="#top">&uarr;</a></span></h2>
 
-<p>Bug reports and pull requests are welcome on GitHub at <a href="https://github.com/UlyssesZh/alda-rb">github.com/UlyssesZh/alda-rb</a>. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the <a href="CODE_OF_CONDUCT_md.html">code of conduct</a>.</p>
+<p>Bug reports and pull requests are welcome on GitHub at <a href="https://github.com/UlyssesZh/alda-rb">github.com/UlyssesZh/alda-rb</a>. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the <a href="https://github.com/UlyssesZh/alda-rb/blob/master/CODE_OF_CONDUCT.md">code of conduct</a>.</p>
 
 <h2 id="label-License">License<span><a href="#label-License">&para;</a> <a href="#top">&uarr;</a></span></h2>
 
@@ -161,7 +202,7 @@
 
 <h2 id="label-Code+of+Conduct">Code of Conduct<span><a href="#label-Code+of+Conduct">&para;</a> <a href="#top">&uarr;</a></span></h2>
 
-<p>Everyone interacting in the alda-rb project&#39;s codebases, issue trackers, chat rooms and mailing lists is expected to follow the <a href="CODE_OF_CONDUCT_md.html">code of conduct</a>.</p>
+<p>Everyone interacting in the alda-rb project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the <a href="https://github.com/UlyssesZh/alda-rb/blob/master/CODE_OF_CONDUCT.md">code of conduct</a>.</p>
 
 </main>
 
@@ -169,7 +210,7 @@
 
 <footer id="validator-badges" role="contentinfo">
   <p><a href="https://validator.w3.org/check/referer">Validate</a>
-  <p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.2.1.
+  <p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.5.0.
   <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
 </footer>
 

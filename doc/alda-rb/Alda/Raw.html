@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 
-<title>class Alda::CommandLineError - RDoc Documentation</title>
+<title>class Alda::Raw - RDoc Documentation</title>
 
 <script type="text/javascript">
   var rdoc_rel_prefix = "../";
@@ -61,7 +61,7 @@
 <div id="parent-class-section" class="nav-section">
   <h3>Parent</h3>
 
-  <p class="link">StandardError
+  <p class="link"><a href="Event.html">Alda::Event</a>
 </div>
 
     
@@ -73,21 +73,22 @@
 
   <ul class="link-list" role="directory">
     <li class="calls-super" ><a href="#method-c-new">::new</a>
-    <li ><a href="#method-i-port">#port</a>
+    <li class="calls-super" ><a href="#method-i-3D-3D">#==</a>
+    <li ><a href="#method-i-to_alda_code">#to_alda_code</a>
   </ul>
 </div>
 
   </div>
 </nav>
 
-<main role="main" aria-labelledby="class-Alda::CommandLineError">
-  <h1 id="class-Alda::CommandLineError" class="class">
-    class Alda::CommandLineError
+<main role="main" aria-labelledby="class-Alda::Raw">
+  <h1 id="class-Alda::Raw" class="class">
+    class Alda::Raw
   </h1>
 
   <section class="description">
     
-<p>The error is raised when <code>alda</code> command exits with nonzero status.</p>
+<p>A special event that contains raw Alda codes. This is a walkaround for the absence of <code>alda-code</code> function in Alda 2 (<a href="https://github.com/alda-lang/alda/issues/379">alda-lang/alda#379</a>). You can use Alda::EventList#raw to add an <a href="Raw.html"><code>Alda::Raw</code></a> event to the event list.</p>
 
   </section>
 
@@ -100,14 +101,14 @@
         <h3>Attributes</h3>
       </header>
 
-      <div id="attribute-i-status" class="method-detail">
+      <div id="attribute-i-contents" class="method-detail">
         <div class="method-heading attribute-method-heading">
-          <span class="method-name">status</span><span
-            class="attribute-access-type">[R]</span>
+          <span class="method-name">contents</span><span
+            class="attribute-access-type">[RW]</span>
         </div>
 
         <div class="method-description">
-        <p>The <code>Process::Status</code> object representing the status of the process that runs <code>alda</code> command.</p>
+        <p>The raw Alda codes.</p>
         </div>
       </div>
     </section>
@@ -122,29 +123,24 @@
         <div class="method-header">
           <div class="method-heading">
             <span class="method-callseq">
-              new(status, msg=nil) &rarr; Alda::CommandLineError
+              new(code) &rarr; Alda::Raw
             </span>
             <span class="method-click-advice">click to toggle source</span>
           </div>
         </div>
 
         <div class="method-description">
-          <p>Create a <a href="CommandLineError.html"><code>Alda::CommandLineError</code></a> object. <code>status</code> is the status of the process running <code>alda</code> command (can be nil). <code>msg</code> is the output of <code>alda</code> command. <a href="CommandLineError.html#method-i-port"><code>port</code></a> info is extracted from <code>msg</code> in Alda 1.</p>
+          <p>Creates an <a href="Raw.html"><code>Alda::Raw</code></a>.</p>
             <div class="method-calls-super">
               Calls superclass method
               
             </div>
 
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/alda-rb/error.rb, line 31</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span> <span class="ruby-identifier">status</span>, <span class="ruby-identifier">msg</span> = <span class="ruby-keyword">nil</span>
-  <span class="ruby-keyword">if</span> <span class="ruby-constant">Alda</span>.<span class="ruby-identifier">v1?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">msg</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-regexp">/^\[(?&lt;port&gt;\d+)\]\sERROR\s(?&lt;message&gt;.*)$/</span> <span class="ruby-operator">=~</span> <span class="ruby-identifier">msg</span>
-    <span class="ruby-keyword">super</span> <span class="ruby-identifier">message</span>
-    <span class="ruby-ivar">@port</span> = <span class="ruby-identifier">port</span>.<span class="ruby-identifier">to_i</span>
-  <span class="ruby-keyword">else</span>
-    <span class="ruby-keyword">super</span> <span class="ruby-identifier">msg</span>
-  <span class="ruby-keyword">end</span>
-  <span class="ruby-ivar">@status</span> = <span class="ruby-identifier">status</span>
+            <pre><span class="ruby-comment"># File lib/alda-rb/event.rb, line 1351</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span> <span class="ruby-identifier">contents</span>
+  <span class="ruby-keyword">super</span>()
+  <span class="ruby-ivar">@contents</span> = <span class="ruby-identifier">contents</span>
 <span class="ruby-keyword">end</span></pre>
           </div>
         </div>
@@ -159,30 +155,51 @@
          <h3>Public Instance Methods</h3>
        </header>
 
-      <div id="method-i-port" class="method-detail ">
+      <div id="method-i-3D-3D" class="method-detail ">
         <div class="method-header">
           <div class="method-heading">
-            <span class="method-name">port</span><span
-              class="method-args">()</span>
+            <span class="method-callseq">
+              raw == other &rarr; true or false
+            </span>
             <span class="method-click-advice">click to toggle source</span>
           </div>
         </div>
 
         <div class="method-description">
-          <p>The port on which the problematic alda server runs. This is only available for Alda 1.</p>
+          <p>Overrides <a href="Event.html#method-i-3D-3D"><code>Alda::Event#==</code></a>. Returns true if <code>other</code> is an <a href="Raw.html"><code>Alda::Raw</code></a> and has the same <a href="Raw.html#attribute-i-contents"><code>contents</code></a> as <code>raw</code> (using <code>==</code>).</p>
+            <div class="method-calls-super">
+              Calls superclass method
+              <a href="Event.html#method-i-3D-3D"><code>Alda::Event#==</code></a>
+            </div>
 
-<pre class="ruby"><span class="ruby-keyword">begin</span>
-  <span class="ruby-constant">Alda</span>[<span class="ruby-value">port:</span> <span class="ruby-value">1108</span>].<span class="ruby-identifier">play</span> <span class="ruby-value">code:</span> <span class="ruby-string">&#39;y&#39;</span>
-<span class="ruby-keyword">rescue</span> <span class="ruby-constant">CommandLineError</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">e</span>
-  <span class="ruby-identifier">e</span>.<span class="ruby-identifier">port</span> <span class="ruby-comment"># =&gt; 1108</span>
-<span class="ruby-keyword">end</span>
-</pre>
+          <div class="method-source-code" id="3D-3D-source">
+            <pre><span class="ruby-comment"># File lib/alda-rb/event.rb, line 1372</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">==</span> <span class="ruby-identifier">other</span>
+  <span class="ruby-keyword">super</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Alda</span><span class="ruby-operator">::</span><span class="ruby-constant">Raw</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@contents</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">contents</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+        </div>
 
-          <div class="method-source-code" id="port-source">
-            <pre><span class="ruby-comment"># File lib/alda-rb/error.rb, line 19</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">port</span>
-  <span class="ruby-constant">Alda</span><span class="ruby-operator">::</span><span class="ruby-constant">GenerationError</span>.<span class="ruby-identifier">assert_generation</span> [<span class="ruby-value">:v1</span>]
-  <span class="ruby-ivar">@port</span>
+
+      </div>
+
+      <div id="method-i-to_alda_code" class="method-detail ">
+        <div class="method-header">
+          <div class="method-heading">
+            <span class="method-callseq">
+              to_alda_code() &rarr; String
+            </span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+        </div>
+
+        <div class="method-description">
+          <p>Overrides <a href="Event.html#method-i-to_alda_code"><code>Alda::Event#to_alda_code</code></a>.</p>
+
+          <div class="method-source-code" id="to_alda_code-source">
+            <pre><span class="ruby-comment"># File lib/alda-rb/event.rb, line 1361</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_alda_code</span>
+  <span class="ruby-ivar">@contents</span>
 <span class="ruby-keyword">end</span></pre>
           </div>
         </div>
