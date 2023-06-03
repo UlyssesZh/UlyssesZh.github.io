@@ -145,7 +145,7 @@
           <p>Raises an <a href="GenerationError.html"><code>Alda::GenerationError</code></a> if the current generation is not in <code>fine_generations</code>.</p>
 
           <div class="method-source-code" id="assert_generation-source">
-            <pre><span class="ruby-comment"># File lib/alda-rb/error.rb, line 106</span>
+            <pre><span class="ruby-comment"># File lib/alda-rb/error.rb, line 117</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">assert_generation</span> <span class="ruby-identifier">fine_generations</span>
   <span class="ruby-identifier">raise</span> <span class="ruby-identifier">new</span> <span class="ruby-identifier">fine_generations</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">fine_generations</span>.<span class="ruby-identifier">include?</span> <span class="ruby-constant">Alda</span>.<span class="ruby-identifier">generation</span>
 <span class="ruby-keyword">end</span></pre>
@@ -173,7 +173,7 @@
             </div>
 
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/alda-rb/error.rb, line 98</span>
+            <pre><span class="ruby-comment"># File lib/alda-rb/error.rb, line 109</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span> <span class="ruby-identifier">fine_generations</span>
   <span class="ruby-keyword">super</span> <span class="ruby-node">&quot;bad Alda generation for this action; good ones are #{fine_generations}&quot;</span>
   <span class="ruby-ivar">@generation</span> = <span class="ruby-constant">Alda</span>.<span class="ruby-identifier">generation</span>

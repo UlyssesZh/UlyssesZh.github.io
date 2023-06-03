@@ -326,7 +326,7 @@
           <div class="method-source-code" id="play-source">
             <pre><span class="ruby-comment"># File lib/alda-rb/event_list.rb, line 241</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">play</span> <span class="ruby-operator">**</span><span class="ruby-identifier">opts</span>
-  <span class="ruby-constant">Alda</span>.<span class="ruby-identifier">play</span> <span class="ruby-value">code:</span> <span class="ruby-keyword">self</span>, <span class="ruby-operator">**</span><span class="ruby-identifier">opts</span>
+  <span class="ruby-constant">Alda</span>.<span class="ruby-identifier">env</span>(<span class="ruby-value">ALDA_DISABLE_SPAWNING:</span> <span class="ruby-value">:no</span>) { <span class="ruby-constant">Alda</span>.<span class="ruby-identifier">play</span> <span class="ruby-value">code:</span> <span class="ruby-keyword">self</span>, <span class="ruby-operator">**</span><span class="ruby-identifier">opts</span> }
 <span class="ruby-keyword">end</span></pre>
           </div>
         </div>

@@ -129,6 +129,16 @@
         <p>The problems returned by the nREPL server. This is an <a href="../Array.html"><code>Array</code></a> of <a href="../String.html"><code>String</code></a>.</p>
         </div>
       </div>
+      <div id="attribute-i-status" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">status</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        <p>The status returned by the nREPL server. It is an <a href="../Array.html"><code>Array</code></a> of <a href="../Symbol.html"><code>Symbol</code></a>. Symbols must appear are <code>:done</code>, <code>:error</code>, and there may be <code>:unknown_op</code>.</p>
+        </div>
+      </div>
     </section>
 
 
@@ -141,7 +151,7 @@
         <div class="method-header">
           <div class="method-heading">
             <span class="method-callseq">
-              new(host, port, problems) &rarr; Alda::NREPLServerError
+              new(host, port, problems, status) &rarr; Alda::NREPLServerError
             </span>
             <span class="method-click-advice">click to toggle source</span>
           </div>
@@ -155,10 +165,15 @@
             </div>
 
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/alda-rb/error.rb, line 67</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span> <span class="ruby-identifier">host</span>, <span class="ruby-identifier">port</span>, <span class="ruby-identifier">problems</span>
+            <pre><span class="ruby-comment"># File lib/alda-rb/error.rb, line 73</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span> <span class="ruby-identifier">host</span>, <span class="ruby-identifier">port</span>, <span class="ruby-identifier">problems</span>, <span class="ruby-identifier">status</span>
   <span class="ruby-constant">Alda</span><span class="ruby-operator">::</span><span class="ruby-constant">GenerationError</span>.<span class="ruby-identifier">assert_generation</span> [<span class="ruby-value">:v2</span>]
-  <span class="ruby-keyword">super</span> <span class="ruby-identifier">problems</span>.<span class="ruby-identifier">join</span> <span class="ruby-value">?\n</span>
+  <span class="ruby-ivar">@status</span> = <span class="ruby-identifier">status</span>.<span class="ruby-identifier">map</span> { <span class="ruby-constant">Alda</span><span class="ruby-operator">::</span><span class="ruby-constant">Utils</span>.<span class="ruby-identifier">slug_to_snake</span> <span class="ruby-identifier">_1</span> }
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@status</span>.<span class="ruby-identifier">include?</span> <span class="ruby-value">:unknown_op</span>
+    <span class="ruby-keyword">super</span> <span class="ruby-string">&#39;unknown operation&#39;</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-keyword">super</span> <span class="ruby-identifier">problems</span>.<span class="ruby-identifier">join</span> <span class="ruby-value">?\n</span>
+  <span class="ruby-keyword">end</span>
   <span class="ruby-ivar">@host</span> = <span class="ruby-identifier">host</span>
   <span class="ruby-ivar">@port</span> = <span class="ruby-identifier">port</span>
   <span class="ruby-ivar">@problems</span> = <span class="ruby-identifier">problems</span>

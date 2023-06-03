@@ -65,17 +65,7 @@
               <summary>      <a href="#label-CHANGELOG">CHANGELOG</a>
 </summary>
               <ul class="link-list" role="directory">
-                          <li>
-            <details open>
-              <summary>      <a href="#label-v0.3.1+-28not+released-29">v0.3.1 (not released)</a>
-</summary>
-              <ul class="link-list" role="directory">
-                          <li>      <a href="#label-Fixed+bugs">Fixed bugs</a>
-          <li>      <a href="#label-Other+changes">Other changes</a>
-
-              </ul>
-            </details>
-          </li>
+                          <li>      <a href="#label-v0.3.1+-282023-06-03-29">v0.3.1 (2023-06-03)</a>
           <li>
             <details open>
               <summary>      <a href="#label-v0.3.0+-282023-05-29-29">v0.3.0 (2023-05-29)</a>
@@ -124,20 +114,42 @@
 
 <h1 id="label-CHANGELOG"><a href="CHANGELOG_md.html">CHANGELOG</a><span><a href="#label-CHANGELOG">&para;</a> <a href="#top">&uarr;</a></span></h1>
 
-<h2 id="label-v0.3.1+-28not+released-29">v0.3.1 (not released)<span><a href="#label-v0.3.1+-28not+released-29">&para;</a> <a href="#top">&uarr;</a></span></h2>
+<h2 id="label-v0.3.1+-282023-06-03-29">v0.3.1 (2023-06-03)<span><a href="#label-v0.3.1+-282023-06-03-29">&para;</a> <a href="#top">&uarr;</a></span></h2>
 
-<h3 id="label-Fixed+bugs">Fixed bugs<span><a href="#label-Fixed+bugs">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<p>New features and new API:</p>
 <ul><li>
-<p>Fixed: <code>alda-irb</code> does not run correctly in Ruby 3.</p>
+<p>Added <a href="Alda/NREPLServerError.html#attribute-i-status"><code>Alda::NREPLServerError#status</code></a>.</p>
+</li><li>
+<p>Added <a href="Alda.html#method-c-env"><code>Alda::env</code></a>.</p>
+</li><li>
+<p><a href="Alda.html#method-c-down-3F"><code>Alda::down?</code></a> and <a href="Alda.html#method-c-up-3F"><code>Alda::up?</code></a> is now useful in Alda 2.</p>
+</li><li>
+<p>Added <a href="Alda/REPL.html#attribute-i-reline"><code>Alda::REPL#reline</code></a>.</p>
 </li></ul>
 
-<h3 id="label-Other+changes">Other changes<span><a href="#label-Other+changes">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<p>BREAKING changes of API:</p>
+<ul><li>
+<p>Now <code>status</code> should be specified as a parameter of <a href="Alda/NREPLServerError.html#method-c-new"><code>Alda::NREPLServerError::new</code></a>.</p>
+</li></ul>
+
+<p>Fixed bugs:</p>
+<ul><li>
+<p>Fixed: <code>alda-irb</code> does not run correctly in Ruby 3.</p>
+</li><li>
+<p>Fixed: cannot handle unknown-op error of nREPL server.</p>
+</li><li>
+<p>Fixed: an excess message printed when exiting REPL on Windows.</p>
+</li></ul>
+
+<p>Other changes:</p>
 <ul><li>
 <p>Fixed dependencies.</p>
 </li><li>
 <p>Fixed some changelog of 0.3.0.</p>
 </li><li>
 <p>Added a gem badge in <a href="README_md.html">README</a>.</p>
+</li><li>
+<p>Updated bundler version.</p>
 </li></ul>
 
 <h2 id="label-v0.3.0+-282023-05-29-29">v0.3.0 (2023-05-29)<span><a href="#label-v0.3.0+-282023-05-29-29">&para;</a> <a href="#top">&uarr;</a></span></h2>
