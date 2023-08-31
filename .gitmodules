@@ -1,0 +1,6 @@
+[submodule "rpg/mechsimul2"]
+	path = rpg/mechsimul2
+	url = https://github.com/UlyssesZh/mechsimul-js.git
+[submodule "rpg/typhm"]
+	path = rpg/typhm
+	url = https://github.com/UlyssesZh/typhm.git
