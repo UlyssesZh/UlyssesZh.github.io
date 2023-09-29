@@ -32,7 +32,7 @@ server {
 	ssl_certificate_key /path/to/your/cert/privkey.pem;
 	location / {
 		proxy_set_header Host $host;
-		proxy_pass http://localhost:8444; // use a port you like
+		proxy_pass http://localhost:8444; # use a port you like
 		proxy_redirect off;
 
 		proxy_http_version 1.1;
