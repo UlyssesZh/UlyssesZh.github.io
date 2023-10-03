@@ -12,11 +12,11 @@ no_gitalk: true
 	window.store = {
 	{% for post in site.posts %}
 		"{{ post.url | slugify }}": {
-			"title": "{{ post.title | markdownify_no_p | strip_newlines | replace: "\", "\\\" | replace: '"', '\"' }}",
+			"title": "{{ post.title | markdownify_no_p | strip_html | newline_to_space | replace: "\", "\\\" | replace: '"', '\"' }}",
 			{%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
 			"date": "{{ post.date | date: date_format }}",
-			"excerpt": "{{ post.excerpt | markdownify_no_p | strip_newlines | replace: "\", "\\\" | replace: '"', '\"' }}",
-			"content": {{ post.content | strip_html | strip_newlines | jsonify }},
+			"excerpt": "{{ post.excerpt | markdownify_no_p | strip_html | newline_to_space | replace: "\", "\\\" | replace: '"', '\"' }}",
+			"content": {{ post.content | strip_lineno | strip_html | newline_to_space | jsonify }},
 			"tags": {{ post.tags | jsonify }},
 			"categories": {{ post.categories | jsonify }},
 			"url": "{{ post.url }}",
