@@ -42,7 +42,7 @@ However, I cannot just replace the `touch` command here with a `ntfy` command or
 because udev cannot run commands with access to the internet.
 Actually, we can find in `systemd-udevd.service`:
 
-```ini
+```systemd
 [Unit]
 IPAddressDeny=any
 ```
@@ -54,7 +54,7 @@ Nevertheless, udev can trigger systemd services that can have access to the netw
 [systemd service](https://www.freedesktop.org/software/systemd/man/systemd.service.html){:target="_blank"}
 file as such, and name it `curl-ntfy.service` for example:
 
-```ini
+```systemd
 [Unit]
 Description=Notify about discharging
 After=network.target
