@@ -1,6 +1,6 @@
 ---
 title: An 🎃 easy 👻 but 🍬 *spooky* 💀 Ruby challenge
-date: 2023-10-18 09:57:54 -0700
+date: 2023-10-31 17:30:48 -0700
 categories:
 - programming
 tags:
@@ -132,6 +132,7 @@ Check them out!
 ### Some explanations for the code golf solution
 
 - The `-p` option basically wraps the code in a `while gets` loop, and you can access the current line with `$_`.
+Ruby will output the contents of `$_` after each iteration.
 - The method `Kernel#gsub` modifies `$_` (the current processing input line).
 It is only available when running Ruby with `-p` option.
 - The method `String#[]` returns a substring.
