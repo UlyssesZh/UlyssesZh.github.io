@@ -11,3 +11,4 @@ git_backup
 .rubocop.yml
 
 .vscode
+**/bootstrap

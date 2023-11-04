@@ -212,7 +212,7 @@ $$\begin{equation}
 \end{equation}$$
 
 To ensure that it is well-defined, we need to guarantee that
-$\pi^{\star(1)}\\!\left(e_1\right)\in W^{\parallel(1)}_{\pi(e_1,e_2)}$
+$\pi^{\star(1)}\!\left(e_1\right)\in W^{\parallel(1)}_{\pi(e_1,e_2)}$
 for any $e_1,e_2$, and this is true.
 
 The two spaces $W^{\star\perp}$ and $W^{\perp}$ do not have any direct relation.
@@ -220,7 +220,7 @@ The only relation between them is that the dimension of $W^{\star\perp}$ is
 one plus the dimension of $W^{\perp}$ (if they are finite-dimensional).
 
 What is good about the projection $\pi^\star$ is that it satisfies
-$\vec W^{\star\parallel(1)}=\vec c^{(1)}\\!\left(\vec\pi^\star(0)\right)$.
+$\vec W^{\star\parallel(1)}=\vec c^{(1)}\!\left(\vec\pi^\star(0)\right)$.
 This makes our notation consistent if we construct another composite system out of $\pi^\star$.
 Now, consider the composite system of $\left(\mathcal E^{(1)},\mathcal M^{(1)}\right)$
 and $\left(\mathcal E^{(2)},\mathcal M^{(2)}\right)$ under the projection $\pi^\star$.
@@ -259,7 +259,7 @@ i^\star=0.
 \end{equation}$$
 
 This is because \ref{eq: pi star} shows that
-$\rho\\!\left(W^{\star\parallel(1)}_e\right)=W^{\star\parallel(2)}_e$,
+$\rho\!\left(W^{\star\parallel(1)}_e\right)=W^{\star\parallel(2)}_e$,
 and thus
 
 $$\vec\rho^{-1}\!\left(\vec\rho^\star\!\left(\vec W^{\star\parallel(1)}\right)\right)
@@ -323,7 +323,7 @@ $$\vec\rho^\star\!\left(-p\,\mathrm dV_1,\mathrm dV_1,0\right)
 =\left(p\,\mathrm dV_1,-\mathrm dV_1,0\right).$$
 
 Our fixed intensive quantities are $i$, which is defined as
-$i\\!\left(\mathrm dU_1,\mathrm dV_1,0\right)=\frac1T\,\mathrm dU_1+\frac pT\,\mathrm dV_1$.
+$i\!\left(\mathrm dU_1,\mathrm dV_1,0\right)=\frac1T\,\mathrm dU_1+\frac pT\,\mathrm dV_1$.
 We can then get $i^\star$ by
 
 $$i^\star:=i\circ\vec\rho^{-1}\circ\vec\rho^\star

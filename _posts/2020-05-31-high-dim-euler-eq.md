@@ -34,7 +34,7 @@ $$\begin{equation}
 \end{equation}$$
 
 where $P_{j,m}$ is the set of all (not necessarily strictly) ascending $j$-tuples in
-$\left\\{1,\dots,m\right\\}^j$, and
+$\left\{1,\dots,m\right\}^j$, and
 
 $$
     \partial_\mu:=\frac{\partial^{\operatorname{len}\mu}}{\prod_k\partial x_{\mu_k}}.

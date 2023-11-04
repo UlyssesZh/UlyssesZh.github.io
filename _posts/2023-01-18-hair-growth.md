@@ -21,7 +21,7 @@ It turns out that we may model it with a first-order PDE.'
 Denote the length distribution of one's hair to be $f(l,t)$.
 This means that, at time $t$,
 the number of hairs within the length range from $l$ to $l+\mathrm dl$
-is $Nf\\!\left(l,t\right)\mathrm dl$, where $N$ is the total number of hairs.
+is $Nf\!\left(l,t\right)\mathrm dl$, where $N$ is the total number of hairs.
 
 Each hair grows at constant speed $v$.
 However, they cannot grow indefinitely because

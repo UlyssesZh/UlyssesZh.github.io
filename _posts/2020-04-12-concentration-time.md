@@ -31,7 +31,7 @@ where $X_k$ and $Y_k$ are reactants, and $a_k$ and $b_k$ are
 stoichiometries.
 
 Use square brackets to denote concentrations.
-Our goal is to find $\left\[X_k\right]$ and $\left\[Y_k\right]$
+Our goal is to find $\left[X_k\right]$ and $\left[Y_k\right]$
 as functions with respect to time $t$.
 
 ## The approach
@@ -159,11 +159,11 @@ as the answer.
 As we all know, here exists a state where the system is in
 chemical equilibrium.
 Denote the value of $s$ in this case as $q$.
-It is easy to figure out that $q$ is a zero of $F\\!\left(s\right)$
+It is easy to figure out that $q$ is a zero of $F\!\left(s\right)$
 on the interval
-\begin{equation\*}
+$$
     I:=\left(-\min_kA_k,\min_kB_k\right),
-\end{equation\*}
+$$
 which is the range of $s$ such that the concentration of all reactants
 are positive.
 
@@ -176,7 +176,7 @@ the improper integral $\int_0^q\frac{\mathrm ds}{F\left(s\right)}$
 diverges, so we can imagine how $s$ changes with respect to $t$.
 $s=0$ when $t=0$, and then $s$ changes monotonically, and finally
 $s\rightarrow q$ when $t\rightarrow+\infty$. Thus, the range of $s$
-over $t\in\left\[0,+\infty\right)$ is $\left\[0,q\right)$ for $q>0$
+over $t\in\left[0,+\infty\right)$ is $\left[0,q\right)$ for $q>0$
 or $\left(q,0\right]$ for $q<0$.
 $q=0$ is not considered because only mathematicians
 believe in such coincidences.
@@ -249,7 +249,7 @@ $$
 \end{split}
 $$
 
-Find $\left\[\ce{H2O}\right]$ as a function of time.
+Find $\left[\ce{H2O}\right]$ as a function of time.
 
 Formula \ref{def_F} becomes
 

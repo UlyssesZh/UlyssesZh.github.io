@@ -15,7 +15,7 @@ I implemented this simulation in RGSS3, the game scripting system shipped with R
 ---
 
 Our goal is to simulate a mechanical system according to its Hamiltonian
-$\mathcal H\\!\left(\mathbf q,\mathbf p,t\right)$.
+$\mathcal H\!\left(\mathbf q,\mathbf p,t\right)$.
 
 To utilize the canonical equations
 

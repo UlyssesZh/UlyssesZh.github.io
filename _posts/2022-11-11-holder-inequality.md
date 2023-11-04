@@ -8,7 +8,7 @@ tags:
 - from zhihu
 layout: post
 excerpt: 'The Hölder mean of $\vec x$ with weights $\vec w$ and a parameter $p$ is defined as
-$M\_{p,\vec w}\\!\left(\vec x\right):=\left(\vec w\cdot\vec x^p\right)^{\frac 1p}$,
+$M_{p,\vec w}\!\left(\vec x\right):=\left(\vec w\cdot\vec x^p\right)^{\frac 1p}$,
 and the value at $p=-\infty,0,+\infty$ are defined by the limits.
 We can prove using Jensen''s inquality that the Hölder mean increases as $p$ increases.
 This property can be used to prove HM-GM-AM-QM inequalities.'
@@ -27,7 +27,7 @@ Some stipulations:
 - $\operatorname{sum}\vec\xi:=\sum_k\xi_k$;
 - $\operatorname{prod}\vec\xi:=\prod_k\xi_k$;
 - If the independent and dependent variables of function $f$ are both scalars, then define
-$f\\!\left(\vec\xi\right):=\left(f\\!\left(\xi_0\right),f\\!\left(\xi_1\right),\ldots,f\\!\left(\xi_n\right)\right)$;
+$f\!\left(\vec\xi\right):=\left(f\!\left(\xi_0\right),f\!\left(\xi_1\right),\ldots,f\!\left(\xi_n\right)\right)$;
 - $\vec\xi^{\vec\eta}:=\prod_k\xi_k^{\eta_k}$;
 - $\min\vec\xi:=\min_k\xi_k$;
 - $\max\vec\xi:=\max_k\xi_k$;
@@ -36,14 +36,14 @@ $f\\!\left(\vec\xi\right):=\left(f\\!\left(\xi_0\right),f\\!\left(\xi_1\right),\
 
 **Definition 1**.
 Suppose we have samples $\vec x\in\left(\mathbb R^+\right)^n$,
-weights $\vec w\in\left\\{\vec\xi\in\left(\mathbb R^+\right)^n\,\middle\|\,\operatorname{sum}\vec\xi=1\right\\}$,
+weights $\vec w\in\left\{\vec\xi\in\left(\mathbb R^+\right)^n\,\middle\|\,\operatorname{sum}\vec\xi=1\right\}$,
 and parameter $p\in\left[-\infty,+\infty\right]$.
 Define the Hölder mean by
 
 $$M_{p,\vec w}\!\left(\vec x\right):=\left(\vec w\cdot\vec x^p\right)^{\frac 1p}.$$
 
 *Note.*
-The function is indefinite when $p\in\left\\{-\infty,0,+\infty\right\\}$,
+The function is indefinite when $p\in\left\{-\infty,0,+\infty\right\}$,
 but actually there exist limits
 
 $$\lim_{p\to0}M_{p,\vec w}\!\left(\vec x\right)=\vec x^{\vec w},$$
@@ -53,7 +53,7 @@ $$\lim_{p\to-\infty}M_{p,\vec w}\!\left(\vec x\right)=\min\vec x,$$
 $$\lim_{p\to+\infty}M_{p,\vec w}\!\left(\vec x\right)=\max\vec x.$$
 
 The limits are to be proved as theorems later.
-We can use them to define the Hölder mean for $p\in\left\\{-\infty,0,+\infty\right\\}$.
+We can use them to define the Hölder mean for $p\in\left\{-\infty,0,+\infty\right\}$.
 
 **Theorem 1**.
 

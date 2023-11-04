@@ -39,12 +39,12 @@ We denote the total partial derivative of function $F$ w.r.t. the $j$th time coo
 and the partial partial derivative as $\frac{\partial F}{\partial t_j}$.
 
 To avoid confusion, there is an example.
-For example, the total partial derivative of $F\\!\left(q,t\right)$ w.r.t. $t_j$
+For example, the total partial derivative of $F\!\left(q,t\right)$ w.r.t. $t_j$
 is $\partial_jF=\frac{\partial F}{\partial q}\partial_jq+\frac{\partial F}{\partial t_j}$.
 We can see that the total partial derivative has an extra term in addition to the partial partial derivative,
 which originates from the change of other independent variables of the function due to the change of time.
 
-A system with $s$ DOF needs $s$ multivariable functions $q_k\\!\left(t\right)$ to describe,
+A system with $s$ DOF needs $s$ multivariable functions $q_k\!\left(t\right)$ to describe,
 where $k$ is the subscript, and $t\in\mathbb R^\iota$.
 The numbers $q_k$ are called generalized coordinates.
 Generalized coordinates are mappings from the time space to the space space.

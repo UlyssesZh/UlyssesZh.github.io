@@ -49,7 +49,7 @@ Suppose $\pi:Y\to X$ is a measurable map so that
 $$\forall A\in\sigma(X):\nu(A)=0\Rightarrow\mu\!\left(\pi^{-1}\!\left(A\right)\right)=0.$$
 
 Then, for each $x\in X$, there exists a Borel measure $\mu_x$
-on the measurable subspace $\left(\pi^{-1}(x),\sigma\\!\left(\pi^{-1}(x)\right)\right)$,
+on the measurable subspace $\left(\pi^{-1}(x),\sigma\!\left(\pi^{-1}(x)\right)\right)$,
 such that for any integrable function $f$ on $Y$,
 
 $$\int_{y\in Y}f\!\left(y\right)\mathrm d\mu(y)
@@ -62,9 +62,9 @@ $$\int_{y\in Y}f\!\left(y\right)\mathrm d\mu(y)
 Because $\mu$ is &sigma;-finite,
 we have a countable covering of $Y$
 by pairwise disjoint measurable sets of finite $\mu$-measure,
-denoted as $\left\\{Y_i\right\\}$.
+denoted as $\left\{Y_i\right\}$.
 Each $Y_i$ is automatically stroke='#currentColor'  and inherits the &sigma;-algebra from $Y$,
-and $\left(Y_i,\sigma\\!\left(Y_i\\right),\mu\right)$ is a measure space.
+and $\left(Y_i,\sigma\!\left(Y_i\\right),\mu\right)$ is a measure space.
 
 Define $\pi_i:Y_i\to X$ as the restriction of $\pi$ to $Y_i$,
 then $\pi_i$ is automatically a measurable map from $Y_i$ to $X$,
@@ -82,7 +82,7 @@ This is a measure because $\pi_i$ is a measurable map.
 According to the disintegration theorem, for each $x\in X$, there exists a Borel measure $\mu_{i,x}$
 on $Y_i$ such that
 for $\nu$-almost all $x\in X$, $\mu_{i,x}$ is concentrated on $\pi_i^{-1}(x)$
-(in other words, $\mu_{i,x}\\!\left(Y\setminus\pi_i^{-1}(x)\right)=0$);
+(in other words, $\mu_{i,x}\!\left(Y\setminus\pi_i^{-1}(x)\right)=0$);
 and for any integrable function $f$ on $Y_i$,
 
 $$\int_{y\in Y_i}f\!\left(y\right)\mathrm d\mu(y)
@@ -115,7 +115,7 @@ $$\begin{align*}
 
 </details>
 
-Here, the family of measures $\left\\{\mu_x\right\\}$ is called
+Here, the family of measures $\left\{\mu_x\right\}$ is called
 the **disintegration** of $\mu$ w.r.t. $\pi$ and $\nu$.
 
 ---
@@ -127,7 +127,7 @@ so that it is consistent with the notion of
 product affine spaces, product measure spaces, product topology, etc.
 Those product spaces are all notated by "$\times$" in this article.
 
-Also, "$\vec W_1$" can be an abbreviation of $\vec W_1\times\left\\{0_2\right\\}$,
+Also, "$\vec W_1$" can be an abbreviation of $\vec W_1\times\left\{0_2\right\}$,
 where $0_2$ is the zero vector in $\vec W_2$.
 
 ---
@@ -141,7 +141,7 @@ $$A+B:=\left\{a+b\,\middle|\,a\in A,\,b\in B\right\}.$$
 This extends the definition of usual Minkowski sums for affine spaces.
 
 By the way, because of the abbreviating "$\vec W_1$"
-meaning $\vec W_1\times\left\\{0_2\right\\}$ above, we can abuse the notation and write
+meaning $\vec W_1\times\left\{0_2\right\}$ above, we can abuse the notation and write
 
 $$\vec W_1+\vec W_2=\vec W_1\times\vec W_2,$$
 
@@ -161,8 +161,8 @@ The complete statement is the following:
 Let $\vec W$ be a locally convex Hausdorff TVS.
 For any finite-dimensional subspace $\vec W^\parallel$ of $\vec W$,
 there is a complement $\vec W^\perp$ of it such that
-the topology $\tau\\!\left(\vec W\right)$ is the product topology of
-$\tau\\!\left(\vec W^\parallel\right)$ and $\tau\\!\left(\vec W^\perp\right)$.
+the topology $\tau\!\left(\vec W\right)$ is the product topology of
+$\tau\!\left(\vec W^\parallel\right)$ and $\tau\!\left(\vec W^\perp\right)$.
 
 This decomposition is also valid for affine spaces.
 If an affine space $W$ is associated with a locally convex Hausdorff TVS $\vec W$,
@@ -329,7 +329,7 @@ A **space of extensive quantities** is a tuple $(W,E,\lambda)$, where
 
 - $W$ is an affine space associated with a reflexive vector space $\vec W$ over $\mathbb R$,
 and it is equipped with topology $\tau(W)$ that is naturally constructed from
-the topology $\tau\\!\left(\vec W\right)$ on $\vec W$;
+the topology $\tau\!\left(\vec W\right)$ on $\vec W$;
 - $E\subseteq V$ is a topological subspace of $W$,
 and its topology $\tau(E)$ makes $E$ a Polish space; and
 - $\lambda:\sigma(E)\to[0,+\infty]$ is a non-trivial &sigma;-finite Borel measure,
@@ -433,7 +433,7 @@ where
 - $\mathcal E:=\left(W,E,\lambda\right)$ is a space of extensive quantities;
 - $\mathcal M:=\bigsqcup_{e\in E}M_e$ is a family of measure spaces; and
 - For each $e\in E$, $M_e$ is a measure space equipped with a measure $\mu_e$ such that
-$\mu_e\\!\left(M_e\right)$ is finite and nonzero.
+$\mu_e\!\left(M_e\right)$ is finite and nonzero.
 
 From now on, I will use a pair $(e,m)\in\mathcal M$ to specify a single microstate,
 where $e\in E$ and $m\in M_e$.
@@ -626,8 +626,8 @@ so that we can possibly take the differential of $S^\circ$ and write something s
 
 $$\mathrm dS^\circ=i\!\left(\varepsilon^\circ\right)(\mathrm d\varepsilon^\circ),$$
 
-where $i^\circ\\!\left(\varepsilon^\circ\right)\in\vec W'$ is a continuous linear functional,
-then we can define $i^\circ\\!\left(\varepsilon^\circ\right)$ to be the **intensive quantities**
+where $i^\circ\!\left(\varepsilon^\circ\right)\in\vec W'$ is a continuous linear functional,
+then we can define $i^\circ\!\left(\varepsilon^\circ\right)$ to be the **intensive quantities**
 at $\varepsilon^\circ$.
 A proper comparison with differential geometry is that we may analogly call $i^\circ$
 be a covector field on $E^\circ$ defined as the differential of the scalar field $S^\circ$.
@@ -667,9 +667,9 @@ is a pair $\left(W^\parallel,\lambda^\parallel\right)$, where
 
 - $W^\parallel\subseteq W$ is an affine subspace of $W$;
 - $E^\parallel:=E\cap W^\parallel$ is non-empty, and it is Polish as a topological subspace of $E$; and
-- $\lambda^\parallel:\sigma\\!\left(E^\parallel\right)\to\left[0,+\infty\right)$
+- $\lambda^\parallel:\sigma\!\left(E^\parallel\right)\to\left[0,+\infty\right)$
 is a non-trivial &sigma;-finite Borel measure on $E^\parallel$, where
-$\sigma\\!\left(E^\parallel\right)\subseteq\mathfrak B\\!\left(E^\parallel\right)$
+$\sigma\!\left(E^\parallel\right)\subseteq\mathfrak B\!\left(E^\parallel\right)$
 is a &sigma;-algebra on $E^\parallel$ that contains the Borel &sigma;-algebra on $E^\parallel$.
 
 This constructs a new space of extensive quantities $\left(W^\parallel,E^\parallel,\lambda^\parallel\right)$,
@@ -797,9 +797,9 @@ Define a probability measure $P^\circ$ on $\mathcal M$ by
 
 $$P^\circ(A):=\frac{\mu(A)}{\mu(\mathcal M)},$$
 
-then $\left(\mathcal M,\sigma\\!\left(\mathcal M\right),P^\circ\right)$ is a probability space.
+then $\left(\mathcal M,\sigma\!\left(\mathcal M\right),P^\circ\right)$ is a probability space.
 Any state $p$, as a function on $\mathcal M$, can be regarded as a random variable
-in the probability space $\left(\mathcal M,\sigma\\!\left(\mathcal M\right),P^\circ\right)$.
+in the probability space $\left(\mathcal M,\sigma\!\left(\mathcal M\right),P^\circ\right)$.
 
 Define the real function
 
@@ -838,7 +838,7 @@ This theorem is the well-known relation between the entropy and the equilibrium 
 By Equation \ref{eq: microcanonical entropy},
 we can now derive the relationship between the entropy and the extensive quantities
 at equilibrium states by the process of isolating.
-Define a family of states $\left\\{p^\circ_e\right\\}_{e\in E}$,
+Define a family of states $\left\{p^\circ_e\right\}_{e\in E}$,
 where each state $p^\circ_e$ is the equilibrium state of the system isolated at $e$.
 Then, we have the fundamental equation
 
@@ -847,7 +847,7 @@ $$\begin{equation}
 S^\circ(e)=\ln\Omega(e),
 \end{equation}$$
 
-where $\Omega(e):=\ln\mu_e\\!\left(M_e\right)$ is called the **counting function** (I invented the phrase),
+where $\Omega(e):=\ln\mu_e\!\left(M_e\right)$ is called the **counting function** (I invented the phrase),
 which is the **microscopic characteristic function** of microcanonical ensembles.
 This defines a function $S^\circ:E\to\mathbb R$,
 which may be used to give a fundamental equation in the form of Equation \ref{eq: fundamental equation},
@@ -898,14 +898,14 @@ is given by a tuple $\left(\pi,\lambda^\perp\right)$, where
 
 - $\pi:W\to W^\perp$ is a projection map from $W$ to an affine subspace $W^\perp$ of $W$;
 - $E^\perp:=\pi(E)$, the image of $E$ under $\pi$, is equipped with the minimal topology
-$\tau\\!\left(E^\perp\right)$ so that $\pi$ is continuous,
+$\tau\!\left(E^\perp\right)$ so that $\pi$ is continuous,
 and the topology makes $E^\perp$ Polish;
-- $\lambda^\perp:\sigma\\!\left(E^\perp\right)\to\left[0,+\infty\right]$
+- $\lambda^\perp:\sigma\!\left(E^\perp\right)\to\left[0,+\infty\right]$
 is a non-trivial &sigma;-finite Borel measure on $E^\perp$,
-where $\sigma\\!\left(E^\perp\right)\supseteq\mathfrak B\\!\left(E^\perp\right)$
+where $\sigma\!\left(E^\perp\right)\supseteq\mathfrak B\!\left(E^\perp\right)$
 is a &sigma;-algebra of $E^\perp$ that contains the Borel &sigma;-algebra of $E^\perp$; and
-- For any $A\in\sigma\\!\left(E^\perp\right)$,
-$\lambda^{\perp}(A)=0$ iff $\lambda\\!\left(\pi^{-1}(A)\right)=0$.
+- For any $A\in\sigma\!\left(E^\perp\right)$,
+$\lambda^{\perp}(A)=0$ iff $\lambda\!\left(\pi^{-1}(A)\right)=0$.
 
 This contracting defines a new space of extensive quantities
 $\left(W^\perp,E^\perp,\lambda^\perp\right)$, called a **contraction** of
@@ -916,9 +916,9 @@ The **contractive slicings** of a space of extensive quantities $\left(W,E,\lamb
 defined by a contracting $\left(\pi,\lambda^\perp\right)$ of it is a family of slicings
 $\bigsqcup_{e\in W^\perp}\left(W^\parallel_e,\lambda^\parallel_e\right)$, where
 
-- $W^\parallel_e:=\pi^{-1}(e)$ is the preimage of $\left\\{e\right\\}$ under $\pi$,
+- $W^\parallel_e:=\pi^{-1}(e)$ is the preimage of $\left\{e\right\}$ under $\pi$,
 an affine subspace of $W$; and
-- $\lambda_e^\parallel:\sigma\\!\left(E_e^\parallel\right)\to\left[0,+\infty\right]$ is a Borel measure;
+- $\lambda_e^\parallel:\sigma\!\left(E_e^\parallel\right)\to\left[0,+\infty\right]$ is a Borel measure;
 the family of measures is the disintegration of $\lambda$ w.r.t. $\pi$ and $\lambda^\perp$.
 
 *Definition.*
@@ -995,7 +995,7 @@ We will see that pullbacks of states are rather useful.
 
 ---
 
-Obviously, the family of affine subspaces $\left\\{W^\parallel_e\right\\}_{e\in W^\perp}$
+Obviously, the family of affine subspaces $\left\{W^\parallel_e\right\}_{e\in W^\perp}$
 are parallel to each other.
 Therefore, their associated vector subspaces are the same vector subspace $\vec W^\parallel$ of $\vec W$,
 which is a complement of the vector subspace $\vec W^\perp$,
@@ -1016,7 +1016,7 @@ $$\begin{equation}
 i\!\left(e'\right):=i\!\left(e'-\pi\!\left(e'\right)\right),
 \end{equation}$$
 
-where $\pi\\!\left(e'\right)$ is just $e$.
+where $\pi\!\left(e'\right)$ is just $e$.
 
 However, we need to remember that
 there is no generally physically meaningful linear structure on $W^\parallel_e$.
@@ -1088,10 +1088,10 @@ is a thermal system $\left(\mathcal E,\mathcal M\right)$ constructed as such:
 - $\mathcal E:=\left(W,E,\lambda\right)$ is the product space of extensive quantities
 of $\mathcal E^{(1)}$ and $\mathcal E^{(2)}$; and
 - $\mathcal M:=\bigsqcup_{(e_1,e_2)\in E}M_{e_1,e_2}$,
-where $M_{e_1,e_2}:=M^{(1)}\_{e_1}\times M^{(2)}\_{e_2}$
-is the product measure space of $M^{(1)}\_{e_1}$ and $M^{(2)}\_{e_2}$,
+where $M_{e_1,e_2}:=M^{(1)}_{e_1}\times M^{(2)}_{e_2}$
+is the product measure space of $M^{(1)}_{e_1}$ and $M^{(2)}_{e_2}$,
 equipped with measure $\mu_{e_1,e_2}$,
-the product measure of $\mu^{(1)}\_{e_1}$ and $\mu^{(2)}\_{e_2}$.
+the product measure of $\mu^{(1)}_{e_1}$ and $\mu^{(2)}_{e_2}$.
 
 By this definition, $\mathcal M$ is naturally identified with $\mathcal M^{(1)}\times\mathcal M^{(2)}$,
 and the measure of number of microstates $\mu$ on $\mathcal M$ is in this sense
@@ -1158,7 +1158,7 @@ then the total energy of the composite system minus the energy of one of the sub
 should be the energy of the other subsystem, which is uniquely determined
 (if this is an allowed energy).
 Mathematically, thie means that for any $e_1\in W^{(1)}$ and $e_2\in W^{(2)}$,
-the two maps $\pi\\!\left(e_1,\cdot\right)$ and $\pi\\!\left(\cdot,e_2\right)$
+the two maps $\pi\!\left(e_1,\cdot\right)$ and $\pi\!\left(\cdot,e_2\right)$
 are both injections.
 
 *Definition.*
@@ -1167,7 +1167,7 @@ is the contraction of their product thermal system
 corresponding to a contracting $(\pi,\lambda^\perp)$, where
 $\pi:W\to W^\perp:(e_1,e_2)\mapsto e$ satisfies that
 for any $e_1\in W^{(1)}$ and $e_2\in W^{(2)}$,
-the two maps $\pi\\!\left(e_1,\cdot\right)$ and $\pi\\!\left(\cdot,e_2\right)$
+the two maps $\pi\!\left(e_1,\cdot\right)$ and $\pi\!\left(\cdot,e_2\right)$
 are both injections.
 
 We may define projection maps to get the extensive quantities of the subsystems
@@ -1182,12 +1182,12 @@ $$W^{\parallel(1)}_e:=c^{(1)}\!\left(W_e^\parallel\right),\quad
 W^{\parallel(2)}_e:=c^{(2)}\!\left(W_e^\parallel\right)$$
 
 are respectively affine subspaces of $W^{(1)}$ and $W^{(2)}$,
-where $W_e^\parallel:=\pi^{-1}\\!\left(e\right)$.
+where $W_e^\parallel:=\pi^{-1}\!\left(e\right)$.
 The two affine subspaces are actually isomorphic to each other
 because of our additional requirement on the projection map $\pi$.
-Because $\pi\\!\left(e_1,\cdot\right)$ is an injection,
+Because $\pi\!\left(e_1,\cdot\right)$ is an injection,
 for any $e_1\in W^{\parallel(1)}_e$ there is a unique $e_2\in W^{\parallel(2)}_e$
-such that $\pi\\!\left(e_1,e_2\right)=e$, and vice versa.
+such that $\pi\!\left(e_1,e_2\right)=e$, and vice versa.
 This gives a correspondence between the two affine subspaces.
 In other words, for each $e\in W^\perp$,
 there is a unique bijection $\rho_e:W^{\parallel(1)}_e\to W^{\parallel(2)}_e$ such that
@@ -1305,7 +1305,7 @@ where $e\in W^\perp$ is fixed,
 $e_0\in W^{\parallel(1)}_e$ is also fixed,
 and $\vec\pi:\vec W\to\vec W^\perp$ is a linear map that is independent of the choice of $e$ and $e_0$.
 
-Let $e_2:=\rho_e\\!\left(e_1\right)$ in the equation above, and we have
+Let $e_2:=\rho_e\!\left(e_1\right)$ in the equation above, and we have
 
 $$\pi\!\left(e_1,\rho_e\!\left(e_1\right)\right)
 =\vec\pi\!\left(e_1-e_0,\rho_e\!\left(e_1\right)-\rho_e\!\left(e_0\right)\right)
@@ -1346,20 +1346,20 @@ Then, we have
 
 $$\pi\!\left(e_1,e_2+\delta\right)-\pi\!\left(e_1,e_2\right)=\vec\pi(0,\delta)=0,$$
 
-which contradicts with the requirement that $\pi\\!\left(e_1,\cdot\right)$ is injective.
+which contradicts with the requirement that $\pi\!\left(e_1,\cdot\right)$ is injective.
 $\square$
 
 </details>
 
 Besides, because $\vec\rho$ is a linear isomorphism
 from $\vec W^{\parallel(1)}$ to $\vec W^{\parallel(2)}$,
-the map $i\_1\mapsto i\_1\circ\vec\rho^{-1}$ is a linear isomorphism
+the map $i_1\mapsto i_1\circ\vec\rho^{-1}$ is a linear isomorphism
 from $\vec W^{\parallel(1)\prime}$ to $\vec W^{\parallel(2)\prime}$.
-The inverse of this isomorphism is $i\_2\mapsto i\_2\circ\vec\rho$.
+The inverse of this isomorphism is $i_2\mapsto i_2\circ\vec\rho$.
 
-As we know, $i\_1$ and $i\_2$ are actually intensive quantities.
+As we know, $i_1$ and $i_2$ are actually intensive quantities.
 The physical meaning of them being each other's image/preimage under this isomorphism is that,
-if the two subsystems in thermal contact have intensive quantities $-i\_1$ and $i_2$ respectively,
+if the two subsystems in thermal contact have intensive quantities $-i_1$ and $i_2$ respectively,
 then they are in equilibrium with each other.
 Therefore, I would like to call this pair of intensive quantities to be **anticonsistent**.
 
@@ -1422,7 +1422,7 @@ $$e_1-e_1'\in\vec W^{\perp(1)}.$$
 
 Because $\vec W^{\perp(1)}$ is a complement of $\vec W^{\parallel(1)}$,
 the only possible case is that $e_1=e_1'$.
-Then, due to $\pi\\!\left(e_1,\cdot\right)$ being injective, $e_2=e_2'$.
+Then, due to $\pi\!\left(e_1,\cdot\right)$ being injective, $e_2=e_2'$.
 Therefore, $\left(e_1,e_2\right)=\left(e_1',e_2'\right)$.
 Therefore, $\pi$ is injective if its domain is restricted to $W^{\perp(1)}\times W^{(2)}$.
 
@@ -1442,7 +1442,7 @@ Then, according to Equation \ref{eq: rho_e and vec rho}, we have
 
 $$e_2'=\rho_e\!\left(e_1+\delta\right)=\rho_e\!\left(e_1\right)+\vec\rho\!\left(\delta\right).$$
 
-Thus $e_2:=e_2'-\vec\rho\\!\left(\delta\right)=\rho_e\\!\left(e_1\right)$.
+Thus $e_2:=e_2'-\vec\rho\!\left(\delta\right)=\rho_e\!\left(e_1\right)$.
 According to Equation \ref{eq: pi and rho_e}, this is equivalently
 
 $$\pi\!\left(e_1,e_2\right)=e.$$
@@ -1462,7 +1462,7 @@ This is our second difficulty.
 Therefore, in order to construct a contracting, we need to following assumptions:
 
 - For different $e\in E^\perp$,
-$\lambda^{\parallel(1)}\_e$ is the same measure whenever $W^{\parallel(1)}\_e$ is the same subspace.
+$\lambda^{\parallel(1)}_e$ is the same measure whenever $W^{\parallel(1)}_e$ is the same subspace.
 - There exists a measure $\lambda^{\perp(1)}$ on $E^{\perp(1)}$ so that $\lambda^\perp$
 is the pushforward of the product measure of $\lambda^{\perp(1)}$ and $\lambda^{(2)}$ under $\pi$.
 
@@ -1470,7 +1470,7 @@ Given those assumptions, if we define $\lambda^{\parallel(1)\prime}_{e_1}$ to be
 the disintegration of $\lambda^{(1)}$ w.r.t. $\pi^{(1)}$ and $\lambda^{\perp(1)}$
 (just the way we constructed the measures in constructive slicings),
 then we can verify that they are actually the same as $\lambda^{\parallel(1)}_e$ defined before,
-for any $e$ in the image of $\pi\\!\left(e_1,\cdot\right)$.
+for any $e$ in the image of $\pi\!\left(e_1,\cdot\right)$.
 You can verify this easily by the following check (not a rigorous proof),
 where $\otimes$ denotes product measures or integration:
 
@@ -1493,7 +1493,7 @@ Those assumptions are very strong, so we do not want to assume them.
 Without those assumptions, we still have a well-constructed $W^{\perp(1)}$ and $\pi^{(1)}$
 so that $W^{\parallel(1)}_e$ are preimages of points in $W^{\perp(1)}$ under $\pi$.
 Then, we can use similar tricks as Equation \ref{eq: linear op on affine} to define
-the action of any continuous linear functional $i\_1\in\vec W^{\parallel(1)\prime}$
+the action of any continuous linear functional $i_1\in\vec W^{\parallel(1)\prime}$
 on a point $e_1\in W^{(1)}$ as
 
 $$i_1\!\left(e_1\right):=i_1\!\left(e_1-\pi^{(1)}\!\left(e_1\right)\right).$$
@@ -1537,27 +1537,27 @@ $$\vec W^{\perp\parallel}:=\vec\pi\!\left(\vec W^{\parallel(1)}+\vec W^{\paralle
 
 *Proof.*
 Obviously
-$\vec\pi\\!\left(\vec W^{\parallel(2)}\right)\subseteq
-\vec\pi\\!\left(\vec W^{\parallel(1)}\times\vec W^{\parallel(2)}\right)$,
+$\vec\pi\!\left(\vec W^{\parallel(2)}\right)\subseteq
+\vec\pi\!\left(\vec W^{\parallel(1)}\times\vec W^{\parallel(2)}\right)$,
 so we just need to prove that
-$\vec\pi\\!\left(\vec W^{\parallel(1)}\times\vec W^{\parallel(2)}\right)
-\subseteq\vec\pi\\!\left(\vec W^{\parallel(2)}\right)$.
+$\vec\pi\!\left(\vec W^{\parallel(1)}\times\vec W^{\parallel(2)}\right)
+\subseteq\vec\pi\!\left(\vec W^{\parallel(2)}\right)$.
 To prove this, we just need to prove that for any
 
 $$s:=\vec\pi\!\left(s_1,s_2\right)\in\vec\pi\!\left(\vec W^{\parallel(1)}\times\vec W^{\parallel(2)}\right),$$
 
 where $s_1\in\vec W^{\parallel(1)}$ and $s_2\in\vec W^{\parallel(2)}$, we have
-$s\in\vec\pi\\!\left(\vec W^{\parallel(2)}\right)$.
+$s\in\vec\pi\!\left(\vec W^{\parallel(2)}\right)$.
 To prove this, subtract Equation \ref{eq: pi(s1, rho(s1))=0} from the definition of $s$, and we have
 
 $$s=\vec\pi\!\left(0,s_2-\vec\rho\!\left(s_1\right)\right)\in\vec\pi\!\left(\vec W^{\parallel(2)}\right).$$
 
 Therefore,
-$\vec\pi\\!\left(\vec W^{\parallel(1)}\times\vec W^{\parallel(2)}\right)
-\subseteq\vec\pi\\!\left(\vec W^{\parallel(2)}\right)$.
+$\vec\pi\!\left(\vec W^{\parallel(1)}\times\vec W^{\parallel(2)}\right)
+\subseteq\vec\pi\!\left(\vec W^{\parallel(2)}\right)$.
 Similarly,
-$\vec\pi\\!\left(\vec W^{\parallel(1)}\times\vec W^{\parallel(2)}\right)
-\subseteq\vec\pi\\!\left(\vec W^{\parallel(1)}\right)$.
+$\vec\pi\!\left(\vec W^{\parallel(1)}\times\vec W^{\parallel(2)}\right)
+\subseteq\vec\pi\!\left(\vec W^{\parallel(1)}\right)$.
 Therefore, we proved the theorem. $\square$
 
 </details>
@@ -1572,7 +1572,7 @@ Here is another interesting thing about this vector space:
 
 *Theorem.*
 Suppose $e,e'\in W^\perp$.
-Iff $W^{\parallel(1)}\_e=W^{\parallel(1)}\_{e'}$ and $W^{\parallel(2)}\_e=W^{\parallel(2)}\_{e'}$,
+Iff $W^{\parallel(1)}_e=W^{\parallel(1)}_{e'}$ and $W^{\parallel(2)}_e=W^{\parallel(2)}_{e'}$,
 then $e'-e\in\vec W^{\perp\parallel}$.
 
 <details markdown="1">
@@ -1581,8 +1581,8 @@ then $e'-e\in\vec W^{\perp\parallel}$.
 *Proof.*
 First, prove the "if" direction.
 
-Because $W^{\parallel(1)}\_e=W^{\parallel(1)}\_{e'}$, we have
-$c^{(1)}\\!\left(\pi^{-1}\\!\left(e\right)\right)=c^{(1)}\\!\left(\pi^{-1}\\!\left(e'\right)\right)$.
+Because $W^{\parallel(1)}_e=W^{\parallel(1)}_{e'}$, we have
+$c^{(1)}\!\left(\pi^{-1}\!\left(e\right)\right)=c^{(1)}\!\left(\pi^{-1}\!\left(e'\right)\right)$.
 In other words,
 
 $$\forall x\in\pi^{-1}(e):\exists s_2\in\vec W^{(2)}:x+\left(0,s_2\right)\in\pi^{-1}(e').$$
@@ -1591,8 +1591,8 @@ Equivalently, this means
 
 $$\pi(x)=e\Rightarrow\exists s_2\in\vec W^{(2)}:\pi\!\left(x+\left(0,s_2\right)\right)=e'.$$
 
-Note that $\pi\\!\left(x+\left(0,s_2\right)\right)=\pi(x)+\vec\pi\\!\left(0,s_2\right)$,
-which is just $e+\vec\pi\\!\left(0,s_2\right)$, and we have
+Note that $\pi\!\left(x+\left(0,s_2\right)\right)=\pi(x)+\vec\pi\!\left(0,s_2\right)$,
+which is just $e+\vec\pi\!\left(0,s_2\right)$, and we have
 
 $$\exists s_2\in\vec W^{(2)}:e'-e=\vec\pi\!\left(0,s_2\right).$$
 
@@ -1619,25 +1619,25 @@ $$e'-e=\vec\pi\!\left(s_1,0\right)\in\vec\pi\!\left(\vec W^{\parallel(1)}\right)
 
 Now, prove the "only if" direction.
 
-Because $e'-e\in\vec W^{\perp\parallel}=\vec\pi\\!\left(\vec W^{\parallel(2)}\right)$,
+Because $e'-e\in\vec W^{\perp\parallel}=\vec\pi\!\left(\vec W^{\parallel(2)}\right)$,
 there exists $s_2\in\vec W^{\parallel(2)}$ such that
 
 $$e'=e+\vec\pi\!\left(0,s_2\right).$$
 
 Therefore, obviously we have
-$c^{(1)}\\!\left(\pi^{-1}\\!\left(e\right)\right)=c^{(1)}\\!\left(\pi^{-1}\\!\left(e'\right)\right)$,
-and thus $W^{\parallel(1)}\_e=W^{\parallel(1)}\_{e'}$.
+$c^{(1)}\!\left(\pi^{-1}\!\left(e\right)\right)=c^{(1)}\!\left(\pi^{-1}\!\left(e'\right)\right)$,
+and thus $W^{\parallel(1)}_e=W^{\parallel(1)}_{e'}$.
 
-Similarly, we can prove that $W^{\parallel(2)}\_e=W^{\parallel(2)}\_{e'}$. $\square$
+Similarly, we can prove that $W^{\parallel(2)}_e=W^{\parallel(2)}_{e'}$. $\square$
 
 </details>
 
-This means that, given both $W^{\parallel(1)}\_e$ and $W^{\parallel(2)}\_e$,
+This means that, given both $W^{\parallel(1)}_e$ and $W^{\parallel(2)}_e$,
 we can determine $e$ upto a vector in $\vec W^{\perp\parallel}$.
 
 Because we already have $\vec W^{\perp\parallel}$,
 we can define a new affine subspace
-$W^{\perp\perp}:=\pi\\!\left(W^{\perp(1)}\times W^{\perp(2)}\right)$
+$W^{\perp\perp}:=\pi\!\left(W^{\perp(1)}\times W^{\perp(2)}\right)$
 so that $W^\perp=W^{\perp\perp}+\vec W^{\perp\parallel}$,
 and each point in $W^\perp$ can be uniquely decomposed as a sum of a point in $W^{\perp\perp}$
 and a vector in $\vec W^{\perp\parallel}$.
@@ -1714,7 +1714,7 @@ so that every point in $W$ can be uniquely decomposed into the sum of a point in
 and a vector in $\vec W^\parallel$.
 Then, we have a projection map $\pi:W\to W^\perp$
 so that for any $e\in W$ we have $e-\pi(e)\in\vec W^\parallel$.
-Then, obviously, $\mu_e\\!\left(M_e\right)$ must be in the form
+Then, obviously, $\mu_e\!\left(M_e\right)$ must be in the form
 
 $$\begin{equation}
 \label{eq: Omega of bath}
@@ -1722,7 +1722,7 @@ $$\begin{equation}
 \end{equation}$$
 
 where $f:W^\perp\to\mathbb R^+$ is some function.
-The eplicit formula of $f$ is $f(e):=\mu_e\\!\left(M_e\right)$.
+The eplicit formula of $f$ is $f(e):=\mu_e\!\left(M_e\right)$.
 
 Further, we may require that $W^\perp$ is associated with a topological complement of $\vec W^\parallel$
 (this is because $\vec W$ is locally convex and Hausdorff and $\vec W^\parallel$ is finite-dimensional).
@@ -1785,7 +1785,7 @@ From the properties of a bath, we can derive a useful property of $\lambda^{\par
 *Theorem.*
 In the composite system for the $\vec W^{\parallel(1)}$-ensemble,
 for $e,e'\in E^\perp$, if $e'-e\in\vec W^{\perp\parallel}$,
-then for any $A\in\sigma\\!\left(W^{\parallel(1)}\_e\right)$, we have
+then for any $A\in\sigma\!\left(W^{\parallel(1)}_e\right)$, we have
 
 $$f\!\left(e'\right)\lambda^{\parallel(1)}_{e'}(A)=f\!\left(e\right)\lambda^{\parallel(1)}_e(A),$$
 
@@ -1800,7 +1800,7 @@ there is a unique $s_2\in\vec W^{\parallel(2)}$ such that
 
 $$e'=e+\vec\pi\!\left(0,s_2\right).$$
 
-Obviously, for any $A\in\sigma\\!\left(E\right)$, $A+\left(0,s_2\right)\in\sigma\\!\left(E\right)$.
+Obviously, for any $A\in\sigma\!\left(E\right)$, $A+\left(0,s_2\right)\in\sigma\!\left(E\right)$.
 Also,
 
 $$\begin{align*}
@@ -1821,7 +1821,7 @@ Because $\pi$ is an affine map, for any $e\in W$, we have
 
 $$\pi\!\left(e+\left(0,s_2\right)\right)=\pi(e)+\vec\pi\!\left(0,s_2\right),$$
 
-so for any $A\in\sigma\\!\left(W^\perp\right)$, we have
+so for any $A\in\sigma\!\left(W^\perp\right)$, we have
 
 $$\pi^{-1}(A+\vec\pi\!\left(0,s_2\right))=\pi^{-1}(A)+\left(0,s_2\right),$$
 
@@ -1830,7 +1830,7 @@ and thus
 $$\lambda\!\left(\pi^{-1}(A+\vec\pi\!\left(0,s_2\right))\right)=\lambda\!\left(\pi^{-1}(A)\right).$$
 
 A requirement of contracting states that
-$\lambda^\perp(A)=0\Leftrightarrow\lambda\\!\left(\pi^{-1}(A)\right)=0$, so by the equation above,
+$\lambda^\perp(A)=0\Leftrightarrow\lambda\!\left(\pi^{-1}(A)\right)=0$, so by the equation above,
 we have
 
 $$\lambda^\perp\!\left(A+\vec\pi\!\left(0,s_2\right)\right)=0\Leftrightarrow\lambda^\perp(A)=0.$$
@@ -1890,7 +1890,7 @@ so
 $$\left(A+\left(0,s_2\right)\right)\cap W^\parallel_{e+\vec\pi(0,s_2)}
 =\left(A\cap\pi^{-1}\!\left(e\right)\right)+\left(0,s_2\right).$$
 
-Now, for any $A\in\sigma\\!\left(E^\parallel_e\right)$, we have
+Now, for any $A\in\sigma\!\left(E^\parallel_e\right)$, we have
 
 $$\lambda^\parallel_{e+\vec\pi(0,s_2)}\!\left(A+\left(0,s_2\right)\right)\varphi_{s_2}\!\left(e\right)=
 \lambda^\parallel_e\!\left(A\right).$$
@@ -1902,8 +1902,8 @@ $$\lambda^{\parallel(1)}_{e+\vec\pi(0,s_2)}\!\left(
   c^{(1)}\!\left(A+\left(0,s_2\right)\right)
 \right)\varphi_{s_2}\!\left(e\right)=\lambda^{\parallel(1)}_e\!\left(c^{(1)}\!\left(A\right)\right).$$
 
-Notice that $c^{(1)}\\!\left(A+\left(0,s_2\right)\right)=c^{(1)}\\!\left(A\right)$.
-Now, for any $A\in\sigma\\!\left(E^{\parallel(1)}_e\right)$, we have
+Notice that $c^{(1)}\!\left(A+\left(0,s_2\right)\right)=c^{(1)}\!\left(A\right)$.
+Now, for any $A\in\sigma\!\left(E^{\parallel(1)}_e\right)$, we have
 
 $$\lambda^{\parallel(1)}_{e+\vec\pi(0,s_2)}(A)\varphi_{s_2}(e)=\lambda^{\parallel(1)}_e(A).$$
 
@@ -1934,19 +1934,19 @@ such that the difference of any two of them is in $\vec W^{\perp\parallel}$, we 
 
 $$g\!\left(e,e'\right)=\frac{g\!\left(e,e''\right)}{g\!\left(e',e''\right)}.$$
 
-Let $e'\':=\pi^\perp(e)=\pi^\perp\\!\left(e'\right)$ in the equation above.
+Let $e'\':=\pi^\perp(e)=\pi^\perp\!\left(e'\right)$ in the equation above.
 Then, we have
 
 $$g\!\left(e,e'\right)=\frac{f\!\left(e\right)}{f\!\left(e'\right)},$$
 
-where $f(e):=g\\!\left(e,\pi^\perp(e)\right)$.
+where $f(e):=g\!\left(e,\pi^\perp(e)\right)$.
 This then proves the conclusion we want. $\square$
 
 </details>
 
 This means that,
-whenever $W^{\parallel(1)}\_e=W^{\parallel(1)}\_{e'}$ and $W^{\parallel(2)}\_e=W^{\parallel(2)}\_{e'}$,
-the two measures $\lambda^{\parallel(1)}\_e$ and $\lambda^{\parallel(1)}\_{e'}$
+whenever $W^{\parallel(1)}_e=W^{\parallel(1)}_{e'}$ and $W^{\parallel(2)}_e=W^{\parallel(2)}_{e'}$,
+the two measures $\lambda^{\parallel(1)}_e$ and $\lambda^{\parallel(1)}_{e'}$
 are the same measure up to a constant factor.
 This is important because it ensures a consistency:
 if two states on the same compositing slice are the same up to a constant factor,
@@ -2000,7 +2000,7 @@ p^{\parallel\circ(1)}_e\!\left(e_1,m_1\right)
 \end{align}$$
 
 Here we utilized Equation \ref{eq: Omega of bath} and the fact that for any $e_1\in W^{\parallel(1)}_e$,
-$\pi^{(2)}\\!\left(\rho_e(e_1)\right)=\pi^{(2)}\\!\left(W^{\parallel(2)}_e\right)$
+$\pi^{(2)}\!\left(\rho_e(e_1)\right)=\pi^{(2)}\!\left(W^{\parallel(2)}_e\right)$
 is the same and is only related to $e$.
 Note that we have already illustrated that
 $\lambda^{\parallel(1)}_e$ is the same as long as $W^{\parallel(1)}_e$ is the same,
@@ -2017,9 +2017,9 @@ $W^{\parallel(1)}_e$ and $W^{\parallel(2)}_e$, so we only need to know no more t
 Then, because $W^{\perp\perp}$ is isomorphic to $W^{\perp(1)}\times W^{\perp(2)}$
 but the corresponding change in $W^{\perp(2)}$ does not affect $W^{\parallel(1)}_e$,
 we only need to know the component
-$\pi^{(1)}\\!\left(e_1\right)=\pi^{(1)}\\!\left(\pi^{-1}(e)\right)$,
+$\pi^{(1)}\!\left(e_1\right)=\pi^{(1)}\!\left(\pi^{-1}(e)\right)$,
 where $e_1$ is just the $e_1$ in Equation \ref{eq: p^(1) propto e^-i(e1)}.
-The space $W^{\parallel(1)}_e$ is just $\pi^{(1)-1}\\!\left(e_1\right)$.
+The space $W^{\parallel(1)}_e$ is just $\pi^{(1)-1}\!\left(e_1\right)$.
 
 Besides these information (components of $e$) is useless, there is other useless information.
 I have previously mentioned that
@@ -2037,7 +2037,7 @@ $$\int_{E^{(1)}}f\,\mathrm d\lambda^{(1)}=
 \int_{s_1\in\vec E^{\parallel(1)}_{e_1}}
 f\!\left(e_1+s_1\right)\mathrm d\lambda^{\parallel(1)}\!\left(s_1\right),$$
 
-where $E^{\perp(1)}:=\pi^{(1)}\\!\left(E^{(1)}\right)$ and
+where $E^{\perp(1)}:=\pi^{(1)}\!\left(E^{(1)}\right)$ and
 $\vec E^{\parallel(1)}_{e_1}:=\left(E^{(1)}-e_1\right)\cap\vec W^{\parallel(1)}$
 is the region of $s_1\in\vec W^{\parallel(1)}$ in which $e_1+s_1$ is in $E^{(1)}$.
 
@@ -2055,9 +2055,9 @@ Z\!\left(e_1,i\right)&:=\int_{s_1\in\vec E^{\parallel(1)}_{e_1}}
 \mathrm e^{-i\left(s_1\right)}\,\mathrm d\lambda^{\parallel(1)}\!\left(s_1\right),
 \end{align*}$$
 
-where $I\_{e\_1}\subseteq\vec W^{\parallel(1)\prime}$
+where $I_{e_1}\subseteq\vec W^{\parallel(1)\prime}$
 is the region of $i$ in which the integral converges.
-It is possible that $I\_{e\_1}=\varnothing$ for all $e\_1\in E^{\perp(1)}$,
+It is possible that $I_{e_1}=\varnothing$ for all $e_1\in E^{\perp(1)}$,
 and in this case the thermal ensemble is not defined.
 
 ---
@@ -2086,12 +2086,12 @@ For any $e\in E^\perp$, $I_e$ is convex.
 
 *Proof.*
 Suppose $i,i'\in I_e$.
-The functional $i'-i$ defines a hyperplane $H:=\operatorname{Ker}\\!\left(i'-i\right)$.
+The functional $i'-i$ defines a hyperplane $H:=\operatorname{Ker}\!\left(i'-i\right)$.
 The hyperplane separate $\vec W^\parallel$ into two half-spaces $H^+$ and $H^-$ defined as
 
 $$H^\pm:=\left\{s\in\vec W^\parallel\,\middle|\,i'\!\left(s\right)-i\!\left(s\right)\gtrless0\right\}.$$
 
-By definition, $Z\\!\left(e,i\right)$ and $Z\\!\left[e,i'\right]$ both converge.
+By definition, $Z\!\left(e,i\right)$ and $Z\!\left[e,i'\right]$ both converge.
 Let $t\in\left[0,1\right]$, and we have
 
 $$\begin{align*}
@@ -2115,7 +2115,7 @@ Being convex is good because it means that $I_e$ is not too shattered.
 It is connected, and its interior $\operatorname{Int}I_e$ and closure $\operatorname{Cl}I_e$
 look very much like $I_e$ itself.
 Also, every point in $I_e$ is a limit point of $I_e$.
-This makes it possible to talk about the limits and derivatives of $Z\\!\left(e,i\right)$ w.r.t. $i$.
+This makes it possible to talk about the limits and derivatives of $Z\!\left(e,i\right)$ w.r.t. $i$.
 
 Since $I_e$ is a region in a finite-dimensional space $\vec W^{\parallel\prime}$,
 we may define the derivatives w.r.t. $i$ in terms of partial derivatives to components of $i$.
@@ -2134,7 +2134,7 @@ and because I am going to use them to label multi-index objects
 that are neither vectors nor linear functionals.
 
 *Theorem.*
-For any $e\in E^\perp$, $Z\\!\left(e,i\right)$ is $C^\infty$ w.r.t. $i$ on $\operatorname{Int}I_e$.
+For any $e\in E^\perp$, $Z\!\left(e,i\right)$ is $C^\infty$ w.r.t. $i$ on $\operatorname{Int}I_e$.
 
 <details markdown="1">
 <summary>Proof</summary>
@@ -2144,7 +2144,7 @@ By the definition of the interior of a region,
 for any $i\in\operatorname{Int}I_e$ and any $p\in\vec W^{\parallel\prime}$,
 there exists $\delta_{i,p}>0$ such that $i+\delta_{i,p}p\in I_e$.
 
-By Leibniz's integral rule, the partial derivatives of $Z\\!\left(e,i\right)$ w.r.t. $i$
+By Leibniz's integral rule, the partial derivatives of $Z\!\left(e,i\right)$ w.r.t. $i$
 (if existing) are given by
 
 $$\begin{align*}
@@ -2254,7 +2254,7 @@ Therefore, the intensive quantities corresponding to change of extensive quantit
 in the subspace $\vec W^\parallel$ is well defined and is constant $i$,
 which is just what we have been calling the fixed intensive quantities.
 The other components of the intensive quantities are not guaranteed to be well-defined
-because $Z\\!\left(\cdot,i\right)$ is not guaranteed to have good enough properties.
+because $Z\!\left(\cdot,i\right)$ is not guaranteed to have good enough properties.
 
 ---
 

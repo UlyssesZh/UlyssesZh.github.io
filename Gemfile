@@ -3,8 +3,8 @@
 source 'https://rubygems.org/'
 
 gem 'jekyll', '~> 4'
-gem 'jekyll-sass-converter', '< 3' # https://github.com/helaili/jekyll-action/issues/150
-gem 'minima'
+gem 'minima', github: 'jekyll/minima', ref: '85374864e0311f544f49139078927b41ecbe8792'
+gem 'kramdown-math-katex'
 group :jekyll_plugins do
 	gem 'jekyll-archives'
 	gem 'jekyll-feed'

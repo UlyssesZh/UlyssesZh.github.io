@@ -202,7 +202,7 @@ $$
 Here $P_j$ is defined as the hyperplane that
 passes all $\mathbf v_k$ that $k\ne j$.
 
-The equation of the quadric is $F\\!\left(\mathbf r\right)=0$,
+The equation of the quadric is $F\!\left(\mathbf r\right)=0$,
 where the quadratic function
 
 $$

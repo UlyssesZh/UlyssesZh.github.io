@@ -70,7 +70,7 @@ which is rather good-looking.
 **Now, bra--ket notation shows its second good-looking feature: use $\left<\cdot\middle|\cdot\middle|\cdot\right>$
 to represent bounded sesquilinear forms.**
 
-Obviously, if a countable set $\left\\{\left|e_n\right>\right\\}$
+Obviously, if a countable set $\left\{\left|e_n\right>\right\}$
 is an orthonormal basis of $\mathscr H$
 (countability requires $\mathscr H$ to be separable), then
 
@@ -79,12 +79,12 @@ $$\sum_n\left|e_n\right>\left<e_n\right|=\mathrm{id}.$$
 Such way of expressing completeness is very good-looking.
 
 If $\hat a\in\mathcal L(\mathscr H)$ has set of eigenvectors
-$\left\\{\left|e_n\right>\right\\}$ (already orthonormalized and countable)
+$\left\{\left|e_n\right>\right\}$ (already orthonormalized and countable)
 is complete, then we have the spectral decomposition
 
 $$\hat a=\sum_na_n\left|e_n\right>,$$
 
-where $\left\\{a_n\right\\}$ is the point spectrum of $\hat a$:
+where $\left\{a_n\right\}$ is the point spectrum of $\hat a$:
 
 $$\hat a\left|e_n\right>=a_n\left|e_n\right>.$$
 

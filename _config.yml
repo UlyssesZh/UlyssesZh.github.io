@@ -14,31 +14,64 @@ email: ulysseszhan@gmail.com
 tagline: Somewhere with strange thoughts
 description: Here we are at the awesome (awful) blog written by UlyssesZhan!
 locale: en_US
-logo: '/assets/images/logos/78(.png'
+logo: /assets/images/logos/78(.png
 baseurl: ''
 url: https://UlyssesZh.github.io
 domain: ulysseszh.github.io
 show_excerpts: true
 markdown: kramdown
 kramdown:
+  input: InlineMath
+  # math_engine: katex
+  math_engine_opts:
+    output: html
   auto_ids: true
   syntax_highlighter_opts:
     block:
       line_numbers: true
-debugging_gitalk: false
+gitalk:
+  enable_in_development: true
+  client_id: 49611570ab5cf827576b
+  client_secret: 6dedc6014eb010990d395ae8aae632c7811dfeff
+  repo: UlyssesZh.github.io
+  owner: UlyssesZh
+  admin:
+    - UlyssesZh
 header_pages:
-- my_pages/about.md
-- my_pages/archives.html
-- my_pages/contact.md
-- my_pages/friends.md
+  - my_pages/about.md
+  - my_pages/archives.html
+  - my_pages/contact.md
+  - my_pages/friends.md
 theme: minima
 minima:
-  date_format: "%b %-d, %Y"
+  skin: my-skin
+  date_format: '%b %-d, %Y'
+  social_links:
+    - platform: x
+      user_url: https://x.com/UlyssesZhan
+    - platform: github
+      user_url: https://github.com/UlyssesZh
+    - platform: facebook
+      user_url: https://facebook.com/YouqiuZhan
+    - platform: instagram
+      user_url: https://instagram.com/ulysseszhan
+    - platform: pinterest
+      user_url: https://pinterest.com/ulysseszhan
+    - platform: linkedin
+      user_url: https://linkedin.com/in/%E6%9C%89%E4%B8%98-%E8%A9%B9-7715a4155
+    - platform: telegram
+      user_url: https://t.me/ulysseszhan
+    - platform: flickr
+      user_url: https://flickr.com/ulysseszhan
+    - platform: stackoverflow
+      user_url: https://stackoverflow.com/u/10245493
+    - platform: youtube
+      user_url: https://youtube.com/@ulysseszhan
 future: true
 defaults:
   - scope:
-      path: ""
-      type: "posts"
+      path: ''
+      type: posts
     values:
       toc: true
 plugins:
@@ -53,47 +86,40 @@ exclude:
   - README.md
   - Gemfile
   - Gemfile.lock
-  - ".git/"
-  - ".idea/"
-  - ".rubocop.yml"
-  - "assets/images/covers/*.txt"
-measurement_id: G-7TSJ5VM6YC
+  - .git/
+  - .idea/
+  - .rubocop.yml
+  - assets/images/covers/*.txt
+google_analytics: G-7TSJ5VM6YC
 webmaster_verifications:
   google: ZuV45Knwuwl49Nvh9UsDzniZ-3qy3bGhBPofLK3SZPw
   baidu: zBiGMiCwrA
   bing: 5E8C434CB5D1F1948B192273BA4BD084
-tagmanager_id: GTM-5PX967D
-twitter_username: UlyssesZhan
-github_username: UlyssesZh
-facebook_username: YouqiuZhan
-instagram_username: ulysseszhan
-pinterest_username: ulysseszhan
-flickr_username: UlyssesZhan
-covers_path: "/assets/images/covers/"
-figures_path: "/assets/images/figures/"
-seo_paginator_message: "Page %<current>s/%<total>s - "
+covers_path: /assets/images/covers/
+figures_path: /assets/images/figures/
+seo_paginator_message: 'Page %<current>s/%<total>s - '
 jekyll-archives:
   enabled: all
   layout: archive
   titles:
-    year: "Archive of posts in %Y"
-    month: "Archive of posts in %b, %Y"
-    day: "Archive of posts on %b %-d, %Y"
-    tag: 'Archive of posts with tag "%s"'
-    category: 'Archive of posts in category "%s"'
+    year: Archive of posts in %Y
+    month: Archive of posts in %b, %Y
+    day: Archive of posts on %b %-d, %Y
+    tag: Archive of posts with tag "%s"
+    category: Archive of posts in category "%s"
   permalinks:
-    year: "/archives/:year/"
-    month: "/archives/:year/:month/"
-    day: "/archives/:year/:month/:day/"
-    tag: "/archives/tag/:name/"
-    category: "/archives/category/:name/"
+    year: /archives/:year/
+    month: /archives/:year/:month/
+    day: /archives/:year/:month/:day/
+    tag: /archives/tag/:name/
+    category: /archives/category/:name/
 pagination:
   enabled: true
-  collection: 'posts'
+  collection: posts
   permalink: /page/:num/
-  title: ':title'
+  title: :title
   per_page: 10
-  sort_field: 'date'
+  sort_field: date
   sort_reverse: true
   trail:
     before: 2

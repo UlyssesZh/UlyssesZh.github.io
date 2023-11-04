@@ -43,11 +43,11 @@ What is the expression of $f(y,\kappa)$?
 ## Notation
 
 Notation for integer range: $a\ldots b$ denotes the integer range defined by the ends $a$ (inclusive) and $b$ (exclusive),
-or in other words $\left\\{a,a+1,\ldots,b-1\right\\}$.
+or in other words $\left\{a,a+1,\ldots,b-1\right\}$.
 It is defined to be empty if $a\ge b$.
 The operator $\ldots$ has a lower precedence than $+$ and $-$ but a higher precedence than $\in$.
 
-The notation $a\,..b$ denotes the inclusive integer range $\left\\{a,a+1,\ldots,b\right\\}$.
+The notation $a\,..b$ denotes the inclusive integer range $\left\{a,a+1,\ldots,b\right\}$.
 It is defined to be empty if $a>b$.
 
 ## The case for finite $n$
@@ -135,7 +135,7 @@ Note that the probabilities related to note count $n$ only depend on those relat
 and that the probabilities related to max combo $k$ and final combo $r$
 only depend on those related to either less max combo than $k$ or less final combo than $r$
 (except for the case $n>k>r=0$, which can be specially treated before the current iteration of $k$ actually starts),
-so for the bottom-up DP we can reduce the spatial complexity from $O\\!\left(n^3\right)$ to $O\\!\left(n^2\right)$
+so for the bottom-up DP we can reduce the spatial complexity from $O\!\left(n^3\right)$ to $O\!\left(n^2\right)$
 by reducing the 3-dimensional DP to a 2-dimensional one.
 What needs to be taken care of is that the DP table needs to be updated from larger $k$ and $r$ to smaller $k$ and $r$
 instead of the other way
@@ -166,7 +166,7 @@ def combo m
 end
 ```
 
-Because of the three nested loops, the time complexity of the DP algorithm is $O\\!\left(n^3\right)$.
+Because of the three nested loops, the time complexity of the DP algorithm is $O\!\left(n^3\right)$.
 
 ### The second DP approach
 
@@ -552,7 +552,7 @@ g(y,\kappa)=-\ln y&\,\left(
 \end{split}\end{equation}$$
 
 There is another integral equation for $g$.
-Because $\int_0^1f\\!\left(y,\kappa\right)\mathrm d\kappa=1$, we have
+Because $\int_0^1f\!\left(y,\kappa\right)\mathrm d\kappa=1$, we have
 
 $$\begin{equation}
 \label{eq: normalization}
@@ -1370,7 +1370,7 @@ S_{\nu,p}&=-\left(p-1\right)!+\sum_{s=1}^\infty\frac{s\left(s+1\right)\cdots\lef
 &=-\left(p-1\right)!+\sum_{\lambda=0}^{p-1}\begin{bmatrix}p-1\\\lambda\end{bmatrix}\zeta\!\left(\nu-\lambda+1\right),
 \end{align*}$$
 
-where $\begin{bmatrix}\cdot\\\\\\cdot\end{bmatrix}$ denotes (unsigned) Stirling numbers of the first kind.
+where $\begin{bmatrix}\cdot\\\cdot\end{bmatrix}$ denotes (unsigned) Stirling numbers of the first kind.
 For $p=0$, we have
 
 $$\begin{align*}
@@ -1493,7 +1493,7 @@ According to Equation \ref{eq: discontinuity}, the jump in $f(y,\kappa)$ at $\ka
 
 $$f\!\left(y,\kappa\to\frac12^+\right)-f\!\left(y,\kappa\to\frac12^-\right)=-2y\ln y.$$
 
-Interestingly, this coincides with $f\\!\left(y,\kappa\to1^-\right)$.
+Interestingly, this coincides with $f\!\left(y,\kappa\to1^-\right)$.
 
 ---
 

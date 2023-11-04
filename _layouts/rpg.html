@@ -6,9 +6,11 @@
 	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 	<meta name="viewport" content="user-scalable=no">
 	<meta name="google-site-verification" content="{{ site.google_verification }}" />
-	{%- include google_analytics_head.html -%}
 	{%- seo title=false -%}
 	{%- feed_meta -%}
+	{%- if jekyll.environment == 'production' and site.google_analytics -%}
+		{%- include google-analytics.html -%}
+	{%- endif -%}
 	{% if page.icon == "common" %}
 		<link rel="icon" href="https://fastly.jsdelivr.net/gh/UlyssesZh/rmmv_materials@master/icon/icon.png" type="image/png">
 		<link rel="apple-touch-icon" href="https://fastly.jsdelivr.net/gh/UlyssesZh/rmmv_materials@master/icon/icon.png">
@@ -27,7 +29,6 @@
 	<title>{{ page.title }}</title>
 </head>
 <body style="background-color: black">
-{%- include google_analytics_body.html -%}
 <script>
 (async function() {
 	const prefix = "https://fastly.jsdelivr.net/gh/rpgtkoolmv/corescript@v1.3b/";

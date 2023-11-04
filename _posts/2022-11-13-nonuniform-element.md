@@ -64,7 +64,7 @@ $$\rho\!\left(x\right)=\pm\frac{mk}{\sqrt{L_0^2k^2+m^2g^2+2mgk\left(L_0-x\right)
 
 The plus-minus sign here should take plus sign.
 
-To test, calculate $\int_0^L\rho\\!\left(x\right)\mathrm dx=m$.
+To test, calculate $\int_0^L\rho\!\left(x\right)\mathrm dx=m$.
 
 The conclusion can be written in a more beautiful way:
 

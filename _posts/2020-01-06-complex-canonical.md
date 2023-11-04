@@ -14,18 +14,18 @@ excerpt: 'In this article, I try exploring an idea:
 using complex numbers to combine pairs of canonical variables into complex variables:
 $\mathbf c:=\alpha\mathbf q+\mathrm i\beta\mathbf p$.
 It turns out that we can write canonical equations
-$\frac{\mathrm d\mathbf c}{\mathrm dt}=-2\mathrm i\alpha\beta\frac{\partial\mathcal H}{\partial\mathbf c^\*}$,
+$\frac{\mathrm d\mathbf c}{\mathrm dt}=-2\mathrm i\alpha\beta\frac{\partial\mathcal H}{\partial\mathbf c^*}$,
 Poisson brackets
-$\left\\{f,g\right\\}=-2\mathrm i\alpha\beta
+$\left\{f,g\right\}=-2\mathrm i\alpha\beta
 \left(\frac{\partial f}{\partial\mathbf c}\cdot
-\frac{\partial g}{\partial\mathbf c^\*}-
-\frac{\partial f}{\partial\mathbf c^\*}\cdot
+\frac{\partial g}{\partial\mathbf c^*}-
+\frac{\partial f}{\partial\mathbf c^*}\cdot
 \frac{\partial g}{\partial\mathbf c}\right)$,
 and canonical transformations
-$\frac{\partial\mathbf c^\*}{\partial\mathbf c''^\*}=
+$\frac{\partial\mathbf c^*}{\partial\mathbf c''^*}=
 \frac{\partial\mathbf c''}{\partial\mathbf c},
-\frac{\partial\mathbf c}{\partial\mathbf c''^\*}=
--\frac{\partial\mathbf c''}{\partial\mathbf c^\*}$
+\frac{\partial\mathbf c}{\partial\mathbf c''^*}=
+-\frac{\partial\mathbf c''}{\partial\mathbf c^*}$
 in these complex numbers.
 Finally, I show two examples of using them in real problems:
 a free particle, and a harmonic oscillator.'
@@ -168,7 +168,7 @@ in the solution.
 
 ## Poisson bracket
 
-The Poisson bracket $\left\\{\cdot,\cdot\right\\}$ can be defined just as usual:
+The Poisson bracket $\left\{\cdot,\cdot\right\}$ can be defined just as usual:
 
 $$
 \begin{equation}
@@ -208,7 +208,7 @@ $$
 ## Canonical transformation
 
 Consider some kind of transformation
-$\mathbf c'=\mathbf c'\\!\left(\mathbf c\right)$
+$\mathbf c'=\mathbf c'\!\left(\mathbf c\right)$
 that will preserve the form of the canonical equation, which means
 
 $$
@@ -253,7 +253,7 @@ $$
 $$
 
 Note that usually $\frac\partial{\partial\mathbf c}$ and
-$\frac\partial{\partial\mathbf c^\*}$ are linearly independent,
+$\frac\partial{\partial\mathbf c^*}$ are linearly independent,
 so we can derive that
 
 $$
@@ -308,7 +308,7 @@ $$
     \mathbf c=\frac{\Im\mathbf c_0}mt+\mathbf c_0,
 $$
 
-where $\mathbf c\_0$ is $3$ arbitrary complex constants.
+where $\mathbf c_0$ is $3$ arbitrary complex constants.
 
 ### Harmonic oscillator
 
@@ -332,4 +332,4 @@ $$
     c=c_0\mathrm e^{-\mathrm i\omega t},
 $$
 
-where $c\_0$ is an arbitrary complex constant.
+where $c_0$ is an arbitrary complex constant.

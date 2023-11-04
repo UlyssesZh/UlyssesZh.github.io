@@ -28,16 +28,16 @@ It can be represented by the utility function $u(x):=-d(x,a)$.
 First, we need a lemma.
 
 *Lemma.*
-Let $\left(P,\\|\cdot\\|\right)$ be a strictly convex space.
+Let $\left(P,\|\cdot\|\right)$ be a strictly convex space.
 Then, for any two distinct points $a,b\in P$,
 we have
 
 $$\forall x\in P:x\in\overline{ab}\Leftrightarrow
 B\!\left(a,\|x-a\|\right)\cap B\!\left(b,\|x-b\|\right)=\varnothing,$$
 
-where $B(c,r):=\left\\{x\in P\,\middle|\,\\|x-c\\|<r\right\\}$
+where $B(c,r):=\left\{x\in P\,\middle|\,\|x-c\|<r\right\}$
 is the open ball centered at $c$ with radius $r$,
-and $\overline{ab}:=\left\\{a+t\left(b-a\right)\middle|\,t\in\left[0,1\right]\right\\}$
+and $\overline{ab}:=\left\{a+t\left(b-a\right)\middle|\,t\in\left[0,1\right]\right\}$
 is the line segment connecting $a$ and $b$.
 
 *Proof.*
@@ -78,8 +78,8 @@ $$\begin{align*}
 &=\|x-a\|.
 \end{align*}$$
 
-Therefore, $y\in B\\!\left(a,\|x-a\|\right)$.
-Similarly, we have $y\in B\\!\left(b,\|x-b\|\right)$.
+Therefore, $y\in B\!\left(a,\|x-a\|\right)$.
+Similarly, we have $y\in B\!\left(b,\|x-b\|\right)$.
 Then, the intersection of these two balls is non-empty.
 $\square$
 

@@ -69,7 +69,7 @@ As can be heard, the first part of the audio is played in
 octave intervals while the second part is played in single notes.
 
 Considering that, here comes an amazing idea by which we can kind
-of make the sequence $\left\\{f_k\right\\}$ seem "periodic".
+of make the sequence $\left\{f_k\right\}$ seem "periodic".
 Let the "period" be denoted as $n$. Because it is not virtually
 periodic, we tend to call it an *octave* instead of a period.
 After that, the constant $n$ is the length of an octave.

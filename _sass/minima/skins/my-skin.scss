@@ -1,0 +1,245 @@
+@charset "utf-8";
+
+$lm-brand-color: #828282 !default;
+$lm-text-color: #665e7b !default;
+$lm-background-color: #fefbf1 !default;
+$lm-code-background-color: #eeeeff !default;
+$lm-link-base-color: #db3168 !default;
+
+$dm-brand-color: #828282 !default;
+$dm-text-color: #8c84a1 !default;
+$dm-background-color: #0e0b01 !default;
+$dm-code-background-color: #000011 !default;
+$dm-link-base-color: #de346b !default;
+
+$lm-kbd-border-color: #cccccc !default;
+$lm-kbd-color: #333333 !default;
+$lm-kbd-background-color: #f7f7f7 !default;
+$lm-pager-border-color: #665e7b !default;
+$lm-pager-color: #665e7b !default;
+$lm-pager-selected-color: #fefbf1 !default;
+$lm-pager-background-color: #fefbf1 !default;
+$lm-pager-selected-background-color: #f1b4b4 !default;
+$lm-hr-background-color: #ffc2d5 !default;
+$lm-search-color: #883e6b !default;
+$lm-search-focus-color: #db5568 !default;
+$lm-search-border-color: #ff92a5 !default;
+$lm-search-background-color: #fff !default;
+$lm-lineno-color: #bbb !default;
+$lm-lineno-background-color: #eeeef0 !default;
+
+$dm-kbd-border-color: #333333 !default;
+$dm-kbd-color: #cccccc !default;
+$dm-kbd-background-color: #080808 !default;
+$dm-pager-border-color: #8c84a1 !default;
+$dm-pager-color: #8c84a1 !default;
+$dm-pager-background-color: #0e0b01 !default;
+$dm-pager-selected-color: #0e0b01 !default;
+$dm-pager-selected-background-color: #b21b4b !default;
+$dm-hr-background-color: #3d0013 !default;
+$dm-search-color: #aa2436 !default;
+$dm-search-focus-color: #c177a3 !default;
+$dm-search-border-color: #9d1113 !default;
+$dm-search-background-color: #000 !default;
+$dm-lineno-color: #555 !default;
+$dm-lineno-background-color: #0f0f11 !default;
+
+$table-text-align: left !default;
+$content-width: 800px !default;
+$on-palm: 600px !default;
+$on-laptop: 800px !default;
+
+@mixin media-query($device) {
+	@media screen and (max-width: $device) {
+		@content;
+	}
+}
+
+@mixin relative-font-size($ratio) {
+	font-size: $base-font-size * $ratio;
+}
+
+:root {
+	--kbd-color: #{$lm-kbd-color};
+	--kbd-background-color: #{$lm-kbd-background-color};
+	--kbd-border-color: #{$lm-kbd-border-color};
+	--pager-color: #{$lm-pager-color};
+	--pager-background-color: #{$lm-pager-background-color};
+	--pager-border-color: #{$lm-pager-border-color};
+	--pager-selected-color: #{$lm-pager-selected-color};
+	--pager-selected-background-color: #{$lm-pager-selected-background-color};
+	--hr-background-color: #{$lm-hr-background-color};
+	--search-color: #{$lm-search-color};
+	--search-focus-color: #{$lm-search-focus-color};
+	--search-border-color: #{$lm-search-border-color};
+	--search-background-color: #{$lm-search-background-color};
+	--lineno-color: #{$lm-lineno-color};
+	--lineno-background-color: #{$lm-lineno-background-color};
+}
+@media (prefers-color-scheme: dark) {
+	:root {
+		--kbd-color: #{$dm-kbd-color};
+		--kbd-background-color: #{$dm-kbd-background-color};
+		--kbd-border-color: #{$dm-kbd-border-color};
+		--pager-color: #{$dm-pager-color};
+		--pager-background-color: #{$dm-pager-background-color};
+		--pager-border-color: #{$dm-pager-border-color};
+		--pager-selected-color: #{$dm-pager-selected-color};
+		--pager-selected-background-color: #{$dm-pager-selected-background-color};
+		--hr-background-color: #{$dm-hr-background-color};
+		--search-color: #{$dm-search-color};
+		--search-focus-color: #{$dm-search-focus-color};
+		--search-border-color: #{$dm-search-border-color};
+		--search-background-color: #{$dm-search-background-color};
+		--lineno-color: #{$dm-lineno-color};
+		--lineno-background-color: #{$dm-lineno-background-color};
+	}
+}
+$kbd-color: var(--kbd-color);
+$kbd-background-color: var(--kbd-background-color);
+$kbd-border-color: var(--kbd-border-color);
+$pager-color: var(--pager-color);
+$pager-background-color: var(--pager-background-color);
+$pager-border-color: var(--pager-border-color);
+$pager-selected-color: var(--pager-selected-color);
+$pager-selected-background-color: var(--pager-selected-background-color);
+$hr-background-color: var(--hr-background-color);
+$search-color: var(--search-color);
+$search-focus-color: var(--search-focus-color);
+$search-border-color: var(--search-border-color);
+$search-background-color: var(--search-background-color);
+$lineno-color: var(--lineno-color);
+$lineno-background-color: var(--lineno-background-color);
+
+@import "minima/skins/auto";
+
+.center {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+kbd {
+	margin: 0px 0.1em;
+	padding: 0.1em 0.6em;
+	border-radius: 3px;
+	border: 1px solid $kbd-border-color;
+	color: $kbd-color;
+	line-height: 1.4;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	display: inline-block;
+	position: relative;
+	top: -2px;
+	box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.2), inset 0px 0px 0px 2px #ffffff;
+	background-color: $kbd-background-color;
+	-moz-box-shadow: 0 1px 0px rgba(0, 0, 0, 0.2), 0 0 0 2px #ffffff inset;
+	-webkit-box-shadow: 0 1px 0px rgba(0, 0, 0, 0.2), 0 0 0 2px #ffffff inset;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	text-shadow: 0 1px 0 #fff;
+}
+
+ul.pager {
+	text-align: center;
+	list-style: none;
+}
+
+ul.pager li {
+	display: inline;
+	padding: 5px;
+
+	&.selected {
+		a {
+			font-weight: bold;
+		}
+	}
+}
+
+.search-form {
+	width: 100%;
+	position: relative;
+	display: flex;
+	padding-bottom: 30px
+}
+
+.search-text {
+	width: 100%;
+	border: 1px solid $search-border-color;
+	border-right: none;
+	padding: 5px;
+	height: 20px;
+	border-radius: 5px 0 0 5px;
+	outline: none;
+	color: $search-color;
+	background-color: $search-background-color;
+
+	&:focus {
+		color: $search-focus-color;
+	}
+}
+
+.search-submit {
+	width: 90px;
+	height: 32px;
+	border: 1px solid $search-border-color;
+	background: $search-border-color;
+	text-align: center;
+	color: $search-background-color;
+	border-radius: 0 5px 5px 0;
+	cursor: pointer;
+	font-size: 16px;
+}
+
+.qrcode {
+	fill: $text-color;
+}
+
+.highlighter-rouge {
+	tab-size: 4;
+}
+
+.language-ruby {
+	tab-size: 2;
+}
+
+.rouge-table {
+	border: none;
+	margin: 0;
+
+	tbody {
+		border: none;
+
+		tr {
+			background: none !important;
+			border: none;
+
+			td {
+				padding: 8px 12px;
+				border: none;
+
+				pre {
+					border: none;
+					padding: 0;
+					margin: 0;
+				}
+			}
+		}
+	}
+}
+
+.rouge-gutter {
+	position: sticky;
+	left: 0;
+	color: $lineno-color;
+	text-align: right;
+	background: $lineno-background-color;
+
+	pre {
+		background: transparent;
+	}
+}
+
+.rouge-code {
+	width: 100%;
+}

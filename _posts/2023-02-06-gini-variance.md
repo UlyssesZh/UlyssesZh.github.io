@@ -27,7 +27,7 @@ The Gini coefficient $G/\mu$ is defined as the area between the Lorenz curve and
 divided by the area enclosed by the three lines $u=v$, $v=0$, and $u=1$.
 
 Now, suppose the wealth distribution in the country is $p(X)$,
-where $p\\!\left(x\right)\mathrm dx$ is the portion of population that has wealth
+where $p\!\left(x\right)\mathrm dx$ is the portion of population that has wealth
 in the range $[x,x+\mathrm dx]$.
 
 Then, the Lorenz curve is the graph of the function $g$ defined as
@@ -94,7 +94,7 @@ G&=\int_{u_2=0}^1\int_{u_1=0}^{u_2}\left(F^{-1}\!\left(u_2\right)-F^{-1}\!\left(
 \end{align*}$$
 
 where $X_1$ and $X_2$ are two independent random variables with $p$ being their respective distribution functions:
-$\left(X_1,X_2\right)\sim p\\!\left(X_1\right)p\\!\left(X_2\right)$.
+$\left(X_1,X_2\right)\sim p\!\left(X_1\right)p\!\left(X_2\right)$.
 
 By this result, we can easily see how the Gini coefficient represents the statistical dispersion.
 

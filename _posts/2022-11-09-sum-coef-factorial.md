@@ -25,7 +25,7 @@ $$f_n\!\left(z\right):=\left(1-z\right)^{n+1}\sum_{k=1}^\infty k^nz^k,$$
 
 where $n$ is a positive integer.
 
-Our goal is to prove that $f_n\\!\left(z\right)$ is a polynomial of degree $n$ w.r.t. $z$,
+Our goal is to prove that $f_n\!\left(z\right)$ is a polynomial of degree $n$ w.r.t. $z$,
 and the sum of its coefficients is $n!$.
 
 **Lemma 1**.

@@ -1,0 +1,45 @@
+@import "bootstrap/_katex";
+@import "gitalk";
+
+hr {
+	border: 0;
+	height: 2px;
+	width: 50%;
+	position: relative;
+	margin: 30px auto;
+	overflow: visible;
+	background-image: linear-gradient(
+		to right,
+		color-mix(in srgb, $hr-background-color 0%, transparent),
+		color-mix(in srgb, $hr-background-color 100%, transparent),
+		color-mix(in srgb, $hr-background-color 0%, transparent)
+	);
+
+	&:before {
+		content: "\2665";
+		color: $hr-background-color;
+		display: inline-block;
+		position: absolute;
+		top: 0px;
+		left: 50%;
+		margin: 0 0 0 -3px;
+		font-size: 15px;
+		line-height: 0;
+	}
+}
+
+blockquote {
+	font-style: initial;
+	font-size: inherit;
+	letter-spacing: initial;
+}
+
+pre.highlight {
+	padding-left: 0;
+	padding-top: 0;
+	padding-bottom: 0;
+}
+
+pre, code {
+	font-size: inherit;
+}

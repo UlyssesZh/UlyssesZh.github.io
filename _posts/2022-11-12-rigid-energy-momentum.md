@@ -32,7 +32,7 @@ and $\mathbf q^{\otimes 2}:=\mathbf q\otimes\mathbf q$.
 - A rigid body consists of some particles with distances between each other fixed.
 $\mu_a$ is the mass of a particle;
 $\mathbf r_a$ is the position of a particle relative to the center of the rigid body
-($\sum\_a\mu\_a\mathbf r\_a=\mathbf 0$);
+($\sum_a\mu_a\mathbf r_a=\mathbf 0$);
 and $\mathbf v_a$ is the velocity of a particle.
 - The total mass of the rigid body is $m=\sum_a\mu_a$;
 the velocity of its mass center is $\mathbf V$;
