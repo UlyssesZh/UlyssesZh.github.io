@@ -11,13 +11,13 @@
         <ul class="contact-list">
           <li class="p-name">
             {%- if site.author -%}
-              {{ site.author | escape }}
+              {{ site.author.name | escape }}
             {%- else -%}
               {{ site.title | escape }}
             {%- endif -%}
             </li>
-            {%- if site.email -%}
-            <li><a class="u-email" href="mailto:{{ site.email }}">{{ site.email }}</a></li>
+            {%- if site.author.email -%}
+            <li><a class="u-email" href="mailto:{{ site.author.name }} <{{ site.author.email }}>">{{ site.author.email | escape }}</a></li>
             {%- endif -%}
         </ul>
       </div>
@@ -28,7 +28,10 @@
 
       <div class="footer-col footer-col-3">
         {% include copyright.html %}
-        <p>Last update of the website was at {{ "now" | date: "%FT%T%z" }}.</p>
+        <p>
+          Last <a href="{{ site.git_repo }}/commit/{{ site.commit_hash }}" target="_blank">update</a>
+          of the website was at {{ "now" | date: "%FT%T%z" }}.
+        </p>
       </div>
     </div>
 

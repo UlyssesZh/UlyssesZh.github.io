@@ -47,8 +47,7 @@ jobs:
         id: cache-restore-ghc
         with:
           path: ${{ steps.setup-ghc.outputs.cabal-store }}
-          key: ${{ runner.os }}-cabal-store-${{ hashFiles('**/Gemfile') }}
-          restore-keys: ${{ runner.os }}-
+          key: ${{ runner.os }}-cabal-${{ hashFiles('**/Gemfile') }}
       
       - name: Install Haskell packages
         if: steps.cache-restore-ghc.outputs.cache-hit != 'true'
@@ -59,9 +58,10 @@ jobs:
         id: cache-save-ghc
         if: steps.cache-restore-ghc.outputs.cache-hit != 'true'
         with:
-          path: ${{ steps.setup-ghc.outputs.cabal-store }}
-          key: ${{ runner.os }}-cabal-store-${{ hashFiles('**/Gemfile') }}
-          restore-keys: ${{ runner.os }}-
+          path: |
+            ${{ steps.setup-ghc.outputs.cabal-store }}
+            ${{ steps.setup-ghc.outputs.cabal-store }}/../bin
+          key: ${{ runner.os }}-cabal-${{ hashFiles('**/Gemfile') }}
       
       - name: Install cargo packages
         uses: baptiste0928/cargo-install@v2

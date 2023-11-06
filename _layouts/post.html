@@ -15,7 +15,7 @@ layout: base
         <summary>About this post</summary>
         <ul>
           <li><strong>Title:</strong> {{ page.title | markdownify_no_p }}</li>
-          <li><strong>Author:</strong> {{ page.author | default: site.author }}</li>
+          <li><strong>Author:</strong> {{ page.author.name | default: site.author.name }}</li>
           <li><strong>Date:</strong>
             {% assign year = page.date | date: "%Y" %}
             {% assign month = page.date | date: "%m" %}
@@ -37,12 +37,12 @@ layout: base
           </li>
           {% if page.image %}
             <li><strong>Cover:</strong>
-              <a href="{{ page.image }}" target="_blank"><img src="{{ page.image }}" width="16"></a>
-              (<a href="https://github.com/UlyssesZh/UlyssesZh.github.io/blob/master{{ page.image | replace: '.png', '.txt' }}" target="_blank">prompts</a>)
+              <a href="{{ page.image }}"><img src="{{ page.image }}" width="16"></a>
+              (<a href="{{ site.git_repo }}/blob/master{{ page.image | replace: '.png', '.txt' }}" target="_blank">prompts</a>)
             </li>
           {% endif %}
-          <li><strong><a href="https://github.com/UlyssesZh/UlyssesZh.github.io/blob/master/{{ page.path }}?plain=1" target="_blank">View source</a></strong></li>
-          <li><strong><a href="https://github.com/UlyssesZh/UlyssesZh.github.io/commits/master/{{ page.path }}" target="_blank">View history</a></strong></li>
+          <li><strong><a href="{{ site.git_repo }}/blob/master/{{ page.path }}?plain=1" target="_blank">View source</a></strong></li>
+          <li><strong><a href="{{ site.git_repo }}/commits/master/{{ page.path }}" target="_blank">View history</a></strong></li>
         </ul>
       </details>
       <details class="post-meta">

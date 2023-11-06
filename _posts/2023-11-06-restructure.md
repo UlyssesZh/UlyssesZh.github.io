@@ -196,9 +196,10 @@ This makes the refactoring task still very tedious.
 Now, to build my site, the machine needs pandoc, pandoc-crossref, and pandoc-katex,
 none of which are Ruby Gems.
 I need to set up Haskell environment and Rust environment to install them.
-In GitHub Actions, I can use [haskell-actions/setup](https://github.com/haskell-actions/setup)
+In GitHub Actions, I can use [haskell-actions/setup](https://github.com/haskell-actions/setup){target="_blank"}
 to set up Haskell environment
-and [cargo-install](https://github.com/baptiste0928/cargo-install) to install Cargo packages.
+and [cargo-install](https://github.com/baptiste0928/cargo-install){target="_blank"}
+to install Cargo packages.
 
 I do not know how I managed to make the GitHub Actions workflow file work expectedly at one shot,
 but I did.
@@ -240,13 +241,13 @@ but I deliberately kept using jekyll-sass-converter v2 because
 [jekyll-action](https://github.com/helaili/jekyll-action){target="_blank"},
 which I used, had [an issue about using sass-embedded](https://github.com/helaili/jekyll-action/issues/150){target="_blank"}.
 However, I have long ago migrated from jekyll-action to GitHub's official
-[upload-pages-artifact](https://github.com/actions/upload-pages-artifact),
+[upload-pages-artifact](https://github.com/actions/upload-pages-artifact){target="_blank"},
 so I can now upgrade jekyll-sass-converter to v3.
 
 Then why does this have anything to do with the theme I used
-(which is [Minima](https://github.com/jekyll/minima))?
+(which is [Minima](https://github.com/jekyll/minima){target="_blank"})?
 After I upgraded jekyll-sass-converter to v3, I found that there are some
-[deprecation warnings in the SCSS files](https://github.com/jekyll/minima/issues/709)
+[deprecation warnings in the SCSS files](https://github.com/jekyll/minima/issues/709){target="_blank"}
 (they are actually already fixed, but I do not know why the issue is still open).
 This was also when I noticed that Minima has not released a new version **for 4 years**,
 and the last stable release is v2.5.1.

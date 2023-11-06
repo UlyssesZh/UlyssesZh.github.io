@@ -16,6 +16,7 @@ module Jekyll
 		def run
 			FileUtils.mkdir_p BOOTSTRAP_DIR
 			read_env
+			read_commit_hash
 			read_katex_version
 			write_crossref_config
 			write_rouge_config
@@ -44,6 +45,10 @@ module Jekyll
 		def read_env
 			@site.config['avoid_markdown'] = !!ENV['JEKYLL_AVOID_MARKDOWN']
 			@site.config['no_archive'] = !!ENV['JEKYLL_NO_ARCHIVE']
+		end
+
+		def read_commit_hash
+			@site.config['commit_hash'] = `git rev-parse HEAD`.chomp
 		end
 	end
 

@@ -1,4 +1,5 @@
 ---
+git_repo: https://github.com/UlyssesZh/UlyssesZh.github.io
 title: Ulysses' trip
 author:
   name: UlyssesZhan
@@ -102,6 +103,7 @@ exclude:
   - Rakefile
   - .git/
   - .idea/
+  - .github/
   - '**/*.yml'
   - assets/images/covers/*.txt
 google_analytics: G-7TSJ5VM6YC

@@ -7,7 +7,6 @@ module Jekyll
 	module UlyssesZhan::ScssFunctions
 
 		ASSET_PATHS = [
-			'/assets/bootstrap/fonts'
 		]
 		Converters::Scss.prepend self
 		
