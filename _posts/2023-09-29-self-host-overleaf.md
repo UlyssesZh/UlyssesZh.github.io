@@ -51,7 +51,7 @@ server {
 ## Set up ShareLaTeX
 
 *Refer to*:
-[quick start guide](https://github.com/overleaf/toolkit/blob/master/doc/quick-start-guide.md){:target="_blank"}.
+[quick start guide](https://github.com/overleaf/toolkit/blob/master/doc/quick-start-guide.md){target="_blank"}.
 
 Run the following:
 
@@ -133,7 +133,7 @@ Use `bin/logs` in another shell to check the logs if there are any issues.
 ## Set up TeXLive
 
 *Refer to*:
-[upgrading TeXLive](https://github.com/overleaf/toolkit/blob/master/doc/ce-upgrading-texlive.md){:target="_blank"}.
+[upgrading TeXLive](https://github.com/overleaf/toolkit/blob/master/doc/ce-upgrading-texlive.md){target="_blank"}.
 
 While the containers are up, run `bin/shell` and run `tlmgr install scheme-full`.
 You need to wait for a long time.

@@ -124,4 +124,4 @@ and the intersection of the two balls is empty.
 
 \end{document}
 -->
-![Cases where the intersection is empty or non-empty]({{page.figure}}intersecting_balls.svg){:.dark-adaptive style="width: 100%;"}
+![Cases where the intersection is empty or non-empty]({{page.figure}}intersecting_balls.svg){.dark-adaptive style="width: 100%;"}

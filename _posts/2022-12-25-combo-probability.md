@@ -33,10 +33,7 @@ Define the random variable $\kappa:=k/n$ where $k$ is the length of the longest 
 Define a parameter $y:=Y^n$ (this parameter is held constant while $n\to\infty$).
 Define the probability distribution function of $\kappa$ as
 
-$$\begin{equation}
-\label{eq: f def}
-f(y,\kappa):=\lim_{n\to\infty}\left(n+1\right)P_{n,\kappa n}\!\left(y^{\frac1n}\right).
-\end{equation}$$
+$$f(y,\kappa):=\lim_{n\to\infty}\left(n+1\right)P_{n,\kappa n}\!\left(y^{\frac1n}\right).$$ {#eq:eq-f-def}
 
 What is the expression of $f(y,\kappa)$?
 
@@ -117,9 +114,7 @@ so there are totally $2^3=8$ cases.
 Considering all those cases (omitted in this article because of the triviality),
 we can write a recurrence relation that is valid for all $n,k,r$, covering all the edge cases:
 
-$$\begin{equation}
-\label{eq: dp1}
-P_{n,k,r}=\begin{cases}
+$$P_{n,k,r}=\begin{cases}
 1,& n=k=r=0,\\
 YP_{n-1,n-1,n-1},& n=k=r>0,\\
 0,& n=k>r>0,\\
@@ -128,8 +123,7 @@ Y\left(P_{n-1,k-1,k-1}+P_{n-1,k,k-1}\right),& n>k=r>0,\\
 YP_{n-1,k,r-1},& n>k>r>0,\\
 \left(1-Y\right)\sum_{r'=0}^kP_{n-1,k,r'},& n>k>r=0,\\
 \left(1-Y\right)P_{n-1,0,0},& n>k=r=0.
-\end{cases}
-\end{equation}$$
+\end{cases}$$ {#eq:eq-dp1}
 
 Note that the probabilities related to note count $n$ only depend on those related to note count $n-1$
 and that the probabilities related to max combo $k$ and final combo $r$
@@ -176,7 +170,7 @@ Instead of building a DP table with the $k,r$ indices, we can build a DP table w
 First, we need to rewrite the recurrence relation of $P_{n,k}$ instead of that of $P_{n,k,r}$.
 We then need to try to express $P_{n,k,r}$ in terms of $P_{n,k}$ terms.
 The easiest part is the case where $n\ge k=r=0$.
-By recursively applying Equation \ref{eq: dp1} to $P_{n,0,0}$, we have
+By recursively applying Equation [@eq:eq-dp1] to $P_{n,0,0}$, we have
 
 $$\begin{align*}
 P_{n,0,0}&=\left(1-Y\right)P_{n-1,0,0}\\
@@ -187,14 +181,11 @@ P_{n,0,0}&=\left(1-Y\right)P_{n-1,0,0}\\
 
 Because $P_{0,0,0}=1$, we have
 
-$$\begin{equation}
-\label{eq: dp2 n>=k=r=0}
-P_{n,0,0}=\left(1-Y\right)^n.
-\end{equation}$$
+$$P_{n,0,0}=\left(1-Y\right)^n.$$ {#eq:eq-dp2-n-ge-k-r-0}
 
 ---
 
-For $n>k>r>0$, we can recursively apply Equation \ref{eq: dp1} to get
+For $n>k>r>0$, we can recursively apply Equation [@eq:eq-dp1] to get
 
 $$\begin{align*}
 P_{n,k,r}&=YP_{n-1,k,r-1}\\
@@ -206,24 +197,21 @@ This will finally either decend the note count to $k$ or decend the final combo 
 determined by which comes first.
 
 - If $n-r\le k$, we will decend to the term $P_{k,k,r-(n-k)}$,
-which must be zero according to the case $n=k>r=0$ and the case $n=k>r>0$ in Equation \ref{eq: dp1},
+which must be zero according to the case $n=k>r=0$ and the case $n=k>r>0$ in Equation [@eq:eq-dp1],
 so $P_{n,k,r}=0$.
 - If $n-r>k$, then we will decend to the term $P_{n-r,k,0}$,
-which is equal to $\left(1-Y\right)P_{n-r-1,k}$ according to the case $n>k>r=0$ in Equation \ref{eq: dp1}.
+which is equal to $\left(1-Y\right)P_{n-r-1,k}$ according to the case $n>k>r=0$ in Equation [@eq:eq-dp1].
 
 Therefore, for $n>k>r>0$, we have
 
-$$\begin{equation}
-\label{eq: dp2 n>k>r>0}
-P_{n,k,r}=\begin{cases}
+$$P_{n,k,r}=\begin{cases}
 0,&n-r\le k,\\
 Y^r\left(1-Y\right)P_{n-r-1,k},&n-r>k.
-\end{cases}
-\end{equation}$$
+\end{cases}$$ {#eq:eq-dp2-n-g-k-r-0}
 
 ---
 
-For the case $n>k=r>0$, we can also recursively apply Equation \ref{eq: dp1} to get
+For the case $n>k=r>0$, we can also recursively apply Equation [@eq:eq-dp1] to get
 
 $$\begin{align*}
 P_{n,k,k}&=Y\left(P_{n-1,k-1,k-1}+P_{n-1,k,k-1}\right)\\
@@ -233,18 +221,18 @@ P_{n,k,k}&=Y\left(P_{n-1,k-1,k-1}+P_{n-1,k,k-1}\right)\\
 &=Y^kP_{n-k,0,0}+\sum_{j=1}^kY^jP_{n-j,k-j+1,k-j}.
 \end{align*}$$
 
-We can then substitute Equation \ref{eq: dp2 n>=k=r=0} and \ref{eq: dp2 n>k>r>0} into the above equation.
-The substitution of Equation \ref{eq: dp2 n>=k=r=0} can be done without a problem,
-but the substitution of Equation \ref{eq: dp2 n>k>r>0} requires some care because of the different cases.
+We can then substitute Equation [@eq:eq-dp2-n-ge-k-r-0] and [@eq:eq-dp2-n-g-k-r-0] into the above equation.
+The substitution of Equation [@eq:eq-dp2-n-ge-k-r-0] can be done without a problem,
+but the substitution of Equation [@eq:eq-dp2-n-g-k-r-0] requires some care because of the different cases.
 
-- If $n-k>k$, then only the case $n-r>k$ in Equation \ref{eq: dp2 n>k>r>0} will be involved in the summation.
-- If $n-k\le k$, then both cases in Equation \ref{eq: dp2 n>k>r>0} will be involved in the summation.
-To be specific, for $j\in1\,..\,2k-n+1$, we need the case $n-r\le k$ in Equation \ref{eq: dp2 n>k>r>0}
+- If $n-k>k$, then only the case $n-r>k$ in Equation [@eq:eq-dp2-n-g-k-r-0] will be involved in the summation.
+- If $n-k\le k$, then both cases in Equation [@eq:eq-dp2-n-g-k-r-0] will be involved in the summation.
+To be specific, for $j\in1\,..\,2k-n+1$, we need the case $n-r\le k$ in Equation [@eq:eq-dp2-n-g-k-r-0]
 (where the summed terms are just zero and can be omitted);
 for other terms in the summation, we need the other case.
 
 Considering both cases, we may realize that we can just modify the range of the summation to $j\in\max(1,2k-n+1)\,..k$
-and adopt the case $n-r>k$ in Equation \ref{eq: dp2 n>k>r>0} for all terms in the summation.
+and adopt the case $n-r>k$ in Equation [@eq:eq-dp2-n-g-k-r-0] for all terms in the summation.
 Therefore, we have
 
 $$\begin{align*}
@@ -253,21 +241,15 @@ P_{n,k,k}&=Y^k\left(1-Y\right)^{n-k}+\sum_{j=\max(1,2k-n+1)}^{k}Y^jY^{k-j}\left(
 \end{align*}$$
 
 where in the last line we changed the summation index to $k':=k-j+1$ to simplify it.
-Because $P_{n-k-1,0}=P_{n-k-1,0,0}=\left(1-Y\right)^{n-k-1}$ according to Equation \ref{eq: dp2 n>=k=r=0},
+Because $P_{n-k-1,0}=P_{n-k-1,0,0}=\left(1-Y\right)^{n-k-1}$ according to Equation [@eq:eq-dp2-n-ge-k-r-0],
 we can combine the two terms into one summation to get the final result for $n>k=r>0$:
 
-$$\begin{equation}
-\label{eq: dp2 n>k=r>0}
-P_{n,k,k}=Y^k\left(1-Y\right)\sum_{k'=0}^{\min(k,n-k-1)}P_{n-k-1,k'}.
-\end{equation}$$
+$$P_{n,k,k}=Y^k\left(1-Y\right)\sum_{k'=0}^{\min(k,n-k-1)}P_{n-k-1,k'}.$$ {#eq:eq-dp2-n-k-r-0}
 
 Noticing the obvious fact that $\sum_{k=0}^nP_{n,k}=1$, the above equation can be simplified,
 when $k\ge n-k-1$, to
 
-$$\begin{equation}
-\label{eq: dp2 n>k=r>0 simplified}
-P_{n,k,k}=Y^k\left(1-Y\right).
-\end{equation}$$
+$$P_{n,k,k}=Y^k\left(1-Y\right).$$ {#eq:eq-dp2-n-k-r-0-simplified}
 
 This simplification is not specially useful, but it can be used to simplify the calculation in the program.
 
@@ -287,14 +269,12 @@ P_{n,k}&=\sum_{r=0}^kP_{n,k,r}\\
 \end{align*}$$
 
 where in the last term $r$ is summed to $\min(k-1,n-k-1)$ instead of $k-1$
-because of the different cases in Equation \ref{eq: dp2 n>k>r>0}.
+because of the different cases in Equation [@eq:eq-dp2-n-g-k-r-0].
 
 Finally, consider the edge cases where $n=k\ge0$ and $n\ge k=0$ (trivial),
 we have the complete resursive relation for $P_{n,k}$:
 
-$$\begin{equation}
-\label{eq: dp2}
-P_{n,k}=\begin{cases}
+$$P_{n,k}=\begin{cases}
 Y^n,&n=k\ge0,\\
 \left(1-Y\right)^n,&n\ge k=0,\\
 \displaystyle{\begin{split}
@@ -304,8 +284,7 @@ Y^n,&n=k\ge0,\\
     +\sum_{r=0}^{\min(k-1,n-k-1)}Y^rP_{n-r-1,k}
   \right),
 \end{split}}&n>k>0.
-\end{cases}
-\end{equation}$$
+\end{cases}$$ {#eq:eq-dp2}
 
 Then, we can write the program to calculate $P_{n,k}$:
 
@@ -333,7 +312,7 @@ Actually, the calculation can be done symbolically.
 
 The probability $P_{n,k}$ is a polynomial of degree (at most) $n$ in $Y$,
 and the coefficients of the polynomial are integers.
-This can be easily proven by using mathematical induction and utilizing Equation \ref{eq: dp2}.
+This can be easily proven by using mathematical induction and utilizing Equation [@eq:eq-dp2].
 Therefore, we can calculate the coefficients of the polynomial $P_{n,k}(Y)$ instead of calculate the value directly
 so that we get a symbolic but accurate result.
 
@@ -342,16 +321,16 @@ Actually, we can define `Y` to be a polynomial object that can do arithmetic ope
 and then the programmes can run without any modification.
 Here, I will modify the second DP algorithm to calculate the coefficients of the polynomial.
 
-We can also utilize Equation \ref{eq: dp2 n>k=r>0 simplified} to simplify the calculation.
+We can also utilize Equation [@eq:eq-dp2-n-k-r-0-simplified] to simplify the calculation.
 Considering the edge cases involved in $\min(k,n-k-1)$ and $\min(k-1,n-k-1)$,
 there are three cases we need to consider:
 
 1. Case $k>n-k-1$:
-Equation \ref{eq: dp2 n>k=r>0 simplified} can be applied, and $r$ is summed to $n-k-1$.
+Equation [@eq:eq-dp2-n-k-r-0-simplified] can be applied, and $r$ is summed to $n-k-1$.
 2. Case $k=n-k-1$ (can only happen when $n$ is odd):
-Equation \ref{eq: dp2 n>k=r>0 simplified} can be applied, and $r$ is summed to $k-1$.
+Equation [@eq:eq-dp2-n-k-r-0-simplified] can be applied, and $r$ is summed to $k-1$.
 3. Case $k<n-k-1$:
-Equation \ref{eq: dp2 n>k=r>0 simplified} cannot be applied, and $r$ is summed to $k-1$.
+Equation [@eq:eq-dp2-n-k-r-0-simplified] cannot be applied, and $r$ is summed to $k-1$.
 
 Then, use arrays to store the coefficients of the polynomial $P_{n,k}(Y)$,
 and we can write the program to calculate the coefficients:
@@ -415,7 +394,7 @@ and then substitute $X:=1-Y$.
 
 Here are some plots of the probability distribution of max combo $k$ when $n=50$:
 
-![n=50]({{page.figure}}finite_distribution_50.png){:.dark-adaptive}
+![n=50]({{page.figure}}finite_distribution_50.png){.dark-adaptive}
 
 The plots are intuitive as they show that one has higher probability to get a higher max combo
 when they have a higher success rate.
@@ -423,31 +402,25 @@ when they have a higher success rate.
 There is a suspicious jump in $P_{n,k}(Y)$ near $k=n/2$ when $Y$ is close to $1$.
 We can look at it closer:
 
-![n=50]({{page.figure}}finite_distribution_50_2.png){:.dark-adaptive}
+![n=50]({{page.figure}}finite_distribution_50_2.png){.dark-adaptive}
 
 In the zoomed-in plot, we can also see a jump in first derivative (w.r.t. $k$) of $P_{n,k}(Y)$ near $k=n/3$.
 Actually, the jumps can be modeled in later sections when we talk about the case when $n\to\infty$.
 
 ## The case when $n\to\infty$
 
-A natural approach is to try substituting Equation \ref{eq: dp2} into Equation \ref{eq: f def}
+A natural approach is to try substituting Equation [@eq:eq-dp2] into Equation [@eq:eq-f-def]
 to get a function w.r.t. the unknown function $f(y,\kappa)$.
 First, we can easily write the case when $y=0$ because it means zero success rate, and the only possible max combo is zero:
 
-$$\begin{equation}
-\label{eq: f y=0}
-f(y=0,\kappa)=\delta(\kappa).
-\end{equation}$$
+$$f(y=0,\kappa)=\delta(\kappa).$$ {#eq:eq-f-y-0}
 
 Similarly, we can easily write the case when $y=1$:
 
-$$\begin{equation}
-\label{eq: f y=1}
-f(y=1,\kappa)=\delta(\kappa-1).
-\end{equation}$$
+$$f(y=1,\kappa)=\delta(\kappa-1).$$ {#eq:eq-f-y-1}
 
 From now on, we only consider the case when $0<y<1$.
-First, for the case $\kappa=0$, according to Equation \ref{eq: dp2},
+First, for the case $\kappa=0$, according to Equation [@eq:eq-dp2],
 
 $$\begin{align*}
 f(y,\kappa=0)&=\lim_{n\to\infty}\left(n+1\right)\left(1-y^{\frac1n}\right)^n\\
@@ -455,9 +428,9 @@ f(y,\kappa=0)&=\lim_{n\to\infty}\left(n+1\right)\left(1-y^{\frac1n}\right)^n\\
 \end{align*}$$
 
 The $\infty$ means that there is a Dirac $\delta$ function
-(shown in Equation \ref{eq: f y=0}).
+(shown in Equation [@eq:eq-f-y-0]).
 
-Then, for the case $\kappa=1$, according to Equation \ref{eq: dp2},
+Then, for the case $\kappa=1$, according to Equation [@eq:eq-dp2],
 
 $$f(y,\kappa=1)=\lim_{n\to\infty}\left(n+1\right)y=\infty.$$
 
@@ -467,15 +440,12 @@ because the probability of getting a max combo ($\kappa=1$) is $y$.
 
 Define
 
-$$\begin{equation}
-\label{eq: h def}
-h(y,\kappa):=f(y,\kappa)-y\delta(\kappa-1),
-\end{equation}$$
+$$h(y,\kappa):=f(y,\kappa)-y\delta(\kappa-1),$$ {#eq:eq-h-def}
 
 and then we can get rid of the infinity here.
 
 From now on, we only consider the case when $0<y<1$ and $0<\kappa<1$.
-According to Equation \ref{eq: dp2},
+According to Equation [@eq:eq-dp2],
 
 $$\begin{align*}
 &\phantom{=~}f\!\left(y\in\left(0,1\right),\kappa\in\left(0,1\right)\right)\\
@@ -534,32 +504,24 @@ $$\begin{align*}
 
 Further, let (we only consider $y\in\left(0,1\right)$ from now on)
 
-$$\begin{equation}
-\label{eq: g def}
-g(y,\kappa):=\frac{h(y,\kappa)}{y},
-\end{equation}$$
+$$g(y,\kappa):=\frac{h(y,\kappa)}{y},$$ {#eq:eq-g-def}
 
 then the integral equation becomes
 
-$$\begin{equation}
-\label{eq: main}
-\begin{split}
+$$\begin{split}
 g(y,\kappa)=-\ln y&\,\left(
   \int_0^{\min\left(\frac\kappa{1-\kappa},1\right)}\left(g\!\left(y^{1-\kappa},u\right)+\delta(u-1)\right)\mathrm du
 \right.\\&\left.
   +\int_\kappa^{\min\left(\frac\kappa{1-\kappa},1\right)}\left(g\!\left(y^{\frac\kappa v},v\right)+\delta(v-1)\right)\frac{\mathrm dv}v
 \right).
-\end{split}\end{equation}$$
+\end{split}$$ {#eq:eq-main}
 
 There is another integral equation for $g$.
 Because $\int_0^1f\!\left(y,\kappa\right)\mathrm d\kappa=1$, we have
 
-$$\begin{equation}
-\label{eq: normalization}
-\int_0^1g\!\left(y,\kappa\right)\mathrm d\kappa=\frac1y-1.
-\end{equation}$$
+$$\int_0^1g\!\left(y,\kappa\right)\mathrm d\kappa=\frac1y-1.$$ {#eq:eq-normalization}
 
-Equation \ref{eq: main} and \ref{eq: normalization}
+Equation [@eq:eq-main] and [@eq:eq-normalization]
 are the equations that we are going to utilize to get the expression for $g(y,\kappa)$.
 
 ### The case $\kappa\in\left(\frac12,1\right)$
@@ -568,23 +530,20 @@ In this case, we have
 
 $$\min\!\left(\frac\kappa{1-\kappa},1\right)=1,$$
 
-so the Dirac delta functions in Equation \ref{eq: main} should be considered.
+so the Dirac delta functions in Equation [@eq:eq-main] should be considered.
 In this case, it simplifies to
 
-$$\begin{equation}
-\label{eq: main 1/2<kappa<1}
-g_1(y,\kappa):=g\!\left(y,\kappa\in\left(\frac12,1\right)\right)=
--\ln y\left(y^{\kappa-1}+\int_\kappa^1g\!\left(y^{\frac\kappa v},v\right)\frac{\mathrm dv}v+1\right),
-\end{equation}$$
+$$g_1(y,\kappa):=g\!\left(y,\kappa\in\left(\frac12,1\right)\right)=
+-\ln y\left(y^{\kappa-1}+\int_\kappa^1g\!\left(y^{\frac\kappa v},v\right)\frac{\mathrm dv}v+1\right),$$ {#eq:eq-main-1-2-kappa-1}
 
-where Equation \ref{eq: normalization} is utilized when finding the first term.
-We can try to solve Equation \ref{eq: main 1/2<kappa<1} by using
-[Adomian decomposition method (ADM)](https://en.wikipedia.org/wiki/Adomian_decomposition_method){:target="_blank"}.
+where Equation [@eq:eq-normalization] is utilized when finding the first term.
+We can try to solve Equation [@eq:eq-main-1-2-kappa-1] by using
+[Adomian decomposition method (ADM)](https://en.wikipedia.org/wiki/Adomian_decomposition_method){target="_blank"}.
 Suppose $g_1$ can be written in a series
 
 $$g_1=g_1^{(0)}+g_1^{(1)}+\cdots,$$
 
-and substitute it into Equation \ref{eq: main 1/2<kappa<1}, and we have
+and substitute it into Equation [@eq:eq-main-1-2-kappa-1], and we have
 
 $$g_1^{(0)}(y,\kappa)+\cdots
 =-\ln y\left(y^{\kappa-1}+1+\int_\kappa^1\left(
@@ -603,18 +562,16 @@ $$\begin{align*}
 
 If we let
 
-$$\begin{equation}
-\label{eq: adm 1/2<kappa<1}
-\begin{split}
+$$\begin{split}
 g_1^{(0)}(y,\kappa)&:=-\ln y\left(y^{\kappa-1}+1\right),\\
 g_1^{(i+1)}(y,\kappa)&:=-\ln y\int_\kappa^1g^{(i)}\!\left(y^{\frac\kappa v},v\right)\frac{\mathrm dv}v,\quad i\in\mathbb N,
-\end{split}\end{equation}$$
+\end{split}$$ {#eq:eq-adm-1-2-kappa-1}
 
 then we can equate each term in the two series.
-If the sum $g_1=\sum_{i=0}^\infty g_1^{(i)}$ converges, then this is a guess of the solution to Equation \ref{eq: main 1/2<kappa<1},
+If the sum $g_1=\sum_{i=0}^\infty g_1^{(i)}$ converges, then this is a guess of the solution to Equation [@eq:eq-main-1-2-kappa-1],
 which we can verify whether it is correct or not.
 
-Using Equation \ref{eq: adm 1/2<kappa<1}, we can find first few terms in the series by directly integrating.
+Using Equation [@eq:eq-adm-1-2-kappa-1], we can find first few terms in the series by directly integrating.
 The first few terms are
 
 $$\begin{split}
@@ -658,12 +615,9 @@ g_1(y,\kappa)&=\sum_{i=0}^\infty g_1^{(i)}(y,\kappa)\\
 
 Therefore, we have the final guess of solution
 
-$$\begin{equation}
-\label{eq: g1}
-g_1(y,\kappa)=-\ln y\left(2+\ln y^{\kappa-1}\right)y^{\kappa-1}.
-\end{equation}$$
+$$g_1(y,\kappa)=-\ln y\left(2+\ln y^{\kappa-1}\right)y^{\kappa-1}.$$ {#eq:eq-g1}
 
-We can substitute it into Equation \ref{eq: main 1/2<kappa<1} to verify that it is indeed the solution.
+We can substitute it into Equation [@eq:eq-main-1-2-kappa-1] to verify that it is indeed the solution.
 
 ### The case $\kappa\in\left(\frac13,\frac12\right)$
 
@@ -672,7 +626,7 @@ In this case, we have
 $$\min\!\left(\frac\kappa{1-\kappa},1\right)=\frac\kappa{1-\kappa}\in\left(\frac12,1\right).$$
 
 We can then use the same method as in the previous case to find the solution.
-First, by Equation \ref{eq: main 1/2<kappa<1},
+First, by Equation [@eq:eq-main-1-2-kappa-1],
 
 $$\begin{align*}
 g_2(y,\kappa)&:=g\!\left(y,\kappa\in\left(\frac13,\frac12\right)\right)\\
@@ -689,11 +643,9 @@ g_2(y,\kappa)&:=g\!\left(y,\kappa\in\left(\frac13,\frac12\right)\right)\\
 \right).
 \end{align*}$$
 
-Substitute Equation \ref{eq: normalization} and \ref{eq: g1} into the above equation, and we have
+Substitute Equation [@eq:eq-normalization] and [@eq:eq-g1] into the above equation, and we have
 
-$$\begin{equation}
-\label{eq: main 1/3<kappa<1/2}
-\begin{split}
+$$\begin{split}
 g_2(y,\kappa)&=-\ln y\left(
   y^{\kappa-1}
   +y^{-\kappa}\left(1+\ln y^{-\kappa}\right)
@@ -701,9 +653,9 @@ g_2(y,\kappa)&=-\ln y\left(
 \vphantom{\int_\kappa^{\frac12}}\right.\\&\phantom{=-\ln y}\left.
   +\int_\kappa^{\frac12}g_2\!\left(y^{\frac\kappa v},v\right)\frac{\mathrm dv}v
 \right).
-\end{split}\end{equation}$$
+\end{split}$$ {#eq:eq-main-1-3-kappa-1-2}
 
-Equation \ref{eq: main 1/3<kappa<1/2} can again be solved by ADM
+Equation [@eq:eq-main-1-3-kappa-1-2] can again be solved by ADM
 though the calculation is much more complicated than the previous case.
 We may guess $g_2=\sum_{i=0}^\infty g_2^{(i)}$ is the solution if the series converges, where
 
@@ -736,23 +688,18 @@ g_2^{(i)}=-\ln y&\,\left(
 Then we can sum it to get a guess of $g_2$.
 After some tedious calculation, we have
 
-$$\begin{equation}
-\label{eq: g2}
-g_2(y,\kappa)=-\ln y\left(
+$$g_2(y,\kappa)=-\ln y\left(
   \left(2+\ln y^{\kappa-1}\right)y^{\kappa-1}
   -\left(2+4\ln y^{2\kappa-1}+\left(\ln y^{2\kappa-1}\right)^2\right)y^{2\kappa-1}
-\right).
-\end{equation}$$
+\right).$$ {#eq:eq-g2}
 
-On may verify that this is indeed the solution by substituting it into Equation \ref{eq: main 1/3<kappa<1/2}.
+On may verify that this is indeed the solution by substituting it into Equation [@eq:eq-main-1-3-kappa-1-2].
 
 ### The case $\kappa\in\left(\frac14,\frac13\right)$
 
 By using very similar methods but after very tedious calculation, the solution is
 
-$$\begin{equation}
-\label{eq: g3}
-\begin{split}
+$$\begin{split}
 g_3(y,\kappa)&:=g\!\left(y,\kappa\in\left(\frac14,\frac13\right)\right)\\
 &=-\ln y\left(
   \left(2+\ln y^{\kappa-1}\right)y^{\kappa-1}
@@ -760,11 +707,11 @@ g_3(y,\kappa)&:=g\!\left(y,\kappa\in\left(\frac14,\frac13\right)\right)\\
 \right.\\&\phantom{=-\ln y}\left.
   {}+\left(3\ln y^{3\kappa-1}+3\left(\ln y^{3\kappa-1}\right)^2+\frac12\left(\ln y^{3\kappa-1}\right)^3\right)y^{3\kappa-1}
 \right).
-\end{split}\end{equation}$$
+\end{split}$$ {#eq:eq-g3}
 
 ### Other cases
 
-After seeing Equation \ref{eq: g1}, \ref{eq: g2}, and \ref{eq: g3},
+After seeing Equation [@eq:eq-g1], [@eq:eq-g2], and [@eq:eq-g3],
 one may guess the form of solution for other cases.
 
 Guess the form of solution for $\kappa\in\left(\frac1{q+1},\frac1q\right)$,
@@ -813,11 +760,9 @@ $$\begin{align*}
 +\int_\kappa^{\frac1q}\Delta g_q\!\left(y^{\frac\kappa v},v\right)\frac{\mathrm dv}v.
 \end{align*}$$
 
-Substitute into Equation \ref{eq: main}, and we have
+Substitute into Equation [@eq:eq-main], and we have
 
-$$\begin{equation}
-\label{eq: main Delta gs}
-\begin{split}
+$$\begin{split}
 \sum_{s=1}^q\Delta g_s(y,\kappa)=-\ln y&\,\left(
   y^{\kappa-1}-1
   -\sum_{s=1}^{q-1}\int_{\frac\kappa{1-\kappa}}^{\frac1s}\Delta g_s\!\left(y^{1-\kappa},u\right)\mathrm du
@@ -825,16 +770,13 @@ $$\begin{equation}
   {}+\sum_{s=1}^{q-1}\int_\kappa^{\frac\kappa{1-\kappa}}\Delta g_s\!\left(y^{\frac\kappa v},v\right)\frac{\mathrm dv}v
   +\int_\kappa^{\frac1q}\Delta g_q\!\left(y^{\frac\kappa v},v\right)\frac{\mathrm dv}v
 \right).
-\end{split}\end{equation}$$
+\end{split}$$ {#eq:eq-main-Delta-gs}
 
 To simplify later expressions, define
 
-$$\begin{equation}
-\label{eq: B def}
-B_{s,l}:=\left(-1\right)^l\sum_{j=l}^s\left(-1\right)^jA_{s,j}.
-\end{equation}$$
+$$B_{s,l}:=\left(-1\right)^l\sum_{j=l}^s\left(-1\right)^jA_{s,j}.$$ {#eq:eq-B-def}
 
-Now, calculate the integrals in Equation \ref{eq: main Delta gs}.
+Now, calculate the integrals in Equation [@eq:eq-main-Delta-gs].
 Before that, first we introduce a handy integral formula:
 
 $$\int\left(\ln w\right)^j\,\mathrm dw
@@ -903,7 +845,7 @@ $$\begin{align*}
 \right).
 \end{align*}$$
 
-Substitute these results into Equation \ref{eq: main Delta gs}, and we have
+Substitute these results into Equation [@eq:eq-main-Delta-gs], and we have
 
 $$\begin{split}
 &\phantom{=~}\sum_{s=1}^q
@@ -934,29 +876,24 @@ $$\begin{split}
 
 Cancel factor $\ln y$ on both sides, and we have
 
-$$\begin{align}
+$$\begin{align*}
 &\phantom{=~}\sum_{s=1}^q
-\left(-1\right)^sy^{s\kappa-1}\sum_{j=0}^s\frac{A_{s,j}}{j!}\left(\ln y^{s\kappa-1}\right)^j\nonumber\\
-
-&=-y^{\kappa-1}+1\nonumber\\
+\left(-1\right)^sy^{s\kappa-1}\sum_{j=0}^s\frac{A_{s,j}}{j!}\left(\ln y^{s\kappa-1}\right)^j\\
+&=-y^{\kappa-1}+1\\
 &\phantom{=}{}+\sum_{s=1}^{q-1}\left(-1\right)^s\frac{B_{s,0}}s
--\sum_{s=2}^q\frac{\left(-1\right)^{s-1}}{s-1}y^{s\kappa-1}\sum_{l=0}^{s-1}B_{s-1,l}\frac{\left(\ln y^{s\kappa-1}\right)^l}{l!}\nonumber\\
+-\sum_{s=2}^q\frac{\left(-1\right)^{s-1}}{s-1}y^{s\kappa-1}\sum_{l=0}^{s-1}B_{s-1,l}\frac{\left(\ln y^{s\kappa-1}\right)^l}{l!}\\
 &\phantom{=}{}-\sum_{s=2}^q\left(-1\right)^{s-1}y^{s\kappa-1}\sum_{l=0}^{s-1}B_{s-1,l}\frac{\left(\ln y^{s\kappa-1}\right)^l}{l!}
-+\sum_{s=1}^{q-1}\left(-1\right)^sy^{s\kappa-1}\sum_{l=0}^sB_{s,l}\frac{\left(\ln y^{s\kappa-1}\right)^l}{l!}\nonumber\\
-&\phantom{=}{}-\left(-1\right)^qB_{q,0}+\left(-1\right)^qy^{q\kappa-1}\sum_{l=0}^qB_{q,l}\frac{\left(\ln y^{q\kappa-1}\right)^l}{l!}\nonumber\\
-
-\label{eql: determine coefficients 1}
-&=1+\sum_{s=1}^{q-1}\frac{\left(-1\right)^s}sB_{s,0}-\left(-1\right)^qB_{q,0}\\
-\label{eql: determine coefficients 2}
-&\phantom{=}-y^{\kappa-1}\left(1+B_{1,0}-B_{1,1}\ln y^{\kappa-1}\right)\\
-\label{eql: determine coefficients 3}
++\sum_{s=1}^{q-1}\left(-1\right)^sy^{s\kappa-1}\sum_{l=0}^sB_{s,l}\frac{\left(\ln y^{s\kappa-1}\right)^l}{l!}\\
+&\phantom{=}{}-\left(-1\right)^qB_{q,0}+\left(-1\right)^qy^{q\kappa-1}\sum_{l=0}^qB_{q,l}\frac{\left(\ln y^{q\kappa-1}\right)^l}{l!}\\
+&=1+\sum_{s=1}^{q-1}\frac{\left(-1\right)^s}sB_{s,0}-\left(-1\right)^qB_{q,0}&(*)\\
+&\phantom{=}-y^{\kappa-1}\left(1+B_{1,0}-B_{1,1}\ln y^{\kappa-1}\right)&(**)\\
 &\phantom{=}{}+\sum_{s=2}^q\left(-1\right)^sy^{s\kappa-1}\left(
   \sum_{l=0}^{s-1}\left(\frac s{s-1}B_{s-1,l}+B_{s,l}\right)\frac{\left(\ln y^{s\kappa-1}\right)^l}{l!}
   +B_{s,s}\frac{\left(\ln y^{s\kappa-1}\right)^s}{s!}
-\right)
-\end{align}$$
+\right)&(***)
+\end{align*}$$
 
-Equate the coefficients in Line \ref{eql: determine coefficients 1} with the corresponding ones on the LHS,
+Equate the coefficients in Line (*) with the corresponding ones on the LHS,
 and we have
 
 $$0=1+\sum_{s=1}^{q-1}\frac{\left(-1\right)^s}sB_{s,0}-\left(-1\right)^qB_{q,0}.$$
@@ -970,41 +907,32 @@ $$\begin{cases}
 
 Subtract the two equations, and we have
 
-$$\begin{equation}
-\label{eq: B recurrence 1}
-B_{q+1,0}=-\frac{q+1}qB_{q,0},\quad q\in 2\ldots\infty.
-\end{equation}$$
+$$B_{q+1,0}=-\frac{q+1}qB_{q,0},\quad q\in 2\ldots\infty.$$ {#eq:eq-B-recurrence-1}
 
-Equation \ref{eq: B recurrence 1} can determine $B_{q,0}$ for all $q\in 2\ldots\infty$ once $B_{2,0}$ is determined.
-The relationship between $B_{1,0}$ and $B_{2,0}$ cannot be described by Equation \ref{eq: B recurrence 1}, but is given by
+Equation [@eq:eq-B-recurrence-1] can determine $B_{q,0}$ for all $q\in 2\ldots\infty$ once $B_{2,0}$ is determined.
+The relationship between $B_{1,0}$ and $B_{2,0}$ cannot be described by Equation [@eq:eq-B-recurrence-1], but is given by
 
-$$\begin{equation}
-\label{eq: B recurrence 2}
-B_{2,0}=1-B_{1,0}.
-\end{equation}$$
+$$B_{2,0}=1-B_{1,0}.$$ {#eq:eq-B-recurrence-2}
 
-Equate the coefficients in Line \ref{eql: determine coefficients 2} with the corresponding ones on the LHS,
+Equate the coefficients in Line (**) with the corresponding ones on the LHS,
 and we have
 
 $$A_{1,0}=1+B_{1,0},\quad A_{1,1}=B_{1,1}.$$
 
-By Equation \ref{eq: B def}, this is equivalent to
+By Equation [@eq:eq-B-def], this is equivalent to
 
 $$A_{1,0}=1+A_{1,0}-A_{1,1},\quad A_{1,1}=A_{1,1}.$$
 
 Therefore, $A_{1,1}=1$, and thus
 
-$$\begin{equation}
-\label{eq: B recurrence 3}
-B_{1,1}=1.
-\end{equation}$$
+$$B_{1,1}=1.$$ {#eq:eq-B-recurrence-3}
 
-Equate the coefficients in Line \ref{eql: determine coefficients 3} with the corresponding ones on the LHS,
+Equate the coefficients in Line (***) with the corresponding ones on the LHS,
 and we have
 
 $$A_{s,l}=\frac s{s-1}B_{s-1,l}+B_{s,l},\quad A_{s,s}=B_{s,s}.$$
 
-By Equation \ref{eq: B def}, $B_{s,l}=A_{s,l}-B_{s,l+1}$ for $l\in 0\ldots s$,
+By Equation [@eq:eq-B-def], $B_{s,l}=A_{s,l}-B_{s,l+1}$ for $l\in 0\ldots s$,
 and $A_{s,s}=B_{s,s}$ is always true.
 Therefore,
 
@@ -1014,12 +942,9 @@ This equation is true for any $s\in 2\,..q$ and $l\in0\ldots s$.
 Because $q$ is arbitrary, we can change the variable $s$ to $q$ and the equation tells us exactly the same information.
 Therefore,
 
-$$\begin{equation}
-\label{eq: B recurrence 4}
-B_{q,l}=\frac q{q-1}B_{q-1,l-1},\quad q\in 2\ldots\infty,\quad l\in 1\,..q.
-\end{equation}$$
+$$B_{q,l}=\frac q{q-1}B_{q-1,l-1},\quad q\in 2\ldots\infty,\quad l\in 1\,..q.$$ {#eq:eq-B-recurrence-4}
 
-Equation \ref{eq: B recurrence 1}, \ref{eq: B recurrence 2}, \ref{eq: B recurrence 3}, and \ref{eq: B recurrence 4}
+Equation [@eq:eq-B-recurrence-1], [@eq:eq-B-recurrence-2], [@eq:eq-B-recurrence-3], and [@eq:eq-B-recurrence-4]
 are sufficient to determine $B_{q,l}$ for all $q\in 1\ldots\infty$ and $l\in 0\,..q$
 up to one arbitrary parameter.
 Define the arbitrary parameter
@@ -1049,8 +974,8 @@ q\left(1-b\right),&l=q-1,\\
 which may be proved by mathematical induction.
 
 Actually, one may find $b=0$ by simply comparing with the results
-in Equation \ref{eq: g1}, \ref{eq: g2}, or \ref{eq: g3}.
-Another way to find $b$ is comparing with Eqution \ref{eq: normalization}.
+in Equation [@eq:eq-g1], [@eq:eq-g2], or [@eq:eq-g3].
+Another way to find $b$ is comparing with Eqution [@eq:eq-normalization].
 Here I wil show the latter approach.
 
 $$\begin{align*}
@@ -1066,7 +991,6 @@ $$\begin{align*}
 &=\sum_{s=1}^\infty\frac{\left(-1\right)^s}s\left(
   B_{s,0}-y^{-1}\sum_{l=0}^sB_{s,l}\frac{\left(\ln y\right)^l}{l!}
 \right)\\
-
 &=-\left(1-b\right)+y^{-1}\left(\left(1-b\right)-\ln y\right)\\
 &\phantom{=}{}+\sum_{s=2}^\infty\frac{\left(-1\right)^s}s\left(
   \left(-1\right)^ssb-y^{-1}\left(
@@ -1078,23 +1002,18 @@ $$\begin{align*}
     +s\frac{\left(-\ln y\right)^s}{s!}
   \right)
 \right)\\
-
 &=b-1+y^{-1}\left(1-b-\ln y\right)
 +y^{-1}\sum_{s=2}^\infty\left(\frac{\left(\ln y\right)^{s-1}}{\left(s-1\right)!}-\frac{\left(\ln y\right)^s}{s!}\right)\\
 &\phantom{=}{}+b\sum_{s=2}^\infty\left(1-y^{-1}\sum_{l=0}^{s-1}\frac{\left(\ln y\right)^l}{l!}\right)\\
-
 &=b-1+y^{-1}\left(1-b-\ln y\right)+y^{-1}\left(\left(\exp\ln y-1\right)-\left(\exp\ln y-\ln y-1\right)\right)\\
 &\phantom{=}{}+b\lim_{q\to\infty}\sum_{s=2}^q\left(1-y^{-1}\sum_{l=0}^{s-1}\left(\ln y\right)^l\right)\\
-
 &=b-1+y^{-1}\left(1-b\right)
 +b\lim_{q\to\infty}\left(q-1-y^{-1}\left(q-1+\sum_{l=1}^{q-1}\frac{q-l}{l!}\left(\ln y\right)^l\right)\right)\\
-
 &=b-1+y^{-1}\left(1-b\right)+b\left(-1+y^{-1}+\ln y\right)\\
-
 &=y^{-1}-1+b\ln y.
 \end{align*}$$
 
-Compare the result with Equation \ref{eq: normalization}, we have
+Compare the result with Equation [@eq:eq-normalization], we have
 
 $$b=0.$$
 
@@ -1124,14 +1043,11 @@ s=1&2&1\\
 
 The general formula for $A_{s,j}$ is
 
-$$\begin{equation}
-\label{eq: A}
-A_{s,j}=\begin{cases}
+$$A_{s,j}=\begin{cases}
 s,&j\in\left\{s,s-2\right\},\\
 2s,&j=s-1,\\
 0,&j\in0\,..s-3.
-\end{cases}
-\end{equation}$$
+\end{cases}$$ {#eq:eq-A}
 
 Therefore, the functions $\Delta g_s$ are
 
@@ -1146,14 +1062,12 @@ $$\Delta g_s(y,\kappa)=\begin{cases}
 
 Therefore, the functions $g_q$ are
 
-$$\begin{equation}
-\label{eq: gq}
-\begin{split}
+$$\begin{split}
 &g_q(y,\kappa)=-y^{\kappa-1}\ln y\left(2+\ln y^{\kappa-1}\right)
 +\ln y\sum_{s=2}^q\frac{s\left(-1\right)^s}{\left(s-2\right)!}y^{s\kappa-1}\left(\ln y^{s\kappa-1}\right)^{s-2}
 \left(1\vphantom{\frac{\left(-1\right)^s}{s!}}\right.\\
 &\phantom{g_q(y,\kappa)=\quad}\left.{}+\frac2{s-1}\ln y^{s\kappa-1}+\frac1{s\left(s-1\right)}\left(\ln y^{s\kappa-1}\right)^2\right)
-\end{split}\end{equation}$$
+\end{split}$$ {#eq:eq-gq}
 
 (the formula is also applicable to $q=1$).
 
@@ -1163,31 +1077,28 @@ Now we have covered almost all cases.
 The only cases that we have not covered are the cases when $\kappa=\frac1q$, where $q\in2\ldots\infty$.
 The discontinuity in $g$ at $\kappa=\frac1q$ is
 
-$$\begin{equation}
-\label{eq: discontinuity}
-\begin{split}
+$$\begin{split}
 &\phantom{=~}g\!\left(y,\frac1q^+\right)-g\!\left(y,\frac1q^-\right)\\
 &=-\Delta g_q\!\left(y,\frac1q\right)\\
 &=\begin{cases}
   -2\ln y,&q=2,\\
   0,&q\in3\ldots\infty.
 \end{cases}
-\end{split}
-\end{equation}$$
+\end{split}$$ {#eq:eq-discontinuity}
 
 Therefore, for $q\in3\ldots\infty$, the function $g$ has defined limit at $\kappa=\frac1q$,
 and the value of $g$ here should just be the limit value.
 Now, the only problem is at $\kappa=\frac12$.
 We should determine whether the value of $g$ at $\kappa=\frac12$ is its left limit or right limit.
 
-Looking at Equation \ref{eq: main}, one may see that the discontinuity at $\kappa=\frac12$ is
+Looking at Equation [@eq:eq-main], one may see that the discontinuity at $\kappa=\frac12$ is
 due to the Dirac $\delta$ function in the integrand.
 Therefore, whether $g$ at $\kappa=\frac12$ is $g_1$ or $g_2$ depends on
 whether the Dirac $\delta$ function is within the integrated interval.
 If it is, then $g$ at $\kappa=\frac12$ is $g_1$; otherwise, it is $g_2$.
 
 The inclusion of the Dirac $\delta$ function in the integrated interval
-corresponds to the inclusion of the highest term in the summation in Equation \ref{eq: dp2}.
+corresponds to the inclusion of the highest term in the summation in Equation [@eq:eq-dp2].
 Because both $\min(k,n-k-1)$ and $\min(k-1,n-k-1)$ equal $n-k-1$ when $n=2k$,
 the highest term in the summation can be reached,
 so the Dirac $\delta$ function is within the integrated interval.
@@ -1195,10 +1106,7 @@ Therefore, $g$ at $\kappa=\frac12$ is $g_1$.
 
 Therefore, we may conclude that for any $\kappa\in\left(0,1\right)$,
 
-$$\begin{equation}
-\label{eq: select q}
-g(y,\kappa)=g_{\lceil\frac1\kappa\rceil-1}(y,\kappa).
-\end{equation}$$
+$$g(y,\kappa)=g_{\lceil\frac1\kappa\rceil-1}(y,\kappa).$$ {#eq:eq-select-q}
 
 ---
 
@@ -1209,7 +1117,7 @@ By some mathematical analysis techniques, one may prove that the limit of $g$ as
 
 ### The solution
 
-Substitute Equation \ref{eq: gq} into Equation \ref{eq: select q}, and we have
+Substitute Equation [@eq:eq-gq] into Equation [@eq:eq-select-q], and we have
 
 $$\begin{split}
 &g(y,\kappa)=-y^{\kappa-1}\ln y\left(2+\ln y^{\kappa-1}\right)
@@ -1218,12 +1126,10 @@ $$\begin{split}
 &\phantom{g(y,\kappa)=\quad}\left.{}+\frac2{s-1}\ln y^{s\kappa-1}+\frac1{s\left(s-1\right)}\left(\ln y^{s\kappa-1}\right)^2\right)
 \end{split}$$
 
-Substitute the result into Equation \ref{eq: g def} and then Equation \ref{eq: h def},
-and also consider Equation \ref{eq: f y=0} and \ref{eq: f y=1}, and we have
+Substitute the result into Equation [@eq:eq-g-def] and then Equation [@eq:eq-h-def],
+and also consider Equation [@eq:eq-f-y-0] and [@eq:eq-f-y-1], and we have
 
-$$\begin{equation}
-\label{eq: f}
-f(y,\kappa)=\begin{cases}
+$$f(y,\kappa)=\begin{cases}
 \delta(\kappa),&y=0,\kappa\in[0,1],\\
 0,&y\in(0,1],\kappa=0,\\
 \begin{split}
@@ -1233,18 +1139,17 @@ y^{s\kappa}\left(\ln y^{s\kappa-1}\right)^{s-2}
 \left(1\vphantom{\left(\ln y^{s\kappa-1}\right)^2}\right.}\\
 &\qquad\textstyle{\left.{}+\frac2{s-1}\ln y^{s\kappa-1}+\frac1{s\left(s-1\right)}\left(\ln y^{s\kappa-1}\right)^2\right)},
 \end{split}&y\in(0,1],\kappa\in(0,1].
-\end{cases}
-\end{equation}$$
+\end{cases}$$ {#eq:eq-f}
 
 ### Plots of the probability density functions
 
-Here are plots of the function $f(y,\kappa)$ whose expression is given by Equation \ref{eq: f}:
+Here are plots of the function $f(y,\kappa)$ whose expression is given by Equation [@eq:eq-f]:
 
-![infinite]({{page.figure}}infinite_distribution.png){:.dark-adaptive}
+![infinite]({{page.figure}}infinite_distribution.png){.dark-adaptive}
 
 We can compare it with a plot of the distributions when $n$ is finite (say, $100$), and we may see that they are very close:
 
-![infinite 2]({{page.figure}}infinite_distribution_2.png){:.dark-adaptive}
+![infinite 2]({{page.figure}}infinite_distribution_2.png){.dark-adaptive}
 
 We have not investigated the asymptotic behavior of the error
 if we approximate the distribution with finite $n$ by the distribution with infinite $n$,
@@ -1254,7 +1159,7 @@ when $n$ is a usual note count in a rhythm game chart (usually at least $500$).
 ### Moments
 
 It may be interesting to calculate the
-[moments](https://en.wikipedia.org/wiki/Moment_(mathematics)){:target="_blank"} of the distribution.
+[moments](https://en.wikipedia.org/wiki/Moment_(mathematics)){target="_blank"} of the distribution.
 
 We need to evaluate
 
@@ -1286,15 +1191,9 @@ $$\begin{align*}
 
 Define
 
-$$\begin{equation}
-\label{eq: B def 2}
-B_{s,l,p}:=\sum_{j=\max(0,l-p)}^s\frac{\left(j+p\right)!\left(-1\right)^j}{j!}A_{s,j},
-\end{equation}$$
+$$B_{s,l,p}:=\sum_{j=\max(0,l-p)}^s\frac{\left(j+p\right)!\left(-1\right)^j}{j!}A_{s,j},$$ {#eq:eq-B-def-2}
 
-$$\begin{equation}
-\label{eq: D def}
-D_{\nu,p,l}:=\sum_{s=\max(1,l-p)}^\infty\frac{\left(-1\right)^s}{s^{\nu+1}}B_{s,l,p}.
-\end{equation}$$
+$$D_{\nu,p,l}:=\sum_{s=\max(1,l-p)}^\infty\frac{\left(-1\right)^s}{s^{\nu+1}}B_{s,l,p}.$$ {#eq:eq-D-def}
 
 Then,
 
@@ -1314,7 +1213,7 @@ $$\begin{align*}
 \end{align*}$$
 
 Now, the only problem is how to get $D_{\nu,p,l}$.
-Substitute Equation \ref{eq: A} into Equation \ref{eq: B def 2}, and after some calculations,
+Substitute Equation [@eq:eq-A] into Equation [@eq:eq-B-def-2], and after some calculations,
 we can get the general formula of $B_{s,l,p}$:
 
 $$B_{s,l,p}=\frac{\left(-1\right)^s\max(l,s+p-2)!}{\left(s-1\right)!}\cdot\begin{cases}
@@ -1323,17 +1222,15 @@ p-s,&l=s+p-1,\\
 1,&l=s+p.
 \end{cases}$$
 
-Substitute it into Equation \ref{eq: D def}, and notice the edge cases, we can get
+Substitute it into Equation [@eq:eq-D-def], and notice the edge cases, we can get
 
 $$\begin{align*}
 D_{\nu,p,l}&=\begin{cases}
 p\left(p-1\right)\sum_{s=1}^\infty\frac{\left(s+p-2\right)!}{s^{\nu+1}\left(s-1\right)!},
 &l\in0\,..p-1,\\
-
 p!\left(p-1\right)+p\left(p-1\right)
 \sum_{s=2}^\infty\frac{\left(s+p-2\right)!}{s^{\nu+1}\left(s-1\right)!},
 &l=p,\\
-
 \begin{split}
 &\textstyle{\frac{l!}{\left(l-p\right)^{\nu+1}\left(l-p-1\right)!}
 -\frac{l!\left(2p-l-1\right)}{\left(l-p+1\right)^{\nu+1}\left(l-p\right)!}}\\
@@ -1341,11 +1238,9 @@ p!\left(p-1\right)+p\left(p-1\right)
 \end{split}
 &l\in p+1\ldots\infty
 \end{cases}\\
-
 &=\begin{cases}
 p\left(p-1\right)\left(\left(p-1\right)!+S_{\nu,p}\right),&
 l\in0\,..p,\\
-
 \begin{split}
 &\textstyle{\frac{l!}{\left(l-p\right)^{\nu+1}\left(l-p-1\right)!}
 -\frac{l!\left(2p-l-1\right)}{\left(l-p+1\right)^{\nu+1}\left(l-p\right)!}}\\
@@ -1360,8 +1255,8 @@ where the infinite sum
 $$S_{\nu,p}:=\sum_{s=2}^\infty\frac{\left(s+p-2\right)!}{s^{\nu+1}\left(s-1\right)!}.$$
 
 There is no closed form for $S_{\nu,p}$, but we may express it in terms of
-[Stirling numbers of the first kind](https://en.wikipedia.org/wiki/Stirling_numbers_of_the_first_kind){:target="_blank"}
-and the [Riemann $\zeta$ function](https://en.wikipedia.org/wiki/Riemann_zeta_function){:target="_blank"}.
+[Stirling numbers of the first kind](https://en.wikipedia.org/wiki/Stirling_numbers_of_the_first_kind){target="_blank"}
+and the [Riemann $\zeta$ function](https://en.wikipedia.org/wiki/Riemann_zeta_function){target="_blank"}.
 For $p\in1\,..\nu$, we have
 
 $$\begin{align*}
@@ -1400,8 +1295,8 @@ $$\begin{align*}
 &=\frac{\operatorname{li}y-\ln(-\ln y)-\gamma}{\ln y},
 \end{align*}$$
 
-where $\operatorname{li}$ is the [logarithmic integral function](https://en.wikipedia.org/wiki/Logarithmic_integral_function){:target="_blank"},
-and $\gamma$ is the [Euler--Mascheroni constant](https://en.wikipedia.org/wiki/Euler%E2%80%93Mascheroni_constant){:target="_blank"}.
+where $\operatorname{li}$ is the [logarithmic integral function](https://en.wikipedia.org/wiki/Logarithmic_integral_function){target="_blank"},
+and $\gamma$ is the [Euler--Mascheroni constant](https://en.wikipedia.org/wiki/Euler%E2%80%93Mascheroni_constant){target="_blank"}.
 The function seems undefined when $y=0$ or $y=1$, but it has limits at these points:
 
 $$\mu_1\!\left(y\to0^+\right)=0,\quad\mu_1\!\left(y\to1^-\right)=1,$$
@@ -1412,7 +1307,7 @@ so slowly that I almost did not believe that when I did the numerical calculatio
 
 The plot:
 
-![mean]({{page.figure}}mean.png){:.dark-adaptive}
+![mean]({{page.figure}}mean.png){.dark-adaptive}
 
 We should also be able to find other statistical quantities like the median, the mode, the variance, etc.,
 but they seem do not have closed forms.
@@ -1436,7 +1331,7 @@ $$y^a\left(\ln y\right)^b=
 \left(y-1\right)^b\left(1+\left(\frac b2-a\right)\left(1-y\right)+\cdots\right),$$
 
 so the only case where the Taylor series has a non-zero first-order term is when $b=1$ or $b=0$.
-In Equation \ref{eq: f}, we can see that the power on $\ln y$ is at least one for each term
+In Equation [@eq:eq-f], we can see that the power on $\ln y$ is at least one for each term
 (because of the general $\ln y$ factor in front),
 so only the terms with no $\ln y$ factors but the general one will have a first-order term.
 In this case, the first order term is proportional to $y-1$,
@@ -1489,7 +1384,7 @@ when your average number of combo breaks is exactly one.
 
 From the plot, it seems that the probability of getting $\kappa$ a little bit higher than $\frac12$
 is always higher than the probability of getting $\kappa$ a little bit lower than $\frac12$.
-According to Equation \ref{eq: discontinuity}, the jump in $f(y,\kappa)$ at $\kappa=\frac12$ is
+According to Equation [@eq:eq-discontinuity], the jump in $f(y,\kappa)$ at $\kappa=\frac12$ is
 
 $$f\!\left(y,\kappa\to\frac12^+\right)-f\!\left(y,\kappa\to\frac12^-\right)=-2y\ln y.$$
 
@@ -1511,12 +1406,12 @@ $$y_0\!\left(\kappa\in\left[\frac12,1\right)\right)
 
 ## Some applications
 
-In [Phigros](https://pigeon-games.com){:target="_blank"},
-one should combo at least $60\\%$ of the notes to get a white V
-(![white V](https://static.wikia.nocookie.net/phigros/images/0/0a/White_v_icon_.png){:width="16px"})
+In [Phigros](https://pigeon-games.com){target="_blank"},
+one should combo at least $60\%$ of the notes to get a white V
+(![white V](https://static.wikia.nocookie.net/phigros/images/0/0a/White_v_icon_.png){width="16px"})
 rank.
 If on average I have one combo break in a chart, which has $1300$ notes,
-what is the probability of comboing at least $60\\%$ of the notes in the chart?
+what is the probability of comboing at least $60\%$ of the notes in the chart?
 
 *Solution.*
 The success rate is

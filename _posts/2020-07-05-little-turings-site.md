@@ -7,13 +7,13 @@ tags:
 - update
 layout: post
 excerpt: 'I, the president and one of the founders of Little Turings,
-created a [website](https://littleturings.github.io){:target="_blank"}
+created a [website](https://littleturings.github.io){target="_blank"}
 to distribute information about it.
 The website is bilingual (Chinese and English).'
 ---
 
 I, the president and one of the founders of Little Turings,
-created a [website](https://littleturings.github.io){:target="_blank"}
+created a [website](https://littleturings.github.io){target="_blank"}
 to distribute information about it.
 The website is bilingual (Chinese and English).
 
@@ -22,4 +22,4 @@ Some information is still at ulysseszh.github.io.
 I will gradually transfer it into the new site in the future.
 
 If you are interested to be with us, you can follow
-[these instructions](https://littleturings.github.io/m/add-yourself.html){:target="_blank"}.
+[these instructions](https://littleturings.github.io/m/add-yourself.html){target="_blank"}.

@@ -38,49 +38,34 @@ as functions with respect to time $t$.
 
 It is easy to write out the rate equations
 
-$$
-\begin{equation}
-\begin{split}
+$$\begin{split}
     \frac{\mathrm d\left[X_j\right]}{\mathrm dt}=
         a_j\left(\mu_Y\prod_k\left[Y_k\right]^{b_k}-
         \mu_X\prod_k\left[X_k\right]^{a_k}\right),\\
     \frac{\mathrm d\left[Y_j\right]}{\mathrm dt}=
         b_j\left(\mu_X\prod_k\left[X_k\right]^{a_k}-
         \mu_Y\prod_k\left[Y_k\right]^{b_k}\right),
-\end{split}
-    \label{rate_equations}
-\end{equation}
-$$
+\end{split}$$ {#eq:rate-equations}
 
 where $\mu_X$ and $\mu_Y$ are rate constants derived by experimenting.
 
 Apply a substitution
 
-$$
-\begin{equation}
-\begin{split}
+$$\begin{split}
     x_j:=\frac{\left[X_j\right]}{a_j},\quad
     y_j:=\frac{\left[Y_j\right]}{b_j},\\
     \mu_x:=\mu_X\prod_ka_k^{a_k},\quad
     \mu_y:=\mu_Y\prod_kb_k^{b_k}
-\end{split}
-    \label{substitution}
-\end{equation}
-$$
+\end{split}$$ {#eq:substitution}
 
-to Formula \ref{rate_equations}, and then it becomes
+to Formula [@eq:rate-equations], and then it becomes
 
-$$
-\begin{equation}
-\begin{split}
+$$\begin{split}
     \frac{\mathrm dx_j}{\mathrm dt}=
     \mu_y\prod_ky_k^{b_k}-\mu_x\prod_kx_k^{a_k},\\
     \frac{\mathrm dy_j}{\mathrm dt}=
     \mu_x\prod_kx_k^{a_k}-\mu_y\prod_ky_k^{b_k},
-\end{split}
-    \label{substituted_rate}
-\end{equation}
-$$
+\end{split}$$ {#eq:substituted-rate}
 
 which means the changes of $x_j$ are all equal,
 the changes of $y_j$ are all equal,
@@ -89,17 +74,12 @@ and the changes of $x_j$ are opposite to the changes of $y_j$.
 Denote the changes of $x_j$ are equal to $s$, the initial value of
 $x_j$ is $A_j$, the initial value of $y_j$ is $B_j$, which means
 
-$$
-\begin{equation}
-\begin{split}
+$$\begin{split}
     x_j=A_j+s,\\
     y_j=B_j-s.
-\end{split}
-    \label{back}
-\end{equation}
-$$
+\end{split}$$ {#eq:back}
 
-Substitute Formula \ref{back} into Formula \ref{substituted_rate},
+Substitute Formula [@eq:back] into Formula [@eq:substituted-rate],
 and it can be derived that
 
 $$
@@ -108,22 +88,12 @@ $$
 
 by which we can reduce the problem to an integral problem
 
-$$
-\begin{equation}
-    t=\int_0^s\frac{\mathrm ds}{F\!\left(s\right)},
-    \label{separated}
-\end{equation}
-$$
+$$t=\int_0^s\frac{\mathrm ds}{F\!\left(s\right)},$$ {#eq:separated}
 
 where
 
-$$
-\begin{equation}
-    F\!\left(s\right):=\mu_y\prod_k\left(B_k-s\right)^{b_k}-
-    \mu_x\prod_k\left(A_k+s\right)^{a_k}
-    \label{def_F}
-\end{equation}
-$$
+$$F\!\left(s\right):=\mu_y\prod_k\left(B_k-s\right)^{b_k}-
+    \mu_x\prod_k\left(A_k+s\right)^{a_k}$$ {#eq:def-F}
 
 is a polynomial of $n$th degree, where
 
@@ -135,22 +105,17 @@ is the larger of the orders of the forward and reverse reactions.
 The degree of $F$ may be lower if the high-order term is offset,
 but only mathematicians believe in such coincidences.
 
-Since Formula \ref{separated} is to integrate a rational function,
+Since Formula [@eq:separated] is to integrate a rational function,
 it is easy.
 
 After deriving $s$ as a function of $t$, substitute it into
-Formula \ref{back} and then Formula \ref{substitution}.
+Formula [@eq:back] and then Formula [@eq:substitution].
 We can derive
 
-$$
-\begin{equation}
-\begin{split}
+$$\begin{split}
     \left[X_j\right]=a_j\left(A_j+s\right),\\
     \left[Y_j\right]=b_j\left(B_j-s\right)
-\end{split}
-    \label{result}
-\end{equation}
-$$
+\end{split}$$ {#eq:result}
 
 as the answer.
 
@@ -187,30 +152,20 @@ only mathematicians believe in such coincidences.
 Decompose the rational function $\frac1{F\left(s\right)}$ into
 several partial fractions, and it can be derived that
 
-$$
-\begin{equation}
-    \frac1{F\!\left(s\right)}=\sum_\alpha\frac{C_\alpha}{r_\alpha-s},
-    \label{partial_fractions}
-\end{equation}
-$$
+$$\frac1{F\!\left(s\right)}=\sum_\alpha\frac{C_\alpha}{r_\alpha-s},$$ {#eq:partial-fractions}
 
 where $C_\alpha$ are undetermined coefficients.
 
-Integrate Formula \ref{partial_fractions},
+Integrate Formula [@eq:partial-fractions],
 and then it can be derived that
 
-$$
-\begin{equation}
-    t=-\sum_\alpha C_\alpha\ln\!\left(1-\frac s{r_\alpha}\right)
-    \label{integrated}
-\end{equation}
-$$
+$$t=-\sum_\alpha C_\alpha\ln\!\left(1-\frac s{r_\alpha}\right)$$ {#eq:integrated}
 
-In most cases, Formula \ref{integrated} cannot be solved analytically
+In most cases, Formula [@eq:integrated] cannot be solved analytically
 and can only be solved numerically.
 
 Note that if the coefficients $C_\alpha$ are in general commensurable,
-Formula \ref{integrated} can be reduced into a rational equation.
+Formula [@eq:integrated] can be reduced into a rational equation.
 However, only mathematicians believe in such coincidences.
 However, if $n=2$, it can be proved that the equation can be reduced
 into a rational one.
@@ -251,7 +206,7 @@ $$
 
 Find $\left[\ce{H2O}\right]$ as a function of time.
 
-Formula \ref{def_F} becomes
+Formula [@eq:def-F] becomes
 
 $$
     F\!\left(s\right):=8.29\times10^{-6}\left(30-s\right)\left(40-s\right)
@@ -295,7 +250,7 @@ $$
     \quad\left(\text{SI}\right).
 $$
 
-Use Formula \ref{result}, and then we can find the answer
+Use Formula [@eq:result], and then we can find the answer
 
 $$
     \left[\ce{H2O}\right]=20+

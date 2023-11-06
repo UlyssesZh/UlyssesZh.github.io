@@ -95,7 +95,7 @@ How are them on Linux desktop?
 I have played many games on Linux.
 The games I mainly play are rhythm games, puzzle games, PvZ series games, and Celeste.
 
-I have to say, thanks to Steam and [Lutris](https://lutris.net){:target="_blank},
+I have to say, thanks to Steam and [Lutris](https://lutris.net){target="_blank},
 gaming on Linux is not as bad as I thought.
 It is just as good as gaming on Windows.
 Sometimes it is even better because some very old games cannot run perfectly on Windows
@@ -108,7 +108,7 @@ To play Android games, I use Genymotion as an Android emulator.
 It is not a good alternative for Noxplayer or MuMu on Windows,
 but it is good enough.
 For more information about Android gaming on Linux, see my
-[article on Zhihu](https://zhuanlan.zhihu.com/p/542623694){:target="_blank"} (Chinese).
+[article on Zhihu](https://zhuanlan.zhihu.com/p/542623694){target="_blank"} (Chinese).
 
 ### Drawing tablet
 
@@ -135,12 +135,12 @@ To be honest, there are no differences between different OSes in this aspect.
 
 The default PDF reader of GNOME is Evince, and it is good enough.
 However, if SumatraPDF has a Linux version, I would definitely use it instead.
-I also read many PDFs online (from my own instance of [Kavita](https://kavitareader.com){:target="_blank"}),
+I also read many PDFs online (from my own instance of [Kavita](https://kavitareader.com){target="_blank"}),
 and it is done on browser, so it is not very related to OS.
 
-I use [Joplin](https://joplinapp.org){:target="_blank"}
-(synchronized using my own instance of [Nextcloud](https://nextcloud.com){:target="_blank"})
-and [Write](https://styluslabs.com){:target="_blank"} (not open-source) as my note-taking apps.
+I use [Joplin](https://joplinapp.org){target="_blank"}
+(synchronized using my own instance of [Nextcloud](https://nextcloud.com){target="_blank"})
+and [Write](https://styluslabs.com){target="_blank"} (not open-source) as my note-taking apps.
 They are very convenient.
 
 For writing homework, I mostly use $\LaTeX$.
@@ -181,7 +181,7 @@ There are often other commonly complained issues about Linux that I have met wit
 such as the lack of driver support, lack of application/game software support, audio issues, etc.,
 as well as many other issues that I have never solved or found anyone who also has the same issue.
 To solve these issues, I have to spend hours on my OS to tweak them or even write programs to solve them (for example,
-[I wrote a Python script just to make my Smartisan stylus usable](https://zhuanlan.zhihu.com/p/539458130){:target="_blank"}).
+[I wrote a Python script just to make my Smartisan stylus usable](https://zhuanlan.zhihu.com/p/539458130){target="_blank"}).
 
 ## Self-hosting
 
@@ -191,13 +191,13 @@ If I brought it, I would have been using it as a self-hosting server.
 Actually, I already installed Arch Linux on it and set up a few services on it before I left for college.
 
 However, I still got to do self-hosting because I brought another computer.
-Thanks to my friend [Xiang](https://orashshi.github.io/){:target="_blank"},
+Thanks to my friend [Xiang](https://orashshi.github.io/){target="_blank"},
 who gave me his old laptop (Lenovo Legion Y7000P), I got another computer for self-hosting.
 I installed Arch Linux on it and set up a few services on it.
 I need to say, self-hosting is very fun and useful.
 
 What is awesome about self-hosting in my university (UC Santa Barbara) is that its dorms are very friendly to self-hosting.
-[Every ethernet port in the dorm has a public IPv4 address.](https://reddit.com/y5a1k0/){:target="_blank"}
+[Every ethernet port in the dorm has a public IPv4 address.](https://reddit.com/y5a1k0/){target="_blank"}
 Previously I thought that I would have to use tunneling services such as ngrok, but I do not need to do that now.
 
 Unfortunately, due to the low availability of campus housing and various other reasons,
@@ -214,18 +214,18 @@ I set up more and more services on the Legion Y7000P.
 Right now, there are more than 20 services running on it.
 
 Among all the services, the most useful one, in my opinion, is my
-[Nextcloud](https://nextcloud.com/){:target="_blank"} instance.
+[Nextcloud](https://nextcloud.com/){target="_blank"} instance.
 Nextcloud is an cloud storage service, and what is good about it is that
 its desktop client is the best cloud storage client available on Linux.
 I use it to synchronize my study notes and homeworks.
 
-Another useful service is my [Kavita](https://kavitareader.com/){:target="_blank"} instance.
+Another useful service is my [Kavita](https://kavitareader.com/){target="_blank"} instance.
 I have already mentioned it before that I read many PDFs online.
 I often download PDFs from the Internet on the Legion Y7000P so that I can read them on Kavita.
 By using Kavita, I do not have to worry about downloading multiple copies
 on all my devices that I want to read the PDF on.
 
-I also use my [ntfy](https://ntfy.sh/){:target="_blank"} instance to send notifications to my phone.
+I also use my [ntfy](https://ntfy.sh/){target="_blank"} instance to send notifications to my phone.
 I have previously written articles about how I use ntfy to send notifications to help with my life
 ([this]({% post_url 2022-11-28-ntfy-warn-discharge %}) and [this]({% post_url 2022-12-05-week-prime %})).
 

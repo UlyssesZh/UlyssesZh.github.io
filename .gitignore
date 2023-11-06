@@ -1,14 +1,16 @@
 #Gemfile.lock
 
-_site
+_site/
 .sass-cache
-.jekyll-cache
+.jekyll-cache/
 .jekyll-metadata
 vendor
+dist-newstyle/
 
-.idea
+.idea/
 git_backup
 .rubocop.yml
 
-.vscode
-**/bootstrap
+.vscode/
+**/bootstrap/
+_tmp/

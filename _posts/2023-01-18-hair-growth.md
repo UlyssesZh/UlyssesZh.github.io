@@ -31,10 +31,7 @@ After a hair is lost, it restarts growing from zero length.
 
 Suppose that at $t=0$ you have got a haircut so that the hair length distribution becomes
 
-$$\begin{equation}
-\label{eq: initial condition}
-f(l,0)=f_0(l).
-\end{equation}$$
+$$f(l,0)=f_0(l).$$ {#eq:eq-initial-condition}
 
 Then, how does the distribution evolve with time?
 
@@ -43,18 +40,12 @@ Then, how does the distribution evolve with time?
 Because $f$ is a distribution function,
 There is a normalization restriction on $f$:
 
-$$\begin{equation}
-\label{eq: normalization}
-\int_0^\infty f\!\left(l,t\right)\mathrm dl=1,\quad t\ge0.
-\end{equation}$$
+$$\int_0^\infty f\!\left(l,t\right)\mathrm dl=1,\quad t\ge0.$$ {#eq:eq-normalization}
 
 This normalization condition also applies to the initial condition ($t=0$).
-This means that the function $f_0$ also satisfies the normalization restriction (Equation \ref{eq: normalization})
+This means that the function $f_0$ also satisfies the normalization restriction (Equation [@eq:eq-normalization])
 
-$$\begin{equation}
-\label{eq: normalization f0}
-\int_0^\infty f_0\!\left(l\right)\mathrm dl=1.
-\end{equation}$$
+$$\int_0^\infty f_0\!\left(l\right)\mathrm dl=1.$$ {#eq:eq-normalization-f0}
 
 Because of the natural loss of hair,
 only a $1-\lambda\,\mathrm dt$ portion of hair will survive $\mathrm dt$.
@@ -65,10 +56,7 @@ $$f\!\left(l+v\,\mathrm dt,t+\mathrm dt\right)=
 
 This equation can be reduced to a first-order linear PDE:
 
-$$\begin{equation}
-\label{eq: pde}
-v\frac{\partial f}{\partial l}+\frac{\partial f}{\partial t}+\lambda f=0.
-\end{equation}$$
+$$v\frac{\partial f}{\partial l}+\frac{\partial f}{\partial t}+\lambda f=0.$$ {#eq:eq-pde}
 
 Define $\theta:=l-vt$, and define a new function
 
@@ -78,7 +66,7 @@ Then,
 
 $$\frac{\partial g}{\partial t}=v\frac{\partial f}{\partial l}+\frac{\partial f}{\partial t}.$$
 
-Then, Equation \ref{eq: pde} can be reduced to
+Then, Equation [@eq:eq-pde] can be reduced to
 
 $$\frac{\partial g}{\partial t}+\lambda g=0.$$
 
@@ -87,28 +75,22 @@ The solution is
 $$g\!\left(\theta,t\right)=\Phi\!\left(\theta\right)\mathrm e^{-\lambda t},$$
 
 where $\Phi$ is an arbitrary function defined on $\mathbb R$.
-Therefore, the general solution to Equation \ref{eq: pde} is
+Therefore, the general solution to Equation [@eq:eq-pde] is
 
-$$\begin{equation}
-\label{eq: general solution}
-f\!\left(l,t\right)=\Phi\!\left(l-vt\right)\mathrm e^{-\lambda t}.
-\end{equation}$$
+$$f\!\left(l,t\right)=\Phi\!\left(l-vt\right)\mathrm e^{-\lambda t}.$$ {#eq:eq-general-solution}
 
-By utilizing Equation \ref{eq: initial condition}, we can find $\Phi(\theta)$ for $\theta>0$.
-Substitute $t=0$ into Equation \ref{eq: general solution}
-and compare with Equation \ref{eq: initial condition},
+By utilizing Equation [@eq:eq-initial-condition], we can find $\Phi(\theta)$ for $\theta>0$.
+Substitute $t=0$ into Equation [@eq:eq-general-solution]
+and compare with Equation [@eq:eq-initial-condition],
 and we have
 
-$$\begin{equation}
-\label{eq: Phi(theta>0)}
-\Phi(\theta>0)=f_0(\theta).
-\end{equation}$$
+$$\Phi(\theta>0)=f_0(\theta).$$ {#eq:eq-Phi-theta-0}
 
 This only gives $\Phi(\theta)$ for $\theta>0$
 because $f_0$ is not defined on negative numbers.
-The rest of $\Phi$, however, may be deduced from Equation \ref{eq: normalization}.
+The rest of $\Phi$, however, may be deduced from Equation [@eq:eq-normalization].
 
-Substitute Equation \ref{eq: general solution} into Equation \ref{eq: normalization},
+Substitute Equation [@eq:eq-general-solution] into Equation [@eq:eq-normalization],
 and we have
 
 $$\begin{align*}
@@ -135,23 +117,17 @@ $$-v\Phi\!\left(-vt\right)=-\lambda\mathrm e^{\lambda t}.$$
 
 In other words,
 
-$$\begin{equation}
-\label{eq: Phi(theta<0)}
-\Phi\!\left(\theta<0\right)=\frac\lambda v\mathrm e^{-\frac\lambda v\theta}.
-\end{equation}$$
+$$\Phi\!\left(\theta<0\right)=\frac\lambda v\mathrm e^{-\frac\lambda v\theta}.$$ {#eq:eq-Phi-theta-lt-0}
 
-Combining Equation \ref{eq: Phi(theta>0)} and \ref{eq: Phi(theta<0)}
-and substituting back to Equation \ref{eq: general solution},
-we can find the special solution to Equation \ref{eq: pde}
-subject to restrictions Equation \ref{eq: normalization} and \ref{eq: initial condition}:
+Combining Equation [@eq:eq-Phi-theta-0] and [@eq:eq-Phi-theta-lt-0]
+and substituting back to Equation [@eq:eq-general-solution],
+we can find the special solution to Equation [@eq:eq-pde]
+subject to restrictions Equation [@eq:eq-normalization] and [@eq:eq-initial-condition]:
 
-$$\begin{equation}
-\label{eq: solution}
-f(l,t)=\begin{cases}
+$$f(l,t)=\begin{cases}
 \frac\lambda v\mathrm e^{-\frac\lambda vl},&0<l<vt,\\
 \mathrm e^{-\lambda t}f_0(l-vt),&l>vt.
-\end{cases}
-\end{equation}$$
+\end{cases}$$ {#eq:eq-solution}
 
 This is our final answer.
 
@@ -163,7 +139,7 @@ as $t\to\infty$ no matter what the initial distribution is:
 
 $$f(l,\infty)=\frac\lambda v\mathrm e^{-\frac\lambda vl}.$$
 
-This distribution is the stationary solution to Equation \ref{eq: pde}.
+This distribution is the stationary solution to Equation [@eq:eq-pde].
 This is actually a normal behavior for first-order PDEs.
 For example,
 the thermal equilibrium state is the stationary solution to the heat equation,

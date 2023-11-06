@@ -17,7 +17,7 @@ The answer turns out to be the interior of a circular paraboloid.'
 ---
 
 *This article solves the first part of the problem proposed in a
-Chinese [article](https://zhuanlan.zhihu.com/p/206771750){:target="_blank"} on my Zhihu account.
+Chinese [article](https://zhuanlan.zhihu.com/p/206771750){target="_blank"} on my Zhihu account.
 The original article was posted at 2020-08-30 18:27 +0800.*
 
 ---
@@ -51,10 +51,7 @@ $$-\frac{b^2}{ar}=1+\sqrt{1+\frac{b^2}{a^2}}\cos\varphi.$$
 
 Rotate the trajectory so that the incident direction is always towards the positive $x$ direction:
 
-$$\begin{equation}
-\label{eq: trajectory}
-0=F\!\left(r,\varphi,b\right):=\frac{b^2}{ar}+1+\cos\varphi+\frac ba\sin\varphi.
-\end{equation}$$
+$$0=F\!\left(r,\varphi,b\right):=\frac{b^2}{ar}+1+\cos\varphi+\frac ba\sin\varphi.$$ {#eq:eq-trajectory}
 
 To find the envelope of the family of trajectories, solve
 
@@ -64,7 +61,7 @@ and we have
 
 $$b=-\frac12r\sin\varphi.$$
 
-Substitute back into Equation \ref{eq: trajectory}, and we have finally the equation of the envelope:
+Substitute back into Equation [@eq:eq-trajectory], and we have finally the equation of the envelope:
 
 $$\frac{4a}r=1-\cos\varphi,$$
 

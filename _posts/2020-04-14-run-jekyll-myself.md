@@ -13,8 +13,8 @@ I wrote a script to do this.'
 ---
 
 It is an annoying thing that I cannot add custom plugins
-if [GitHub pages](https://pages.github.com/){:target="_blank"}
-runs [Jekyll](https://jekyllrb.com/){:target="_blank"} for me.
+if [GitHub pages](https://pages.github.com/){target="_blank"}
+runs [Jekyll](https://jekyllrb.com/){target="_blank"} for me.
 
 Thus, I need to build the site myself and let GitHub pages to
 present my built site.

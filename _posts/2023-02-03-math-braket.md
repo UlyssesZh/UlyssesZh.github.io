@@ -13,7 +13,7 @@ Let me introduce it to you.'
 ---
 
 *This article is translated from a
-Chinese [article](https://zhuanlan.zhihu.com/p/344660674){:target="_blank"} on my Zhihu account.
+Chinese [article](https://zhuanlan.zhihu.com/p/344660674){target="_blank"} on my Zhihu account.
 The original article was posted at 2021-01-16 15:52 +0800.*
 
 ---
@@ -99,7 +99,7 @@ and
 
 $$\operatorname{E}\!\left[a\right]=\left<\psi\middle|\hat a\middle|\psi\right>$$
 
-(the expectation of $a$) is pleasant ($\left\|\psi\right>$ is already normalized).
+(the expectation of $a$) is pleasant ($\left|\psi\right>$ is already normalized).
 
 ---
 

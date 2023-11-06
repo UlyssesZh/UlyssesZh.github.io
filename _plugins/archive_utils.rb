@@ -1,6 +1,6 @@
 # frozon_string_literal: true
 
-require 'jekyll-archives'
+return if ENV['JEKYLL_NO_ARCHIVE']
 
 module Jekyll::UlyssesZhan
 end

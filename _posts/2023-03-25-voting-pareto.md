@@ -160,4 +160,4 @@ Then we can find the core easily by the conclusion above:
 
 \end{document}
 -->
-![The core of the example]({{page.figure}}five_voting_core.svg){:.dark-adaptive .center}
+![The core of the example]({{page.figure}}five_voting_core.svg){.dark-adaptive .center}

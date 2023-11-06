@@ -19,7 +19,7 @@ but it uses a very awful notation...'
 ---
 
 *This article is translated from a
-Chinese [article](https://zhuanlan.zhihu.com/p/60752992){:target="_blank"} on my Zhihu account.
+Chinese [article](https://zhuanlan.zhihu.com/p/60752992){target="_blank"} on my Zhihu account.
 The original article was posted at 2019-04-06 13:46 +0800.*
 
 *Notice*: Because this article was written very early,
@@ -86,10 +86,7 @@ By Definition 1. $\square$
 Suppose $\vec p$ is a constant $\left(m+1\right)$-dimensional vector,
 then the differential operator
 
-$$\begin{equation}
-L\!\left(\mathrm D\right):=\vec p\cdot\overrightarrow{\mathrm D^k}^m_{k=0}
-\label{lin diff op w/ const coef}
-\end{equation}$$
+$$L\!\left(\mathrm D\right):=\vec p\cdot\overrightarrow{\mathrm D^k}^m_{k=0}$$ {#eq:lin-diff-op-w-const-coef}
 
 is a linear differential operator.
 
@@ -101,7 +98,7 @@ $$\overrightarrow{a_kb_k}_{k=0}^m\cdot\overrightarrow{c_k}_{k=0}^m
 Proof is omitted.
 
 **Definition 3** (linear differential operator with constant coefficients).
-Linear differential operators with form as Equation \ref{lin diff op w/ const coef} are called linear differential operators with constant coefficients.
+Linear differential operators with form as Equation [@eq:lin-diff-op-w-const-coef] are called linear differential operators with constant coefficients.
 
 **Definition 4** (linear ODE).
 Suppose $L$ is a linear differential operator.
@@ -117,7 +114,7 @@ If $L$ is a linear differential operator with constant coefficients,
 then the ODE is called a linear ODE with constant coefficients.
 
 **Definition 5** (generating function).
-For a sequence $\left\{a_n\\right\}_{n=0}^\infty$, the function
+For a sequence $\left\{a_n\right\}_{n=0}^\infty$, the function
 
 $$G\!\left(x\right):=\overrightarrow{a_n}_{n=0}^\infty\cdot\overrightarrow{x^n}_{n=0}^\infty$$
 
@@ -130,7 +127,7 @@ $$G\!\left(x\right):=\lim_{s\to\infty}\overrightarrow{a_n}_{n=0}^s\cdot\overrigh
 
 **Definition 6** (exponential generating function).
 For a sequence $\left\{a_n\right\}_{n=0}^\infty$,
-the OGF of the sequence $\left\{\frac{a_n}{n!}\\right\}_{n=0}^\infty$
+the OGF of the sequence $\left\{\frac{a_n}{n!}\right\}_{n=0}^\infty$
 is called the exponential generating function (EGF)
 of the sequence $\left\{a_n\right\}_{n=0}^\infty$.
 In other words,
@@ -149,7 +146,7 @@ $$\mathrm D^k\left(x^n\right)=\frac{n!}{\left(n-k\right)!}x^{n-k}.$$
 By mathematical induction. $\square$
 
 **Lemma 6** (differential of EGF).
-If $G\!\left(x\right)$ is the EGF of a sequence $\left\{a_n\\right\}_{n=0}^\infty$,
+If $G\!\left(x\right)$ is the EGF of a sequence $\left\{a_n\right\}_{n=0}^\infty$,
 then $\mathrm D^kG$ is the EGF of $\left\{a_{n+k}\right\}_{n=0}^\infty$.
 
 *Proof.*
@@ -216,13 +213,13 @@ then the function
 
 $$F\!\left(n\right)=0$$
 
-is called a sequence equation w.r.t. the sequence $\left\{a_n\\right\}_{n=0}^\infty$.
+is called a sequence equation w.r.t. the sequence $\left\{a_n\right\}_{n=0}^\infty$.
 For a sequence, if it satisfies the equation for any $n$,
 then it is called a special solution of the sequence equation.
 The set of all special solutions of the sequence equation is called the general solution of the equation.
 
 **Definition 10** (linear dependence of sequences).
-If for a set of sequences (a sequence of tuples) $\left\{\vec a_n\\right\}_{n=0}^\infty$
+If for a set of sequences (a sequence of tuples) $\left\{\vec a_n\right\}_{n=0}^\infty$
 there exists a tuple of constants $\vec C$ which are not all zero
 (the dimensions of $\vec C$ and $\vec a_n$ are the same)
 such that
@@ -234,7 +231,7 @@ then the set of sequences are called to be linearly dependent.
 They are otherwise called to be linearly independent.
 
 **Lemma 10**.
-The sufficient and necessary condition for a set of $m+1$ sequences $\left\{\vec a_n\\right\}_{n=0}^\infty$
+The sufficient and necessary condition for a set of $m+1$ sequences $\left\{\vec a_n\right\}_{n=0}^\infty$
 to be linearly dependent is that
 
 $$\operatorname{det}\overrightarrow{\vec a_{n+k}}_{k=0}^m=0.$$
@@ -251,8 +248,8 @@ Replace $n$ by $n,n+1,n+1,\ldots,n+m$ respectively, and we have
 
 $$\overrightarrow{\vec C\cdot\vec a_{n+k}}_{k=0}^m=\vec 0.$$
 
-Let the $\left(l+1\right)$th component of $\vec a_n$ be $a_n^{\*l}$,
-i.e. $\vec a_n=\overrightarrow{a_n^{\*l}}_{l=0}^m$.
+Let the $\left(l+1\right)$th component of $\vec a_n$ be $a_n^{*l}$,
+i.e. $\vec a_n=\overrightarrow{a_n^{*l}}_{l=0}^m$.
 Then we have
 
 $$\overrightarrow{\vec C\cdot\overrightarrow{a_n^{*l}}_{l=0}^m}_{k=0}^m=\vec 0.$$
@@ -285,9 +282,9 @@ $$\vec p\cdot\overrightarrow{a_{n+k}}_{k=0}^m=0$$
 
 (where $\vec p$ is a $\left(m+1\right)$-dimensional constant vector and not all zero)
 has a set of $m$ linearly independent special solutions
-$\left\{\overrightarrow{a_n^{\*l}}_{l=1}^m\right\}$,
+$\left\{\overrightarrow{a_n^{*l}}_{l=1}^m\right\}$,
 then the general solution of the sequence solution is
-$\vec C\cdot\overrightarrow{a_n^{\*l}}_{l=1}^m$,
+$\vec C\cdot\overrightarrow{a_n^{*l}}_{l=1}^m$,
 where $\vec C$ is a tuple of $m$ constants.
 
 *Proof.*
@@ -308,16 +305,16 @@ $$\begin{align*}
 &=0.
 \end{align*}$$
 
-By Definition 9, the sequence $\left\{a_n\\right\}$ is a special solution of the original sequence equation.
+By Definition 9, the sequence $\left\{a_n\right\}$ is a special solution of the original sequence equation.
 
-Then prove that the original sequence equation does not have a special solution $\left\{a_n\\right\}$,
+Then prove that the original sequence equation does not have a special solution $\left\{a_n\right\}$,
 such that there does not exist a set of $m$ constants $\vec C$
-such that $a_n=\vec C\cdot\overrightarrow{a_n^{\*l}}_{l=1}^m$ for any $n$.
+such that $a_n=\vec C\cdot\overrightarrow{a_n^{*l}}_{l=1}^m$ for any $n$.
 
 Prove by contradiction.
 Assume there is such a special solution, denoted as $\left\{a_n^{*0}\right\}$.
 Then by Definition 10, the set of sequences (sequence of tuples)
-$\overrightarrow{a_n^{\*l}}_{l=0}^m$ are linearly independent.
+$\overrightarrow{a_n^{*l}}_{l=0}^m$ are linearly independent.
 Let matrix
 
 $$\mathbf A:=\overrightarrow{\overrightarrow{a_n^{*l}}_{l=0}}_{k=0}^m,$$
@@ -341,7 +338,7 @@ $$\vec p=\vec 0,$$
 which contradicts with the fact that $\vec p$ is not all zero.
 
 From all the above, we have proved that the general solution of the sequence equation is
-$\vec C\cdot\overrightarrow{a_n^{\*l}}_{l=1}^m$. $\square$
+$\vec C\cdot\overrightarrow{a_n^{*l}}_{l=1}^m$. $\square$
 
 **Definition 11** (polynomial).
 Suppose $\vec p$ is a constant vector whose $\left(m+1\right)$th component is not $0$,
@@ -419,10 +416,7 @@ $$\begin{align*}
 If $r$ is a root with multiplicity $w$ of the polynomial with coefficients $\vec p$,
 then for any natural number $q<w$, the sequence
 
-$$\begin{equation}
-a_n:=\frac{n!}{\left(n-q\right)!}r^{n-q}
-\label{special sol of seq eq}
-\end{equation}$$
+$$a_n:=\frac{n!}{\left(n-q\right)!}r^{n-q}$$ {#eq:special-sol-of-seq-eq}
 
 is a special solution of the sequence equation
 $\vec p\cdot\overrightarrow{a_{n+k}}_{k=0}^m=\vec 0$.
@@ -527,7 +521,7 @@ The EGF of the sequence $\left\{1\right\}$ is called the exponential function, i
 $$\mathrm e^x:=\overrightarrow{\frac 1{n!}}_{n=0}^{\infty}\cdot\overrightarrow{x^n}_{n=0}^\infty.$$
 
 **Lemma 19**.
-If $y$ is the EGF of the sequence in Equation \ref{special sol of seq eq},
+If $y$ is the EGF of the sequence in Equation [@eq:special-sol-of-seq-eq],
 then $y=x^q\mathrm e^{rx}$.
 
 *Proof.*

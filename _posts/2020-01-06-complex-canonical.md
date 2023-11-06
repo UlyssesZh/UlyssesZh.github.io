@@ -35,12 +35,7 @@ a free particle, and a harmonic oscillator.'
 
 In Hamiltonian physics, if we let
 
-$$
-\begin{equation}
-    \mathbf c:=\alpha\mathbf q+\mathrm i\beta\mathbf p,
-    \label{def c}
-\end{equation}
-$$
+$$\mathbf c:=\alpha\mathbf q+\mathrm i\beta\mathbf p,$$ {#eq:def-c}
 
 where $\alpha$ and $\beta$ are non-zero real numbers,
 then two real vectors $\mathbf q$ and $\mathbf p$
@@ -80,13 +75,10 @@ $$
 Thus,
 
 $$
-\begin{equation}
     \frac\partial{\partial\mathbf c}=
     \frac1{2\alpha}\frac\partial{\partial\mathbf q}-
     \frac{\mathrm i}{2\beta}\frac\partial{\partial\mathbf p}.
-    \label{d/dc}
-\end{equation}
-$$
+$$ {#eq:d-dc}
 
 There is also an obvious property that for any function
 $f:\mathbb C\rightarrow\mathbb R$, we have
@@ -99,68 +91,49 @@ $$
 Furthermore,
 
 $$
-\begin{equation}
     \frac\partial{\partial\mathbf q}=
     \alpha\left(\frac\partial{\partial\mathbf c}+
     \frac\partial{\partial\mathbf c^*}\right),\quad
     \frac\partial{\partial\mathbf p}=
     \mathrm i\beta\left(\frac\partial{\partial\mathbf c}-
     \frac\partial{\partial\mathbf c^*}\right).
-    \label{d/dq & d/dp}
-\end{equation}
-$$
+$$ {#eq:d-dq-d-dp}
 
 ## Canonical equations
 
 Now we may be curious about what will the canonical equations
 
-$$
-\begin{equation}
-    \frac{\mathrm d\mathbf q}{\mathrm dt}=
+$$\frac{\mathrm d\mathbf q}{\mathrm dt}=
     \frac{\partial\mathcal H}{\partial\mathbf p},\quad
     \frac{\mathrm d\mathbf p}{\mathrm dt}=
     -\frac{\partial\mathcal H}{\partial\mathbf q}
-    \label{canonical eq}
-\end{equation}
-$$
+$$ {#eq:canonical-eq}
 
 change into after $\mathbf c$ is introduced.
 
-Apply Formula \ref{d/dc} to $2\mathrm i\alpha\beta\mathcal H$,
+Apply Formula [@eq:d-dc] to $2\mathrm i\alpha\beta\mathcal H$,
 and we can derive that
 
-$$
-\begin{equation}
-   2\mathrm i\alpha\beta\frac{\partial\mathcal H}{\partial\mathbf c}=
+$$2\mathrm i\alpha\beta\frac{\partial\mathcal H}{\partial\mathbf c}=
    \alpha\frac{\partial\mathcal H}{\partial\mathbf p}+
-   \mathrm i\beta\frac{\partial\mathcal H}{\partial\mathbf q}.
-   \label{dH/dc}
-\end{equation}
-$$
+   \mathrm i\beta\frac{\partial\mathcal H}{\partial\mathbf q}.$$ {#eq:dH-dc}
 
-On the other hand, take the derivative of both sides of Formula \ref{def c},
-and substitute Formula \ref{canonical eq} into it,
+On the other hand, take the derivative of both sides of Formula [@eq:def-c],
+and substitute Formula [@eq:canonical-eq] into it,
 and then we can derive that
 
-$$
-\begin{equation}
-    \frac{\mathrm d\mathbf c}{\mathrm dt}=
+$$\frac{\mathrm d\mathbf c}{\mathrm dt}=
     \alpha\frac{\partial\mathcal H}{\partial\mathbf p}-
     \mathrm i\beta\frac{\partial\mathcal H}{\partial\mathbf q}.
-    \label{dc/dt}
-\end{equation}
-$$
+$$ {#eq:dc-dt}
 
-Compare Formula \ref{dH/dc} and \ref{dc/dt}, we get the useful formula
+Compare Formula [@eq:dH-dc] and [@eq:dc-dt], we get the useful formula
 
 $$
-\begin{equation}
     \frac{\mathrm d\mathbf c}{\mathrm dt}=
     -2\mathrm i\alpha\beta
     \frac{\partial\mathcal H}{\partial\mathbf c^*}.
-    \label{new canonical eq}
-\end{equation}
-$$
+$$ {#eq:new-canonical-eq}
 
 The new canonical equations are a set of $s$ ODEs of $1$st degree,
 and there should be only $s$ (instead of $2s$) arbitrary constants
@@ -171,39 +144,30 @@ in the solution.
 The Poisson bracket $\left\{\cdot,\cdot\right\}$ can be defined just as usual:
 
 $$
-\begin{equation}
     \left\{f,g\right\}:=
     \frac{\partial f}{\partial\mathbf q}\cdot
     \frac{\partial g}{\partial\mathbf p}-
     \frac{\partial f}{\partial\mathbf p}\cdot
     \frac{\partial g}{\partial\mathbf q};
-    \label{def poisson}
-\end{equation}
-$$
+$$ {#eq:def-poisson}
 
-while something beautiful will occur if we substitute Formula \ref{d/dq & d/dp}
-into \ref{def poisson}:
+while something beautiful will occur if we substitute Formula [@eq:d-dq-d-dp]
+into [@eq:def-poisson]:
 
 $$
-\begin{equation}
     \left\{f,g\right\}=-2\mathrm i\alpha\beta
     \left(\frac{\partial f}{\partial\mathbf c}\cdot
     \frac{\partial g}{\partial\mathbf c^*}-
     \frac{\partial f}{\partial\mathbf c^*}\cdot
     \frac{\partial g}{\partial\mathbf c}\right).
-    \label{new poisson}
-\end{equation}
-$$
+$$ {#eq:new-poisson}
 
-With Formula \ref{new poisson}, you can also verify that
+With Formula [@eq:new-poisson], you can also verify that
 
 $$
-\begin{equation}
     \frac{\mathrm d}{\mathrm dt}=
     \frac\partial{\partial t}-\left\{\mathcal H,\cdot\right\}.
-    \label{d/dt & poisson}
-\end{equation}
-$$
+$$ {#eq:d-dt-poisson}
 
 ## Canonical transformation
 
@@ -212,20 +176,17 @@ $\mathbf c'=\mathbf c'\!\left(\mathbf c\right)$
 that will preserve the form of the canonical equation, which means
 
 $$
-\begin{equation}
     \frac{\mathrm d\mathbf c'}{\mathrm dt}=
     -2\mathrm i\alpha\beta
     \frac{\partial\mathcal H}{\partial\mathbf c'^*}.
-    \label{transformed canonical eq}
-\end{equation}
-$$
+$$ {#eq:transformed-canonical-eq}
 
 (We do not consider those transformations that involves $t$.
 As we all know, if a canonical transformation involves $t$,
 an additional part should be added to $\mathcal H$.)
 
-Apply Formula \ref{d/dt & poisson} to $\mathbf c'$
-and make use of Formula \ref{transformed canonical eq}, we can derive that
+Apply Formula [@eq:d-dt-poisson] to $\mathbf c'$
+and make use of Formula [@eq:transformed-canonical-eq], we can derive that
 
 $$
     \frac{\partial\mathcal H}{\partial\mathbf c'^*}=
@@ -295,7 +256,7 @@ $$
 $$
 
 where $\mathbf c$ is a $3$-dimensional complex vector, $\alpha=\beta=1$.
-Substitute it into \ref{new canonical eq}, and then we can derive that
+Substitute it into [@eq:new-canonical-eq], and then we can derive that
 
 $$
     \frac{\mathrm d\mathbf c}{\mathrm dt}=
@@ -319,7 +280,7 @@ $$
 $$
 
 where $c$ is a complex number, $\alpha=\sqrt k$, $\beta=\frac1{\sqrt m}$.
-Substitute it into \ref{new canonical eq}, and then we can derive that
+Substitute it into [@eq:new-canonical-eq], and then we can derive that
 
 $$
     \frac{\mathrm dc}{\mathrm dt}=-\mathrm i\omega c,

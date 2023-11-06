@@ -14,7 +14,7 @@ by generalizing the principle of relativity and Hamilton''s principle.'
 ---
 
 *This article is translated from a
-Chinese [article](https://zhuanlan.zhihu.com/p/142546940){:target="_blank"} on my Zhihu account.
+Chinese [article](https://zhuanlan.zhihu.com/p/142546940){target="_blank"} on my Zhihu account.
 The original article was posted at 2020-05-28 21:24 +0800.*
 
 ---
@@ -67,7 +67,7 @@ What it says is that, if we regard $\mathcal S$ as a functional of the function 
 then the problem of finding the actual motion $q$ of the system is equivalent to solve the optimization problem:
 constraint the value of $q$ on $\partial M$, and minimize $\mathcal S$.
 
-In this case, the Euler--Lagrange equation is (according to [a previous post](/math/2020/05/31/high-dim-euler-eq))
+In this case, the Euler--Lagrange equation is (according to [a previous post]({% post_url 2020-05-31-high-dim-euler-eq %}))
 
 $$\sum_j\partial_j\frac{\partial\mathcal L}{\partial\!\left(\partial_jq_k\right)}=\frac{\partial\mathcal L}{\partial q_k}.$$
 

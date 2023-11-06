@@ -94,4 +94,4 @@ end
 
 Similar tricks are used in my other Ruby project [alda-rb](/doc/alda-rb/).
 The codes can be found
-[on GitHub](https://github.com/UlyssesZh/alda-rb){:target="_blank"}.
+[on GitHub](https://github.com/UlyssesZh/alda-rb){target="_blank"}.

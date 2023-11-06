@@ -9,7 +9,7 @@ $lm-link-base-color: #db3168 !default;
 $dm-brand-color: #828282 !default;
 $dm-text-color: #8c84a1 !default;
 $dm-background-color: #0e0b01 !default;
-$dm-code-background-color: #000011 !default;
+$dm-code-background-color: #271b20 !default;
 $dm-link-base-color: #de346b !default;
 
 $lm-kbd-border-color: #cccccc !default;
@@ -41,8 +41,8 @@ $dm-search-color: #aa2436 !default;
 $dm-search-focus-color: #c177a3 !default;
 $dm-search-border-color: #9d1113 !default;
 $dm-search-background-color: #000 !default;
-$dm-lineno-color: #555 !default;
-$dm-lineno-background-color: #0f0f11 !default;
+$dm-lineno-color: #777 !default;
+$dm-lineno-background-color: #202020 !default;
 
 $table-text-align: left !default;
 $content-width: 800px !default;
@@ -113,6 +113,12 @@ $lineno-background-color: var(--lineno-background-color);
 
 @import "minima/skins/auto";
 
+@media (prefers-color-scheme: dark) {
+	.dark-adaptive {
+		filter: invert(1) hue-rotate(180deg);
+	}
+}
+
 .center {
 	display: block;
 	margin-left: auto;
@@ -127,7 +133,7 @@ kbd {
 	color: $kbd-color;
 	line-height: 1.4;
 	font-family: Arial, Helvetica, sans-serif;
-	font-size: 10px;
+	font-size: 12px;
 	display: inline-block;
 	position: relative;
 	top: -2px;
@@ -205,7 +211,9 @@ ul.pager li {
 
 .rouge-table {
 	border: none;
-	margin: 0;
+	margin: 0px 0px 15px 0px;
+	overflow-x: auto;
+	display: block;
 
 	tbody {
 		border: none;
@@ -234,12 +242,40 @@ ul.pager li {
 	color: $lineno-color;
 	text-align: right;
 	background: $lineno-background-color;
+	width: 1px;
 
 	pre {
 		background: transparent;
 	}
 }
 
-.rouge-code {
+.highlight {
 	width: 100%;
+}
+
+table:has(.katex-display), td:has(.katex-display) {
+	border: none;
+	margin-bottom: 0px;
+	color: inherit
+}
+
+table .katex-display {
+	margin: 0px;
+}
+
+p:has(> .katex-display) {
+	overflow-x: auto;
+	margin-bottom: 0px;
+}
+
+p:has(+ div table .katex-display), p:has(+ p .katex-display), p:has(+ .katex-display) {
+	margin-bottom: 0px;
+}
+
+div:has(> table .katex-display) {
+	overflow-x: auto;
+}
+
+.line-block {
+	margin-bottom: 15px;
 }

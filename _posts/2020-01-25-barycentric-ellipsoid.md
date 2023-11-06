@@ -53,34 +53,19 @@ $\mathbf r_1=\mathbf V_1
 \boldsymbol\lambda$,
 so
 
-$$
-\begin{equation}
-    \boldsymbol\lambda=\mathbf V_1^{-1}
-    \mathbf r_1.
-    \label{as Cartesian}
-\end{equation}
-$$
+$$\boldsymbol\lambda=\mathbf V_1^{-1}
+    \mathbf r_1.$$ {#eq:as-Cartesian}
 
 Usually, due to the convenience, we select the center of the Cartesian
 coordinate system so properly that $\sum_j\mathbf v_j=\mathbf0$ or
 
-$$
-\begin{equation}
-    \mathbf V\mathbf1=\mathbf0.
-    \label{barycenter zero}
-\end{equation}
-$$
+$$\mathbf V\mathbf1=\mathbf0.$$ {#eq:barycenter-zero}
 
 ## The research object
 
 We are going to show that the equation
 
-$$
-\begin{equation}
-    \boldsymbol\lambda^{\mathrm T}\boldsymbol\lambda=1
-    \label{research object}
-\end{equation}
-$$
+$$\boldsymbol\lambda^{\mathrm T}\boldsymbol\lambda=1$$ {#eq:research-object}
 
 depicts a hyperellipsoid whose center is $\mathbf0$ and
 its tangent hyperplane at $\mathbf v_j$ is parallel to the hyperplane
@@ -88,15 +73,13 @@ that passes all $\mathbf v_k$ that $k\ne j$.
 
 ## The quadric
 
-We are going to rewrite Formula \ref{research object} in the form of
+We are going to rewrite Formula [@eq:research-object] in the form of
 a quadric of $\mathbf r$.
 
-Substitute Formula \ref{as Cartesian} into \ref{research object}, and
+Substitute Formula [@eq:as-Cartesian] into [@eq:research-object], and
 then we can derive that
 
-$$
-\begin{equation}
-    1=\boldsymbol\lambda^{\mathrm T}\boldsymbol\lambda
+$$1=\boldsymbol\lambda^{\mathrm T}\boldsymbol\lambda
     =\left(\mathbf V_1^{-1}
         \mathbf r_1\right)^{\mathrm T}
         \left(\mathbf V_1^{-1}
@@ -104,31 +87,19 @@ $$
     =\mathbf r_1^{\mathrm T}
         \left(\left(\mathbf V_1^{-1}
         \right)^{\mathrm T}\mathbf V_1^{-1}
-        \right)\mathbf r_1.
-    \label{r quadric}
-\end{equation}
-$$
+        \right)\mathbf r_1.$$ {#eq:r-quadric}
 
 Let
 
-$$
-\begin{equation}
-    \mathbf Q:=\left(\mathbf V_1^{-1}
+$$\mathbf Q:=\left(\mathbf V_1^{-1}
         \right)^{\mathrm T}\mathbf V_1^{-1}
     =\left(\mathbf V_1
-        \mathbf V_1^{\mathrm T}\right)^{-1},
-    \label{Q def}
-\end{equation}
-$$
+        \mathbf V_1^{\mathrm T}\right)^{-1},$$ {#eq:Q-def}
 
-and substitute Formula \ref{Q def} into \ref{r quadric},
+and substitute Formula [@eq:Q-def] into [@eq:r-quadric],
 and then we can derive the quadric of $\mathbf r_1$
 
-$$
-\begin{equation}
-    \mathbf r_1^{\mathrm T}\mathbf Q\mathbf r_1=1.
-\end{equation}
-$$
+$$\mathbf r_1^{\mathrm T}\mathbf Q\mathbf r_1=1.$$
 
 Note that besides $\mathbf r$, there is a $1$ in $\mathbf r_1$, so
 the quadric is a $2$nd-degree polynomial of $\mathbf r$,
@@ -144,9 +115,7 @@ and the determinant of the coefficients is positive.
 Note that $\mathbf Q=\left(\mathbf V_1\mathbf V_1^{\mathrm T}\right)^{-1}$,
 so
 
-$$
-\begin{equation}
-    \mathbf Q^{-1}=
+$$\mathbf Q^{-1}=
     \left(\begin{matrix}
         \\&\mathbf V&\\\\1&\cdots&1
     \end{matrix}\right)
@@ -156,12 +125,9 @@ $$
     \left(\begin{matrix}
         \\&\mathbf V\mathbf V^{\mathrm T}&&\mathbf V\mathbf1
         \\\\&\mathbf1^{\mathrm T}\mathbf V^{\mathrm T}&&n
-    \end{matrix}\right).
-    \label{Q^-1}
-\end{equation}
-$$
+    \end{matrix}\right).$$ {#eq:Q-1}
 
-Substitute Formula \ref{barycenter zero} into \ref{Q^-1},
+Substitute Formula [@eq:barycenter-zero] into [@eq:Q-1],
 and then we can derive that
 
 $$
@@ -230,26 +196,16 @@ The equation of $P_j$ should holds when $\mathbf r=\mathbf v_k$
 for all $k\ne j$, so we can derive $n-1$ linear equations with respect
 to $\mathbf m_j$
 
-$$
-\begin{equation}
-    \forall k\ne j:n\mathbf m_j^{\mathrm T}\mathbf v_k+2=0.
-    \label{equations for m}
-\end{equation}
-$$
+$$\forall k\ne j:n\mathbf m_j^{\mathrm T}\mathbf v_k+2=0.$$ {#eq:equations-for-m}
 
 If we can show that
 
-$$
-\begin{equation}
-    \mathbf m_j=\boldsymbol\nu_j=2\mathbf W\mathbf v_j
-    \label{solution for m}
-\end{equation}
-$$
+$$\mathbf m_j=\boldsymbol\nu_j=2\mathbf W\mathbf v_j$$ {#eq:solution-for-m}
 
-is the solution to Formula \ref{equations for m},
+is the solution to Formula [@eq:equations-for-m],
 then we can say that the two hyperplane are parallel.
 Thus, we need to verify the equations derived from
-substituting Formula \ref{solution for m} into \ref{equations for m}
+substituting Formula [@eq:solution-for-m] into [@eq:equations-for-m]
 
 $$
     \forall k\ne j:n\mathbf v_j^{\mathrm T}\mathbf W\mathbf v_k+1=0,
@@ -271,7 +227,7 @@ if we regard $\mathbf V^{\mathrm T}$ as $n-1$ $n$-dimensional vectors,
 then $\mathbf P$ is an orthogonal projection in $\mathbb R^n$ to
 the linear subspace whose basis is the $n-1$ vectors.
 
-Note that with Formula \ref{barycenter zero}, we can say that
+Note that with Formula [@eq:barycenter-zero], we can say that
 the subspace is just a hyperplane whose normal vector is $\mathbf1$.
 With the conclusion, we can easily write out the form of $\mathbf P$
 because we just need to write out one set of its basis $\mathbf B$.

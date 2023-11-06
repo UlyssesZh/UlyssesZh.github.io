@@ -14,7 +14,7 @@ It turns out that there is a neat mathematical relationship between them.'
 ---
 
 *This article is translated from a
-Chinese [article](https://zhuanlan.zhihu.com/p/367530273){:target="_blank"} on my Zhihu account.
+Chinese [article](https://zhuanlan.zhihu.com/p/367530273){target="_blank"} on my Zhihu account.
 The original article was posted at 2021-04-25 10:06 +0800.*
 
 ---
@@ -40,10 +40,7 @@ $$F\!\left(x\right):=\int_{-\infty}^xp\!\left(t\right)\mathrm dt$$
 
 is the cumulative distribution function of $p(X)$, and
 
-$$\begin{equation}
-\label{eq: def mu}
-\mu:=\int_{-\infty}^{+\infty}tp\!\left(t\right)\mathrm dt
-\end{equation}$$
+$$\mu:=\int_{-\infty}^{+\infty}tp\!\left(t\right)\mathrm dt$$ {#eq:eq-def-mu}
 
 is the average wealth of the population, which is just $\mathrm E[\mathrm X]$
 ($X$ is a random variable such that $X\sim p(X)$).
@@ -67,7 +64,7 @@ G&=\mu-2\int_{t=-\infty}^{+\infty}\int_{u=F(t)}^1tp\!\left(t\right)\mathrm dt\,\
 &=\mu-2\int_{-\infty}^{+\infty}\left(1-F(t)\right)tp\!\left(t\right)\mathrm dt.
 \end{align*}$$
 
-Substitute Equation \ref{eq: def mu} into the above equation, and we have
+Substitute Equation [@eq:eq-def-mu] into the above equation, and we have
 
 $$\begin{align*}
 G&=\int_{-\infty}^{+\infty}2tF\!\left(t\right)p\!\left(t\right)\mathrm dt-\mu\\
@@ -114,7 +111,6 @@ $$\begin{align*}
 \sigma_X^2&=\frac12\int_0^1F^{-1}\!\left(u_2\right)^2\,\mathrm du_2\int_0^1\mathrm du_1\\
 &\phantom{=~}{}-\int_0^1F^{-1}\!\left(u_1\right)\mathrm du_1\int_0^1F^{-1}\!\left(u_2\right)\mathrm du_2\\
 &\phantom{=~}{}+\frac12\int_0^1F^{-1}\!\left(u_1\right)^2\,\mathrm du_1\int_0^1\mathrm du_2\\
-
 &=\frac12\int_0^1\int_0^1
 \left(F^{-1}\!\left(u_2\right)^2-2F^{-1}\!\left(u_1\right)F^{-1}\!\left(u_2\right)+F^{-1}\!\left(u_1\right)^2\right)
 \mathrm du_1\,\mathrm du_2\\

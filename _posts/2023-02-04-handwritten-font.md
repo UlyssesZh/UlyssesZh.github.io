@@ -17,7 +17,7 @@ In this article, I will try to settle this problem.'
 ---
 
 *This article is adapted from a
-Chinese [article](https://zhuanlan.zhihu.com/p/348630262){:target="_blank"} on my Zhihu account.
+Chinese [article](https://zhuanlan.zhihu.com/p/348630262){target="_blank"} on my Zhihu account.
 The original article was posted at 2021-02-02 00:41 +0800.
 There are some minor modifications to the original article
 as well as some added contents.*
@@ -123,7 +123,7 @@ all uppercase letters (both English and Greek) have the same position of bottom 
 
 For other details, look at this image:
 
-![Handwritten letters]({{page.figure}}letters.svg){:.dark-adaptive}
+![Handwritten letters]({{page.figure}}letters.svg){.dark-adaptive}
 
 ## Roman and italic
 
@@ -481,6 +481,6 @@ You may think it is hard to write in Fraktur style when you look at how $\LaTeX$
 Actually, it indeed is, but it is not intended for you to handwrite.
 I recommend write them as shown here (ignore the final line because we do not need them):
 
-![written fraktur](https://www.omniglot.com/images/writing/suetterlin.gif){:.dark-adaptive}
+![written fraktur](https://www.omniglot.com/images/writing/suetterlin.gif){.dark-adaptive}
 
 They look very distinguishable.

@@ -9,22 +9,25 @@ no_gitalk: true
 <ul id="search-results" class="post-list"></ul>
 
 <script>
-	window.store = {
+window.store = {
 	{% for post in site.posts %}
+		{% assign title = post.title | markdownify_no_p %}
+		{% assign excerpt = post.excerpt | markdownify_no_p %}
+		{% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
 		"{{ post.url | slugify }}": {
-			"title": "{{ post.title | markdownify_no_p | strip_html | newline_to_space | replace: "\", "\\\" | replace: '"', '\"' }}",
-			{%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-			"date": "{{ post.date | date: date_format }}",
-			"excerpt": "{{ post.excerpt | markdownify_no_p | strip_html | newline_to_space | replace: "\", "\\\" | replace: '"', '\"' }}",
-			"content": {{ post.content | strip_lineno | strip_html | newline_to_space | jsonify }},
-			"tags": {{ post.tags | jsonify }},
-			"categories": {{ post.categories | jsonify }},
-			"url": "{{ post.url }}",
-			"image": "{{ post.image }}"
-		}
-		{% unless forloop.last %}, {% endunless %}
+			titleStripped: {{ title | strip_html | jsonify }},
+			title: {{ title | jsonify }},
+			date: {{ post.date | date: date_format | jsonify }},
+			excerptStripped: {{ excerpt | strip_html | jsonify }},
+			excerpt: {{ excerpt | jsonify }},
+			content: {{ post.content | strip_lineno | strip_html | jsonify }},
+			tags: {{ post.tags | jsonify }},
+			categories: {{ post.categories | jsonify }},
+			url: {{ post.url | jsonify }},
+			image: {{ post.image | jsonify }}
+		},
 	{% endfor %}
-  };
+};
 </script>
 <script src="https://fastly.jsdelivr.net/npm/lunr@2.3.9/lunr.min.js"></script>
 <script>
@@ -71,7 +74,7 @@ if (searchTerm) {
 	// Initalize lunr with the fields it will be searching on. I've given title
 	// a boost of 10 to indicate matches on this field are more important.
 	var idx = lunr(function () {
-		this.field('id');
+		this.field('id', { boost: 10 });
 		this.field('title', { boost: 10 });
 		this.field('excerpt');
 		this.field('categories');
@@ -79,12 +82,12 @@ if (searchTerm) {
 		this.field('content');
 		for (var key in window.store) { // Add the data to lunr
 			this.add({
-				'id': key,
-				'title': window.store[key].title,
-				'excerpt': window.store[key].excerpt,
-				'categories': window.store[key].categories,
-				'tag': window.store[key].tags,
-				'content': window.store[key].content
+				id: key,
+				title: window.store[key].titleStripped,
+				excerpt: window.store[key].excerptStripped,
+				categories: window.store[key].categories,
+				tag: window.store[key].tags,
+				content: window.store[key].content
 			});
 		}
 	});

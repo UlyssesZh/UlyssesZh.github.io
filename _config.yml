@@ -19,18 +19,29 @@ baseurl: ''
 url: https://UlyssesZh.github.io
 domain: ulysseszh.github.io
 show_excerpts: true
-markdown: kramdown
-kramdown:
-  input: InlineMath
-  # math_engine: katex
-  math_engine_opts:
-    output: html
-  auto_ids: true
-  syntax_highlighter_opts:
-    block:
-      line_numbers: true
+markdown: Paru
+paru:
+  options:
+    from: markdown+link_attributes+pipe_tables+escaped_line_breaks+space_in_atx_header+header_attributes+line_blocks+inline_code_attributes
+    no_highlight: true
+    filter:
+      - pandoc-crossref
+      - pandoc-katex
+      - _exe/pandoc-rouge.rb
+    metadata:
+      - crossrefYaml=bootstrap/crossref.yml
+      - rougeConfig=bootstrap/rouge.yml
+  crossref:
+    link_references: true
+    table_eqns: true
+    set_label_attribute: true
+    eqn_prefix_template: $$i$$
+  rouge:
+    formatter: table
+    formatter_options:
+      code_class: highlight
 gitalk:
-  enable_in_development: true
+  enable_in_development: false
   client_id: 49611570ab5cf827576b
   client_secret: 6dedc6014eb010990d395ae8aae632c7811dfeff
   repo: UlyssesZh.github.io
@@ -75,20 +86,22 @@ defaults:
     values:
       toc: true
 plugins:
-  - jekyll-archives
+  #- jekyll-archives
   - jekyll-feed
   - jekyll-paginate-v2
   - jekyll-sitemap
   - jekyll-toc
+  - jekyll-paru
 exclude:
   - LICENSE
   - LICENSE.md
   - README.md
   - Gemfile
   - Gemfile.lock
+  - Rakefile
   - .git/
   - .idea/
-  - .rubocop.yml
+  - '**/*.yml'
   - assets/images/covers/*.txt
 google_analytics: G-7TSJ5VM6YC
 webmaster_verifications:

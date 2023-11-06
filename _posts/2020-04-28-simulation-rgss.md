@@ -19,15 +19,10 @@ $\mathcal H\!\left(\mathbf q,\mathbf p,t\right)$.
 
 To utilize the canonical equations
 
-$$
-\begin{equation}
-    \frac{\mathrm d\mathbf q}{\mathrm dt}=
+$$\frac{\mathrm d\mathbf q}{\mathrm dt}=
     \frac{\partial\mathcal H}{\partial\mathbf p},\quad
     \frac{\mathrm d\mathbf p}{\mathrm dt}=
-    -\frac{\partial\mathcal H}{\partial\mathbf p},
-    \label{canonical}
-\end{equation}
-$$
+    -\frac{\partial\mathcal H}{\partial\mathbf p},$$ {#eq:canonical}
 
 we need to calculate the partial derivatives of $\mathcal H$.
 Here is a simple code to calculate partial derivatives.
@@ -47,13 +42,9 @@ the attached file below.)
 Here `x0` is a `Vector`, `f` is a `call`-able object as a function
 of vectors, `dx` is a small scalar which we are going to take `1e-6`.
 
-Let `x = Vector[*q, *p]`, and then Formula \ref{canonical} has the form
+Let `x = Vector[*q, *p]`, and then Formula [@eq:canonical] has the form
 
-$$
-\begin{equation}
-    \frac{\mathrm d\mathbf x}{\mathrm dt}=f\!\left(\mathbf x\right).
-\end{equation}
-$$
+$$\frac{\mathrm d\mathbf x}{\mathrm dt}=f\!\left(\mathbf x\right).$$
 
 To solve this equation numerically, we need to use a famous method
 called the (explicit) Runge--Kutta method.
@@ -138,13 +129,13 @@ solve_hamiltonian 2,Vector[PI/2,0.0,0.0,0.0],Float::INFINITY,1e-3,
 		->t,(q1,q2,p1,p2){p1**2+p2**2/2+cos(q1-q2)*p1*p2-cos(q1)-cos(q2)}
 ```
 
-![double_pendulum]({{page.figure}}double_pendulum.gif)
+![The simulated motion of a double pendulum.]({{page.figure}}double_pendulum.gif)
 
 The codes are not complete in this post.
 See the [attached file](/assets/codes/RungeKutta.rar) for details.
 You can open the project using
-[RPG Maker VX Ace](https://store.steampowered.com/app/220700/RPG_Maker_VX_Ace){:target="_blank"}.
+[RPG Maker VX Ace](https://store.steampowered.com/app/220700/RPG_Maker_VX_Ace){target="_blank"}.
 The `Game.exe` file is not the official `Game.exe` executable
 but the third-party improved version of it called
-[RGD](http://cirno.blog/archives/290){:target="_blank"}
+[RGD](http://cirno.blog/archives/290){target="_blank"}
 (of version 1.3.2, while the latest till now is 1.5.1).

@@ -1,20 +1,24 @@
 # frozen_string_literal: true
 
 require 'fileutils'
-require 'katex'
+require 'yaml'
 
 module Jekyll::UlyssesZhan
 end
 
 module Jekyll
 	module UlyssesZhan::Bootstrap
+
+		BOOTSTRAP_DIR = 'bootstrap'
+
 		module_function
 
 		def run
-			if @site.config['kramdown']['math_engine'] == 'katex'
-				copy_katex_stylesheet
-				copy_katex_fonts
-			end
+			FileUtils.mkdir_p BOOTSTRAP_DIR
+			read_env
+			read_katex_version
+			write_crossref_config
+			write_rouge_config
 		end
 
 		def register
@@ -24,20 +28,22 @@ module Jekyll
 			end
 		end
 
-		def copy_katex_stylesheet
-			katex_scss = File.join Katex.gem_path, 'vendor/katex/sprockets/stylesheets/_katex.scss'
-			sass_bootstrap = File.join @site.source, '_sass/bootstrap'
-			return if File.exist? sass_bootstrap
-			FileUtils.mkdir_p File.dirname sass_bootstrap
-			FileUtils.cp katex_scss, sass_bootstrap
+		def read_katex_version
+			@site.config['katex_version'] = `pandoc-katex --katex-version`.chomp
 		end
 
-		def copy_katex_fonts
-			katex_fonts = File.join Katex.gem_path, 'vendor/katex/fonts'
-			assets_bootstrap = File.join @site.source, 'assets/bootstrap/fonts'
-			return if File.exist? assets_bootstrap
-			FileUtils.mkdir_p File.dirname assets_bootstrap
-			FileUtils.cp_r katex_fonts, assets_bootstrap
+		def write_crossref_config
+			yaml = YAML.dump @site.config['paru']['crossref'].transform_keys { _1.to_s.gsub(/_(\w)/) { $1.upcase } }
+			File.write File.join(BOOTSTRAP_DIR, 'crossref.yml'), yaml.tap { _1["---\n"] = '' }
+		end
+
+		def write_rouge_config
+			File.write File.join(BOOTSTRAP_DIR, 'rouge.yml'), YAML.dump(@site.config['paru']['rouge'])
+		end
+
+		def read_env
+			@site.config['avoid_markdown'] = !!ENV['JEKYLL_AVOID_MARKDOWN']
+			@site.config['no_archive'] = !!ENV['JEKYLL_NO_ARCHIVE']
 		end
 	end
 

@@ -17,39 +17,33 @@ with initial conditions $x\!\left(t_0\right)=C$ as the limit of the sequence of 
 
 Suppose we have an ODE (with initial conditions)
 
-$$\begin{equation}
-x'\!\left(t\right)=f\!\left(x\!\left(t\right),t\right),
-\quad x\!\left(t_0\right)=C,
-\label{eq: ode}
-\end{equation}$$
+$$x'\!\left(t\right)=f\!\left(x\!\left(t\right),t\right),
+\quad x\!\left(t_0\right)=C,$$ {#eq:eq-ode}
 
 where $x$ is the unknown function,
 and $f$ is Lipschitz continuous in its first argument and continuous in its second argument.
-By Picard--Lindelöf theorem, we can seek the unique solution within $t\in\left[t_0-\varepsilon,t_0+\varepsilon\right\]$.
+By Picard--Lindelöf theorem, we can seek the unique solution within $t\in\left[t_0-\varepsilon,t_0+\varepsilon\right]$.
 
 Here, I propose the following method:
 we can write out a sequence of functions defined by
 
-$$\begin{equation}x_0\!\left(t\right):=C,\label{eq: x0}\end{equation}$$
+$$x_0\!\left(t\right):=C,$$ {#eq:eq-x0}
 
-$$\begin{equation}
-x_{n+1}\!\left(t\right):=\int_{t_0}^tf\!\left(x_n\!\left(s\right),s\right)\,\mathrm ds+C
-\label{eq: xn+1}
-\end{equation}$$
+$$x_{n+1}\!\left(t\right):=\int_{t_0}^tf\!\left(x_n\!\left(s\right),s\right)\,\mathrm ds+C$$ {#eq:eq-xn-1}
 
 (the properties of $f$ guarantee that the integral is well-defined).
-Then, if the sequence $\left(x_n'\right)$ converges uniformly on $\left[t-\varepsilon,t+\varepsilon\right\]$
+Then, if the sequence $\left(x_n'\right)$ converges uniformly on $\left[t-\varepsilon,t+\varepsilon\right]$
 (question: can this condition actually be proved?),
-then the sequence $\left(x_n\right)$ converges uniformly to a function $x$ on $\left[t-\varepsilon,t+\varepsilon\right\]$,
-which is the unique solution to Equation \ref{eq: ode}.
+then the sequence $\left(x_n\right)$ converges uniformly to a function $x$ on $\left[t-\varepsilon,t+\varepsilon\right]$,
+which is the unique solution to Equation [@eq:eq-ode].
 
 ## Proof
 
-The proof is easy. Note from Equation \ref{eq: xn+1} that
+The proof is easy. Note from Equation [@eq:eq-xn-1] that
 
 $$x_{n+1}'\!\left(t\right)=f\!\left(x_n\!\left(t\right),t\right).$$
 
-Then, take the limit $n\to\infty$. By the uniform convergence, we recovers Equation \ref{eq: ode}.
+Then, take the limit $n\to\infty$. By the uniform convergence, we recovers Equation [@eq:eq-ode].
 
 ## An example
 
@@ -72,5 +66,5 @@ This method is good because integration is sometimes much easier than solving OD
 We can use integration to get functions that are close to the exact solution.
 A natural question to ask is how close $x_n$ is to the exact solution $x$.
 
-If Equation \ref{eq: ode} is defined on $\mathbb R^n$ (where we may define differences and infinitesimals),
+If Equation [@eq:eq-ode] is defined on $\mathbb R^n$ (where we may define differences and infinitesimals),
 it is clear that $x_n-x$ is an infinitesimal of higher order than $\left(t-t_0\right)^n$.

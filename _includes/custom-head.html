@@ -3,4 +3,6 @@
 {%- include gitalk_head.html -%}
 {% if page.mathjax or layout.mathjax %}
 	{%- include mathjax.html -%}
+{% else %}
+	<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/katex@{{ site.katex_version }}/dist/katex.min.css">
 {% endif %}

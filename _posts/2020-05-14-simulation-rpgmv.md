@@ -32,7 +32,7 @@ $$
 
 depicting two pendulum coupled with a spring,
 
-![Spring-coupled pendulums]({{page.figure}}spring_coupled_pendulum.png){:.dark-adaptive}
+![Spring-coupled pendulums]({{page.figure}}spring_coupled_pendulum.png){.dark-adaptive}
 
 which is a classical example of non-linearly coupled system.
 
@@ -50,7 +50,7 @@ you can study [the codes](/rpg/mechsimul/js/mechsimul.js) I wrote
 and write your own codes in the console.
 
 By the way, the
-[OpenRGSS](https://github.com/UlyssesZh/OpenRGSS/){:target="_blank"}
+[OpenRGSS](https://github.com/UlyssesZh/OpenRGSS/){target="_blank"}
 version of the simulator is open-source
-[here](https://github.com/UlyssesZh/mechsimul/){:target="_blank"}.
+[here](https://github.com/UlyssesZh/mechsimul/){target="_blank"}.
 Please star the repo if you like it.

@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+return if ENV['JEKYLL_NO_ARCHIVE']
 module Jekyll::UlyssesZhan
 end
 

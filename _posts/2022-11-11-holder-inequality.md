@@ -15,7 +15,7 @@ This property can be used to prove HM-GM-AM-QM inequalities.'
 ---
 
 *This article is translated from a
-Chinese [article](https://zhuanlan.zhihu.com/p/85968527){:target="_blank"} on my Zhihu account.
+Chinese [article](https://zhuanlan.zhihu.com/p/85968527){target="_blank"} on my Zhihu account.
 The original article was posted at 2019-10-12 18:56 +0800.*
 
 ---

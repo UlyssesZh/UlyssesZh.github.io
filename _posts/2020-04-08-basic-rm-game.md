@@ -13,7 +13,7 @@ They only illustrate the basic concepts of how a RM game is structured
 and what is the running logic of it.'
 ---
 
-[RPG Maker (RM)](https://tkool.jp/){:target="_blank"}
+[RPG Maker (RM)](https://tkool.jp/){target="_blank"}
 is a tool for making games.
 
 I only have experience in using RPG Maker XP, RPG Maker VX,
@@ -21,10 +21,9 @@ RPG Maker VX Ace, and RPG Maker MV.
 
 Games made by using RM are based on
 
-| XP | RGSS        |
-| VX | RGSS2       |
-| VA | RGSS3       |
-| MV | rpg_core.js |
+| XP | VX | VA | MV |
+|-|-|-|-|
+| RGSS | RGSS2 | RGSS3 | rpg_core.js |
 
 In most cases, when I say RGSS, I mean RGSS, RGSS2, and RGSS3.
 RGSS is in Ruby and rpg_core.js is in Javascript.
@@ -98,4 +97,4 @@ There is a simple RPG built by me which can be accessed
 
 The source codes of RGSS are secret, but those of rpg_core.js are not a secret
 and can be seen at
-[its GitHub repo](https://github.com/rpgtkoolmv/corescript/){:target="_blank"}.
+[its GitHub repo](https://github.com/rpgtkoolmv/corescript/){target="_blank"}.

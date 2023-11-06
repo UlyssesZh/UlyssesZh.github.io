@@ -30,7 +30,7 @@ about those topics that I am interested in.
 The icon of this website is my avatar.
 It is drawn by myself.
 If you want to use it, the user terms and the downloadable files are
-available [here](https://github.com/UlyssesZh/drawings){:target="_blank"}.
+available [here](https://github.com/UlyssesZh/drawings){target="_blank"}.
 
 This blog may be updated at an extremely low frequency because
 I may be busy.
@@ -41,19 +41,13 @@ I will be happy if I know there are people interested in my blog!
 Note that if the browser tells you that my site is trying to run
 some dangerous scripts, it is just loading necessary scripts for
 mathematical equations
-(such as Equation \ref{least action} shown below)
+(such as Equation [@eq:least-action] shown below)
 to be rendered in my pages.
 
 Finally, I would like to tell you what I think is the most beautiful
 equations of all.
 Yes, it is Hamilton's principle
-
-$$
-\begin{equation}
-    \delta\int\mathcal L\,\mathrm dt=0.
-    \label{least action}
-\end{equation}
-$$
+$$\delta\int\mathcal L\,\mathrm dt=0.$$ {#eq:least-action}
 
 I will never tell you that I was actually to test whether
 mathematical equations can be rendered correctly.

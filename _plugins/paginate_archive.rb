@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+return if ENV['JEKYLL_NO_ARCHIVE']
+
 module Jekyll::UlyssesZhan
 end
 
@@ -46,6 +48,13 @@ module Jekyll
 			count = model.run @config, [@archive], @archive.title
 			Jekyll.logger.info "Archive pagination:", "Complete #{count} pages for #{@archive.title} #{@archive.date}" if LOG
 			@archive.data.delete 'pagination'
+		end
+	end
+
+	module UlyssesZhan::PaginationPagePatch
+		PaginateV2::Generator::PaginationPage.prepend self
+		def relative_path
+			@url
 		end
 	end
 end

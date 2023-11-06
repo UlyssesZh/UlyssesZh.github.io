@@ -15,7 +15,7 @@ and the eccentricity being $\frac rf$.'
 ---
 
 *This article is translated from a
-Chinese [article](https://zhuanlan.zhihu.com/p/73294062){:target="_blank"} on my Zhihu account.
+Chinese [article](https://zhuanlan.zhihu.com/p/73294062){target="_blank"} on my Zhihu account.
 The original article was posted at 2019-07-12 15:40 +0800.*
 
 ---

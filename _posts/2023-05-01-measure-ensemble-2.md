@@ -124,11 +124,8 @@ Note that our bath actually has the fixed intensive quantities
 $i=\left(1/T,p/T\right)\in\vec W^{\parallel(1)\prime}$,
 we can rewrite the above equation as
 
-$$\begin{equation}
-\label{eq: W star parallel}
-\vec W^{\parallel\parallel(1)}
-=\left\{s_1\in\vec W^{\parallel(1)}\,\middle|\,i\!\left(s_1\right)=0\right\}.
-\end{equation}$$
+$$\vec W^{\parallel\parallel(1)}
+=\left\{s_1\in\vec W^{\parallel(1)}\,\middle|\,i\!\left(s_1\right)=0\right\}.$$ {#eq:eq-W-star-parallel}
 
 Wait! What does $T$ do here? It is supposed to mean the temperature of the bath,
 but the temperature of the bath is irrelevant since the contact is non-thermal.
@@ -204,12 +201,9 @@ $\left(\mathcal E^{(2)},\mathcal M^{(2)}\right)$.
 Consider this projection $\pi^\star:W\to W^{\star\perp}$
 (where $W^{\star\perp}$ is an affine subspace of $W$ and the range of $\pi^\star$):
 
-$$\begin{equation}
-\label{eq: pi star}
-\pi^\star\!\left(e_1,e_2\right)
+$$\pi^\star\!\left(e_1,e_2\right)
 :=\left(\pi^{\star(1)}\!\left(e_1\right),
-\rho_{\pi(e_1,e_2)}\!\left(\pi^{\star(1)}\!\left(e_1\right)\right)\right).
-\end{equation}$$
+\rho_{\pi(e_1,e_2)}\!\left(\pi^{\star(1)}\!\left(e_1\right)\right)\right).$$ {#eq:eq-pi-star}
 
 To ensure that it is well-defined, we need to guarantee that
 $\pi^{\star(1)}\!\left(e_1\right)\in W^{\parallel(1)}_{\pi(e_1,e_2)}$
@@ -245,20 +239,14 @@ $$-i^\star\circ\vec\rho^{\star-1}=-i\circ\vec\rho^{-1}.$$
 
 Therefore,
 
-$$\begin{equation}
-\label{eq: i star}
-i^\star:=i\circ\vec\rho^{-1}\circ\vec\rho^\star
-\end{equation}$$
+$$i^\star:=i\circ\vec\rho^{-1}\circ\vec\rho^\star$$ {#eq:eq-i-star}
 
 would be a good definition of $i^\star$.
 However, actually $i^\star$ is trivial:
 
-$$\begin{equation}
-\label{eq: i star = 0}
-i^\star=0.
-\end{equation}$$
+$$i^\star=0.$$ {#eq:eq-i-star-0}
 
-This is because \ref{eq: pi star} shows that
+This is because [@eq:eq-pi-star] shows that
 $\rho\!\left(W^{\star\parallel(1)}_e\right)=W^{\star\parallel(2)}_e$,
 and thus
 
@@ -329,7 +317,7 @@ We can then get $i^\star$ by
 $$i^\star:=i\circ\vec\rho^{-1}\circ\vec\rho^\star
 =\left(-p\,\mathrm dV_1,\mathrm dV_1,0\right)\mapsto0.$$
 
-This is consistent with Equation \ref{eq: i star = 0}.
+This is consistent with Equation [@eq:eq-i-star-0].
 
 ## Non-thermal ensembles (bath version)
 
@@ -342,8 +330,8 @@ A **composite system for the non-thermal $\vec W^{\parallel(1)}$-ensemble**
 of the system $\left(\mathcal E^{(1)},\mathcal M^{(1)}\right)$
 with fixed intensive quantities $i$
 is the same as the composite system for the thermal $\vec W^{\star\parallel(1)}$-ensemble
-with fixed intensive quantities $i^\star=0$ (given by Equation \ref{eq: i star = 0}),
-where $\vec W^{\star\parallel(1)}$ is defined by Equation \ref{eq: W star parallel}.
+with fixed intensive quantities $i^\star=0$ (given by Equation [@eq:eq-i-star-0]),
+where $\vec W^{\star\parallel(1)}$ is defined by Equation [@eq:eq-W-star-parallel].
 
 This definition looks very neat.
 Also, just like how we define the domain of fixed intensive quantities of a thermal ensemble,
@@ -381,36 +369,27 @@ In that case, the non-thermal ensemble is not defined.
 
 Because $i^\star=0$, the observed extensive quantities in thermal equilibrium are just
 
-$$\begin{equation}
-\label{eq: epsilon^circ}
-\varepsilon^\circ
+$$\varepsilon^\circ
 =e+\left.\frac{\partial\ln Z^\star\!\left(e,i^\star\right)}{\partial i^\star}\right|_{i^\star=0}
 =e+\frac{\int_{s\in\left(E-e\right)\cap\vec W^{\star\parallel}}
 s\Omega\!\left(e+s\right)\mathrm d\lambda^{\parallel}\!\left(s\right)}
 {\int_{s\in\left(E-e\right)\cap\vec W^{\star\parallel}}
-\Omega\!\left(e+s\right)\mathrm d\lambda^{\parallel}\!\left(s\right)},
-\end{equation}$$
+\Omega\!\left(e+s\right)\mathrm d\lambda^{\parallel}\!\left(s\right)},$$ {#eq:eq-epsilon-circ}
 
 and the entropy in thermal equilibrium is just
 
-$$\begin{equation}
-\label{eq: S^circ}
-S^\circ=\ln Z^\star\!\left(e,0\right)
+$$S^\circ=\ln Z^\star\!\left(e,0\right)
 =\ln\int_{s\in\left(E-e\right)\cap\vec W^{\star\parallel}}
-\Omega\!\left(e+s\right)\mathrm d\lambda^{\parallel}\!\left(s\right).
-\end{equation}$$
+\Omega\!\left(e+s\right)\mathrm d\lambda^{\parallel}\!\left(s\right).$$ {#eq:eq-S-circ}
 
-We can cancel the parameter $e$ by Equation \ref{eq: epsilon^circ} and \ref{eq: S^circ}
+We can cancel the parameter $e$ by Equation [@eq:eq-epsilon-circ] and [@eq:eq-S-circ]
 to get
 
-$$\begin{equation}
-\label{eq: S^circ vs epsilon^circ}
-S^\circ=\ln Z^\star\!\left(\pi^\star\!\left(\varepsilon^\circ\right),0\right)
+$$S^\circ=\ln Z^\star\!\left(\pi^\star\!\left(\varepsilon^\circ\right),0\right)
 =\ln\int_{s\in\left(E-\varepsilon^\circ\right)\cap\vec W^{\star\parallel}}
-\Omega\!\left(\varepsilon^\circ+s\right)\mathrm d\lambda^{\parallel}\!\left(s\right).
-\end{equation}$$
+\Omega\!\left(\varepsilon^\circ+s\right)\mathrm d\lambda^{\parallel}\!\left(s\right).$$ {#eq:eq-S-circ-vs-epsilon-circ}
 
-What is interesting about Equation \ref{eq: S^circ vs epsilon^circ} is that
+What is interesting about Equation [@eq:eq-S-circ-vs-epsilon-circ] is that
 it actually does not guarantee the intensive variables to be defined in $\vec W^\parallel$.
 Physically this means that the temperature is not necessarily defined,
 unlike the case of thermal ensembles
@@ -426,7 +405,7 @@ as the bath up to different temperatures.
 
 It may seem surprising that we can define non-thermal ensembles without a bath.
 How is it possible to fix some features about the intensive variables without a bath?
-The inspiration is looking at Equation \ref{eq: W star parallel}.
+The inspiration is looking at Equation [@eq:eq-W-star-parallel].
 We can make a guess here: if we contract the system along $\vec W^{\star\parallel}$,
 the contraction satisfy the equal a priori probability principle.
 We make this guess because of the following arguments:
@@ -440,7 +419,7 @@ because otherwise the temperature would matter (as appears in the expression of 
 After finding the equilibrium state of the contraction, we can use the contractional pullback
 to find the equilibrium state of the original system.
 
-If you do it right, you should get the same answer as Equation \ref{eq: S^circ vs epsilon^circ}.
+If you do it right, you should get the same answer as Equation [@eq:eq-S-circ-vs-epsilon-circ].
 
 ## Summary
 

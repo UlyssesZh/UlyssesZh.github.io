@@ -64,7 +64,7 @@ we have a countable covering of $Y$
 by pairwise disjoint measurable sets of finite $\mu$-measure,
 denoted as $\left\{Y_i\right\}$.
 Each $Y_i$ is automatically stroke='#currentColor'  and inherits the &sigma;-algebra from $Y$,
-and $\left(Y_i,\sigma\!\left(Y_i\\right),\mu\right)$ is a measure space.
+and $\left(Y_i,\sigma\!\left(Y_i\right),\mu\right)$ is a measure space.
 
 Define $\pi_i:Y_i\to X$ as the restriction of $\pi$ to $Y_i$,
 then $\pi_i$ is automatically a measurable map from $Y_i$ to $X$,
@@ -223,12 +223,9 @@ it represents something about the probability distribution over all the possible
 
 Therefore, I would rather rewrite the fundamental equation of thermodynamics as
 
-$$\begin{equation}
-\label{eq: fundamental}
-\mathrm dS=\frac1T\,\mathrm dU+\frac pT\,\mathrm dV-\frac\mu T\,\mathrm dN.
-\end{equation}$$
+$$\mathrm dS=\frac1T\,\mathrm dU+\frac pT\,\mathrm dV-\frac\mu T\,\mathrm dN.$$ {#eq:eq-fundamental}
 
-Equation \ref{eq: fundamental} embodies how different quantities serve different roles more clearly,
+Equation [@eq:eq-fundamental] embodies how different quantities serve different roles more clearly,
 but it becomes vague in its own physical meaning.
 Does it mean different ways of changing the entropy in quasi-static processes?
 Both mathematically and physically, yes, but it is not a useful interpretation.
@@ -272,7 +269,7 @@ and because it is a good way to understand its physical meaning with this name,
 but you need to keep in mind that what I actually refer to is a macrostate.
 
 There is another difficulty.
-If we look closely, Equation \ref{eq: fundamental} actually does not make much sense in that
+If we look closely, Equation [@eq:eq-fundamental] actually does not make much sense in that
 $N$ is quantized (and also $U$ if we are doing quantum).
 If we are doing real numbers, we can always translate a quantized quantity to something that is not allowed,
 which means that we cannot have the full set of operations on the allowed values
@@ -280,7 +277,7 @@ of the extensive quantities.
 Therefore, we need to specify a subset on the affine space
 to represent the allowed values of the extensive quantities.
 
-We also see that Equation \ref{eq: fundamental} is a relation between differentials.
+We also see that Equation [@eq:eq-fundamental] is a relation between differentials.
 Do we need to require that we have differential structure on the space of extensive quantities?
 Not yet, because it actually is somehow difficult.
 The same difficulty about the quantized quantities applies.
@@ -514,10 +511,7 @@ A **state** of a thermal system $(\mathcal E,\mathcal M)$ is a function
 $p:\mathcal M\to\left[0,+\infty\right]$ such that $(\mathcal M,\sigma(\mathcal M),P)$ is a probability space,
 where $P:\sigma(\mathcal M)\to\left[0,1\right]$ is defined by
 
-$$\begin{equation}
-\label{eq: probability measure}
-P(A):=\int_Ap\,\mathrm d\mu.
-\end{equation}$$
+$$P(A):=\int_Ap\,\mathrm d\mu.$$ {#eq:eq-probability-measure}
 
 Two states are the same if they are equal $\mu$-almost everywhere.
 
@@ -585,7 +579,7 @@ Explicitly, the definition is
 
 $$\varepsilon[p]:=\mathrm E_P\!\left[\left(e,m\right)\mapsto e\right],$$
 
-where the probability measure $P$ on $\mathcal M$ is defined in Equation \ref{eq: probability measure}.
+where the probability measure $P$ on $\mathcal M$ is defined in Equation [@eq:eq-probability-measure].
 
 In the definition, it involves taking the $P$-expectation of a $W$-valued function.
 This involves doing a Pettis integral, which I claim to exist.
@@ -603,21 +597,15 @@ Suppose that we postulate a family of states $p_t^\circ$ of the thermal system
 labeld by different $t$'s, and call them the possible equilibrium states.
 Then, we can have the following two equations:
 
-$$\begin{equation}
-\label{eq: fundamental equation before}
-\begin{cases}
+$$\begin{cases}
 S^\circ=S\!\left[p_t^\circ\right],\\
 \varepsilon^\circ=\varepsilon\!\left[p_t^\circ\right].
-\end{cases}
-\end{equation}$$
+\end{cases}$$ {#eq:eq-fundamental-equation-before}
 
 By cancelling out the $t$ in the two equations (which may be impossible but assumed to be possible),
 we can get the fundamental equation in this form:
 
-$$\begin{equation}
-\label{eq: fundamental equation}
-S^\circ=S^\circ\!\left(\varepsilon^\circ\right).
-\end{equation}$$
+$$S^\circ=S^\circ\!\left(\varepsilon^\circ\right).$$ {#eq:eq-fundamental-equation}
 
 Then, here we get the function $S^\circ:E^\circ\to\mathbb R$, where $E^\circ$ is a subset of $W$
 consisting of all possible measured values of extensive quantities among equilibrium states.
@@ -771,10 +759,7 @@ $$p^\circ\!\left(\cdot\right):=\frac1{\mu\!\left(\mathcal M\right)}.$$
 After writing this out, we have successfully derived the **microcanonical ensemble**.
 We can then calculate the entropy of the state, which is
 
-$$\begin{equation}
-\label{eq: microcanonical entropy}
-S^\circ:=S\!\left[p^\circ\right]=\ln\mu(\mathcal M).
-\end{equation}$$
+$$S^\circ:=S\!\left[p^\circ\right]=\ln\mu(\mathcal M).$$ {#eq:eq-microcanonical-entropy}
 
 Mentioning the entropy, a notable feature about
 the equilibrium state of an isolated system is that
@@ -835,22 +820,19 @@ This theorem is the well-known relation between the entropy and the equilibrium 
 
 ---
 
-By Equation \ref{eq: microcanonical entropy},
+By Equation [@eq:eq-microcanonical-entropy],
 we can now derive the relationship between the entropy and the extensive quantities
 at equilibrium states by the process of isolating.
 Define a family of states $\left\{p^\circ_e\right\}_{e\in E}$,
 where each state $p^\circ_e$ is the equilibrium state of the system isolated at $e$.
 Then, we have the fundamental equation
 
-$$\begin{equation}
-\label{eq: mce fundamental eq}
-S^\circ(e)=\ln\Omega(e),
-\end{equation}$$
+$$S^\circ(e)=\ln\Omega(e),$$ {#eq:eq-mce-fundamental-eq}
 
 where $\Omega(e):=\ln\mu_e\!\left(M_e\right)$ is called the **counting function** (I invented the phrase),
 which is the **microscopic characteristic function** of microcanonical ensembles.
 This defines a function $S^\circ:E\to\mathbb R$,
-which may be used to give a fundamental equation in the form of Equation \ref{eq: fundamental equation},
+which may be used to give a fundamental equation in the form of Equation [@eq:eq-fundamental-equation],
 and it is the **macroscopic characteristic function** of microcanonical ensembles.
 
 We will encounter microscopic or macroscopic characteristic functions for other ensembles later.
@@ -1011,10 +993,7 @@ This bijection can then push forward linear operations from $\vec W^\parallel$ t
 For example, we can define the action of some continuous linear functional $i\in\vec W^{\parallel\prime}$
 on a point $e'\in W^\parallel_e$ as
 
-$$\begin{equation}
-\label{eq: linear op on affine}
-i\!\left(e'\right):=i\!\left(e'-\pi\!\left(e'\right)\right),
-\end{equation}$$
+$$i\!\left(e'\right):=i\!\left(e'-\pi\!\left(e'\right)\right),$$ {#eq:eq-linear-op-on-affine}
 
 where $\pi\!\left(e'\right)$ is just $e$.
 
@@ -1192,11 +1171,8 @@ This gives a correspondence between the two affine subspaces.
 In other words, for each $e\in W^\perp$,
 there is a unique bijection $\rho_e:W^{\parallel(1)}_e\to W^{\parallel(2)}_e$ such that
 
-$$\begin{equation}
-\label{eq: pi and rho_e}
-\forall e_1\in W^{\parallel(1)}_e:
-\pi\!\left(e_1,e_2\right)=e\Leftrightarrow e_2=\rho_e\!\left(e_1\right).
-\end{equation}$$
+$$\forall e_1\in W^{\parallel(1)}_e:
+\pi\!\left(e_1,e_2\right)=e\Leftrightarrow e_2=\rho_e\!\left(e_1\right).$$ {#eq:eq-pi-and-rho-e}
 
 The bijection $\rho_e$ is an affine isomorphism
 from $W^{\parallel(1)}_e$ to $W^{\parallel(2)}_e$.
@@ -1251,12 +1227,9 @@ and completely dependent (deterministic) extensive quantities
 instead of having completely independent extensive quantities.
 Taken this into account, we can define marginal states of compositing slices as follows:
 
-$$\begin{equation}
-\label{eq: slice marginal state}
-p^{\parallel(1)}\!\left(e_1,m_1\right)
+$$p^{\parallel(1)}\!\left(e_1,m_1\right)
 :=\int_{m_2\in M^{(2)}_{\rho_e(e_1)}}p^\parallel\!\left(e_1,\rho_e(e_1),m_1,m_2\right)
-\mathrm d\mu^{(2)}_{\rho_e(e_1)}\!\left(m_2\right),
-\end{equation}$$
+\mathrm d\mu^{(2)}_{\rho_e(e_1)}\!\left(m_2\right),$$ {#eq:eq-slice-marginal-state}
 
 where $p^{\parallel(1)}$ is a state of $\left(\mathcal E^{\parallel(1)}_e,\mathcal M^{\parallel(1)}_e\right)$,
 and $p^\parallel$ is a state of $\left(\mathcal E^{\parallel}_e,\mathcal M^{\parallel}_e\right)$
@@ -1268,10 +1241,7 @@ There is an additional property that $\rho_e$ has.
 
 As we all know, an affine map is a linear map combined with a translation:
 
-$$\begin{equation}
-\label{eq: rho_e and vec rho}
-\rho_e\!\left(e_1\right)=\vec\rho\!\left(e_1-e_0\right)+\rho_e\!\left(e_0\right),
-\end{equation}$$
+$$\rho_e\!\left(e_1\right)=\vec\rho\!\left(e_1-e_0\right)+\rho_e\!\left(e_0\right),$$ {#eq:eq-rho-e-and-vec-rho}
 
 where $e_0$ is a fixed point in $W^{\parallel(1)}_e$,
 and $\vec\rho:\vec W^{\parallel(1)}_e\to \vec W^{\parallel(2)}_e$
@@ -1311,17 +1281,14 @@ $$\pi\!\left(e_1,\rho_e\!\left(e_1\right)\right)
 =\vec\pi\!\left(e_1-e_0,\rho_e\!\left(e_1\right)-\rho_e\!\left(e_0\right)\right)
 +\pi\!\left(e_0,\rho_e\!\left(e_0\right)\right).$$
 
-According to Equation \ref{eq: pi and rho_e} and \ref{eq: rho_e and vec rho},
+According to Equation [@eq:eq-pi-and-rho-e] and [@eq:eq-rho-e-and-vec-rho],
 we have
 
 $$e=\vec\pi\!\left(e_1-e_0,\vec\rho\!\left(e_1-e_0\right)\right)+e.$$
 
 In other words,
 
-$$\begin{equation}
-\label{eq: pi(s1, rho(s1))=0}
-\vec\pi\!\left(s_1,\vec\rho\!\left(s_1\right)\right)=0,
-\end{equation}$$
+$$\vec\pi\!\left(s_1,\vec\rho\!\left(s_1\right)\right)=0,$$ {#eq:eq-pi-s1-rho-s1-0}
 
 where $s_1\in\vec W^{\parallel(1)}$ is an arbitrary vector.
 
@@ -1432,18 +1399,18 @@ there exists some $\left(e_1',e_2'\right)\in W$ such that
 
 $$\pi\!\left(e_1',e_2'\right)=e.$$
 
-According to Equation \ref{eq: pi and rho_e}, this is equivalently
+According to Equation [@eq:eq-pi-and-rho-e], this is equivalently
 
 $$e_2'=\rho_e\!\left(e_1'\right).$$
 
 We can uniquely decompose $e_1'\in W^{(1)}$ into
 the sum of a point $e_1\in W^{\perp(1)}$ and a vector $\delta\in\vec W^{\parallel(1)}$.
-Then, according to Equation \ref{eq: rho_e and vec rho}, we have
+Then, according to Equation [@eq:eq-rho-e-and-vec-rho], we have
 
 $$e_2'=\rho_e\!\left(e_1+\delta\right)=\rho_e\!\left(e_1\right)+\vec\rho\!\left(\delta\right).$$
 
 Thus $e_2:=e_2'-\vec\rho\!\left(\delta\right)=\rho_e\!\left(e_1\right)$.
-According to Equation \ref{eq: pi and rho_e}, this is equivalently
+According to Equation [@eq:eq-pi-and-rho-e], this is equivalently
 
 $$\pi\!\left(e_1,e_2\right)=e.$$
 
@@ -1492,7 +1459,7 @@ An explicit verification is more tedious and is omitted here.
 Those assumptions are very strong, so we do not want to assume them.
 Without those assumptions, we still have a well-constructed $W^{\perp(1)}$ and $\pi^{(1)}$
 so that $W^{\parallel(1)}_e$ are preimages of points in $W^{\perp(1)}$ under $\pi$.
-Then, we can use similar tricks as Equation \ref{eq: linear op on affine} to define
+Then, we can use similar tricks as Equation [@eq:eq-linear-op-on-affine] to define
 the action of any continuous linear functional $i_1\in\vec W^{\parallel(1)\prime}$
 on a point $e_1\in W^{(1)}$ as
 
@@ -1548,7 +1515,7 @@ $$s:=\vec\pi\!\left(s_1,s_2\right)\in\vec\pi\!\left(\vec W^{\parallel(1)}\times\
 
 where $s_1\in\vec W^{\parallel(1)}$ and $s_2\in\vec W^{\parallel(2)}$, we have
 $s\in\vec\pi\!\left(\vec W^{\parallel(2)}\right)$.
-To prove this, subtract Equation \ref{eq: pi(s1, rho(s1))=0} from the definition of $s$, and we have
+To prove this, subtract Equation [@eq:eq-pi-s1-rho-s1-0] from the definition of $s$, and we have
 
 $$s=\vec\pi\!\left(0,s_2-\vec\rho\!\left(s_1\right)\right)\in\vec\pi\!\left(\vec W^{\parallel(2)}\right).$$
 
@@ -1649,7 +1616,7 @@ $W^{\perp(1)}\times W^{\perp(2)}$ to $W^{\perp\perp}$.
 
 Now that we have defined many affine spaces and vector spaces,
 here is a diagram of the relation between (some of) them
-(powered by [quiver](https://q.uiver.app){:target="_blank"}):
+(powered by [quiver](https://q.uiver.app){target="_blank"}):
 
 <details>
 <summary>Diagrarm</summary>
@@ -1667,7 +1634,7 @@ $$\pi^\perp\!\left(\frac U2,\frac U2,N_1,N_2\right)=\left(0,0,N_1,N_2\right).$$
 **Bath**s are a special class of thermal systems.
 They are systems that have some of their intensive quantities well-defined and constant.
 
-According to Equation \ref{eq: mce fundamental eq},
+According to Equation [@eq:eq-mce-fundamental-eq],
 to make the intensive quantities constant,
 $\ln\Omega(e)$ should be linear in $e$.
 If we just require some of the intensive quantities to be constant,
@@ -1700,7 +1667,7 @@ $$\ln\mu_{e+s}\!\left(M_{e+s}\right)=i(s)+\ln\mu_e\!\left(M_e\right).$$
 An important notice is that $\vec W^\parallel$ must be finite-dimensional
 because a metrizable TVS with a non-trivial &sigma;-finite
 translationally quasi-invariant Borel measure must be finite-dimensional
-([Feldman, 1966](https://doi.org/10.2307/2035076){:target="_blank"}).
+([Feldman, 1966](https://doi.org/10.2307/2035076){target="_blank"}).
 
 We can then define the
 non-trivial &sigma;-finite translationally invariant Borel measure on $\vec W^\parallel$,
@@ -1716,10 +1683,7 @@ Then, we have a projection map $\pi:W\to W^\perp$
 so that for any $e\in W$ we have $e-\pi(e)\in\vec W^\parallel$.
 Then, obviously, $\mu_e\!\left(M_e\right)$ must be in the form
 
-$$\begin{equation}
-\label{eq: Omega of bath}
-\mu_e\!\left(M_e\right)=f\!\left(\pi(e)\right)\mathrm e^{i(e-\pi(e))},
-\end{equation}$$
+$$\mu_e\!\left(M_e\right)=f\!\left(\pi(e)\right)\mathrm e^{i(e-\pi(e))},$$ {#eq:eq-Omega-of-bath}
 
 where $f:W^\perp\to\mathbb R^+$ is some function.
 The eplicit formula of $f$ is $f(e):=\mu_e\!\left(M_e\right)$.
@@ -1751,11 +1715,8 @@ is the ensemble of the composite system of the system in question (subsystem 1) 
 a $\left(\vec W^{\parallel(2)},-i\circ\vec\rho^{-1}\right)$-bath (subsystem 2),
 where $i\in\vec W^{\parallel(1)\prime}$ is a parameter, with an extra requirement:
 
-$$\begin{equation}
-\label{eq: W2 translationally invariant}
-\forall s_2\in\vec W^{\parallel(2)},A\in\sigma(E):
-\lambda^\perp\!\left(\pi\!\left(A+s_2\right)\right)=\lambda^\perp\!\left(\pi\!\left(A\right)\right).
-\end{equation}$$
+$$\forall s_2\in\vec W^{\parallel(2)},A\in\sigma(E):
+\lambda^\perp\!\left(\pi\!\left(A+s_2\right)\right)=\lambda^\perp\!\left(\pi\!\left(A\right)\right).$$ {#eq:eq-W2-translationally-invariant}
 
 The physical meaning of $i$ is the intensive variables
 that the system is fixed at by contacting the bath.
@@ -1775,7 +1736,7 @@ where
 - $\left(\mathcal E^{(2)},\mathcal M^{(2)}\right)$
 is a $\left(\vec W^{\parallel(2)},-i\circ\vec\rho^{-1}\right)$-bath,
 where $i\in\vec W^{\parallel(1)\prime}$ is a parameter called the **fixed intensive quantities**;
-- Equation \ref{eq: W2 translationally invariant} holds.
+- Equation [@eq:eq-W2-translationally-invariant] holds.
 
 ---
 
@@ -1984,11 +1945,11 @@ where $\mu^\parallel_e$ is the measure of the number of microstates on $\mathcal
 Here $\propto$ means that the factor is only related to $e$.
 We just need "$\propto$" instead of "$=$" because we can always normalize a probability density function.
 
-Substitute this into Equation \ref{eq: slice marginal state}, and we get that
+Substitute this into Equation [@eq:eq-slice-marginal-state], and we get that
 the equilibrium state $p^{\parallel\circ(1)}_e$ on the compositing slice
 $$\left(\mathcal E^{\parallel(1)}_e,\mathcal M^{\parallel(1)}_e\right)$$ is
 
-$$\begin{align}
+$$\begin{align*}
 p^{\parallel\circ(1)}_e\!\left(e_1,m_1\right)
 &\propto\mu^{(2)}_{\rho_e(e_1)}\!\left(M^{(2)}_{\rho_e(e_1)}\right)
 \nonumber\\
@@ -1996,10 +1957,9 @@ p^{\parallel\circ(1)}_e\!\left(e_1,m_1\right)
 \mathrm e^{\left(-i\circ\vec\rho^{-1}\right)\left(\rho_e(e_1)-\pi^{(2)}(\rho_e(e_1))\right)}
 \nonumber\\
 &\propto\mathrm e^{-i(e_1)}.
-\label{eq: p^(1) propto e^-i(e1)}
-\end{align}$$
+\end{align*}$$ {#eq:eq-p-1-propto-e-i-e1}
 
-Here we utilized Equation \ref{eq: Omega of bath} and the fact that for any $e_1\in W^{\parallel(1)}_e$,
+Here we utilized Equation [@eq:eq-Omega-of-bath] and the fact that for any $e_1\in W^{\parallel(1)}_e$,
 $\pi^{(2)}\!\left(\rho_e(e_1)\right)=\pi^{(2)}\!\left(W^{\parallel(2)}_e\right)$
 is the same and is only related to $e$.
 Note that we have already illustrated that
@@ -2018,7 +1978,7 @@ Then, because $W^{\perp\perp}$ is isomorphic to $W^{\perp(1)}\times W^{\perp(2)}
 but the corresponding change in $W^{\perp(2)}$ does not affect $W^{\parallel(1)}_e$,
 we only need to know the component
 $\pi^{(1)}\!\left(e_1\right)=\pi^{(1)}\!\left(\pi^{-1}(e)\right)$,
-where $e_1$ is just the $e_1$ in Equation \ref{eq: p^(1) propto e^-i(e1)}.
+where $e_1$ is just the $e_1$ in Equation [@eq:eq-p-1-propto-e-i-e1].
 The space $W^{\parallel(1)}_e$ is just $\pi^{(1)-1}\!\left(e_1\right)$.
 
 Besides these information (components of $e$) is useless, there is other useless information.
@@ -2041,7 +2001,7 @@ where $E^{\perp(1)}:=\pi^{(1)}\!\left(E^{(1)}\right)$ and
 $\vec E^{\parallel(1)}_{e_1}:=\left(E^{(1)}-e_1\right)\cap\vec W^{\parallel(1)}$
 is the region of $s_1\in\vec W^{\parallel(1)}$ in which $e_1+s_1$ is in $E^{(1)}$.
 
-Next, what we need to do is to normalize Equation \ref{eq: p^(1) propto e^-i(e1)}.
+Next, what we need to do is to normalize Equation [@eq:eq-p-1-propto-e-i-e1].
 The denominator in the normalization factor, which we could call the **partition function**
 $Z:\bigsqcup_{e_1\in E^{\perp(1)}}I^{(1)}_{e_1}\to\mathbb R$, is
 
@@ -2212,7 +2172,7 @@ $$p_e^{\parallel\circ}\!\left(e,m\right)
 =\frac{\mathrm e^{-i\left(e\right)}}{Z\!\left(\pi(e),i\right)}.$$
 
 where $Z$ is the partition function.
-Here the role of $e$ becomes the label parameter in Equation \ref{eq: fundamental equation before}.
+Here the role of $e$ becomes the label parameter in Equation [@eq:eq-fundamental-equation-before].
 The measured value of extensive quantities under equilibrium is then
 
 $$\begin{align*}
@@ -2241,7 +2201,7 @@ i\!\left(s\right)\mathrm e^{-i\left(s\right)}
 \end{align*}$$
 
 By this two equations, we can eliminate the parameter $e$ and get the fundamental equation
-in the form of Equation \ref{eq: fundamental equation}:
+in the form of Equation [@eq:eq-fundamental-equation]:
 
 $$S^\circ=i\!\left(\varepsilon^\circ\right)+\ln Z\!\left(\pi\!\left(\varepsilon^\circ\right),i\right).$$
 

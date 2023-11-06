@@ -133,12 +133,7 @@ $$
 From that, we can naturally think an excellent frequency
 assignment be defined as
 
-$$
-\begin{equation}
-    p_k:=p_0+\frac kn,
-    \label{p_freq_def}
-\end{equation}
-$$
+$$p_k:=p_0+\frac kn,$$ {#eq:p-freq-def}
 
 which is an elegant arithmetic progression.
 
@@ -155,18 +150,13 @@ make $O_0$ a cyclic group of order $n$. I call this group an
 To make you have a good sense of what on earth the group looks
 like, the definition of its group operation can be defined as
 
-$$
-\begin{equation}
-    \nu_a\circ\nu_b:=\nu_{\left(a+b\right)\mathbin\%n},
-    \label{group_op_def}
-\end{equation}
-$$
+$$\nu_a\circ\nu_b:=\nu_{\left(a+b\right)\mathbin\%n},$$ {#eq:group-op-def}
 
 where $x\mathbin\%y:=x-y\left\lfloor\frac xy\right\rfloor$.
 
 Note that this binary operator $\circ$ can be extended to
 be used for the whole $N$ while the definition remains the same
-as Formula \ref{group_op_def}.
+as Formula [@eq:group-op-def].
 
 <!--
 Let
@@ -179,7 +169,7 @@ $$
 It is obvious that $q\mapsto \nu_{\left(m+q\right)n}$
 is a bijection from $Q$ to $O_m$. Pointing out such a bijection
 is natural because elements in $Q$ seem to have
-a similar form to that of $p_k$ in Formula \ref{p_freq_def}.
+a similar form to that of $p_k$ in Formula [@eq:p-freq-def].
 
 In fact, $Q$ is a group of size $T$ whose group operation is
 defined as
@@ -206,7 +196,7 @@ we should take a further look at musical intervals to find out.
 
 ## The musical intervals
 
-Taking Formula \ref{p_freq_def}, people find that although
+Taking Formula [@eq:p-freq-def], people find that although
 it is sometimes subjective whether a musical interval sounds
 harmonic or not, it does not depend on where the interval is
 located but on how far the two notes making up the interval are.
@@ -240,7 +230,7 @@ value of $n$.
 
 The inventor of the current prevailing frequency assignment
 (which is the $12$-tone equal temperament shown in
-Formula \ref{12_equal_def}) may think the generator of the group
+Formula [@eq:12-equal-def]) may think the generator of the group
 a vital thing.
 Actually, people think it a wonderful thing that a note
 representing a very harmonic interval is a generator of the
@@ -276,7 +266,6 @@ $$
     \nu_0&\nu_7&\nu_2&\nu_9&\nu_4&\nu_{11}&\nu_6&\nu_1&
     \nu_8&\nu_3&\nu_{10}&\nu_5
     \\\hline
-    \label{generator}
 \end{array}
 $$
 
@@ -287,14 +276,9 @@ Thus, wonderful! Let's take $n:=12$.
 The $12$-tone equal temperament is the most popular
 frequency assignment used nowadays. It is defined as
 
-$$
-\begin{equation}
-    f_k:=16.3516\cdot 2^\frac k{12},
-    \label{12_equal_def}
-\end{equation}
-$$
+$$f_k:=16.3516\cdot 2^\frac k{12},$$ {#eq:12-equal-def}
 
-which can be derived from Formula \ref{p_freq_def} taking
+which can be derived from Formula [@eq:p-freq-def] taking
 
 $$
     p_0:=4.03136\qquad n:=12.
@@ -320,7 +304,7 @@ The famous "middle C" is $\mathrm C_4$.
 This notation is called the
 [*scientific pitch notation*](
 https://en.wikipedia.org/wiki/
-Scientific_pitch_notation){:target="_blank"}.
+Scientific_pitch_notation){target="_blank"}.
 
 Note that in fact, this definition of $12$-tone equal temperament
 has some slight error. The accurate value for $p_0$ is
@@ -332,7 +316,7 @@ $$
 because it is stipulated that $f\left(\mathrm A_4\right)=440$,
 which is standardized as ISO 16 and known as
 [A440](https://en.wikipedia.org/wiki/
-A440_(pitch_standard)){:target="_blank"}.
+A440_(pitch_standard)){target="_blank"}.
 
 ## Why $\frac 7{12}$
 
@@ -343,5 +327,5 @@ $2^\frac 7{12}\approx\frac32$, which is a simple ratio.
 Harmonic, huh.
 
 (Finally, as is a notice, codes appearing above are
-[alda](https://alda.io/){:target="_blank"} codes,
+[alda](https://alda.io/){target="_blank"} codes,
 which are used to write music.)

@@ -10,9 +10,9 @@ layout: post
 excerpt: 'I use udev and systemd to send a notification to my phone via ntfy automatically
 whenever my laptop is discharging.'
 ---
-I need to thank [one of my friends](https://orashshi.github.io){:target="_blank"}
+I need to thank [one of my friends](https://orashshi.github.io){target="_blank"}
 for giving me one of his old laptops.
-We are now [using it as a self-hosting server](https://reddit.com/y5a1k0){:target="_blank"}.
+We are now [using it as a self-hosting server](https://reddit.com/y5a1k0){target="_blank"}.
 
 However, there is a problem around it:
 the charging port of the laptop is a little bit broken,
@@ -24,13 +24,13 @@ I was not aware of that until I found my services stopped working because the la
 Because I may run some important tasks or services on this laptop,
 I need a way to get aware when the laptop starts discharging.
 
-I found the way when I saw [ntfy](https://ntfy.sh){:target="_blank"}.
+I found the way when I saw [ntfy](https://ntfy.sh){target="_blank"}.
 It is a self-hostable pub-sub notification service.
-All I need to do is to [host ntfy on my server](https://docs.ntfy.sh/install){:target="_blank"}
+All I need to do is to [host ntfy on my server](https://docs.ntfy.sh/install){target="_blank"}
 and let my laptop publish a notification on it whenever it starts discharging.
 
 To make my laptop run commands automatically when it switches the power source (AC or battery),
-I can [write udev rules](http://www.reactivated.net/writing_udev_rules.html){:target="_blank"}.
+I can [write udev rules](http://www.reactivated.net/writing_udev_rules.html){target="_blank"}.
 For example, to run `touch /tmp/discharging` when the laptop starts discharging, I can write the following rule
 (write it to a file in `/etc/udev/rules.d/` and run `udevadm control --reload-rules` to apply it):
 
@@ -51,7 +51,7 @@ If you write any commands that try to access the internet in the udev rule,
 you will get errors of being unable to resolve hosts or connection time out.
 
 Nevertheless, udev can trigger systemd services that can have access to the network. Write a
-[systemd service](https://www.freedesktop.org/software/systemd/man/systemd.service.html){:target="_blank"}
+[systemd service](https://www.freedesktop.org/software/systemd/man/systemd.service.html){target="_blank"}
 file as such, and name it `curl-ntfy.service` for example:
 
 ```systemd

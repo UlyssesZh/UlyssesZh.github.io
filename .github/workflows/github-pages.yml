@@ -18,7 +18,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           submodules: recursive
           token: ${{ secrets.JEKYLL_PAT }}
@@ -27,15 +27,48 @@ jobs:
       #  with:
       #    path: vendor/bundle
       #    key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile') }}
-      #    restore-keys: |
-      #      ${{ runner.os }}-gems-
+      #    restore-keys: ${{ runner.os }}-gems-
 
-      - uses: ruby/setup-ruby@v1
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        id: setup-ruby
         with:
-          ruby-version: '3.2.0'
+          ruby-version: 3.2.2
           bundler-cache: true
-          cache-version: 0
+
+      - name: Set up GHC
+        uses: haskell-actions/setup@v2
+        id: setup-ghc
+        with:
+          ghc-version: 9.4.7
+
+      - name: Restore GHC cache
+        uses: actions/cache/restore@v3
+        id: cache-restore-ghc
+        with:
+          path: ${{ steps.setup-ghc.outputs.cabal-store }}
+          key: ${{ runner.os }}-cabal-store-${{ hashFiles('**/Gemfile') }}
+          restore-keys: ${{ runner.os }}-
       
+      - name: Install Haskell packages
+        if: steps.cache-restore-ghc.outputs.cache-hit != 'true'
+        run: cabal v2-install pandoc-cli pandoc-crossref
+
+      - name: Save GHC cache
+        uses: actions/cache/save@v3
+        id: cache-save-ghc
+        if: steps.cache-restore-ghc.outputs.cache-hit != 'true'
+        with:
+          path: ${{ steps.setup-ghc.outputs.cabal-store }}
+          key: ${{ runner.os }}-cabal-store-${{ hashFiles('**/Gemfile') }}
+          restore-keys: ${{ runner.os }}-
+      
+      - name: Install cargo packages
+        uses: baptiste0928/cargo-install@v2
+        with:
+          crate: pandoc-katex
+          cache-key: ${{ runner.os }}-cargo-${{ hashFiles('**/Gemfile') }}
+
       - id: pages
         uses: actions/configure-pages@v3
 

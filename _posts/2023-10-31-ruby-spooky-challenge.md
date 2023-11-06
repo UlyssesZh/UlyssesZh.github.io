@@ -13,14 +13,14 @@ After communing with the dead, you realize a mysterious message was left behind.
 What is the decoded message? Use your Ruby skills to find out!'
 ---
 
-This was a challenge in the [Ruby Discord server](https://discord.gg/ad2acQFtkh){:target="_blank"}.
+This was a challenge in the [Ruby Discord server](https://discord.gg/ad2acQFtkh){target="_blank"}.
 The contents of the challenge is this:
 
 > ## Halloween Challenge
 >
 > It's the weekend and you've just completed a seance with friends. After communing with the dead, you realize a mysterious message was left behind.
 >
-> ```plain
+> ```plaintext
 > 3🍬4🎃04🎃6👻00🎃62🎃6👻32👻5🎃4🍬42🎃4🎃2🎃6🍬3🎃52🍬3🎃6💀0🎃2🎃6🍬13🍬0🎃432👻4👻4🎃230🎃62🎃1🍬03🎃2🍬6
 🍬4👻5👻3🎃220🎃5👻0👻5🎃4🎃6👻42🎃4👻01🎃60🍬1🎃2👻3👻30🎃6💀0👻0🍬3🎃5👻0👻5🎃6👻0🍬30🎃61🍬0🎃1🎃2🎃6🎃42👻3🍬03🎃2💀3
 🎃0🎃2👻5🎃22🍬3🎃5🎃6🍬3🎃5🎃2🎃6🎃52🍬4👻5🍬3🎃2🎃1🎃6👻4🍬0🍬0👻5🍬6🎃6👻0🍬30🎃604👻5🍬32💀1🎃6💀0🎃2🎃6🎃2💀1🍬1👻3🍬03🎃2🍬6
@@ -44,9 +44,9 @@ The contents of the challenge is this:
 > ### Objective
 >
 > Your Ouija board looks like the following
-> [straddling checkerboard](https://en.wikipedia.org/wiki/Straddling_checkerboard){:target="_blank"}:
+> [straddling checkerboard](https://en.wikipedia.org/wiki/Straddling_checkerboard){target="_blank"}:
 >
-> ```plain
+> ```plaintext
 > ==================================
 > |    | 0 | 1 | 2 | 3 | 4 | 5 | 6 |
 > |    | S | C | A | R | Y | ? | ! |
@@ -61,7 +61,7 @@ The contents of the challenge is this:
 > I have attached a file to help get you started. You don't need to use it if you don't want to.
 >
 > You may also find this
-> [link](https://www.ciphermachinesandcryptology.com/en/table.htm){:target="_blank"} helpful too.
+> [link](https://www.ciphermachinesandcryptology.com/en/table.htm){target="_blank"} helpful too.
 >
 > ### Requirements
 >
@@ -126,7 +126,7 @@ and that I can use `-p` option of Ruby command line to save even more characters
 gsub(/(\D?)(\d)/){'SCARY?!🎃BDEFGH 👻IJKLMN\'🍬OPQTUV,💀WXZ.#$:'[/#$1.{#$2}(.)/,1]}
 ```
 
-Here are some [other solutions](https://gist.github.com/ParadoxV5/77cab0e2b47004712deba623fe5ea816){:target="_blank"}.
+Here are some [other solutions](https://gist.github.com/ParadoxV5/77cab0e2b47004712deba623fe5ea816){target="_blank"}.
 Check them out!
 
 ### Some explanations for the code golf solution
@@ -143,7 +143,7 @@ This is also true for instance variables and class variables.
 
 ## The message
 
-```plain
+```plaintext
 RUBY IS A LANGUAGE THAT WE PROGRAMMERS ADORE,
 UNLEASHING MAGIC SPELLS WITHIN ITS CODE GALORE.
 BENEATH THE HAUNTED MOON, ITS SYNTAX WE EXPLORE,

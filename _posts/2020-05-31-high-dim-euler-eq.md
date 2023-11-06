@@ -27,11 +27,8 @@ where $\mathrm dV$ is the volume element in $\Omega$.
 Then the extremal of $I$ satisfies a set of PDEs with respect to $\mathbf f$.
 The set of PDEs consists of $p$ equations, the $i$th of which is
 
-$$\begin{equation}
-    \sum_{j=0}^n\sum_{\mu\in P_{j,m}}\left(-1\right)^j
-    \partial_\mu\frac{\partial\mathcal L}{\partial\left(\partial_\mu f_i\right)}=0,
-    \label{ret}
-\end{equation}$$
+$$\sum_{j=0}^n\sum_{\mu\in P_{j,m}}\left(-1\right)^j
+    \partial_\mu\frac{\partial\mathcal L}{\partial\left(\partial_\mu f_i\right)}=0,$$ {#eq:ret}
 
 where $P_{j,m}$ is the set of all (not necessarily strictly) ascending $j$-tuples in
 $\left\{1,\dots,m\right\}^j$, and
@@ -40,4 +37,4 @@ $$
     \partial_\mu:=\frac{\partial^{\operatorname{len}\mu}}{\prod_k\partial x_{\mu_k}}.
 $$
 
-Equation \ref{ret} is the Generalization of Euler--Lagrange equation.
+Equation [@eq:ret] is the Generalization of Euler--Lagrange equation.

@@ -34,6 +34,7 @@ from the popular definitions!
 ## Galilean world
 
 Here is the basic principle of the Galilean world:
+
 > Principle 1: The world is a Galilean structure with
 > $3$-dimensional space and $1$-dimensional time.
 
@@ -64,7 +65,9 @@ iff $\tau\!\left(a-b\right)=0$,
 *distance between simultaneous events $a,b$*.
 
 ---
+
 Here is the second principle of the Galilean world:
+
 > Principle 2 (Galileo's principle of relativity):
 > Laws of nature remain the same under Galilean transformation.
 
@@ -119,10 +122,12 @@ All Galilean spaces with the same dimensions
 are isomorphic to each other (why?).
 
 ---
+
 In fact, the two principles above are not enough to
 build up the whole classical mechanics.
 We need to define motion, velocity, and acceleration
 in our $3$-$1$ universe, and use the third principle
+
 > Principle 3 (Newton's principle of determinacy):
 > The motion is uniquely determined by initial positions
 > and initial velocities.
@@ -164,6 +169,7 @@ and is not related to the topic today.
 
 We can build up the Einsteinian world similarly as we have
 done for the Galilean world.
+
 > Principle 1: The world is an Einsteinian structure
 > with $3$-dimensional space and $1$-dimensional time.
 
@@ -196,7 +202,9 @@ stuff clear, we
 *spacetime interval between events $a,b$*.
 
 ---
+
 Here is the second principle of the Einsteinian world:
+
 > Principle 2 (Einstein's principle of relativity):
 > Laws of nature remain the same under
 > extended Poincaré transformation.
@@ -244,6 +252,7 @@ All Einsteinian spaces with the same dimensions are isomorphic
 to each other (why?).
 
 ---
+
 The rest is just the same as what we have done with
 Galilean world.
 You can find that the Einsteinian world is also
@@ -308,7 +317,9 @@ iff $\tau\!\left(a-b\right)=0$,
 *distance between simultaneous events $a,b$*.
 
 ---
+
 Then the task is to define the Aristotelian transformations.
+
 > Principle 2: Laws of nature remain the same under
 > Aristotelian transformation.
 
@@ -362,6 +373,7 @@ All Aristotelian spaces with the same dimensions are isomorphic
 to each other (why?).
 
 ---
+
 After building up the Aristotle world, how can we develop
 the mechanics here?
 Maybe it can be interesting.

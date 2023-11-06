@@ -286,7 +286,7 @@ This can be served as a guide for those who have started learning math and scien
 当然, 并不是说理解就一定要有顿悟的过程, 你可以刚看到这个知识的时候就理解了, 而且这种情况其实更常见.
 
 于是, 我们可以说**学习是对直觉的后天塑造**. 关于这一点,
-杨振宁的短文[*我的学习与研究经历*](http://www.wuli.ac.cn/cn/article/id/32089){:target="_blank"}中有一段话是这样说的:
+杨振宁的短文[*我的学习与研究经历*](http://www.wuli.ac.cn/cn/article/id/32089){target="_blank"}中有一段话是这样说的:
 
 <blockquote markdown="1">
 我没有念过高中物理学, 为了参加那次入学考试, 借了一本高中物理教科书,
@@ -302,7 +302,7 @@ This can be served as a guide for those who have started learning math and scien
 
 我直接抄了这段话, 因为我觉得这段话说得相当精彩: 它诠释出了直觉在学习过程中所扮演的角色.
 直觉既是学习的工具, 又是学习的主体. 这就好像[一个编程 AI 通过写程序来修正自己,
-从而使得自己更擅长写程序](https://code2048.com/series/betacat){:target="_blank"}.
+从而使得自己更擅长写程序](https://code2048.com/series/betacat){target="_blank"}.
 
 ### 想象
 
@@ -357,7 +357,7 @@ This can be served as a guide for those who have started learning math and scien
 但是说 verbal learner 的时候往往会给人一种擅长听说读写, 擅长文科, 然而缺乏对逻辑和公式的理解的刻板印象,
 所以我不喜欢用这个称呼.
 
-> 说一件[我小时候的事](https://zhihu.com/answer/2385130593){:target="_blank"}.
+> 说一件[我小时候的事](https://zhihu.com/answer/2385130593){target="_blank"}.
 二年级的时候学到了加法和乘法的交换律, 结合律, 分配律. 所有的运算律中唯一没有理解的是乘法分配律.
 多年后的一天, 在初中的数学课上, 老师在教我们解方程时说了一句 "一个 $x$ 加上两个 $x$ 得到三个 $x$",
 我就顿悟了. 从此以后我能够直观地理解乘法分配律了.
