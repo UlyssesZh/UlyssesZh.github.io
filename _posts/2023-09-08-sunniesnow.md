@@ -6,6 +6,7 @@ categories:
 tags:
 - update
 - rhythm game
+- web
 layout: post
 excerpt: 'In order to build a better player community for the rhythm game Lyrica,
 I created a new rhythm game called [Sunniesnow](https://sunniesnow.github.io){target="_blank"}.

@@ -1,6 +1,8 @@
 ---
 title: Ulysses' trip
-author: UlyssesZhan
+author:
+  name: UlyssesZhan
+  email: ulysseszhan@gmail.com
 timezone: America/Los_Angeles
 lang: en-US
 collections:
@@ -10,7 +12,6 @@ collections:
   uploads:
     title: Uploads
     output: true
-email: ulysseszhan@gmail.com
 tagline: Somewhere with strange thoughts
 description: Here we are at the awesome (awful) blog written by UlyssesZhan!
 locale: en_US

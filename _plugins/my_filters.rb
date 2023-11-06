@@ -12,7 +12,7 @@ module Jekyll
 
 		def markdownify input
 			return input if @context.registers[:site].config['avoid_markdown']
-			UlyssesZhan.markdown_snippet_cache[input] ||= Jekyll::Filters.instance_method(:markdownify).bind_call self, input
+			UlyssesZhan.markdown_snippet_cache[input] ||= Filters.instance_method(:markdownify).bind_call self, input
 		end
 
 		def markdownify_no_p input
