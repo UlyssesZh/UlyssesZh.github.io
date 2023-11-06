@@ -8,11 +8,11 @@
 			gitalkId = gitalkId.replace(/\/page\/\d+\/$/, '/');
 		}
 		const gitalk = new Gitalk({
-			clientID: '{{ site.gitalk.client_id }}',
-			clientSecret: '{{ site.gitalk.client_secret }}',
-			repo: '{{ site.gitalk.repo }}',
-			owner: '{{ site.gitalk.owner }}',
-			admin: ['{{ site.gitalk.admin | join: "','" }}'],
+			clientID: {{ site.gitalk.client_id | jsonify }},
+			clientSecret: {{ site.gitalk.client_secret | jsonify }},
+			repo: {{ site.gitalk.repo | jsonify }},
+			owner: {{ site.gitalk.owner | jsonify }},
+			admin: {{ site.gitalk.admin | jsonify }},
 			id: gitalkId,
 			distractionFreeMode: false,
 			language: document.documentElement.lang

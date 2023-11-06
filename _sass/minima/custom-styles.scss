@@ -1,11 +1,9 @@
-@import "gitalk";
-
 hr {
 	border: 0;
-	height: 2px;
+	height: $spacing-unit * .066667;
 	width: 50%;
 	position: relative;
-	margin: 30px auto;
+	margin: $spacing-unit auto;
 	overflow: visible;
 	background-image: linear-gradient(
 		to right,
@@ -21,8 +19,8 @@ hr {
 		position: absolute;
 		top: 0px;
 		left: 50%;
-		margin: 0 0 0 -3px;
-		font-size: 15px;
+		margin: 0 0 0 -($spacing-unit * .1);
+		font-size: $spacing-unit * .5;
 		line-height: 0;
 	}
 }
@@ -41,4 +39,8 @@ pre.highlight {
 
 pre, code {
 	font-size: inherit;
+}
+
+.footer-col-1, .footer-col-2, .footer-col-3 {
+	width: calc(100% - (#{$spacing-unit} / 2));
 }

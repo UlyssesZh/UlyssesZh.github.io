@@ -44,21 +44,6 @@ $dm-search-background-color: #000 !default;
 $dm-lineno-color: #777 !default;
 $dm-lineno-background-color: #202020 !default;
 
-$table-text-align: left !default;
-$content-width: 800px !default;
-$on-palm: 600px !default;
-$on-laptop: 800px !default;
-
-@mixin media-query($device) {
-	@media screen and (max-width: $device) {
-		@content;
-	}
-}
-
-@mixin relative-font-size($ratio) {
-	font-size: $base-font-size * $ratio;
-}
-
 :root {
 	--kbd-color: #{$lm-kbd-color};
 	--kbd-background-color: #{$lm-kbd-background-color};
@@ -288,3 +273,5 @@ a[target="_blank"]:not([rel="me"]) {
 		font-weight: thin;
 	}
 }
+
+@import "gitalk";

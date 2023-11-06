@@ -17,7 +17,7 @@ excerpt: 'O, &rsquo;tis too true!'
 | Than is my deed to my most painted word:
 | O heavy burthen!
 
-(From *Hamlet* Act 3 Scene 1, Shakespeare)
+(From *Hamlet* Act 3 Scene 1, Shakespeare)<sup>&copy;</sup>
 
 ---
 
@@ -27,4 +27,4 @@ excerpt: 'O, &rsquo;tis too true!'
 | 还不及掩藏在虚伪的言辞后面的我的行为更丑恶。
 | 难堪的重负啊！
 
-（朱生豪译）
+（朱生豪译）<sup>&copy;</sup>

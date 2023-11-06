@@ -224,7 +224,7 @@ I also had to refactor the search functionality a bit to make the search results
 The reason that I updated the theme is actually quite dramatic.
 This originated from me trying to use kramdown-math-katex.
 To ensure that the KaTeX CSS has the correct version with the KaTeX renderer used by katex-ruby,
-I decided to `@include` the
+I decided to `@import` the
 [SCSS file](https://github.com/glebm/katex-ruby/blob/main/vendor/katex/sprockets/stylesheets/_katex.scss){target="_blank"}
 found in the repo of katex-ruby into my theme.
 I found that the SCSS file utilizes a function `asset-path` to load the fonts,
@@ -278,5 +278,5 @@ so that I have to rewrite a large part of the SCSS files provided by Minima to s
 Now, Minima v3 has a pre-defined skin called `auto`, which adaptively looks the same as `classic` or `dark`
 based on the browser's `prefers-color-scheme`.
 I can now implement my skin based on `auto` (select my skin in the site's configuration file
-and `@include` the `auto` skin in my skin's SCSS file),
+and `@import` the `auto` skin in my skin's SCSS file),
 and the codes are now much cleaner.

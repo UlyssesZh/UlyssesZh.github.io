@@ -14,7 +14,7 @@ What is the decoded message? Use your Ruby skills to find out!'
 ---
 
 This was a challenge in the [Ruby Discord server](https://discord.gg/ad2acQFtkh){target="_blank"}.
-The contents of the challenge is this:
+The contents of the challenge is:<sup>&copy;</sup>
 
 > ## Halloween Challenge
 >
@@ -143,6 +143,8 @@ This is also true for instance variables and class variables.
 
 ## The message
 
+The decoded message is:<sup>&copy;</sup>
+
 ```plaintext
 RUBY IS A LANGUAGE THAT WE PROGRAMMERS ADORE,
 UNLEASHING MAGIC SPELLS WITHIN ITS CODE GALORE.
@@ -161,5 +163,7 @@ ENCHANTING US WITH GEMS, IT'S EVERY CODER'S DREAM,
 ADVENTURES IN THE CODE, WHERE THE EERIE'S ROUTINE.
 DEATH MAY SEEM TO LURK, BUT FOR RUBY IT'S HALLOWEEN!
 ```
+
+(The contents do not share the license of this blog.)
 
 Did you spot the hidden message?

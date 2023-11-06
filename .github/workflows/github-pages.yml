@@ -18,16 +18,11 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
         with:
           submodules: recursive
           token: ${{ secrets.JEKYLL_PAT }}
-        
-      #- uses: actions/cache@v3
-      #  with:
-      #    path: vendor/bundle
-      #    key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile') }}
-      #    restore-keys: ${{ runner.os }}-gems-
 
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
@@ -36,43 +31,48 @@ jobs:
           ruby-version: 3.2.2
           bundler-cache: true
 
+      - name: Restore development binary dependencies
+        uses: actions/cache/restore@v3
+        id: cache-restore
+        with:
+          path: ${{ github.workspace }}/bin-dev
+          key: ${{ runner.os }}-cabal-${{ hashFiles('**/cabal.lock') }}
+      
       - name: Set up GHC
+        if: steps.cache-restore.outputs.cache-hit != 'true'
         uses: haskell-actions/setup@v2
         id: setup-ghc
         with:
           ghc-version: 9.4.7
 
-      - name: Restore GHC cache
-        uses: actions/cache/restore@v3
-        id: cache-restore-ghc
-        with:
-          path: ${{ steps.setup-ghc.outputs.cabal-store }}
-          key: ${{ runner.os }}-cabal-${{ hashFiles('**/Gemfile') }}
-      
       - name: Install Haskell packages
-        if: steps.cache-restore-ghc.outputs.cache-hit != 'true'
-        run: cabal v2-install pandoc-cli pandoc-crossref
+        if: steps.cache-restore.outputs.cache-hit != 'true'
+        run: cabal v2-install pandoc-cli pandoc-crossref --install-method=copy --installdir=$GITHUB_WORKSPACE/bin-dev
 
-      - name: Save GHC cache
+      - name: Save development binary dependencies
         uses: actions/cache/save@v3
-        id: cache-save-ghc
-        if: steps.cache-restore-ghc.outputs.cache-hit != 'true'
+        id: cache-save
+        if: steps.cache-restore.outputs.cache-hit != 'true'
         with:
-          path: |
-            ${{ steps.setup-ghc.outputs.cabal-store }}
-            ${{ steps.setup-ghc.outputs.cabal-store }}/../bin
-          key: ${{ runner.os }}-cabal-${{ hashFiles('**/Gemfile') }}
+          path: ${{ github.workspace }}/bin-dev
+          key: ${{ runner.os }}-cabal-${{ hashFiles('**/cabal.lock') }}
       
       - name: Install cargo packages
         uses: baptiste0928/cargo-install@v2
         with:
           crate: pandoc-katex
-          cache-key: ${{ runner.os }}-cargo-${{ hashFiles('**/Gemfile') }}
+          cache-key: ${{ runner.os }}-cargo-${{ hashFiles('**/cargo.lock') }}
 
-      - id: pages
+      - name: Configure Pages
+        id: pages
         uses: actions/configure-pages@v3
 
-      - run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
+      - name: Add development binaries to PATH
+        run: |
+          echo "$GITHUB_WORKSPACE/bin-dev" >> $GITHUB_PATH
+
+      - name: Jekyll build
+        run: bundle exec jekyll build --verbose --trace --profile --baseurl "${{ steps.pages.outputs.base_path }}"
         env:
           JEKYLL_ENV: production
 

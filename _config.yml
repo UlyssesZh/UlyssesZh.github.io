@@ -6,20 +6,13 @@ author:
   email: ulysseszhan@gmail.com
 timezone: America/Los_Angeles
 lang: en-US
-collections:
-  posts:
-    title: Posts
-    output: true
-  uploads:
-    title: Uploads
-    output: true
 tagline: Somewhere with strange thoughts
 description: Here we are at the awesome (awful) blog written by UlyssesZhan!
 locale: en_US
 logo: /assets/images/logos/78(.png
 baseurl: ''
 url: https://UlyssesZh.github.io
-domain: ulysseszh.github.io
+domain: UlyssesZh.github.io
 show_excerpts: true
 markdown: Paru
 paru:
@@ -95,8 +88,7 @@ plugins:
   - jekyll-toc
   - jekyll-paru
 exclude:
-  - LICENSE
-  - LICENSE.md
+  - '**/LICENSE*'
   - README.md
   - Gemfile
   - Gemfile.lock
@@ -106,6 +98,9 @@ exclude:
   - .github/
   - '**/*.yml'
   - assets/images/covers/*.txt
+  - bin-dev
+  - cabal.lock
+  - cargo.lock
 google_analytics: G-7TSJ5VM6YC
 webmaster_verifications:
   google: ZuV45Knwuwl49Nvh9UsDzniZ-3qy3bGhBPofLK3SZPw
