@@ -1,12 +1,10 @@
 # frozon_string_literal: true
 
-return
-
 module Jekyll::UlyssesZhan
 end
 
 module Jekyll
-	module UlyssesZhan::MultithreadRendering
+	module UlyssesZhan::MultithreadRenderingSitePatch
 
 		CONCURRENT_JOB_COUNT = 20
 
@@ -21,15 +19,26 @@ module Jekyll
 		end
 
 		class RenderingJob
-			def initialize site, document, payload
-				@site, @document, @payload = site, document, payload
+
+			attr_reader :thread
+
+			def initialize site, document
+				@site, @document = site, document
 			end
 
 			def run
-				Thread.new do
-					@site.__send__ :actually_render_regenerated, @document, @payload
-					Thread.main.raise RenderingJobFinished.new self unless @site.queue_clear
+				@thread = Thread.new do
+					@site.__send__ :actually_render_regenerated, @document, @site.site_payload
+					Thread.main.raise RenderingJobFinished.new self unless @suppress_errors
 				end
+			end
+
+			def suppress_errors
+				@suppress_errors = true
+			end
+
+			def join
+				@thread.join
 			end
 		end
 
@@ -40,7 +49,7 @@ module Jekyll
 			super
 		end
 
-		def render_regenerated document, payload
+		def render_regenerated document, _
 			@rendering_jobs[
 				case priority_data = document.data['rendering_priority']
 				when nil then 0
@@ -48,27 +57,35 @@ module Jekyll
 				when String, Symbol then Plugin::PRIORITIES[priority_data.to_sym]
 				else raise "Invalid rendering priority: #{priority_data.inspect}"
 				end
-			].add RenderingJob.new self, document, payload.dup
+			].add RenderingJob.new self, document
 		end
 
 		def render_pages ...
 			super
 			@rendering_jobs.sort_by { |priority, _| -priority }.each do |_, jobs|
-				@queue_clear = false
-				running = Set.new
-				running.add jobs.delete jobs.each.first.tap &:run while running.size < CONCURRENT_JOB_COUNT
+				running, e = Set.new, nil
 				begin
-					sleep
+					running.delete e&.job
+					sleep unless (while running.size < CONCURRENT_JOB_COUNT
+						break true unless job = jobs.each.first&.tap(&:run)
+						running.add job and jobs.delete job
+					end)
+					running.each &:suppress_errors
 				rescue RenderingJobFinished => e
-					running.delete e.job
-					unless jobs.empty?
-						running.add jobs.delete jobs.each.first.tap &:run
-						retry
-					end
+					retry
 				end
-				@queue_clear = true
 				running.each &:join
 			end
+		end
+	end
+
+	module UlyssesZhan::LiquidRendererFilePatch
+
+		LiquidRenderer::File.prepend self
+		
+		def parse content
+			measure_time { @template = Liquid::Template.parse content, line_numbers: true }
+			self
 		end
 	end
 
