@@ -11,16 +11,7 @@ module Jekyll
 		Site.prepend self
 		Site.alias_method :actually_render_regenerated, :render_regenerated
 
-		class RenderingJobFinished < Exception
-			attr_reader :job
-			def initialize job
-				@job = job
-			end
-		end
-
 		class RenderingJob
-
-			attr_reader :thread
 
 			def initialize site, document
 				@site, @document = site, document
@@ -29,16 +20,11 @@ module Jekyll
 			def run
 				@thread = Thread.new do
 					@site.__send__ :actually_render_regenerated, @document, @site.site_payload
-					Thread.main.raise RenderingJobFinished.new self unless @suppress_errors
 				end
 			end
 
-			def suppress_errors
-				@suppress_errors = true
-			end
-
-			def join
-				@thread.join
+			def finished?
+				!@thread.status
 			end
 		end
 
@@ -63,18 +49,15 @@ module Jekyll
 		def render_pages ...
 			super
 			@rendering_jobs.sort_by { |priority, _| -priority }.each do |_, jobs|
-				running, e = Set.new, nil
-				begin
-					running.delete e&.job
-					sleep unless (while running.size < CONCURRENT_JOB_COUNT
-						break true unless job = jobs.each.first&.tap(&:run)
-						running.add job and jobs.delete job
-					end)
-					running.each &:suppress_errors
-				rescue RenderingJobFinished => e
-					retry
+				running = Set.new
+				while !running.empty? || !jobs.empty?
+					while running.size < CONCURRENT_JOB_COUNT && (job = jobs.each.first&.tap &:run)
+						running.add job
+						jobs.delete job
+					end
+					sleep 1
+					running.delete_if &:finished?
 				end
-				running.each &:join
 			end
 		end
 	end
@@ -82,7 +65,7 @@ module Jekyll
 	module UlyssesZhan::LiquidRendererFilePatch
 
 		LiquidRenderer::File.prepend self
-		
+
 		def parse content
 			measure_time { @template = Liquid::Template.parse content, line_numbers: true }
 			self
