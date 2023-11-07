@@ -19,7 +19,7 @@ hr {
 		position: absolute;
 		top: 0px;
 		left: 50%;
-		margin: 0 0 0 -($spacing-unit * .1);
+		margin: 0 0 0 (-$spacing-unit * .1);
 		font-size: $spacing-unit * .5;
 		line-height: 0;
 	}

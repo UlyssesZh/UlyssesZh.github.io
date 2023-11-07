@@ -38,11 +38,11 @@ If you want to prompt me to update my blog
 (which is a really rare occasion), [contact me](/contact).
 I will be happy if I know there are people interested in my blog!
 
-Note that if the browser tells you that my site is trying to run
-some dangerous scripts, it is just loading necessary scripts for
-mathematical equations
-(such as Equation [@eq:least-action] shown below)
-to be rendered in my pages.
+Feel free to turn off JavaScript in your browser!
+Equations (such as Equation [@eq:least-action] shown below)
+can be rendered nicely without JavaScript.
+The only broken things would be comments, search engine,
+and (maybe disgusting) trackings.
 
 Finally, I would like to tell you what I think is the most beautiful
 equations of all.
