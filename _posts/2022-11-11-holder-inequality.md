@@ -8,7 +8,7 @@ tags:
 - from zhihu
 layout: post
 excerpt: 'The Hölder mean of $\vec x$ with weights $\vec w$ and a parameter $p$ is defined as
-$M_{p,\vec w}\!\left(\vec x\right):=\left(\vec w\cdot\vec x^p\right)^{\frac 1p}$,
+$M_{p,\vec w}\!\left(\vec x\right)\coloneqq\left(\vec w\cdot\vec x^p\right)^{\frac 1p}$,
 and the value at $p=-\infty,0,+\infty$ are defined by the limits.
 We can prove using Jensen''s inquality that the Hölder mean increases as $p$ increases.
 This property can be used to prove HM-GM-AM-QM inequalities.'
@@ -24,14 +24,14 @@ Some stipulations:
 
 - Without special statements, all vectors appearing in this article are $n$-dimensional vectors, $n\in\mathbb N$;
 - Iteration variable $k$ always iterates over $\left[0,n\right)\cup\mathbb Z$;
-- $\operatorname{sum}\vec\xi:=\sum_k\xi_k$;
-- $\operatorname{prod}\vec\xi:=\prod_k\xi_k$;
+- $\operatorname{sum}\vec\xi\coloneqq\sum_k\xi_k$;
+- $\operatorname{prod}\vec\xi\coloneqq\prod_k\xi_k$;
 - If the independent and dependent variables of function $f$ are both scalars, then define
-$f\!\left(\vec\xi\right):=\left(f\!\left(\xi_0\right),f\!\left(\xi_1\right),\ldots,f\!\left(\xi_n\right)\right)$;
-- $\vec\xi^{\vec\eta}:=\prod_k\xi_k^{\eta_k}$;
-- $\min\vec\xi:=\min_k\xi_k$;
-- $\max\vec\xi:=\max_k\xi_k$;
-- $\delta_{\xi,\eta}:=\begin{cases}1,&&\xi=\eta,\\\\0,&&\xi\ne\eta;\end{cases}$
+$f\!\left(\vec\xi\right)\coloneqq\left(f\!\left(\xi_0\right),f\!\left(\xi_1\right),\ldots,f\!\left(\xi_n\right)\right)$;
+- $\vec\xi^{\vec\eta}\coloneqq\prod_k\xi_k^{\eta_k}$;
+- $\min\vec\xi\coloneqq\min_k\xi_k$;
+- $\max\vec\xi\coloneqq\max_k\xi_k$;
+- $\delta_{\xi,\eta}\coloneqq\begin{cases}1,&&\xi=\eta,\\\\0,&&\xi\ne\eta;\end{cases}$
 - By saying $\vec\xi$ is congruent, all components of $\vec\xi$ are equal to each other.
 
 **Definition 1**.
@@ -40,7 +40,7 @@ weights $\vec w\in\left\{\vec\xi\in\left(\mathbb R^+\right)^n\,\middle\|\,\opera
 and parameter $p\in\left[-\infty,+\infty\right]$.
 Define the Hölder mean by
 
-$$M_{p,\vec w}\!\left(\vec x\right):=\left(\vec w\cdot\vec x^p\right)^{\frac 1p}.$$
+$$M_{p,\vec w}\!\left(\vec x\right)\coloneqq\left(\vec w\cdot\vec x^p\right)^{\frac 1p}.$$
 
 *Note.*
 The function is indefinite when $p\in\left\{-\infty,0,+\infty\right\}$,

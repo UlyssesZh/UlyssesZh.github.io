@@ -56,7 +56,7 @@ which means that the image is a conic section with the focus being $\left(2f,0\r
 the directrix being line $x=f$,
 and the eccentricity being $\frac rf$.
 
-Alternatively, let $\rho:=\sqrt{\left(x-2f\right)^2+y^2}$, and we have
+Alternatively, let $\rho\coloneqq\sqrt{\left(x-2f\right)^2+y^2}$, and we have
 
 $$\rho=\frac r{1-\frac rf\cos t},$$
 

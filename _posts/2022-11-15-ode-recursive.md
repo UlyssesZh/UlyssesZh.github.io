@@ -7,8 +7,8 @@ tags:
 - ode
 - calculus
 layout: post
-excerpt: 'By recursively integrating according to $x_{n+1}\!\left(t\right):=\int_{t_0}^tf\!\left(x_n\!\left(s\right),s\right)\,\mathrm ds+C$
-from $x_0\!\left(t_0\right):=C$,
+excerpt: 'By recursively integrating according to $x_{n+1}\!\left(t\right)\coloneqq\int_{t_0}^tf\!\left(x_n\!\left(s\right),s\right)\,\mathrm ds+C$
+from $x_0\!\left(t_0\right)\coloneqq C$,
 we can get the solution of the ODE $x''\!\left(t\right)=f\!\left(x\!\left(t\right),t\right)$
 with initial conditions $x\!\left(t_0\right)=C$ as the limit of the sequence of functions.'
 ---
@@ -27,9 +27,9 @@ By Picard--Lindelöf theorem, we can seek the unique solution within $t\in\left[
 Here, I propose the following method:
 we can write out a sequence of functions defined by
 
-$$x_0\!\left(t\right):=C,$$ {#eq:eq-x0}
+$$x_0\!\left(t\right)\coloneqq C,$$ {#eq:eq-x0}
 
-$$x_{n+1}\!\left(t\right):=\int_{t_0}^tf\!\left(x_n\!\left(s\right),s\right)\,\mathrm ds+C$$ {#eq:eq-xn-1}
+$$x_{n+1}\!\left(t\right)\coloneqq\int_{t_0}^tf\!\left(x_n\!\left(s\right),s\right)\,\mathrm ds+C$$ {#eq:eq-xn-1}
 
 (the properties of $f$ guarantee that the integral is well-defined).
 Then, if the sequence $\left(x_n'\right)$ converges uniformly on $\left[t-\varepsilon,t+\varepsilon\right]$
@@ -47,7 +47,7 @@ Then, take the limit $n\to\infty$. By the uniform convergence, we recovers Equat
 
 ## An example
 
-Suppose $f\!\left(x,t\right):=x$ and $t_0:=0$, then
+Suppose $f\!\left(x,t\right)\coloneqq x$ and $t_0\coloneqq0$, then
 
 $$x_n\!\left(t\right)=C\sum_{j=0}^{n-1}\frac{t^j}{j!}.$$
 

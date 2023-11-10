@@ -74,7 +74,7 @@ Let $y\in P$ such that $y\ne x$, and the goal is to prove that $y$ is not a defe
 
 Let
 
-$$Y:=\left\{v\in V\,\middle|\,y\succeq_vx\right\}.$$
+$$Y\coloneqq\left\{v\in V\,\middle|\,y\succeq_vx\right\}.$$
 
 Then, $y$ is a $Y$-Pareto improvement of $x$,
 so we have $\left|Y\right|<q$
@@ -85,7 +85,7 @@ To prove the backward direction, suppose
 that $x\in P$ has a non-trivial $Q$-Pareto improvement, where $Q\subseteq V$ and $\left|Q\right|=q$.
 Denote the improvement as $y$. Let
 
-$$Y:=\left\{v\in V\,\middle|\,y\succeq_vx\right\}.$$
+$$Y\coloneqq\left\{v\in V\,\middle|\,y\succeq_vx\right\}.$$
 
 because $y$ is a $Q$-Pareto improvement of $x$, we have $Q\subseteq Y$.
 Therefore, $\left|Y\right|\geq\left|Q\right|=q$.

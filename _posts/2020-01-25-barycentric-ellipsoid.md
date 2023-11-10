@@ -17,21 +17,21 @@ and its tangent hyperplane at each vertex is parallel to the hyperplane containi
 ## Some notations
 
 $$
-    S_n:=\left\{\mathbf a\in\mathbb R^{n}\,\middle|\,\sum_ja_j=1\right\}.
+    S_n\coloneqq\left\{\mathbf a\in\mathbb R^{n}\,\middle|\,\sum_ja_j=1\right\}.
 $$
 
 $$
-    \mathbf1:=\left(\begin{matrix}1\\\vdots\\1\end{matrix}\right).
+    \mathbf1\coloneqq\left(\begin{matrix}1\\\vdots\\1\end{matrix}\right).
 $$
 
 $$
-    \mathbf v_1:=\left(\begin{matrix}
+    \mathbf v_1\coloneqq\left(\begin{matrix}
         \\\mathbf v\\\\1
     \end{matrix}\right).
 $$
 
 $$
-    \mathbf M_1:=\left(\begin{matrix}
+    \mathbf M_1\coloneqq\left(\begin{matrix}
         \\&\mathbf M&\\\\&\mathbf1^{\mathrm T}
     \end{matrix}\right).
 $$
@@ -91,7 +91,7 @@ $$1=\boldsymbol\lambda^{\mathrm T}\boldsymbol\lambda
 
 Let
 
-$$\mathbf Q:=\left(\mathbf V_1^{-1}
+$$\mathbf Q\coloneqq\left(\mathbf V_1^{-1}
         \right)^{\mathrm T}\mathbf V_1^{-1}
     =\left(\mathbf V_1
         \mathbf V_1^{\mathrm T}\right)^{-1},$$ {#eq:Q-def}
@@ -140,7 +140,7 @@ $$
     \end{matrix}\right),
 $$
 
-where $\mathbf W:=\left(\mathbf V\mathbf V^{\mathrm T}\right)^{-1}$,
+where $\mathbf W\coloneqq\left(\mathbf V\mathbf V^{\mathrm T}\right)^{-1}$,
 so
 
 $$
@@ -172,7 +172,7 @@ The equation of the quadric is $F\!\left(\mathbf r\right)=0$,
 where the quadratic function
 
 $$
-    F\!\left(\mathbf r\right):=\mathbf r^{\mathrm T}\mathbf W\mathbf r
+    F\!\left(\mathbf r\right)\coloneqq\mathbf r^{\mathrm T}\mathbf W\mathbf r
     +\frac1n-1.
 $$
 
@@ -180,7 +180,7 @@ According to geometry, the normal vector of the quadric at $\mathbf v_j$
 is the gradient of $F$ at $\mathbf v_j$, which is
 
 $$
-    \boldsymbol\nu_j:=
+    \boldsymbol\nu_j\coloneqq
     \left.\frac{\partial F\!\left(\mathbf r\right)}{\partial\mathbf r}\right|
     _{\mathbf r=\mathbf v_j}=
     2\mathbf W\mathbf v_j.
@@ -214,7 +214,7 @@ $$
 which is to say that the $n\times n$ matrix
 
 $$
-    \mathbf P:=\mathbf V^{\mathrm T}\mathbf W\mathbf V=\
+    \mathbf P\coloneqq\mathbf V^{\mathrm T}\mathbf W\mathbf V=\
     \mathbf V^{\mathrm T}\left(\mathbf V\mathbf V^{\mathrm T}\right)^{-1}
     \mathbf V
 $$
@@ -236,7 +236,7 @@ vectors that are perpendicular to $\mathbf1$.
 For example,
 
 $$
-    \mathbf B:=\left(\begin{matrix}
+    \mathbf B\coloneqq\left(\begin{matrix}
         n-1&-1&-1&\cdots&-1\\-1&n-1&-1&\cdots&-1
         \\-1&-1&n-1&\cdots&-1\\\vdots&\vdots&\vdots&\ddots&\vdots
         \\-1&-1&-1&\cdots&n-1\\-1&-1&-1&\cdots&-1

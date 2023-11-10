@@ -49,7 +49,7 @@ Chemicals with positive stoichiometries and those with negative ones
 stay at different side of the chemical reaction equation.
 
 One can define the concept of "rank" in $\mathscr M^n$.
-Let $r:=\operatorname{rank}C$.
+Let $r\coloneqq\operatorname{rank}C$.
 
 1. $r\ge n$. In this case, $x$ has the only solution $x=0$.
 A mistake made when writing out the reaction equation may lead to this case.

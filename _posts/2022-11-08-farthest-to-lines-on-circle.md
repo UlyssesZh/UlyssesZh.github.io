@@ -42,8 +42,8 @@ l_2&:k_2x-y=0.
 Suppose
 
 $$\begin{align*}
-d_1&:=\frac{k_1\left(x_C+r\cos\theta\right)-r\sin\theta}{\sqrt{k_1^2+1}},\\
-d_2&:=\frac{k_2\left(x_C+r\cos\theta\right)-r\sin\theta}{\sqrt{k_2^2+1}},
+d_1&\coloneqq\frac{k_1\left(x_C+r\cos\theta\right)-r\sin\theta}{\sqrt{k_1^2+1}},\\
+d_2&\coloneqq\frac{k_2\left(x_C+r\cos\theta\right)-r\sin\theta}{\sqrt{k_2^2+1}},
 \end{align*}$$
 
 and then $\left\|d_1\right\|$ and $\left\|d_2\right\|$ are the distances from $P$ to $l_1$ and $l_2$ respectively.
@@ -62,19 +62,19 @@ i.e. $P$ is in the interior of the adjacent supplementary angle of $\angle O$.
 
 Suppose
 
-$$d:=d_1+d_2,$$
+$$d\coloneqq d_1+d_2,$$
 
 and then $\left\|d\right\|$ is the sum of distances from $P$ to $l_1$ and $l_2$,
 so we just need to discuss the case when $d$ is extremal.
 
 Let
 
-$$d_C:=x_C\left(\frac{k_1}{\sqrt{k_1^2+1}}+\frac{k_2}{\sqrt{k_2^2+1}}\right),$$
+$$d_C\coloneqq x_C\left(\frac{k_1}{\sqrt{k_1^2+1}}+\frac{k_2}{\sqrt{k_2^2+1}}\right),$$
 
-$$A:=r\sqrt{\left(\frac{k_1}{\sqrt{k_1^2+1}}+\frac{k_2}{\sqrt{k_2^2+1}}\right)^2
+$$A\coloneqqr\sqrt{\left(\frac{k_1}{\sqrt{k_1^2+1}}+\frac{k_2}{\sqrt{k_2^2+1}}\right)^2
 +\left(\frac1{\sqrt{k_1^2+1}}+\frac1{\sqrt{k_2^2+1}}\right)^2},$$
 
-$$\phi:=\arctan\frac{\frac1{\sqrt{k_1^2+1}}+\frac1{\sqrt{k_2^2+1}}}{\frac{k_1}{\sqrt{k_1^2+1}}+\frac{k_2}{\sqrt{k_2^2+1}}}.$$
+$$\phi\coloneqq\arctan\frac{\frac1{\sqrt{k_1^2+1}}+\frac1{\sqrt{k_2^2+1}}}{\frac{k_1}{\sqrt{k_1^2+1}}+\frac{k_2}{\sqrt{k_2^2+1}}}.$$
 
 Then, we have
 
@@ -89,8 +89,8 @@ Then we study what are the features of $\theta$ when $d$ is extremal.
 Let
 
 $$\begin{align*}
-\theta_1&:=\arctan k_1,\\
-\theta_2&:=\arctan k_2.
+\theta_1&\coloneqq\arctan k_1,\\
+\theta_2&\coloneqq\arctan k_2.
 \end{align*}$$
 
 Then, we have after some calculations
@@ -118,18 +118,18 @@ i.e. $P$ is in the interior of $\angle O$ or its opposite angle.
 
 Similarly, let
 
-$$d:=d_1-d_2,$$
+$$d\coloneqq d_1-d_2,$$
 
 and then $\left\|d\right\|$ is the sum of distances from $P$ to $l_1$ and $l_2$.
 
 Let
 
-$$d_C:=x_C\left(\frac{k_1}{\sqrt{k_1^2+1}}-\frac{k_2}{\sqrt{k_2^2+1}}\right),$$
+$$d_C\coloneqq x_C\left(\frac{k_1}{\sqrt{k_1^2+1}}-\frac{k_2}{\sqrt{k_2^2+1}}\right),$$
 
-$$A:=r\sqrt{\left(\frac{k_1}{\sqrt{k_1^2+1}}-\frac{k_2}{\sqrt{k_2^2+1}}\right)^2
+$$A\coloneqq r\sqrt{\left(\frac{k_1}{\sqrt{k_1^2+1}}-\frac{k_2}{\sqrt{k_2^2+1}}\right)^2
 +\left(\frac1{\sqrt{k_1^2+1}}-\frac1{\sqrt{k_2^2+1}}\right)^2},$$
 
-$$\phi:=\arctan\frac{\frac1{\sqrt{k_1^2+1}}-\frac1{\sqrt{k_2^2+1}}}{\frac{k_1}{\sqrt{k_1^2+1}}-\frac{k_2}{\sqrt{k_2^2+1}}}.$$
+$$\phi\coloneqq\arctan\frac{\frac1{\sqrt{k_1^2+1}}-\frac1{\sqrt{k_2^2+1}}}{\frac{k_1}{\sqrt{k_1^2+1}}-\frac{k_2}{\sqrt{k_2^2+1}}}.$$
 
 Then, we have
 
@@ -141,8 +141,8 @@ Then we study what are the features of $\theta$ when $d$ is extremal.
 Similarly, let
 
 $$\begin{align*}
-\theta_1&:=\arctan k_1,\\
-\theta_2&:=\arctan k_2.
+\theta_1&\coloneqq\arctan k_1,\\
+\theta_2&\coloneqq\arctan k_2.
 \end{align*}$$
 
 Then, we have after some calculations
@@ -184,7 +184,7 @@ Then, in some neighborhood of $\theta_0$, for the two cases $\theta<\theta_0$ an
 the sign of $d_2$ is different.
 We can define in this neighborhood
 
-$$d:=\begin{cases}
+$$d\coloneqq\begin{cases}
 d_1+d_2,&\text{if $d_1d_2>0$,}\\
 d_1,&\text{if $\theta=\theta_0$,}\\
 d_1-d_2,&\text{if $d_1d_2<0$.}
@@ -201,8 +201,8 @@ we can write the product of them and see whether the result is positive or negat
 Find the derivatives of $d_1$ and $d_2$ respectively.
 
 $$\begin{align*}
-\theta_1&:=\arctan k_1,\\
-\theta_2&:=\arctan k_2.
+\theta_1&\coloneqq\arctan k_1,\\
+\theta_2&\coloneqq\arctan k_2.
 \end{align*}$$
 
 Then, we have
@@ -230,7 +230,7 @@ $$\left.\frac{\mathrm dd}{\mathrm d\theta}\right|_{\theta=\theta_0^\mp}
 
 Then, the product of the two derivatives is
 
-$$\nu_0:=
+$$\nu_0\coloneqq
 \left.\frac{\mathrm dd}{\mathrm d\theta}\right|_{\theta=\theta_0^\pm}
 \cdot\left.\frac{\mathrm dd}{\mathrm d\theta}\right|_{\theta=\theta_0^\mp}
 =r^2\sin\!\left(\theta_1-\theta_2\right)\sin\left(2\left(\theta_0-\frac{\theta_1+\theta_2}2\right)\right).$$

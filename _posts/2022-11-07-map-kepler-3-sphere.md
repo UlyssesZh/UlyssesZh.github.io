@@ -13,11 +13,11 @@ excerpt: 'There is a canonical transform of the Kepler problem which is the same
 the problem of motion of a free particle on 3-sphere.
 The explicit formula of the transform as well as some links about this topic is written in the article.
 The explicit formula for $E<0$ is
-$\mathbf u:=\frac{p^2-p_0^2}{p^2+p_0^2}\hat{\mathbf n}+\frac{2p_0}{p^2+p_0^2}\mathbf p,$
+$\mathbf u\coloneqq\frac{p^2-p_0^2}{p^2+p_0^2}\hat{\mathbf n}+\frac{2p_0}{p^2+p_0^2}\mathbf p,$
 where $\mathbf u$ is the position of the particle on 3-sphere (a 4-dimensional vector),
 $\mathbf p$ is the momentum of the original particle in Kepler problem,
 $\hat{\mathbf n}$ is a vector perpendicular to the 3-dimensional hyperplane where $\mathbf p$ lies,
-and $p_0:=\sqrt{-2mE}$.'
+and $p_0\coloneqq\sqrt{-2mE}$.'
 ---
 
 *This article is adapted from the letter that I wrote to my professor of classical mechanics.
@@ -35,11 +35,11 @@ I found something about what the mapping from the 3-dimensional Kepler problem
 to the 3-sphere is.
 
 We choose the canonical coordinates as the 3 Cartesian coordinates and the 3 associated momenta.
-Then, use stereographic projection to map the 3-dimensional vector $\mathbf p/p_0$ (where $p_0:=\sqrt{-2mE}$) to a point on an 3-sphere
+Then, use stereographic projection to map the 3-dimensional vector $\mathbf p/p_0$ (where $p_0\coloneqq\sqrt{-2mE}$) to a point on an 3-sphere
 (where we should already have built a coordinate system $\mathbf u$ for us to calculate with).
 The explicit expression for the projection is
 
-$$\mathbf u:=\frac{p^2-p_0^2}{p^2+p_0^2}\hat{\mathbf n}+\frac{2p_0}{p^2+p_0^2}\mathbf p,$$
+$$\mathbf u\coloneqq\frac{p^2-p_0^2}{p^2+p_0^2}\hat{\mathbf n}+\frac{2p_0}{p^2+p_0^2}\mathbf p,$$
 
 where $\mathbf u$ is a unit 4-dimensional vector, and $\hat{\mathbf n}$ is a unit vector perpendicular to the hyperplane where $\mathbf p$ lies.
 I'm sorry for the abuse of notation, but the $\mathbf u$ in this email also stands for the (3-spherical) coordinates of it on the 3-sphere.

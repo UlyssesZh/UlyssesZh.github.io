@@ -58,7 +58,7 @@ We may think that the generalized velocities span a space called the velocity sp
 Just like traditional universe with one time dimension,
 we define the action $\mathcal S$ as the volume integral of the function $\mathcal L$ in the time space,
 where the Lagrangian $\mathcal L$ is a scalar function defined on the space-velocity-time phase space.
-Written explicitly, it is $\mathcal S:=\int_M\mathcal L\\,\mathrm dV_t$,
+Written explicitly, it is $\mathcal S\coloneqq\int_M\mathcal L\\,\mathrm dV_t$,
 where $M\subseteq\mathbb R^\iota$ is a region in the time space,
 and $\mathrm dV_t$ is the volume element in the time space.
 
@@ -73,7 +73,7 @@ $$\sum_j\partial_j\frac{\partial\mathcal L}{\partial\!\left(\partial_jq_k\right)
 
 Therefore, the momentum is defined to be the matrix
 
-$$p_{j,k}:=\frac{\partial\mathcal L}{\partial\!\left(\partial_jq_k\right)}.$$
+$$p_{j,k}\coloneqq\frac{\partial\mathcal L}{\partial\!\left(\partial_jq_k\right)}.$$
 
 Note that now the Euler--Lagrange equation is a set of second-order PDEs.
 
@@ -97,7 +97,7 @@ and then we have
 $$\mathrm d\!\left(\sum_{j,k}p_{j,k}\partial_jq_k-\mathcal L\right)
 =-\sum_{j,k}\partial_jp_{j,k}\,\mathrm dq_k+\sum_{j,k}\partial_jq_k\,\mathrm dp_{j,k}.$$
 
-If we let $\mathcal H:=\sum_{j,k}p_{j,k}\partial_jq_k-\mathcal L$,
+If we let $\mathcal H\coloneqq\sum_{j,k}p_{j,k}\partial_jq_k-\mathcal L$,
 then we have
 
 $$\partial_jq_k=\frac{\partial\mathcal H}{\partial p_{j,k}},\quad\sum_j\partial_jp_{j,k}=-\frac{\partial\mathcal H}{\partial q_k}.$$
@@ -108,7 +108,7 @@ We may find that it lacks the beauty of the form in one-dimensional time.
 Problem 1:
 Prove that if we add the Lagrangian by the "total divergence" w.r.t. time of some function defined on space and time,
 the new Lagrangian describes the same mechanical system as the original.
-In other words, $\mathcal L':=\mathcal L+\sum_j\partial_jf$ has the same equation of motion as $\mathcal L$,
+In other words, $\mathcal L'\coloneqq\mathcal L+\sum_j\partial_jf$ has the same equation of motion as $\mathcal L$,
 where $f$ is an arbitrary function defined on the spacetime.
 
 Problem 2:

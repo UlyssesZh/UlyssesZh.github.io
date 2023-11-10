@@ -36,23 +36,23 @@ $$g(F(x))=\frac1\mu\int_{-\infty}^xtp\!\left(t\right)\mathrm dt,$$
 
 where
 
-$$F\!\left(x\right):=\int_{-\infty}^xp\!\left(t\right)\mathrm dt$$
+$$F\!\left(x\right)\coloneqq\int_{-\infty}^xp\!\left(t\right)\mathrm dt$$
 
 is the cumulative distribution function of $p(X)$, and
 
-$$\mu:=\int_{-\infty}^{+\infty}tp\!\left(t\right)\mathrm dt$$ {#eq:eq-def-mu}
+$$\mu\coloneqq\int_{-\infty}^{+\infty}tp\!\left(t\right)\mathrm dt$$ {#eq:eq-def-mu}
 
 is the average wealth of the population, which is just $\mathrm E[\mathrm X]$
 ($X$ is a random variable such that $X\sim p(X)$).
 
 Then, the Lorenz curve is
 
-$$v=g(u):=\frac1\mu\int_{-\infty}^{F^{-1}(u)}tp\!\left(t\right)\mathrm dt.$$
+$$v=g(u)\coloneqq\frac1\mu\int_{-\infty}^{F^{-1}(u)}tp\!\left(t\right)\mathrm dt.$$
 
 According to the definition of the Gini coefficient,
 
 $$\begin{align*}
-G&:=2\mu\int_0^1\left(u-g(u)\right)\mathrm du\\
+G&\coloneqq2\mu\int_0^1\left(u-g(u)\right)\mathrm du\\
 &=\mu-2\mu\int_0^1g\!\left(u\right)\mathrm du\\
 &=\mu-2\int_{u=0}^1\int_{t=-\infty}^{F^{-1}(u)}tp\!\left(t\right)\mathrm dt\,\mathrm du.
 \end{align*}$$

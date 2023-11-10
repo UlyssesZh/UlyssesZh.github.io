@@ -71,7 +71,7 @@ using the binomial theorem.
 
 ---
 
-We are now interested in the limit $n,k\to\infty$ with $\lambda:=k/n$ fixed.
+We are now interested in the limit $n,k\to\infty$ with $\lambda\coloneqq k/n$ fixed.
 By Stirling's approximation, we have
 
 $$P_{n,k}(m)\sim\left(n-1\right)

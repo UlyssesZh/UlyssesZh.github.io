@@ -80,13 +80,6 @@ defaults:
       type: posts
     values:
       toc: true
-plugins:
-  #- jekyll-archives
-  - jekyll-feed
-  - jekyll-paginate-v2
-  - jekyll-sitemap
-  - jekyll-toc
-  - jekyll-paru
 exclude:
   - '**/LICENSE*'
   - README.md

@@ -42,7 +42,7 @@ Consider the motion
 
 $$\vec r=ut\vec i+\frac{u^2t^2}{2p}\vec j$$
 
-($u$ here is introduced just for consistency in dimension, but actually we can just let $u:=1$).
+($u$ here is introduced just for consistency in dimension, but actually we can just let $u\coloneqq1$).
 
 Obviously the object is doing a uniform acceleration motion, and the acceleration is as large as $\frac{u^2}p$,
 and its direction is $+y$.

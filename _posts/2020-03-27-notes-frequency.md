@@ -32,7 +32,7 @@ of the sound of a note.
 It is a natural idea to define a sequence
 
 $$
-    f_k:=f\!\left(\nu_k\right).
+    f_k\coloneqq f\!\left(\nu_k\right).
 $$
 
 It makes sense that the sequence is in strictly increasing order.
@@ -89,14 +89,14 @@ Let's define the *base octave*, notes of which can generate all
 other notes by multiplying the frequency by a power of 2:
 
 $$
-    O_0:=\left\{\nu_k\,\middle|\,k\in T\right\},
+    O_0\coloneqq\left\{\nu_k\,\middle|\,k\in T\right\},
 $$
 
 so we can say the frequency assignment has $n$ different tones.
 A *tone* is an integer in
 
 $$
-    T:=\left[0,n\right)\cap\mathbb Z
+    T\coloneqq\left[0,n\right)\cap\mathbb Z
 $$
 
 representing where a note is in an octave.
@@ -104,7 +104,7 @@ representing where a note is in an octave.
 We can thus define a sequence of octaves
 
 $$
-    O_m:=\left\{\nu_{k+mn}\,\middle|\,\nu_k\in O_0\right\}.
+    O_m\coloneqq\left\{\nu_{k+mn}\,\middle|\,\nu_k\in O_0\right\}.
 $$
 
 In fact, any octave can be the base octave. They are all the same.
@@ -124,7 +124,7 @@ $$
 \end{array}
 $$
 
-If we define $p_k:=\log_2f_k$, it is interesting to see that
+If we define $p_k\coloneqq\log_2f_k$, it is interesting to see that
 
 $$
     \forall k:p_{k+n}=p_k+1.
@@ -133,7 +133,7 @@ $$
 From that, we can naturally think an excellent frequency
 assignment be defined as
 
-$$p_k:=p_0+\frac kn,$$ {#eq:p-freq-def}
+$$p_k\coloneqqp_0+\frac kn,$$ {#eq:p-freq-def}
 
 which is an elegant arithmetic progression.
 
@@ -150,9 +150,9 @@ make $O_0$ a cyclic group of order $n$. I call this group an
 To make you have a good sense of what on earth the group looks
 like, the definition of its group operation can be defined as
 
-$$\nu_a\circ\nu_b:=\nu_{\left(a+b\right)\mathbin\%n},$$ {#eq:group-op-def}
+$$\nu_a\circ\nu_b\coloneqq\nu_{\left(a+b\right)\mathbin\%n},$$ {#eq:group-op-def}
 
-where $x\mathbin\%y:=x-y\left\lfloor\frac xy\right\rfloor$.
+where $x\mathbin\%y\coloneqq x-y\left\lfloor\frac xy\right\rfloor$.
 
 Note that this binary operator $\circ$ can be extended to
 be used for the whole $N$ while the definition remains the same
@@ -162,7 +162,7 @@ as Formula [@eq:group-op-def].
 Let
 
 $$
-    Q:=\left\{\frac kn\,\middle|\,
+    Q\coloneqq\left\{\frac kn\,\middle|\,
     k\in T\right\}.
 $$
 
@@ -175,7 +175,7 @@ In fact, $Q$ is a group of size $T$ whose group operation is
 defined as
 
 $$
-    q_1\circ q_2:=q_1+q_2-\left\lfloor q_1+q_2\right\rfloor.
+    q_1\circ q_2\coloneqq q_1+q_2-\left\lfloor q_1+q_2\right\rfloor.
 $$
 
 In this way, $\left(Q,\circ\right)$ forms a group, as can
@@ -255,7 +255,7 @@ V2: (transpose 7) motif
 ```
 
 Furthermore, as can be seen in the following table,
-$\nu_7$ is a generator of the group $O_0$ if $n:=12$.
+$\nu_7$ is a generator of the group $O_0$ if $n\coloneqq12$.
 
 $$
 \begin{array}{|c|cccccccccccc|}
@@ -269,19 +269,19 @@ $$
 \end{array}
 $$
 
-Thus, wonderful! Let's take $n:=12$.
+Thus, wonderful! Let's take $n\coloneqq12$.
 
 ## The $12$-tone equal temperament
 
 The $12$-tone equal temperament is the most popular
 frequency assignment used nowadays. It is defined as
 
-$$f_k:=16.3516\cdot 2^\frac k{12},$$ {#eq:12-equal-def}
+$$f_k\coloneqq16.3516\cdot 2^\frac k{12},$$ {#eq:12-equal-def}
 
 which can be derived from Formula [@eq:p-freq-def] taking
 
 $$
-    p_0:=4.03136\qquad n:=12.
+    p_0\coloneqq4.03136\qquad n\coloneqq12.
 $$
 
 The frequency assignment has $12$ different tones, $7$ of which
@@ -289,13 +289,13 @@ have their names:
 
 $$
 \begin{align*}
-    \mathrm C_m&:=\nu_{12m},\\
-    \mathrm D_m&:=\nu_{12m+2},\\
-    \mathrm E_m&:=\nu_{12m+4},\\
-    \mathrm F_m&:=\nu_{12m+5},\\
-    \mathrm G_m&:=\nu_{12m+7},\\
-    \mathrm A_m&:=\nu_{12m+9},\\
-    \mathrm B_m&:=\nu_{12m+11}.
+    \mathrm C_m&\coloneqq\nu_{12m},\\
+    \mathrm D_m&\coloneqq\nu_{12m+2},\\
+    \mathrm E_m&\coloneqq\nu_{12m+4},\\
+    \mathrm F_m&\coloneqq\nu_{12m+5},\\
+    \mathrm G_m&\coloneqq\nu_{12m+7},\\
+    \mathrm A_m&\coloneqq\nu_{12m+9},\\
+    \mathrm B_m&\coloneqq\nu_{12m+11}.
 \end{align*}
 $$
 
@@ -310,7 +310,7 @@ Note that in fact, this definition of $12$-tone equal temperament
 has some slight error. The accurate value for $p_0$ is
 
 $$
-    p_0:=\log_255-\frac74
+    p_0\coloneqq\log_255-\frac74
 $$
 
 because it is stipulated that $f\left(\mathrm A_4\right)=440$,

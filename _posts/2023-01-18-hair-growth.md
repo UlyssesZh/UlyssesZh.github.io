@@ -58,9 +58,9 @@ This equation can be reduced to a first-order linear PDE:
 
 $$v\frac{\partial f}{\partial l}+\frac{\partial f}{\partial t}+\lambda f=0.$$ {#eq:eq-pde}
 
-Define $\theta:=l-vt$, and define a new function
+Define $\theta\coloneqq l-vt$, and define a new function
 
-$$g\!\left(\theta,t\right):=f\!\left(\theta+vt,t\right).$$
+$$g\!\left(\theta,t\right)\coloneqq f\!\left(\theta+vt,t\right).$$
 
 Then,
 

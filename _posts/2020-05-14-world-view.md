@@ -46,7 +46,7 @@ principles:
 
 1. $\mathscr A$ is a $\nu$-dimensional
 affine space associated with the vector space $\mathbb R^\nu$,
-where $\nu:=\chi+\iota$;
+where $\nu\coloneqq\chi+\iota$;
 2. $\tau:\mathbb R^\nu\rightarrow\mathbb R^\iota$
 is a linear mapping;
 3. For $a,b\in\mathscr A$ such that $\tau\!\left(a-b\right)=0$,
@@ -93,9 +93,9 @@ Lie group (why?).
 
 $$
 \begin{align*}
-\mathscr A&:=\mathbb R^\nu,\\
-\tau&:=\left(t,x\right)\mapsto t,\\
-\rho&:=\left(a,b\right)\mapsto\sqrt{\left(a-b\right)^2}
+\mathscr A&\coloneqq\mathbb R^\nu,\\
+\tau&\coloneqq\left(t,x\right)\mapsto t,\\
+\rho&\coloneqq\left(a,b\right)\mapsto\sqrt{\left(a-b\right)^2}
 \end{align*}
 $$
 
@@ -181,7 +181,7 @@ with the following principles:
 
 1. $\mathscr A$ is a $\nu$-dimensional affine space
 associated with the vector space $\mathbb R^\nu$,
-where $\nu:=\chi+\iota$;
+where $\nu\coloneqq\chi+\iota$;
 2. $\tau:\mathbb R^\nu\rightarrow\mathbb R^\iota$
 and $\sigma:\mathbb R^\nu\rightarrow\mathbb R^\chi$
 are linear mappings;
@@ -225,10 +225,10 @@ $\frac{\nu\left(\nu+1\right)}2$-dimensional Lie group (why?).
 
 $$
 \begin{align*}
-    \mathscr A&:=\mathbb R^\nu,\\
-    \tau&:=\left(ct,x\right)\mapsto t,\\
-    \sigma&:=\left(ct,x\right)\mapsto x,\\
-    \rho&:=\left(a,b\right)\mapsto
+    \mathscr A&\coloneqq\mathbb R^\nu,\\
+    \tau&\coloneqq\left(ct,x\right)\mapsto t,\\
+    \sigma&\coloneqq\left(ct,x\right)\mapsto x,\\
+    \rho&\coloneqq\left(a,b\right)\mapsto
     \sqrt{\tau\!\left(a-b\right)^2-\sigma\!\left(a-b\right)^2}
 \end{align*}
 $$
@@ -296,7 +296,7 @@ principles:
 
 1. $\mathscr A$ is a $\nu$-dimensional affine space
 associated with the vector space $\mathbb R^\nu$,
-where $\nu:=\chi+\iota$;
+where $\nu\coloneqq\chi+\iota$;
 2. $\tau:\mathbb R^\nu\rightarrow\mathbb R^\iota$
 is a linear mapping;
 3. $o$ is an $\iota$-dimensional affine subspace of $\mathscr A$;
@@ -347,10 +347,10 @@ Lie group (why?).
 
 $$
 \begin{align*}
-    \mathscr A&:=\mathbb R^\nu,\\
-    \tau&:=\left(t,x\right)\mapsto t,\\
-    o&:=\mathbb R^\iota\times\left\{0\right\},\\
-    \rho&:=\left(a,b\right)\mapsto\sqrt{\left(a-b\right)^2}
+    \mathscr A&\coloneqq\mathbb R^\nu,\\
+    \tau&\coloneqq\left(t,x\right)\mapsto t,\\
+    o&\coloneqq\mathbb R^\iota\times\left\{0\right\},\\
+    \rho&\coloneqq\left(a,b\right)\mapsto\sqrt{\left(a-b\right)^2}
 \end{align*}
 $$
 

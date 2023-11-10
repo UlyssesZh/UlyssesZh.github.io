@@ -39,7 +39,7 @@ Let $\tau$ be the time at which you hear the sound emitted by the airplane at $t
 
 $$\tau=t+\frac lv=t+\sqrt{\tau_0^2+M^2t^2},$$
 
-where $\tau_0:=\frac hv$.
+where $\tau_0\coloneqq\frac hv$.
 
 Then, we can find the minimum value of $\tau$ by letting $\frac{\mathrm d\tau}{\mathrm dt}=0$.
 However, here we use a middle school technique to reduce calculation.

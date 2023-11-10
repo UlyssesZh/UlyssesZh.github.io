@@ -29,11 +29,11 @@ Let $P_{n,k}(Y)$ be the probability that the length of the longest all-$1$ subst
 What is the expression of $P_{n,k}(Y)$?
 
 A more interesting problem to consider is what the probability distribution tends to be when $n\to\infty$.
-Define the random variable $\kappa:=k/n$ where $k$ is the length of the longest all-$1$ substring.
-Define a parameter $y:=Y^n$ (this parameter is held constant while $n\to\infty$).
+Define the random variable $\kappa\coloneqq k/n$ where $k$ is the length of the longest all-$1$ substring.
+Define a parameter $y\coloneqq Y^n$ (this parameter is held constant while $n\to\infty$).
 Define the probability distribution function of $\kappa$ as
 
-$$f(y,\kappa):=\lim_{n\to\infty}\left(n+1\right)P_{n,\kappa n}\!\left(y^{\frac1n}\right).$$ {#eq:eq-f-def}
+$$f(y,\kappa)\coloneqq\lim_{n\to\infty}\left(n+1\right)P_{n,\kappa n}\!\left(y^{\frac1n}\right).$$ {#eq:eq-f-def}
 
 What is the expression of $f(y,\kappa)$?
 
@@ -61,7 +61,7 @@ To give the current combo a formal definition, denote each bit in the bit string
 Define the current combo $r_i$ as the length of the longest all-$1$ substring of the bit string ending **before** (exclusive) $i$
 (so $r_i=0$ if $b_{i-1}=0$, which is callled a *combo break*):
 
-$$r_i:=\max\left\{r\in0\,..i\,\middle|\,\forall j\in i-r\ldots i:b_j=1\right\},$$
+$$r_i\coloneqq\max\left\{r\in0\,..i\,\middle|\,\forall j\in i-r\ldots i:b_j=1\right\},$$
 
 where $i\in0\,..n$.
 
@@ -240,7 +240,7 @@ P_{n,k,k}&=Y^k\left(1-Y\right)^{n-k}+\sum_{j=\max(1,2k-n+1)}^{k}Y^jY^{k-j}\left(
 &=Y^k\left(1-Y\right)^{n-k}+Y^k\left(1-Y\right)\sum_{k'=1}^{\min(k,n-k-1)}P_{n-k-1,k'},
 \end{align*}$$
 
-where in the last line we changed the summation index to $k':=k-j+1$ to simplify it.
+where in the last line we changed the summation index to $k'\coloneqq k-j+1$ to simplify it.
 Because $P_{n-k-1,0}=P_{n-k-1,0,0}=\left(1-Y\right)^{n-k-1}$ according to Equation [@eq:eq-dp2-n-ge-k-r-0],
 we can combine the two terms into one summation to get the final result for $n>k=r>0$:
 
@@ -388,7 +388,7 @@ When evaluating the polynomials for large $n$,
 the result is inaccurate for $Y$ that is not close to $0$
 because of the limited precision of floating numbers.
 If $Y$ is closer to $1$, we can first find the coefficients of $P_{n,k}(1-X)$
-and then substitute $X:=1-Y$.
+and then substitute $X\coloneqq1-Y$.
 
 ### Plots of the probability distributions
 
@@ -440,7 +440,7 @@ because the probability of getting a max combo ($\kappa=1$) is $y$.
 
 Define
 
-$$h(y,\kappa):=f(y,\kappa)-y\delta(\kappa-1),$$ {#eq:eq-h-def}
+$$h(y,\kappa)\coloneqq f(y,\kappa)-y\delta(\kappa-1),$$ {#eq:eq-h-def}
 
 and then we can get rid of the infinity here.
 
@@ -486,7 +486,7 @@ f\!\left(y\in\left(0,1\right),\kappa\right)=-\ln y\int_{t=0}^{\min(\kappa,1-\kap
 \end{split}$$
 
 There are two terms in the integral.
-Substitute $u:=\frac t{1-\kappa}$ in the first term, and we have
+Substitute $u\coloneqq\frac t{1-\kappa}$ in the first term, and we have
 
 $$\begin{align*}
 \int_{t=0}^{\min\left(\kappa,1-\kappa\right)}\frac{y^\kappa}{1-\kappa}f\!\left(y^{1-\kappa},\frac t{1-\kappa}\right)\mathrm dt
@@ -494,7 +494,7 @@ $$\begin{align*}
 &=\int_0^{\min(\frac\kappa{1-\kappa},1)}\left(y^\kappa h\!\left(y^{1-\kappa},u\right)+y\delta(u-1)\right)\mathrm du.
 \end{align*}$$
 
-Substitute $v:=\frac\kappa{1-t}$ in the second term, and we have
+Substitute $v\coloneqq\frac\kappa{1-t}$ in the second term, and we have
 
 $$\begin{align*}
 \int_{t=0}^{\min(\kappa,1-\kappa)}\frac{y^t}{1-t}f\!\left(y^{1-t},\frac\kappa{1-t}\right)\mathrm dt
@@ -504,7 +504,7 @@ $$\begin{align*}
 
 Further, let (we only consider $y\in\left(0,1\right)$ from now on)
 
-$$g(y,\kappa):=\frac{h(y,\kappa)}{y},$$ {#eq:eq-g-def}
+$$g(y,\kappa)\coloneqq\frac{h(y,\kappa)}{y},$$ {#eq:eq-g-def}
 
 then the integral equation becomes
 
@@ -533,7 +533,7 @@ $$\min\!\left(\frac\kappa{1-\kappa},1\right)=1,$$
 so the Dirac delta functions in Equation [@eq:eq-main] should be considered.
 In this case, it simplifies to
 
-$$g_1(y,\kappa):=g\!\left(y,\kappa\in\left(\frac12,1\right)\right)=
+$$g_1(y,\kappa)\coloneqq g\!\left(y,\kappa\in\left(\frac12,1\right)\right)=
 -\ln y\left(y^{\kappa-1}+\int_\kappa^1g\!\left(y^{\frac\kappa v},v\right)\frac{\mathrm dv}v+1\right),$$ {#eq:eq-main-1-2-kappa-1}
 
 where Equation [@eq:eq-normalization] is utilized when finding the first term.
@@ -563,8 +563,8 @@ $$\begin{align*}
 If we let
 
 $$\begin{split}
-g_1^{(0)}(y,\kappa)&:=-\ln y\left(y^{\kappa-1}+1\right),\\
-g_1^{(i+1)}(y,\kappa)&:=-\ln y\int_\kappa^1g^{(i)}\!\left(y^{\frac\kappa v},v\right)\frac{\mathrm dv}v,\quad i\in\mathbb N,
+g_1^{(0)}(y,\kappa)&\coloneqq-\ln y\left(y^{\kappa-1}+1\right),\\
+g_1^{(i+1)}(y,\kappa)&\coloneqq-\ln y\int_\kappa^1g^{(i)}\!\left(y^{\frac\kappa v},v\right)\frac{\mathrm dv}v,\quad i\in\mathbb N,
 \end{split}$$ {#eq:eq-adm-1-2-kappa-1}
 
 then we can equate each term in the two series.
@@ -629,7 +629,7 @@ We can then use the same method as in the previous case to find the solution.
 First, by Equation [@eq:eq-main-1-2-kappa-1],
 
 $$\begin{align*}
-g_2(y,\kappa)&:=g\!\left(y,\kappa\in\left(\frac13,\frac12\right)\right)\\
+g_2(y,\kappa)&\coloneqq g\!\left(y,\kappa\in\left(\frac13,\frac12\right)\right)\\
 &=-\ln y\left(
   \int_0^{\frac\kappa{1-\kappa}}g\!\left(y^{1-\kappa},u\right)\mathrm du
   +\int_\kappa^{\frac\kappa{1-\kappa}}g\!\left(y^{\frac\kappa v},v\right)\frac{\mathrm dv}v
@@ -660,12 +660,12 @@ though the calculation is much more complicated than the previous case.
 We may guess $g_2=\sum_{i=0}^\infty g_2^{(i)}$ is the solution if the series converges, where
 
 $$\begin{split}
-g_2^{(0)}(y,\kappa)&:=-\ln y\left(
+g_2^{(0)}(y,\kappa)&\coloneqq-\ln y\left(
   y^{\kappa-1}
   +y^{-\kappa}\left(1+\ln y^{-\kappa}\right)
   -2y^{2\kappa-1}\left(1+\ln y^{2\kappa-1}\right)
 \right),\\
-g_1^{(i+1)}(y,\kappa)&:=-\ln y\int_\kappa^{\frac12}g^{(i)}\!\left(y^{\frac\kappa v},v\right)\frac{\mathrm dv}v,
+g_1^{(i+1)}(y,\kappa)&\coloneqq-\ln y\int_\kappa^{\frac12}g^{(i)}\!\left(y^{\frac\kappa v},v\right)\frac{\mathrm dv}v,
 \quad i\in\mathbb N.
 \end{split}$$
 
@@ -700,7 +700,7 @@ On may verify that this is indeed the solution by substituting it into Equation 
 By using very similar methods but after very tedious calculation, the solution is
 
 $$\begin{split}
-g_3(y,\kappa)&:=g\!\left(y,\kappa\in\left(\frac14,\frac13\right)\right)\\
+g_3(y,\kappa)&\coloneqq g\!\left(y,\kappa\in\left(\frac14,\frac13\right)\right)\\
 &=-\ln y\left(
   \left(2+\ln y^{\kappa-1}\right)y^{\kappa-1}
   -\left(2+4\ln y^{2\kappa-1}+\left(\ln y^{2\kappa-1}\right)^2\right)y^{2\kappa-1}\vphantom{\frac12}
@@ -717,11 +717,11 @@ one may guess the form of solution for other cases.
 Guess the form of solution for $\kappa\in\left(\frac1{q+1},\frac1q\right)$,
 where $q\in1\ldots\infty$, is
 
-$$g_q(y,\kappa):=g\!\left(y,\kappa\in\left(\frac1q,\frac1{q+1}\right)\right)=\sum_{s=1}^q\Delta g_s(y,\kappa),$$
+$$g_q(y,\kappa)\coloneqq g\!\left(y,\kappa\in\left(\frac1q,\frac1{q+1}\right)\right)=\sum_{s=1}^q\Delta g_s(y,\kappa),$$
 
 where
 
-$$\Delta g_s(y,\kappa):=\left(-1\right)^sy^{s\kappa-1}\ln y\sum_{j=0}^s\frac{A_{s,j}}{j!}\left(\ln y^{s\kappa-1}\right)^j,$$
+$$\Delta g_s(y,\kappa)\coloneqq\left(-1\right)^sy^{s\kappa-1}\ln y\sum_{j=0}^s\frac{A_{s,j}}{j!}\left(\ln y^{s\kappa-1}\right)^j,$$
 
 where $A_{s,j}$ are coefficients to be determined.
 
@@ -774,7 +774,7 @@ $$\begin{split}
 
 To simplify later expressions, define
 
-$$B_{s,l}:=\left(-1\right)^l\sum_{j=l}^s\left(-1\right)^jA_{s,j}.$$ {#eq:eq-B-def}
+$$B_{s,l}\coloneqq\left(-1\right)^l\sum_{j=l}^s\left(-1\right)^jA_{s,j}.$$ {#eq:eq-B-def}
 
 Now, calculate the integrals in Equation [@eq:eq-main-Delta-gs].
 Before that, first we introduce a handy integral formula:
@@ -949,7 +949,7 @@ are sufficient to determine $B_{q,l}$ for all $q\in 1\ldots\infty$ and $l\in 0\,
 up to one arbitrary parameter.
 Define the arbitrary parameter
 
-$$b:=1-B_{1,0},$$
+$$b\coloneqq1-B_{1,0},$$
 
 then the first few $B_{q,l}$ are
 
@@ -1163,7 +1163,7 @@ It may be interesting to calculate the
 
 We need to evaluate
 
-$$\mu_\nu\!\left(y\right):=\int_0^1\kappa^\nu f\!\left(y,\kappa\right)\mathrm d\kappa.$$
+$$\mu_\nu\!\left(y\right)\coloneqq\int_0^1\kappa^\nu f\!\left(y,\kappa\right)\mathrm d\kappa.$$
 
 First, calculate
 
@@ -1191,9 +1191,9 @@ $$\begin{align*}
 
 Define
 
-$$B_{s,l,p}:=\sum_{j=\max(0,l-p)}^s\frac{\left(j+p\right)!\left(-1\right)^j}{j!}A_{s,j},$$ {#eq:eq-B-def-2}
+$$B_{s,l,p}\coloneqq\sum_{j=\max(0,l-p)}^s\frac{\left(j+p\right)!\left(-1\right)^j}{j!}A_{s,j},$$ {#eq:eq-B-def-2}
 
-$$D_{\nu,p,l}:=\sum_{s=\max(1,l-p)}^\infty\frac{\left(-1\right)^s}{s^{\nu+1}}B_{s,l,p}.$$ {#eq:eq-D-def}
+$$D_{\nu,p,l}\coloneqq\sum_{s=\max(1,l-p)}^\infty\frac{\left(-1\right)^s}{s^{\nu+1}}B_{s,l,p}.$$ {#eq:eq-D-def}
 
 Then,
 
@@ -1252,7 +1252,7 @@ l\in0\,..p,\\
 
 where the infinite sum
 
-$$S_{\nu,p}:=\sum_{s=2}^\infty\frac{\left(s+p-2\right)!}{s^{\nu+1}\left(s-1\right)!}.$$
+$$S_{\nu,p}\coloneqq\sum_{s=2}^\infty\frac{\left(s+p-2\right)!}{s^{\nu+1}\left(s-1\right)!}.$$
 
 There is no closed form for $S_{\nu,p}$, but we may express it in terms of
 [Stirling numbers of the first kind](https://en.wikipedia.org/wiki/Stirling_numbers_of_the_first_kind){target="_blank"}
@@ -1290,7 +1290,7 @@ $$D_{1,0,l}=\begin{cases}-1,&l=0,\\\frac1l-\frac1{l+1},&l\in1\ldots\infty,\end{c
 
 $$\begin{align*}
 \mu_1\!\left(y\right)
-&:=\int_0^1\kappa f\!\left(y,\kappa\right)\mathrm d\kappa\\
+&\coloneqq\int_0^1\kappa f\!\left(y,\kappa\right)\mathrm d\kappa\\
 &=y+y\int_0^1\kappa g\!\left(y,\kappa\right)\mathrm d\kappa\\
 &=\frac{\operatorname{li}y-\ln(-\ln y)-\gamma}{\ln y},
 \end{align*}$$
@@ -1394,7 +1394,7 @@ Interestingly, this coincides with $f\!\left(y,\kappa\to1^-\right)$.
 
 Define
 
-$$y_0(\kappa):=\mathop{\mathrm{arg\,max}}_{y\in[0,1]}\,f(y,\kappa),$$
+$$y_0(\kappa)\coloneqq\mathop{\mathrm{arg\,max}}_{y\in[0,1]}\,f(y,\kappa),$$
 
 and then it seems that $y_0:[0,1]\to[0,1]$ is injective but not surjective.
 It is strictly increasing, and there is a jump at $\kappa=\frac12$ and at $\kappa=1$.

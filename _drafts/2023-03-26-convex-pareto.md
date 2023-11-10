@@ -18,10 +18,10 @@ A **spatial preference relation** (with ideal point $a$)
 over a metric space $\left(P,d\right)$ is
 the preference relation $\succeq$ defined as follows:
 
-$$\left(x\succeq y\right):=\left(d\!\left(x,a\right)\leq d\!\left(y,a\right)\right).$$
+$$\left(x\succeq y\right)\coloneqq\left(d\!\left(x,a\right)\leq d\!\left(y,a\right)\right).$$
 
 We can easily prove that this is indeed a preference relation, and it is continuous.
-It can be represented by the utility function $u(x):=-d(x,a)$.
+It can be represented by the utility function $u(x)\coloneqq-d(x,a)$.
 
 ---
 
@@ -35,9 +35,9 @@ we have
 $$\forall x\in P:x\in\overline{ab}\Leftrightarrow
 B\!\left(a,\|x-a\|\right)\cap B\!\left(b,\|x-b\|\right)=\varnothing,$$
 
-where $B(c,r):=\left\{x\in P\,\middle|\,\|x-c\|<r\right\}$
+where $B(c,r)\coloneqq\left\{x\in P\,\middle|\,\|x-c\|<r\right\}$
 is the open ball centered at $c$ with radius $r$,
-and $\overline{ab}:=\left\{a+t\left(b-a\right)\middle|\,t\in\left[0,1\right]\right\}$
+and $\overline{ab}\coloneqq\left\{a+t\left(b-a\right)\middle|\,t\in\left[0,1\right]\right\}$
 is the line segment connecting $a$ and $b$.
 
 *Proof.*
@@ -68,7 +68,7 @@ $$\|x-a\|+\|x-b\|>\|b-a\|.$$
 
 Define
 
-$$y:=a+\frac{\|x-a\|}{\|x-a\|+\|x-b\|}\left(b-a\right).$$
+$$y\coloneqqa+\frac{\|x-a\|}{\|x-a\|+\|x-b\|}\left(b-a\right).$$
 
 Then we have
 

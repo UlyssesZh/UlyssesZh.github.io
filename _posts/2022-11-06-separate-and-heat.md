@@ -48,7 +48,7 @@ Then, the final temperature is $T_n$.
 
 We now want to find the final temperature at $n\to\infty$:
 
-$$T':=\lim_{n\to\infty}T_n.$$
+$$T'\coloneqq\lim_{n\to\infty}T_n.$$
 
 According to the formula of thermal equilibrium,
 
@@ -58,12 +58,12 @@ Solve for $T_{m+1}$:
 
 $$T_{m+1}=\frac{C_0T_m+\frac CnT}{C_0+\frac Cn}.$$
 
-Let $k:=\frac{C_0}{C_0+\frac Cn}$, and $b:=\frac{\frac CnT}{C_0+\frac Cn}$,
+Let $k\coloneqq\frac{C_0}{C_0+\frac Cn}$, and $b\coloneqq\frac{\frac CnT}{C_0+\frac Cn}$,
 and we have
 
 $$T_{m+1}=kT_m+b.$$
 
-Let $m:=0,1,\ldots,n-1$ respectively, and we have
+Let $m\coloneqq0,1,\ldots,n-1$ respectively, and we have
 
 $$\begin{align*}
 T_1&=kT_0+b,\\
@@ -94,7 +94,7 @@ $$T_n=k^nT_0+\frac{1-k^n}{1-k}b$$
 Because
 
 $$\begin{align*}
-b&:=\frac{\frac CnT}{C_0+\frac Cn}\\
+b&\coloneqq\frac{\frac CnT}{C_0+\frac Cn}\\
 &=\frac{C_0}{C_0+\frac Cn}\frac{\frac CnT}{C_0}\\
 &=\frac{C_0}{C_0+\frac Cn}\left(\frac{C_0+\frac Cn}{C_0}-1\right)T\\
 &=\left(1-\frac{C_0}{C_0+\frac Cn}\right)T,
@@ -119,7 +119,7 @@ $$\begin{align*}
 Therefore,
 
 $$\begin{align*}
-T'&:=\lim_{n\to\infty}T_n\\
+T'&\coloneqq\lim_{n\to\infty}T_n\\
 &=T+\mathrm e^{-\frac C{C_0}}\left(T_0-T\right).
 \end{align*}$$
 

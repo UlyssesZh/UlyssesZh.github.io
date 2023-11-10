@@ -27,8 +27,8 @@ Some notations:
 - $a$ indexes particles. $j,k,l$ are indices of vector components.
 $\mathbf q,\mathbf s,\mathbf t$ are arbitrary vectors.
 - $\mathbf I$ is the unit matrix.
-Matrix $\mathbf q\otimes\mathbf s:=\mathbf q\mathbf s^\mathrm T$ is the outer product of $\mathbf q$ and $\mathbf s$,
-and $\mathbf q^{\otimes 2}:=\mathbf q\otimes\mathbf q$.
+Matrix $\mathbf q\otimes\mathbf s\coloneqq\mathbf q\mathbf s^\mathrm T$ is the outer product of $\mathbf q$ and $\mathbf s$,
+and $\mathbf q^{\otimes 2}\coloneqq\mathbf q\otimes\mathbf q$.
 - A rigid body consists of some particles with distances between each other fixed.
 $\mu_a$ is the mass of a particle;
 $\mathbf r_a$ is the position of a particle relative to the center of the rigid body
@@ -38,7 +38,7 @@ and $\mathbf v_a$ is the velocity of a particle.
 the velocity of its mass center is $\mathbf V$;
 and its angular velocity is $\mathbf\Omega$.
 $\theta_a$ is the angle between $\mathbf r_a$ and $\mathbf\Omega$.
-- $\mathbf m:= m\mathbf I$, $\mathbf J:=\sum_a\mu_a\left(\mathbf r_a^2\mathbf I+\mathbf r_a^{\otimes 2}\right)$.
+- $\mathbf m\coloneqq m\mathbf I$, $\mathbf J\coloneqq\sum_a\mu_a\left(\mathbf r_a^2\mathbf I+\mathbf r_a^{\otimes 2}\right)$.
 
 ---
 
@@ -74,11 +74,11 @@ $$\mathbf g\!\left(\mathbf q\right)=\mathbf A\mathbf q$$
 ---
 
 Introduce outer product.
-If the matrix $\mathbf A:=\mathbf q\otimes\mathbf s$, then
+If the matrix $\mathbf A\coloneqq\mathbf q\otimes\mathbf s$, then
 
 $$A_{j,k}=q_js_k.$$
 
-Specially, if $\mathbf A:=\mathbf q^{\otimes 2}$, then
+Specially, if $\mathbf A\coloneqq\mathbf q^{\otimes 2}$, then
 
 $$A_{j,k}=q_jq_k.$$
 
@@ -95,7 +95,7 @@ $$\mathbf v_a=\mathbf V+\mathbf\Omega\times\mathbf r_a.$$
 
 Then, we can discuss the kinetic energy
 
-$$T:=\sum_a\frac{\mu_a}2\mathbf v_a^2$$
+$$T\coloneqq\sum_a\frac{\mu_a}2\mathbf v_a^2$$
 
 of the rigid body.
 We will discover that the kinetic energy of the rigid body can be represented as
@@ -107,14 +107,14 @@ $$T=T_{\mathrm{tra}}+T_{\mathrm{rot}},$$
 
 where
 
-$$T_{\mathrm{tra}}:=\frac{\mathbf m}2\mathbf V\cdot\mathbf V,$$
+$$T_{\mathrm{tra}}\coloneqq\frac{\mathbf m}2\mathbf V\cdot\mathbf V,$$
 
-$$T_{\mathrm{rot}}:=\frac{\mathbf J}2\mathbf\Omega\cdot\mathbf\Omega.$$
+$$T_{\mathrm{rot}}\coloneqq\frac{\mathbf J}2\mathbf\Omega\cdot\mathbf\Omega.$$
 
 The proof is not difficult:
 
 $$\begin{align*}
-T&:=\sum_a\frac{\mu_a}2\mathbf v_a^2\\
+T&\coloneqq\sum_a\frac{\mu_a}2\mathbf v_a^2\\
 &=\sum_a\frac{\mu_a}2\left(\mathbf V+\mathbf\Omega\times\mathbf r_a\right)^2\\
 &=\sum_a\frac{\mu_a}2\left(
 	\mathbf V^2+2\mathbf V\cdot\left(\mathbf\Omega\times\mathbf r_a\right)
@@ -154,7 +154,7 @@ T&=T_{\mathrm{tra}}+\frac12\sum_a\mu_a\left(\mathbf r_a^2\mathbf I-\mathbf r_a^{
 
 Then, we may discuss the momentum of the rigid body
 
-$$\mathbf P:=\sum_a\mu_a\mathbf v_a.$$
+$$\mathbf P\coloneqq\sum_a\mu_a\mathbf v_a.$$
 
 We will discover that it is a homogeneous function of degree 1 w.r.t. $\mathbf V$,
 i.e.
@@ -164,7 +164,7 @@ $$\mathbf P=\mathbf m\mathbf V.$$
 The proof is easier:
 
 $$\begin{align*}
-\mathbf P&:=\sum_a\mu_a\mathbf v_a\\
+\mathbf P&\coloneqq\sum_a\mu_a\mathbf v_a\\
 &=\sum_a\mu_a\left(\mathbf V+\mathbf\Omega\times\mathbf r_a\right)\\
 &=\underbrace{\left(\sum_a\mu_a\right)}_m\mathbf V
 +\mathbf\Omega\times\underbrace{\sum_a\mu_a\mathbf r_a}_{\mathbf 0}\\
@@ -173,7 +173,7 @@ $$\begin{align*}
 
 Finally, we can discuss the angular momentum of the rigid body
 
-$$\mathbf M:=\sum_a\mathbf r_a\times\left(\mu_a\mathbf v_a\right).$$
+$$\mathbf M\coloneqq\sum_a\mathbf r_a\times\left(\mu_a\mathbf v_a\right).$$
 
 We will discover that it is a homogeneous function of degree 1 w.r.t. $\mathbf\Omega$,
 i.e.
@@ -183,7 +183,7 @@ $$\mathbf M=\mathbf J\mathbf\Omega.$$
 The proof is also easy:
 
 $$\begin{align*}
-\mathbf M&:=\sum_a\mathbf r_a\times\left(\mu_a\mathbf v_a\right)\\
+\mathbf M&\coloneqq\sum_a\mathbf r_a\times\left(\mu_a\mathbf v_a\right)\\
 &=\sum_a\mu_a\mathbf r_a\times\left(\mathbf V+\mathbf\Omega\times\mathbf r_a\right)\\
 &=\underbrace{\left(\sum_a\mu_a\mathbf r_a\right)}_{\mathbf 0}\times\mathbf V
 +\sum_a\mu_a\mathbf r_a\times\left(\mathbf\Omega\times\mathbf r_a\right)\\
@@ -278,7 +278,7 @@ when the principal inertia can be calculated.
 Now, we may study the rotational kinetic energy
 
 $$\begin{align*}
-T_{\mathrm{rot}}&:=\frac{\mathbf J}2\mathbf\Omega\cdot\mathbf\Omega\\
+T_{\mathrm{rot}}&\coloneqq\frac{\mathbf J}2\mathbf\Omega\cdot\mathbf\Omega\\
 &=\frac12\mathbf M\cdot\mathbf\Omega\\
 &=\frac12\mathbf M\cdot\mathbf\Omega\\
 &=\frac12\mathbf e_{\mathrm{pri}}\left(\operatorname{\mathbf{diag}}\mathbf J_{\mathrm{pri}}\right)
@@ -299,9 +299,9 @@ Study how $\mathbf J$ will change if $\mathbf r_a$ experience some transformatio
 First, consider translation.
 Let
 
-$$\mathbf r_a':=\mathbf r_a+\mathbf d,$$
+$$\mathbf r_a'\coloneqq\mathbf r_a+\mathbf d,$$
 
-$$\mathbf J':=\sum_a\mu_a\left(\mathbf r_a'^2\mathbf I-\mathbf r_a'^{\otimes2}\right)$$
+$$\mathbf J'\coloneqq\sum_a\mu_a\left(\mathbf r_a'^2\mathbf I-\mathbf r_a'^{\otimes2}\right)$$
 
 (we may regard $\mathbf J'$ as the inertia matrix of the rigid body w.r.t. the point with $\mathbf d$ distance away from the center of mass,
 but not (in usual cases) w.r.t. the center of mass),
@@ -314,7 +314,7 @@ This provides us a useful way to calculate $\mathbf J$ when $\mathbf J'$ is easy
 The proof is not difficult:
 
 $$\begin{align*}
-\mathbf J'&:=\sum_a\mu_a\left(\mathbf r_a'^2\mathbf I-\mathbf r_a'^{\otimes2}\right)\\
+\mathbf J'&\coloneqq\sum_a\mu_a\left(\mathbf r_a'^2\mathbf I-\mathbf r_a'^{\otimes2}\right)\\
 &=\sum_a\mu_a\left(\left(\mathbf r_a+\mathbf d\right)^2\mathbf I-\left(\mathbf r_a+\mathbf d\right)^{\otimes2}\right)\\
 &=\sum_a\mu_a\left(\left(\mathbf r_a^2+2\mathbf r_a\cdot\mathbf d+\mathbf d^2\right)\mathbf I
 -\left(\mathbf r_a^{\otimes2}+\mathbf d\otimes\mathbf r_a+\mathbf r_a\otimes\mathbf d+\mathbf d^{\otimes 2}\right)\right)\\
@@ -338,9 +338,9 @@ Now, consider rotation.
 Suppose the rotational matrix $\mathbf R$ represents the rotation around the unit vector $\mathbf u$.
 Let
 
-$$\mathbf r_a':=\mathbf R\mathbf r_a,$$
+$$\mathbf r_a'\coloneqq\mathbf R\mathbf r_a,$$
 
-$$\mathbf J':=\sum_a\mu_a\left(\mathbf r_a'^2\mathbf I-\mathbf r_a'^{\otimes2}\right),$$
+$$\mathbf J'\coloneqq\sum_a\mu_a\left(\mathbf r_a'^2\mathbf I-\mathbf r_a'^{\otimes2}\right),$$
 
 and we will discover
 
@@ -359,7 +359,7 @@ $$\left(\mathbf R\mathbf q\right)^{\otimes2}=\mathbf R\mathbf q^{\otimes2}\mathb
 Therefore,
 
 $$\begin{align*}
-\mathbf J'&:=\sum_a\mu_a\left(\mathbf r_a'^2\mathbf I-\mathbf r_a'^{\otimes2}\right)\\
+\mathbf J'&\coloneqq\sum_a\mu_a\left(\mathbf r_a'^2\mathbf I-\mathbf r_a'^{\otimes2}\right)\\
 &=\sum_a\mu_a\left(\mathbf r_a^2\mathbf I-\mathbf R\mathbf r_a^{\otimes2}\mathbf R^{-1}\right)\\
 &=\mathbf R\left(\sum_a\mu_a\left(\mathbf r_a^2\mathbf I-\mathbf r_a^{\otimes2}\right)\right)\mathbf R^{-1}\\
 &=\mathbf R\mathbf J\mathbf R^{-1}.

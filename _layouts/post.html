@@ -1,7 +1,7 @@
 ---
 layout: base
 ---
-{% capture content_var %}{{ content }}{% endcapture %}
+
 <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
@@ -47,13 +47,13 @@ layout: base
       </details>
       <details class="post-meta">
         <summary>Table of contents</summary>
-        {{ content_var | toc_only }}
+        {{ content | toc_only }}
       </details>
     </p>
   </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    {{ content_var | inject_anchors }}
+    {{ content | inject_anchors }}
     {% if page.image %}
       <p style="text-align: center"><img src="{{ page.image }}"></p>
     {% endif %}

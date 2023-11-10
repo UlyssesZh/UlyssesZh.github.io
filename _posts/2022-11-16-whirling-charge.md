@@ -34,9 +34,9 @@ $$U=\int_0^{2\pi}\frac{\frac{\mathrm d\theta}{2\pi}Q}{4\pi\varepsilon_0\sqrt{R^2
 Note that the elliptic integral of the first kind is
 
 $$\begin{align*}
-K\!\left(\mu\right)&:=\int_0^{\frac\pi2}\frac{\mathrm d\varphi}{\sqrt{1-\mu\sin^2\varphi}}\\
+K\!\left(\mu\right)&\coloneqq\int_0^{\frac\pi2}\frac{\mathrm d\varphi}{\sqrt{1-\mu\sin^2\varphi}}\\
 &=\int_0^{\frac\pi2}\frac{\mathrm d\varphi}{\sqrt{1-\mu\frac{1-\cos2\varphi}{2}}}\\
-&=\int_0^\pi\frac{\mathrm d\theta}{\sqrt{4-2\mu+2\mu\cos\theta}}&\theta:=2\varphi\\
+&=\int_0^\pi\frac{\mathrm d\theta}{\sqrt{4-2\mu+2\mu\cos\theta}}&\theta\coloneqq2\varphi\\
 &=\frac1{2\sqrt{4-2\mu}}\int_0^{2\pi}\frac{\mathrm d\theta}{1+\frac\mu{2-\mu}{\cos\theta}}.\\
 \end{align*}$$
 

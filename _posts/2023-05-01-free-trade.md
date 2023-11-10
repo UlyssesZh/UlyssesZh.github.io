@@ -82,7 +82,7 @@ Therefore, the total number of degrees of freedom in the solution of the model i
 $$n+\frac{n\left(n-1\right)}2-\left(\frac{n\left(n-1\right)}2-\left(n-1\right)\right)=2n-1.$$
 
 Now, the useful quantities that we can solve is
-the production and the net-import $T_j:=\sum_kT_{j,k}$ of every agent.
+the production and the net-import $T_j\coloneqq\sum_kT_{j,k}$ of every agent.
 Note that the net-import actually has only $n-1$ degrees of freedom because of the restriction $\sum_jT_j=0$.
 
 ## The middleman (re-exportation)

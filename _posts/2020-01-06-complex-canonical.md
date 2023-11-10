@@ -12,7 +12,7 @@ tags:
 layout: post
 excerpt: 'In this article, I try exploring an idea:
 using complex numbers to combine pairs of canonical variables into complex variables:
-$\mathbf c:=\alpha\mathbf q+\mathrm i\beta\mathbf p$.
+$\mathbf c\coloneqq\alpha\mathbf q+\mathrm i\beta\mathbf p$.
 It turns out that we can write canonical equations
 $\frac{\mathrm d\mathbf c}{\mathrm dt}=-2\mathrm i\alpha\beta\frac{\partial\mathcal H}{\partial\mathbf c^*}$,
 Poisson brackets
@@ -35,7 +35,7 @@ a free particle, and a harmonic oscillator.'
 
 In Hamiltonian physics, if we let
 
-$$\mathbf c:=\alpha\mathbf q+\mathrm i\beta\mathbf p,$$ {#eq:def-c}
+$$\mathbf c\coloneqq\alpha\mathbf q+\mathrm i\beta\mathbf p,$$ {#eq:def-c}
 
 where $\alpha$ and $\beta$ are non-zero real numbers,
 then two real vectors $\mathbf q$ and $\mathbf p$
@@ -67,7 +67,7 @@ The approach to this is to use the average of the limit along the real axis
 and that along the imaginary axis, which means
 
 $$
-    \frac{\mathrm d}{\mathrm d\left(x+\mathrm iy\right)}:=
+    \frac{\mathrm d}{\mathrm d\left(x+\mathrm iy\right)}\coloneqq
     \frac12\left(\frac\partial{\partial x}-
     \mathrm i\frac\partial{\partial y}\right).
 $$
@@ -144,7 +144,7 @@ in the solution.
 The Poisson bracket $\left\{\cdot,\cdot\right\}$ can be defined just as usual:
 
 $$
-    \left\{f,g\right\}:=
+    \left\{f,g\right\}\coloneqq
     \frac{\partial f}{\partial\mathbf q}\cdot
     \frac{\partial g}{\partial\mathbf p}-
     \frac{\partial f}{\partial\mathbf p}\cdot
@@ -286,7 +286,7 @@ $$
     \frac{\mathrm dc}{\mathrm dt}=-\mathrm i\omega c,
 $$
 
-where $\omega:=\alpha\beta=\sqrt{\frac km}$.
+where $\omega\coloneqq\alpha\beta=\sqrt{\frac km}$.
 By solving it, we can derive that
 
 $$

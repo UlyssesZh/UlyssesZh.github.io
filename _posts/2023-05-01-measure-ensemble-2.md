@@ -149,7 +149,7 @@ $\vec W^{\parallel\perp(1)}$.
 Then, we have $\vec W^{\parallel(1)}=\vec W^{\parallel\parallel(1)}+\vec W^{\parallel\perp(1)}$.
 The space $\vec W^{\parallel\perp(1)}$ is a one-dimensional vector space.
 
-For convenience, define $W^{\star\perp(1)}:=W^{\perp(1)}+\vec W^{\parallel\perp(1)}$.
+For convenience, define $W^{\star\perp(1)}\coloneqq W^{\perp(1)}+\vec W^{\parallel\perp(1)}$.
 The vector space $\vec W^{\star\perp(1)}$ associated with it is a complement of
 $\vec W^{\parallel\parallel(1)}$ in $\vec W^{(1)}$.
 To make the notation look more consistent, we can use $\vec W^{\star\parallel(1)}$
@@ -178,7 +178,7 @@ Because a complement of a vector subspace is not determined,
 there are multiple possible ways of constructing the projection.
 One possible way is
 
-$$\pi^{\star(1)}\!\left(U,V,N\right):=\left(U+pV,0,N\right).$$
+$$\pi^{\star(1)}\!\left(U,V,N\right)\coloneqq\left(U+pV,0,N\right).$$
 
 Here the fixed intensive quantity $p$ is involved.
 Note that this projection is still valid for different temperatures of the bath,
@@ -202,7 +202,7 @@ Consider this projection $\pi^\star:W\to W^{\star\perp}$
 (where $W^{\star\perp}$ is an affine subspace of $W$ and the range of $\pi^\star$):
 
 $$\pi^\star\!\left(e_1,e_2\right)
-:=\left(\pi^{\star(1)}\!\left(e_1\right),
+\coloneqq\left(\pi^{\star(1)}\!\left(e_1\right),
 \rho_{\pi(e_1,e_2)}\!\left(\pi^{\star(1)}\!\left(e_1\right)\right)\right).$$ {#eq:eq-pi-star}
 
 To ensure that it is well-defined, we need to guarantee that
@@ -239,7 +239,7 @@ $$-i^\star\circ\vec\rho^{\star-1}=-i\circ\vec\rho^{-1}.$$
 
 Therefore,
 
-$$i^\star:=i\circ\vec\rho^{-1}\circ\vec\rho^\star$$ {#eq:eq-i-star}
+$$i^\star\coloneqq i\circ\vec\rho^{-1}\circ\vec\rho^\star$$ {#eq:eq-i-star}
 
 would be a good definition of $i^\star$.
 However, actually $i^\star$ is trivial:
@@ -277,17 +277,17 @@ They physically mean the same composite system.
 
 The space $W^\perp$ is four-dimensional, and the space $W^{\star\perp}$ is five-dimensional.
 We can denote the five degrees of freedom as
-$U,V,H_1,N_1,N_2$, where $U:=U_1+U_2$ is the total energy, $V:=V_1+V_2$ is the total volume,
-and $H_1:=U_1+pV_1$ is the enthalpy of subsystem 1.
+$U,V,H_1,N_1,N_2$, where $U\coloneqq U_1+U_2$ is the total energy, $V\coloneqq V_1+V_2$ is the total volume,
+and $H_1\coloneqq U_1+pV_1$ is the enthalpy of subsystem 1.
 Then, the projection $\pi^\star$ can be written as
 
 $$\pi^\star\!\left(U_1,V_1,N_1,U_2,V_2,N_2\right)
 =\left(H_1,0,N_1,U-H_1,V,N_2\right).$$
 
 We can get $W^{\star\parallel}_e$ by finding the inverse of the projection,
-where $e:=\left(H_1,0,N_1,U-H_1,V,N_2\right)$:
+where $e\coloneqq\left(H_1,0,N_1,U-H_1,V,N_2\right)$:
 
-$$W^{\star\parallel}_e:=\pi^{\star-1}\!\left(e\right)
+$$W^{\star\parallel}_e\coloneqq\pi^{\star-1}\!\left(e\right)
 =\left\{\left(H_1-pV_1,V_1,N_1,U-H_1+pV_1,V-V_1,N_2\right)\middle|\,V_1\in\mathbb R\right\}.$$
 
 Because it is parameterized by one real parameter $V_1$,
@@ -296,10 +296,10 @@ Projecting it under $c^{(1)}$ and $c^{(2)}$ will respectively give us
 $W^{\star\parallel(1)}_e$ and $W^{\star\parallel(2)}_e$:
 
 $$W^{\star\parallel(1)}_e
-:=\left\{\left(H_1-pV_1,V_1,N_1\right)\middle|\,V_1\in\mathbb R\right\},$$
+\coloneqq\left\{\left(H_1-pV_1,V_1,N_1\right)\middle|\,V_1\in\mathbb R\right\},$$
 
 $$W^{\star\parallel(2)}_e
-:=\left\{\left(U-H_1+pV_1,V-V_1,N_2\right)\middle|\,V_1\in\mathbb R\right\}.$$
+\coloneqq\left\{\left(U-H_1+pV_1,V-V_1,N_2\right)\middle|\,V_1\in\mathbb R\right\}.$$
 
 The affine isomorphism $\rho^\star_e$ is then naturally
 
@@ -314,7 +314,7 @@ Our fixed intensive quantities are $i$, which is defined as
 $i\!\left(\mathrm dU_1,\mathrm dV_1,0\right)=\frac1T\,\mathrm dU_1+\frac pT\,\mathrm dV_1$.
 We can then get $i^\star$ by
 
-$$i^\star:=i\circ\vec\rho^{-1}\circ\vec\rho^\star
+$$i^\star\coloneqq i\circ\vec\rho^{-1}\circ\vec\rho^\star
 =\left(-p\,\mathrm dV_1,\mathrm dV_1,0\right)\mapsto0.$$
 
 This is consistent with Equation [@eq:eq-i-star-0].
@@ -360,7 +360,7 @@ This is then a criterion of judge whether $i$ is
 in the domain of fixed intensive quantities of the non-thermal ensemble or not.
 To be clear, we define
 
-$$J:=\left\{i\in\vec W^{\parallel\prime}\,\middle|\,
+$$J\coloneqq\left\{i\in\vec W^{\parallel\prime}\,\middle|\,
 \exists e\in E^{\star\perp}:0\in I^\star_{e}\right\}.$$
 
 A problem about this formulation is that it is possible to have two $i$s that share the same

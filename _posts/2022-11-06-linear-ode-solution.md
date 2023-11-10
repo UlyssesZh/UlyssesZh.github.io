@@ -57,7 +57,7 @@ by using mathematical induction on the dimension of $\vec C$ and $\vec F$,
 the necessity can be proved. $\square$
 
 **Definition 2**.
-$\overrightarrow{a_n}_{n=0}^m:=\left(a_0,a_1,\ldots,a_m\right)$.
+$\overrightarrow{a_n}_{n=0}^m\coloneqq\left(a_0,a_1,\ldots,a_m\right)$.
 
 **Lemma 2**.
 Suppose the $\left(m+1\right)$-dimensional vector $\vec a$ is independent to $x$,
@@ -75,7 +75,7 @@ Suppose $\vec P$ is a tuple of functions w.r.t. $x$,
 and the dimension of $\vec P$ is $m+1$,
 then the differential operator
 
-$$L\!\left(\mathrm D,x\right):=\vec P\cdot\overrightarrow{\mathrm D^k}^m_{k=0}$$
+$$L\!\left(\mathrm D,x\right)\coloneqq\vec P\cdot\overrightarrow{\mathrm D^k}^m_{k=0}$$
 
 is a linear differential operator.
 
@@ -86,7 +86,7 @@ By Definition 1. $\square$
 Suppose $\vec p$ is a constant $\left(m+1\right)$-dimensional vector,
 then the differential operator
 
-$$L\!\left(\mathrm D\right):=\vec p\cdot\overrightarrow{\mathrm D^k}^m_{k=0}$$ {#eq:lin-diff-op-w-const-coef}
+$$L\!\left(\mathrm D\right)\coloneqq\vec p\cdot\overrightarrow{\mathrm D^k}^m_{k=0}$$ {#eq:lin-diff-op-w-const-coef}
 
 is a linear differential operator.
 
@@ -116,14 +116,14 @@ then the ODE is called a linear ODE with constant coefficients.
 **Definition 5** (generating function).
 For a sequence $\left\{a_n\right\}_{n=0}^\infty$, the function
 
-$$G\!\left(x\right):=\overrightarrow{a_n}_{n=0}^\infty\cdot\overrightarrow{x^n}_{n=0}^\infty$$
+$$G\!\left(x\right)\coloneqq\overrightarrow{a_n}_{n=0}^\infty\cdot\overrightarrow{x^n}_{n=0}^\infty$$
 
 is called the (ordinary) generating function (OGF) of the sequence.
 
 *Note.* here we do not introduce vectors with infinite dimensions.
 Actually,
 
-$$G\!\left(x\right):=\lim_{s\to\infty}\overrightarrow{a_n}_{n=0}^s\cdot\overrightarrow{x^n}_{n=0}^s.$$
+$$G\!\left(x\right)\coloneqq\lim_{s\to\infty}\overrightarrow{a_n}_{n=0}^s\cdot\overrightarrow{x^n}_{n=0}^s.$$
 
 **Definition 6** (exponential generating function).
 For a sequence $\left\{a_n\right\}_{n=0}^\infty$,
@@ -132,7 +132,7 @@ is called the exponential generating function (EGF)
 of the sequence $\left\{a_n\right\}_{n=0}^\infty$.
 In other words,
 
-$$G\!\left(x\right):=\overrightarrow{\frac{a_n}{n!}}_{n=0}^\infty\cdot\overrightarrow{x^n}_{n=0}^\infty.$$
+$$G\!\left(x\right)\coloneqq\overrightarrow{\frac{a_n}{n!}}_{n=0}^\infty\cdot\overrightarrow{x^n}_{n=0}^\infty.$$
 
 **Lemma 5** (differential of power functions).
 Suppose $n,k\in\mathbb N$,
@@ -191,7 +191,7 @@ the necessity can be proved by Taylor expansion of the zero function. $\square$
 
 **Definition 8**.
 
-$$\overrightarrow{\overrightarrow{a_{n,k}}_{n=0}^s}_{k=0}^m:=
+$$\overrightarrow{\overrightarrow{a_{n,k}}_{n=0}^s}_{k=0}^m\coloneqq
 \left(\begin{matrix}
 a_{0,0}&a_{0,1}&\cdots&a_{0,m}\\
 a_{1,0}&a_{1,1}&\cdots&a_{1,m}\\
@@ -258,7 +258,7 @@ By Lemma 9, the LHS actually equals $\overrightarrow{\overrightarrow{a_{n}^{*l}}
 
 Define matrix
 
-$$\mathbf A:=\overrightarrow{\overrightarrow{a_n^{*l}}_{k=0}^m}_{l=0}^m,$$
+$$\mathbf A\coloneqq\overrightarrow{\overrightarrow{a_n^{*l}}_{k=0}^m}_{l=0}^m,$$
 
 then $\mathbf A\vec C=\vec 0$, and
 
@@ -290,7 +290,7 @@ where $\vec C$ is a tuple of $m$ constants.
 *Proof.*
 First prove that $\left\{a_n\right\}$, where
 
-$$a_n:=\vec C\cdot\overrightarrow{a_n^{*l}}_{l=1}^m,$$
+$$a_n\coloneqq\vec C\cdot\overrightarrow{a_n^{*l}}_{l=1}^m,$$
 
 must be a special solution of the original sequence equation.
 
@@ -317,7 +317,7 @@ Then by Definition 10, the set of sequences (sequence of tuples)
 $\overrightarrow{a_n^{*l}}_{l=0}^m$ are linearly independent.
 Let matrix
 
-$$\mathbf A:=\overrightarrow{\overrightarrow{a_n^{*l}}_{l=0}}_{k=0}^m,$$
+$$\mathbf A\coloneqq\overrightarrow{\overrightarrow{a_n^{*l}}_{l=0}}_{k=0}^m,$$
 
 then according to Lemma 10, $\mathbf A$ is invertible.
 
@@ -344,7 +344,7 @@ $\vec C\cdot\overrightarrow{a_n^{*l}}_{l=1}^m$. $\square$
 Suppose $\vec p$ is a constant vector whose $\left(m+1\right)$th component is not $0$,
 then the function
 
-$$F\!\left(x\right):=\vec p\cdot\overrightarrow{x^k}_{k=0}^m$$
+$$F\!\left(x\right)\coloneqq\vec p\cdot\overrightarrow{x^k}_{k=0}^m$$
 
 is called a polynomial of degree $m$ w.r.t. $x$,
 and $\vec p$ is called the coefficients of the polynomial.
@@ -366,7 +366,7 @@ Proof is omitted.
 
 **Definition 13** (binomial coefficient).
 
-$$\binom uv:=\frac{u!}{v!(u-v)!}.$$
+$$\binom uv\coloneqq\frac{u!}{v!(u-v)!}.$$
 
 **Lemma 13**.
 
@@ -416,7 +416,7 @@ $$\begin{align*}
 If $r$ is a root with multiplicity $w$ of the polynomial with coefficients $\vec p$,
 then for any natural number $q<w$, the sequence
 
-$$a_n:=\frac{n!}{\left(n-q\right)!}r^{n-q}$$ {#eq:special-sol-of-seq-eq}
+$$a_n\coloneqq\frac{n!}{\left(n-q\right)!}r^{n-q}$$ {#eq:special-sol-of-seq-eq}
 
 is a special solution of the sequence equation
 $\vec p\cdot\overrightarrow{a_{n+k}}_{k=0}^m=\vec 0$.
@@ -463,7 +463,7 @@ by Definition 9, $\left\{a_n\right\}$ is a special solution of the sequence equa
 **Lemma 17**.
 The sequence
 
-$$a_n:=\overrightarrow{\overrightarrow{C_{l,q}}_{q=0}^{w_l-1}\cdot
+$$a_n\coloneqq\overrightarrow{\overrightarrow{C_{l,q}}_{q=0}^{w_l-1}\cdot
 \overrightarrow{\frac{n!}{\left(n-q\right)!}r_l^{n-q}}_{q=0}^{w_l-1}}_{l=1}^o\cdot\vec 1$$
 
 is the general solution to the sequence equation
@@ -518,7 +518,7 @@ All the steps are reversible, so the necessity is also proved. $\square$
 **Definition 14** (exponential function).
 The EGF of the sequence $\left\{1\right\}$ is called the exponential function, i.e.
 
-$$\mathrm e^x:=\overrightarrow{\frac 1{n!}}_{n=0}^{\infty}\cdot\overrightarrow{x^n}_{n=0}^\infty.$$
+$$\mathrm e^x\coloneqq\overrightarrow{\frac 1{n!}}_{n=0}^{\infty}\cdot\overrightarrow{x^n}_{n=0}^\infty.$$
 
 **Lemma 19**.
 If $y$ is the EGF of the sequence in Equation [@eq:special-sol-of-seq-eq],

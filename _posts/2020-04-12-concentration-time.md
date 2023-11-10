@@ -52,10 +52,10 @@ where $\mu_X$ and $\mu_Y$ are rate constants derived by experimenting.
 Apply a substitution
 
 $$\begin{split}
-    x_j:=\frac{\left[X_j\right]}{a_j},\quad
-    y_j:=\frac{\left[Y_j\right]}{b_j},\\
-    \mu_x:=\mu_X\prod_ka_k^{a_k},\quad
-    \mu_y:=\mu_Y\prod_kb_k^{b_k}
+    x_j\coloneqq\frac{\left[X_j\right]}{a_j},\quad
+    y_j\coloneqq\frac{\left[Y_j\right]}{b_j},\\
+    \mu_x\coloneqq\mu_X\prod_ka_k^{a_k},\quad
+    \mu_y\coloneqq\mu_Y\prod_kb_k^{b_k}
 \end{split}$$ {#eq:substitution}
 
 to Formula [@eq:rate-equations], and then it becomes
@@ -92,13 +92,13 @@ $$t=\int_0^s\frac{\mathrm ds}{F\!\left(s\right)},$$ {#eq:separated}
 
 where
 
-$$F\!\left(s\right):=\mu_y\prod_k\left(B_k-s\right)^{b_k}-
+$$F\!\left(s\right)\coloneqq\mu_y\prod_k\left(B_k-s\right)^{b_k}-
     \mu_x\prod_k\left(A_k+s\right)^{a_k}$$ {#eq:def-F}
 
 is a polynomial of $n$th degree, where
 
 $$
-    n:=\max\!\left(\sum_ka_k,\sum_kb_k\right)
+    n\coloneqq\max\!\left(\sum_ka_k,\sum_kb_k\right)
 $$
 
 is the larger of the orders of the forward and reverse reactions.
@@ -127,7 +127,7 @@ Denote the value of $s$ in this case as $q$.
 It is easy to figure out that $q$ is a zero of $F\!\left(s\right)$
 on the interval
 $$
-    I:=\left(-\min_kA_k,\min_kB_k\right),
+    I\coloneqq\left(-\min_kA_k,\min_kB_k\right),
 $$
 which is the range of $s$ such that the concentration of all reactants
 are positive.
@@ -209,7 +209,7 @@ Find $\left[\ce{H2O}\right]$ as a function of time.
 Formula [@eq:def-F] becomes
 
 $$
-    F\!\left(s\right):=8.29\times10^{-6}\left(30-s\right)\left(40-s\right)
+    F\!\left(s\right)\coloneqq8.29\times10^{-6}\left(30-s\right)\left(40-s\right)
     -2.07\times10^{-4}\left(10+s\right)\left(20+s\right)
     \quad\left(\text{SI}\right).
 $$

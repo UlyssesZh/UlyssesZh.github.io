@@ -21,7 +21,7 @@ The original article was posted at 2019-07-13 20:36 +0800.*
 
 **Definition 1**. Let
 
-$$f_n\!\left(z\right):=\left(1-z\right)^{n+1}\sum_{k=1}^\infty k^nz^k,$$
+$$f_n\!\left(z\right)\coloneqq\left(1-z\right)^{n+1}\sum_{k=1}^\infty k^nz^k,$$
 
 where $n$ is a positive integer.
 
@@ -43,7 +43,7 @@ $$\begin{align*}
 
 **Definition 2** (Eulerian numbers).
 
-$$\left<\begin{matrix}n\\k\end{matrix}\right>:=\sum_{j=0}^{k+1}\left(-1\right)^j\binom{n+1}j\left(k-j+1\right)^n.$$
+$$\left<\begin{matrix}n\\k\end{matrix}\right>\coloneqq\sum_{j=0}^{k+1}\left(-1\right)^j\binom{n+1}j\left(k-j+1\right)^n.$$
 
 **Lemma 2**.
 

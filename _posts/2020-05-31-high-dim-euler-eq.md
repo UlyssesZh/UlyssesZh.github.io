@@ -20,7 +20,7 @@ and the independent variable $\mathbf x\in\Omega$ will be arguments of $\mathcal
 Define a functional
 
 $$
-    I:=\mathbf f\mapsto\int_\Omega\mathcal L\left(\cdots\right)\mathrm dV,
+    I\coloneqq\mathbf f\mapsto\int_\Omega\mathcal L\left(\cdots\right)\mathrm dV,
 $$
 
 where $\mathrm dV$ is the volume element in $\Omega$.
@@ -34,7 +34,7 @@ where $P_{j,m}$ is the set of all (not necessarily strictly) ascending $j$-tuple
 $\left\{1,\dots,m\right\}^j$, and
 
 $$
-    \partial_\mu:=\frac{\partial^{\operatorname{len}\mu}}{\prod_k\partial x_{\mu_k}}.
+    \partial_\mu\coloneqq\frac{\partial^{\operatorname{len}\mu}}{\prod_k\partial x_{\mu_k}}.
 $$
 
 Equation [@eq:ret] is the Generalization of Euler--Lagrange equation.
