@@ -27,7 +27,7 @@ Active:
 * [Bilibili](https://space.bilibili.com/226047082){target="_blank"}
 * [Zelle](enroll.zellepay.com/qr-codes?data=eyJuYW1lIjoiWU9VUUlVIiwidG9rZW4iOiI4MDU4MjU4NDA3IiwiYWN0aW9uIjoicGF5bWVudCJ9){target="_blank"}
 * [知乎](https://zhihu.com/people/ulysseszhan){target="_blank"}
-* [Mastodon](https://mastodon.social/@ulysseszhan){target="_blank"} (@ulysseszhan@mastodon.social)
+* [Mastodon](https://mastodon.social/@ulysseszhan){target="_blank"} (\@ulysseszhan\@mastodon.social)
 
 Available:
 
