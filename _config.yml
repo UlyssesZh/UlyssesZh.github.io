@@ -53,6 +53,8 @@ minima:
   skin: my-skin
   date_format: '%b %-d, %Y'
   social_links:
+    - platform: mastodon
+      user_url: https://mastodon.social/@ulysseszhan
     - platform: x
       user_url: https://x.com/UlyssesZhan
     - platform: github
