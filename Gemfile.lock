@@ -8,6 +8,14 @@ GIT
       jekyll-feed (~> 0.9)
       jekyll-seo-tag (~> 2.1)
 
+GIT
+  remote: https://github.com/sverrirs/jekyll-paginate-v2.git
+  revision: 7bc2634c04c49120b674cc3506275f85c4389f5c
+  ref: 7bc2634c04c49120b674cc3506275f85c4389f5c
+  specs:
+    jekyll-paginate-v2 (3.0.0)
+      jekyll (>= 3.0, < 5.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -27,7 +35,7 @@ GEM
     faraday-net_http (3.0.2)
     ffi (1.16.3)
     forwardable-extended (2.6.0)
-    google-protobuf (3.25.0-x86_64-linux)
+    google-protobuf (3.25.1-x86_64-linux)
     highline (2.1.0)
     http_parser.rb (0.8.0)
     i18n (1.14.1)
@@ -52,8 +60,6 @@ GEM
       jekyll (>= 3.6, < 5.0)
     jekyll-feed (0.17.0)
       jekyll (>= 3.7, < 5.0)
-    jekyll-paginate-v2 (3.0.0)
-      jekyll (>= 3.0, < 5.0)
     jekyll-paru (0.2.0)
       jekyll (>= 3.0)
       paru (>= 1.1.0)
@@ -114,7 +120,7 @@ DEPENDENCIES
   jekyll (~> 4)
   jekyll-archives
   jekyll-feed
-  jekyll-paginate-v2
+  jekyll-paginate-v2!
   jekyll-paru
   jekyll-seo-tag
   jekyll-sitemap
@@ -127,4 +133,4 @@ DEPENDENCIES
   webrick
 
 BUNDLED WITH
-   2.4.1
+   2.4.22

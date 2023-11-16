@@ -3,35 +3,31 @@
 	{% if paginator.previous_page %}
 		{% if paginator.first_page %}
 			<li class="previous">
-				<a href="{{ paginator.first_page_path }}" title="Page 1">&lt;&lt;</a>
+				<a href="{{ paginator.first_page_path | strip_index }}" title="Page 1">&lt;&lt;</a>
 			</li>
 		{% endif %}
 
 		<li class="previous">
-			<a href="{{ paginator.previous_page_path }}" title="Page {{ paginator.page - 1 }}">&lt;</a>
+			<a href="{{ paginator.previous_page_path | strip_index }}" title="Page {{ paginator.page - 1 }}">&lt;</a>
 		</li>
 	{% endif %}
 
 	{% if paginator.page_trail %}
 		{% for trail in paginator.page_trail %}
 			<li{% if page.url == trail.path %} class="selected" {% endif %}>
-				<a href="{% if trail.num == 1 and paginator.first_page %}
-					{{ paginator.first_page_path }}
-				{% else %}
-					{{ trail.path | replace: "/index.html", "" }}
-				{% endif %}" title="Page {{ trail.num }}">{{ trail.num }}</a>
+				<a href="{{ trail.path | strip_index }}" title="Page {{ trail.num }}">{{ trail.num }}</a>
 			</li>
 		{% endfor %}
 	{% endif %}
 
 	{% if paginator.next_page %}
 		<li class="next">
-			<a href="{{ paginator.next_page_path }}" title="Page {{ paginator.page + 1 }}">&gt;</a>
+			<a href="{{ paginator.next_page_path | strip_index }}" title="Page {{ paginator.page + 1 }}">&gt;</a>
 		</li>
 
 		{% if paginator.last_page %}
 			<li class="previous">
-				<a href="{{ paginator.last_page_path }}" title="Page {{ paginator.total_pages }}">&gt;&gt;</a>
+				<a href="{{ paginator.last_page_path | strip_index }}" title="Page {{ paginator.total_pages }}">&gt;&gt;</a>
 			</li>
 		{% endif %}
 	{% endif %}

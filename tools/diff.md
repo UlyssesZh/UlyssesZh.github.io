@@ -3,8 +3,8 @@ title: Diff
 layout: tool
 ---
 
-<script src="https://cdn.jsdelivr.net/npm/diff_match_patch@0.1.1/lib/diff_match_patch.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/autosize@4.0.2/dist/autosize.min.js"></script>
+<script src="https://fastly.jsdelivr.net/npm/diff_match_patch@0.1.1/lib/diff_match_patch.js"></script>
+<script src="https://fastly.jsdelivr.net/npm/autosize@4.0.2/dist/autosize.min.js"></script>
 
 Diff takes two texts and finds the differences.
 This implementation works on a character by character basis.
@@ -12,7 +12,7 @@ The result of any diff may contain 'chaff',
 irrelevant small commonalities which complicate the output.
 A post-diff cleanup algorithm factors out these trivial commonalities.
 
-Copied from the [Demo of Diff](https://neil.fraser.name/software/diff_match_patch/demos/diff.html).
+Copied from the [Demo of Diff](https://neil.fraser.name/software/diff_match_patch/demos/diff.html){target=_blank}.
 
 <textarea id="text1" autofocus="true" style="-webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; width: 100%;"></textarea>
 <textarea id="text2" autofocus="true" style="-webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; width: 100%;"></textarea>

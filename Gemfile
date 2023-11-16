@@ -13,7 +13,7 @@ group :jekyll_plugins do
 		gem 'jekyll-feed'
 		gem 'jekyll-sitemap'
 	end
-	gem 'jekyll-paginate-v2'
+	gem 'jekyll-paginate-v2', github: 'sverrirs/jekyll-paginate-v2', ref: '7bc2634c04c49120b674cc3506275f85c4389f5c'
 	gem 'jekyll-toc'
 	gem 'jekyll-paru'
 	gem 'jekyll-seo-tag'

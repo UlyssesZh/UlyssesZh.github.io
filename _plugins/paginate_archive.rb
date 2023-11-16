@@ -41,20 +41,13 @@ module Jekyll
 			@site.pages.delete page_to_remove
 		end
 		def run_pagination_model
-			@config['permalink'] = File.join @archive.url, 'page/:num/'
+			@config['permalink'] = File.join @archive.url, @site.config['pagination']['permalink']
 			@archive.data['pagination'] = {'enabled' => true}
 			@archive.data['date'] = @archive.date
 			model = Jekyll::PaginateV2::Generator::PaginationModel.new method(:log), method(:page_add), method(:page_remove), method(:collection_by_name)
 			count = model.run @config, [@archive], @archive.title
 			Jekyll.logger.info "Archive pagination:", "Complete #{count} pages for #{@archive.title} #{@archive.date}" if LOG
 			@archive.data.delete 'pagination'
-		end
-	end
-
-	module UlyssesZhan::PaginationPagePatch
-		PaginateV2::Generator::PaginationPage.prepend self
-		def relative_path
-			@url
 		end
 	end
 end

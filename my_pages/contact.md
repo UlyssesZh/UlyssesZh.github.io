@@ -20,7 +20,8 @@ layout: my_page
 
 Active:
 
-* [Discord](https://discordapp.com/users/586808226058862623){target="_blank"} (ulysseszhan)
+* [Discord](https://discordapp.com/users/586808226058862623){target="_blank"} (ulysseszhan);
+[Discord server](https://discord.gg/zc64ydP4JA){target="_blank"}
 * [Telegram](https://t.me/UlyssesZhan){target="_blank"} (UlyssesZhan)
 * [Reddit](https://reddit.com/u/UlyssesZhan){target="_blank"} (UlyssesZhan)
 * [Instagram](https://instagram.com/ulysseszhan){target="_blank"} (ulysseszhan)
@@ -111,9 +112,7 @@ Specific:
 * [Project1](https://rpg.blue/?2644692){target="_blank"}
 * [4399手游论坛](https://bbs.4399.cn/forums-mythread-uid-832996581){target="_blank"}
 * [PVZ Forum](https://forum.crescb.com/profile/6068){target="_blank"} (ulysseszhan)
-
-Miscellaneous:
-
+* [质心论坛](https://forum.eduzhixin.com/homepage/UID_62b6586b5f9b9b5ee2215e38a8cd04ac){target="_blank"}
 * [MacroDroid Forum](https://macrodroidforum.com/index.php?members/ulysseszhan.24270){target="_blank"}
 * [Jellyfin Forum](https://forum.jellyfin.org/u-ulysseszhan){target="_blank"} (UlyssesZhan)
 * [Nextcloud community](https://help.nextcloud.com/u/ulysseszhan){target="_blank"} (UlyssesZhan)

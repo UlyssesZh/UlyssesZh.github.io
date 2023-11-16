@@ -15,7 +15,7 @@
       {% if post.excerpt and post.excerpt != "" %}
         <p>
           {% if post.image %}
-            <img src="{{ post.image }}" style="float: right; padding-left: 12px; padding-bottom: 6px" width="64">
+            <img src="{{ post.image }}" class="post-image">
           {% endif %}
           {{ post.excerpt | markdownify_no_p }}
         </p>

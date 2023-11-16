@@ -55,26 +55,27 @@ minima:
   social_links:
     - platform: mastodon
       user_url: https://mastodon.social/@ulysseszhan
-    - platform: x
-      user_url: https://x.com/UlyssesZhan
+      account_id: 111291458352797823
     - platform: github
       user_url: https://github.com/UlyssesZh
+    - platform: telegram
+      user_url: https://t.me/ulysseszhan
+    - platform: youtube
+      user_url: https://youtube.com/@ulysseszhan
+    - platform: linkedin
+      user_url: https://linkedin.com/in/%E6%9C%89%E4%B8%98-%E8%A9%B9-7715a4155
+    - platform: stackoverflow
+      user_url: https://stackoverflow.com/u/10245493
+    - platform: x
+      user_url: https://x.com/UlyssesZhan
     - platform: facebook
       user_url: https://facebook.com/YouqiuZhan
     - platform: instagram
       user_url: https://instagram.com/ulysseszhan
     - platform: pinterest
       user_url: https://pinterest.com/ulysseszhan
-    - platform: linkedin
-      user_url: https://linkedin.com/in/%E6%9C%89%E4%B8%98-%E8%A9%B9-7715a4155
-    - platform: telegram
-      user_url: https://t.me/ulysseszhan
     - platform: flickr
       user_url: https://flickr.com/ulysseszhan
-    - platform: stackoverflow
-      user_url: https://stackoverflow.com/u/10245493
-    - platform: youtube
-      user_url: https://youtube.com/@ulysseszhan
 future: true
 defaults:
   - scope:

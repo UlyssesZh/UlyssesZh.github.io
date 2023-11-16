@@ -1,5 +1,7 @@
 # frozon_string_literal: true
 
+return if ENV['JEKYLL_NO_MULTITHREAD']
+
 module Jekyll::UlyssesZhan
 end
 

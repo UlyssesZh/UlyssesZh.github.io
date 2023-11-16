@@ -42,7 +42,7 @@ function displaySearchResults(results, store) {
 			var item = store[results[i].ref];
 			appendString += '<li><span class="post-meta">' + item.date + '</span>';
 			appendString += '<h3><a class="post-link" href="' + item.url + '">' + item.title + '</a></h3>';
-			appendString += '<p>' + `<img src="${item.image}" style="float: right; padding-left: 12px; padding-bottom: 6px" width="64">` + item.excerpt + '</p>';
+			appendString += '<p>' + `<img src="${item.image}" class="post-image">` + item.excerpt + '</p>';
 			appendString += '<ul><li>Categories: ' + item.categories.map(cat => `<a href="/archives/category/${cat.replace(/ /g, '-')}">${cat}</a>`).join(", ") + '</li>';
 			appendString += '<li>Tags: ' + item.tags.map(tag => `<a href="/archives/tag/${tag.replace(/ /g, '-')}">${tag}</a>`).join(", ") + '</li></ul></li>';
 		}

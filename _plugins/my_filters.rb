@@ -26,6 +26,11 @@ module Jekyll
 		def strip_lineno input
 			input.gsub %r{<td class="rouge-gutter gl">.*?</td>}m, ''
 		end
+
+		def strip_index input
+			result = input.sub %r{/index\.html$}, ''
+			result.empty? ? '/' : result
+		end
 	end
 end
 Liquid::Template.register_filter Jekyll::UlyssesZhan::Filters

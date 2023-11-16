@@ -274,4 +274,41 @@ a[target="_blank"]:not([rel="me"]) {
 	}
 }
 
+.post-image {
+	float: right;
+	padding-left: 12px;
+	padding-bottom: 6px;
+	width: 64px;
+}
+
+.rss-subscribe {
+	text-align: right;
+}
+
+.mastodon-heading {
+	font-size: 1.75rem;
+}
+
+.mastodon-date {
+	font-size: 14px;
+	color: var(--minima-brand-color);
+}
+
+.mastodon-post-content {
+	min-height: 100px;
+	padding-bottom: 1px;
+}
+
+.mastodon-image {
+	float: right;
+	padding-left: 12px;
+	padding-bottom: 6px;
+	height: 100%;
+	max-height: 100px;
+}
+
+.mastodon-subscribe {
+	text-align: right;
+}
+
 @import "gitalk";
