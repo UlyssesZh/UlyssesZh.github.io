@@ -6,11 +6,12 @@ $lm-background-color: #fefbf1 !default;
 $lm-code-background-color: #eeeeff !default;
 $lm-link-base-color: #db3168 !default;
 
-$dm-brand-color: #828282 !default;
-$dm-text-color: #8c84a1 !default;
+$dm-brand-color: #929292 !default;
+$dm-text-color: #ac94b1 !default;
 $dm-background-color: #0e0b01 !default;
 $dm-code-background-color: #271b20 !default;
-$dm-link-base-color: #de346b !default;
+$dm-link-base-color: #de446f !default;
+$dm-link-visited-color: darken($dm-link-base-color, 12%) !default;
 
 $lm-kbd-border-color: #cccccc !default;
 $lm-kbd-color: #333333 !default;
@@ -36,13 +37,26 @@ $dm-pager-color: #8c84a1 !default;
 $dm-pager-background-color: #0e0b01 !default;
 $dm-pager-selected-color: #0e0b01 !default;
 $dm-pager-selected-background-color: #b21b4b !default;
-$dm-hr-background-color: #3d0013 !default;
+$dm-hr-background-color: #8a2d4c !default;
 $dm-search-color: #aa2436 !default;
 $dm-search-focus-color: #c177a3 !default;
 $dm-search-border-color: #9d1113 !default;
 $dm-search-background-color: #000 !default;
 $dm-lineno-color: #777 !default;
 $dm-lineno-background-color: #202020 !default;
+
+@function str-replace($string, $search, $replace: '') {
+	$index: str-index($string, $search);
+	@if $index {
+		@return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+	}
+	@return $string;
+}
+
+@function external-link-image($color) {
+	$svg-url: 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12"><path fill="#{$color}" d="M6 1h5v5L8.86 3.85 4.7 8 4 7.3l4.15-4.16L6 1Z M2 3h2v1H2v6h6V8h1v2a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1Z" /></svg>';
+	@return url(str-replace($svg-url, '#', '%23'));
+}
 
 :root {
 	--kbd-color: #{$lm-kbd-color};
@@ -98,7 +112,18 @@ $lineno-background-color: var(--lineno-background-color);
 
 @import "minima/skins/auto";
 
+:root {
+	--external-link-image: #{external-link-image($lm-link-base-color)};
+	--external-link-visited-image: #{external-link-image($lm-link-visited-color)};
+	--external-link-hover-image: #{external-link-image($lm-link-hover-color)};
+}
 @media (prefers-color-scheme: dark) {
+	:root {
+		--external-link-image: #{external-link-image($dm-link-base-color)};
+		--external-link-visited-image: #{external-link-image($dm-link-visited-color)};
+		--external-link-hover-image: #{external-link-image($dm-link-hover-color)};
+	}
+
 	.dark-adaptive {
 		filter: invert(1) hue-rotate(180deg);
 	}
@@ -266,11 +291,19 @@ div:has(> table .katex-display) {
 }
 
 a[target="_blank"]:not([rel="me"]) {
-	&:after {
-		content: "\2197";
-		font-size: 10px;
-		vertical-align: super;
-		font-weight: thin;
+	background-image: var(--external-link-image);
+	background-position: center right;
+	background-repeat: no-repeat;
+	background-size: 0.857em;
+	padding-right: 1em;
+
+	&:visited {
+		// sadly, this is useless: https: //developer.mozilla.org/en-US/docs/Web/CSS/:visited#privacy_restrictions
+		background-image: var(--external-link-visited-image);
+	}
+
+	&:hover {
+		background-image: var(--external-link-hover-image);
 	}
 }
 
