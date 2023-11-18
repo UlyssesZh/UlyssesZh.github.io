@@ -38,25 +38,12 @@ $dm-pager-background-color: #0e0b01 !default;
 $dm-pager-selected-color: #0e0b01 !default;
 $dm-pager-selected-background-color: #b21b4b !default;
 $dm-hr-background-color: #8a2d4c !default;
-$dm-search-color: #aa2436 !default;
+$dm-search-color: #902436 !default;
 $dm-search-focus-color: #c177a3 !default;
-$dm-search-border-color: #9d1113 !default;
+$dm-search-border-color: #862333 !default;
 $dm-search-background-color: #000 !default;
 $dm-lineno-color: #777 !default;
 $dm-lineno-background-color: #202020 !default;
-
-@function str-replace($string, $search, $replace: '') {
-	$index: str-index($string, $search);
-	@if $index {
-		@return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
-	}
-	@return $string;
-}
-
-@function external-link-image($color) {
-	$svg-url: 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12"><path fill="#{$color}" d="M6 1h5v5L8.86 3.85 4.7 8 4 7.3l4.15-4.16L6 1Z M2 3h2v1H2v6h6V8h1v2a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1Z" /></svg>';
-	@return url(str-replace($svg-url, '#', '%23'));
-}
 
 :root {
 	--kbd-color: #{$lm-kbd-color};
@@ -112,18 +99,7 @@ $lineno-background-color: var(--lineno-background-color);
 
 @import "minima/skins/auto";
 
-:root {
-	--external-link-image: #{external-link-image($lm-link-base-color)};
-	--external-link-visited-image: #{external-link-image($lm-link-visited-color)};
-	--external-link-hover-image: #{external-link-image($lm-link-hover-color)};
-}
 @media (prefers-color-scheme: dark) {
-	:root {
-		--external-link-image: #{external-link-image($dm-link-base-color)};
-		--external-link-visited-image: #{external-link-image($dm-link-visited-color)};
-		--external-link-hover-image: #{external-link-image($dm-link-hover-color)};
-	}
-
 	.dark-adaptive {
 		filter: invert(1) hue-rotate(180deg);
 	}
@@ -291,19 +267,27 @@ div:has(> table .katex-display) {
 }
 
 a[target="_blank"]:not([rel="me"]) {
-	background-image: var(--external-link-image);
-	background-position: center right;
-	background-repeat: no-repeat;
-	background-size: 0.857em;
-	padding-right: 1em;
+	&::after {
+		content: "\2197\fe0e"; // placeholder
+		display: inline-block;
+		background-color: var(--minima-link-base-color);
+		width: 0.7em;
 
-	&:visited {
-		// sadly, this is useless: https: //developer.mozilla.org/en-US/docs/Web/CSS/:visited#privacy_restrictions
-		background-image: var(--external-link-visited-image);
+		--image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12"><path d="M6 1h5v5L8.86 3.85 4.7 8 4 7.3l4.15-4.16L6 1Z M2 3h2v1H2v6h6V8h1v2a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1Z" /></svg>');
+		mask-image: var(--image);
+		-webkit-mask-image: var(--image);
+		mask-size: contain;
+		-webkit-mask-size: contain;
+		mask-repeat: no-repeat;
+		-webkit-mask-repeat: no-repeat;
+		mask-position: left 25%;
+		-webkit-mask-position: left 25%;
 	}
-
-	&:hover {
-		background-image: var(--external-link-hover-image);
+	&:visited::after {
+		background-color: var(--minima-link-visited-color);
+	}
+	&:hover::after {
+		background-color: var(--minima-link-hover-color);
 	}
 }
 
