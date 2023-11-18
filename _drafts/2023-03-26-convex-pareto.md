@@ -68,7 +68,7 @@ $$\|x-a\|+\|x-b\|>\|b-a\|.$$
 
 Define
 
-$$y\coloneqqa+\frac{\|x-a\|}{\|x-a\|+\|x-b\|}\left(b-a\right).$$
+$$y\coloneqq a+\frac{\|x-a\|}{\|x-a\|+\|x-b\|}\left(b-a\right).$$
 
 Then we have
 

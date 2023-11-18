@@ -28,10 +28,15 @@
 
       <div class="footer-col footer-col-3">
         {% include copyright.html %}
-        <p>
-          Last <a href="{{ site.git_repo }}/commit/{{ site.commit_hash }}" target="_blank">update</a>
-          of the website was at {{ "now" | date: "%FT%T%z" }}.
-        </p>
+
+        <div class="update-info">
+          {% if site.github_run_id %}
+              <a href="{{ site.git_repo }}/actions/runs/{{ site.github_run_id }}" target="_blank">Build</a>
+              {{ "now" | date: "%FT%T%z" }}<br>
+          {% endif %}
+          <a href="{{ site.git_repo }}/commit/{{ site.commit_hash }}" target="_blank">Commit</a>
+          {{ site.commit_time | date: "%FT%T%z" }}
+        </div>
       </div>
     </div>
 

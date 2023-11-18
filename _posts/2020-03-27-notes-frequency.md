@@ -133,7 +133,7 @@ $$
 From that, we can naturally think an excellent frequency
 assignment be defined as
 
-$$p_k\coloneqqp_0+\frac kn,$$ {#eq:p-freq-def}
+$$p_k\coloneqq p_0+\frac kn,$$ {#eq:p-freq-def}
 
 which is an elegant arithmetic progression.
 

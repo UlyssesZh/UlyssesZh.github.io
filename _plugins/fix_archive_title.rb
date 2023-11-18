@@ -5,19 +5,11 @@ return if ENV['JEKYLL_NO_ARCHIVE']
 module Jekyll::UlyssesZhan
 end
 
-module Jekyll::UlyssesZhan::Utils
-	module_function
-	def silence_warnings
-		warn_level = $VERBOSE
-		$VERBOSE = nil
-		result = yield
-		$VERBOSE = warn_level
-		result
-	end
-end
+module Jekyll
 
-module Jekyll::Archives
-	class Archive < ::Jekyll::Page # monkey-patching
+	module UlyssesZhan::ArchivePatch
+		Archives::Archive.prepend self
+
 		def title
 			case @type
 			when 'year', 'month', 'day'
@@ -29,18 +21,20 @@ module Jekyll::Archives
 			end
 		end
 	end
-	class Archives < ::Jekyll::Generator # monkey-patching
-		::Jekyll::UlyssesZhan::Utils.silence_warnings do
-			DEFAULTS = {
-				**DEFAULTS,
-				"titles" => {
-					"year" => "",
-					"month" => "",
-					"day" => "",
-					"category" => "%s",
-					"tag" => "%s"
-				}
-			}.freeze
-		end
+
+	module UlyssesZhan::ArchivesPatch
+		Archives::Archives.prepend self
+
+		DEFAULTS = {
+			**Archives::Archives::DEFAULTS,
+			"titles" => {
+				"year" => "",
+				"month" => "",
+				"day" => "",
+				"category" => "%s",
+				"tag" => "%s"
+			}
+		}.freeze
+
 	end
 end

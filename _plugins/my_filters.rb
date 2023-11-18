@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require 'nokogiri'
+
 module Jekyll::UlyssesZhan
 	@markdown_snippet_cache = {}
 	def self.markdown_snippet_cache
@@ -30,6 +32,15 @@ module Jekyll
 		def strip_index input
 			result = input.sub %r{/index\.html$}, ''
 			result.empty? ? '/' : result
+		end
+
+		def external_links input
+			doc = Nokogiri::HTML::DocumentFragment.parse input
+			doc.css('a').each do |a|
+				next if a['href'].downcase.start_with? @context.registers[:site].config['url'].downcase
+				a['target'] = '_blank'
+			end
+			doc.to_html
 		end
 	end
 end

@@ -71,7 +71,7 @@ Let
 
 $$d_C\coloneqq x_C\left(\frac{k_1}{\sqrt{k_1^2+1}}+\frac{k_2}{\sqrt{k_2^2+1}}\right),$$
 
-$$A\coloneqqr\sqrt{\left(\frac{k_1}{\sqrt{k_1^2+1}}+\frac{k_2}{\sqrt{k_2^2+1}}\right)^2
+$$A\coloneqq r\sqrt{\left(\frac{k_1}{\sqrt{k_1^2+1}}+\frac{k_2}{\sqrt{k_2^2+1}}\right)^2
 +\left(\frac1{\sqrt{k_1^2+1}}+\frac1{\sqrt{k_2^2+1}}\right)^2},$$
 
 $$\phi\coloneqq\arctan\frac{\frac1{\sqrt{k_1^2+1}}+\frac1{\sqrt{k_2^2+1}}}{\frac{k_1}{\sqrt{k_1^2+1}}+\frac{k_2}{\sqrt{k_2^2+1}}}.$$

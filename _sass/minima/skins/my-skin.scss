@@ -311,4 +311,10 @@ a[target="_blank"]:not([rel="me"]) {
 	text-align: right;
 }
 
+.update-info {
+	text-align: right;
+	font-size: 10px;
+	color: var(--minima-brand-color);
+}
+
 @import "gitalk";

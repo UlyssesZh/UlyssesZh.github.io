@@ -4,6 +4,7 @@ layout: base
 
 <div class="home">
 	{{ content }}
+	{% include latest-mastodon-post.html %}
 	{% if site.posts.size > 0 %}
 		<h2 class="post-list-heading">Articles</h2>
 		{% include search.html %}
