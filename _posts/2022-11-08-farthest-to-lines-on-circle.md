@@ -19,7 +19,7 @@ translate the region to make it center at $C$, and see whether $P$ is inside the
 ---
 
 *This article is translated (while omitting some tedious calculations) from a
-Chinese [article](https://zhuanlan.zhihu.com/p/62898884){target="_blank"} on my Zhihu account.
+Chinese [article](https://zhuanlan.zhihu.com/p/62898884) on my Zhihu account.
 The original article was posted at 2019-05-15 20:28 +0800.*
 
 ---

@@ -17,7 +17,7 @@ In this article, I will try to settle this problem.'
 ---
 
 *This article is adapted from a
-Chinese [article](https://zhuanlan.zhihu.com/p/348630262){target="_blank"} on my Zhihu account.
+Chinese [article](https://zhuanlan.zhihu.com/p/348630262) on my Zhihu account.
 The original article was posted at 2021-02-02 00:41 +0800.
 There are some minor modifications to the original article
 as well as some added contents.*

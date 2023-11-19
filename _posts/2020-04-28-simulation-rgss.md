@@ -134,8 +134,8 @@ solve_hamiltonian 2,Vector[PI/2,0.0,0.0,0.0],Float::INFINITY,1e-3,
 The codes are not complete in this post.
 See the [attached file](/assets/codes/RungeKutta.rar) for details.
 You can open the project using
-[RPG Maker VX Ace](https://store.steampowered.com/app/220700/RPG_Maker_VX_Ace){target="_blank"}.
+[RPG Maker VX Ace](https://store.steampowered.com/app/220700/RPG_Maker_VX_Ace).
 The `Game.exe` file is not the official `Game.exe` executable
 but the third-party improved version of it called
-[RGD](http://cirno.blog/archives/290){target="_blank"}
+[RGD](http://cirno.blog/archives/290)
 (of version 1.3.2, while the latest till now is 1.5.1).

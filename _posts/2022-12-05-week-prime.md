@@ -27,8 +27,8 @@ Since my need is actually very easy to satisfy (I just need a reliable reminder!
 I decided to write a Ruby program to help me with that.
 
 The program is called peroutine.
-It is available [on GitHub](https://github.com/UlyssesZh/peroutine){target="_blank"}.
+It is available [on GitHub](https://github.com/UlyssesZh/peroutine).
 It is a Ruby program that runs on the command line.
 I can now see whether I need to wash my hair or clothes today by running `peroutine list`!
-It also notifies me every day at 11 PM via my self-hosted [ntfy](https://ntfy.sh){target="_blank"} server
+It also notifies me every day at 11 PM via my self-hosted [ntfy](https://ntfy.sh) server
 whether I need to wash my hair today.

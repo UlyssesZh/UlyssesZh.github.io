@@ -11,7 +11,7 @@ excerpt: 'I set up a simple model to determine the production and consumption
 in free trade between nations.'
 ---
 
-*This article is translated from a Chinese [article](https://zhuanlan.zhihu.com/p/424773907){target="_blank"} on my Zhihu account.
+*This article is translated from a Chinese [article](https://zhuanlan.zhihu.com/p/424773907) on my Zhihu account.
 The original article was posted at 2021-04-26 14:27 +0800.*
 
 ---

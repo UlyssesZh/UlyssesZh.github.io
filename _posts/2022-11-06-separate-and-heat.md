@@ -20,7 +20,7 @@ and $C_0$ is the heat capacity of the hot water.'
 ---
 
 *This article is translated from a
-Chinese [article](https://zhuanlan.zhihu.com/p/60146217){target="_blank"} on my Zhihu account.
+Chinese [article](https://zhuanlan.zhihu.com/p/60146217) on my Zhihu account.
 The original article was posted at 2019-03-23 12:49 +0800.*
 
 ---

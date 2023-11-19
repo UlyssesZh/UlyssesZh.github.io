@@ -12,7 +12,7 @@ The result of any diff may contain 'chaff',
 irrelevant small commonalities which complicate the output.
 A post-diff cleanup algorithm factors out these trivial commonalities.
 
-Copied from the [Demo of Diff](https://neil.fraser.name/software/diff_match_patch/demos/diff.html){target=_blank}.
+Copied from the [Demo of Diff](https://neil.fraser.name/software/diff_match_patch/demos/diff.html).
 
 <textarea id="text1" autofocus="true" style="-webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; width: 100%;"></textarea>
 <textarea id="text2" autofocus="true" style="-webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; width: 100%;"></textarea>

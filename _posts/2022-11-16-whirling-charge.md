@@ -15,7 +15,7 @@ Find the magnetic induction $B$ at the center of the ring.'
 ---
 
 *This article is translated from a
-Chinese [article](https://zhuanlan.zhihu.com/p/107399199){target="_blank"} on my Zhihu account.
+Chinese [article](https://zhuanlan.zhihu.com/p/107399199) on my Zhihu account.
 The original article was posted at 2020-02-17 18:49 +0800.*
 
 ---

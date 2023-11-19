@@ -1,28 +1,5 @@
 hr {
-	border: 0;
-	height: $spacing-unit * .066667;
-	width: 50%;
-	position: relative;
 	margin: $spacing-unit auto;
-	overflow: visible;
-	background-image: linear-gradient(
-		to right,
-		color-mix(in srgb, $hr-background-color 0%, transparent),
-		color-mix(in srgb, $hr-background-color 100%, transparent),
-		color-mix(in srgb, $hr-background-color 0%, transparent)
-	);
-
-	&:before {
-		content: "\2665\fe0e";
-		color: $hr-background-color;
-		display: inline-block;
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		margin: 0 0 0 (-$spacing-unit * .1);
-		font-size: $spacing-unit * .5;
-		line-height: 0;
-	}
 }
 
 blockquote {
@@ -46,5 +23,14 @@ pre, code {
 }
 
 summary {
-	margin-bottom: $spacing-unit * .5;
+	padding-bottom: $spacing-unit * .5;
+}
+
+.post-meta summary {
+	padding-bottom: 0px;
+}
+
+.post-meta time {
+	display: block;
+	padding-bottom: $spacing-unit * .5;
 }

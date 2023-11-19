@@ -13,7 +13,7 @@ They only illustrate the basic concepts of how a RM game is structured
 and what is the running logic of it.'
 ---
 
-[RPG Maker (RM)](https://tkool.jp/){target="_blank"}
+[RPG Maker (RM)](https://tkool.jp/)
 is a tool for making games.
 
 I only have experience in using RPG Maker XP, RPG Maker VX,
@@ -97,4 +97,4 @@ There is a simple RPG built by me which can be accessed
 
 The source codes of RGSS are secret, but those of rpg_core.js are not a secret
 and can be seen at
-[its GitHub repo](https://github.com/rpgtkoolmv/corescript/){target="_blank"}.
+[its GitHub repo](https://github.com/rpgtkoolmv/corescript/).

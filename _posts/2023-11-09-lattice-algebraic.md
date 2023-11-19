@@ -31,7 +31,7 @@ so such a lattice cannot exist intuitively.
 
 Actually, the only allowed rotational symmetries are 2-fold, 3-fold, 4-fold, and 6-fold.
 This result is known as the
-[crystallographic restriction theorem](https://en.wikipedia.org/wiki/Crystallographic_restriction_theorem){target="_blank"}.
+[crystallographic restriction theorem](https://en.wikipedia.org/wiki/Crystallographic_restriction_theorem).
 Then, how to prove it?
 
 After jiggling around the possible structure of the symmetry group of a plane lattice,
@@ -80,7 +80,7 @@ Now, we are ready to prove our main result:
 **Theorem.**
 There is a discrete subset of $\mathbb R^2$ that has both translational symmetry
 and $m$-fold symmetry iff $\varphi(m)\le2$, where $\varphi$ is
-[Euler's totient function](https://en.wikipedia.org/wiki/Euler%27s_totient_function){target="_blank"}.
+[Euler's totient function](https://en.wikipedia.org/wiki/Euler%27s_totient_function).
 
 *Proof.*
 Prove by contradiction.
@@ -106,12 +106,12 @@ I will discuss later the other case).
 Notice that for any $z\in S,n\in\mathbb Z$,
 we have $T^nRz=n+\alpha z\in S$.
 Therefore, by expanding any polynomial with integer coefficients using
-[Horner's rule](https://en.wikipedia.org/wiki/Horner%27s_method){target="_blank"},
+[Horner's rule](https://en.wikipedia.org/wiki/Horner%27s_method),
 we can see that $\mathbb Z[\alpha]\subseteq S$.
 
 Because $\alpha$ is an algebraic integer of degree $\varphi(m)$
 (the minimal polynomial of $\alpha$ is known as the $m$th
-[cyclotomic polynomial](https://en.wikipedia.org/wiki/Cyclotomic_polynomial){target="_blank"}),
+[cyclotomic polynomial](https://en.wikipedia.org/wiki/Cyclotomic_polynomial)),
 the generating set of $\mathbb Z[\alpha]$ must have at least $\varphi(m)$ elements.
 Therefore, according to Lemma 1, $\mathbb Z[\alpha]$ is discrete iff $\varphi(m)\le2$.
 

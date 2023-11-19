@@ -538,7 +538,7 @@ $$g_1(y,\kappa)\coloneqq g\!\left(y,\kappa\in\left(\frac12,1\right)\right)=
 
 where Equation [@eq:eq-normalization] is utilized when finding the first term.
 We can try to solve Equation [@eq:eq-main-1-2-kappa-1] by using
-[Adomian decomposition method (ADM)](https://en.wikipedia.org/wiki/Adomian_decomposition_method){target="_blank"}.
+[Adomian decomposition method (ADM)](https://en.wikipedia.org/wiki/Adomian_decomposition_method).
 Suppose $g_1$ can be written in a series
 
 $$g_1=g_1^{(0)}+g_1^{(1)}+\cdots,$$
@@ -1159,7 +1159,7 @@ when $n$ is a usual note count in a rhythm game chart (usually at least $500$).
 ### Moments
 
 It may be interesting to calculate the
-[moments](https://en.wikipedia.org/wiki/Moment_(mathematics)){target="_blank"} of the distribution.
+[moments](https://en.wikipedia.org/wiki/Moment_(mathematics)) of the distribution.
 
 We need to evaluate
 
@@ -1255,8 +1255,8 @@ where the infinite sum
 $$S_{\nu,p}\coloneqq\sum_{s=2}^\infty\frac{\left(s+p-2\right)!}{s^{\nu+1}\left(s-1\right)!}.$$
 
 There is no closed form for $S_{\nu,p}$, but we may express it in terms of
-[Stirling numbers of the first kind](https://en.wikipedia.org/wiki/Stirling_numbers_of_the_first_kind){target="_blank"}
-and the [Riemann $\zeta$ function](https://en.wikipedia.org/wiki/Riemann_zeta_function){target="_blank"}.
+[Stirling numbers of the first kind](https://en.wikipedia.org/wiki/Stirling_numbers_of_the_first_kind)
+and the [Riemann $\zeta$ function](https://en.wikipedia.org/wiki/Riemann_zeta_function).
 For $p\in1\,..\nu$, we have
 
 $$\begin{align*}
@@ -1295,8 +1295,8 @@ $$\begin{align*}
 &=\frac{\operatorname{li}y-\ln(-\ln y)-\gamma}{\ln y},
 \end{align*}$$
 
-where $\operatorname{li}$ is the [logarithmic integral function](https://en.wikipedia.org/wiki/Logarithmic_integral_function){target="_blank"},
-and $\gamma$ is the [Euler--Mascheroni constant](https://en.wikipedia.org/wiki/Euler%E2%80%93Mascheroni_constant){target="_blank"}.
+where $\operatorname{li}$ is the [logarithmic integral function](https://en.wikipedia.org/wiki/Logarithmic_integral_function),
+and $\gamma$ is the [Euler--Mascheroni constant](https://en.wikipedia.org/wiki/Euler%E2%80%93Mascheroni_constant).
 The function seems undefined when $y=0$ or $y=1$, but it has limits at these points:
 
 $$\mu_1\!\left(y\to0^+\right)=0,\quad\mu_1\!\left(y\to1^-\right)=1,$$
@@ -1406,7 +1406,7 @@ $$y_0\!\left(\kappa\in\left[\frac12,1\right)\right)
 
 ## Some applications
 
-In [Phigros](https://pigeon-games.com){target="_blank"},
+In [Phigros](https://pigeon-games.com),
 one should combo at least $60\%$ of the notes to get a white V
 (![white V](https://static.wikia.nocookie.net/phigros/images/0/0a/White_v_icon_.png){width="16px"})
 rank.

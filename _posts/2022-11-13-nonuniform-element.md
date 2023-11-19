@@ -14,7 +14,7 @@ The elements add up to get the total length $L=\frac{mg}{2k}+L_0$.'
 ---
 
 *This article is translated from a
-Chinese [article](https://zhuanlan.zhihu.com/p/97803238){target="_blank"} on my Zhihu account.
+Chinese [article](https://zhuanlan.zhihu.com/p/97803238) on my Zhihu account.
 The original article was posted at 2019-12-18 11:20 +0800.*
 
 ---

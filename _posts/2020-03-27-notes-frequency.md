@@ -304,7 +304,7 @@ The famous "middle C" is $\mathrm C_4$.
 This notation is called the
 [*scientific pitch notation*](
 https://en.wikipedia.org/wiki/
-Scientific_pitch_notation){target="_blank"}.
+Scientific_pitch_notation).
 
 Note that in fact, this definition of $12$-tone equal temperament
 has some slight error. The accurate value for $p_0$ is
@@ -316,7 +316,7 @@ $$
 because it is stipulated that $f\left(\mathrm A_4\right)=440$,
 which is standardized as ISO 16 and known as
 [A440](https://en.wikipedia.org/wiki/
-A440_(pitch_standard)){target="_blank"}.
+A440_(pitch_standard)).
 
 ## Why $\frac 7{12}$
 
@@ -327,5 +327,5 @@ $2^\frac 7{12}\approx\frac32$, which is a simple ratio.
 Harmonic, huh.
 
 (Finally, as is a notice, codes appearing above are
-[alda](https://alda.io/){target="_blank"} codes,
+[alda](https://alda.io/) codes,
 which are used to write music.)

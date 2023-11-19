@@ -17,6 +17,12 @@ class Hash
 	end
 end
 
+class Paru::PandocFilter::Attr
+	def []= key, value
+		@data[key] = value
+	end
+end
+
 AVAILABLE_FORMATTERS = %w[linewise line_highlighter line_table pygments table]
 
 DEFAULT_CONFIG = {
@@ -33,6 +39,7 @@ Paru::Filter.run do
 			@config.merge_r! YAML.load_file config_file, symbolize_names: true
 		end
 	end
+
 	with 'CodeBlock' do |code_block|
 		lang = code_block.attr.classes.first
 		code = code_block.to_code_string
@@ -48,5 +55,13 @@ Paru::Filter.run do
 		formatter_options = formatter_options[:css_class] if @config[:formatter] == 'pygments'
 		formatter = Rouge::Formatter.find("html_#{@config[:formatter]}").new base_formatter, formatter_options
 		code_block.markdown = formatter.format lexer.lex code
+	end
+
+	with 'Link' do |link|
+		next unless link.target.url =~ %r{^(https?:)?//}
+		link.attr['target'] = '_blank'
+		rel = link.attr['rel']&.split || []
+		rel.push 'external' unless rel.include? 'external'
+		link.attr['rel'] = rel.join ' '
 	end
 end

@@ -19,7 +19,7 @@ but it uses a very awful notation...'
 ---
 
 *This article is translated from a
-Chinese [article](https://zhuanlan.zhihu.com/p/60752992){target="_blank"} on my Zhihu account.
+Chinese [article](https://zhuanlan.zhihu.com/p/60752992) on my Zhihu account.
 The original article was posted at 2019-04-06 13:46 +0800.*
 
 *Notice*: Because this article was written very early,

@@ -1,8 +1,11 @@
+---
+# empty frontmatter
+---
 <OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/">
-  <ShortName>Search Ulysses' trip</ShortName>
-  <Description>Search among articles in the blog Ulysses' trip</Description>
+  <ShortName>Search {{ site.title }}</ShortName>
+  <Description>Search among articles in the blog {{ site.title }}</Description>
   <InputEncoding>UTF-8</InputEncoding>
   <Image width="16" height="16" type="image/x-icon">/favicon.ico</Image>
   <Image width="64" height="64" type="image/x-icon">/assets/images/logos/78(.png</Image>
-  <Url type="text/html" template="https://ulysseszh.github.io/search/?query={searchTerms}"/>
+  <Url type="text/html" template="{{ site.url }}/search/?query={searchTerms}"/>
 </OpenSearchDescription>

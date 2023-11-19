@@ -14,7 +14,7 @@ The answer is that the smallest curvature is exactly $p$, and the point with sma
 ---
 
 *This article is translated from a
-Chinese [article](https://zhuanlan.zhihu.com/p/113293049){target="_blank"} on my Zhihu account.
+Chinese [article](https://zhuanlan.zhihu.com/p/113293049) on my Zhihu account.
 The original article was posted at 2020-03-15 11:50 +0800.*
 
 ---

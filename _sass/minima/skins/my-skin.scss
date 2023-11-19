@@ -266,9 +266,9 @@ div:has(> table .katex-display) {
 	margin-bottom: 15px;
 }
 
-a[target="_blank"]:not([rel="me"]) {
+a[rel~=external] {
 	&::after {
-		content: "\2197\fe0e"; // placeholder
+		content: "\2197\fe0e"; // shown in case mask-image not supported
 		display: inline-block;
 		background-color: var(--minima-link-base-color);
 		width: 0.7em;
@@ -332,6 +332,70 @@ a[target="_blank"]:not([rel="me"]) {
 	text-align: right;
 	font-size: 10px;
 	color: var(--minima-brand-color);
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	width: 50%;
+	position: relative;
+	overflow: visible;
+	background-image: linear-gradient(
+		to right,
+		color-mix(in srgb, $hr-background-color 0%, transparent),
+		color-mix(in srgb, $hr-background-color 100%, transparent),
+		color-mix(in srgb, $hr-background-color 0%, transparent)
+	);
+
+	&:before {
+		content: "\2665\fe0e";
+		color: $hr-background-color;
+		display: inline-block;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		margin: 0 0 0 (-3px);
+		font-size: 15px;
+		line-height: 0;
+	}
+}
+
+.post-navi {
+	display: flex;
+}
+
+.post-navi-date {
+	font-size: 0.8em;
+	color: var(--minima-brand-color);
+}
+
+.post-navi-item {
+	padding: 0 2.2em;
+	width: 50%;
+	position: relative;
+	
+	&.navi-prev {
+		text-align: left;
+		&::before {
+			left: 0;
+			content: "<";
+		}
+	}
+	&.navi-next {
+		text-align: right;
+		&::before {
+			right: 0;
+			content: ">";
+		}
+	}
+
+	&::before {
+		position: absolute;
+		top: 50%;
+		translate: 0 -50%;
+		font-size: 2.5em;
+		color: var(--minima-brand-color-light);
+	}
 }
 
 @import "gitalk";

@@ -14,7 +14,7 @@ by generalizing the principle of relativity and Hamilton''s principle.'
 ---
 
 *This article is translated from a
-Chinese [article](https://zhuanlan.zhihu.com/p/142546940){target="_blank"} on my Zhihu account.
+Chinese [article](https://zhuanlan.zhihu.com/p/142546940) on my Zhihu account.
 The original article was posted at 2020-05-28 21:24 +0800.*
 
 ---

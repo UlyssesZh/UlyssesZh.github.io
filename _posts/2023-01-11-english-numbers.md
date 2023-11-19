@@ -238,19 +238,19 @@ I propose that we write the number as 1.234e-8, and just pronounce how it looks
 English uses the suffixes *-th*, *-st*, *-nd*, and *-rd* to represent ordinal numerals,
 which is actually a disaster...
 
-- [Do you like $(n+1)$st or $(n+1)$th?](https://english.stackexchange.com/q/36512/457522){target="_blank"}
+- [Do you like $(n+1)$st or $(n+1)$th?](https://english.stackexchange.com/q/36512/457522)
 (People surely have personal preferences over these two according to the answers,
 and there is no standard.)
 - You may know
-[Platform Nine and Three-Quarters](https://harrypotter.fandom.com/wiki/Platform_Nine_and_Three-Quarters){target="_blank"}
+[Platform Nine and Three-Quarters](https://harrypotter.fandom.com/wiki/Platform_Nine_and_Three-Quarters)
 if you are a *Harry Potter* fan,
 but what is the ordinal of $9\frac34$?
 - Because there are multiple suffixes,
 there is a disaster for non-native speakers to write ordinal numerals.
-You may [Google "21th"](https://www.google.com/search?q=21th){target="_blank"}
+You may [Google "21th"](https://www.google.com/search?q=21th)
 to see how many people have made the mistake.
 - How to ask a question w.r.t. an unknown ordinal numeral?
-["The how many-th president is Barack Obama?"](https://english.stackexchange.com/q/21876/457522){target="_blank"}
+["The how many-th president is Barack Obama?"](https://english.stackexchange.com/q/21876/457522)
 (Most the answers in this link cannot generalize to other questions like
 "How many-th most beautiful person is Kat in the world?"
 or even weirder questions like
@@ -315,9 +315,9 @@ with *ra wah*, *ra tue*, etc.
 
 Here is another mess with English: numerical prefixes.
 Just look at how many
-[systems of numerical prefixes we have in English](https://en.wikipedia.org/wiki/Numeral_prefix){target="_blank"}.
+[systems of numerical prefixes we have in English](https://en.wikipedia.org/wiki/Numeral_prefix).
 
 However, I do not have motivations to fix the numerical prefixes...
-After all, [people will invent their own](https://english.stackexchange.com/a/28374/457522){target="_blank"}.
+After all, [people will invent their own](https://english.stackexchange.com/a/28374/457522).
 Also, there is an advantage of using numerical prefixes different from normal numerals:
 they avoid ambiguity in oral speech.

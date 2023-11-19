@@ -17,7 +17,7 @@ and how those transformations may lead to conclusions that can help us simplify 
 ---
 
 *This article is translated from a
-Chinese [article](https://zhuanlan.zhihu.com/p/89690556){target="_blank"} on my Zhihu account.
+Chinese [article](https://zhuanlan.zhihu.com/p/89690556) on my Zhihu account.
 The original article was posted at 2019-11-03 20:02 +0800.*
 
 ---

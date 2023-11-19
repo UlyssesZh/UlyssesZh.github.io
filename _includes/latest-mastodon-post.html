@@ -1,5 +1,5 @@
 {% assign post = site.mastodon_post %}
-<h2 class="mastodon-heading"><a href="{{ post.link }}" target="_blank">Latest post</a></h2>
+<h2 class="mastodon-heading"><a href="{{ post.link }}" target="_blank" rel="external">Latest post</a></h2>
 <div class="mastodon-post-content">
 	{% for image in post.images %}
 		<img src="{{ image.url }}" class="mastodon-image"{% if image.alt %} alt="{{ image.alt }}" title="{{ image.alt }}"{% endif %}>
@@ -7,4 +7,4 @@
 	<span class="mastodon-date">{{ post.date | date: "%b %-d, %Y, %H:%M:%S" }}</span>
 	{{ post.description | external_links }}
 </div>
-<p class="mastodon-subscribe">follow me <a href="{{ mastodon.user_url }}" target="_blank">on Mastodon</a></p>
+<p class="mastodon-subscribe">follow me <a href="{{ mastodon.user_url }}" target="_blank" rel="external me">on Mastodon</a></p>

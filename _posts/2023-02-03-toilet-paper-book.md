@@ -14,7 +14,7 @@ excerpt: '何为*手纸本*?'
 ---
 
 *This article is copied from the original
-[article](https://zhuanlan.zhihu.com/p/348297133){target="_blank"} on my Zhihu account.
+[article](https://zhuanlan.zhihu.com/p/348297133) on my Zhihu account.
 The original article was posted at 2021-01-31 11:44 +0800.*
 
 ---

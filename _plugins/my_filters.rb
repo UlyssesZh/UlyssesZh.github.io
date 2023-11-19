@@ -38,7 +38,12 @@ module Jekyll
 			doc = Nokogiri::HTML::DocumentFragment.parse input
 			doc.css('a').each do |a|
 				next if a['href'].downcase.start_with? @context.registers[:site].config['url'].downcase
+				next if !a['href'].start_with?('http') && !a['href'].start_with?('//')
 				a['target'] = '_blank'
+				rel = a['rel']&.split || []
+				rel.delete 'tag'
+				rel.push 'external' unless rel.include? 'external'
+				a['rel'] = rel.join ' '
 			end
 			doc.to_html
 		end

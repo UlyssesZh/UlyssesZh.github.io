@@ -13,7 +13,7 @@ After communing with the dead, you realize a mysterious message was left behind.
 What is the decoded message? Use your Ruby skills to find out!'
 ---
 
-This was a challenge in the [Ruby Discord server](https://discord.gg/ad2acQFtkh){target="_blank"}.
+This was a challenge in the [Ruby Discord server](https://discord.gg/ad2acQFtkh).
 The contents of the challenge is:<sup>&copy;</sup>
 
 > ## Halloween Challenge
@@ -44,7 +44,7 @@ The contents of the challenge is:<sup>&copy;</sup>
 > ### Objective
 >
 > Your Ouija board looks like the following
-> [straddling checkerboard](https://en.wikipedia.org/wiki/Straddling_checkerboard){target="_blank"}:
+> [straddling checkerboard](https://en.wikipedia.org/wiki/Straddling_checkerboard):
 >
 > ```plaintext
 > ==================================
@@ -61,7 +61,7 @@ The contents of the challenge is:<sup>&copy;</sup>
 > I have attached a file to help get you started. You don't need to use it if you don't want to.
 >
 > You may also find this
-> [link](https://www.ciphermachinesandcryptology.com/en/table.htm){target="_blank"} helpful too.
+> [link](https://www.ciphermachinesandcryptology.com/en/table.htm) helpful too.
 >
 > ### Requirements
 >
@@ -126,7 +126,7 @@ and that I can use `-p` option of Ruby command line to save even more characters
 gsub(/(\D?)(\d)/){'SCARY?!🎃BDEFGH 👻IJKLMN\'🍬OPQTUV,💀WXZ.#$:'[/#$1.{#$2}(.)/,1]}
 ```
 
-Here are some [other solutions](https://gist.github.com/ParadoxV5/77cab0e2b47004712deba623fe5ea816){target="_blank"}.
+Here are some [other solutions](https://gist.github.com/ParadoxV5/77cab0e2b47004712deba623fe5ea816).
 Check them out!
 
 ### Some explanations for the code golf solution

@@ -1,0 +1,17 @@
+<div class="post-navi">
+	{% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
+	{% if page.previous %}
+		{% assign prev = page.previous %}
+		<div class="post-navi-item navi-prev">
+			<div class="post-navi-date">{{ prev.date | date: date_format }}</div>
+			<div class="post-navi-title"><a href="{{ prev.url }}" rel="prev">{{ prev.title | markdownify_no_p }}</a></div>
+		</div>
+	{% endif %}
+	{% if page.next %}
+		{% assign next = page.next %}
+		<div class="post-navi-item navi-next" href="{{ next.url }}">
+			<div class="post-navi-date">{{ next.date | date: date_format }}</div>
+			<div class="post-navi-title"><a href="{{ next.url }}" rel="next">{{ next.title | markdownify_no_p }}</a></div>
+		</div>
+	{% endif %}
+</div>

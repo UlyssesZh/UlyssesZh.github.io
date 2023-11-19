@@ -17,7 +17,7 @@
             {%- endif -%}
             </li>
             {%- if site.author.email -%}
-            <li><a class="u-email" href="mailto:{{ site.author.name }} <{{ site.author.email }}>">{{ site.author.email | escape }}</a></li>
+            <li><a class="u-email" href="mailto:{{ site.author.name }} <{{ site.author.email }}>" rel="author">{{ site.author.email | escape }}</a></li>
             {%- endif -%}
         </ul>
       </div>
@@ -31,10 +31,10 @@
 
         <div class="update-info">
           {% if site.github_run_id %}
-              <a href="{{ site.git_repo }}/actions/runs/{{ site.github_run_id }}" target="_blank">Build</a>
+              <a href="{{ site.git_repo }}/actions/runs/{{ site.github_run_id }}" target="_blank" rel="external">Build</a>
               {{ "now" | date: "%FT%T%z" }}<br>
           {% endif %}
-          <a href="{{ site.git_repo }}/commit/{{ site.commit_hash }}" target="_blank">Commit</a>
+          <a href="{{ site.git_repo }}/commit/{{ site.commit_hash }}" target="_blank" rel="external">Commit</a>
           {{ site.commit_time | date: "%FT%T%z" }}
         </div>
       </div>

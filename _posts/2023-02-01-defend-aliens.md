@@ -17,7 +17,7 @@ The answer turns out to be the interior of a circular paraboloid.'
 ---
 
 *This article solves the first part of the problem proposed in a
-Chinese [article](https://zhuanlan.zhihu.com/p/206771750){target="_blank"} on my Zhihu account.
+Chinese [article](https://zhuanlan.zhihu.com/p/206771750) on my Zhihu account.
 The original article was posted at 2020-08-30 18:27 +0800.*
 
 ---

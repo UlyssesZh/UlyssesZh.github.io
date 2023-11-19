@@ -51,7 +51,7 @@ you can study [the codes](/rpg/mechsimul/js/mechsimul.js) I wrote
 and write your own codes in the console.
 
 By the way, the
-[OpenRGSS](https://github.com/UlyssesZh/OpenRGSS/){target="_blank"}
+[OpenRGSS](https://github.com/UlyssesZh/OpenRGSS/)
 version of the simulator is open-source
-[here](https://github.com/UlyssesZh/mechsimul/){target="_blank"}.
+[here](https://github.com/UlyssesZh/mechsimul/).
 Please star the repo if you like it.

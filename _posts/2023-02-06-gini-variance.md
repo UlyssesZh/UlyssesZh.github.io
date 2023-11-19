@@ -14,7 +14,7 @@ It turns out that there is a neat mathematical relationship between them.'
 ---
 
 *This article is translated from a
-Chinese [article](https://zhuanlan.zhihu.com/p/367530273){target="_blank"} on my Zhihu account.
+Chinese [article](https://zhuanlan.zhihu.com/p/367530273) on my Zhihu account.
 The original article was posted at 2021-04-25 10:06 +0800.*
 
 ---

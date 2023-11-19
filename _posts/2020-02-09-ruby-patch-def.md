@@ -16,7 +16,7 @@ They look graciously in that we can use it to shorten the codes for monkey-patch
 ---
 
 I am going to show how to monkey-patch graciously using
-[Ruby](https://www.ruby-lang.org/){target="_blank"}.
+[Ruby](https://www.ruby-lang.org/).
 
 The original idea is to implement a method `Module#def_after` so that
 I can easily make something to be done after the original method.
@@ -296,9 +296,9 @@ The final source code can be found [here](/assets/codes/patch_def.rb).
 The reason why I do not use `Module#refine` and `Module#using` is
 that they currently have too much limitations and even bugs.
 I have already found as many as two bugs
-([#16107](https://bugs.ruby-lang.org/issues/16107){target="_blank"}
+([#16107](https://bugs.ruby-lang.org/issues/16107)
 and
-[#16617](https://bugs.ruby-lang.org/issues/16617){target="_blank"}).
+[#16617](https://bugs.ruby-lang.org/issues/16617)).
 Although both of them have been fixed (or will be fixed),
 I cannot be sure that there will not be further and fatal bugs.
 I do not think these features are very reliable in recent Ruby versions.

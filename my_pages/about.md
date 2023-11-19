@@ -30,7 +30,7 @@ about those topics that I am interested in.
 The icon of this website is my avatar.
 It is drawn by myself.
 If you want to use it, the user terms and the downloadable files are
-available [here](https://github.com/UlyssesZh/drawings){target="_blank"}.
+available [here](https://github.com/UlyssesZh/drawings).
 
 This blog may be updated at an extremely low frequency because
 I may be busy.

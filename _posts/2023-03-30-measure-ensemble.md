@@ -309,7 +309,7 @@ Mathematically, to have a probability density function,
 we need to have an underlying measure on our space for a notion of "volume" on the space,
 and then we can define the probability density function as the
 Radon--Nikodym derivative of the probability measure w.r.t. the underlying volume measure.
-Also, for t he Radon--Nikodym derivative to exist, the probability measure
+Also, for the Radon--Nikodym derivative to exist, the probability measure
 must be absolutely continuous w.r.t. the volume measure,
 which means that we have to sacrifice all the probability distributions that are not absolutely continuous
 to take the probability density function approach.
@@ -1616,7 +1616,7 @@ $W^{\perp(1)}\times W^{\perp(2)}$ to $W^{\perp\perp}$.
 
 Now that we have defined many affine spaces and vector spaces,
 here is a diagram of the relation between (some of) them
-(powered by [quiver](https://q.uiver.app){target="_blank"}):
+(powered by [quiver](https://q.uiver.app)):
 
 <details>
 <summary>Diagrarm</summary>
@@ -1667,7 +1667,7 @@ $$\ln\mu_{e+s}\!\left(M_{e+s}\right)=i(s)+\ln\mu_e\!\left(M_e\right).$$
 An important notice is that $\vec W^\parallel$ must be finite-dimensional
 because a metrizable TVS with a non-trivial &sigma;-finite
 translationally quasi-invariant Borel measure must be finite-dimensional
-([Feldman, 1966](https://doi.org/10.2307/2035076){target="_blank"}).
+([Feldman, 1966](https://doi.org/10.2307/2035076)).
 
 We can then define the
 non-trivial &sigma;-finite translationally invariant Borel measure on $\vec W^\parallel$,

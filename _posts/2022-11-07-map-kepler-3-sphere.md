@@ -50,7 +50,7 @@ and convert it into the form $\mathrm d(\mathbf p\cdot\mathbf x)-\mathbf P(\math
 Then, we get the canonical transform $(\mathbf x,\mathbf p)\mapsto(\mathbf u,\mathbf P)$.
 The hamiltonian will be correspondingly transformed into exactly the same as the hamiltonian of a free particle on the 3-sphere.
 
-The explicit calculation for the 2-dimensional case can be found in [this paper](https://www.researchgate.net/publication/268173388){target="_blank"}.
+The explicit calculation for the 2-dimensional case can be found in [this paper](https://www.researchgate.net/publication/268173388).
 It also covered the case where $E=0$ and $E>0$.
 
 Figuring out this mapping is actually more straightforward if we consider it as a problem in quantum mechanics.
@@ -65,8 +65,8 @@ Some calculation should reduce this equation to the Schrödinger equation of a f
 
 Some online sources:
 several Wikipedia pages,
-[Baez 2022](https://math.ucr.edu/home/baez/gravitational.html){target="_blank"},
-[Egan 2013](http://www.gregegan.net/SCIENCE/Ellipse/Ellipse.html){target="_blank"}.
+[Baez 2022](https://math.ucr.edu/home/baez/gravitational.html),
+[Egan 2013](http://www.gregegan.net/SCIENCE/Ellipse/Ellipse.html).
 
 Best regards,
 

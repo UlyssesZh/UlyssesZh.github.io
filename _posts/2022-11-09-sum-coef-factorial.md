@@ -14,7 +14,7 @@ This turns out to be properties of Eulerian numbers.'
 ---
 
 *This article is translated from a
-Chinese [article](https://zhuanlan.zhihu.com/p/73079049){target="_blank"} on my Zhihu account.
+Chinese [article](https://zhuanlan.zhihu.com/p/73079049) on my Zhihu account.
 The original article was posted at 2019-07-13 20:36 +0800.*
 
 ---
