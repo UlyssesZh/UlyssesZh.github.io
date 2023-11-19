@@ -1,8 +1,10 @@
+<meta name="theme-color" content="#ffc2d5" />
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#3d0013" />
 <link rel="icon" type="image/x-icon" href="{{ "/favicon.ico?" | relative-url }}">
-<link rel="search" type="application/opensearchdescription+xml" title="Search Ulysses' trip" href="/opensearch.xml" />
-{%- include gitalk_head.html -%}
+<link rel="search" type="application/opensearchdescription+xml" title="Search {{ site.title }}" href="/opensearch.xml" />
+{% include gitalk_head.html %}
 {% if page.mathjax or layout.mathjax %}
-	{%- include mathjax.html -%}
+	{% include mathjax.html %}
 {% else %}
 	<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/katex@{{ site.katex_version }}/dist/katex.min.css">
 {% endif %}
