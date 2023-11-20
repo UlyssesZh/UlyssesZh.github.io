@@ -39,6 +39,32 @@ $dm-lineno-color: #777 !default;
 $dm-lineno-background-color: #202020 !default;
 $dm-details-background-color: #1e0b10 !default;
 
+@function str-replace($string, $search, $replace: '') {
+	$index: str-index($string, $search);
+	@if $index {
+		@return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+	}
+	@return $string;
+}
+
+@function hr-image($color) {
+	$svg: 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12"><path style="fill:#{$color}" d="m 3.8525389,1.6289069 q 1.189453,0 1.8691405,1.3769532 0.2460938,0.5449218 0.2578125,0.8320313 h 0.017578 Q 6.2021481,2.8886725 6.7412106,2.2617194 7.3740231,1.6289069 8.1650393,1.6289069 q 1.224609,0 1.9628907,1.3125 0.1875,0.4863282 0.1875,0.9140625 0,1.4648438 -1.2187507,2.7949219 L 5.9970701,10.371093 H 5.9619138 L 2.6689452,6.333985 Q 1.6845701,5.1328132 1.6845701,3.8554694 q 0,-1.2363281 1.1660158,-1.9628906 0.4921874,-0.2636719 1.001953,-0.2636719 z"/></svg>';
+	@return url(str-replace($svg, '#', '%23'));
+}
+
+@function summary-image($color, $thickness) {
+	$svg: 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12"><path d="M 1,5 6,10 11,5" style="fill:none;stroke:#{$color};stroke-width:#{$thickness};stroke-linecap:round;stroke-linejoin:round"/></svg>';
+	@return url(str-replace($svg, '#', '%23'));
+}
+
+$lm-hr-image: hr-image($lm-hr-background-color) !default;
+$lm-summary-image: summary-image($lm-text-color, 1.5px) !default;
+$lm-summary-image-brand: summary-image($lm-brand-color, 1px) !default;
+
+$dm-hr-image: hr-image($dm-hr-background-color) !default;
+$dm-summary-image: summary-image($dm-text-color, 1.5px) !default;
+$dm-summary-image-brand: summary-image($dm-brand-color, 1px) !default;
+
 :root {
 	--kbd-color: #{$lm-kbd-color};
 	--kbd-background-color: #{$lm-kbd-background-color};
@@ -51,6 +77,10 @@ $dm-details-background-color: #1e0b10 !default;
 	--lineno-color: #{$lm-lineno-color};
 	--lineno-background-color: #{$lm-lineno-background-color};
 	--details-background-color: #{$lm-details-background-color};
+
+	--hr-image: #{$lm-hr-image};
+	--summary-image: #{$lm-summary-image};
+	--summary-image-brand: #{$lm-summary-image-brand};
 }
 @media (prefers-color-scheme: dark) {
 	:root {
@@ -65,6 +95,10 @@ $dm-details-background-color: #1e0b10 !default;
 		--lineno-color: #{$dm-lineno-color};
 		--lineno-background-color: #{$dm-lineno-background-color};
 		--details-background-color: #{$dm-details-background-color};
+
+		--hr-image: #{$dm-hr-image};
+		--summary-image: #{$dm-summary-image};
+		--summary-image-brand: #{$dm-summary-image-brand};
 	}
 }
 
@@ -79,7 +113,9 @@ $search-background-color: var(--search-background-color);
 $lineno-color: var(--lineno-color);
 $lineno-background-color: var(--lineno-background-color);
 $details-background-color: var(--details-background-color);
+$hr-image: var(--hr-image);
 $summary-image: var(--summary-image);
+$summary-image-brand: var(--summary-image-brand);
 
 @import "minima/skins/auto";
 
@@ -333,15 +369,11 @@ hr {
 	);
 
 	&:before {
-		content: "\2665\fe0e";
-		color: $hr-background-color;
-		display: inline-block;
+		content: $hr-image;
 		position: absolute;
 		top: 50%;
 		left: 50%;
-		margin: 0 0 0 (-3px);
-		font-size: 15px;
-		line-height: 0;
+		translate: -50% -50%;
 	}
 }
 
@@ -388,20 +420,9 @@ summary {
 	cursor: pointer;
 	display: flex;
 	&::after {
-		content: "\9660";
-		--image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12"><path d="M 1,4 6,9 11,4" style="fill:none;stroke:%23000;stroke-width:1.5px;stroke-linecap:round;stroke-linejoin:round"/></svg>');
-		mask-image: var(--image);
-		-webkit-mask-image: var(--image);
-		mask-size: contain;
-		-webkit-mask-size: contain;
-		mask-repeat: no-repeat;
-		-webkit-mask-repeat: no-repeat;
-		mask-position: center;
-		-webkit-mask-position: center;
-		background-color: $text-color;
+		content: $summary-image-brand;
 		width: 1em;
 		margin-left: .75em;
-		display: inline-block;
 	}
 }
 
@@ -412,10 +433,16 @@ details[open] > summary::after {
 .e-content details {
 	padding: 8px;
 	background-color: $details-background-color;
+	&[open] {
+		padding: 8px 8px 0px;
+	}
 }
 
 .e-content summary {
 	justify-content: space-between;
+	&::after {
+		content: $summary-image;
+	}
 }
 
 .post-meta dl {

@@ -1,5 +1,3 @@
-#Gemfile.lock
-
 _site/
 .sass-cache
 .jekyll-cache/
@@ -10,6 +8,7 @@ dist-newstyle/
 .idea/
 git_backup
 .rubocop.yml
+*.swp
 
 .vscode/
 **/bootstrap/
