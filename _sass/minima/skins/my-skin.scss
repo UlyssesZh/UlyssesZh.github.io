@@ -260,14 +260,20 @@ ul.pager li {
 	width: 100%;
 }
 
-table:has(.katex-display), td:has(.katex-display) {
+.katex-display-table, .katex-display-table td {
 	border: none;
-	margin-bottom: 0px;
-	color: inherit
+	margin: 0px;
+	color: inherit;
+	padding: 0px;
 }
 
-table .katex-display {
-	margin: 0px;
+.katex-display-numbered {
+	width: 100%;
+	text-align: center;
+}
+
+.katex-display-number {
+	text-align: right;
 }
 
 p:has(> .katex-display) {
@@ -275,11 +281,11 @@ p:has(> .katex-display) {
 	margin-bottom: 0px;
 }
 
-p:has(+ div table .katex-display), p:has(+ p .katex-display), p:has(+ .katex-display) {
+p:has(+ div .katex-display-table), p:has(+ p .katex-display), p:has(+ .katex-display) {
 	margin-bottom: 0px;
 }
 
-div:has(> table .katex-display) {
+div:has(> .katex-display-table) {
 	overflow-x: auto;
 }
 
@@ -459,6 +465,23 @@ details[open] > summary::after {
 			content: '';
 		}
 	}
+}
+
+.katex-display:has(+ .qed) {
+	margin-bottom: 0px;
+}
+
+.katex-display + .qed {
+	margin-top: -2em;
+	margin-bottom: 1em;
+}
+
+.qed {
+	float: right;
+}
+
+.e-content p, .e-content li {
+	text-align: justify;
 }
 
 @import "gitalk";

@@ -38,8 +38,9 @@ $$\begin{align*}
 \frac{\mathrm d}{\mathrm dz}\left(\frac{f_n\!\left(z\right)}{\left(1-z\right)^{n+1}}\right)
 &=\frac{\mathrm d}{\mathrm dz}\sum_{k=1}^\infty k^nz^k\\
 &=\sum_{k=1}^\infty k^{n+1}z^{k-1}\\
-&=\frac{f_{n+1}\!\left(z\right)}{z\,\left(1-z\right)^{n+2}}.&\square
+&=\frac{f_{n+1}\!\left(z\right)}{z\,\left(1-z\right)^{n+2}}.
 \end{align*}$$
+{% qed %}
 
 **Definition 2** (Eulerian numbers).
 
@@ -62,15 +63,15 @@ $$\begin{align*}
 &=\sum_{j=0}^{k+2}\left(-1\right)^j\left(k-j+2\right)^{n+1}\frac{\left(n+2\right)!}{j!\left(n-j+2\right)}\\
 &=\sum_{j=0}^{k+2}\left(-1\right)^j\binom{n+2}j\left(k-j+2\right)^{n+1}\\
 &=\left<\begin{matrix}n+1\\k+1\end{matrix}\right>.
-&\square
 \end{align*}$$
+{% qed %}
 
 **Lemma 3**.
 
 $$\left<\begin{matrix}n\\0\end{matrix}\right>=1,\quad\left<\begin{matrix}n\\n\end{matrix}\right>=0.$$
 
 *Brief proof.*
-Easily proved by Definition 2. $\square$
+Easily proved by Definition 2. {% qed %}
 
 **Lemma 4**.
 
@@ -107,7 +108,7 @@ $$\begin{align*}
 &=\sum_{k=1}^n\left<\begin{matrix}n\\n-k\end{matrix}\right>z^k.
 \end{align*}$$
 
-Then we can derive that the result is true by mathematical induction. $\square$
+Then we can derive that the result is true by mathematical induction. {% qed %}
 
 **Lemma 5**.
 
@@ -131,7 +132,8 @@ $$\sum_{j=0}^n\left(-1\right)^{n-j}\binom njj^n\mathrm e^{jx}=n!+o\!\left(1\righ
 
 Take $x=0$, and we have
 
-$$\sum_{j=0}^n\left(-1\right)^{n-j}\binom njj^n=n!.\qquad\square$$
+$$\sum_{j=0}^n\left(-1\right)^{n-j}\binom njj^n=n!.$$
+{% qed %}
 
 **Lemma 6**.
 
@@ -148,8 +150,8 @@ $$\begin{align*}
 &=\sum_{j=1}^n\left(-1\right)^{n-j+1}\frac{\left(n+1\right)n!}{\left(j-1\right)!\left(n-j+1\right)!}j^n\\
 &=\sum_{j=0}^n\left(-1\right)^{n-j}\frac{\left(n+1\right)n!}{j!\left(n-j\right)!}\left(j+1\right)^n\\
 &=\left(n+1\right)\sum_{j=0}^n\left(-1\right)^{n-j}\binom nj\left(j+1\right)^n.
-&\square
 \end{align*}$$
+{% qed %}
 
 **Lemma 7**.
 
@@ -171,8 +173,9 @@ $$\begin{align*}
 &=\sum_{j=0}^n\left(-1\right)^{n-j}\binom nj\left(j+1\right)^n+\sum_{j=0}^n\left(-1\right)^{n-j}\binom nj\sum_{k=1}^jk^n+\sum_{j=1}^n\left(-1\right)^{n-j+1}\binom nj\sum_{k=1}^jk^n\\
 &=n!+\sum_{j=1}^n\left(-1\right)^{n-j}\binom nj\sum_{k=1}^jk^n-\sum_{j=1}^n\left(-1\right)^{n-j}\binom nj\sum_{k=1}^jk^n
 &\text{(Lemma 6)}\\
-&=n!.&\square
+&=n!.
 \end{align*}$$
+{% qed %}
 
 *Proof of the original proposition.*
 By Lemma 4, $f_n\!\left(z\right)$ is a polynomial of degree $n$ in $z$
@@ -186,6 +189,6 @@ $$\begin{align*}
 &=\sum_{k=0}^n\left<\begin{matrix}n\\k\end{matrix}\right>
 &\text{(Lemma 3)}\\
 &=n!.
-&\text{(Lemma 7)}\\
-&&\square
+&\text{(Lemma 7)}
 \end{align*}$$
+{% qed %}

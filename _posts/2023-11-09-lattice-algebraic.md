@@ -73,7 +73,7 @@ g'\coloneqq g-c_1h_1-c_2h_2.$$
 
 Then, $g'\in T$, and if we express it as $g'=a'h_1+b'g_2$, then $b'$ is smaller than $b^\star$.
 By definition of $b^\star$, $b'=0$, so $g'\in G_0$.
-Hence, $\left\{h_1,h_2\right\}$ generates $G$. $\square$
+Hence, $\left\{h_1,h_2\right\}$ generates $G$. {% qed %}
 
 Now, we are ready to prove our main result:
 
@@ -120,7 +120,7 @@ we can generate $S$ by acting $G$ on any lattice site $z_0$.
 We can then easily prove that $z_0+\mathbb Z[\alpha]\subseteq S$.
 To prove this, we just need to see that we can act $R^{-k}$ on $z_0$
 before further acting $T^nR$ on it for $k$ times.
-All the other steps are the same and still valid. $\square$
+All the other steps are the same and still valid. {% qed %}
 
 I know the original problem in the book was probably not intended to be solved in this way,
 but it is really amazing how some seemingly purely mathematical areas

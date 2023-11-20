@@ -68,11 +68,11 @@ $$\begin{aligned}
 &=\lim_{p\to0}\exp\frac{\ln\!\left(\vec w\cdot\vec x^p\right)}p\\
 &=\exp\lim_{p\to0}\frac{\ln\!\left(\vec w\cdot\vec x^p\right)}p\\
 &=\exp\lim_{p\to0}\frac{\vec w\cdot\left(\vec x^p\ln\vec x\right)}{\vec w\cdot\vec x^p}
-&\text{(L'Hôpital's rule)}\\
+&\text{(L'H\^opital's rule)}\\
 &=\exp\!\left(\vec w\cdot\ln\vec x\right)\\
 &=\vec x^{\vec w}.
-&\square
 \end{aligned}$$
+{% qed %}
 
 **Theorem 2**.
 
@@ -86,9 +86,9 @@ M_{p,\vec w}\!\left(\vec x\right)
 &\text{(Definition 1)}\\
 &=\left(\left(\vec w \cdot\left(\vec x^{-1}\right)^{-p}\right)^{-\frac1p}\right)^{-1}\\
 &=M_{-p,\vec w}\!\left(\vec x^{-1}\right)^{-1}
-&\text{(Definition 1)}\\
-&&\square
+&\text{(Definition 1)}
 \end{aligned}$$
+{% qed %}
 
 **Theorem 3**.
 
@@ -106,8 +106,8 @@ $$\begin{aligned}
 &=\max\vec x\left(\vec w\cdot\lim_{p\to+\infty}\left(\frac x{\max\vec x}\right)^p\right)^{\lim_{p\to+\infty}\frac 1p}\\
 &=\left(\max\vec x\right)\left(\vec w\cdot\delta_{\left(\max\vec x\right),\vec x}\right)^0\\
 &=\max\vec x.
-&\square
 \end{aligned}$$
+{% qed %}
 
 **Theorem 4**.
 
@@ -123,8 +123,8 @@ $$\begin{aligned}
 &=\max\left(\vec x^{-1}\right)^{-1}
 &\text{(Theorem 3)}\\
 &=\min\vec x.
-&\square
 \end{aligned}$$
+{% qed %}
 
 **Theorem 5**.
 If $p>q$, then
@@ -219,7 +219,7 @@ M_{q,\vec w}\!\left(\vec x\right)
 
 The equality holds iff $\vec x$ is congruent (Case 1).
 
-By all 4 cases, the original proposition is proved. $\square$
+By all 4 cases, the original proposition is proved. {% qed %}
 
 **Corollary** (HM-GM-AM-QM inequalities).
 
@@ -250,4 +250,4 @@ $$\min\vec x\le n\left(\sum\vec x^{-1}\right)^{-1}
 \le\sqrt{\frac{\sum\vec x^2}{n}}
 \le\max\vec x,$$
 
-where the equality holds iff $\vec x$ is congruent (Theorem 5). $\square$
+where the equality holds iff $\vec x$ is congruent (Theorem 5). {% qed %}

@@ -110,8 +110,9 @@ $$\begin{align*}
 &=\sum_i\int_{x\in X}\varphi_i\!\left(x\right)\mathrm d\nu(x)
 \int_{y\in\pi_i^{-1}(x)}f\!\left(y\right)\mathrm d\mu_{i,x}(y)\\
 &=\int_{x\in X}\mathrm d\nu(x)\sum_i\int_{y\in\pi_i^{-1}(x)}f\!\left(y\right)\mathrm d\mu_x(y)\\
-&=\int_{x\in X}\mathrm d\nu(x)\int_{y\in\pi^{-1}(x)}f\!\left(y\right)\mathrm d\mu_x(y).&\square
+&=\int_{x\in X}\mathrm d\nu(x)\int_{y\in\pi^{-1}(x)}f\!\left(y\right)\mathrm d\mu_x(y).
 \end{align*}$$
+{% qed %}
 
 </details>
 
@@ -812,7 +813,7 @@ the only possibility is that the value of $p$ is $P^\circ$-almost surely a const
 which means that the probability distribution defined by the probability density function $p$
 is equal to the uniform distribution $\mu$-almost everywhere.
 Therefore, the equality holds iff $p$ is the same state as the equilibrium state.
-$\square$
+{% qed %}
 
 </details>
 
@@ -1314,7 +1315,7 @@ Then, we have
 $$\pi\!\left(e_1,e_2+\delta\right)-\pi\!\left(e_1,e_2\right)=\vec\pi(0,\delta)=0,$$
 
 which contradicts with the requirement that $\pi\!\left(e_1,\cdot\right)$ is injective.
-$\square$
+{% qed %}
 
 </details>
 
@@ -1417,7 +1418,7 @@ $$\pi\!\left(e_1,e_2\right)=e.$$
 Therefore, $\left(e_1,e_2\right)\in W^{\perp(1)}\times W^{(2)}$
 is the desired point in $W^{\perp(1)}\times W^{(2)}$ that is mapped to $e$ under $\pi$.
 Therefore, $\pi$ is surjective if its domain is restricted to $W^{\perp(1)}\times W^{(2)}$.
-$\square$
+{% qed %}
 
 </details>
 
@@ -1525,7 +1526,7 @@ $\vec\pi\!\left(\vec W^{\parallel(1)}\times\vec W^{\parallel(2)}\right)
 Similarly,
 $\vec\pi\!\left(\vec W^{\parallel(1)}\times\vec W^{\parallel(2)}\right)
 \subseteq\vec\pi\!\left(\vec W^{\parallel(1)}\right)$.
-Therefore, we proved the theorem. $\square$
+Therefore, we proved the theorem. {% qed %}
 
 </details>
 
@@ -1595,7 +1596,7 @@ Therefore, obviously we have
 $c^{(1)}\!\left(\pi^{-1}\!\left(e\right)\right)=c^{(1)}\!\left(\pi^{-1}\!\left(e'\right)\right)$,
 and thus $W^{\parallel(1)}_e=W^{\parallel(1)}_{e'}$.
 
-Similarly, we can prove that $W^{\parallel(2)}_e=W^{\parallel(2)}_{e'}$. $\square$
+Similarly, we can prove that $W^{\parallel(2)}_e=W^{\parallel(2)}_{e'}$. {% qed %}
 
 </details>
 
@@ -1901,7 +1902,7 @@ Then, we have
 $$g\!\left(e,e'\right)=\frac{f\!\left(e\right)}{f\!\left(e'\right)},$$
 
 where $f(e)\coloneqq g\!\left(e,\pi^\perp(e)\right)$.
-This then proves the conclusion we want. $\square$
+This then proves the conclusion we want. {% qed %}
 
 </details>
 
@@ -2067,7 +2068,7 @@ Z\!\left(e,i+t\left(i'-i\right)\right)
 \end{align*}$$
 
 Therefore, $Z\!\left[e,i+t\left(i'-i\right)\right]$ converges.
-$\square$
+{% qed %}
 
 </details>
 
@@ -2159,7 +2160,7 @@ $$\frac{\partial^{\Sigma\alpha_\bullet}Z\!\left(e,i\right)}{\partial^{\alpha_\bu
 \mathrm d\lambda^{\parallel}\!\left(s\right)<\infty.$$
 
 Therefore, the partial derivatives exist.
-$\square$
+{% qed %}
 
 </details>
 

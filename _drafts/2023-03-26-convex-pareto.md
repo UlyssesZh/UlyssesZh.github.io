@@ -81,7 +81,7 @@ $$\begin{align*}
 Therefore, $y\in B\!\left(a,\|x-a\|\right)$.
 Similarly, we have $y\in B\!\left(b,\|x-b\|\right)$.
 Then, the intersection of these two balls is non-empty.
-$\square$
+{% qed %}
 
 Here is a figure to illustrate the lemma in the case of $\mathbb R^2$
 with the euclidean norm.

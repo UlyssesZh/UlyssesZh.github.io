@@ -54,7 +54,7 @@ $$L\left(\vec C\cdot\vec F\right)=\vec C\cdot L\vec F.$$
 *Brief proof.*
 Directly letting $\vec C$ and $\vec F$ be 2-dimensional vectors and using Definition 1, the sufficiency can be proved;
 by using mathematical induction on the dimension of $\vec C$ and $\vec F$,
-the necessity can be proved. $\square$
+the necessity can be proved. {% qed %}
 
 **Definition 2**.
 $\overrightarrow{a_n}_{n=0}^m\coloneqq\left(a_0,a_1,\ldots,a_m\right)$.
@@ -68,7 +68,7 @@ $$\mathrm D^k\left(\vec a\cdot\overrightarrow{f_n\!\left(x\right)}_{n=0}^s\right
 =\vec a\cdot\overrightarrow{\mathrm D^kf_n\!\left(x\right)}_{n=0}^s.$$
 
 *Brief proof.*
-By mathematical induction. $\square$
+By mathematical induction. {% qed %}
 
 **Lemma 3**.
 Suppose $\vec P$ is a tuple of functions w.r.t. $x$,
@@ -80,7 +80,7 @@ $$L\!\left(\mathrm D,x\right)\coloneqq\vec P\cdot\overrightarrow{\mathrm D^k}^m_
 is a linear differential operator.
 
 *Brief proof.*
-By Definition 1. $\square$
+By Definition 1. {% qed %}
 
 **Corollary of Lemma 3**.
 Suppose $\vec p$ is a constant $\left(m+1\right)$-dimensional vector,
@@ -143,7 +143,7 @@ $$\mathrm D^k\left(x^n\right)=\frac{n!}{\left(n-k\right)!}x^{n-k}.$$
 *Note.* it is stipulated that factorials of negative integers are infinity, so $\mathrm D^k\left(x^n\right)=0$ when $n<k$.
 
 *Brief proof.*
-By mathematical induction. $\square$
+By mathematical induction. {% qed %}
 
 **Lemma 6** (differential of EGF).
 If $G\!\left(x\right)$ is the EGF of a sequence $\left\{a_n\right\}_{n=0}^\infty$,
@@ -164,7 +164,7 @@ $$\begin{align*}
 \text{(note in Lemma 5)}
 \end{align*}$$
 
-Then the result can be proved by Definition 6. $\square$
+Then the result can be proved by Definition 6. {% qed %}
 
 **Corollary to Lemma 6**.
 
@@ -187,7 +187,7 @@ is that $a_n=0$ for any $n$.
 
 *Brief proof.*
 The sufficiency can be proved by Definition 6 and Definition 7;
-the necessity can be proved by Taylor expansion of the zero function. $\square$
+the necessity can be proved by Taylor expansion of the zero function. {% qed %}
 
 **Definition 8**.
 
@@ -273,7 +273,7 @@ and we have $\vec C=\vec 0$, which contradicts with the fact that $\vec C$ is no
 
 Therefore, $\det\overrightarrow{\vec a_{n+k}}_{k=0}^m=0$.
 
-(Boohoo! I cannot prove the sufficiency myself.) $\square$
+(Boohoo! I cannot prove the sufficiency myself.) {% qed %}
 
 **Lemma 11**.
 Suppose the sequence equation
@@ -338,7 +338,7 @@ $$\vec p=\vec 0,$$
 which contradicts with the fact that $\vec p$ is not all zero.
 
 From all the above, we have proved that the general solution of the sequence equation is
-$\vec C\cdot\overrightarrow{a_n^{*l}}_{l=1}^m$. $\square$
+$\vec C\cdot\overrightarrow{a_n^{*l}}_{l=1}^m$. {% qed %}
 
 **Definition 11** (polynomial).
 Suppose $\vec p$ is a constant vector whose $\left(m+1\right)$th component is not $0$,
@@ -377,7 +377,7 @@ $$\vec p\cdot\overrightarrow{\frac{k!}{\left(k-q\right)!}r^{k-q}}_{k=0}^m=0.$$
 
 *Brief proof.*
 First use Definition 11 and Definition 12,
-and then use Lemma 2 and Lemma 5. $\square$
+and then use Lemma 2 and Lemma 5. {% qed %}
 
 **Lemma 14** (Vandermonde's identity).
 
@@ -409,8 +409,9 @@ $$\begin{align*}
 \text{(Lemma 14)}\\
 &=q!\frac{\left(n+k\right)!}{q!\left(n+k-q\right)!}&
 \text{(Definition 13)}\\
-&=\frac{\left(n+k\right)!}{\left(n+k-q\right)!}.&\square
+&=\frac{\left(n+k\right)!}{\left(n+k-q\right)!}.
 \end{align*}$$
+{% qed %}
 
 **Lemma 16**.
 If $r$ is a root with multiplicity $w$ of the polynomial with coefficients $\vec p$,
@@ -458,7 +459,7 @@ $$\begin{align*}
 &=0,
 \end{align*}$$
 
-by Definition 9, $\left\{a_n\right\}$ is a special solution of the sequence equation. $\square$
+by Definition 9, $\left\{a_n\right\}$ is a special solution of the sequence equation. {% qed %}
 
 **Lemma 17**.
 The sequence
@@ -476,7 +477,7 @@ and $C_{l,q}$ are arbitrary constants.
 By Lemma 16, the root $r_l$ brings $w_l$ special solutions.
 All the special solutions brought by all the roots can be proved to be linearly independent.
 According to Lemma 12, there are $m$ linearly independent special solutions.
-According to Lemma 11, the result can be proved. $\square$
+According to Lemma 11, the result can be proved. {% qed %}
 
 **Lemma 18**.
 The sufficient and necessary condition for the sequence
@@ -513,7 +514,7 @@ by Lemma 8, for any $n$,
 
 $$\vec p\cdot\overrightarrow{a_{n+k}}_{k=0}^m=0.$$
 
-All the steps are reversible, so the necessity is also proved. $\square$
+All the steps are reversible, so the necessity is also proved. {% qed %}
 
 **Definition 14** (exponential function).
 The EGF of the sequence $\left\{1\right\}$ is called the exponential function, i.e.
@@ -535,9 +536,9 @@ y&=\overrightarrow{\frac{\frac{n!}{\left(n-q\right)!}}{n!}}_{n=0}^{\infty}\cdot\
 &=x^q\overrightarrow{\frac 1{n!}}_{n=0}^{\infty}\cdot\overrightarrow{\left(rx\right)^n}_{n=0}^\infty&
 \text{(Lemma 4)}\\
 &=x^q\mathrm e^{rx}.&
-\text{(Definition 14)}\\
-&&\square
+\text{(Definition 14)}
 \end{align*}$$
+{% qed %}
 
 **Corollary of Lemma 18 and 19**.
 The function

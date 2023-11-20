@@ -31,6 +31,12 @@ paru:
     table_eqns: true
     set_label_attribute: true
     eqn_prefix_template: $$i$$
+    eqn_block_template: >-
+      `<table class="katex-display-table"><tr class="odd"><td class="katex-display-numbered">`{=html}
+      $$t$$
+      `</td><td class="katex-display-number">`{=html}
+      $$i$$
+      `</td></tr></table>`{=html}
   rouge:
     formatter: table
     formatter_options:

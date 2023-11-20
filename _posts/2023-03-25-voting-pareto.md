@@ -90,7 +90,7 @@ $$Y\coloneqq\left\{v\in V\,\middle|\,y\succeq_vx\right\}.$$
 because $y$ is a $Q$-Pareto improvement of $x$, we have $Q\subseteq Y$.
 Therefore, $\left|Y\right|\geq\left|Q\right|=q$.
 Therefore, $y$ is a defeat of $x$.
-$\square$
+{% qed %}
 
 ---
 
