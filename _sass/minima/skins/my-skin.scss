@@ -5,6 +5,7 @@ $lm-text-color: #665e7b !default;
 $lm-background-color: #fefbf1 !default;
 $lm-code-background-color: #eeeeff !default;
 $lm-link-base-color: #db3168 !default;
+$lm-table-text-color: $lm-text-color !default;
 
 $dm-brand-color: #929292 !default;
 $dm-text-color: #ac94b1 !default;
@@ -12,15 +13,11 @@ $dm-background-color: #0e0b01 !default;
 $dm-code-background-color: #271b20 !default;
 $dm-link-base-color: #de446f !default;
 $dm-link-visited-color: darken($dm-link-base-color, 12%) !default;
+$dm-table-text-color: $dm-text-color !default;
 
 $lm-kbd-border-color: #cccccc !default;
 $lm-kbd-color: #333333 !default;
 $lm-kbd-background-color: #f7f7f7 !default;
-$lm-pager-border-color: #665e7b !default;
-$lm-pager-color: #665e7b !default;
-$lm-pager-selected-color: #fefbf1 !default;
-$lm-pager-background-color: #fefbf1 !default;
-$lm-pager-selected-background-color: #f1b4b4 !default;
 $lm-hr-background-color: #ffc2d5 !default;
 $lm-search-color: #883e6b !default;
 $lm-search-focus-color: #db5568 !default;
@@ -28,15 +25,11 @@ $lm-search-border-color: #ff92a5 !default;
 $lm-search-background-color: #fff !default;
 $lm-lineno-color: #bbb !default;
 $lm-lineno-background-color: #eeeef0 !default;
+$lm-details-background-color: #fef0f1 !default;
 
 $dm-kbd-border-color: #333333 !default;
 $dm-kbd-color: #cccccc !default;
 $dm-kbd-background-color: #080808 !default;
-$dm-pager-border-color: #8c84a1 !default;
-$dm-pager-color: #8c84a1 !default;
-$dm-pager-background-color: #0e0b01 !default;
-$dm-pager-selected-color: #0e0b01 !default;
-$dm-pager-selected-background-color: #b21b4b !default;
 $dm-hr-background-color: #8a2d4c !default;
 $dm-search-color: #902436 !default;
 $dm-search-focus-color: #c177a3 !default;
@@ -44,16 +37,12 @@ $dm-search-border-color: #862333 !default;
 $dm-search-background-color: #000 !default;
 $dm-lineno-color: #777 !default;
 $dm-lineno-background-color: #202020 !default;
+$dm-details-background-color: #1e0b10 !default;
 
 :root {
 	--kbd-color: #{$lm-kbd-color};
 	--kbd-background-color: #{$lm-kbd-background-color};
 	--kbd-border-color: #{$lm-kbd-border-color};
-	--pager-color: #{$lm-pager-color};
-	--pager-background-color: #{$lm-pager-background-color};
-	--pager-border-color: #{$lm-pager-border-color};
-	--pager-selected-color: #{$lm-pager-selected-color};
-	--pager-selected-background-color: #{$lm-pager-selected-background-color};
 	--hr-background-color: #{$lm-hr-background-color};
 	--search-color: #{$lm-search-color};
 	--search-focus-color: #{$lm-search-focus-color};
@@ -61,17 +50,13 @@ $dm-lineno-background-color: #202020 !default;
 	--search-background-color: #{$lm-search-background-color};
 	--lineno-color: #{$lm-lineno-color};
 	--lineno-background-color: #{$lm-lineno-background-color};
+	--details-background-color: #{$lm-details-background-color};
 }
 @media (prefers-color-scheme: dark) {
 	:root {
 		--kbd-color: #{$dm-kbd-color};
 		--kbd-background-color: #{$dm-kbd-background-color};
 		--kbd-border-color: #{$dm-kbd-border-color};
-		--pager-color: #{$dm-pager-color};
-		--pager-background-color: #{$dm-pager-background-color};
-		--pager-border-color: #{$dm-pager-border-color};
-		--pager-selected-color: #{$dm-pager-selected-color};
-		--pager-selected-background-color: #{$dm-pager-selected-background-color};
 		--hr-background-color: #{$dm-hr-background-color};
 		--search-color: #{$dm-search-color};
 		--search-focus-color: #{$dm-search-focus-color};
@@ -79,16 +64,13 @@ $dm-lineno-background-color: #202020 !default;
 		--search-background-color: #{$dm-search-background-color};
 		--lineno-color: #{$dm-lineno-color};
 		--lineno-background-color: #{$dm-lineno-background-color};
+		--details-background-color: #{$dm-details-background-color};
 	}
 }
+
 $kbd-color: var(--kbd-color);
 $kbd-background-color: var(--kbd-background-color);
 $kbd-border-color: var(--kbd-border-color);
-$pager-color: var(--pager-color);
-$pager-background-color: var(--pager-background-color);
-$pager-border-color: var(--pager-border-color);
-$pager-selected-color: var(--pager-selected-color);
-$pager-selected-background-color: var(--pager-selected-background-color);
 $hr-background-color: var(--hr-background-color);
 $search-color: var(--search-color);
 $search-focus-color: var(--search-focus-color);
@@ -96,6 +78,8 @@ $search-border-color: var(--search-border-color);
 $search-background-color: var(--search-background-color);
 $lineno-color: var(--lineno-color);
 $lineno-background-color: var(--lineno-background-color);
+$details-background-color: var(--details-background-color);
+$summary-image: var(--summary-image);
 
 @import "minima/skins/auto";
 
@@ -229,6 +213,7 @@ ul.pager li {
 	text-align: right;
 	background: $lineno-background-color;
 	width: 1px;
+	user-select: none;
 
 	pre {
 		background: transparent;
@@ -270,7 +255,7 @@ a[rel~=external] {
 	&::after {
 		content: "\2197\fe0e"; // shown in case mask-image not supported
 		display: inline-block;
-		background-color: var(--minima-link-base-color);
+		background-color: $link-base-color;
 		width: 0.7em;
 
 		--image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12"><path d="M6 1h5v5L8.86 3.85 4.7 8 4 7.3l4.15-4.16L6 1Z M2 3h2v1H2v6h6V8h1v2a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1Z" /></svg>');
@@ -284,10 +269,10 @@ a[rel~=external] {
 		-webkit-mask-position: left 25%;
 	}
 	&:visited::after {
-		background-color: var(--minima-link-visited-color);
+		background-color: $link-visited-color;
 	}
 	&:hover::after {
-		background-color: var(--minima-link-hover-color);
+		background-color: $link-hover-color;
 	}
 }
 
@@ -331,7 +316,7 @@ a[rel~=external] {
 .update-info {
 	text-align: right;
 	font-size: 10px;
-	color: var(--minima-brand-color);
+	color: $brand-color;
 }
 
 hr {
@@ -366,7 +351,7 @@ hr {
 
 .post-navi-date {
 	font-size: 0.8em;
-	color: var(--minima-brand-color);
+	color: $brand-color;
 }
 
 .post-navi-item {
@@ -394,7 +379,58 @@ hr {
 		top: 50%;
 		translate: 0 -50%;
 		font-size: 2.5em;
-		color: var(--minima-brand-color-light);
+		color: $brand-color-light;
+	}
+}
+
+summary {
+	list-style: none;
+	cursor: pointer;
+	display: flex;
+	&::after {
+		content: "\9660";
+		--image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12"><path d="M 1,4 6,9 11,4" style="fill:none;stroke:%23000;stroke-width:1.5px;stroke-linecap:round;stroke-linejoin:round"/></svg>');
+		mask-image: var(--image);
+		-webkit-mask-image: var(--image);
+		mask-size: contain;
+		-webkit-mask-size: contain;
+		mask-repeat: no-repeat;
+		-webkit-mask-repeat: no-repeat;
+		mask-position: center;
+		-webkit-mask-position: center;
+		background-color: $text-color;
+		width: 1em;
+		margin-left: .75em;
+		display: inline-block;
+	}
+}
+
+details[open] > summary::after {
+	transform: rotate(180deg);
+}
+
+.e-content details {
+	padding: 8px;
+	background-color: $details-background-color;
+}
+
+.e-content summary {
+	justify-content: space-between;
+}
+
+.post-meta dl {
+	> dt {
+		display: inline-block;
+		font-weight: bold;
+		padding-right: 1em;
+	}
+
+	> dd {
+		display: inline;
+		&::after {
+			display: block;
+			content: '';
+		}
 	}
 }
 

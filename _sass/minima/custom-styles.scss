@@ -22,15 +22,23 @@ pre, code {
 	width: calc(100% - (#{$spacing-unit} / 2));
 }
 
-summary {
-	padding-bottom: $spacing-unit * .5;
+details {
+	margin-bottom: $spacing-unit * .5;
 }
 
-.post-meta summary {
-	padding-bottom: 0px;
+details[open] > summary {
+	margin-bottom: $spacing-unit * .5;
+}
+
+.post-meta details {
+	margin-bottom: 0px;
 }
 
 .post-meta time {
 	display: block;
 	padding-bottom: $spacing-unit * .5;
+}
+
+dl {
+	margin-left: $spacing-unit;
 }
