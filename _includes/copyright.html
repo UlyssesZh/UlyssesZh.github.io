@@ -1,5 +1,12 @@
 <p>
-	All contents inside blog posts are licensed under
-	<a href="https://creativecommons.org/licenses/by/4.0" target="_blank" rel="external license">CC-BY-4.0</a>
-	unless marked with this symbol: &copy;.
+	All contents inside
+	{% if page.license %}
+		{% assign license = page.license | markdownify_no_p %}
+		this particular blog article
+	{% else %}
+		{% assign license = site.license | markdownify_no_p %}
+		blog articles
+	{% endif %}
+	are licensed under {{ license }}
+	unless stated otherwise or marked with this symbol: &copy;.
 </p>

@@ -40,7 +40,7 @@ function displaySearchResults(results, store) {
 
 		for (var i = 0; i < results.length; i++) {  // Iterate over the results
 			var item = store[results[i].ref];
-			appendString += '<li><span class="post-meta">' + item.date + '</span>';
+			appendString += '<li class="post-list-item"><span class="post-meta">' + item.date + '</span>';
 			appendString += '<h3><a class="post-link" href="' + item.url + '">' + item.title + '</a></h3>';
 			appendString += '<p>' + `<img src="${item.image}" class="post-image">` + item.excerpt + '</p>';
 			appendString += '<ul><li>Categories: ' + item.categories.map(cat => `<a href="/archives/category/${cat.replace(/ /g, '-')}">${cat}</a>`).join(", ") + '</li>';

@@ -51,6 +51,8 @@ layout: base
 							(<a href="{{ site.git_repo }}/blob/master{{ page.image | replace: '.png', '.txt' }}" target="_blank" rel="external">prompts</a>)
 						</dd>
 					{% endif %}
+					<dt>License</dt>
+					<dd>{{ page.license | default: site.license | markdownify_no_p }}</dd>
 					<dt><a href="{{ site.git_repo }}/blob/master/{{ page.path }}?plain=1" target="_blank" rel="external">View source</a></dt>
 					<dt><a href="{{ site.git_repo }}/commits/master/{{ page.path }}" target="_blank" rel="external">View history</a></dt>
 				</dl>

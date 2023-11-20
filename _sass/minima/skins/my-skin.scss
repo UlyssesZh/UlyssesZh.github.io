@@ -429,11 +429,10 @@ summary {
 		content: $summary-image-brand;
 		width: 1em;
 		margin-left: .75em;
+		details[open] > & {
+			transform: rotate(180deg);
+		}
 	}
-}
-
-details[open] > summary::after {
-	transform: rotate(180deg);
 }
 
 .e-content details {
@@ -480,8 +479,10 @@ details[open] > summary::after {
 	float: right;
 }
 
-.e-content p, .e-content li {
-	text-align: justify;
+.e-content, .mastodon-post-content, .post-list-item, .post-header, .footer-col {
+	p, ol, ul, dl, h1, h2, h3, h4, h5, h6 {
+		text-align: justify;
+	}
 }
 
 @import "gitalk";
