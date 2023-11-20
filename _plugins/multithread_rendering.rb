@@ -79,7 +79,7 @@ module Jekyll
 		def make_page ...
 			super.tap { _1.data['rendering_priority'] = :lowest }
 		end
-	end if Jekyll.const_defined? :JekyllFeed
+	end if const_defined? :JekyllFeed
 
 	module UlyssesZhan::ArchiveRenderingPriorityPatch
 		Archives::Archive.prepend self
@@ -87,7 +87,7 @@ module Jekyll
 			super
 			@data['rendering_priority'] = :lowest
 		end
-	end if Jekyll.const_defined? :Archives
+	end if const_defined? :Archives
 
 	module UlyssesZhan::SitemapRenderingPriorityPatch
 		JekyllSitemap.prepend self
@@ -97,5 +97,23 @@ module Jekyll
 		def robots ...
 			super.tap { _1.data['rendering_priority'] = :lowest }
 		end
-	end if Jekyll.const_defined? :JekyllSitemap
+	end if const_defined? :JekyllSitemap
+
+	# https://github.com/jekyll/jekyll-sass-converter/issues/159
+	if Converters.const_defined? :Scss
+		module UlyssesZhan::SassSourceMapRenderingPriorityPatch
+			SourceMapPage.prepend self
+			def initialize ...
+				super
+				@data['rendering_priority'] = :lowest
+			end
+		end
+		module UlyssesZhan::SassSourceMapGenerationPatch
+			Converters::Scss.prepend self
+			def generate_source_map_page ...
+				return unless super
+				site.render_regenerated source_map_page, site.site_payload
+			end
+		end
+	end
 end
