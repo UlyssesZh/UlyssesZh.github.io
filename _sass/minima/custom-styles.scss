@@ -46,3 +46,13 @@ dl {
 .embed-container {
 	margin-bottom: $spacing-unit * .5;
 }
+
+table {
+	margin-bottom: $spacing-unit * .5;
+	width: fit-content;
+	text-align: initial;
+	overflow-x: auto;
+	position: relative;
+	left: 50%;
+	translate: -50%;
+}

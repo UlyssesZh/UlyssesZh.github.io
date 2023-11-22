@@ -207,19 +207,12 @@ ul.pager li {
 	fill: $text-color;
 }
 
-.highlighter-rouge {
-	tab-size: 4;
-}
-
-.language-ruby {
-	tab-size: 2;
-}
-
 .rouge-table {
 	border: none;
 	margin: 0px 0px 15px 0px;
 	overflow-x: auto;
 	display: block;
+	width: 100%;
 
 	tbody {
 		border: none;
@@ -258,6 +251,10 @@ ul.pager li {
 
 .highlight {
 	width: 100%;
+	tab-size: 4;
+	&.language-ruby {
+		tab-size: 2;
+	}
 }
 
 .katex-display-table, .katex-display-table td {

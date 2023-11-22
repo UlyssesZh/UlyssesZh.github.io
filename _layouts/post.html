@@ -12,49 +12,43 @@ layout: base
 			<details>
 				<summary>About this post</summary>
 				<dl>
-					<dt>Title</dt>
-					<dd>{{ page.title | markdownify_no_p }}</dd>
-					<dt>Permalink</dt>
-					<dd><a href="{{ page.url | absolute_url }}">{{ page.url | absolute_url }}</a></dd>
-					<dt>Author</dt>
-					<dd>
+					<dt>Title</dt><dd>{{ page.title | markdownify_no_p }}</dd>
+					<dt>Permalink</dt><dd><a href="{{ page.url | absolute_url }}">{{ page.url | absolute_url }}</a></dd>
+					<dt>Author</dt><dd>
 						{% assign author_name = page.author.name | default: site.author.name %}
 						{% assign author_email = page.author.email | default: site.author.email %}
 						{{ author_name }}
 						&lt;<a href="mailto:{{ author_name }} <{{ author_email }}>" rel="author">{{ author_email }}</a>&gt;
 					</dd>
-					<dt>Date</dt>
-					<dd>
+					<dt>Date</dt><dd>
 						{% assign year = page.date | date: "%Y" %}
 						{% assign month = page.date | date: "%m" %}
 						{% assign day = page.date | date: "%d" %}
 						<a href="/archives/{{ year }}">{{ year }}</a>-<a href="/archives/{{ year }}/{{ month }}">{{ month }}</a>-<a href="/archives/{{ year }}/{{ month }}/{{ day }}">{{ day }}</a>T{{ page.date | date: "%T%z" }}
 					</dd>
-					<dt>Categories</dt>
-					<dd>
+					<dt>Categories</dt><dd>
 						{% for category in page.categories %}
 							<a href="/archives/category/{{ category | slugify }}" rel="tag">{{ category }}</a>{% unless forloop.last %}, {% endunless -%}
 						{% endfor %}
 					</dd>
-					<dt>Tags</dt>
-					<dd>
+					<dt>Tags</dt><dd>
 						{% for tag in page.tags %}
 							<a href="/archives/tag/{{ tag | slugify }}" rel="tag">{{ tag }}</a>{% unless forloop.last %}, {% endunless %}
 						{% endfor %}
 					</dd>
-					<dt>Excerpt</dt>
-					<dd>{{ page.excerpt | markdownify_no_p }}</dd>
+					<dt>Excerpt</dt><dd>{{ page.excerpt | markdownify_no_p }}</dd>
 					{% if page.image %}
-						<dt>Cover</dt>
-						<dd>
+						<dt>Cover</dt><dd>
 							<a href="{{ page.image }}" target="_blank"><img src="{{ page.image }}" width="16"></a>
 							(<a href="{{ site.git_repo }}/blob/master{{ page.image | replace: '.png', '.txt' }}" target="_blank" rel="external">prompts</a>)
 						</dd>
 					{% endif %}
-					<dt>License</dt>
-					<dd>{{ page.license | default: site.license | markdownify_no_p }}</dd>
-					<dt><a href="{{ site.git_repo }}/blob/master/{{ page.path }}?plain=1" target="_blank" rel="external">View source</a></dt>
-					<dt><a href="{{ site.git_repo }}/commits/master/{{ page.path }}" target="_blank" rel="external">View history</a></dt>
+					<dt>License</dt><dd>{{ page.license | default: site.license | markdownify_no_p }}</dd>
+					<dt>
+						<a href="{{ site.git_repo }}/blob/master/{{ page.path }}?plain=1" target="_blank" rel="external">View source</a>
+					</dt><dt>
+						<a href="{{ site.git_repo }}/commits/master/{{ page.path }}" target="_blank" rel="external">View history</a>
+					</dt>
 				</dl>
 			</details>
 			<details>

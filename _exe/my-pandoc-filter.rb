@@ -23,6 +23,8 @@ class Paru::PandocFilter::Attr
 	end
 end
 
+Paru::PandocFilter::MARKDOWN2JSON.__send__ :preserve_tabs
+
 AVAILABLE_FORMATTERS = %w[linewise line_highlighter line_table pygments table]
 
 DEFAULT_CONFIG = {
@@ -52,6 +54,7 @@ Paru::Filter.run do
 		end
 		abort "Unknown formatter #{@config[:formatter]}" unless AVAILABLE_FORMATTERS.include? @config[:formatter]
 		formatter_options = @config[:formatter_options]
+		formatter_options = formatter_options.transform_values { _1.is_a?(String) ? _1 % { lang: lexer.class.tag } : _1 }
 		formatter_options = formatter_options[:css_class] if @config[:formatter] == 'pygments'
 		formatter = Rouge::Formatter.find("html_#{@config[:formatter]}").new base_formatter, formatter_options
 		code_block.markdown = formatter.format lexer.lex code

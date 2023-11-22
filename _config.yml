@@ -20,6 +20,8 @@ paru:
   options:
     from: markdown+link_attributes+pipe_tables+escaped_line_breaks+space_in_atx_header+header_attributes+line_blocks+inline_code_attributes
     no_highlight: true
+    columns: 10000 # prevent colgroup elements
+    preserve_tabs: true
     filter:
       - pandoc-crossref
       - pandoc-katex
@@ -41,7 +43,7 @@ paru:
   rouge:
     formatter: table
     formatter_options:
-      code_class: highlight
+      code_class: highlight language-%{lang}
 gitalk:
   enable_in_development: false
   client_id: 49611570ab5cf827576b
