@@ -28,10 +28,9 @@ Any people can write their own charts for Sunniesnow, serving as fanmade charts 
 Learn more about Sunniesnow by [joining our Discord server](https://discord.gg/6ZHRU9teju)
 (this is also the unofficial Discord server for Lyrica I created).
 
-<p style="text-align: center"><iframe src="https://discord.com/widget?id=1131429935303626782&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe></p>
+{% include embed/discord.html id="1131429935303626782" %}
 
 I have already written a few charts. Here are videos:
 
-<p style="text-align: center"><iframe width="560" height="315" src="https://youtube.com/embed/xqrqxprl71o" title="Stasis Master 13" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></p>
-
-<p style="text-align: center"><iframe width="560" height="315" src="https://youtube.com/embed/oiMivgDPJBg" title="嘤嘤大作战 Master 12" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></p>
+{% include embed/youtube.html id="xqrqxprl71o" %}
+{% include embed/youtube.html id="oiMivgDPJBg" %}

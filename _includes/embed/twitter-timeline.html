@@ -1,0 +1,7 @@
+{% capture id %}twitter-timeline-{{ include.user }}{% endcapture %}
+<a class="twitter-timeline" id="{{ id }}" data-height="400" href="https://twitter.com/{{ include.user }}">Tweets by {{ include.user }}</a>
+<script>
+document.getElementById('{{ id }}').setAttribute('data-theme', matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+</script>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+

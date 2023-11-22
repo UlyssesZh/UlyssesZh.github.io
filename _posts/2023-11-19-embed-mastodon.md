@@ -17,40 +17,24 @@ As we all know you can [embed a Twitter timeline](https://help.twitter.com/en/us
 in your website like this:
 
 <details>
-	<summary>A Twitter timeline</summary>
-	<a class="twitter-timeline" data-height="400" href="https://twitter.com/UlyssesZhan">Tweets by UlyssesZhan</a>
+<summary>A Twitter timeline</summary>
+{% include embed/twitter-timeline.html user="UlyssesZhan" %}
 </details>
-<script>
-	document.getElementsByClassName('twitter-timeline')[0].setAttribute('data-theme', matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-</script>
-<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 You can also embed a Twitter post like this:
 
 <details>
-	<summary>A Twitter post</summary>
-	<blockquote class="twitter-tweet" data-theme="dark">
-		<p lang="en" dir="ltr">
-			Heat got the bottle deformed.
-			<a href="https://t.co/qjLBPPSKov">pic.twitter.com/qjLBPPSKov</a>
-		</p>
-		&mdash; Ulysses Zhan (@UlyssesZhan)
-		<a href="https://twitter.com/UlyssesZhan/status/1561297804596695041">August 21, 2022</a>
-	</blockquote>
+<summary>A Twitter post</summary>
+{% include embed/twitter.html user="UlyssesZhan" id="1561297804596695041" %}
 </details>
-<script>
-	document.getElementsByClassName('twitter-tweet')[0].setAttribute('data-theme', matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-</script>
-<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 However, [there is no official way of embedding a Mastodon timeline](https://github.com/mastodon/mastodon/issues/1065#issuecomment-297531140).
 At most, you can embed a specific Mastodon post like this:
 
 <details>
-	<summary>A Mastodon post</summary>
-	<iframe src="https://mastodon.social/@ulysseszhan/111417118208218240/embed" class="mastodon-embed" style="max-width: 100%; border: 0" width="400" allowfullscreen="allowfullscreen"></iframe>
+<summary>A Mastodon post</summary>
+{% include embed/mastodon.html instance="mastodon.social" user="ulysseszhan" id=111417118208218240 %}
 </details>
-<script src="https://mastodon.social/embed.js" async></script>
 
 This just embeds a specific Mastodon post instead of dynamically grabbing the latest posts.
 Also, this embed requires JavaScript on the client side, which I have been trying to avoid.

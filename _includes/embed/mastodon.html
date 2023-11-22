@@ -1,0 +1,17 @@
+{% capture id %}{{ include.instance }}-{{ include.user }}-{{ include.id }}{% endcapture %}
+<div class="embed-container">
+<iframe id="{{ id }}" src="https://{{ include.instance }}/@{{ include.user }}/{{ include.id }}/embed" class="mastodon-embed" allowfullscreen scrolling></iframe>
+</div>
+<script src="https://{{ include.instance }}/embed.js" async></script>
+<script>
+(async () => {
+	const iframe = document.getElementById('{{ id }}');
+	new MutationObserver((mutations, observer) => {
+		if (!mutations.some(m => m.attributeName === 'height')) {
+			return;
+		}
+		iframe.parentNode.style.paddingBottom = iframe.height + 'px';
+		observer.disconnect();
+	}).observe(iframe, { attributes: true });
+})();
+</script>

@@ -1,0 +1,7 @@
+<blockquote class="twitter-tweet" id="twitter-{{ include.id }}">
+<a href="https://twitter.com/{{ include.user }}/status/{{ include.id }}">Twitter post from {{ include.user }}</a>
+</blockquote>
+<script>
+document.getElementById('twitter-{{ include.id }}').setAttribute('data-theme', matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+</script>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

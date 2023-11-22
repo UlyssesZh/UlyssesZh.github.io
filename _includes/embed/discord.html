@@ -1,0 +1,12 @@
+{% capture id %}discord-embed-{{ include.id }}{% endcapture %}
+<div class="embed-container">
+<iframe id="{{ id }}" src="https://discord.com/widget?id={{ include.id }}" allowtransparency="true" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+</div>
+<script>
+(() => {
+	const element = document.getElementById('{{ id }}');
+	element.src += '&theme=' + (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+	element.parentNode.style.paddingBottom = '400px';
+	element.style.maxWidth = '600px';
+})();
+</script>
