@@ -262,15 +262,20 @@ ul.pager li {
 	margin: 0px;
 	color: inherit;
 	padding: 0px;
+	translate: initial;
+	&.katex-display-numbered {
+		width: 100%;
+		text-align: center;
+		padding-right: 20px;
+	}
+	&.katex-display-number {
+		text-align: right;
+	}
 }
 
-.katex-display-numbered {
+.katex-display-table {
+	left: initial;
 	width: 100%;
-	text-align: center;
-}
-
-.katex-display-number {
-	text-align: right;
 }
 
 p:has(> .katex-display) {
@@ -315,10 +320,13 @@ a[rel~=external] {
 	}
 }
 
+$float-image-padding-horizontal: 12px;
+$float-image-padding-vertical: 6px;
+
 .post-image {
 	float: right;
-	padding-left: 12px;
-	padding-bottom: 6px;
+	padding-left: $float-image-padding-horizontal;
+	padding-bottom: $float-image-padding-vertical;
 	width: 64px;
 }
 
@@ -337,7 +345,7 @@ a[rel~=external] {
 
 .mastodon-post-content {
 	min-height: 100px;
-	padding-bottom: 1px;
+	margin-bottom: $float-image-padding-vertical;
 }
 
 .mastodon-image {
