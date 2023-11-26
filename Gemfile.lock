@@ -79,7 +79,7 @@ GEM
     mercenary (0.4.0)
     nokogiri (1.15.5-x86_64-linux)
       racc (~> 1.4)
-    paru (1.1.2)
+    paru (1.2.0)
     pathutil (0.16.2)
       forwardable-extended (~> 2.6)
     public_suffix (5.0.4)
