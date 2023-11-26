@@ -111,6 +111,7 @@ Specific:
 
 * [Project1](https://rpg.blue/?2644692)
 * [4399手游论坛](https://bbs.4399.cn/forums-mythread-uid-832996581)
+* [MLP Forums](https://mlpforums.com/profile/49563-ulysseszhan)
 * [PVZ Forum](https://forum.crescb.com/profile/6068) (ulysseszhan)
 * [质心论坛](https://forum.eduzhixin.com/homepage/UID_62b6586b5f9b9b5ee2215e38a8cd04ac)
 * [MacroDroid Forum](https://macrodroidforum.com/index.php?members/ulysseszhan.24270)
