@@ -8,57 +8,62 @@ end
 module Jekyll
 	module UlyssesZhan::MultithreadRenderingSitePatch
 
-		CONCURRENT_JOB_COUNT = 20
+		CONCURRENT_JOB_COUNT = ENV['JEKYLL_CONCURRENT_JOB_COUNT']&.to_i || 16
+		DOCUMENTS_PER_JOB = ENV['JEKYLL_DOCUMENTS_PER_JOB']&.to_i || 5
 
 		Site.prepend self
 		Site.alias_method :actually_render_regenerated, :render_regenerated
 
 		class RenderingJob
 
-			def initialize site, document
-				@site, @document = site, document
+			attr_reader :documents
+
+			def initialize site
+				@site = site
+				@documents = []
 			end
 
-			def run
-				@thread = Thread.new do
-					@site.__send__ :actually_render_regenerated, @document, @site.site_payload
+			def run queue, product
+				Thread.new do
+					payload = @site.site_payload
+					@documents.each do |document|
+						@site.__send__ :actually_render_regenerated, document, payload
+					end
+					queue.push product
 				end
-			end
-
-			def finished?
-				!@thread.status
+				self
 			end
 		end
 
 		attr_reader :queue_clear
 
 		def render ...
-			@rendering_jobs = Hash.new { |jobs, priority| jobs[priority] = Set[] }
+			@rendering_jobs = Hash.new { |jobs, priority| jobs[priority] = [RenderingJob.new(self)] }
 			super
 		end
 
 		def render_regenerated document, _
-			@rendering_jobs[
+			jobs = @rendering_jobs[
 				case priority_data = document.data['rendering_priority']
 				when nil then 0
 				when Numeric then priority_data
 				when String, Symbol then Plugin::PRIORITIES[priority_data.to_sym]
 				else raise "Invalid rendering priority: #{priority_data.inspect}"
 				end
-			].add RenderingJob.new self, document
+			]
+			job = jobs.last
+			jobs.push job = RenderingJob.new(self) if job.documents.size >= DOCUMENTS_PER_JOB
+			job.documents.push document
 		end
 
 		def render_pages ...
 			super
+			queue = Thread::Queue.new
 			@rendering_jobs.sort_by { |priority, _| -priority }.each do |_, jobs|
-				running = Set.new
-				while !running.empty? || !jobs.empty?
-					while running.size < CONCURRENT_JOB_COUNT && (job = jobs.each.first&.tap &:run)
-						running.add job
-						jobs.delete job
-					end
-					sleep 1
-					running.delete_if &:finished?
+				running = jobs[0...CONCURRENT_JOB_COUNT].each_with_index { _1.run queue, _2 }
+				jobs.size.times do |i|
+					i += CONCURRENT_JOB_COUNT
+					running[queue.shift] = jobs[i]&.run queue, i
 				end
 			end
 		end
@@ -68,6 +73,7 @@ module Jekyll
 
 		LiquidRenderer::File.prepend self
 
+		# https://github.com/jekyll/jekyll/issues/9485#issuecomment-1797873978
 		def parse content
 			measure_time { @template = Liquid::Template.parse content, line_numbers: true }
 			self
