@@ -134,7 +134,6 @@ Specific:
 Useful:
 
 * [Steam](https://steamcommunity.com/id/ulysseszhan) (ulysseszhan)
-* [osu!](https://osu.ppy.sh/users/21013127) (UlyssesZhan)
 
 <details>
 <summary>Probably useless:</summary>
@@ -143,6 +142,17 @@ Useful:
 * [itch.io](https://ulysseszhan.itch.io) (UlyssesZhan)
 * (taptap.io) [TapTap](https://taptap.io/user/483441132)
 * (taptap.cn) [TapTap](https://taptap.cn/user/17520255)
+
+</details>
+
+<details>
+<summary>Specific games:</summary>
+
+* [osu!](https://osu.ppy.sh/users/21013127) (UlyssesZhan)
+* Project SEKAI (jp) (254638253382266881)
+* Arcaea (067626912)
+* [Malody](https://m.mugzone.net/accounts/user/474907)
+* Colorful Stage (en) (207422022240731139)
 
 </details>
 
