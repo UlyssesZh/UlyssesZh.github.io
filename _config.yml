@@ -44,6 +44,87 @@ paru:
     formatter: table
     formatter_options:
       code_class: highlight language-%{lang}
+  katex:
+    output: html
+    macros:
+      '\mbb': '\mathbb'
+      '\mfk': '\mathfrak'
+      '\mrm': '\mathrm'
+      '\trm': '\textrm'
+      '\mbf': '\mathbf'
+      '\tbf': '\textbf'
+      '\mit': '\mathit'
+      '\msf': '\mathsf'
+      '\mcal': '\mathcal'
+      '\mscr': '\mathscr'
+      '\mtt': '\mathtt'
+      '\tit': '\textit'
+      '\ttt': '\texttt'
+      '\bs': '\boldsymbol'
+
+      '\bN': '\mbb{N}'
+      '\bZ': '\mbb{Z}'
+      '\bQ': '\mbb{Q}'
+      '\bR': '\mbb{R}'
+      '\bC': '\mbb{C}'
+
+      '\alp': '\alpha'
+      '\gma': '\gamma'
+      '\Gma': '\Gamma'
+      '\dlt': '\delta'
+      '\Dlt': '\Delta'
+      '\eps': '\epsilon'
+      '\veps': '\varepsilon'
+      '\vphi': '\varphi'
+      '\tht': '\theta'
+      '\Tht': '\Theta'
+      '\kap': '\kappa'
+      '\lmd': '\lambda'
+      '\Lmd': '\Lambda'
+      '\omg': '\omega'
+      '\Omg': '\Omega'
+      '\sgm': '\sigma'
+      '\Sgm': '\Sigma'
+
+      '\divby': '\divisionsymbol'
+      '\ceq': '\coloneqq'
+      '\eqc': '\eqqcolon'
+
+      '\i': '\mrm{i}'
+      '\e': '\mrm{e}'
+      '\st': '\mrm{st}'
+      '\d': '\mrm{d}'
+
+      '\fr': '\frac'
+      '\dfr': '\dfrac'
+      '\tfr': '\tfrac'
+      '\opn': '\operatorname'
+      '\bhat': '\hat{\mbf{\bs{#1}}}'
+      '\func': '#1\colon #2\to #3'
+      '\vfunc': '\func{#1}{#2}{#3},\quad #4\longmapsto #5'
+      '\fc': '#1\mathchoice{\!}{\!}{}{}\p{#2}'
+      '\bfc': '#1\mathchoice{\!}{\!}{}{}\b{#2}'
+      '\Bfc': '#1\mathchoice{\!}{\!}{}{}\B{#2}'
+      '\opc': '\fc{\opn{#1}}{#2}'
+      '\bopc': '\bfc{\opn{#1}}{#2}'
+      '\Bopc': '\Bfc{\opn{#1}}{#2}'
+      '\set': '\left\{#1\;\middle|\;#2\right\}'
+      '\abar': '\left.#1\right|_{#2}'
+
+      '\p': '\left(#1\right)'
+      '\b': '\left[#1\right]'
+      '\B': '\left\{#1\right\}'
+      '\v': '\left|#1\right|'
+      '\V': '\left\|#1\right\|'
+      '\a': '\left\langle #1\right\rangle'
+      '\floor': '\left\lfloor #1\right\rfloor'
+      '\ceil': '\left\lceil #1\right\rceil'
+      '\round': '\left\lfloor #1\right\rceil'
+      '\bra': '\left\langle #1\right|'
+      '\ket': '\left|#1\right\rangle'
+      '\braket': '\left\langle #1\middle|#2\right\rangle'
+      '\mel': '\left\langle #1\middle|#2\middle|#3\right\rangle'
+
 gitalk:
   enable_in_development: false
   client_id: 49611570ab5cf827576b

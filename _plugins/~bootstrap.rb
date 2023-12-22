@@ -2,6 +2,7 @@
 
 require 'fileutils'
 require 'yaml'
+require 'tomlib'
 
 module Jekyll::UlyssesZhan
 end
@@ -20,6 +21,7 @@ module Jekyll
 			read_katex_version
 			write_crossref_config
 			write_rouge_config
+			write_katex_config
 			fetch_mastodon_post
 			read_github_run_id
 		end
@@ -42,6 +44,11 @@ module Jekyll
 
 		def write_rouge_config
 			File.write File.join(BOOTSTRAP_DIR, 'rouge.yml'), YAML.dump(@site.config['paru']['rouge'])
+		end
+
+		def write_katex_config
+			ENV['PANDOC_KATEX_CONFIG_FILE'] = filename = File.join BOOTSTRAP_DIR, 'katex.toml'
+			File.write filename, Tomlib.dump(@site.config['paru']['katex'])
 		end
 
 		def read_env

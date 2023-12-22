@@ -5,6 +5,7 @@ categories:
 - math
 tags:
 - calculus
+- vector analysis
 layout: post
 excerpt: 'This article gives the formula for the normal vectors of a surface defined by a scalar field on $\mathbb R^n$.
 The normal vector of the graph of the function $y=f\!\left(\mathbf x\right)$ at

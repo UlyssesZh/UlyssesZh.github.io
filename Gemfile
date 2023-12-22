@@ -4,6 +4,7 @@ source 'https://rubygems.org/'
 
 gem 'highline'
 gem 'rake'
+gem 'tomlib'
 
 gem 'jekyll', '~> 4'
 gem 'minima', github: 'jekyll/minima', ref: '85374864e0311f544f49139078927b41ecbe8792'
