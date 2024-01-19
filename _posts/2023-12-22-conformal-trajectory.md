@@ -431,7 +431,7 @@ usually do not allow for a transformation in time, but only for a transformation
 Therefore, I need to first address the problem of integrating the transformation of time
 into the theory of canonical transformations.
 I will not do this for the most general case,
-but only for the case general enough for the purpose of explaining the case interested by this article.
+but only for the case general enough for the purpose of explaining the case interesting this article.
 
 ### Change in the time variable in the stationary-action principle
 
@@ -471,7 +471,7 @@ When finding the variation $\dlt S$, we are fixing $t_1,t_2$.
 However, we cannot fix both $\tau_1,\tau_2$ because their difference is dependent on the path $\fc qt$.
 What we can do is to fix $\tau_1$ and to let $\tau_2$ have a variation given by
 
-$$\dlt\tau_2=\int_{t_1}^{t_2}\fc{\tau'}q\dlt q\,\d t
+$$\dlt\tau_2=\int_{t_1}^{t_2}\fc{\dot\tau'}q\dlt q\,\d t
 =\int_{\tau_1}^{\tau_2}\fr{\fc{\dot\tau'}q}{\fc{\dot\tau}q}\dlt q\,\d\tau,$$
 
 where $\dot\tau'$ is the derivative (or gradient, in higher dimensions) of $\dot\tau$ as a function of $q$.

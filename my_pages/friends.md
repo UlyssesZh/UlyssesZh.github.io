@@ -4,7 +4,7 @@ permalink: "/friends/"
 layout: my_page
 ---
 
-Here are some of my friends' websites (ordered lexicographically):
+Here are some of my friends (ordered lexicographically):
 
 - [Esphas](https://icefla.me){title=浴巾},
 - [Hyrious](https://hyrious.me){title=喵喵喵},
@@ -20,3 +20,7 @@ Here are some of my friends' websites (ordered lexicographically):
 and
 
 - You.
+
+Other links:
+
+- [博友圈](https://www.boyouquan.com).
