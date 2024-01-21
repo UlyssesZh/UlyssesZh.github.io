@@ -29,6 +29,11 @@ $\fc Vw\ceq B\v{\d z/\d w}^2$.
 This result is pretty amazing in that it reveals a quite implicit duality between the two potentials,
 and it looks very symmetric as written.
 
+This theorem, as I know of, was first introduced in
+the appendix of V. I. Arnold's book
+*Huygens and Barrow, Newton and Hooke*.
+Part of this article is already covered in the relevant part of the book.
+
 ## Power-law central-force potentials
 
 Before I show the proof of it, let me first introduce it by a much more well-known example.
