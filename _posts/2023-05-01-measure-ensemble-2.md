@@ -163,7 +163,7 @@ and a vector in $\vec W^{\star\parallel(1)}$.
 We can describe the decomposition by a projection $\pi^{\star(1)}:W^{(1)}\to W^{\star\perp(1)}$.
 
 We will heavily use the "$\star$" on the superscripts of symbols.
-Any symbol that was labeled "$\star$" is dependent on $i$
+Any symbol labeled with "$\star$" is dependent on $i$
 (but independent on an overall constant factor on $i$).
 You can regard those symbols to have an invisible "$i$" in the subscript
 so that you can keep in mind that they are dependent on $i$.
@@ -228,7 +228,7 @@ are well-defined.
 The former maps $\vec W^{\star\parallel(1)}$ to another subspace of $\vec W^{(1)}$,
 and the latter maps $\vec W^{\star\parallel(2)}$ to another subspace of $\vec W^{(2)}$.
 
-We can think the construction of the new composite system as replacing
+We can regard the construction of the new composite system as replacing
 the "plate" between the subsystems in the original composite system from a "thermally conductive plate"
 to a "thermally non-conductive plate".
 Suppose that in the new situation, the intensive quantities "felt" by subsystem 1 is
@@ -336,7 +336,7 @@ where $\vec W^{\star\parallel(1)}$ is defined by Equation [@eq:eq-W-star-paralle
 This definition looks very neat.
 Also, just like how we define the domain of fixed intensive quantities of a thermal ensemble,
 we can define the domain of fixed intensive quantities of a non-thermal ensemble
-to consist of those values that makes the integral in the definition of the partition function converge.
+to consist of those values that make the integral in the definition of the partition function converge.
 
 Because we already derived the formula of the partition function in
 [part 1]({% post_url 2023-03-30-measure-ensemble %}#thermal-ensembles)
@@ -363,7 +363,7 @@ To be clear, we define
 $$J\coloneqq\left\{i\in\vec W^{\parallel\prime}\,\middle|\,
 \exists e\in E^{\star\perp}:0\in I^\star_{e}\right\}.$$
 
-A problem about this formulation is that it is possible to have two $i$s that share the same
+A problem about this formulation is that it is possible to have two $i$'s that share the same
 thermal equilibrium state.
 In that case, the non-thermal ensemble is not defined.
 

@@ -243,17 +243,17 @@ may exchange values of extensive quantities
 and that we can scale a system by multiplying the extensive quantities by a factor,
 we require that the extensive quantities must support at least linear operations... do we?
 
-Well, actually we will see that if we require a space a vector space, things would be a little bit complex
+Well, actually we will see that if we require a space to be a vector space, things would be a little bit complex
 because sometimes we need to construct a new space of extensive quantities out of the
 affine subspace of an existing one, which is not a vector space by nature.
 If we require the space to be a vector space, we need to translate that affine subspace
 to make it pass through the zero element of the vector space,
-which is possible but does not give any insight about the physics except adding complicationg to our construction.
+which is possible but does not give any insight about the physics except adding complication to our construction.
 Therefore, I will not require the space of extensive quantities to be a vector space,
 but be an affine space.
 
 You may ask, OK then, but how do we "add" or "scale" extensive quantities
-if they live one an affine space?
+if they live on an affine space?
 First, regarding the addition operation, we will use an abstraction for such operations
 so that the actual implementation about how do we combine the summands is hidden under this abstraction.
 We will see that this abstraction is useful because it also applies to other senarios or useful operations
@@ -376,7 +376,7 @@ here is a set of possible microstates, denoted as $M_e$
 (you can then see why we excluded the entropy from the extensive quantities:
 otherwise we cannot do such a classification of microstates).
 
-Now the problem is what structures should we add to $M_e$ for each $e\in E$.
+Now the problem is what structures we should add to $M_e$ for each $e\in E$.
 Recall that in statistical mechanics,
 we study probability distribution over all possible microstates.
 Therefore, we need to be able to have a probability measure on $M_e$.
@@ -420,7 +420,7 @@ In other words, the total microstate density should be finite for any possible $
 Also, there should be at least some possible microstates in $M_e$,
 so the total microstate density should not be zero.
 
-We may them sum up the above discussion to give $M_e$ enough structure to make it
+We may then sum up the above discussion to give $M_e$ enough structure to make it
 the set of microstates of a thermal system with the given extensive quantities $e$.
 Then, the disjoint union of all of them (the family of measure spaces) is the thermal system.
 
@@ -726,8 +726,9 @@ An **isolated system** is a thermal system whose underlying affine space of its 
 is a single-element set.
 
 *Definition.*
-An **isolation** (at $e$) of a thermal system $\left(\mathcal E,\mathcal M\right)$
-is the slice of it corresponding to the isolation at $e^\circ$ of $\mathcal E$.
+An **isolation** (at $e^\circ$) of a thermal system $\left(\mathcal E,\mathcal M\right)$
+is the slice of it corresponding to the isolating at $e^\circ$ of $\mathcal E$.
+An isolation is an isolated system.
 
 Here is an obvious property of isolated systems:
 the measured value of extensive quantities of any state of an isolated system
@@ -817,7 +818,8 @@ Therefore, the equality holds iff $p$ is the same state as the equilibrium state
 
 </details>
 
-This theorem is the well-known relation between the entropy and the equilibrium state.
+This theorem is the well-known relation between the entropy and the equilibrium state:
+for an isolated system, the equilibrium state is the state with the maximum entropy.
 
 ---
 
@@ -830,7 +832,7 @@ Then, we have the fundamental equation
 
 $$S^\circ(e)=\ln\Omega(e),$$ {#eq:eq-mce-fundamental-eq}
 
-where $\Omega(e)\coloneqq\ln\mu_e\!\left(M_e\right)$ is called the **counting function** (I invented the phrase),
+where $\Omega(e)\coloneqq\mu_e\!\left(M_e\right)$ is called the **counting function** (I invented the phrase),
 which is the **microscopic characteristic function** of microcanonical ensembles.
 This defines a function $S^\circ:E\to\mathbb R$,
 which may be used to give a fundamental equation in the form of Equation [@eq:eq-fundamental-equation],
