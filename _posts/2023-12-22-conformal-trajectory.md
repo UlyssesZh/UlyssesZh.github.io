@@ -208,7 +208,7 @@ regarding the two potentials.
 However, the reverse is not actually well-defined since the inverse of squaring, i.e., taking the square root,
 is not a single-valued function.
 Nevertheless, it is still well-defined in some sense:
-starting with which ever branch we like, tracing one point on the trajectory of the Kepler problem,
+starting with whichever branch we like, tracing one point on the trajectory of the Kepler problem,
 and moving it along this trajectory for two cycles,
 we will end up with a trajectory of the harmonic oscillator if we take the square root of the position
 and ensure we always choose the branch so that the mapping is continuously done.
@@ -510,8 +510,8 @@ $$\dlt S=\int_{\tau_1}^{\tau_2}
 \p{\fr{\partial M}{\partial q}\dlt q+\fr{\partial M}{\partial\mathring q}\dlt\mathring q}\d\tau
 +\fc M{\fc q{\tau_2},\fc{\mathring q}{\tau_2}}\dlt\tau_2.$$
 
-Recall the derivation of the Euler--Lagrange equation,
-for the second term in the integrand, we can integrate by parts to get
+Recall the derivation of the Euler--Lagrange equation.
+For the second term in the integrand, we can integrate by parts to get
 
 $$\int_{\tau_1}^{\tau_2}\fr{\partial M}{\partial\mathring q}\dlt\mathring q\,\d\tau
 =\abar{\fr{\partial M}{\partial\mathring q}\dlt q}{\tau_1}^{\tau_2}
