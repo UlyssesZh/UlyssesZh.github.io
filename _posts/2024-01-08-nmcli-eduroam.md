@@ -11,6 +11,7 @@ without using the configuration assistant tool provided by eduroam.'
 ---
 
 Save this certificate to some file, say `/YOUR/PATH/TO/ca.pem`:
+
 ```
 -----BEGIN CERTIFICATE-----
 MIIEMjCCAxqgAwIBAgIBATANBgkqhkiG9w0BAQUFADB7MQswCQYDVQQGEwJHQjEb
