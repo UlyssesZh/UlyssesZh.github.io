@@ -137,6 +137,10 @@ Use `bin/logs` in another shell to check the logs if there are any issues.
 
 While the containers are up, run `bin/shell` and run `tlmgr install scheme-full`.
 You need to wait for a long time.
+If you run into the [problem](https://github.com/overleaf/overleaf/issues/1009) of
+"Local TeX Live is older than remote repository,"
+you need to run `update-tlmgr-latest.sh` in the container
+(after fetching it from CTAN first).
 
 After that, run `docker commit overleaf-sharelatex sharelatex/sharelatex:with-texlive-full`.
 Then, edit `config/docker-compose.override.yml` and uncomment the line `image: sharelatex/sharelatex:with-texlive-full`.
