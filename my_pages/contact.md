@@ -125,6 +125,7 @@ Specific:
 
 * [Zelle](enroll.zellepay.com/qr-codes?data=eyJuYW1lIjoiWU9VUUlVIiwidG9rZW4iOiI4MDU4MjU4NDA3IiwiYWN0aW9uIjoicGF5bWVudCJ9)
 * [PayPal](https://paypal.me/youqiuzhan) (youqiuzhan)
+* [Ko-fi](https://ko-fi.com/ulysseszhan) (UlyssesZhan)
 * [Venmo](https://venmo.com/UlyssesZhan) (UlyssesZhan)
 * [Cash App](https://cash.app/$UlyssesZhan) (UlyssesZhan)
 * [Liberapay](https://liberapay.com/UlyssesZhan/) (UlyssesZhan)

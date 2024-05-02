@@ -12,6 +12,8 @@ layout: my_page
 
 <p style="text-align: center">{% include donate/cash-app.svg %}</p>
 
+## [Ko-fi](https://ko-fi.com/ulysseszhan)
+
 ## [Liberapay](https://liberapay.com/UlyssesZhan)
 
 ## [PayPal](https://paypal.me/youqiuzhan)
