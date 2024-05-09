@@ -118,6 +118,13 @@ Specific:
 * [Jellyfin Forum](https://forum.jellyfin.org/u-ulysseszhan) (UlyssesZhan)
 * [Nextcloud community](https://help.nextcloud.com/u/ulysseszhan) (UlyssesZhan)
 * [KDE Discuss](https://discuss.kde.org/u/ulysseszhan) (UlyssesZhan)
+* [Pi-hole Userspace](https://discourse.pi-hole.net/u/ulysseszhan) (UlyssesZhan)
+* [NixOS Discourse](https://discourse.nixos.org/u/ulysseszhan) (UlyssesZhan)
+* [Matplotlib](https://discourse.matplotlib.org/u/ulysseszhan) (UlyssesZhan)
+* [Joplin Forum](https://discourse.joplinapp.org/u/ulysseszhan) (UlyssesZhan)
+* [Jupyter Community Forum](https://discourse.jupyter.org/u/ulysseszhan) (UlyssesZhan)
+* [Arch Linux Forums](https://bbs.archlinux.org/profile.php?id=159168) (UlyssesZhan)
+* [MiraiForum](https://mirai.mamoe.net/user/%E6%9C%89%E4%B8%98%E7%9B%B4%E6%96%B9) (有丘直方)
 
 </details>
 
@@ -174,5 +181,9 @@ Useful:
 * [Fandom](https://community.fandom.com/wiki/User:UlyssesZhan) (UlyssesZhan)
 * [百度网盘](https://snsyun.baidu.com/wap/snsdeeplink?page=middle&is_qrcode=1&qrcode_type=1&scheme=bdnetdisk%3A%2F%2Fn%2Faction.ADD_FRIEND%3Fuk%3D738998772%26type%3Dnormal) (kMIErtrjD)
 * [Spotify](https://open.spotify.com/user/31mqgfrabp3qehe3w6bvlp447dcm)
+* [ImgBB](https://ulysseszhan.imgbb.com) (ulysseszhan)
+* [Imgur](https://imgur.com/user/ulysseszhan) (ulysseszhan)
+* [Disqus](https://disqus.com/by/ulysseszhan) (ulysseszhan)
+* [AUR](https://aur.archlinux.org/account/UlyssesZhan) (UlyssesZhan)
 
 </details>
