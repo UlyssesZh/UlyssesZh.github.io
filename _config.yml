@@ -187,6 +187,8 @@ exclude:
   - bin-dev
   - cabal.lock
   - cargo.lock
+  - gemset.nix
+  - shell.nix
 google_analytics: G-7TSJ5VM6YC
 webmaster_verifications:
   google: ZuV45Knwuwl49Nvh9UsDzniZ-3qy3bGhBPofLK3SZPw
