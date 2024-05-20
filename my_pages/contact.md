@@ -185,5 +185,6 @@ Useful:
 * [Imgur](https://imgur.com/user/ulysseszhan) (ulysseszhan)
 * [Disqus](https://disqus.com/by/ulysseszhan) (ulysseszhan)
 * [AUR](https://aur.archlinux.org/account/UlyssesZhan) (UlyssesZhan)
+* [16Personalities](https://www.16personalities.com/profiles/c926b68f51625)
 
 </details>
