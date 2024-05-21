@@ -39,7 +39,7 @@ jobs:
           ghc-version: 9.4.7
 
       - name: Restore Cabal cache
-        uses: actions/cache/restore@v3
+        uses: actions/cache/restore@v4
         id: cache-cabal-restore
         with:
           path: |
@@ -52,7 +52,7 @@ jobs:
         run: cabal v2-install pandoc-cli pandoc-crossref --install-method=copy --installdir=$GITHUB_WORKSPACE/bin-dev
 
       - name: Save Cabal cache
-        uses: actions/cache/save@v3
+        uses: actions/cache/save@v4
         if: steps.cache-cabal-restore.outputs.cache-hit != 'true'
         with:
           path: |
@@ -61,14 +61,14 @@ jobs:
           key: ${{ runner.os }}-cabal-${{ hashFiles('**/cabal.lock') }}
       
       - name: Install cargo packages
-        uses: baptiste0928/cargo-install@v2
+        uses: baptiste0928/cargo-install@v3
         with:
           crate: pandoc-katex
           cache-key: ${{ runner.os }}-cargo-${{ hashFiles('**/cargo.lock') }}
 
       - name: Configure Pages
         id: pages
-        uses: actions/configure-pages@v3
+        uses: actions/configure-pages@v5
 
       - name: Add development binaries to PATH
         run: |
@@ -80,7 +80,7 @@ jobs:
           JEKYLL_ENV: production
           GITHUB_RUN_ID: ${{ github.run_id }}
 
-      - uses: actions/upload-pages-artifact@v2
+      - uses: actions/upload-pages-artifact@v3
 
   deploy:
     environment:
@@ -90,4 +90,4 @@ jobs:
     needs: build
     steps:
       - id: deployment
-        uses: actions/deploy-pages@v2
+        uses: actions/deploy-pages@v4
