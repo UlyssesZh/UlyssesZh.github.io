@@ -255,7 +255,7 @@ but be an affine space.
 You may ask, OK then, but how do we "add" or "scale" extensive quantities
 if they live on an affine space?
 First, regarding the addition operation, we will use an abstraction for such operations
-so that the actual implementation about how do we combine the summands is hidden under this abstraction.
+so that the actual implementation about how we combine the summands is hidden under this abstraction.
 We will see that this abstraction is useful because it also applies to other senarios or useful operations
 that does not necessarily involve any meaningful addition.
 Regarding the scaling operation, I would argue that now we do not need them.
@@ -595,7 +595,7 @@ which describes the relationship between the extensive quantities and the entrop
 at any equilibrium state.
 Suppose that we postulate a family of states $p_t^\circ$ of the thermal system
 (or its slices, which will be introduced below),
-labeld by different $t$'s, and call them the possible equilibrium states.
+labeled by different $t$'s, and call them the possible equilibrium states.
 Then, we can have the following two equations:
 
 $$\begin{cases}
@@ -684,7 +684,7 @@ This is physically not desirable because we want to keep the number of microstat
 so that its logarithm does not depend on the units we use.
 However, this is not a problem because here is an argument:
 in any physical construction of a thermal system,
-it is fine to have non-dimensionless number of microstates,
+it is fine to have dimensionful number of microstates,
 the cost is that the model must not be valid under low temperature;
 in mathematical construction, dimension is never a thing, so we do not even need to worry about it.
 In low temperature, we must use quantum statistical mechanics,
