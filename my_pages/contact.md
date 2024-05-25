@@ -125,6 +125,7 @@ Specific:
 * [Jupyter Community Forum](https://discourse.jupyter.org/u/ulysseszhan) (UlyssesZhan)
 * [Arch Linux Forums](https://bbs.archlinux.org/profile.php?id=159168) (UlyssesZhan)
 * [MiraiForum](https://mirai.mamoe.net/user/%E6%9C%89%E4%B8%98%E7%9B%B4%E6%96%B9) (有丘直方)
+* [超理论坛](https://chaoli.club/index.php/member/14584) (有丘直方)
 
 </details>
 
