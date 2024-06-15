@@ -125,6 +125,16 @@ paru:
       '\braket': '\left\langle #1\middle|#2\right\rangle'
       '\mel': '\left\langle #1\middle|#2\middle|#3\right\rangle'
 
+      '\O': '\fc{\mrm O}{#1}'
+      '\SO': '\fc{\mrm{SO}}{#1}'
+      '\U': '\fc{\mrm U}{#1}'
+      '\SU': '\fc{\mrm{SU}}{#1}'
+      '\GL': '\fc{\mrm{GL}}{#1}'
+      '\SL': '\fc{\mrm{SL}}{#1}'
+      '\Spin': '\fc{\mrm{Spin}}{#1}'
+      '\Pin': '\fc{\mrm{Pin}}{#1}'
+      '\Cl': '\fc{\mrm{Cl}}{#1}'
+
 gitalk:
   enable_in_development: false
   client_id: 49611570ab5cf827576b
