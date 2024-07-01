@@ -125,6 +125,9 @@ paru:
       '\braket': '\left\langle #1\middle|#2\right\rangle'
       '\mel': '\left\langle #1\middle|#2\middle|#3\right\rangle'
 
+      '\Re': '\opn{Re}'
+      '\Im': '\opn{Im}'
+
       '\O': '\fc{\mrm O}{#1}'
       '\SO': '\fc{\mrm{SO}}{#1}'
       '\U': '\fc{\mrm U}{#1}'

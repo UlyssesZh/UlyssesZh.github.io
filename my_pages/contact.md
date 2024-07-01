@@ -60,6 +60,7 @@ Active:
 * [微博](https://weibo.com/u/3207976064)
 * [BeReal.](https://bere.al/ulysseszhan) (ulysseszhan)
 * [Bilibili](https://space.bilibili.com/226047082/dynamic)
+* [小红书](https://xiaohongshu.com/user/profile/61accfa9000000001000f798) (8076302547)
 
 </details>
 

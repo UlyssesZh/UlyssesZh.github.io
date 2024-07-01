@@ -13,7 +13,10 @@ layout: base
 				<summary>About this post</summary>
 				<dl>
 					<dt>Title</dt><dd>{{ page.title | markdownify_no_p }}</dd>
-					<dt>Permalink</dt><dd><a href="{{ page.url | absolute_url }}">{{ page.url | absolute_url }}</a></dd>
+					<dt>Permalink</dt><dd>
+						<a href="{{ page.url | absolute_url }}">{{ page.url | absolute_url }}</a>
+						(<a href="javascript:navigator.clipboard.writeText('{{ page.url | absolute_url }}')">copy</a>)
+					</dd>
 					<dt>Author</dt><dd>
 						{% assign author_name = page.author.name | default: site.author.name %}
 						{% assign author_email = page.author.email | default: site.author.email %}

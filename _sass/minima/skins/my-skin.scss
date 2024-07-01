@@ -429,10 +429,11 @@ hr {
 summary {
 	list-style: none;
 	cursor: pointer;
-	display: flex;
+	text-align: justify;
 	&::after {
 		content: $summary-image-brand;
 		width: 1em;
+		float: right;
 		margin-left: .75em;
 		details[open] > & {
 			transform: rotate(180deg);
@@ -448,11 +449,8 @@ summary {
 	}
 }
 
-.e-content summary {
-	justify-content: space-between;
-	&::after {
-		content: $summary-image;
-	}
+.e-content summary::after {
+	content: $summary-image;
 }
 
 .post-meta dl {
@@ -505,6 +503,15 @@ summary {
 		width: 100%;
 		height: 100%;
 		translate: -50% 0;
+	}
+}
+
+figure {
+	img + figcaption {
+		text-align: center;
+	}
+	blockquote + figcaption {
+		text-align: right;
 	}
 }
 
