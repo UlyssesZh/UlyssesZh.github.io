@@ -41,13 +41,12 @@ I will be happy if I know there are people interested in my blog!
 Feel free to turn off JavaScript in your browser!
 Equations (such as Equation [@eq:least-action] shown below)
 can be rendered nicely without JavaScript.
-The only broken things would be comments, search engine,
-and (maybe disgusting) trackings.
+The only broken things would be comments, click-to-copy functionalities,
+the search engine, and (well-hated) trackings.
 
 Finally, I would like to tell you what I think is the most beautiful
 equations of all.
 Yes, it is Hamilton's principle
 $$\delta\int\mathcal L\,\mathrm dt=0.$$ {#eq:least-action}
-
 I will never tell you that I was actually to test whether
 mathematical equations can be rendered correctly.

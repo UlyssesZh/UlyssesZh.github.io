@@ -28,8 +28,6 @@ The original letter was sent at 2022-10-13 21:56 -0700.*
 
 ---
 
-Hello!
-
 After searching on the internet,
 I found something about what the mapping from the 3-dimensional Kepler problem
 to the 3-sphere is.
@@ -38,9 +36,7 @@ We choose the canonical coordinates as the 3 Cartesian coordinates and the 3 ass
 Then, use stereographic projection to map the 3-dimensional vector $\mathbf p/p_0$ (where $p_0\coloneqq\sqrt{-2mE}$) to a point on an 3-sphere
 (where we should already have built a coordinate system $\mathbf u$ for us to calculate with).
 The explicit expression for the projection is
-
 $$\mathbf u\coloneqq\frac{p^2-p_0^2}{p^2+p_0^2}\hat{\mathbf n}+\frac{2p_0}{p^2+p_0^2}\mathbf p,$$
-
 where $\mathbf u$ is a unit 4-dimensional vector, and $\hat{\mathbf n}$ is a unit vector perpendicular to the hyperplane where $\mathbf p$ lies.
 I'm sorry for the abuse of notation, but the $\mathbf u$ in this email also stands for the (3-spherical) coordinates of it on the 3-sphere.
 
@@ -55,19 +51,13 @@ It also covered the case where $E=0$ and $E>0$.
 
 Figuring out this mapping is actually more straightforward if we consider it as a problem in quantum mechanics.
 Here is how Fock derived this historically.
-The Schrödinger equation of the Kepler problem, after a Fourier transformation, is
-
+The Schr&ouml;dinger equation of the Kepler problem, after a Fourier transformation, is
 $$\left(\frac{p^2}{2m}-E\right)\Phi(p)=\frac{k}{2\pi^2\hbar}\int\mathrm d^3q\frac{\Phi(q)}{|\mathbf p-\mathbf q|^2}.$$
-
 Looking into it keenly enough, one may find that the factor $1/|\mathbf p-\mathbf q|^2$ is
 actually the Jacobian of the stereographic projection mentioned above.
-Some calculation should reduce this equation to the Schrödinger equation of a free particle on the 3-sphere.
+Some calculation should reduce this equation to the Schr&ouml;dinger equation of a free particle on the 3-sphere.
 
 Some online sources:
 several Wikipedia pages,
 [Baez 2022](https://math.ucr.edu/home/baez/gravitational.html),
 [Egan 2013](http://www.gregegan.net/SCIENCE/Ellipse/Ellipse.html).
-
-Best regards,
-
-Ulysses Zhan

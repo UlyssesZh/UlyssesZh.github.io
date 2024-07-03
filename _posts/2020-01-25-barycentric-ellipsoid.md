@@ -214,7 +214,7 @@ $$
 which is to say that the $n\times n$ matrix
 
 $$
-    \mathbf P\coloneqq\mathbf V^{\mathrm T}\mathbf W\mathbf V=\
+    \mathbf P\coloneqq\mathbf V^{\mathrm T}\mathbf W\mathbf V=
     \mathbf V^{\mathrm T}\left(\mathbf V\mathbf V^{\mathrm T}\right)^{-1}
     \mathbf V
 $$

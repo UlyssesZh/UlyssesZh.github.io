@@ -14,7 +14,7 @@ What is the decoded message? Use your Ruby skills to find out!'
 ---
 
 This was a challenge in the [Ruby Discord server](https://discord.gg/ad2acQFtkh).
-The contents of the challenge is:<sup>&copy;</sup>
+The contents of the challenge is:{%copy%}
 
 > ## Halloween Challenge
 >
@@ -38,7 +38,7 @@ The contents of the challenge is:<sup>&copy;</sup>
 2🎃1🍬5🎃2👻5🍬3🍬43🎃20🎃6👻0👻5🎃6🍬3🎃5🎃2🎃61🍬0🎃1🎃2🍬6🎃6💀0🎃5🎃23🎃2🎃6🍬3🎃5🎃2🎃6🎃2🎃23👻0🎃2👻60🎃63🍬0🍬4🍬3👻0👻5🎃2💀3
 🎃1🎃22🍬3🎃5🎃6👻424🎃60🎃2🎃2👻4🎃6🍬3🍬0🎃6👻3🍬43👻2🍬6🎃6🎃0🍬4🍬3🎃6🎃3🍬03🎃63🍬4🎃04🎃6👻0🍬3👻60🎃6🎃52👻3👻3🍬0💀0🎃2🎃2👻56
 > ```
-> 
+>
 > However, with your unique Ouija board you should have no problem deciphering what they left!
 >
 > ### Objective
@@ -80,8 +80,10 @@ I am too stupid to think of regular expressions at first, so I wrote this:
 M
 ```
 
+<p class="no-indent">
 I did not want to code golf, but I did intend to wrote a one-liner.
 It seems hard to understand, but it is pretty straightforward if it is expanded:
+</p>
 
 ```ruby
 board = [' ', '0', '1', '2', '3', '4', '5', '6'],
@@ -109,7 +111,7 @@ message.chars.reduce nil do |row, encoded_char|
 end
 ```
 
-Then I realized that I could have used regular expressions, so I wrote a cleaner version:
+Then, I realized that I could have used regular expressions, so I wrote a cleaner version:
 
 ```ruby
 puts <<M.gsub(/([🎃👻🍬💀])?([0-6])/){|s|{nil=>'SCARY?!',🎃:'BDEFGH ',👻:"IJKLMN'",🍬:'OPQTUV,',💀:'WXZ.#$:'}[$1&.to_sym][$2.to_i]}
@@ -117,7 +119,7 @@ puts <<M.gsub(/([🎃👻🍬💀])?([0-6])/){|s|{nil=>'SCARY?!',🎃:'BDEFGH ',
 M
 ```
 
-Then I suddenly become creative and realized that I can use another regular expression to implement a string-based indexing,
+Then, I suddenly become creative and realized that I can use another regular expression to implement a string-based indexing,
 and that I can use `-p` option of Ruby command line to save even more characters
 (here I smelled code golfing):
 
@@ -143,7 +145,7 @@ This is also true for instance variables and class variables.
 
 ## The message
 
-The decoded message is:<sup>&copy;</sup>
+The decoded message is:{%copy%}
 
 ```plaintext
 RUBY IS A LANGUAGE THAT WE PROGRAMMERS ADORE,
@@ -164,6 +166,6 @@ ADVENTURES IN THE CODE, WHERE THE EERIE'S ROUTINE.
 DEATH MAY SEEM TO LURK, BUT FOR RUBY IT'S HALLOWEEN!
 ```
 
-(The contents do not share the license of this blog.)
-
+<p class="no-indent">
 Did you spot the hidden message?
+</p>

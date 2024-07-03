@@ -66,7 +66,3 @@ The answer to this question is the choice we made when we wrote the SE, which is
 The question that can be genuinely asked is this:
 why is infinitesimal translation identity minus $\varepsilon \mathrm d/\mathrm dx$ instead of plus?
 The arguments made in class are then valid to answer this question.
-
-Best regards,
-
-Ulysses Zhan

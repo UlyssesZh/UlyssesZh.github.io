@@ -68,40 +68,26 @@ then the problem of finding the actual motion $q$ of the system is equivalent to
 constraint the value of $q$ on $\partial M$, and minimize $\mathcal S$.
 
 In this case, the Euler--Lagrange equation is (according to [a previous post]({% post_url 2020-05-31-high-dim-euler-eq %}))
-
 $$\sum_j\partial_j\frac{\partial\mathcal L}{\partial\!\left(\partial_jq_k\right)}=\frac{\partial\mathcal L}{\partial q_k}.$$
-
 Therefore, the momentum is defined to be the matrix
-
 $$p_{j,k}\coloneqq\frac{\partial\mathcal L}{\partial\!\left(\partial_jq_k\right)}.$$
-
 Note that now the Euler--Lagrange equation is a set of second-order PDEs.
 
 We try performing Legendre transformation on $\mathcal S$ and get Hamiltonian $\mathcal H$.
 
 As a function of space coordinates and velocities, the total derivative of $\mathcal L$ is
-
 $$\mathrm d\mathcal L=\sum_{j,k}\frac{\partial\mathcal L}{\partial\!\left(\partial_jq_k\right)}\,\mathrm d\!\left(\partial_jq_k\right)
 +\sum_k\frac{\partial\mathcal L}{\partial q_k}\,\mathrm dq_k.$$
-
 Substitute the Euler--Lagrange equation and the definition of momenta, and we have
-
 $$\mathrm d\mathcal L=\sum_{j,k}p_{j,k}\,\mathrm d\!\left(\partial_jq_k\right)+\sum_{j,k}\partial_jp_{j,k}\,\mathrm dq_k.$$
-
 By the product rule, the first term in the formula above can be written as
-
 $$p_{j,k}\,\mathrm d\!\left(\partial_jq_k\right)=\mathrm d\!\left(p_{j,k}\partial_jq_k\right)-\partial_jq_k\,\mathrm dp_{j,k},$$
-
 and then we have
-
 $$\mathrm d\!\left(\sum_{j,k}p_{j,k}\partial_jq_k-\mathcal L\right)
 =-\sum_{j,k}\partial_jp_{j,k}\,\mathrm dq_k+\sum_{j,k}\partial_jq_k\,\mathrm dp_{j,k}.$$
-
 If we let $\mathcal H\coloneqq\sum_{j,k}p_{j,k}\partial_jq_k-\mathcal L$,
 then we have
-
 $$\partial_jq_k=\frac{\partial\mathcal H}{\partial p_{j,k}},\quad\sum_j\partial_jp_{j,k}=-\frac{\partial\mathcal H}{\partial q_k}.$$
-
 This is the new Hamiltonian equations, or canonical equations.
 We may find that it lacks the beauty of the form in one-dimensional time.
 
@@ -123,8 +109,8 @@ Does the conservation of energy still hold?
 
 A problem that I am too lazy to consider:
 Consider the Minkowski universe.
-Poincaré transformations are defined as those affine transformations that preserve the spacetime distance between events,
+Poincar&eacute; transformations are defined as those affine transformations that preserve the spacetime distance between events,
 and the spacetime distance is defined as the difference of the square of Euclidean distance in time space
 and the square of Euclidean distance in space space.
-The principle of special relativity guarantees that the equation of motion of closed systems is invariant under Poincaré transformations.
+The principle of special relativity guarantees that the equation of motion of closed systems is invariant under Poincar&eacute; transformations.
 Find the Lagrangian of a single free particle system.

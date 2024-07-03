@@ -1,5 +1,5 @@
 ---
-title: Hölder means inequality
+title: H&ouml;lder means inequality
 date: 2022-11-11 16:42:37 -0800
 categories:
 - math
@@ -7,10 +7,10 @@ tags:
 - calculus
 - from zhihu
 layout: post
-excerpt: 'The Hölder mean of $\vec x$ with weights $\vec w$ and a parameter $p$ is defined as
+excerpt: 'The H&ouml;lder mean of $\vec x$ with weights $\vec w$ and a parameter $p$ is defined as
 $M_{p,\vec w}\!\left(\vec x\right)\coloneqq\left(\vec w\cdot\vec x^p\right)^{\frac 1p}$,
 and the value at $p=-\infty,0,+\infty$ are defined by the limits.
-We can prove using Jensen''s inquality that the Hölder mean increases as $p$ increases.
+We can prove using Jensen''s inquality that the H&ouml;lder mean increases as $p$ increases.
 This property can be used to prove HM-GM-AM-QM inequalities.'
 ---
 
@@ -31,36 +31,34 @@ $f\!\left(\vec\xi\right)\coloneqq\left(f\!\left(\xi_0\right),f\!\left(\xi_1\righ
 - $\vec\xi^{\vec\eta}\coloneqq\prod_k\xi_k^{\eta_k}$;
 - $\min\vec\xi\coloneqq\min_k\xi_k$;
 - $\max\vec\xi\coloneqq\max_k\xi_k$;
-- $\delta_{\xi,\eta}\coloneqq\begin{cases}1,&&\xi=\eta,\\\\0,&&\xi\ne\eta;\end{cases}$
+- $\delta_{\xi,\eta}\coloneqq\begin{cases}1,&&\xi=\eta,\\0,&&\xi\ne\eta;\end{cases}$
 - By saying $\vec\xi$ is congruent, all components of $\vec\xi$ are equal to each other.
 
+<p class="no-indent">
 **Definition 1**.
 Suppose we have samples $\vec x\in\left(\mathbb R^+\right)^n$,
-weights $\vec w\in\left\{\vec\xi\in\left(\mathbb R^+\right)^n\,\middle\|\,\operatorname{sum}\vec\xi=1\right\}$,
+weights $\vec w\in\left\{\vec\xi\in\left(\mathbb R^+\right)^n\,\middle|\,\operatorname{sum}\vec\xi=1\right\}$,
 and parameter $p\in\left[-\infty,+\infty\right]$.
-Define the Hölder mean by
-
+Define the H&ouml;lder mean by
 $$M_{p,\vec w}\!\left(\vec x\right)\coloneqq\left(\vec w\cdot\vec x^p\right)^{\frac 1p}.$$
+</p>
 
 *Note.*
 The function is indefinite when $p\in\left\{-\infty,0,+\infty\right\}$,
 but actually there exist limits
-
 $$\lim_{p\to0}M_{p,\vec w}\!\left(\vec x\right)=\vec x^{\vec w},$$
-
 $$\lim_{p\to-\infty}M_{p,\vec w}\!\left(\vec x\right)=\min\vec x,$$
-
 $$\lim_{p\to+\infty}M_{p,\vec w}\!\left(\vec x\right)=\max\vec x.$$
-
 The limits are to be proved as theorems later.
-We can use them to define the Hölder mean for $p\in\left\{-\infty,0,+\infty\right\}$.
+We can use them to define the H&ouml;lder mean for $p\in\left\{-\infty,0,+\infty\right\}$.
 
+<p class="no-indent">
 **Theorem 1**.
-
 $$\lim_{p\to0}M_{p,\vec w}\!\left(\vec x\right)=\vec x^{\vec w}.$$
+</p>
 
+<p class="no-indent">
 *Proof.*
-
 $$\begin{aligned}
 \lim_{p\to0}M_{p,\vec w}\!\left(\vec x\right)
 &=\lim_{p\to0}\left(\vec w\cdot\vec x^p\right)^{\frac 1p}
@@ -73,13 +71,15 @@ $$\begin{aligned}
 &=\vec x^{\vec w}.
 \end{aligned}$$
 {% qed %}
+</p>
 
+<p class="no-indent">
 **Theorem 2**.
-
 $$M_{p,\vec w}\!\left(\vec x\right)=M_{-p,\vec w}\!\left(\vec x^{-1}\right)^{-1}.$$
+</p>
 
+<p class="no-indent">
 *Proof.*
-
 $$\begin{aligned}
 M_{p,\vec w}\!\left(\vec x\right)
 &=\left(\vec w\cdot\vec x^p\right)^{\frac 1p}
@@ -89,15 +89,17 @@ M_{p,\vec w}\!\left(\vec x\right)
 &\text{(Definition 1)}
 \end{aligned}$$
 {% qed %}
+</p>
 
+<p class="no-indent">
 **Theorem 3**.
-
 $$\lim_{p\to+\infty}M_{p,\vec w}\!\left(\vec x\right)=\max\vec x.$$
+</p>
 
+<p class="no-indent">
 *Proof.*
 Because $\forall k:\frac{x_k}{\max\vec x}\le1$,
 then $\lim_{p\to+\infty}\left(\frac{\vec x}{\max\vec x}\right)^p=\delta_{\max\vec x},\vec x$.
-
 $$\begin{aligned}
 \lim_{p\to+\infty}M_{p,\vec w}\!\left(\vec x\right)
 &=\lim_{p\to+\infty}\left(\vec w\cdot\vec x^p\right)^{\frac 1p}
@@ -108,13 +110,15 @@ $$\begin{aligned}
 &=\max\vec x.
 \end{aligned}$$
 {% qed %}
+</p>
 
+<p class="no-indent">
 **Theorem 4**.
-
 $$\lim_{p\to-\infty}M_{p,\vec w}\!\left(\vec x\right)=\min\vec x.$$
+</p>
 
+<p class="no-indent">
 *Proof.*
-
 $$\begin{aligned}
 \lim_{p\to-\infty}M_{p,\vec w}\!\left(\vec x\right)
 &=\lim_{p\to-\infty}M_{-p,\vec w}\!\left(\vec x^{-1}\right)^{-1}
@@ -125,67 +129,52 @@ $$\begin{aligned}
 &=\min\vec x.
 \end{aligned}$$
 {% qed %}
+</p>
 
+<p class="no-indent">
 **Theorem 5**.
 If $p>q$, then
-
 $$M_{p,\vec w}\!\left(\vec x\right)\ge M_{q,\vec w}\!\left(\vec x\right),$$
+where the equality holds iff $\vec x$ is congruent.
+</p>
 
-he equality holds iff $\vec x$ is congruent.
-
+<p class="no-indent">
 *Proof.*
 Case 1: $p>q>0$.
+</p>
 
 Let $f:\mathbb R^+\to\mathbb R^+:\xi\mapsto\xi^{\frac pq}$,
 then it has second derivative
-
 $$\frac{\mathrm d^2f\!\left(\xi\right)}{\mathrm d\xi^2}=\frac pq\left(\frac pq-1\right)\xi^{\frac pq-2}.$$
-
 Because $p>q>0$,
 then $\frac pq\left(\frac pq-1\right)>0$,
 and then $\frac{\mathrm d^2f}{\mathrm d\xi^2}>0$,
 i.e. $f$ is convex.
 Therefore, according to Jensen's inequality,
-
 $$\vec w\cdot f\!\left(\vec x^q\right)\ge f\!\left(\vec w\cdot\vec x^q\right),$$
-
 i.e.
-
 $$\vec w\cdot\vec x^p\ge\left(\vec w\cdot\vec x^q\right)^{\frac pq}.$$
-
 Take $\frac1p$th power to both sides of the equation.
 Without changing the direction of the inequality sign,
 we have
-
 $$\vec w\cdot\vec x^p\ge\vec w\cdot\vec x^q,$$
-
 i.e. (according to Definition 1)
-
 $$M_{p,\vec w}\!\left(\vec x\right)\ge M_{q,\vec w}\!\left(\vec x\right).$$
-
 According to the condition for the equality to hold in Jensen's inequality,
 the equality holds iff $\vec x$ is congruent.
 
 Case 2: $p>q=0$.
 
 Because the logarithm function is concave, according to Jensen's inequality,
-
 $$\ln\!\left(\vec w\cdot\vec x^p\right)\ge\vec w\cdot\ln\vec x^p.$$
-
 Take exponential on both sides of the equation, and we have
-
 $$\vec w\cdot\vec x^p\ge\vec x^{p\vec w}.$$
-
 Take $\frac1p$th power to both sides of the equation.
 Without changing the direction of the inequality sign,
 we have
-
 $$\left(\vec w\cdot\vec x^p\right)^{\frac1p}\ge\vec x^{\vec w},$$
-
 i.e. (according to Definition 1)
-
 $$M_{p,\vec w}\!\left(\vec x\right)\ge M_{q,\vec w}\!\left(\vec x\right).$$
-
 According to the condition for the equality to hold in Jensen's inequality,
 the equality holds iff $\vec x$ is congruent.
 
@@ -200,13 +189,11 @@ M_{q,\vec w}\!\left(\vec x\right)
 &=M_{0,\vec w}\!\left(\vec x\right).
 &\text{(Theorem 2)}
 \end{align*}$$
-
 The equality holds iff $\vec x$ is congruent (Case 2).
 
 Case 4: $0>p>q$.
 
 Because $-q>-p>0$, we have
-
 $$\begin{align*}
 M_{q,\vec w}\!\left(\vec x\right)
 &=M_{-q,\vec w}\!\left(\vec x^{-1}\right)^{-1}
@@ -216,38 +203,36 @@ M_{q,\vec w}\!\left(\vec x\right)
 &=M_{p,\vec w}\!\left(\vec x\right).
 &\text{(Theorem 2)}
 \end{align*}$$
-
 The equality holds iff $\vec x$ is congruent (Case 1).
 
-By all 4 cases, the original proposition is proved. {% qed %}
+By all 4 cases, the original proposition is proved.
+{% qed %}
 
-**Corollary** (HM-GM-AM-QM inequalities).
-
+<p class="no-indent">
+**Corollary** (HM-GM-AM-QM inequalities)**.**
 $$\min\vec x\le n\left(\sum\vec x^{-1}\right)^{-1}
 \le\left(\prod\vec x\right)^\frac1n
 \le\frac{\sum\vec x}n
 \le\sqrt{\frac{\sum\vec x^2}{n}}
 \le\max\vec x,$$
-
 where the equality holds iff $\vec x$ is congruent.
+</p>
 
+<p class="no-indent">
 *Proof.*
 Let $\vec w=\left(\frac1n,\dots,\frac1n\right)$.
 Then according to Theorem 5,
-
 $$M_{-\infty,\vec w}\!\left(\vec x\right)
 \le M_{-1,\vec w}\!\left(\vec x\right)
 \le M_{0,\vec w}\!\left(\vec x\right)
 \le M_{1,\vec w}\!\left(\vec x\right)
 \le M_{2,\vec w}\!\left(\vec x\right)
 \le M_{+\infty,\vec w}\!\left(\vec x\right),$$
-
 i.e. (according to Definition 1)
-
 $$\min\vec x\le n\left(\sum\vec x^{-1}\right)^{-1}
 \le\left(\prod\vec x\right)^\frac1n
 \le\frac{\sum\vec x}n
 \le\sqrt{\frac{\sum\vec x^2}{n}}
 \le\max\vec x,$$
-
 where the equality holds iff $\vec x$ is congruent (Theorem 5). {% qed %}
+</p>

@@ -17,7 +17,9 @@ Here are some of my friends (ordered lexicographically):
 - [Xiang](https://orashshi.github.io){title=Orash},
 - [后马勒音乐文库](https://musiknachmahler.xyz){title=Jiewei},
 
+<p class="no-indent">
 and
+</p>
 
 - You.
 

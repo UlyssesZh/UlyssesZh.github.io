@@ -24,28 +24,30 @@ paru:
     preserve_tabs: true
     filter:
       - pandoc-crossref
-      - pandoc-katex
       - _exe/my-pandoc-filter.rb
+      - pandoc-katex
     metadata:
       - crossrefYaml=bootstrap/crossref.yml
       - rougeConfig=bootstrap/rouge.yml
   crossref:
     link_references: true
-    table_eqns: true
+    table_eqns: false
     set_label_attribute: true
     eqn_prefix_template: $$i$$
-    eqn_block_template: >-
-      `<table class="katex-display-table"><tr class="odd"><td class="katex-display-numbered">`{=html}
-      $$t$$
-      `</td><td class="katex-display-number">`{=html}
-      $$i$$
-      `</td></tr></table>`{=html}
+    # https://github.com/lierdakil/pandoc-crossref/issues/444#issuecomment-2201090324
+    eqn_inline_template: >-
+      very_unlikely_numbered_equation_start
+      $$e$$
+      very_unlikely_numbered_equation_middle
+      $$ri$$
+      very_unlikely_numbered_equation_finish
   rouge:
     formatter: table
     formatter_options:
       code_class: highlight language-%{lang}
   katex:
     output: html
+    trust: true
     macros:
       '\mbb': '\mathbb'
       '\mfk': '\mathfrak'

@@ -35,8 +35,11 @@ from the popular definitions!
 
 Here is the basic principle of the Galilean world:
 
-> Principle 1: The world is a Galilean structure with
-> $3$-dimensional space and $1$-dimensional time.
+<p class="no-indent">
+**Principle 1.**
+The world is a Galilean structure with
+$3$-dimensional space and $1$-dimensional time.
+</p>
 
 Here is the definition of a Galilean structure.
 A *Galilean structure* with $\chi$-dimensional space
@@ -53,8 +56,10 @@ is a linear mapping;
 the mapping $\rho$ satisfies
 $\rho\!\left(a,b\right)=\sqrt{\left(a-b\right)^2}$.
 
+<p class="no-indent">
 To make the physical meanings of the above mathematical stuff
 clear, we
+</p>
 
 - call $\mathscr A$ the *universe* or a *Galilean space*,
 - call the points in the universe the *events*,
@@ -68,8 +73,10 @@ iff $\tau\!\left(a-b\right)=0$,
 
 Here is the second principle of the Galilean world:
 
-> Principle 2 (Galileo's principle of relativity):
-> Laws of nature remain the same under Galilean transformation.
+<p class="no-indent">
+**Principle 2** (Galileo's principle of relativity)**.**
+Laws of nature remain the same under Galilean transformation.
+</p>
 
 Here is the definition of a Galilean transformation.
 An affine transformation $g$ over the Galilean space $\mathscr A$
@@ -98,7 +105,6 @@ $$
 \rho&\coloneqq\left(a,b\right)\mapsto\sqrt{\left(a-b\right)^2}
 \end{align*}
 $$
-
 is a Galilean structure (why?).
 Here $\mathscr A$ is called the *Galilean coordinate space*.
 
@@ -126,27 +132,27 @@ are isomorphic to each other (why?).
 In fact, the two principles above are not enough to
 build up the whole classical mechanics.
 We need to define motion, velocity, and acceleration
-in our $3$-$1$ universe, and use the third principle
+in our $3+1$ universe.
+Then, to describe how the motion is determined,
+we need the following principle:
 
-> Principle 3 (Newton's principle of determinacy):
-> The motion is uniquely determined by initial positions
-> and initial velocities.
+<p class="no-indent">
+**Principle 3** (Newton's principle of determinacy)**.**
+The motion is uniquely determined by initial positions
+and initial velocities.
+</p>
 
-to conclude that the motion can be depicted by
+With this principle, we can conclude that the motion can be depicted by
 *Hamilton's principle*
-
 $$
     \delta\int\mathcal L\!\left(q,\dot q,t\right)=0
 $$
-
 (why?), which leads to *Euler--Lagrange equation*
-
 $$
     \frac{\mathrm d}{\mathrm dt}
     \frac{\partial\mathcal L}{\partial\dot q}=
     \frac{\partial\mathcal L}{\partial q}
 $$
-
 (why?).
 
 According to Principle 2, for a closed system,
@@ -170,8 +176,11 @@ and is not related to the topic today.
 We can build up the Einsteinian world similarly as we have
 done for the Galilean world.
 
-> Principle 1: The world is an Einsteinian structure
-> with $3$-dimensional space and $1$-dimensional time.
+<p class="no-indent">
+**Principle 1.**
+The world is an Einsteinian structure
+with $3$-dimensional space and $1$-dimensional time.
+</p>
 
 Here is the definition of an Einsteinian structure.
 An *Einsteinian structure* with $\chi$-dimensional space
@@ -191,8 +200,10 @@ are linear mappings;
 4. $\forall a,b\in\mathscr A:\rho\!\left(a,b\right)=
 \sqrt{\tau\left(a-b\right)^2-\sigma\left(a-b\right)^2}$.
 
+<p class="no-indent">
 To make the physical meanings of the above mathematical
 stuff clear, we
+</p>
 
 - call $\mathscr A$ the *universe* or an *Einsteinian space*,
 - call the points in the universe the *events*,
@@ -205,20 +216,22 @@ stuff clear, we
 
 Here is the second principle of the Einsteinian world:
 
-> Principle 2 (Einstein's principle of relativity):
-> Laws of nature remain the same under
-> extended Poincaré transformation.
+<p class="no-indent">
+**Principle 2** (Einstein's principle of relativity)**.**
+Laws of nature remain the same under
+extended Poincar&eacute; transformation.
+</p>
 
-Here is the definition of a Poincaré transformation.
+Here is the definition of a Poincar&eacute; transformation.
 An affine transformation $g$ over the Einsteinian space
-$\mathscr A$ is called a *Poincaré transformation*
+$\mathscr A$ is called a *Poincar&eacute; transformation*
 iff $\forall a,b\in\mathscr A:
 \rho\!\left(a,b\right)=\rho\!\left(ga,gb\right)$.
 Well, the definition is much simpler than that of
 Galilean transformation.
 
-Poincaré transformations form a group (why?)
-called the *Poincaré group*, which is a
+Poincar&eacute; transformations form a group (why?)
+called the *Poincar&eacute; group*, which is a
 $\frac{\nu\left(\nu+1\right)}2$-dimensional Lie group (why?).
 
 ---
@@ -232,19 +245,18 @@ $$
     \sqrt{\tau\!\left(a-b\right)^2-\sigma\!\left(a-b\right)^2}
 \end{align*}
 $$
-
 is an Einsteinian structure (why?), where the constant
 $c\in\mathbb R$ is called the *speed of light*.
 Here $\mathscr A$ is called the *Minkowski space*.
 
 The following transformations on the Minkowski space are
-Poincaré transformations (why?):
+Poincar&eacute; transformations (why?):
 
 1. $a\mapsto a+d$, where $d\in\mathbb R^\nu$ (*translation*),
 2. $a\mapsto Ga$, where $G\in\mathrm O\!\left(\iota,\chi\right)$
 is an indefinite orthogonal matrix (*rotation*).
 
-Every Poincaré transformation of the Minkowski space can be
+Every Poincar&eacute; transformation of the Minkowski space can be
 represented uniquely as the composition of a translation
 and a rotation (why?).
 
@@ -264,8 +276,11 @@ Further more, it is time-isotropic.
 Although the Aristotelian world is not real, we can
 think of what it may look like.
 
-> Principle 1: The world is an Aristotelian structure
+<p class="no-indent">
+**Principle 1.**
+The world is an Aristotelian structure
 with $3$-dimensional space and $1$-dimensional time.
+</p>
 
 According to Aristotle's theory about the natural place,
 the world has something like a "center",
@@ -320,8 +335,11 @@ iff $\tau\!\left(a-b\right)=0$,
 
 Then the task is to define the Aristotelian transformations.
 
-> Principle 2: Laws of nature remain the same under
-> Aristotelian transformation.
+<p class="no-indent">
+**Principle 2.**
+Laws of nature remain the same under
+Aristotelian transformation.
+</p>
 
 Here is the definition of an Aristotelian transformation.
 An affine transformation $g$ over the Aristotelian space
@@ -335,8 +353,10 @@ iff all of the following are satisfied:
 \rho\!\left(a,b\right)=\rho\!\left(ga,gb\right)$.
 3. $\forall a\in o:ga\in o$.
 
+<p class="no-indent">
 Notice the third condition, which makes it different from
 a Galilean transformation.
+</p>
 
 Aristotelian transformations from a group (why?) called
 the *Aristotelian group*, which is an
@@ -353,7 +373,6 @@ $$
     \rho&\coloneqq\left(a,b\right)\mapsto\sqrt{\left(a-b\right)^2}
 \end{align*}
 $$
-
 is an Aristotelian structure (why?). Here $\mathscr A$
 is called the *Aristotelian coordinate space*.
 

@@ -64,10 +64,8 @@ with each energy level labeled by $n\in\bZ^+$,
 and each energy level has $g_n\ceq n^2$ degeneracy (ignoring spin degeneracy,
 which merely contributes to an overall factor of the partition function).
 The partition function is
-
 $$\fc Z\beta\ceq\sum_{n=1}^\infty g_n\e^{-\beta E_n}
 =\sum_{n=1}^\infty n^2\e^{\beta/2n^2},$$ {#eq:Z}
-
 which diverges for any $\beta\in\bC$
 (of course, normally we can only have $\beta\in\bR$,
 but the point of saying that it diverges for any complex $\beta$ is that
@@ -83,17 +81,19 @@ all the methods are valid for more general divergent sums.
 Here is a sentence that is quoted by many literatures on diverging series,
 so I want to quote it, too:
 
-<figure>
+<figure class="no-indent">
 
 > Divergente Rækker er i det Hele noget Fandenskap,
-> og det er en Skam at man vover at grunde nogen Demonstrasjon derpaa.
+og det er en Skam at man vover at grunde nogen Demonstrasjon derpaa.
 
 <figcaption>---N. H. Abel</figcaption>
 
 </figure>
 
+<p class="no-indent">
 It translates to "Divergent series are in general deadly,
 and it is shameful that anyone dare to base any proof on them."
+</p>
 
 ## The physical answer
 
@@ -111,10 +111,8 @@ is now having significant effects.
 Or, if there is not a box at all, we can use the size of the universe instead,
 which is about $r_n\sim L\ceq10^{36}$ ($\Lmd\ceq10^{18}$).
 Use the model of particle in a box for energy levels higher than $n=\Lmd$, and we have
-
 $$Z=\sum_{n=1}^\Lmd n^2\e^{\beta/2n^2}
 +\sum_{n_x,n_y,n_z=1}^\infty\fc\exp{-\beta\fr{\p{n_x^2+n_y^2+n_z^2}\pi^2}{2L^2}},$$
-
 where $L$ is the side length of the box (assuming that the box is cubic).
 If $L$ is very large,
 we can approximate the second term as a spherically symmetric integral over the first octant
@@ -127,16 +125,12 @@ This is actually the result for Boltzmann ideal gas, so it should be familar,
 but I still write down the calculation here for completeness.
 
 We can approximate
-
 $$\sum_{n_x,n_y,n_z=1}^\infty\fc\exp{-\beta\fr{\p{n_x^2+n_y^2+n_z^2}\pi^2}{2L^2}}
 \approx I\ceq\int_0^\infty\d^3n\,\fc\exp{-\beta\fr{\p{n_x^2+n_y^2+n_z^2}\pi^2}{2L^2}},$$
-
 where $\int_0^\infty\d^3n$ means $\int_0^\infty\int_0^\infty\int_0^\infty\d n_x\,\d n_y\,\d n_z$.
 We can then change the integral to spherical coordinates:
-
 $$I=\int_0^\infty\fr184\pi n^2\,\d n\,\fc\exp{-\beta\fr{n^2\pi^2}{2L^2}}
 =\fr{L^3}{4\pi^2\beta^{3/2}}\int_{-\infty}^\infty\d n\,n^2\e^{-n^2/2},$$
-
 where the factor of $1/8$ is because we only integrate in the first octant,
 and the second step utilizes the symmetry of the integrand and redefines the integrated variable.
 This integral is than a familiar Gaussian integral of order unity.
@@ -165,10 +159,8 @@ so it is second largest term in the sum.
 
 An upper bound of the summation is given by replacing every term except the largest term by the second largest term,
 which gives
-
 $$Z<\underbrace{\e^{\beta/2}}_{10^{217}}
 +\underbrace{\p{\Lmd-1}4\e^{\beta/8}}_{10^{72}}+\underbrace{L^3\p{2\pi\beta}^{-3/2}}_{10^{48}}\approx\e^{\beta/2}.$$
-
 Therefore, the $n=1$ term dominates the entire partition function.
 This means that the hydrogen atom is extremely likely to be in the ground state
 (despite the seeming divergence of the partition function).
@@ -203,9 +195,7 @@ it replaces the infinite sum by a finite partial sum.
 This can be generalized a little by considering a more general cutoff function $\chi$
 such that $\lim_{x\to0^+}\fc \chi x=1$.
 Then, an infinite sum $\sum_{n=1}^\infty\fc fn$ can be written as
-
 $$\sum_{n=1}^\infty\fc fn=\lim_{\lmd\to0^+}\sum_{n=1}^\infty\fc fn\fc\chi{\lmd n}.$$
-
 The simple cutoff is then the case where $\fc \chi x\ceq\fc\tht{1-x}$ and $\lmd\ceq1/\Lmd$,
 where $\tht$ is the Heaviside step function.
 For converging series, this gives the same result as the original sum
@@ -220,9 +210,7 @@ where $\eta$ is the [Dirichlet eta function](https://en.wikipedia.org/wiki/Diric
 Here is a check for the special case $\fc\chi x\ceq\e^{-x}$
 (equivalent to the [Abel summation](https://en.wikipedia.org/wiki/Divergent_series#Abel_summation)).
 By definition of the [polylogarithm](https://en.wikipedia.org/wiki/Polylogarithm), we have
-
 $$\sum_{n=1}^\infty\p{-1}^nn^k\e^{-\lmd n}=\fc{\mrm{Li}_{-k}}{-\e^{-\lmd}}.$$
-
 Now, substitute $\lmd=0$, and utilizing the identity $\fc{\mrm{Li}_s}{-1}=-\fc\eta s$,
 we have the result $-\fc\eta{-k}$.
 
@@ -245,18 +233,14 @@ If it diverges because $\fc fn$ grows too fast
 (or decays too slowly) as $n\to\infty$,
 then we should expect that the sum also tends to infinity as $\lmd\to0^+$.
 Assume that we can characterize this divergence by a Laurent series:
-
 $$\sum_{n=1}^\infty\fc fn\fc\chi{\lmd n}
 =\sum_{k=-\infty}^\infty\gma_k\lmd^k.$$ {#eq:cutoff1}
-
 If the $\lmd\to0^+$ limit converge, we would expect $\gma_{k<0}$ to be zero,
 and then the result is simply $\gma_0$.
 Therefore, we may also want only $\gma_0$ when the limit does not exist.
 To pick out $\gma_0$, utilize the residue theorem:
-
 $$\sum_{n=1}^\infty\fc fn=\fr1{2\pi\i}\oint\fr{\d\lmd}\lmd
 \sum_{n=1}^\infty\fc fn\fc\chi{\lmd n},$$ {#eq:cutoff2}
-
 where the domain of $\lmd$ is now analytically continued from $\bR^+$
 to a deleted neighborhood of $0$.
 Equation [@eq:cutoff2] is then a generalized version of Equation [@eq:cutoff1].
@@ -286,26 +270,20 @@ An example is $E_n\ceq\ln\ln n$ (for $n\ge2$) with no degeneracies
 In this case, if you try to use the cutoff function $\fc\chi x\ceq\e^{-x}$,
 the sum goes like $\p{-\ln\lmd}^{-\beta}/\lmd$ instead of analytically when $\lmd\to0^+$.
 Proving this is simple. We have
-
 $$Z_\lmd=\sum_{n=2}^\infty\e^{-\lmd n}\p{\ln n}^{-\beta}
 \approx\int_2^\infty\e^{-\lmd n}\p{\ln n}^{-\beta}\d n
 =\fr1{\lmd\p{-\ln\lmd}^\beta}\int_{2\lmd}^\infty
 \fr{\e^{-x}\,\d x}{\p{1-\ln x/\ln\lmd}^\beta},$$
-
 where the last step uses the substitution $x\ceq\lmd n$.
 Using the binomial theorem, we have
-
 $$Z_\lmd\approx\fr1{\lmd\p{-\ln\lmd}^\beta}\int_{2\lmd}^\infty\d x\,\e^{-x}
 \sum_{k=0}^\infty\binom{-\beta}k\p{\fr{\ln x}{-\ln\lmd}}^k,$$
-
 where $\binom{-\beta}k$ is the binomial coefficient.
 Note that $\fc{\Gma^{\p k}}z=\int_0^\infty x^{k-1}\p{\ln x}^k\e^{-zx}\d x$,
 where $\Gma^{\p k}$ is the $k$th derivative to the Euler Gamma function,
 so the integral for $x$ gives a factor $\fc{\Gma^{\p k}}1$
 in the limit of $\lmd\to0^+$. Therefore,
-
 $$Z_\lmd\approx\fr1{\lmd\p{-\ln\lmd}^\beta},$$
-
 where only the $k=0$ term in the sum is retained for the leading contribution as $\lmd\to0^+$.
 
 However, for any $k\in\bZ^+$, one can always choose functions $h,\chi$ so that the sum
@@ -314,18 +292,12 @@ For example, for $\fc\chi x\ceq\e^{-x}$
 (equivalent to the [Abelian mean](https://en.wikipedia.org/wiki/Divergent_series#Abelian_means)
 or the [heat-kernel regularization](https://en.wikipedia.org/wiki/Zeta_function_regularization#Heat_kernel_regularization)),
 we have
-
 $$Z_\lmd\approx\int_{n_0}^\infty\e^{-\lmd\fc hn}\fc fn\d n
 =\int_{\lmd\fc f{n_0}}^\infty\e^{-x}\fc f{\fc{h^{-1}}{\fr x\lmd}}\fr{\d x}{\lmd\fc{h'}{\fc{h^{-1}}{\fr x\lmd}}}.$$
-
 We can choose $\fc hn\ceq\p{\int\fc fn\d n}^{1/k}$ so that
-
 $$\fc f{\fc{h^{-1}}{\fr x\lmd}}=k\p{\fr x\lmd}^{k-1}\fc{h'}{\fc{h^{-1}}{\fr x\lmd}}.$$
-
 Therefore, as $\lmd\to0^+$, we have
-
 $$Z_\lmd\approx\fr1\lmd\int_{\lmd\fc f{n_0}}^\infty\e^{-x}k\p{\fr x\lmd}^{k-1}\,\d x\approx\fr{k!}{\lmd^k}.$$
-
 However, this does not guarantee that the Laurent series expansion exists.
 This is a good trial, though.
 My math capacity does not allow me to confirm whether this is the case for the example of $E_n\ceq\ln\ln n$.
@@ -337,11 +309,9 @@ My math capacity does not allow me to confirm whether this is the case for the e
 After saying so much about cutoff regularization in general,
 what does it say about the partition function of a hydrogen atom?
 Try multiplying the cutoff function $\fc\chi{\lmd n}$ to the summand in Equation [@eq:Z]:
-
 $$Z_\lmd\ceq\sum_{n=1}^\infty n^2\e^{\beta/2n^2}\fc\chi{\lmd n}
 =\sum_{k=0}^\infty\fr{\p{\beta/2}^k}{k!}\sum_{n=1}^\infty n^{2-2k}\fc\chi{\lmd n}
 \to\sum_{k=0}^\infty\fr{\p{\beta/2}^k}{k!}\fc\zeta{2k-2},$$ {#eq:Z-reg}
-
 where the last step utilizes the result for $\fc fn\ceq n^k$,
 with which we get rid of the dependence on $\lmd$.
 The last expression is then identified as $Z$.
@@ -373,31 +343,22 @@ for a hydrogen atom confined in a box with a typical macroscopic size or the siz
 <details><summary>Derivation of the asymptotic behavior at cold positive temperature</summary>
 
 We have
-
 $$Z=\sum_{k=0}^\infty\fr{\p{\beta/2}^k}{k!}\fc\zeta{2k-2},\quad
 \fr{\d Z}{\d\beta}=\fr12\sum_{k=0}^\infty\fr{\p{\beta/2}^k}{k!}\fc\zeta{2k}.$$
-
 Therefore,
-
 $$Z-2\fr{\d Z}{\d\beta}=\sum_{k=0}^\infty\fr{\p{\beta/2}^k}{k!}
 \p{\fc\zeta{2k-2}-\fc\zeta{2k}}.$$
-
 We can try to find the asymptotic behavior of the coefficient of each term.
 We have
-
 $$\fc\zeta{2k-2}-\fc\zeta{2k}=\sum_{n=1}^\infty\p{\fr1{n^{2k-2}}-\fr1{n^{2k}}}
 =\sum_{n=1}^\infty\fr{n^2-1}{n^{2k}}
 =\fr{3}{2^{2k}}+\O{\fr1{3^{2k}}}.$$
-
 We also have $\fc\zeta{2k-2}=1+\O{2^{-2k}}$, of course.
 Therefore,
-
 $$1-p_1\le2\a E+1=\fr{Z-2\d Z/\d\beta}Z
 =\fr{\sum_k\fr{\p{\beta/2}^k}{k!}\p{\fr3{2^{2k}}+\O{\fr1{3^{2k}}}}}{\sum_k\fr{\p{\beta/2}^k}{k!}\p{1+\O{\fr1{2^{2k}}}}}.$$
-
 These power series are then simply exponential functions.
 Therefore,
-
 $$1-p_1\le\fr{3\e^{\beta/8}+\O{\e^{\beta/18}}}{\e^{\beta/2}+\O{\e^{\beta/8}}}
 =3\e^{-3\beta/8}+\O{\e^{-4\beta/9}}.$$ {#eq:1-p1}
 
@@ -545,12 +506,10 @@ $$Z=\sum_{k=0}^\infty\fr{\p{\beta/2}^k}{k!}\fr1{2\pi\i}\oint\fr{\d x}{x^{2k-1}}\
 
 Here is a non-rigorous derivation.
 We can rewrite the regularized $Z$ in a similar form as
-
 $$\begin{align*}
 Z&=-\fr\beta4+\sum_{n=1}^\infty n^2\p{\e^{\beta/2n^2}-1-\fr\beta{2n^2}}\\
 &=\lim_{N\to\infty}\p{-\p{\fr14+\fr N2}\beta-\fr16N\p{1+N}\p{1+2N}+\sum_{n=1}^Nn^2\e^{\beta/2n^2}}.
 \end{align*}$$
-
 For finite $N$, it has a straight line asymptote as $\beta\to-\infty$.
 The envelope of this family of straight lines (parametrized by $N$)
 is $Z=\p{1-6\beta}^{3/2}/36\sqrt3$, which means that
@@ -569,10 +528,8 @@ Consider the second derivative $\d^2Z/\d\beta^2$
 by differentiating the summand twice w.r.t. $\beta$ in Equation [@eq:Z],
 and then take twice antiderivative w.r.t. $\beta$.
 This gives
-
 $$Z=A+B\beta+\sum_{k=0}^\infty\fr{\p{\beta/2}^k}{k!}\fc\zeta{2k-2}
 =A+B\beta+\sum_{n=1}^\infty n^2\p{\e^{\beta/2n^2}-1-\fr{\beta}{2n^2}},$$
-
 where $A,B$ are integration constants.
 The result from the cutoff regularization and the zeta function regularization
 is simply $A=0$, $B=-1/4$.
@@ -597,9 +554,7 @@ the asymptotic behavior of $\fc fn$ needs to be a non-trivial power law as $n\to
 Otherwise, the sum may not converge for any $s$.
 For example, consider $E_n=\ln\ln n$ (with no degeneracies).
 The partition function with zeta function regularization is
-
 $$Z_s\ceq\sum_{n=2}^\infty\p{\ln n}^{\beta s}.$$
-
 This series is divergent for any complex $s$.
 
 </details>
@@ -615,11 +570,9 @@ so they should be the same by the uniqueness of analytic continuation.
 
 We can check this with the hydrogen atom.
 We have, for $s>1/2$ and $\beta$ real,
-
 $$Z_s\ceq\sum_{n=1}^\infty n^{-2s}\e^{-s\beta/2n^2}
 =\sum_{k=0}^\infty\fr{\p{-s\beta/2}^k}{k!}\sum_{n=1}^\infty n^{-2s-2k}
 =\sum_{k=0}^\infty\fr{\p{-s\beta/2}^k}{k!}\fc\zeta{2s+2k}.$$
-
 Analytically continue this result to $s=-1$,
 and then this gives the same result as Equation [@eq:Z-reg].
 The rest will be the same as the last section.

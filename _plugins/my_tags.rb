@@ -15,6 +15,16 @@ module Jekyll
 			end
 		end
 
+		class CopyTag < Liquid::Tag
+			def self.tag_name
+				'copy'
+			end
+
+			def render context
+				'<sup>&copy;</sup>'
+			end
+		end
+
 		constants.each do |c|
 			tag_class = const_get c
 			next unless tag_class.respond_to? :tag_name

@@ -60,7 +60,7 @@ $$\fc\Psi{x,y}=\int\d k\,a_k\e^{\i ky}\e^{-\p{x-kl^2}^2/2l^2}.$$
 
 ## The solution
 
-Consider the moment-generating function
+Consider the [moment-generating function](https://en.wikipedia.org/wiki/Moment_generating_function)
 
 $$\begin{align*}
 	\fc M{u,v}&\ceq\mel{\Psi}{\e^{ux+vy}}{\Psi}\\
@@ -139,8 +139,9 @@ $$\begin{align*}
 
 The equality in the first "$\ge$" is achieved when $\sgm_\Pi=\omg\sgm_\Xi$,
 and that in the second "$\ge$" is achieved when the uncertainty principle is saturated.
-As we know from quantum mechanics, the coherent state of a harmonic oscillator
-satisfies both conditions.
+As we know from quantum mechanics, the
+[coherent state](https://en.wikipedia.org/wiki/Coherent_state)
+of a harmonic oscillator satisfies both conditions.
 The wavefunction of this state is
 
 $$\fc\vphi k=\p{\fr\omg\pi}^{1/4}

@@ -14,8 +14,9 @@ layout: base
 				<dl>
 					<dt>Title</dt><dd>{{ page.title | markdownify_no_p }}</dd>
 					<dt>Permalink</dt><dd>
-						<a href="{{ page.url | absolute_url }}">{{ page.url | absolute_url }}</a>
-						(<a href="javascript:navigator.clipboard.writeText('{{ page.url | absolute_url }}')">copy</a>)
+						{% assign url = page.url | absolute_url %}
+						<a href="{{ url }}">{{ url }}</a>
+						(<a href="javascript:navigator.clipboard.writeText('{{ url }}')">copy</a>)
 					</dd>
 					<dt>Author</dt><dd>
 						{% assign author_name = page.author.name | default: site.author.name %}
@@ -51,6 +52,8 @@ layout: base
 						<a href="{{ site.git_repo }}/blob/master/{{ page.path }}?plain=1" target="_blank" rel="external">View source</a>
 					</dt><dt>
 						<a href="{{ site.git_repo }}/commits/master/{{ page.path }}" target="_blank" rel="external">View history</a>
+					</dt><dt>
+						<a href="#gitalk-container">Comment</a>
 					</dt>
 				</dl>
 			</details>
