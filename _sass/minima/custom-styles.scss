@@ -6,6 +6,9 @@ blockquote {
 	font-style: initial;
 	font-size: inherit;
 	letter-spacing: initial;
+	i, em {
+		font-style: italic;
+	}
 }
 
 pre.highlight {

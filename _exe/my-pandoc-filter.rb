@@ -66,19 +66,6 @@ class Paru::PandocFilter::Node
 	end
 end
 
-# https://github.com/htdebeer/paru/pull/82
-class Paru::PandocFilter::Math
-	def display?
-		'DisplayMath' == @math_type['t']
-	end
-	def inline?
-		'InlineMath' == @math_type['t']
-	end
-end
-
-# https://github.com/htdebeer/paru/issues/79
-#Paru::PandocFilter::MARKDOWN2JSON.__send__ :preserve_tabs
-
 AVAILABLE_FORMATTERS = %w[linewise line_highlighter line_table pygments table]
 
 DEFAULT_CONFIG = {

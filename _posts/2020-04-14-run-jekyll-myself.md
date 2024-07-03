@@ -49,7 +49,9 @@ git commit -m "$MESSAGE" --author "$AUTHOR"
 git push --set-upstream origin master
 ```
 
+<p class="no-indent">
 where `AUTHOR` is your name and email in the format `name <email>`.
+</p>
 
 Before that, I need to initialize the `_site` dir as a git repo:
 
@@ -62,4 +64,6 @@ git commit -m "initial commit"
 git push -f --set-upstream origin master
 ```
 
+<p class="no-indent">
 where `REMOTE_URL` is the GitHub url of the repo of your site.
+</p>

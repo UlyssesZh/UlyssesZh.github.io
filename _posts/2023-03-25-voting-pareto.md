@@ -27,13 +27,9 @@ called the **quota**.
 
 For each voter $v\in V$ and two proposals $x,y\in P$,
 we denote "$v$ prefers $x$ to $y$" by
-
 $$x\succeq_vy.$$
-
 A proposal $x\in P$ is a **defeat** of $y\in P$ if
-
 $$\left|\left\{v\in V\,\middle|\,x\succeq_vy\right\}\right|\geq q,$$
-
 denoted as $x\succsim_{V,q}y$
 (despite this notation, $\succsim_{V,q}$ is *not* necessarily a preference relation on $P$
 because it is not transitive generally,
@@ -60,22 +56,21 @@ $x$ does not have any $Q$-Pareto improvement other than $x$ itself
 
 Here is the main result.
 For a voting system $(P,V,q)$,
-
 $$\mathcal C(P,V,q)=\bigcap_{Q\subseteq V,\left|Q\right|=q}\mathcal P(P,Q).$$
 
+<p class="no-indent">
 *Proof.*
 To prove this, we need to show that
 $x\in P$ does not have any non-trivial Pareto improvement for any $q$ voters iff
 $x$ does not have any non-trivial defeat.
+</p>
 
 To prove the forward direction, suppose
 that $x\in P$ does not have any non-trivial Pareto improvement for any $q$ voters.
 Let $y\in P$ such that $y\ne x$, and the goal is to prove that $y$ is not a defeat of $x$.
 
 Let
-
 $$Y\coloneqq\left\{v\in V\,\middle|\,y\succeq_vx\right\}.$$
-
 Then, $y$ is a $Y$-Pareto improvement of $x$,
 so we have $\left|Y\right|<q$
 (because otherwise there is a subset of $Y$ with $q$ voters for which $y$ is a Pareto improvement of $x$).
@@ -84,9 +79,7 @@ Therefore, $y$ is not a defeat of $x$.
 To prove the backward direction, suppose
 that $x\in P$ has a non-trivial $Q$-Pareto improvement, where $Q\subseteq V$ and $\left|Q\right|=q$.
 Denote the improvement as $y$. Let
-
 $$Y\coloneqq\left\{v\in V\,\middle|\,y\succeq_vx\right\}.$$
-
 because $y$ is a $Q$-Pareto improvement of $x$, we have $Q\subseteq Y$.
 Therefore, $\left|Y\right|\geq\left|Q\right|=q$.
 Therefore, $y$ is a defeat of $x$.
@@ -95,7 +88,6 @@ Therefore, $y$ is a defeat of $x$.
 ---
 
 Specially, we have
-
 $$\mathcal C\!\left(P,V,\left|V\right|\right)=\mathcal P(P,V).$$
 
 ---
@@ -160,4 +152,4 @@ Then we can find the core easily by the conclusion above:
 
 \end{document}
 -->
-![The core of the example]({{page.figure}}five_voting_core.svg){.dark-adaptive .center}
+![The core of the example]({{page.figure}}five_voting_core.svg){.dark-adaptive}

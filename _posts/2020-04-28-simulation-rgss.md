@@ -18,12 +18,10 @@ Our goal is to simulate a mechanical system according to its Hamiltonian
 $\mathcal H\!\left(\mathbf q,\mathbf p,t\right)$.
 
 To utilize the canonical equations
-
 $$\frac{\mathrm d\mathbf q}{\mathrm dt}=
     \frac{\partial\mathcal H}{\partial\mathbf p},\quad
     \frac{\mathrm d\mathbf p}{\mathrm dt}=
     -\frac{\partial\mathcal H}{\partial\mathbf p},$$ {#eq:canonical}
-
 we need to calculate the partial derivatives of $\mathcal H$.
 Here is a simple code to calculate partial derivatives.
 
@@ -37,15 +35,15 @@ def div x0, dx, f
 end
 ```
 
+<p class="no-indent">
 (RGSS do not have `matrix.rb`, you can copy one from
 the attached file below.)
 Here `x0` is a `Vector`, `f` is a `call`-able object as a function
 of vectors, `dx` is a small scalar which we are going to take `1e-6`.
+</p>
 
 Let `x = Vector[*q, *p]`, and then Formula [@eq:canonical] has the form
-
 $$\frac{\mathrm d\mathbf x}{\mathrm dt}=f\!\left(\mathbf x\right).$$
-
 To solve this equation numerically, we need to use a famous method
 called the (explicit) Runge--Kutta method.
 
@@ -60,9 +58,11 @@ def runge_kutta initial, max_t, dt, (*pyramid, coefs), func
 end
 ```
 
+<p class="no-indent">
 Note that Runge--Kutta is a family of methods. The argument
 `(*pyramid, coefs)` takes one of the following, each of which
 is a single Runge--Kutta method.
+</p>
 
 ```ruby
 FORWARD_EULER = [[],[1]]
@@ -109,7 +109,9 @@ class Array
 end
 ```
 
+<p class="no-indent">
 (Again, note that this is Ruby 1.9.2.)
+</p>
 
 Finally, just combine them up, and we can solve a Hamiltonian numerically.
 

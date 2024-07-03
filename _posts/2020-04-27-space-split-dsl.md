@@ -27,7 +27,9 @@ Robot.new do
 end.run
 ```
 
+<p class="no-indent">
 outputs
+</p>
 
 ```plain
 Go to a

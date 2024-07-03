@@ -10,6 +10,7 @@ layout: post
 excerpt: 'I use udev and systemd to send a notification to my phone via ntfy automatically
 whenever my laptop is discharging.'
 ---
+
 I need to thank [one of my friends](https://orashshi.github.io)
 for giving me one of his old laptops.
 We are now [using it as a self-hosting server](https://reddit.com/y5a1k0).
@@ -64,8 +65,10 @@ Type=oneshot
 ExecStart=/opt/curl-ntfy/curl-ntfy
 ```
 
+<p class="no-indent">
 Here, `/opt/curl-ntfy/curl-ntfy` is the script that sends a notification to ntfy.
 The contents of the script are:
+</p>
 
 ```ruby
 #!/usr/bin/env ruby

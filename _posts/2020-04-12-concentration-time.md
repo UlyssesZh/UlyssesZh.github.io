@@ -22,11 +22,9 @@ In this article, I will answer this question by proposing a general approach to 
 A reversible elementary reaction takes place inside a closed,
 highly thermally conductive container of constant volume,
 whose reactants are all gases, and the reaction equation is
-
 $$
     \sum_ka_kX_k\rightleftharpoons\sum_kb_kY_k,
 $$
-
 where $X_k$ and $Y_k$ are reactants, and $a_k$ and $b_k$ are
 stoichiometries.
 
@@ -37,7 +35,6 @@ as functions with respect to time $t$.
 ## The approach
 
 It is easy to write out the rate equations
-
 $$\begin{split}
     \frac{\mathrm d\left[X_j\right]}{\mathrm dt}=
         a_j\left(\mu_Y\prod_k\left[Y_k\right]^{b_k}-
@@ -46,61 +43,46 @@ $$\begin{split}
         b_j\left(\mu_X\prod_k\left[X_k\right]^{a_k}-
         \mu_Y\prod_k\left[Y_k\right]^{b_k}\right),
 \end{split}$$ {#eq:rate-equations}
-
 where $\mu_X$ and $\mu_Y$ are rate constants derived by experimenting.
 
 Apply a substitution
-
 $$\begin{split}
     x_j\coloneqq\frac{\left[X_j\right]}{a_j},\quad
     y_j\coloneqq\frac{\left[Y_j\right]}{b_j},\\
     \mu_x\coloneqq\mu_X\prod_ka_k^{a_k},\quad
     \mu_y\coloneqq\mu_Y\prod_kb_k^{b_k}
 \end{split}$$ {#eq:substitution}
-
 to Formula [@eq:rate-equations], and then it becomes
-
 $$\begin{split}
     \frac{\mathrm dx_j}{\mathrm dt}=
     \mu_y\prod_ky_k^{b_k}-\mu_x\prod_kx_k^{a_k},\\
     \frac{\mathrm dy_j}{\mathrm dt}=
     \mu_x\prod_kx_k^{a_k}-\mu_y\prod_ky_k^{b_k},
 \end{split}$$ {#eq:substituted-rate}
-
 which means the changes of $x_j$ are all equal,
 the changes of $y_j$ are all equal,
 and the changes of $x_j$ are opposite to the changes of $y_j$.
 
 Denote the changes of $x_j$ are equal to $s$, the initial value of
 $x_j$ is $A_j$, the initial value of $y_j$ is $B_j$, which means
-
 $$\begin{split}
     x_j=A_j+s,\\
     y_j=B_j-s.
 \end{split}$$ {#eq:back}
-
 Substitute Formula [@eq:back] into Formula [@eq:substituted-rate],
 and it can be derived that
-
 $$
     \frac{\mathrm ds}{\mathrm dt}=F\!\left(s\right),
 $$
-
 by which we can reduce the problem to an integral problem
-
 $$t=\int_0^s\frac{\mathrm ds}{F\!\left(s\right)},$$ {#eq:separated}
-
 where
-
 $$F\!\left(s\right)\coloneqq\mu_y\prod_k\left(B_k-s\right)^{b_k}-
     \mu_x\prod_k\left(A_k+s\right)^{a_k}$$ {#eq:def-F}
-
 is a polynomial of $n$th degree, where
-
 $$
     n\coloneqq\max\!\left(\sum_ka_k,\sum_kb_k\right)
 $$
-
 is the larger of the orders of the forward and reverse reactions.
 The degree of $F$ may be lower if the high-order term is offset,
 but only mathematicians believe in such coincidences.
@@ -111,12 +93,10 @@ it is easy.
 After deriving $s$ as a function of $t$, substitute it into
 Formula [@eq:back] and then Formula [@eq:substitution].
 We can derive
-
 $$\begin{split}
     \left[X_j\right]=a_j\left(A_j+s\right),\\
     \left[Y_j\right]=b_j\left(B_j-s\right)
 \end{split}$$ {#eq:result}
-
 as the answer.
 
 ## Properties of $F$
@@ -151,16 +131,12 @@ is $q$. The possible existence of multiple roots is ignored because
 only mathematicians believe in such coincidences.
 Decompose the rational function $\frac1{F\left(s\right)}$ into
 several partial fractions, and it can be derived that
-
 $$\frac1{F\!\left(s\right)}=\sum_\alpha\frac{C_\alpha}{r_\alpha-s},$$ {#eq:partial-fractions}
-
 where $C_\alpha$ are undetermined coefficients.
 
 Integrate Formula [@eq:partial-fractions],
 and then it can be derived that
-
 $$t=-\sum_\alpha C_\alpha\ln\!\left(1-\frac s{r_\alpha}\right)$$ {#eq:integrated}
-
 In most cases, Formula [@eq:integrated] cannot be solved analytically
 and can only be solved numerically.
 
@@ -175,26 +151,19 @@ into a rational one.
 The closed container that is highly thermally conductive is
 in a certain temperature environment,
 and the water-gas shift reaction
-
 $$
     \ce{CO +H2O\rightleftharpoons CO2 +H2}
 $$
-
 occurs under the catalysis of a certain catalyst,
 where the forward rate constant
-
 $$
     \mu_1=2.07\times10^{-4}\quad\left(\text{SI}\right),
 $$
-
 and the reverse rate constant
-
 $$
     \mu_2=8.29\times10^{-6}\quad\left(\text{SI}\right).
 $$
-
 Initial concentrations are
-
 $$
 \begin{split}
     \left[\ce{CO}\right]_0=10.00\quad\left(\text{SI}\right),\\
@@ -203,55 +172,43 @@ $$
     \left[\ce{H2}\right]_0=40.00\quad\left(\text{SI}\right).
 \end{split}
 $$
-
 Find $\left[\ce{H2O}\right]$ as a function of time.
 
 Formula [@eq:def-F] becomes
-
 $$
     F\!\left(s\right)\coloneqq8.29\times10^{-6}\left(30-s\right)\left(40-s\right)
     -2.07\times10^{-4}\left(10+s\right)\left(20+s\right)
     \quad\left(\text{SI}\right).
 $$
-
 It is a polynomial of $2$nd degree.
 Its two roots are
-
 $$
 \begin{split}
     r_1=-28.65\quad\left(\text{SI}\right),\\
     r_2=-5.53\quad\left(\text{SI}\right).
 \end{split}
 $$
-
 Decomposing $\frac1{F\left(s\right)}$ into partial fractions,
 we can derive that
-
 $$
 \begin{split}
     C_1=-217.654\quad\left(\text{SI}\right),\\
     C_2=217.654\quad\left(\text{SI}\right).
 \end{split}
 $$
-
 Thus,
-
 $$
     t=217.654\ln\!\left(1-\frac s{-28.65}\right)-
     217.654\ln\!\left(1-\frac s{-5.53}\right)
     \quad\left(\text{SI}\right).
 $$
-
 Since $C_1$ and $C_2$ are in general commensurable,
 we can solve the equation analytically into
-
 $$
     s=\frac{5.53\left(1-1.0046^t\right)}{1.0046^t-0.1929}
     \quad\left(\text{SI}\right).
 $$
-
 Use Formula [@eq:result], and then we can find the answer
-
 $$
     \left[\ce{H2O}\right]=20+
     \frac{5.53\left(1-1.0046^t\right)}{1.0046^t-0.1929}

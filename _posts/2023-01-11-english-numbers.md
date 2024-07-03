@@ -13,11 +13,15 @@ I want to invent a better way to read numbers!'
 First, play a simple game. Read the number 7777 in English.
 Here is what you read:
 
-> Seven thousand seven hundred and seventy-seven.
+<blockquote>
+Seven thousand seven hundred and seventy-seven.
+</blockquote>
 
+<p class="no-indent">
 There are 14 syllables while the original number has only 4 digits.
 This makes it very tedious to read numbers in English.
 Thus, I want to invent a better way to read numbers!
+</p>
 
 ## Single-digit numbers
 
@@ -39,8 +43,10 @@ First, let's improve the first few numbers in English. They are
 | 11 | eleven | /eˈlevən/ |
 | 12 | twelve | /twelv/ |
 
+<p class="no-indent">
 (I do not want to read 0 as /əʊ/ because it confuses with the letter O.)
 Here are several problems:
+</p>
 
 - Some words have more than one syllable or end with a consonant,
 this makes it hard to pronounce them fast in continuous speech.
@@ -66,7 +72,9 @@ I want to improve them as follows:
 | 8 | tay | /teɪ/ |
 | 9 | nye | /naɪ/ |
 
+<p class="no-indent">
 There are some advantages:
+</p>
 
 - Most of the words have similar pronunciation as the original words,
 this makes it easy to remember them.
@@ -136,7 +144,9 @@ The multiples of hundred are then
 | 800 | tayha | /ˈteɪhə/ |
 | 900 | nyeha | /ˈnaɪhə/ |
 
+<p class="no-indent">
 Hyphenization gives other numbers below 1000:
+</p>
 
 | Number | Word |
 |---|---|
@@ -169,9 +179,11 @@ Another way to do this is just reading digits.
 | 65,535 | souta-fah thou fahha-teeta-fah | sou-fah thou fah-tee-fah | sou-fah-fah-tee-fah |
 | 20,031,108 | tueta mill teeta-wah thou wahha-tay | tue-zoh mill tee-wah thou wah-zoh-tay | tue-zoh-zoh-tee-wah-wah-zoh-tay |
 
+<p class="no-indent">
 (Actually, I do not think using *thou*, *mill*, etc. is a good idea
 because they coincide with existing English words and are hard to remember (for foreigners),
 but I cannot come up with a better idea.)
+</p>
 
 ## Decimals
 
@@ -202,16 +214,18 @@ which is very non-intuitive and sometimes ambiguous.
 There are various ways to represent fractions in English that do not involve ordinal numerals.
 For example, a half can be represented as
 
-- 1 in 2,
+> - 1 in 2,
 - 1 (divided) by 2,
 - 1 over 2,
 - 1 to 2 *(only used for ratios)*,
 - 1 slash 2,
 
+<p class="no-indent">
 etc., but none of them is a good way because they may be ambiguous.
 We need to invent a new word.
 I propose using the word *ci*, from the second syllable in the word *reciprocal*,
 pronounced as /sɪ/.
+</p>
 
 | Number | Word |
 |---|---|
@@ -223,11 +237,15 @@ pronounced as /sɪ/.
 
 How do you read $1.234\times10^{-8}$?
 
-> One point two three four times ten to the power of negative eight.
+<blockquote>
+One point two three four times ten to the power of negative eight.
+</blockquote>
 
+<p class="no-indent">
 That is very long!
 I propose that we write the number as 1.234e-8, and just pronounce how it looks
 (pronounce the *e* here as /iː/).
+</p>
 
 | Number | Word |
 |---|---|
@@ -256,8 +274,10 @@ to see how many people have made the mistake.
 or even weirder questions like
 "You love Kat the how many-th most in the world?")
 
+<p class="no-indent">
 Therefore, we need to have a consistent way to turn any cardinal numeral into an ordinal numeral,
 and we need to invent a way to ask questions about ordinal numerals.
+</p>
 
 I then want to use the word *ra*
 (abbreviation for *rank*, although this is an existing English meaning the hawk-headed sun god),

@@ -46,7 +46,9 @@ or maintain a public server which would be exposed to my email receivers.
 - It is hard for me make the position of the baseline of rendered math correctly.
 - Email clients will probably block images from remote sources.
 
+<p class="no-indent">
 Both ways have the following disadvantages:
+</p>
 
 - There is no "half-working"---either the math is rendered, or it cannot be read at all
 (on email clients that do not support or block `<img>` or `<svg>` elements).
@@ -54,7 +56,9 @@ Both ways have the following disadvantages:
 - Images normally have a larger bandwidth burden.
 - It is hard to get them aware of the context (text size, color, etc.).
 
+<p class="no-indent">
 Therefore, I try to seek other ways.
+</p>
 
 You may wonder how I typeset math in my blog.
 The answer is that I use [MathJax](https://mathjax.org).

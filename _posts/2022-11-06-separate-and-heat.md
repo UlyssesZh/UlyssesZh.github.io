@@ -47,82 +47,58 @@ Suppose the temperature of the component is $T_m$ after reaching thermal equilib
 Then, the final temperature is $T_n$.
 
 We now want to find the final temperature at $n\to\infty$:
-
 $$T'\coloneqq\lim_{n\to\infty}T_n.$$
-
 According to the formula of thermal equilibrium,
-
 $$C_0\left(T_{m+1}-T_m\right)+\frac Cn\left(T_{m+1}-T\right)=0.$$
-
 Solve for $T_{m+1}$:
-
 $$T_{m+1}=\frac{C_0T_m+\frac CnT}{C_0+\frac Cn}.$$
-
 Let $k\coloneqq\frac{C_0}{C_0+\frac Cn}$, and $b\coloneqq\frac{\frac CnT}{C_0+\frac Cn}$,
 and we have
-
 $$T_{m+1}=kT_m+b.$$
-
 Let $m\coloneqq0,1,\ldots,n-1$ respectively, and we have
-
 $$\begin{align*}
 T_1&=kT_0+b,\\
 T_2&=kT_1+b,\\
 &\vdots\\
 T_n&=kT_{n-1}+b.
 \end{align*}$$
-
 Transform the $n$ equations a little, and we have
-
 $$\begin{align*}
 k^{n-1}T_1&=k^nT_0+k^{n-1}b,
 k^{n-2}T_2&=k^{n-1}T_1+k^{n-2}b,
 &\vdots\\
 T_n=kT_{n-1}+b.
 \end{align*}$$
-
 Sum up all the $n$ equations, and we have
-
 $$T_n=k^nT_0+\sum_{j=0}^{n-1}k^jb.$$
-
 According to the formula for summation of geometric progression, we have
-
 $$T_n=k^nT_0+\frac{1-k^n}{1-k}b$$
-
 (this is actually the formula for the $n$th recursion of linear function.)
 
 Because
-
 $$\begin{align*}
 b&\coloneqq\frac{\frac CnT}{C_0+\frac Cn}\\
 &=\frac{C_0}{C_0+\frac Cn}\frac{\frac CnT}{C_0}\\
 &=\frac{C_0}{C_0+\frac Cn}\left(\frac{C_0+\frac Cn}{C_0}-1\right)T\\
 &=\left(1-\frac{C_0}{C_0+\frac Cn}\right)T,
 \end{align*}$$
-
 then
-
 $$\begin{align*}
 T_n&=k^nT_0+\frac{1-k^n}{1-k}\left(1-k\right)T\\
 &=T+k^n\left(T_0-T\right).
 \end{align*}$$
-
 Now calculate the limit of $k^n$. We have
-
 $$\begin{align*}
 \lim_{n\to\infty}k^n&=\lim_{n\to\infty}\left(\frac{C_0}{C_0+\frac Cn}\right)^n\\
 &=\lim_{n\to\infty}\frac1{\left(\frac{C_0+\frac Cn}{C_0}\right)^n}\\
 &=\lim_{n\to\infty}\frac{1}{\left(1+\frac{\frac C{C_0}}{n}\right)^n}\\
 &=\mathrm e^{-\frac C{C_0}}.
 \end{align*}$$
-
 Therefore,
-
 $$\begin{align*}
 T'&\coloneqq\lim_{n\to\infty}T_n\\
 &=T+\mathrm e^{-\frac C{C_0}}\left(T_0-T\right).
 \end{align*}$$
-
 This is a intuitive result.
 
 (Gonna take exams for high school entrance...)

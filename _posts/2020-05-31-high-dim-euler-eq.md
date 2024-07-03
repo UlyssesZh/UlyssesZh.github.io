@@ -18,23 +18,17 @@ The function $\mathcal L$ is real-valued and has continuous first partial deriva
 and the $0$th to $n$th partial derivatives of $\mathbf f$
 and the independent variable $\mathbf x\in\Omega$ will be arguments of $\mathcal L$.
 Define a functional
-
 $$
     I\coloneqq\mathbf f\mapsto\int_\Omega\mathcal L\left(\cdots\right)\mathrm dV,
 $$
-
 where $\mathrm dV$ is the volume element in $\Omega$.
 Then the extremal of $I$ satisfies a set of PDEs with respect to $\mathbf f$.
 The set of PDEs consists of $p$ equations, the $i$th of which is
-
 $$\sum_{j=0}^n\sum_{\mu\in P_{j,m}}\left(-1\right)^j
     \partial_\mu\frac{\partial\mathcal L}{\partial\left(\partial_\mu f_i\right)}=0,$$ {#eq:ret}
-
 where $P_{j,m}$ is the set of all (not necessarily strictly) ascending $j$-tuples in
 $\left\{1,\dots,m\right\}^j$, and
-
 $$
     \partial_\mu\coloneqq\frac{\partial^{\operatorname{len}\mu}}{\prod_k\partial x_{\mu_k}}.
 $$
-
 Equation [@eq:ret] is the Generalization of Euler--Lagrange equation.

@@ -38,7 +38,9 @@ end
 Foo.new.bar # => before & after
 ```
 
+<p class="no-indent">
 The implementation is a little easy:
+</p>
 
 ```ruby
 class Module
@@ -52,9 +54,11 @@ class Module
 end
 ```
 
+<p class="no-indent">
 However, there is a little problem. The `self` in `refine_block`
 depends on how and where `refine_block` is defined instead of
 just being the instance receiving the method.
+</p>
 
 Since an instance method (`UnboundMethod` object) defined in a
 `Module` can `bind` any other object, we can use
@@ -83,7 +87,9 @@ class Module
 end
 ```
 
+<p class="no-indent">
 The `self` can successfully be converted. You can test it yourself.
+</p>
 
 Here is still a problem. When the new instance method is defined,
 its visibility is `public`, while the original visibility may be
@@ -165,15 +171,19 @@ class Object
 end
 ```
 
+<p class="no-indent">
 What about parsing a callable object as an argument instead of
 through `refine_block`?
 Parsing a `Symbol` can also be useful. Like this:
+</p>
 
 ```ruby
 Object.def_after :display, :puts
 ```
 
+<p class="no-indent">
 Then `Object#def_after` will be a little complex:
+</p>
 
 ```ruby
 class Object

@@ -65,9 +65,11 @@ I will try to find a handwriting style that satisfies the following conditions
 4. The shape is similar to the default mathematical font of $\LaTeX$ (Computer Modern).
 5. If the last condition cannot be satisfied, the shape is similar to some style that ever existed.
 
+<p class="no-indent">
 The reason for the 2nd principle to be lower than the 1st is that
 the efficiency of taking notes should not be too low
 and that one may distinguish letters and styles by the context.
+</p>
 
 If a style fails to satisfy the 5th or the 4th principle
 (i.e. this style is invented by me),
@@ -104,12 +106,14 @@ The following lists all the letters and the styles that I want to distinguish:
 - Fraktur style of lowercase English letters:
 *a*, *b*, *c*, *d*, *e*, *f*, *g*, *h*, *i*, *j*, *k*, *l*, *m*, *n*, *o*, *p*, *q*, *r*, *s*, *t*, *u*, *v*, *w*, *x*, *y*, *z*.
 
+<p class="no-indent">
 In terms of linguistic terminology,
 each entry in the above list is a grapheme in my handwritten notes.
 However, in extreme cases, even if I have actively avoided,
 it is still possible that two graphemes are indistinguishable.
 Then, I will design allographs for those graphemes
 to provide extra distinguishability in extreme cases.
+</p>
 
 Here are some of the general rules that I set up:
 
@@ -266,7 +270,9 @@ The italic style of *q* has a sharp right-tail in the bottom.
 
 OK, this is important.
 
-> Every physicist must have met at least one person who mistakenly recognized *nu* as *v*.
+<blockquote>
+Every physicist must have met at least one person who mistakenly recognized *nu* as *v*.
+</blockquote>
 
 The roman style of *r* does not have tails
 (the arc at the top-right does not count as a tail).
@@ -481,6 +487,6 @@ You may think it is hard to write in Fraktur style when you look at how $\LaTeX$
 Actually, it indeed is, but it is not intended for you to handwrite.
 I recommend write them as shown here (ignore the final line because we do not need them):
 
-![written fraktur](https://www.omniglot.com/images/writing/suetterlin.gif){.dark-adaptive}
+![Written fraktur](https://www.omniglot.com/images/writing/suetterlin.gif){.dark-adaptive}
 
 They look very distinguishable.

@@ -19,4 +19,4 @@ It is an open-source project, whose source codes can be seen in the [GitHub repo
 It is not mature currently.
 To help Dododo become mature, I wish you could join our community by [joining our Discord server](https://discord.gg/yYdMw5hm2K):
 
-<p style="text-align: center"><iframe src="https://discord.com/widget?id=977458815794552842" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe></p>
+{% include embed/discord.html id="977458815794552842" %}

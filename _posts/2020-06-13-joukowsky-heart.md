@@ -16,11 +16,9 @@ is a curve resembling a heart.
 ![Joukowsky heart]({{page.figure}}joukowsky_heart.png)
 
 To be specific, it is
-
 $$
     \left\{1+\mathrm i+\mathrm e^{\mathrm it}+
     \frac1{1+\mathrm i+\mathrm e^{\mathrm it}}
     \,\middle|\,t\in\left[0,2\pi\right)\right\}
 $$
-
 on the complex plane.

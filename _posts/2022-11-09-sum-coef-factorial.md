@@ -19,39 +19,44 @@ The original article was posted at 2019-07-13 20:36 +0800.*
 
 ---
 
-**Definition 1**. Let
-
+<p class="no-indent">
+**Definition 1.**
+Let
 $$f_n\!\left(z\right)\coloneqq\left(1-z\right)^{n+1}\sum_{k=1}^\infty k^nz^k,$$
-
 where $n$ is a positive integer.
+</p>
 
 Our goal is to prove that $f_n\!\left(z\right)$ is a polynomial of degree $n$ w.r.t. $z$,
 and the sum of its coefficients is $n!$.
 
-**Lemma 1**.
-
+<p class="no-indent">
+**Lemma 1.**
 $$f_{n+1}\!\left(z\right)=z\,\left(1-z\right)^{n+2}\frac{\mathrm d}{\mathrm dz}\left(\frac{f_n\!\left(z\right)}{\left(1-z\right)^{n+1}}\right).$$
+</p>
 
+<p class="no-indent">
 *Proof.*
-
 $$\begin{align*}
 \frac{\mathrm d}{\mathrm dz}\left(\frac{f_n\!\left(z\right)}{\left(1-z\right)^{n+1}}\right)
 &=\frac{\mathrm d}{\mathrm dz}\sum_{k=1}^\infty k^nz^k\\
 &=\sum_{k=1}^\infty k^{n+1}z^{k-1}\\
 &=\frac{f_{n+1}\!\left(z\right)}{z\,\left(1-z\right)^{n+2}}.
 \end{align*}$$
-{% qed %}
+{% qed last %}
+</p>
 
-**Definition 2** (Eulerian numbers).
-
+<p class="no-indent">
+**Definition 2** (Eulerian numbers)**.**
 $$\left<\begin{matrix}n\\k\end{matrix}\right>\coloneqq\sum_{j=0}^{k+1}\left(-1\right)^j\binom{n+1}j\left(k-j+1\right)^n.$$
+</p>
 
-**Lemma 2**.
-
+<p class="no-indent">
+**Lemma 2.**
 $$\left<\begin{matrix}n+1\\k+1\end{matrix}\right>=\left(n-k\right)\left<\begin{matrix}n\\k\end{matrix}\right>+\left(k+2\right)\left<\begin{matrix}n\\k+1\end{matrix}\right>.$$
+</p>
 
+<p class="no-indent">
 *Proof.*
-
 $$\begin{align*}
 &\phantom{=}~\,\left(n-k\right)\left<\begin{matrix}n\\k\end{matrix}\right>+\left(k+2\right)\left<\begin{matrix}n\\k+1\end{matrix}\right>\\
 &=\left(n-k\right)\sum_{j=0}^{k+1}\left(-1\right)^j\binom{n+1}j\left(k-j+1\right)^n+\left(k+2\right)\sum_{j=0}^{k+2}\left(-1\right)^j\binom{n+1}j\left(k-j+2\right)^n\\
@@ -64,29 +69,34 @@ $$\begin{align*}
 &=\sum_{j=0}^{k+2}\left(-1\right)^j\binom{n+2}j\left(k-j+2\right)^{n+1}\\
 &=\left<\begin{matrix}n+1\\k+1\end{matrix}\right>.
 \end{align*}$$
-{% qed %}
+{% qed last %}
+</p>
 
-**Lemma 3**.
-
+<p class="no-indent">
+**Lemma 3.**
 $$\left<\begin{matrix}n\\0\end{matrix}\right>=1,\quad\left<\begin{matrix}n\\n\end{matrix}\right>=0.$$
+</p>
 
+<p class="no-indent">
 *Brief proof.*
-Easily proved by Definition 2. {% qed %}
+Easily proved by Definition 2.
+{% qed %}
+</p>
 
-**Lemma 4**.
-
+<p class="no-indent">
+**Lemma 4.**
 $$f_n\!\left(z\right)=\sum_{k=1}^n\left<\begin{matrix}n\\n-k\end{matrix}\right>z^k.$$
+</p>
 
+<p class="no-indent">
 *Proof.*
 By mathematical induction.
 When $n=1$,
-
 $$f_n\left(z\right)=z=\sum_{k=1}^n\left<\begin{matrix}n\\n-k\end{matrix}\right>z^k,$$
+the result holds.
+</p>
 
-the result stands.
-
-Suppose the result stands when $n=n_0$, and then when $n=n_0+1$,
-
+Suppose the result holds when $n=n_0$, and then when $n=n_0+1$,
 $$\begin{align*}
 &\phantom{=}~\,f_n\!\left(z\right)\\
 &=z\,\left(1-z\right)^{n_0+2}\frac{\mathrm d}{\mathrm dz}\left(\frac{f_{n_0}\left(z\right)}{\left(1-z\right)^{n_0+1}}\right)
@@ -107,40 +117,37 @@ $$\begin{align*}
 &\text{(Lemma 2)}\\
 &=\sum_{k=1}^n\left<\begin{matrix}n\\n-k\end{matrix}\right>z^k.
 \end{align*}$$
+Then we can derive that the result is true by mathematical induction.
+{% qed %}
 
-Then we can derive that the result is true by mathematical induction. {% qed %}
-
-**Lemma 5**.
-
+<p class="no-indent">
+**Lemma 5.**
 $$\sum_{j=0}^n\left(-1\right)^{n-j}\binom njj^n=n!.$$
+</p>
 
+<p class="no-indent">
 *Proof.*
 Because $\mathrm e^x-1\sim x$ (in terms of infinitesimal quantity),
 $\left(\mathrm e^x-1\right)^n\sim x^n$, i.e.
-
 $$\left(\mathrm e^x-1\right)^n=x^n+o\!\left(x^n\right)$$
-
 (where $o$ denotes higher order of infinitesimal quantity).
+</p>
 
 Apply Newton's binomial theorem to the left-hand side, and we have
-
 $$\sum_{j=0}^n\left(-1\right)^{n-j}\binom nj\mathrm e^{jx}=x^n+o\!\left(x^n\right).$$
-
 Take $n$th derivative of the equation, and we have
-
 $$\sum_{j=0}^n\left(-1\right)^{n-j}\binom njj^n\mathrm e^{jx}=n!+o\!\left(1\right).$$
-
 Take $x=0$, and we have
-
 $$\sum_{j=0}^n\left(-1\right)^{n-j}\binom njj^n=n!.$$
-{% qed %}
+{% qed last %}
 
-**Lemma 6**.
-
+<p class="no-indent">
+**Lemma 6.**
 $$\sum_{j=0}^n\left(-1\right)^{n-j}\binom nj\left(j+1\right)^n=n!.$$
+</p>
 
+<p class="no-indent">
 *Proof.*
-
 $$\begin{align*}
 \left(n+1\right)!&=\sum_{j=0}^n\left(-1\right)^{n-j+1}\binom{n+1}jj^{n+1}&
 \text{(Lemma 5)}\\
@@ -151,14 +158,16 @@ $$\begin{align*}
 &=\sum_{j=0}^n\left(-1\right)^{n-j}\frac{\left(n+1\right)n!}{j!\left(n-j\right)!}\left(j+1\right)^n\\
 &=\left(n+1\right)\sum_{j=0}^n\left(-1\right)^{n-j}\binom nj\left(j+1\right)^n.
 \end{align*}$$
-{% qed %}
+{% qed last %}
+</p>
 
-**Lemma 7**.
-
+<p class="no-indent">
+**Lemma 7.**
 $$\sum_{k=0}^n\left<\begin{matrix}n\\k\end{matrix}\right>=n!.$$
+</p>
 
+<p class="no-indent">
 *Proof.*
-
 $$\begin{align*}
 &\phantom{=}~\,\sum_{k=0}^n\left<\begin{matrix}n\\k\end{matrix}\right>\\
 &=\sum_{k=0}^n\sum_{j=0}^{k+1}\left(-1\right)^j\binom{n+1}j\left(k-j+1\right)^n\\
@@ -175,14 +184,16 @@ $$\begin{align*}
 &\text{(Lemma 6)}\\
 &=n!.
 \end{align*}$$
-{% qed %}
+{% qed last %}
+</p>
 
+<p class="no-indent">
 *Proof of the original proposition.*
 By Lemma 4, $f_n\!\left(z\right)$ is a polynomial of degree $n$ in $z$
 (Lemma 3 guarantees that the coefficient of the $n$th degree term is not $0$).
+</p>
 
 The sum of coefficients
-
 $$\begin{align*}
 \sum_{k=1}^n\left<\begin{matrix}n\\n-k\end{matrix}\right>
 &=\sum_{k=0}^{n-1}\left<\begin{matrix}n\\k\end{matrix}\right>\\
@@ -191,4 +202,4 @@ $$\begin{align*}
 &=n!.
 &\text{(Lemma 7)}
 \end{align*}$$
-{% qed %}
+{% qed span %}

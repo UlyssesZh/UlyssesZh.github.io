@@ -70,7 +70,7 @@ $$\begin{aligned}
 &=\exp\!\left(\vec w\cdot\ln\vec x\right)\\
 &=\vec x^{\vec w}.
 \end{aligned}$$
-{% qed %}
+{% qed last %}
 </p>
 
 <p class="no-indent">
@@ -88,7 +88,7 @@ M_{p,\vec w}\!\left(\vec x\right)
 &=M_{-p,\vec w}\!\left(\vec x^{-1}\right)^{-1}
 &\text{(Definition 1)}
 \end{aligned}$$
-{% qed %}
+{% qed span %}
 </p>
 
 <p class="no-indent">
@@ -109,7 +109,7 @@ $$\begin{aligned}
 &=\left(\max\vec x\right)\left(\vec w\cdot\delta_{\left(\max\vec x\right),\vec x}\right)^0\\
 &=\max\vec x.
 \end{aligned}$$
-{% qed %}
+{% qed last %}
 </p>
 
 <p class="no-indent">
@@ -128,7 +128,7 @@ $$\begin{aligned}
 &\text{(Theorem 3)}\\
 &=\min\vec x.
 \end{aligned}$$
-{% qed %}
+{% qed last %}
 </p>
 
 <p class="no-indent">
@@ -234,5 +234,6 @@ $$\min\vec x\le n\left(\sum\vec x^{-1}\right)^{-1}
 \le\frac{\sum\vec x}n
 \le\sqrt{\frac{\sum\vec x^2}{n}}
 \le\max\vec x,$$
-where the equality holds iff $\vec x$ is congruent (Theorem 5). {% qed %}
+where the equality holds iff $\vec x$ is congruent (Theorem 5).
+{% qed %}
 </p>

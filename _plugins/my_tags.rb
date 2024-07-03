@@ -10,8 +10,17 @@ module Jekyll
 				'qed'
 			end
 
+			def initialize tag_name, text, tokens
+				super
+				@type = :normal
+				%i[last span].each { @type = _1 if text =~ /#{_1}/i }
+				# normal: float right
+				# last: float right in the last line
+				# span: create a dedicated line
+			end
+
 			def render context
-				'<span class="qed">$\square$</span>'
+				%{<span class="qed-wrapper qed-#@type"><span class="qed qed-#@type">$\\square$</span></span>}
 			end
 		end
 

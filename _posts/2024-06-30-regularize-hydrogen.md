@@ -460,15 +460,15 @@ savefig('plotE2.pdf')
 Here is a plot that shows how $\a E$ starts to decrease with temperature at some point
 and becomes even lower than the ground state energy:
 
-![Plot of $\a E$ vs. $\beta$]({{page.figure}}plotE2.svg){.dark-adaptive .center}
+![Plot of $\a E$ vs. $\beta$]({{page.figure}}plotE2.svg){.dark-adaptive}
 
 Here is a plot that shows how $\a E$ goes to infinity at different temperatures:
 
-![Plot of $\a E$ vs. $\beta$]({{page.figure}}plotE.svg){.dark-adaptive .center}
+![Plot of $\a E$ vs. $\beta$]({{page.figure}}plotE.svg){.dark-adaptive}
 
 Here are also plots for $Z$ and $\d Z/\d\beta$, if you are curious:
 
-![Plot of $Z$ and $\d Z/\d\beta$ vs. $\beta$]({{page.figure}}plotZ.svg){.dark-adaptive .center}
+![Plot of $Z$ and $\d Z/\d\beta$ vs. $\beta$]({{page.figure}}plotZ.svg){.dark-adaptive}
 
 The two vertical asymptotes of $\a E$ corresponds to the two zeros of $Z$,
 which are $\beta=0$ and $\beta=1.0721$.

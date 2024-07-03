@@ -566,7 +566,7 @@ $$\begin{align*}
 +\p{\fr{\partial L}{\partial\dot q}\dot q-L}\fr{\fc{\dot\tau'}q}{\fc{\dot\tau}q^2}\\
 &=0.
 \end{align*}$$
-{% qed %}
+{% qed last %}
 
 ### Specifying $\tau$ vs. specifying $\dot\tau$
 

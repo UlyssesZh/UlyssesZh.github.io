@@ -245,12 +245,6 @@ hr {
 	fill: $text-color;
 }
 
-.center {
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-}
-
 .line-block {
 	margin-bottom: 15px;
 }
@@ -271,6 +265,19 @@ hr {
 		height: 100%;
 		translate: -50% 0;
 	}
+}
+
+.qed {
+	&:not(.qed-span) {
+		float: right;
+	}
+	&.qed-last {
+		margin-top: -3em;
+	}
+}
+.qed-wrapper.qed-span {
+	display: block;
+	text-align: right;
 }
 
 //==========
@@ -388,17 +395,6 @@ hr {
 .katex-display {
 	overflow-x: auto;
 	overflow-y: hidden;
-	&:has(+ .qed) {
-		margin-bottom: 0px;
-	}
-	+ .qed {
-		margin-top: -2em;
-		margin-bottom: 1em;
-	}
-}
-
-.qed {
-	float: right;
 }
 
 //==========
@@ -561,6 +557,10 @@ summary {
 }
 
 figure {
+	img {
+		margin-left: auto;
+		margin-right: auto;
+	}
 	img + figcaption {
 		text-align: center;
 	}

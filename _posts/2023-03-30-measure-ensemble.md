@@ -112,7 +112,7 @@ $$\begin{align*}
 &=\int_{x\in X}\mathrm d\nu(x)\sum_i\int_{y\in\pi_i^{-1}(x)}f\!\left(y\right)\mathrm d\mu_x(y)\\
 &=\int_{x\in X}\mathrm d\nu(x)\int_{y\in\pi^{-1}(x)}f\!\left(y\right)\mathrm d\mu_x(y).
 \end{align*}$$
-{% qed %}
+{% qed last %}
 
 </details>
 

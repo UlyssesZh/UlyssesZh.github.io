@@ -39,9 +39,7 @@ By observing the graph, we can see that the point with smallest curvature radius
 (I just run around now, but I will prove this argument later).
 
 Consider the motion
-
 $$\vec r=ut\vec i+\frac{u^2t^2}{2p}\vec j$$
-
 ($u$ here is introduced just for consistency in dimension, but actually we can just let $u\coloneqq1$).
 
 Obviously the object is doing a uniform acceleration motion, and the acceleration is as large as $\frac{u^2}p$,
@@ -62,27 +60,15 @@ without using calculus.
 Prove that the point on the parabola with smallest curvature radius is the vertex using physical method.
 
 By the formula for uniform acceleration motion, the motion
-
 $$\vec r=ut\vec i+\frac{u^2t^2}{2p}\vec j$$
-
 has velocity
-
 $$\vec v=u\vec i+\frac{u^2t}{p}\vec j$$
-
 and acceleration
-
 $$\vec a=\frac{u^2}{p}\vec j.$$
-
 By easy calculation, we can get the tangential acceleration
-
 $$a_\tau=\frac{u^3t}{p\sqrt{p^2+u^2t^2}}$$
-
 and the normal acceleration
-
 $$a_\nu=\frac{u^2}{\sqrt{p^2+u^2t^2}}.$$
-
 The curvature radius
-
 $$\rho=\frac{v^2}{a_\nu}=\frac{\left(p^2+u^2t^2\right)^\frac32}{p^2}\ge p,$$
-
 where the equality holds iff $t=0$.
