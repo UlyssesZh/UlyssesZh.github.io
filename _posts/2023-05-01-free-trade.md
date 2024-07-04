@@ -35,16 +35,13 @@ Also, assume that every agent is rational and with perfect information.
 
 Now, consider the profit $\Pi_j$ of the $j$th agent.
 Subtract the cost from the benefit, and we have
-
 $$\textstyle
 \Pi_j=B_j\!\left(Q_j+\sum_kT_{j,k}\right)-C_j\!\left(Q_j\right)-S_j\!\left(T\right).$$
-
 According to the fundamental theorem of welfare economics,
 $T$ and $Q$ is Pareto optimal under market equilibrium.
 We assume that this case happens at the stationary point of the social benefit,
 and the social benefit is the sum of the profit of every agent.
 We can then get the equations
-
 $$\begin{align*}
 &0=\frac{\partial}{\partial Q_l}\sum_j\Pi_j
 =B_l'\!\left(Q_l+\sum_kT_{l,k}\right)-C_l'\!\left(Q_l\right),\quad\forall l;\\
@@ -52,7 +49,6 @@ $$\begin{align*}
 =B_l'\!\left(Q_l+\sum_kT_{l,k}\right)-B_m'\!\left(Q_m+\sum_kT_{m,k}\right)
 -\sum_j\frac{\partial S_j}{\partial T_{l,m}}\!\left(T\right),\quad\forall l<m.
 \end{align*}$$
-
 Here are $n+\frac{n\left(n-1\right)}2$ equations,
 and exactly $Q$ and $T$ have $n+\frac{n\left(n-1\right)}2$ degrees of freedom in total
 (note that $T$ is anti-symmetric).
@@ -73,14 +69,10 @@ under zero trade cost, every two agents may trade arbitrary amount of goods unde
 this provides extra degrees of freedom to the model.
 To be specific, if $(Q,T)$ is a solution to the model,
 then $(Q,T+\Delta T)$ is also a solution, where the anti-symmetric matrix $\Delta T$ satisfies
-
 $$\sum_k\Delta T_{j,k}=0,\quad\forall j,$$
-
 where there are $n-1$ independent equations in the $n$ equations.
 Therefore, the total number of degrees of freedom in the solution of the model is
-
 $$n+\frac{n\left(n-1\right)}2-\left(\frac{n\left(n-1\right)}2-\left(n-1\right)\right)=2n-1.$$
-
 Now, the useful quantities that we can solve is
 the production and the net-import $T_j\coloneqq\sum_kT_{j,k}$ of every agent.
 Note that the net-import actually has only $n-1$ degrees of freedom because of the restriction $\sum_jT_j=0$.
@@ -96,7 +88,6 @@ the customer does not produce (the cost and the marginal cost is infinity);
 and the retailer does not produce or consume.
 Assume that the trade between any two of them does not bring cost to the third one.
 Then, the social benefit is
-
 $$\Pi=B\!\left(T_{\mathrm c,\mathrm r}+T_{\mathrm c,\mathrm p}\right)
 -C\!\left(T_{\mathrm c,\mathrm p}+T_{\mathrm r,\mathrm p}\right)
 -S_\mathrm c\!\left(T_{\mathrm c,\mathrm r},T_{\mathrm c,\mathrm p}\right)

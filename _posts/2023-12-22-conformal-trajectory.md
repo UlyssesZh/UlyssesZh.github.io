@@ -21,17 +21,19 @@ I will prove this beautiful result and show some implications of it.'
 I always feel amazed about how 2D physics can often be fascinating due to theorems in complex analysis.
 This article is about one among such cases.
 
+<p class="no-indent">
 **Theorem.**
 The conformal map $\fc wz$ transforms the trajectory with energy $-B$ in potential
 $\fc Uz\ceq A\v{\d w/\d z}^2$ into the trajectory with energy $-A$ in potential
 $\fc Vw\ceq B\v{\d z/\d w}^2$.
+</p>
 
 This result is pretty amazing in that it reveals a quite implicit duality between the two potentials,
 and it looks very symmetric as written.
 
 This theorem, as I know of, was first introduced in
 the appendix of V. I. Arnold's book
-*Huygens and Barrow, Newton and Hooke*.
+<cite>Huygens and Barrow, Newton and Hooke</cite>.
 Part of this article is already covered in the relevant part of the book.
 
 ## Power-law central-force potentials
@@ -50,9 +52,7 @@ trajectories of harmonic oscillators under complex squaring.
 
 You may ask, how can we notice complex squaring does the said transformation on ellipses?
 The observation is noticing the simple algebra
-
 $$\p{z+\fr1z}^2=z^2+\fr1{z^2}+2,$$
-
 which means that the Joukowski transform $z\mapsto z+1/z$ of a unit circle
 simply translates under complex squaring.
 We can then try to generalize this to circles of other radii,
@@ -69,9 +69,7 @@ we can take some power of it to get a trajectory in another power-law central-fo
 This result can be summarized as follows.
 Taking the $\p{\alp/2+1}$th power of a trajectory with energy $E$ in the potential $U=ar^\alp$
 ($\alp\ne-2$) gives a trajectory with energy $F$ in the potential $V=br^\beta$, where
-
 $$\p{\alp+2}\p{\beta+2}=4,\quad b=-\fr14\p{\alp+2}^2E,\quad F=-\fr14\p{\alp+2}^2a.$$
-
 To prove this, we just need to reparameterize the transformed trajectory in a new time coordinate $\tau$
 defined as $\d\tau=\v z^\alp\,\d t$, where $z$ is the complex position of the original trajectory.
 Then, by some calculation and utilizing the energy conservation,
@@ -100,9 +98,7 @@ The zero-energy trajectory in $U\propto-r^{-4}$ is a circle passing through the 
 
 Another interesting result is that, the deflection angle of an incident zero-energy particle
 scattered by the potential $U\propto-r^\alp$ is $\tht$ under paraxial limit, if
-
 $$\alp=\fr{2\vphi}{\pi-\vphi},\quad\vphi=\pm\tht-2k\pi,\quad k\in\bN.$$
-
 This result can be easily derived by using the conformal transform of the real line
 (actually, a straight line that approaches the real line).
 The crucial part here is that $k$ cannot take negative integers because we need $\alp>-2$.
@@ -115,10 +111,10 @@ either, in that limit, in contrast to being seemingly a free particle.
 
 Let's go back to the theorem I stated at the beginning of this article.
 
+<p class="no-indent">
 *Proof.*
 Consider a new time coordinate $\tau$ defined as $\d\tau=\v{\d w/\d z}^2\,\d t$.
 Then, the motion of $w$ satisfies
-
 $$\begin{align*}
 m\fr{\d^2w}{\d\tau^2}
 &=m\fr{\d t}{\d\tau}\fr{\d}{\d t}\p{\fr{\d t}{\d\tau}\fr{\d w}{\d t}}\\
@@ -126,59 +122,47 @@ m\fr{\d^2w}{\d\tau^2}
 &=m\fr{\d z}{\d w}\p{\fr{\d z}{\d w}}^*\p{\p{\fr{\d^2z}{\d w^2}\fr{\d w}{\d z}\fr{\d z}{\d t}}^*\fr{\d z}{\d t}
 +\p{\fr{\d z}{\d w}}^*\fr{\d^2 z}{\d t^2}}.
 \end{align*}$$
-
 Here we need to substitute $\d^2 z/\d t^2$ by the equation of motion for $z$.
 By computing the real and imaginary parts separately,
 we can derive that for any holomorphic function $f$,
 the gradient of $\v f^2$ expressed as a complex number is
 $\nabla\v f^2=2\p{\d f/\d z}^*f$.
 Therefore, the equation of motion for $z$ is
-
 $$m\fr{\d^2z}{\d t^2}=-2A\fr{\d w}{\d z}\p{\fr{\d^2w}{\d z^2}}^*.$$
-
 According to [series reversion](https://mathworld.wolfram.com/SeriesReversion.html), we have
 $\d^2 w/\d z^2=-\p{\d w/\d z}^3\d^2 z/\d w^2$.
 Therefore, the equation of motion for $z$ can also be written as
-
 $$m\fr{\d^2z}{\d t^2}=2A\v{\fr{\d w}{\d z}}^2\p{\fr{\d w}{\d z}}^{*2}\p{\fr{\d^2 z}{\d w^2}}^*.$$
-
 Substitute this, and we have
-
 $$m\fr{\d^2w}{\d\tau^2}=\fr{\d z}{\d w}\p{\fr{\d^2z}{\d w^2}}^*
 \p{m\v{\fr{\d z}{\d t}}^2+2A\v{\fr{\d w}{\d z}}^2}.$$
-
 Substitute the energy conservation of the motion of $z$:
-
 $$\fr12m\v{\fr{\d z}{\d t}}^2+A\v{\fr{\d w}{\d z}}^2=-B,$$
-
 and we have
-
 $$m\fr{\d^2w}{\d\tau^2}=-2B\fr{\d z}{\d w}\p{\fr{\d^2z}{\d w^2}}^*,$$
-
 which is the equation of motion for $w$ that we expect.
+</p>
 
 To get the energy of the motion of $w$, we calculate
-
 $$\begin{align*}
 \fr12m\v{\fr{\d w}{\d\tau}}^2+B\v{\fr{\d z}{\d w}}^2
 &=\fr12m\v{\fr{\d w}{\d z}\fr{\d z}{\d t}\fr{\d t}{\d\tau}}^2+B\v{\fr{\d z}{\d w}}^2\\
 &=\v{\fr{\d w}{\d z}}^2\p{-B-A\v{\fr{\d w}{\d z}}^2}\v{\fr{\d z}{\d w}}^4+B\v{\fr{\d z}{\d w}}^2\\
 &=-A,
 \end{align*}$$
-
 which is the energy conservation of the motion of $w$ in the potential $V$ that we expect.
 {% qed %}
 
 Noticing that we are only interested in the trajectory,
 we can just use Maupertuis' principle to get a simpler proof.
 
+<p class="no-indent">
 *Proof.*
-
 $$\mcal S_0=\int\v{\d z}\sqrt{2m\p{-B-A\v{\fr{\d w}{\d z}}^2}}=\int\v{\d w}\sqrt{2m\p{-A-B\v{\fr{\d z}{\d w}}^2}}.$$
-
 The abbreviated action is then exactly the same for the motion of $z$ and the motion of $w$.
 Therefore, by Maupertuis' principle, for any physical trajectory of $z$, the trajectory of $w$ is also physical.
 {% qed %}
+</p>
 
 ## Details worth noting
 
@@ -246,15 +230,19 @@ which generalizes the notion of analytic function to allow for multiple branches
 Not any potential can be expressed as $A\v{\d w/\d z}^2$.
 How can we determine whether a potential can be expressed in this form?
 
+<p class="no-indent">
 **Theorem.**
 A continuous potential $U$ can be expressed in the form of $A\v{\d w/\d z}^2$
 (where $\fc wz$ is a conformal transformation) iff one of the following conditions is met:
+</p>
 
 - $U$ is zero everywhere, or
 - $\ln\v U$ is a harmonic function on the domain of $U$.
 
+<p class="no-indent">
 *Proof.*
 First, prove the necessity.
+</p>
 
 An obvious requirement is that the potential must be positive everywhere or negative everywhere
 (or zero everywhere, but that is trivial).
@@ -263,25 +251,17 @@ Therefore, without loss of generality, we can assume $A=1$
 because we can always absorb a factor of $\sqrt{\v A}$ into $w$ and adjust the overall sign of $U$ accordingly.
 
 We can decompose $\p{\d w/\d z}^2$ in the polar form
-
 $$\p{\d w/\d z}^2=\v{\d w/\d z}^2\e^{\i\vphi}=U\e^{\i\vphi},$$
-
 where $\vphi$ is a real function of $z$.
 Applying the Cauchy--Riemann equations to $\p{\d w/\d z}^2$ gives
-
 $$\i\partial_x\p{\fr{\d w}{\d z}}^2=\partial_y\p{\fr{\d w}{\d z}}^2
 \implies\i\p{\e^{\i\vphi}\partial_xU+\i U\e^{\i\vphi}\partial_x\vphi}
 =\e^{\i\vphi}\partial_yU+\i U\e^{\i\vphi}\partial_y\vphi.$$
-
 Equate the real and imaginary parts, and we have
-
 $$\begin{cases}U\partial_x\vphi=-\partial_yU,\\U\partial_y\vphi=\partial_xU.\end{cases}$$
-
 Use the symmetry of second derivatives on $\vphi$, and we have
-
 $$\partial_x\partial_y\vphi-\partial_y\partial_x\vphi=0
 \implies\partial_x\fr{\partial_xU}U+\partial_y\fr{\partial_yU}U=0.$$
-
 In the language of vector analysis, this is just $\nabla^2\ln U=0$.
 
 Considering the case where $U$ is negative everywhere, we have that $\ln\v U$ is a harmonic function.
@@ -295,9 +275,7 @@ Because $U$ is continuous, we have $U$ is either positive everywhere or negative
 Without loss of generality, assume $U$ is positive everywhere.
 Let $\vphi$ be the harmonic conjugate of $\ln U$.
 Then, $\ln U+\i\vphi$ is a holomorphic function. We can then define
-
 $$\fr{\d w}{\d z}=\sqrt U\e^{\i\vphi/2},$$
-
 which is also a holomorphic function.
 {% qed %}
 
@@ -348,9 +326,7 @@ then $\tht$ must be a constant (except the trivial case where $w=0$).
 
 The dual trajectory does change, though, but the dual potential $V$ is also changed, too.
 Because $\v{\d z/\d w'}=\v{\d z/\d w}$, we have
-
 $$\fc{V'}{w'}=\fc Vw=\fc V{\p{w'-w_0}\e^{-\i\tht}}.$$
-
 Therefore, the dual trajectory and the dual potential are also rotated and translated by the same amount.
 
 ### Scaling
@@ -407,9 +383,7 @@ The potential $U$ can be kept invariant by scaling $A\to A'\ceq C^2A$.
 However, we cannot change $B$ if we want to leave the trajectory of $z$ unchanged
 because it is determined by the energy of the trajectory of $z$.
 Therefore, the dual potential $V$ would be scaled to
-
 $$\fc{V'}{w'}=C^2\fc Vw=C^2\fc V{Cw'}.$$
-
 This means that physics is unchanged if length is scaled by $C$ and energy and potential are both scaled by $C^2$.
 This corresponds to one of the three scaling invariances in classical mechanics that we talked about before.
 
@@ -422,9 +396,7 @@ so the two systems can have totally different unit systems.
 The transformation from $z$ to $w$ seems like a coordinate transformation,
 which is covered by canonical transformations.
 However, here we have an additional requirement about the form of the Hamiltonian:
-
 $$H=\fr{p_z^2}{2m}+\fc Uz,\quad K=\fr{p_w^2}{2m}+\fc Vw,$$
-
 where $K$ is the transformed Hamiltonian (or called the Kamiltonian in the jargon of canonical transformations).
 This is not generally true because the transformation in the generalized momentum
 is restrictively determined when the transformation in the generalized coordinate is already given.
@@ -445,15 +417,25 @@ let's first consider the case where the transformation is only in the time varia
 
 Consider a system with the Lagrangian $\fc L{q,\dot q}$ (not explicitly dependent on time).
 Then, the action can be expressed as
-
 $$S=\int_{t_1}^{t_2}\fc L{q,\dot q}\d t.$$
-
 The same integral can be expressed in terms of a new time variable $\tau$ as
-
 $$S=\int_{\tau_1}^{\tau_2}\fc L{q,\mathring q\dot\tau}\fr{\d\tau}{\dot\tau},$$
-
 where $\mathring q\ceq\d q/\d\tau$ is the generalized velocity in the new time variable.
 The transformed Lagrangian, or what I want to call the **Magrangian**[^magrangian], is then
+$$\fc M{q,\mathring q}\ceq\fc L{q,\mathring q\dot\tau}\fr1{\dot\tau}.$$ {#eq:magrangian}
+For the case that we are concerning, $\dot\tau$ is a positive real function of $q$
+but does not (explicitly) depend on $t$.
+The limits $\tau_1,\tau_2$ satisfy the condition
+$$\tau_2-\tau_1=\int_{t_1}^{t_2}\fc{\dot\tau}q\,\d t.$$
+This relation is crucial.
+When finding the variation $\dlt S$, we are fixing $t_1,t_2$.
+However, we cannot fix both $\tau_1,\tau_2$ because their difference is dependent on the path $\fc qt$.
+What we can do is to fix $\tau_1$ and to let $\tau_2$ have a variation given by
+$$\dlt\tau_2=\int_{t_1}^{t_2}\fc{\dot\tau'}q\dlt q\,\d t
+=\int_{\tau_1}^{\tau_2}\fr{\fc{\dot\tau'}q}{\fc{\dot\tau}q}\dlt q\,\d\tau,$$
+where $\dot\tau'$ is the derivative (or gradient, in higher dimensions) of $\dot\tau$ as a function of $q$.
+As can be seen, only if $\dot\tau$ is a constant (i.e., $\tau$ is simply an affine transform of $t$)
+does $\dlt\tau_2$ vanish for any $\dlt q$.
 
 [^magrangian]: For unknown reasons, the transformed Hamiltonian is called the Kamiltonian
 just because we often use the symbol $K$ to represent it.
@@ -463,62 +445,32 @@ The surname "Lagrange" is originated from the French phrase *la grange* (meaning
 and correspondingly "Magrange" may refer to the French phrase *ma grange* (meaning "my barn").
 This pun then can make "Magrangian" kind of mean "my Lagrangian".
 
-$$\fc M{q,\mathring q}\ceq\fc L{q,\mathring q\dot\tau}\fr1{\dot\tau}.$$ {#eq:magrangian}
-
-For the case that we are concerning, $\dot\tau$ is a positive real function of $q$
-but does not (explicitly) depend on $t$.
-The limits $\tau_1,\tau_2$ satisfy the condition
-
-$$\tau_2-\tau_1=\int_{t_1}^{t_2}\fc{\dot\tau}q\,\d t.$$
-
-This relation is crucial.
-When finding the variation $\dlt S$, we are fixing $t_1,t_2$.
-However, we cannot fix both $\tau_1,\tau_2$ because their difference is dependent on the path $\fc qt$.
-What we can do is to fix $\tau_1$ and to let $\tau_2$ have a variation given by
-
-$$\dlt\tau_2=\int_{t_1}^{t_2}\fc{\dot\tau'}q\dlt q\,\d t
-=\int_{\tau_1}^{\tau_2}\fr{\fc{\dot\tau'}q}{\fc{\dot\tau}q}\dlt q\,\d\tau,$$
-
-where $\dot\tau'$ is the derivative (or gradient, in higher dimensions) of $\dot\tau$ as a function of $q$.
-As can be seen, only if $\dot\tau$ is a constant (i.e., $\tau$ is simply an affine transform of $t$)
-does $\dlt\tau_2$ vanish for any $\dlt q$.
-
 Using the well-known variation of the action when there is variation in the time coordinate, we have
-
 $$\dlt S=\int_{\tau_1}^{\tau_2}
 \p{\fr{\partial M}{\partial q}-\fr{\d}{\d\tau}\fr{\partial M}{\partial\mathring q}}\dlt q\,\d t
 -\fc{K}{\fc q{\tau_2},\fc{\mathring q}{\tau_2}}\dlt\tau_2,$$
-
 where
-
 $$\fc K{q,\mathring q}\ceq\mathring q\fr{\partial M}{\partial\mathring q}-M$$
-
 is the energy (or the Kamiltonian, but as a function of generalized coordinates and velocities) of the system.
 
 <details>
 <summary>A quick check of this variation</summary>
 
 Because $\fc q{\tau_2}$ is fixed, we have
-
 $$\fc q{\tau_2}=\fc q{\tau_2+\dlt\tau_2}+\fc{\dlt q}{\tau_2+\dlt\tau_2}
 =\fc q{\tau_2}+\fc{\mathring q}{\tau_2}\dlt\tau_2+\fc{\dlt q}{\tau_2}
 \implies\fc{\dlt q}{\tau_2}=-\fc{\mathring q}{\tau_2}\dlt\tau_2.$$
-
 Now, calculate the variation of the action:
-
 $$\dlt S=\int_{\tau_1}^{\tau_2}
 \p{\fr{\partial M}{\partial q}\dlt q+\fr{\partial M}{\partial\mathring q}\dlt\mathring q}\d\tau
 +\fc M{\fc q{\tau_2},\fc{\mathring q}{\tau_2}}\dlt\tau_2.$$
-
 Recall the derivation of the Euler--Lagrange equation.
 For the second term in the integrand, we can integrate by parts to get
-
 $$\int_{\tau_1}^{\tau_2}\fr{\partial M}{\partial\mathring q}\dlt\mathring q\,\d\tau
 =\abar{\fr{\partial M}{\partial\mathring q}\dlt q}{\tau_1}^{\tau_2}
 -\int_{\tau_1}^{\tau_2}\fr{\d}{\d\tau}\fr{\partial M}{\partial\mathring q}\dlt q\,\d\tau
 =\abar{-\fr{\partial M}{\partial\mathring q}\mathring q}{\tau_2}\dlt\tau_2
 -\int_{\tau_1}^{\tau_2}\fr{\d}{\d\tau}\fr{\partial M}{\partial\mathring q}\dlt q\,\d\tau.$$
-
 Substitute this back into the expression for $\dlt S$, and we have the desired result.
 
 </details>
@@ -541,23 +493,20 @@ and the stationary-action principle will be satisfied by the motion between any 
 We can explicitly show that Equation [@eq:transformed-EL] can be derived
 from the original Euler--Lagrange equation under the zero-energy condition.
 
+<p class="no-indent">
 *Proof.*
 We need to first derive the condition of zero energy in the old time variable.
 Take derivatives of Equation [@eq:magrangian] with respect to $\mathring q$, and we have
-
 $$\fr{\partial M}{\partial\mathring q}=\fr{\partial L}{\partial\dot q}\dot\tau\fr1{\dot\tau}
 =\fr{\partial L}{\partial\dot q}.$$
-
 Therefore, the Kamiltonian is
-
 $$K=\fr{\partial M}{\partial\mathring q}\mathring q-M=\fr{\partial L}{\partial\dot q}\fr{\dot q}{\dot\tau}-\fr L{\dot\tau}
 =\fr H{\dot\tau},$$ {#eq:K-H}
-
 where $H\ceq\dot q\partial L/\partial\dot q-L$ is the original Hamiltonian.
 This relation means that the condition $K=0$ is equivalent to the condition $H=0$.
+</p>
 
 Then, use Equation [@eq:magrangian] to explicitly calculate the lhs of Equation [@eq:transformed-EL]:
-
 $$\begin{align*}
 \fr{\partial M}{\partial q}-\fr{\d}{\d\tau}\fr{\partial M}{\partial\mathring q}
 &=\p{\fr{\partial L}{\partial q}+\fr{\partial L}{\partial\dot q}\mathring q\fc{\dot\tau'}q}\fr1{\fc{\dot\tau}q}
@@ -581,31 +530,22 @@ Recall that the canonical transformation is just a transformation of coordinates
 that preserves the canonical one-form up to a total differential.
 Adding the idea of time transformation into this has a difficulty that time is not a coordinate in the phase space.
 Including the time coordinate, the actual one-form that needs to be preserved is
-
 $$\d S=p\,\d q-H\,\d t,$$
-
 which is exactly the total differential of the action.
 Therefore, we have
-
 $$p\,\d q-H\,\d t=P\,\d Q-K\,\d\tau+\d G,$$ {#eq:preserved-form}
-
 where $P,Q$ are the new canonical variables, $K$ is the transformed Hamiltonian,
 and $G$ is called the generating function of the canonical transformation.
 Assume $\tau$ and $G$ are both functions of $q,Q,t$. Then, we have
-
 $$p\,\d q-H\,\d t=P\,\d Q
 -K\p{\fr{\partial\tau}{\partial q}\,\d q+\fr{\partial\tau}{\partial Q}\,\d Q+\fr{\partial\tau}{\partial t}\,\d t}
 +\fr{\partial G}{\partial q}\,\d q+\fr{\partial G}{\partial Q}\,\d Q+\fr{\partial G}{\partial t}\,\d t.$$
-
 Compare the coefficients of $\d q,\d Q,\d t$ on both sides, and we have
-
 $$p+K\fr{\partial\tau}{\partial q}-\fr{\partial G}{\partial q}=0,\quad
 P-K\fr{\partial\tau}{\partial Q}+\fr{\partial G}{\partial Q}=0,\quad
 H-K\fr{\partial\tau}{\partial t}+\fr{\partial G}{\partial t}=0.$$ {#eq:canonical-tau}
-
 These equations determines $Q,P,K$.
 They will satisfy Hamilton's equation:
-
 $$\fr{\d Q}{\d\tau}=\fr{\partial K}{\partial P},\quad
 \fr{\d P}{\d\tau}=-\fr{\partial K}{\partial Q}.$$
 
@@ -613,12 +553,9 @@ $$\fr{\d Q}{\d\tau}=\fr{\partial K}{\partial P},\quad
 <summary>An example</summary>
 
 Consider the Hamiltonian $H=p+q$. The motion is
-
 $$q=q_0+t,\quad p=p_0-t.$$
-
 Consider the new time variable $\tau=t/q$ and the generating function $G=Qq$.
 With Equation [@eq:canonical-tau] and the expression for $H$ and $\tau$, we have a set of five equations:
-
 $$\begin{dcases}
 p-K\fr1{q^2}t-Q=0,\\
 P+q=0,\\
@@ -632,11 +569,8 @@ K=\fr{\p{P-Q}P}{1-\tau},\\
 t=-P\tau,\\
 H=\fr{Q-P}{1-\tau}.
 \end{dcases}$$
-
 With the expression for the Kamiltonian $K$, we get the motion of $Q,P$:
-
 $$Q=\fr{\p{2-\tau}\tau}{1-\tau}P_0+\p{1-\tau}Q_0,\quad P=\fr{P_0}{1-\tau}.$$
-
 This is consistent with the motion of $q,p$ as can be verified with calculation.
 
 </details>
@@ -656,35 +590,23 @@ but this time the conclusion would only be valid under the zero-energy condition
 
 Denote the real and imaginary parts of $z$ as $x,y$, and the real and imaginary parts of $w$ as $X,Y$.
 The Cauchy--Riemann equations give
-
 $$u\ceq\fr{\partial X}{\partial x}=\fr{\partial Y}{\partial y},\quad
 v\ceq\fr{\partial X}{\partial y}=-\fr{\partial Y}{\partial x}.$$
-
 Here $u,v$ are two real functions defined for convenience.
 They can either be functions of $x,y$ or functions of $X,Y$, depending on which are more convenient.
 With $u,v$, we have
-
 $$\d X=u\,\d x+v\,\d y,\quad\d Y=-v\,\d x+u\,\d y,$$
-
 The time transformation is given by
-
 $$\dot\tau=\v{\fr{\d w}{\d z}}^2=u^2+v^2.$$
-
 The original Hamiltonian is
-
 $$H=\fr{p_x^2+p_y^2}{2m}+A\p{u^2+v^2}+B$$
-
 (the last term is added because we want it to be zero during the motion).
 Substitute these into Equation [@eq:preserved-form], and we have ($\d G=0$)
-
 $$\begin{align*}
 &p_x\,\d x+p_y\,\d y-\p{\fr{p_x^2+p_y^2}{2m}+A\p{u^2+v^2}+B}\d t\\
 ={}&P_X\p{u\,\d x+v\,\d y}+P_Y\p{-v\,\d x+u\,\d y}-K\p{u^2+v^2}\d t.
 \end{align*}$$
-
 Then, after some calculations, we have perfectly the expected result
-
 $$p_x=uP_X-vP_Y,\quad p_y=vP_X+uP_Y,\quad
 K=\fr{P_X^2+P_Y^2}{2m}+\fr{B}{u^2+v^2}+A.$$
-
 The condition $K=0$ specifies the energy of the dual trajectory.

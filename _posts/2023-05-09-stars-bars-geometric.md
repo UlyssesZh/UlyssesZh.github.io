@@ -19,45 +19,48 @@ the distribution tends to be a geometric distribution.'
 > If there are 200 typographical errors randomly distributed in a 500 page manuscript,
 find the probability that a given page contains exactly 3 errors.
 
+<p class="no-indent">
 We can abstract this type of problems as follows:
+</p>
 
-> Suppose there are $n$ distinguishable boxes and $k$ indistinguishable balls.
+<blockquote>
+Suppose there are $n$ distinguishable boxes and $k$ indistinguishable balls.
 Now, we randomly put the balls into the boxes.
 For each of the boxes, what is the probability that it contains $m$ balls?
+</blockquote>
 
+<p class="no-indent">
 For example, if the first page contains 3 errors, the second page contains 197 errors,
 and the rest of the pages contain no errors,
 then the situation corresponds to the situation where the first box contains 3 balls,
 the second box contains 197 balls, and the rest of the boxes contain no balls.
 The balls are indistinguishable because we can only determine how many errors are on each page
 but not which errors are on the page.
+</p>
 
 To deal with the problem, we simply need to find these two numbers:
 
 - the number of ways to put $k$ indistinguishable balls into $n$ distinguishable boxes, and
 - the number of ways to put $k-m$ indistinguishable balls into $n-1$ distinguishable boxes.
 
+<p class="no-indent">
 The latter corresponds to the number of ways to put the balls into the boxes
 provided that we already know that the given box contains $m$ balls.
 After we find these two numbers, their ratio is the probability in question.
+</p>
 
 To find the number of ways to put $k$ indistinguishable balls into $n$ distinguishable boxes,
 we can use the stars and bars method.
 To see this, we write a special example.
 Here is an example of $n=4$ and $k=6$:
-
 $${}|{}\star{}\star{}|{}\star{}|{}\star{}\star{}\star{},$$
-
 which corresponds to the distribution $0,2,1,3$.
 We can see that there are $n-1$ bars and $k$ stars.
 Therefore, the number of ways to put the balls
 is the same as the number of ways to choose the $k$ positions of the stars among $n+k-1$ positions.
 Therefore, the number of ways is
-
 $$N_{n,k}=\binom{n+k-1}{k}=\frac{\left(n+k-1\right)!}{k!\left(n-1\right)!}.$$
-
 Therefore, the final probability of the given box containing $m$ balls is
-
 $$P_{n,k}(m)=\frac{N_{n-1,k-m}}{N_{n,k}}
 =\frac{\left(n-1\right)k!\left(n+k-m-2\right)!}{\left(k-m\right)!\left(n+k-1\right)!}.$$
 
@@ -73,16 +76,13 @@ using the binomial theorem.
 
 We are now interested in the limit $n,k\to\infty$ with $\lambda\coloneqq k/n$ fixed.
 By Stirling's approximation, we have
-
 $$P_{n,k}(m)\sim\left(n-1\right)
 \frac{k^{k+1/2}\left(n+k-m-2\right)^{n+k-m-2+1/2}}{\left(k-m\right)^{k-m+1/2}\left(n+k-1\right)^{n+k-1+1/2} }
 \mathrm e^{k-m+n+k-1-k-n-k+m+2}.$$
-
 The $1/2$'s in the exponents can just be dropped because
 you may find that if we extract the $1/2$'s, the factor tends to unity.
 The exponential is just constant $\mathrm e$.
 Therefore, we have
-
 $$\begin{align*}
 P_{n,k}(m)&\sim\left(n-1\right)
 \frac{\left(\lambda n\right)^{\lambda n}\left(n+\lambda n-m-2\right)^{n+\lambda n-m-2} }
@@ -95,7 +95,6 @@ P_{n,k}(m)&\sim\left(n-1\right)
 \mathrm e^{-\frac{m+1}{\lambda+1}\lambda}\left(\tfrac\lambda{\lambda+1}\right)^m\tfrac1{\lambda+1}\mathrm e\\
 &=\left(\tfrac\lambda{\lambda+1}\right)^m\tfrac1{\lambda+1}.
 \end{align*}$$
-
 This is just the geometric distribution with parameter $p=1/(\lambda+1)=n/(k+n)$.
 
 ---

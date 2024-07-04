@@ -31,9 +31,7 @@ Therefore, I feel it necessary to try to have a mathematical formulation.
 Suppose $(\Omega,\sigma(\Omega),P)$ is a probability space.
 Suppose $W$ is an affine space.
 For some map $f:\Omega\to W$, we define the $P$-expectation of $f$ as
-
 $$\mathrm E_P\!\left[f\right]\coloneqq\int_{x\in\Omega}\left(f(x)-e_0\right)\mathrm dP(x)+e_0,$$
-
 where $e_0\in W$ is arbitrary.
 Here the integral is Pettis integral.
 The expectation is defined if the Pettis integral is defined,
@@ -45,64 +43,52 @@ Suppose $X,Y$ are Polish spaces.
 Suppose $(Y,\sigma(Y),\mu),(X,\sigma(X),\nu)$ are measure spaces,
 where $\mu$ and $\nu$ are &sigma;-finite Borel measures.
 Suppose $\pi:Y\to X$ is a measurable map so that
-
 $$\forall A\in\sigma(X):\nu(A)=0\Rightarrow\mu\!\left(\pi^{-1}\!\left(A\right)\right)=0.$$
-
 Then, for each $x\in X$, there exists a Borel measure $\mu_x$
 on the measurable subspace $\left(\pi^{-1}(x),\sigma\!\left(\pi^{-1}(x)\right)\right)$,
 such that for any integrable function $f$ on $Y$,
-
 $$\int_{y\in Y}f\!\left(y\right)\mathrm d\mu(y)
 =\int_{x\in X}\mathrm d\nu(x)\int_{y\in\pi^{-1}(x)}f\!\left(y\right)\mathrm d\mu_x(y).$$
 
-<details markdown="1">
-<summary>Proof</summary>
+<details><summary>Proof</summary>
 
+<p class="no-indent">
 *Proof.*
 Because $\mu$ is &sigma;-finite,
 we have a countable covering of $Y$
 by pairwise disjoint measurable sets of finite $\mu$-measure,
 denoted as $\left\{Y_i\right\}$.
-Each $Y_i$ is automatically stroke='#currentColor'  and inherits the &sigma;-algebra from $Y$,
+Each $Y_i$ inherits the &sigma;-algebra from $Y$,
 and $\left(Y_i,\sigma\!\left(Y_i\right),\mu\right)$ is a measure space.
+</p>
 
 Define $\pi_i:Y_i\to X$ as the restriction of $\pi$ to $Y_i$,
 then $\pi_i$ is automatically a measurable map from $Y_i$ to $X$,
 and for any $x\in X$,
-
 $$\pi^{-1}(x)=\bigcup_i\pi_i^{-1}(x),$$
-
 and the terms in the bigcup are pairwise disjoint.
 
 Let $\nu_i$ be a measure on $X$ defined as
-
 $$\nu_i(A)\coloneqq\mu\!\left(\pi_i^{-1}\!\left(A\right)\right).$$
-
 This is a measure because $\pi_i$ is a measurable map.
 According to the disintegration theorem, for each $x\in X$, there exists a Borel measure $\mu_{i,x}$
 on $Y_i$ such that
 for $\nu$-almost all $x\in X$, $\mu_{i,x}$ is concentrated on $\pi_i^{-1}(x)$
 (in other words, $\mu_{i,x}\!\left(Y\setminus\pi_i^{-1}(x)\right)=0$);
 and for any integrable function $f$ on $Y_i$,
-
 $$\int_{y\in Y_i}f\!\left(y\right)\mathrm d\mu(y)
 =\int_{x\in X}\mathrm d\nu_i(x)\int_{y\in\pi_i^{-1}(x)}f\!\left(y\right)\mathrm d\mu_{i,x}(y).$$
-
 From the condition in the original proposition, we can easily prove that
 $\nu_i$ is absolutely continuous w.r.t. $\nu$.
 Therefore, we have their Radon--Nikodym derivative
-
 $$\varphi_i(x)\coloneqq\frac{\mathrm d\nu_i(x)}{\mathrm d\nu(x)}.$$
 
 For each $x\in X$, define the measure $\mu_x$ on $\pi^{-1}(x)$ as
-
 $$\mu_x(A)\coloneqq\sum_i\varphi_i\!\left(x\right)\mu_{i,x}\!\left(A\cap Y_i\right).$$
-
 This is a well-defined measure because the sets $A\cap Y_i$ are pairwise disjoint,
 and $\mu_{i,x}$ is well-defined measure on $Y_i$.
 
 Then, for any integrable function $f$ on $Y$,
-
 $$\begin{align*}
 \int_{y\in Y}f\!\left(y\right)\mathrm d\mu(y)
 &=\sum_i\int_{y\in Y_i}f\!\left(y\right)\mathrm d\mu(y)\\
@@ -136,16 +122,12 @@ where $0_2$ is the zero vector in $\vec W_2$.
 Suppose $W$ is an affine space associated with the vector space $\vec W$.
 For any $A\subseteq W$ and $B\subseteq\vec W$, we denote $A+B$ as
 the Minkowski sum of $A$ and $B$, i.e.,
-
 $$A+B\coloneqq\left\{a+b\,\middle|\,a\in A,\,b\in B\right\}.$$
-
 This extends the definition of usual Minkowski sums for affine spaces.
 
 By the way, because of the abbreviating "$\vec W_1$"
 meaning $\vec W_1\times\left\{0_2\right\}$ above, we can abuse the notation and write
-
 $$\vec W_1+\vec W_2=\vec W_1\times\vec W_2,$$
-
 where "$+$" denotes the Minkowski sum.
 This is true for any two vector spaces $\vec W_1,\vec W_2$ that do not share
 a non-trivial vector subspace.
@@ -186,13 +168,9 @@ and we guarantees that the disintegration is also &sigma;-finite and Borel.
 
 When I want to use multi-index notations, I will use "$\bullet$" to denote the indices.
 For example,
-
 $$\Sigma\alpha_\bullet\coloneqq\sum_\bullet\alpha_\bullet.$$
-
 $$\alpha_\bullet\beta_\bullet\coloneqq\sum_\bullet\alpha_\bullet\beta_\bullet.$$
-
 $$\alpha_\bullet^{\beta_\bullet}\coloneqq\prod_\bullet\alpha_\bullet^{\beta_\bullet}.$$
-
 $$\alpha_\bullet!\coloneqq\prod_\bullet\alpha_\bullet!.$$
 
 ## Extensive quantities and macrostates
@@ -201,9 +179,7 @@ First, I need to point out that the most central state function of a thermal sys
 is not its energy, but its entropy.
 The energy is regarded as the central state function in thermodynamics,
 which can be seen from the fundamental equation of thermodynamics
-
 $$\mathrm dU=-p\,\mathrm dV+T\,\mathrm dS+\mu\,\mathrm dN.$$
-
 We also always do the Legendre transformations on the potential function $U$
 to get other potential functions instead of doing the transformation on other extensive quantities.
 All such practices make us think that $S$ is just some quantity that is similar to $V$ and $N$,
@@ -223,9 +199,7 @@ but $S$ serves as a totally different role:
 it represents something about the probability distribution over all the possible microstates.
 
 Therefore, I would rather rewrite the fundamental equation of thermodynamics as
-
 $$\mathrm dS=\frac1T\,\mathrm dU+\frac pT\,\mathrm dV-\frac\mu T\,\mathrm dN.$$ {#eq:eq-fundamental}
-
 Equation [@eq:eq-fundamental] embodies how different quantities serve different roles more clearly,
 but it becomes vague in its own physical meaning.
 Does it mean different ways of changing the entropy in quasi-static processes?
@@ -322,8 +296,10 @@ Therefore, I will use the probability density function approach.
 
 Here is our final definition of the space of extensive quantities:
 
-*Definition.*
+<p class="no-indent">
+**Definition.**
 A **space of extensive quantities** is a tuple $(W,E,\lambda)$, where
+</p>
 
 - $W$ is an affine space associated with a reflexive vector space $\vec W$ over $\mathbb R$,
 and it is equipped with topology $\tau(W)$ that is naturally constructed from
@@ -343,25 +319,21 @@ so I removed it from the definition
 
 *Example.*
 Here is an example of a space of extensive quantities.
-
 $$\begin{align*}
 W&\coloneqq\mathbb R^3,\\
 E&\coloneqq(0,+\infty)\times(0,+\infty)\times\mathbb Z^+,\\
 \lambda(A)&\coloneqq\sum_{N\in\mathbb Z^+}\operatorname{area}(A\cap(0,+\infty)\times(0,+\infty)\times\{N\}).
 \end{align*}$$
-
 Physically we may think of this as the extensive quantities of the system of ideal gas.
 The three dimensions of $W$ are energy, volume, and number of particles.
 
 *Example.*
 Here is another example of a space of extensive quantities.
-
 $$\begin{align*}
 W&\coloneqq\mathbb R^2,\\
 E&\coloneqq\{(3N/2+n,N)\,|\,N\in\mathbb Z^+,n\in\mathbb N\},\\
 \lambda(A)&\coloneqq\operatorname{card}A.
 \end{align*}$$
-
 Physically we may think of this as the extensive quantities of the system of Einstein solid
 with $\hbar\omega=1$.
 The two dimensions of $W$ are energy and number of particles.
@@ -424,9 +396,11 @@ We may then sum up the above discussion to give $M_e$ enough structure to make i
 the set of microstates of a thermal system with the given extensive quantities $e$.
 Then, the disjoint union of all of them (the family of measure spaces) is the thermal system.
 
-*Definition.*
+<p class="no-indent">
+**Definition.**
 A **thermal system** is a pair $\left(\mathcal E,\mathcal M\right)$,
 where
+</p>
 
 - $\mathcal E\coloneqq\left(W,E,\lambda\right)$ is a space of extensive quantities;
 - $\mathcal M\coloneqq\bigsqcup_{e\in E}M_e$ is a family of measure spaces; and
@@ -442,7 +416,6 @@ where $e\in E$ and $m\in M_e$.
 For the thermal system of a solid consisting of spin-$\frac12$ particles,
 where each particle has two possible states with energy $0$ and $1$,
 we can construct
-
 $$\begin{align*}
 W&\coloneqq\mathbb R^2,\\
 E&\coloneqq\left\{\left(U,N\right)\in\mathbb N\times\mathbb Z^+\,\middle|\,U\le N\right\},\\
@@ -450,7 +423,6 @@ E&\coloneqq\left\{\left(U,N\right)\in\mathbb N\times\mathbb Z^+\,\middle|\,U\le 
 M_{U,N}&\coloneqq\left\{n\in\left\{0,1\right\}^N\,\middle|\,\sum_in_i=U\right\},\\
 \mu_{U,N}(A)&\coloneqq\operatorname{card}A.
 \end{align*}$$
-
 This should be the simplest example of a thermal system.
 
 *Example.*
@@ -459,14 +431,12 @@ Suppose we are considering the system of ideal atomic gas inside a cubic box.
 The construction of the space of extensive quantities is the same as before.
 Denote possible values of extensive quantities in coordinates $e=(U,V,N)$.
 Now the measure spaces $M_e$ may be constructed as such:
-
 $$\begin{align*}
 M_{U,V,N}&\coloneqq\left\{\left(\ldots\right)\in
 \left(\left[0,\sqrt[3]V\right]^3\times\mathbb R^3\right)^N
 \,\middle|\,\text{lexicographic order, }\sum_i\frac{\left|\mathbf p_i\right|^2}{2m}=U\right\},\\
 \mu_{U,V,N}(A)&\coloneqq\frac{H^{6N-1}(A)}{h^{3N}}.
 \end{align*}$$
-
 The "lexicographic order" here means that only those configurations where
 particle indices coincides with the lexicographic order are included in $M_e$.
 This is because the particles are indistinguishable, and the order of particles is irrelevant.
@@ -484,18 +454,16 @@ To understand, the expression $H^{6N-1}(A)$ is just the $(6N-1)$-dimensional "vo
 Since we have microstate density, why do not we have the true **number of microstates**?
 We can define a measure on $\mathcal M$ to represent the number of microstates.
 
-*Definition.*
+<p class="no-indent">
+**Definition.**
 The **measure of number of microstates** is a measure $\mu:\sigma(\mathcal M)\to\left[0,+\infty\right]$,
 where
-
 $$\sigma(\mathcal M)\coloneqq\left\{\bigsqcup_{e\in A}B_e\,\middle|\,A\in\sigma(E),\,B_e\in\sigma(M_e)\right\},$$
-
 and the measure is defined by
-
 $$\mu(A)\coloneqq\iint\limits_{(e,m)\in A}\mathrm d\mu_e(m)\,\mathrm d\lambda(e).$$
-
 The uniqueness of $\mu$ is guaranteed by the &sigma;-finiteness of $\lambda$ and $\mu_e$.
 The expression $\mu(A)$ is called the **number of microstates** in $A$.
+</p>
 
 ## States and the entropy
 
@@ -507,14 +475,14 @@ I will take this idea, too.
 As said before, I have taken the probability density approach of defining a probability distribution.
 Therefore, a state is just a probability density function.
 
-*Definition.*
+<p class="no-indent">
+**Definition.**
 A **state** of a thermal system $(\mathcal E,\mathcal M)$ is a function
 $p:\mathcal M\to\left[0,+\infty\right]$ such that $(\mathcal M,\sigma(\mathcal M),P)$ is a probability space,
 where $P:\sigma(\mathcal M)\to\left[0,1\right]$ is defined by
-
 $$P(A)\coloneqq\int_Ap\,\mathrm d\mu.$$ {#eq:eq-probability-measure}
-
 Two states are the same if they are equal $\mu$-almost everywhere.
+</p>
 
 A probability space is just a measure space with a normalized measure,
 and here the physical meaning of $p$ is the probability density on $\mathcal M$,
@@ -535,9 +503,7 @@ which is defined for any probability space
 and does not depend on any so-called probability density function
 or a "volume" measure (which is the number of microstates in our case).
 The definition of this entropy is (if anyone is interested)
-
 $$S^{\mathrm{info}}\coloneqq\sup_\Pi\sum_{A\in\Pi}-P(A)\ln P(A),$$
-
 where $P$ is the probability measure on the probability space,
 and the supremum is taken over all $P$-almost partition $\Pi$ of the probability space
 ($\Pi$ is a subset of the &sigma;-algebra so that
@@ -548,10 +514,11 @@ The discrepancy happens when we are doing classical statistical mechanics
 because the entropy defined above will diverge to infinity for those "continuous" probability distributions.
 A quick check is that the entropy of the uniform distribution over $[0,1]$ is $+\infty$.
 
-*Definition.*
+<p class="no-indent">
+**Definition.**
 The **entropy** of a state $p$ is defined by
-
 $$S[p]\coloneqq\int_\mathcal M-p\ln p\,\mathrm d\mu.$$
+</p>
 
 Different from extensive quantities, the entropy is a functional of $p$.
 The entropy here is consistent with the entropy in thermodynamics or statistical mechanics.
@@ -572,15 +539,15 @@ The actual values that we get when we measure them are postulated to be the ense
 Therefore, for a given state $p$, we can define the measured values of extensive quantities
 by taking the $P$-expectation of the extensive quantities.
 
-*Definition.*
+<p class="no-indent">
+**Definition.**
 For a thermal system $(\mathcal E,\mathcal M)$
 and a state $p$ of it, the **measured value of extensive quantities** of the state $p$ is
 the $P$-expectation of the $E$-valued random variable $(e,m)\mapsto e$.
 Explicitly, the definition is
-
 $$\varepsilon[p]\coloneqq\mathrm E_P\!\left[\left(e,m\right)\mapsto e\right],$$
-
 where the probability measure $P$ on $\mathcal M$ is defined in Equation [@eq:eq-probability-measure].
+</p>
 
 In the definition, it involves taking the $P$-expectation of a $W$-valued function.
 This involves doing a Pettis integral, which I claim to exist.
@@ -597,24 +564,18 @@ Suppose that we postulate a family of states $p_t^\circ$ of the thermal system
 (or its slices, which will be introduced below),
 labeled by different $t$'s, and call them the possible equilibrium states.
 Then, we can have the following two equations:
-
 $$\begin{cases}
 S^\circ=S\!\left[p_t^\circ\right],\\
 \varepsilon^\circ=\varepsilon\!\left[p_t^\circ\right].
 \end{cases}$$ {#eq:eq-fundamental-equation-before}
-
 By cancelling out the $t$ in the two equations (which may be impossible but assumed to be possible),
 we can get the fundamental equation in this form:
-
 $$S^\circ=S^\circ\!\left(\varepsilon^\circ\right).$$ {#eq:eq-fundamental-equation}
-
 Then, here we get the function $S^\circ:E^\circ\to\mathbb R$, where $E^\circ$ is a subset of $W$
 consisting of all possible measured values of extensive quantities among equilibrium states.
 If we can possibly define some differential structure on $E^\circ$
 so that we can possibly take the differential of $S^\circ$ and write something sensible like
-
 $$\mathrm dS^\circ=i\!\left(\varepsilon^\circ\right)(\mathrm d\varepsilon^\circ),$$
-
 where $i^\circ\!\left(\varepsilon^\circ\right)\in\vec W'$ is a continuous linear functional,
 then we can define $i^\circ\!\left(\varepsilon^\circ\right)$ to be the **intensive quantities**
 at $\varepsilon^\circ$.
@@ -636,8 +597,10 @@ I call this way **slicing**.
 - By allowing some extensive quantities to change freely.
 I call this way **contracting**.
 
+<p class="no-indent">
 I chose the words "slicing" and "contracting".
 They are not present in actual physics textbooks, but I found the notion of them necesesary.
+</p>
 
 Slicing fixes extensive quantities.
 How we do it is to pick out a subset of $E$ and make it our new accessible values of extensive quantities.
@@ -650,9 +613,11 @@ and picking one piece as our new affine space,
 and picking the corresponding accessible values of extensive quantities and possible microstates
 within that piece to form our new thermal system.
 
-*Definition.*
+<p class="no-indent">
+**Definition.**
 A **slicing** of a space of extensive quantities $\left(W,E,\lambda\right)$
 is a pair $\left(W^\parallel,\lambda^\parallel\right)$, where
+</p>
 
 - $W^\parallel\subseteq W$ is an affine subspace of $W$;
 - $E^\parallel\coloneqq E\cap W^\parallel$ is non-empty, and it is Polish as a topological subspace of $E$; and
@@ -661,13 +626,17 @@ is a non-trivial &sigma;-finite Borel measure on $E^\parallel$, where
 $\sigma\!\left(E^\parallel\right)\subseteq\mathfrak B\!\left(E^\parallel\right)$
 is a &sigma;-algebra on $E^\parallel$ that contains the Borel &sigma;-algebra on $E^\parallel$.
 
+<p class="no-indent">
 This constructs a new space of extensive quantities $\left(W^\parallel,E^\parallel,\lambda^\parallel\right)$,
 called a **slice** of the original space of extensive quantities $\left(W,E,\lambda\right)$.
+</p>
 
-*Definition.*
+<p class="no-indent">
+**Definition.**
 A **slice** of a thermal system $\left(\mathcal E,\mathcal M\right)$
 defined by the slicing $\left(W^\parallel,\lambda^\parallel\right)$ of $\mathcal E$
 is a new thermal system $\left(\mathcal E^\parallel,\mathcal M^\parallel\right)$ constructed as such:
+</p>
 
 - $\mathcal E^\parallel\coloneqq\left(W^\parallel,E^\parallel,\lambda^\parallel\right)$ is the slice of $\mathcal E$
 corrsponding to the given slicing; and
@@ -710,25 +679,29 @@ The physical meaning of such a system is that it is isolated from the outside
 so that it cannot exchange any extensive quantities with the outside.
 We may construct an isolated system out of an existing thermal system by the process of isolating.
 
-*Definition.*
+<p class="no-indent">
+**Definition.**
 An **isolating** (at $e^\circ$) of a space of extensive quantities $\left(W,E,\lambda\right)$
 is a slicing $\left(W^\parallel,\lambda^\parallel\right)$ of it, constructed as
-
 $$\begin{align*}
 W^\parallel&\coloneqq\left\{e^\circ\right\},\\
 \lambda^\parallel(A)&\coloneqq\begin{cases}1,&A=\left\{e^\circ\right\},\\0,&A=\varnothing,\end{cases}
 \end{align*}$$
-
 where $e^\circ\in E$.
+</p>
 
-*Definition.*
+<p class="no-indent">
+**Definition.**
 An **isolated system** is a thermal system whose underlying affine space of its space of extensive quantities
 is a single-element set.
+</p>
 
-*Definition.*
+<p class="no-indent">
+**Definition.**
 An **isolation** (at $e^\circ$) of a thermal system $\left(\mathcal E,\mathcal M\right)$
 is the slice of it corresponding to the isolating at $e^\circ$ of $\mathcal E$.
 An isolation is an isolated system.
+</p>
 
 Here is an obvious property of isolated systems:
 the measured value of extensive quantities of any state of an isolated system
@@ -744,8 +717,10 @@ Most importantly, this is a way that does not require us to define concepts like
 beforehand, which is a good thing for a mathematical formulation because it would require
 less mathematical structures or objects that are hard to well define at this stage.
 
-*Axiom* (the **equal a priori probability postulate**).
+<p class="no-indent">
+**Axiom** (the equal a priori probability postulate)**.**
 The equilibrium state of an isolated system is the uniform distribution.
+</p>
 
 Actually, instead of saying that this is an axiom, we may say that formally this is a definition of
 equilibrium states.
@@ -754,58 +729,48 @@ rather than any thermal systems.
 
 The equilibrium state of an isolated system $\left(\mathcal E,\mathcal M\right)$
 may be written mathematically as
-
-$$p^\circ\!\left(\cdot\right)\coloneqq\frac1{\mu\!\left(\mathcal M\right)}.$$
-
-(The circle in the superscript denotes equilibrium state.)
+$$p^\circ\!\left(\cdot\right)\coloneqq\frac1{\mu\!\left(\mathcal M\right)}$$
+(the circle in the superscript denotes equilibrium state).
 After writing this out, we have successfully derived the **microcanonical ensemble**.
 We can then calculate the entropy of the state, which is
-
 $$S^\circ\coloneqq S\!\left[p^\circ\right]=\ln\mu(\mathcal M).$$ {#eq:eq-microcanonical-entropy}
-
 Mentioning the entropy, a notable feature about
 the equilibrium state of an isolated system is that
 it is the state of the system that has the maximum entropy,
 and any state different from it has a lower entropy.
 
-*Theorem.*
+<p class="no-indent">
+**Theorem.**
 For an isolated system, for any state $p$ of it,
-
 $$S[p]\le S^\circ,$$
-
 where $S^\circ$ is the entropy of the equilibrium state of it.
 The equality holds iff $p$ is the same state as the equilibrium state.
+</p>
 
-<details markdown="1">
+<details>
 <summary>Proof</summary>
 
+<p class="no-indent">
 *Proof.*
 Define a probability measure $P^\circ$ on $\mathcal M$ by
-
 $$P^\circ(A)\coloneqq\frac{\mu(A)}{\mu(\mathcal M)},$$
-
 then $\left(\mathcal M,\sigma\!\left(\mathcal M\right),P^\circ\right)$ is a probability space.
 Any state $p$, as a function on $\mathcal M$, can be regarded as a random variable
 in the probability space $\left(\mathcal M,\sigma\!\left(\mathcal M\right),P^\circ\right)$.
+</p>
 
 Define the real function
-
 $$\varphi(x)\coloneqq\begin{cases}
 x\ln x,&x\in\left(0,+\infty\right),\\
 0,&x=0.
 \end{cases}$$
-
 It is a convex function, so according to the probabilistic form of Jensen's inequality,
-
 $$\varphi\!\left(\mathrm E_{P^\circ}\!\left[p\right]\right)
 \le\mathrm E_{P^\circ}\!\left[\varphi\circ p\right].$$
-
 In other words,
-
 $$\frac1{\mu(\mathcal M)}\ln\frac1{\mu(\mathcal M)}
 \le\int_{m\in\mathcal M}p\!\left(m\right)\ln p\!\left(m\right)
 \,\frac{\mathrm d\mu\!\left(m\right)}{\mu(\mathcal M)}.$$
-
 Then, it follows immediately that $S[p]\le S^\circ$.
 The equality holds iff $\varphi$ is linear on a convex set $A\subseteq\left[0,+\infty\right)$
 such that the value of the random variable $p$ is $P^\circ$-almost surely in $A$.
@@ -829,9 +794,7 @@ at equilibrium states by the process of isolating.
 Define a family of states $\left\{p^\circ_e\right\}_{e\in E}$,
 where each state $p^\circ_e$ is the equilibrium state of the system isolated at $e$.
 Then, we have the fundamental equation
-
 $$S^\circ(e)=\ln\Omega(e),$$ {#eq:eq-mce-fundamental-eq}
-
 where $\Omega(e)\coloneqq\mu_e\!\left(M_e\right)$ is called the **counting function** (I invented the phrase),
 which is the **microscopic characteristic function** of microcanonical ensembles.
 This defines a function $S^\circ:E\to\mathbb R$,
@@ -842,9 +805,7 @@ We will encounter microscopic or macroscopic characteristic functions for other 
 
 *Example.*
 In the example of a system of a tank of ideal atomic gas, we have the fundamental equation
-
 $$S^\circ=\ln\!\left(\frac1{h^{3N}N!}V^NS_{3N-1}\!\left(\sqrt{2mU}\right)\right),$$
-
 where $S_n(r)$ is the surface area of an $n$-sphere with radius $r$, which is proportional to $r^n$.
 Taking its derivative w.r.t. $U,V,N$ and taking the thermodynamic limit will recover familiar results.
 
@@ -877,9 +838,11 @@ The family of affine subspaces may be used to define a family of slices of
 the space of extensive quantities or the thermal system, which are useful when defining the
 contraction of the space of extensive quantities or the system.
 
-*Definition.*
+<p class="no-indent">
+**Definition.**
 A **contracting** of a space of extensive quantities $\left(W,E,\lambda\right)$
 is given by a tuple $\left(\pi,\lambda^\perp\right)$, where
+</p>
 
 - $\pi:W\to W^\perp$ is a projection map from $W$ to an affine subspace $W^\perp$ of $W$;
 - $E^\perp\coloneqq\pi(E)$, the image of $E$ under $\pi$, is equipped with the minimal topology
@@ -892,24 +855,30 @@ is a &sigma;-algebra of $E^\perp$ that contains the Borel &sigma;-algebra of $E^
 - For any $A\in\sigma\!\left(E^\perp\right)$,
 $\lambda^{\perp}(A)=0$ iff $\lambda\!\left(\pi^{-1}(A)\right)=0$.
 
+<p class="no-indent">
 This contracting defines a new space of extensive quantities
 $\left(W^\perp,E^\perp,\lambda^\perp\right)$, called a **contraction** of
 the original space of extensive quantities $\left(W,E,\lambda\right)$.
+</p>
 
-*Definition.*
+<p class="no-indent">
+**Definition.**
 The **contractive slicings** of a space of extensive quantities $\left(W,E,\lambda\right)$
 defined by a contracting $\left(\pi,\lambda^\perp\right)$ of it is a family of slicings
 $\bigsqcup_{e\in W^\perp}\left(W^\parallel_e,\lambda^\parallel_e\right)$, where
+</p>
 
 - $W^\parallel_e\coloneqq\pi^{-1}(e)$ is the preimage of $\left\{e\right\}$ under $\pi$,
 an affine subspace of $W$; and
 - $\lambda_e^\parallel:\sigma\!\left(E_e^\parallel\right)\to\left[0,+\infty\right]$ is a Borel measure;
 the family of measures is the disintegration of $\lambda$ w.r.t. $\pi$ and $\lambda^\perp$.
 
-*Definition.*
+<p class="no-indent">
+**Definition.**
 A **contraction** of a thermal system $\left(\mathcal E,\mathcal M\right)$
 defined by the contracting $\left(\pi,\lambda^\perp\right)$ of $\mathcal E$
 is a new thermal system $\left(\mathcal E^\perp,\mathcal M^\perp\right)$ constructed as such:
+</p>
 
 - $\mathcal E^\perp\coloneqq\left(W^\perp,E^\perp,\lambda^\perp\right)$
 is the contraction of $\mathcal E$ corresponding to the given contracting;
@@ -922,21 +891,20 @@ of $\mathcal E$ defined by the contracting $\left(\pi,\lambda^\perp\right)$;
 the measure equipped on $\mathcal M_e^\parallel$ is the measure of number of microstates
 of $\left(\mathcal E_e^\parallel,\mathcal M_e^\parallel\right)$.
 
+<p class="no-indent">
 In some cases, the total number of microstates in $\mathcal M^\parallel_e$ is not finite for some $e$,
 then the contraction is not defined in this case.
+</p>
 
 *Example.*
 For the thermal system of a solid consisting of spin-$\frac12$ particles,
 define a constracting $\left(\pi,\lambda^\perp\right)$ by
-
 $$\begin{align*}
 \pi\!\left(U,N\right)&\coloneqq N,\\
 \lambda^\perp\!\left(A\right)&\coloneqq\operatorname{card}A.
 \end{align*}$$
-
 Then the corresponding contraction of the thermal system may be written as
 a thermal system $\left(\left(W,E,\lambda\right),\bigsqcup_{e\in E}M_e\right)$, where
-
 $$\begin{align*}
 W&\coloneqq\mathbb R,\\
 E&\coloneqq\mathbb Z^+,\\
@@ -962,15 +930,11 @@ in such a sense that the microstates in the two systems are naturally one-to-one
 Indeed, the natural bijection from $\mathcal M$ to $\mathcal M^\perp$ is given by
 $\left(e,m\right)\mapsto\left(\pi(e),\left(e,m\right)\right)$.
 It is obvious that for any measurable function $f$ on $\mathcal M^\perp$ we have
-
 $$\int_{\left(e,m\right)\in\mathcal M}f\!\left(\pi(e),(e,m)\right)\mathrm d\mu(e,m)
 =\int_{\left(e,m\right)\in\mathcal M^\perp}f\!\left(e,m\right)\mathrm d\mu^\perp(e,m).$$
-
 Using this map, we can pull back any function $f^\perp$ on $\mathcal M^\perp$
 to become a function on $\mathcal M$ by
-
 $$f\!\left(e,m\right)\coloneqq f^\perp\!\left(\pi(e),\left(e,m\right)\right)$$
-
 and the other way around.
 I want to call $f$ the **contractional pullback** of $f^\perp$ under $\pi$
 and call $f^\perp$ the **contractional pushforward** of $f$ under $\pi$.
@@ -986,18 +950,14 @@ Therefore, their associated vector subspaces are the same vector subspace $\vec 
 which is a complement of the vector subspace $\vec W^\perp$,
 the vector space that $W^\perp$ is associated with.
 We can write
-
 $$\vec W=\vec W^\perp+\vec W^\parallel,\quad W=W^\perp+\vec W^\parallel.$$
-
 Each point in $W$ can be written in the form of $e+s$, where $e\in W^\perp$ and $s\in\vec W^\parallel$.
 Furthermore, for any $e\in W^\perp$, the map $s\mapsto e+s$ is a bijection
 from $\vec W^\parallel$ to $W^\parallel_e$.
 This bijection can then push forward linear operations from $\vec W^\parallel$ to $W^\parallel_e$.
 For example, we can define the action of some continuous linear functional $i\in\vec W^{\parallel\prime}$
 on a point $e'\in W^\parallel_e$ as
-
 $$i\!\left(e'\right)\coloneqq i\!\left(e'-\pi\!\left(e'\right)\right),$$ {#eq:eq-linear-op-on-affine}
-
 where $\pi\!\left(e'\right)$ is just $e$.
 
 However, we need to remember that
@@ -1051,10 +1011,12 @@ Physically, this means that the subsystems do not have any thermodynamic contact
 I would like to call the simplest case a **product thermal system**
 just as how mathematicians name their product spaces constructed out of existing spaces.
 
-*Definition.*
+<p class="no-indent">
+**Definition.**
 The **product space of extensive quantities** of two spaces of extensive quantities
 $\left(W^{(1)},E^{(1)},\lambda^{(1)}\right)$ and $\left(W^{(2)},E^{(2)},\lambda^{(2)}\right)$
 is a space of extensive quantities $\left(W,E,\lambda\right)$ constructed as such:
+</p>
 
 - $W\coloneqq W^{(1)}\times W^{(2)}$ is the product affine space of $W^{(1)}$ and $W^{(2)}$;
 - $E\coloneqq E^{(1)}\times E^{(2)}$ is the product topological space as well as the product measure space
@@ -1062,10 +1024,12 @@ of $E^{(1)}$ and $E^{(2)}$; and
 - $\lambda$ is the product measure of $\lambda^{(1)}$ and $\lambda^{(2)}$,
 whose uniqueness is guaranteed by the &sigma;-finiteness of $\lambda^{(1)}$ and $\lambda^{(2)}$.
 
-*Definition.*
+<p class="no-indent">
+**Definition.**
 The **product thermal system** of two thermal systems
 $\left(\mathcal E^{(1)},\mathcal M^{(1)}\right)$ and $\left(\mathcal E^{(2)},\mathcal M^{(2)}\right)$
 is a thermal system $\left(\mathcal E,\mathcal M\right)$ constructed as such:
+</p>
 
 - $\mathcal E\coloneqq\left(W,E,\lambda\right)$ is the product space of extensive quantities
 of $\mathcal E^{(1)}$ and $\mathcal E^{(2)}$; and
@@ -1093,14 +1057,15 @@ Conditional states are not very useful because they are not physically observed 
 The physically observed states of subsystems are marginal states,
 so marginal states are of special interest.
 
-*Definition.*
+<p class="no-indent">
+**Definition.**
 Given a state $p$ of the product thermal system $(\mathcal E,\mathcal M)$
 of $\left(\mathcal E^{(1)},\mathcal M^{(1)}\right)$ and $\left(\mathcal E^{(2)},\mathcal M^{(2)}\right)$,
 its **marginal state** of the subsystem $\left(\mathcal E^{(1)},\mathcal M^{(1)}\right)$
 is a state $p^{(1)}$ of the system $\left(\mathcal E^{(1)},\mathcal M^{(1)}\right)$ defined by
-
 $$p^{(1)}\!\left(e_1,m_1\right)\coloneqq\int_{\left(e_2,m_2\right)\in\mathcal M^{(2)}}
 p\!\left(e_1,e_2,m_1,m_2\right)\mathrm d\mu^{(2)}\!\left(e_2,m_2\right).$$
+</p>
 
 Physically, if a product thermal system is in equilibrium,
 then each of its subsystems is in equilibrium as well.
@@ -1143,7 +1108,8 @@ Mathematically, thie means that for any $e_1\in W^{(1)}$ and $e_2\in W^{(2)}$,
 the two maps $\pi\!\left(e_1,\cdot\right)$ and $\pi\!\left(\cdot,e_2\right)$
 are both injections.
 
-*Definition.*
+<p class="no-indent">
+**Definition.**
 A **(thermally) composite thermal system** of two thermal systems
 is the contraction of their product thermal system
 corresponding to a contracting $(\pi,\lambda^\perp)$, where
@@ -1151,18 +1117,15 @@ $\pi:W\to W^\perp:(e_1,e_2)\mapsto e$ satisfies that
 for any $e_1\in W^{(1)}$ and $e_2\in W^{(2)}$,
 the two maps $\pi\!\left(e_1,\cdot\right)$ and $\pi\!\left(\cdot,e_2\right)$
 are both injections.
+</p>
 
 We may define projection maps to get the extensive quantities of the subsystems
 from those of the composite system:
-
 $$c^{(1)}:W\to W^{(1)}:(e_1,e_2)\mapsto e_1,\quad
 c^{(2)}:W\to W^{(2)}:(e_1,e_2)\mapsto e_2.$$
-
 Then, for each $e\in W^\perp$, the two spaces
-
 $$W^{\parallel(1)}_e\coloneqq c^{(1)}\!\left(W_e^\parallel\right),\quad
 W^{\parallel(2)}_e\coloneqq c^{(2)}\!\left(W_e^\parallel\right)$$
-
 are respectively affine subspaces of $W^{(1)}$ and $W^{(2)}$,
 where $W_e^\parallel\coloneqq\pi^{-1}\!\left(e\right)$.
 The two affine subspaces are actually isomorphic to each other
@@ -1173,10 +1136,8 @@ such that $\pi\!\left(e_1,e_2\right)=e$, and vice versa.
 This gives a correspondence between the two affine subspaces.
 In other words, for each $e\in W^\perp$,
 there is a unique bijection $\rho_e:W^{\parallel(1)}_e\to W^{\parallel(2)}_e$ such that
-
 $$\forall e_1\in W^{\parallel(1)}_e:
 \pi\!\left(e_1,e_2\right)=e\Leftrightarrow e_2=\rho_e\!\left(e_1\right).$$ {#eq:eq-pi-and-rho-e}
-
 The bijection $\rho_e$ is an affine isomorphism
 from $W^{\parallel(1)}_e$ to $W^{\parallel(2)}_e$.
 
@@ -1194,13 +1155,9 @@ We write them as $\left(U_1,N_1\right)$ and $\left(U_2,N_2\right)$.
 They are in thermal contact so that they can exchange energy but not particles.
 Then, the extensive quantities of the composite system may be written as $\left(U/2,U/2,N_1,N_2\right)$,
 with $\pi:\left(U_1,U_2\right)\mapsto\left(U/2,U/2\right)$ defined as
-
 $$\pi\!\left(U_1,U_2\right)\coloneqq\left(\frac{U_1+U_2}2,\frac{U_1+U_2}2\right).$$
-
 The isomorphism $\rho_{U/2,U/2,N_1,N_2}$ is then
-
 $$\rho_{U/2,U/2,N_1,N_2}\!\left(U_1,N_1\right)=\left(U-U_1,N_2\right).$$
-
 The contracting is not unique.
 For example, $\left(U_1,U_2\right)\mapsto\left(3U/4,U/4\right)$ is another valid projection
 for constructing the composite thermal system, and it has exactly the same physical meaning
@@ -1229,11 +1186,9 @@ the subsystems (compositing slices) have isomorphic
 and completely dependent (deterministic) extensive quantities
 instead of having completely independent extensive quantities.
 Taken this into account, we can define marginal states of compositing slices as follows:
-
 $$p^{\parallel(1)}\!\left(e_1,m_1\right)
 \coloneqq\int_{m_2\in M^{(2)}_{\rho_e(e_1)}}p^\parallel\!\left(e_1,\rho_e(e_1),m_1,m_2\right)
 \mathrm d\mu^{(2)}_{\rho_e(e_1)}\!\left(m_2\right),$$ {#eq:eq-slice-marginal-state}
-
 where $p^{\parallel(1)}$ is a state of $\left(\mathcal E^{\parallel(1)}_e,\mathcal M^{\parallel(1)}_e\right)$,
 and $p^\parallel$ is a state of $\left(\mathcal E^{\parallel}_e,\mathcal M^{\parallel}_e\right)$
 (a contractive slice of the composite system).
@@ -1243,9 +1198,7 @@ and $p^\parallel$ is a state of $\left(\mathcal E^{\parallel}_e,\mathcal M^{\par
 There is an additional property that $\rho_e$ has.
 
 As we all know, an affine map is a linear map combined with a translation:
-
 $$\rho_e\!\left(e_1\right)=\vec\rho\!\left(e_1-e_0\right)+\rho_e\!\left(e_0\right),$$ {#eq:eq-rho-e-and-vec-rho}
-
 where $e_0$ is a fixed point in $W^{\parallel(1)}_e$,
 and $\vec\rho:\vec W^{\parallel(1)}_e\to \vec W^{\parallel(2)}_e$
 is a linear map that is independent of the choice of $e_0$.
@@ -1262,37 +1215,33 @@ a linear isomorphism from $\vec W^{\parallel(1)}$ to $\vec W^{\parallel(2)}$.
 
 Then, here is the interesting claim:
 
-*Theorem.*
+<p class="no-indent">
+**Theorem.**
 The linear map $\vec\rho$ defined above is independent of the choice of $e$.
+</p>
 
-<details markdown="1">
+<details>
 <summary>Proof</summary>
 
+<p class="no-indent">
 *Proof.*
 Because $\pi$ is an affine map, we have
-
 $$\pi\!\left(e_1,e_2\right)
 =\vec\pi\!\left(e_1-e_0,e_2-\rho_e\!\left(e_0\right)\right)+\pi\!\left(e_0,\rho_e\!\left(e_0\right)\right),$$
-
 where $e\in W^\perp$ is fixed,
 $e_0\in W^{\parallel(1)}_e$ is also fixed,
 and $\vec\pi:\vec W\to\vec W^\perp$ is a linear map that is independent of the choice of $e$ and $e_0$.
+</p>
 
 Let $e_2\coloneqq\rho_e\!\left(e_1\right)$ in the equation above, and we have
-
 $$\pi\!\left(e_1,\rho_e\!\left(e_1\right)\right)
 =\vec\pi\!\left(e_1-e_0,\rho_e\!\left(e_1\right)-\rho_e\!\left(e_0\right)\right)
 +\pi\!\left(e_0,\rho_e\!\left(e_0\right)\right).$$
-
 According to Equation [@eq:eq-pi-and-rho-e] and [@eq:eq-rho-e-and-vec-rho],
 we have
-
 $$e=\vec\pi\!\left(e_1-e_0,\vec\rho\!\left(e_1-e_0\right)\right)+e.$$
-
 In other words,
-
 $$\vec\pi\!\left(s_1,\vec\rho\!\left(s_1\right)\right)=0,$$ {#eq:eq-pi-s1-rho-s1-0}
-
 where $s_1\in\vec W^{\parallel(1)}$ is an arbitrary vector.
 
 Prove by contradition.
@@ -1303,19 +1252,13 @@ Because they are different maps,
 there exists an $s_1\in\vec W^{\parallel(1)}$ such that $\vec\rho(s_1)\ne\vec\rho'(s_1)$.
 
 On the other hand, we have
-
 $$\vec\pi\!\left(s_1,\vec\rho\!\left(s_1\right)\right)=0,\quad
 \vec\pi\!\left(s_1,\vec\rho'\!\left(s_1\right)\right)=0.$$
-
 Subtract the two equations, and because of the linearity of $l$, we have
-
 $$\vec\pi\!\left(0,\delta\right)=0,$$
-
 where $\delta\coloneqq\vec\rho(s_1)-\vec\rho'(s_1)$ is a nonzero vector.
 Then, we have
-
 $$\pi\!\left(e_1,e_2+\delta\right)-\pi\!\left(e_1,e_2\right)=\vec\pi(0,\delta)=0,$$
-
 which contradicts with the requirement that $\pi\!\left(e_1,\cdot\right)$ is injective.
 {% qed %}
 
@@ -1363,33 +1306,29 @@ Such unique decompositions can be encoded into a projection map $\pi^{(1)}:W^{(1
 It seems that we are now halfway to the construction of our contracting.
 However, before we proceed, I would like to prove a property of $W^{\perp(1)}$ we construct:
 
-*Theorem.*
+<p class="no-indent">
+**Theorem.**
 The map $\pi$ is an affine isomorphism
 from the product affine space $W^{\perp(1)}\times W^{(2)}$ to $W^\perp$.
+</p>
 
-<details markdown="1">
+<details>
 <summary>Proof</summary>
 
+<p class="no-indent">
 *Proof.*
 The map $\pi$ is itself affine, so we just need to prove that it is injective and surjective.
+</p>
 
 To prove it is injective, suppose that we have two points
 $(e_1,e_2)$ and $(e_1',e_2')$ in $W^{\perp(1)}\times W^{(2)}$, such that
-
 $$\pi\!\left(e_1,e_2\right)=\pi\!\left(e_1',e_2'\right)=:e.$$
-
 Then, we have
-
 $$\left(e_1,e_2\right),\left(e_1',e_2'\right)\in W^\parallel_e.$$
-
 Therefore, $e_1,e_1'\in W^{\parallel(1)}_e$, so
-
 $$e_1-e_1'\in\vec W^{\parallel(1)}.$$
-
 On the other hand, because $e_1,e_1'\in W^{\perp(1)}$, we have
-
 $$e_1-e_1'\in\vec W^{\perp(1)}.$$
-
 Because $\vec W^{\perp(1)}$ is a complement of $\vec W^{\parallel(1)}$,
 the only possible case is that $e_1=e_1'$.
 Then, due to $\pi\!\left(e_1,\cdot\right)$ being injective, $e_2=e_2'$.
@@ -1399,24 +1338,16 @@ Therefore, $\pi$ is injective if its domain is restricted to $W^{\perp(1)}\times
 To prove it is surjective, suppose $e\in W^\perp$.
 Because $\pi$ is surjective from $W$ to $W^\perp$,
 there exists some $\left(e_1',e_2'\right)\in W$ such that
-
 $$\pi\!\left(e_1',e_2'\right)=e.$$
-
 According to Equation [@eq:eq-pi-and-rho-e], this is equivalently
-
 $$e_2'=\rho_e\!\left(e_1'\right).$$
-
 We can uniquely decompose $e_1'\in W^{(1)}$ into
 the sum of a point $e_1\in W^{\perp(1)}$ and a vector $\delta\in\vec W^{\parallel(1)}$.
 Then, according to Equation [@eq:eq-rho-e-and-vec-rho], we have
-
 $$e_2'=\rho_e\!\left(e_1+\delta\right)=\rho_e\!\left(e_1\right)+\vec\rho\!\left(\delta\right).$$
-
 Thus $e_2\coloneqq e_2'-\vec\rho\!\left(\delta\right)=\rho_e\!\left(e_1\right)$.
 According to Equation [@eq:eq-pi-and-rho-e], this is equivalently
-
 $$\pi\!\left(e_1,e_2\right)=e.$$
-
 Therefore, $\left(e_1,e_2\right)\in W^{\perp(1)}\times W^{(2)}$
 is the desired point in $W^{\perp(1)}\times W^{(2)}$ that is mapped to $e$ under $\pi$.
 Therefore, $\pi$ is surjective if its domain is restricted to $W^{\perp(1)}\times W^{(2)}$.
@@ -1443,20 +1374,14 @@ then we can verify that they are actually the same as $\lambda^{\parallel(1)}_e$
 for any $e$ in the image of $\pi\!\left(e_1,\cdot\right)$.
 You can verify this easily by the following check (not a rigorous proof),
 where $\otimes$ denotes product measures or integration:
-
 $$\lambda=\lambda^{\perp}\otimes\left\{\lambda^\parallel_e\right\}
 =\lambda^{\perp(1)}\otimes\lambda^{(2)}\otimes\left\{\lambda^\parallel_e\right\}.$$
-
 On the other hand,
-
 $$\lambda=\lambda^{(1)}\otimes\lambda^{(2)}
 =\lambda^{\perp(1)}\otimes\left\{\lambda^{\parallel(1)\prime}_{e_1}\right\}\otimes\lambda^{(2)}.$$
-
 Comparing them, we have
-
 $$\left\{\lambda^{\parallel(1)\prime}_{e_1}\right\}=\left\{\lambda^\parallel_e\right\}
 =\left\{\lambda^{\parallel(1)}_e\right\}.$$
-
 An explicit verification is more tedious and is omitted here.
 
 Those assumptions are very strong, so we do not want to assume them.
@@ -1465,30 +1390,23 @@ so that $W^{\parallel(1)}_e$ are preimages of points in $W^{\perp(1)}$ under $\p
 Then, we can use similar tricks as Equation [@eq:eq-linear-op-on-affine] to define
 the action of any continuous linear functional $i_1\in\vec W^{\parallel(1)\prime}$
 on a point $e_1\in W^{(1)}$ as
-
 $$i_1\!\left(e_1\right)\coloneqq i_1\!\left(e_1-\pi^{(1)}\!\left(e_1\right)\right).$$
 
 We can also do the same thing on $W^{(2)}$.
 Then, an interesting thing to notice is that if we have
 $e_1\in W^{(1)}$ and $e_2\in W^{(2)}$ such that
-
 $$e\coloneqq\pi\!\left(e_1,e_2\right)
 =\pi\!\left(\pi^{(1)}\!\left(e_1\right),\pi^{(2)}\!\left(e_2\right)\right),$$
-
 then we have
-
 $$i_1\!\left(e_1\right)=i_2\!\left(e_2\right),$$
-
 where $i_1\in\vec W^{\parallel(1)\prime}$ and $i_2\in\vec W^{\parallel(2)\prime}$
 are anticonsistent to each other.
 
 *Example.*
 In the example of two thermal systems that can exchange energy but not number of particles,
 we may choose
-
 $$\pi^{(1)}\!\left(U_1,N_1\right)\coloneqq\left(0,N_1\right),\quad
 \pi^{(2)}\!\left(U_2,N_2\right)\coloneqq\left(0,N_2\right).$$
-
 Such projections are not unique, but this is the simplest one
 and also the most natural one considering their physical meanings.
 
@@ -1497,14 +1415,16 @@ and also the most natural one considering their physical meanings.
 We have newly defined some vector spaces.
 There are interesting relations between them:
 
-*Theorem.*
-
+<p class="no-indent">
+**Theorem.**
 $$\vec W^{\perp\parallel}\coloneqq\vec\pi\!\left(\vec W^{\parallel(1)}+\vec W^{\parallel(2)}\right)
 =\vec\pi\!\left(\vec W^{\parallel(1)}\right)=\vec\pi\!\left(\vec W^{\parallel(2)}\right).$$
+</p>
 
-<details markdown="1">
+<details>
 <summary>Proof</summary>
 
+<p class="no-indent">
 *Proof.*
 Obviously
 $\vec\pi\!\left(\vec W^{\parallel(2)}\right)\subseteq
@@ -1513,22 +1433,20 @@ so we just need to prove that
 $\vec\pi\!\left(\vec W^{\parallel(1)}\times\vec W^{\parallel(2)}\right)
 \subseteq\vec\pi\!\left(\vec W^{\parallel(2)}\right)$.
 To prove this, we just need to prove that for any
-
 $$s\coloneqq\vec\pi\!\left(s_1,s_2\right)\in\vec\pi\!\left(\vec W^{\parallel(1)}\times\vec W^{\parallel(2)}\right),$$
-
 where $s_1\in\vec W^{\parallel(1)}$ and $s_2\in\vec W^{\parallel(2)}$, we have
 $s\in\vec\pi\!\left(\vec W^{\parallel(2)}\right)$.
 To prove this, subtract Equation [@eq:eq-pi-s1-rho-s1-0] from the definition of $s$, and we have
-
 $$s=\vec\pi\!\left(0,s_2-\vec\rho\!\left(s_1\right)\right)\in\vec\pi\!\left(\vec W^{\parallel(2)}\right).$$
-
 Therefore,
 $\vec\pi\!\left(\vec W^{\parallel(1)}\times\vec W^{\parallel(2)}\right)
 \subseteq\vec\pi\!\left(\vec W^{\parallel(2)}\right)$.
 Similarly,
 $\vec\pi\!\left(\vec W^{\parallel(1)}\times\vec W^{\parallel(2)}\right)
 \subseteq\vec\pi\!\left(\vec W^{\parallel(1)}\right)$.
-Therefore, we proved the theorem. {% qed %}
+Therefore, we proved the theorem.
+{% qed %}
+</p>
 
 </details>
 
@@ -1540,50 +1458,39 @@ and a linear isomorphism from $\vec W^{\parallel(2)}$ to $\vec W^{\perp\parallel
 
 Here is another interesting thing about this vector space:
 
-*Theorem.*
+<p class="no-indent">
+**Theorem.**
 Suppose $e,e'\in W^\perp$.
 Iff $W^{\parallel(1)}_e=W^{\parallel(1)}_{e'}$ and $W^{\parallel(2)}_e=W^{\parallel(2)}_{e'}$,
 then $e'-e\in\vec W^{\perp\parallel}$.
+</p>
 
-<details markdown="1">
+<details>
 <summary>Proof</summary>
 
+<p class="no-indent">
 *Proof.*
 First, prove the "if" direction.
+</p>
 
 Because $W^{\parallel(1)}_e=W^{\parallel(1)}_{e'}$, we have
 $c^{(1)}\!\left(\pi^{-1}\!\left(e\right)\right)=c^{(1)}\!\left(\pi^{-1}\!\left(e'\right)\right)$.
 In other words,
-
 $$\forall x\in\pi^{-1}(e):\exists s_2\in\vec W^{(2)}:x+\left(0,s_2\right)\in\pi^{-1}(e').$$
-
 Equivalently, this means
-
 $$\pi(x)=e\Rightarrow\exists s_2\in\vec W^{(2)}:\pi\!\left(x+\left(0,s_2\right)\right)=e'.$$
-
 Note that $\pi\!\left(x+\left(0,s_2\right)\right)=\pi(x)+\vec\pi\!\left(0,s_2\right)$,
 which is just $e+\vec\pi\!\left(0,s_2\right)$, and we have
-
 $$\exists s_2\in\vec W^{(2)}:e'-e=\vec\pi\!\left(0,s_2\right).$$
-
 Similarly,
-
 $$\exists s_1\in\vec W^{(1)}:e'-e=\vec\pi\!\left(s_1,0\right).$$
-
 Subtract the two equations, and we have
-
 $$0=\vec\pi\!\left(s_1,-s_2\right),$$
-
 which means
-
 $$\left(s_1,-s_2\right)\in\vec\pi^{-1}(0)=\vec W^\parallel.$$
-
 Therefore,
-
 $$s_1\in c^{(1)}\!\left(\vec W^\parallel\right)=\vec W^{\parallel(1)}.$$
-
 Therefore,
-
 $$e'-e=\vec\pi\!\left(s_1,0\right)\in\vec\pi\!\left(\vec W^{\parallel(1)}\right)
 =\vec W^{\perp\parallel}.$$
 
@@ -1591,14 +1498,13 @@ Now, prove the "only if" direction.
 
 Because $e'-e\in\vec W^{\perp\parallel}=\vec\pi\!\left(\vec W^{\parallel(2)}\right)$,
 there exists $s_2\in\vec W^{\parallel(2)}$ such that
-
 $$e'=e+\vec\pi\!\left(0,s_2\right).$$
-
 Therefore, obviously we have
 $c^{(1)}\!\left(\pi^{-1}\!\left(e\right)\right)=c^{(1)}\!\left(\pi^{-1}\!\left(e'\right)\right)$,
 and thus $W^{\parallel(1)}_e=W^{\parallel(1)}_{e'}$.
 
-Similarly, we can prove that $W^{\parallel(2)}_e=W^{\parallel(2)}_{e'}$. {% qed %}
+Similarly, we can prove that $W^{\parallel(2)}_e=W^{\parallel(2)}_{e'}$.
+{% qed %}
 
 </details>
 
@@ -1629,7 +1535,6 @@ here is a diagram of the relation between (some of) them
 *Example.*
 In the example of two thermal systems that can exchange energy but not number of particles,
 we may have
-
 $$\pi^\perp\!\left(\frac U2,\frac U2,N_1,N_2\right)=\left(0,0,N_1,N_2\right).$$
 
 ## Baths
@@ -1650,10 +1555,12 @@ translationally invariant in such directions.
 
 Then, here comes the definition of a bath:
 
-*Definition.*
+<p class="no-indent">
+**Definition.**
 A thermal system $(\mathcal E,\mathcal M)$ is called
 a **$\left(\vec W^\parallel,i\right)$-bath**,
 where $\mathcal E=(W,E,\lambda)$ and $\mathcal M=\bigsqcup_{e\in W}M_e$, if
+</p>
 
 - $\vec W^\parallel$ is a vector subspace of $\vec W$ and is a Polish reflexive space;
 - For any $e\in E$ and $s\in\vec W^\parallel$, $e+s\in E$.
@@ -1662,7 +1569,6 @@ in other words, for any $s\in\vec W^\parallel$ and $A\in\sigma(E)$, we have $\la
 - $i\in\vec W^{\parallel\prime}$ is a continuous linear functional on $\vec W^\parallel$,
 called the **constant intensive quantities** of the bath; and
 - For any $e\in E$ and $s\in\vec W^\parallel$,
-
 $$\ln\mu_{e+s}\!\left(M_{e+s}\right)=i(s)+\ln\mu_e\!\left(M_e\right).$$
 
 ---
@@ -1685,9 +1591,7 @@ and a vector in $\vec W^\parallel$.
 Then, we have a projection map $\pi:W\to W^\perp$
 so that for any $e\in W$ we have $e-\pi(e)\in\vec W^\parallel$.
 Then, obviously, $\mu_e\!\left(M_e\right)$ must be in the form
-
 $$\mu_e\!\left(M_e\right)=f\!\left(\pi(e)\right)\mathrm e^{i(e-\pi(e))},$$ {#eq:eq-Omega-of-bath}
-
 where $f:W^\perp\to\mathbb R^+$ is some function.
 The eplicit formula of $f$ is $f(e)\coloneqq\mu_e\!\left(M_e\right)$.
 
@@ -1699,7 +1603,6 @@ we can disintegrate the measure $\lambda$ w.r.t. $\lambda^\parallel$ to get a me
 $\vec W^\parallel$-translationally invariant).
 Then, $\lambda$ is the product measure of $\lambda^\perp$ and $\lambda^\parallel$.
 In other words, for any measurable function $f:E\to\mathbb R$, we have
-
 $$\int_Ef\,\mathrm d\lambda=
 \int_{e\in E^\perp}\int_{s\in\vec W^\parallel}f\!\left(e+s\right)
 \mathrm d\lambda^\perp\!\left(e\right)\mathrm d\lambda^\parallel\!\left(s\right).$$
@@ -1717,10 +1620,8 @@ The thermal ensemble of a thermal system
 is the ensemble of the composite system of the system in question (subsystem 1) and
 a $\left(\vec W^{\parallel(2)},-i\circ\vec\rho^{-1}\right)$-bath (subsystem 2),
 where $i\in\vec W^{\parallel(1)\prime}$ is a parameter, with an extra requirement:
-
 $$\forall s_2\in\vec W^{\parallel(2)},A\in\sigma(E):
 \lambda^\perp\!\left(\pi\!\left(A+s_2\right)\right)=\lambda^\perp\!\left(\pi\!\left(A\right)\right).$$ {#eq:eq-W2-translationally-invariant}
-
 The physical meaning of $i$ is the intensive variables
 that the system is fixed at by contacting the bath.
 
@@ -1730,11 +1631,13 @@ It is called that because we will see that the only important thing
 that distinguishes different thermal ensembles is the choice of $\vec W^{\parallel(1)}$,
 and the choices of $\pi,\lambda^\perp,W^{\perp(1)},W^{\perp(2)}$ are not important.
 
-*Definition.*
+<p class="no-indent">
+**Definition.**
 The **composite system for the $\vec W^{\parallel(1)}$-ensemble**
 of the system $\left(\mathcal E^{(1)},\mathcal M^{(1)}\right)$ is the composite system
 of $\left(\mathcal E^{(1)},\mathcal M^{(1)}\right)$ and $\left(\mathcal E^{(2)},\mathcal M^{(2)}\right)$,
 where
+</p>
 
 - $\left(\mathcal E^{(2)},\mathcal M^{(2)}\right)$
 is a $\left(\vec W^{\parallel(2)},-i\circ\vec\rho^{-1}\right)$-bath,
@@ -1940,10 +1843,8 @@ each compositing slice in the subsystem.
 Because the equal a priori probability postulate,
 the equilibrium state $p^{\parallel\circ}_e$ on the contractive slice
 $$\left(\mathcal E^\parallel_e,\mathcal M^\parallel_e\right)$$ is
-
 $$p^{\parallel\circ}_e\!\left(e_1,e_2,m_1,m_2\right)
 =\frac1{\mu^\parallel_e\!\left(\mathcal M^\parallel_e\right)}\propto1,$$
-
 where $\mu^\parallel_e$ is the measure of the number of microstates on $\mathcal M^\parallel_e$.
 Here $\propto$ means that the factor is only related to $e$.
 We just need "$\propto$" instead of "$=$" because we can always normalize a probability density function.
@@ -1951,7 +1852,6 @@ We just need "$\propto$" instead of "$=$" because we can always normalize a prob
 Substitute this into Equation [@eq:eq-slice-marginal-state], and we get that
 the equilibrium state $p^{\parallel\circ(1)}_e$ on the compositing slice
 $$\left(\mathcal E^{\parallel(1)}_e,\mathcal M^{\parallel(1)}_e\right)$$ is
-
 $$\begin{align*}
 p^{\parallel\circ(1)}_e\!\left(e_1,m_1\right)
 &\propto\mu^{(2)}_{\rho_e(e_1)}\!\left(M^{(2)}_{\rho_e(e_1)}\right)
@@ -1961,7 +1861,6 @@ p^{\parallel\circ(1)}_e\!\left(e_1,m_1\right)
 \nonumber\\
 &\propto\mathrm e^{-i(e_1)}.
 \end{align*}$$ {#eq:eq-p-1-propto-e-i-e1}
-
 Here we utilized Equation [@eq:eq-Omega-of-bath] and the fact that for any $e_1\in W^{\parallel(1)}_e$,
 $\pi^{(2)}\!\left(\rho_e(e_1)\right)=\pi^{(2)}\!\left(W^{\parallel(2)}_e\right)$
 is the same and is only related to $e$.
@@ -1994,12 +1893,10 @@ This is not related to the choices of $\lambda^\perp$, $\lambda^{\perp(2)}$ etc.
 By this, we reduced the only thing that we need to care about into three ones
 $\lambda^{(1)}$, $\lambda^{\perp(1)}$, and $\lambda^{\parallel(1)}$,
 and their relation is given by the following:
-
 $$\int_{E^{(1)}}f\,\mathrm d\lambda^{(1)}=
 \int_{e_1\in E^{\perp(1)}}\mathrm d\lambda^{\perp(1)}\!\left(e_1\right)
 \int_{s_1\in\vec E^{\parallel(1)}_{e_1}}
 f\!\left(e_1+s_1\right)\mathrm d\lambda^{\parallel(1)}\!\left(s_1\right),$$
-
 where $E^{\perp(1)}\coloneqq\pi^{(1)}\!\left(E^{(1)}\right)$ and
 $\vec E^{\parallel(1)}_{e_1}\coloneqq\left(E^{(1)}-e_1\right)\cap\vec W^{\parallel(1)}$
 is the region of $s_1\in\vec W^{\parallel(1)}$ in which $e_1+s_1$ is in $E^{(1)}$.
@@ -2007,7 +1904,6 @@ is the region of $s_1\in\vec W^{\parallel(1)}$ in which $e_1+s_1$ is in $E^{(1)}
 Next, what we need to do is to normalize Equation [@eq:eq-p-1-propto-e-i-e1].
 The denominator in the normalization factor, which we could call the **partition function**
 $Z:\bigsqcup_{e_1\in E^{\perp(1)}}I^{(1)}_{e_1}\to\mathbb R$, is
-
 $$\begin{align*}
 Z\!\left(e_1,i\right)&\coloneqq\int_{s_1\in\vec E^{\parallel(1)}_{e_1}}
 \int_{m_1\in M^{(1)}_{e_1+s_1}}
@@ -2017,7 +1913,6 @@ Z\!\left(e_1,i\right)&\coloneqq\int_{s_1\in\vec E^{\parallel(1)}_{e_1}}
 \Omega^{(1)}\!\left(e_1+s_1\right)
 \mathrm e^{-i\left(s_1\right)}\,\mathrm d\lambda^{\parallel(1)}\!\left(s_1\right),
 \end{align*}$$
-
 where $I_{e_1}\subseteq\vec W^{\parallel(1)\prime}$
 is the region of $i$ in which the integral converges.
 It is possible that $I_{e_1}=\varnothing$ for all $e_1\in E^{\perp(1)}$,
@@ -2027,12 +1922,10 @@ and in this case the thermal ensemble is not defined.
 
 Because we have got rid of arguments about the bath and the composite system,
 we can now define the partition function without the "$(1)$" superscript:
-
 $$Z\!\left(e,i\right)=\int_{s\in\vec E^{\parallel}_e}
 \Omega\!\left(e+s\right)
 \mathrm e^{-i\left(s\right)}\,\mathrm d\lambda^{\parallel}\!\left(s\right),\quad
 e\in E^\perp,\quad i\in I_e\subseteq\vec W^{\parallel\prime}.$$
-
 By looking at the definition,
 we may see that the partition function is just the partial Laplace transform of $\Omega$.
 
@@ -2041,22 +1934,22 @@ because we can choose another $\lambda^\parallel$ by multiplying a positive cons
 
 The partition function has very good properties.
 
-*Theorem.*
+<p class="no-indent">
+**Theorem.**
 For any $e\in E^\perp$, $I_e$ is convex.
+</p>
 
-<details markdown="1">
+<details>
 <summary>Proof</summary>
 
+<p class="no-indent">
 *Proof.*
 Suppose $i,i'\in I_e$.
 The functional $i'-i$ defines a hyperplane $H\coloneqq\operatorname{Ker}\!\left(i'-i\right)$.
 The hyperplane separate $\vec W^\parallel$ into two half-spaces $H^+$ and $H^-$ defined as
-
 $$H^\pm\coloneqq\left\{s\in\vec W^\parallel\,\middle|\,i'\!\left(s\right)-i\!\left(s\right)\gtrless0\right\}.$$
-
 By definition, $Z\!\left(e,i\right)$ and $Z\!\left[e,i'\right]$ both converge.
 Let $t\in\left[0,1\right]$, and we have
-
 $$\begin{align*}
 Z\!\left(e,i+t\left(i'-i\right)\right)
 &=\left(\int_{s\in\vec E^{\parallel}_e\cap H^+}+\int_{s\in\vec E^{\parallel}_e\cap H^-}\right)
@@ -2068,9 +1961,9 @@ Z\!\left(e,i+t\left(i'-i\right)\right)
 \mathrm e^{-i'(s)}\,\mathrm d\lambda^{\parallel}\!\left(s\right)\\
 &<\infty.
 \end{align*}$$
-
 Therefore, $Z\!\left[e,i+t\left(i'-i\right)\right]$ converges.
 {% qed %}
+</p>
 
 </details>
 
@@ -2096,20 +1989,23 @@ because it is just for multi-index notation
 and because I am going to use them to label multi-index objects
 that are neither vectors nor linear functionals.
 
-*Theorem.*
+<p class="no-indent">
+**Theorem.**
 For any $e\in E^\perp$, $Z\!\left(e,i\right)$ is $C^\infty$ w.r.t. $i$ on $\operatorname{Int}I_e$.
+</p>
 
-<details markdown="1">
+<details>
 <summary>Proof</summary>
 
+<p class="no-indent">
 *Proof.*
 By the definition of the interior of a region,
 for any $i\in\operatorname{Int}I_e$ and any $p\in\vec W^{\parallel\prime}$,
 there exists $\delta_{i,p}>0$ such that $i+\delta_{i,p}p\in I_e$.
+</p>
 
 By Leibniz's integral rule, the partial derivatives of $Z\!\left(e,i\right)$ w.r.t. $i$
 (if existing) are given by
-
 $$\begin{align*}
 \frac{\partial^{\Sigma\alpha_\bullet}Z\!\left(e,i\right)}{\partial^{\alpha_\bullet}i_\bullet}
 &=\int_{s\in\vec E^{\parallel}_e}
@@ -2119,48 +2015,37 @@ $$\begin{align*}
 \Omega\!\left(e+s\right)\left|s_\bullet\right|^{\alpha_\bullet}
 \mathrm e^{-i\left(s\right)}\,\mathrm d\lambda^{\parallel}\!\left(s\right)
 \end{align*}$$
-
 where $\alpha_\bullet$ is some natural numbers indexed by $\bullet$.
 Now we just need to prove that this integral converges for any $i\in\operatorname{Int}I_e$.
 
 Because of the inequality
-
 $$a\ln x-bx\le a\left(\ln\frac ab-1\right),\quad a,b,x>0,$$
-
 where the equality holds when $x=a/b$, we have
-
 $$\left|s_\bullet\right|^{\alpha_\bullet}
 \le\left(\frac{\alpha_\bullet}{\mathrm eb}\right)^{\alpha_\bullet}\mathrm e^{b\Sigma\left|s_\bullet\right|},
-\quad b>0$$
+\quad b>0.$$
 
 There are $2^{\dim\vec W^\parallel}$ orthants in $\vec W^\parallel$.
 We can label each of them by a string $\sigma_\bullet$ of $\pm1$ of length $\dim\vec W^\parallel$.
 Then, each orthant can be denoted as $O_\sigma$.
 Then, we have
-
 $$\forall s\in O_\sigma:\sigma_\bullet s_\bullet=\Sigma\left|s_\bullet\right|.$$
-
 Therefore,
-
 $$\forall s\in O_\sigma:\left|s_\bullet\right|^{\alpha_\bullet}
 \le\left(\frac{\alpha_\bullet}{\mathrm eb}\right)^{\alpha_\bullet}\mathrm e^{b\sigma_\bullet s_\bullet},
 \quad b>0.$$
 
 Let $b\coloneqq\delta_{i,-\sigma}$, where $\sigma:s\mapsto\sigma_\bullet s_\bullet$ is a linear functional.
 Then,
-
 $$\forall s\in O_\sigma:\left|s_\bullet\right|^{\alpha_\bullet}\mathrm e^{-i(s)}
 \le\left(\frac{\alpha_\bullet}{\mathrm e\delta_{i,-\sigma}}\right)^{\alpha_\bullet}
 \mathrm e^{-\left(i-\delta_{i,-\sigma}\sigma\right)(s)}.$$
-
 Because $i-\delta_{i,-\sigma}\sigma\in I_e$, we have
-
 $$\frac{\partial^{\Sigma\alpha_\bullet}Z\!\left(e,i\right)}{\partial^{\alpha_\bullet}i_\bullet}
 \le\sum_\sigma\left(\frac{\alpha_\bullet}{\mathrm e\delta_{i,-\sigma}}\right)^{\alpha_\bullet}
 \int_{s\in\vec E^{\parallel}_e\cap O_\sigma}\Omega\!\left(e+s\right)
 \mathrm e^{-\left(i-\delta_{i,-\sigma}\sigma\right)(s)}\,
 \mathrm d\lambda^{\parallel}\!\left(s\right)<\infty.$$
-
 Therefore, the partial derivatives exist.
 {% qed %}
 
@@ -2170,14 +2055,11 @@ Therefore, the partial derivatives exist.
 
 The next step is to find the macroscopic quantities.
 The equilibrium states are
-
 $$p_e^{\parallel\circ}\!\left(e,m\right)
 =\frac{\mathrm e^{-i\left(e\right)}}{Z\!\left(\pi(e),i\right)}.$$
-
 where $Z$ is the partition function.
 Here the role of $e$ becomes the label parameter in Equation [@eq:eq-fundamental-equation-before].
 The measured value of extensive quantities under equilibrium is then
-
 $$\begin{align*}
 \varepsilon^\circ
 &=\frac1{Z\!\left(e,i\right)}\int_{s\in\vec E^{\parallel}_e}
@@ -2188,9 +2070,7 @@ s\mathrm e^{-i\left(s\right)}
 \Omega\!\left(e+s\right)\mathrm d\lambda^{\parallel}\!\left(s\right)\\
 &=e+\frac{\partial\ln Z\!\left(e,i\right)}{\partial i}.
 \end{align*}$$
-
 The entropy under equilibrium is then
-
 $$\begin{align*}
 S^\circ
 &=\int_{s\in\vec E^{\parallel}_e}
@@ -2202,12 +2082,9 @@ i\!\left(s\right)\mathrm e^{-i\left(s\right)}
 +\ln Z\!\left(e,i\right)\\
 &=-i\!\left(\frac{\partial\ln Z\!\left(e,i\right)}{\partial i}\right)+\ln Z\!\left(e,i\right).
 \end{align*}$$
-
 By this two equations, we can eliminate the parameter $e$ and get the fundamental equation
 in the form of Equation [@eq:eq-fundamental-equation]:
-
 $$S^\circ=i\!\left(\varepsilon^\circ\right)+\ln Z\!\left(\pi\!\left(\varepsilon^\circ\right),i\right).$$
-
 We can see that $S^\circ$ decouples into two terms,
 one of which is only related to the $\vec W^\parallel$ component of $\varepsilon^\circ$,
 and the other of which is only related to the $W^\perp$ component of $\varepsilon^\circ$.

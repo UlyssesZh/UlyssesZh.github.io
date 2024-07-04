@@ -64,9 +64,7 @@ by a thermally non-conductive, massless, incompressible plate in the middle that
 The two parts can then adiabatically exchange
 energy ($U$) and volume ($V$) but not number of particles ($N$).
 For one of the parts, we have
-
 $$0=\delta Q=\mathrm dU+p\,\mathrm dV=\mathrm dU+\frac{2U}{3V}\,\mathrm dV,$$
-
 which is good and easy to deal with
 because it is simply a differential 1-form.
 
@@ -109,9 +107,7 @@ so that any process of it is reversible.
 Then, the pressure (or generally, any other intensive quantities that we are in control of
 times the temperature) is determined (and actually constant),
 and we can express the non-conductivity restriction as
-
 $$\mathrm dU+p\,\mathrm dV=0,$$
-
 where $p$ is the pressure, which is a constant.
 This is a homogeneous linear equation on $\vec W^{\parallel(1)}$
 (whose vectors are denoted as $(\mathrm dU,\mathrm dV)$ in our case)
@@ -123,10 +119,8 @@ is the hyperplane of fixed enthalpy.
 Note that our bath actually has the fixed intensive quantities
 $i=\left(1/T,p/T\right)\in\vec W^{\parallel(1)\prime}$,
 we can rewrite the above equation as
-
 $$\vec W^{\parallel\parallel(1)}
 =\left\{s_1\in\vec W^{\parallel(1)}\,\middle|\,i\!\left(s_1\right)=0\right\}.$$ {#eq:eq-W-star-parallel}
-
 Wait! What does $T$ do here? It is supposed to mean the temperature of the bath,
 but the temperature of the bath is irrelevant since the contact is non-thermal.
 Actually, it is.
@@ -177,9 +171,7 @@ with the same enthalpy and number of particles into the same point.
 Because a complement of a vector subspace is not determined,
 there are multiple possible ways of constructing the projection.
 One possible way is
-
 $$\pi^{\star(1)}\!\left(U,V,N\right)\coloneqq\left(U+pV,0,N\right).$$
-
 Here the fixed intensive quantity $p$ is involved.
 Note that this projection is still valid for different temperatures of the bath,
 so an overall constant factor of $i$ does not affect the projection.
@@ -200,11 +192,9 @@ $\left(\mathcal E^{(2)},\mathcal M^{(2)}\right)$.
 
 Consider this projection $\pi^\star:W\to W^{\star\perp}$
 (where $W^{\star\perp}$ is an affine subspace of $W$ and the range of $\pi^\star$):
-
 $$\pi^\star\!\left(e_1,e_2\right)
 \coloneqq\left(\pi^{\star(1)}\!\left(e_1\right),
 \rho_{\pi(e_1,e_2)}\!\left(\pi^{\star(1)}\!\left(e_1\right)\right)\right).$$ {#eq:eq-pi-star}
-
 To ensure that it is well-defined, we need to guarantee that
 $\pi^{\star(1)}\!\left(e_1\right)\in W^{\parallel(1)}_{\pi(e_1,e_2)}$
 for any $e_1,e_2$, and this is true.
@@ -234,25 +224,17 @@ to a "thermally non-conductive plate".
 Suppose that in the new situation, the intensive quantities "felt" by subsystem 1 is
 $i^\star\in\vec W^{\star\parallel(1)\prime}$.
 Then, because the bath is still the same bath in the two situations, we have
-
 $$-i^\star\circ\vec\rho^{\star-1}=-i\circ\vec\rho^{-1}.$$
-
 Therefore,
-
 $$i^\star\coloneqq i\circ\vec\rho^{-1}\circ\vec\rho^\star$$ {#eq:eq-i-star}
-
 would be a good definition of $i^\star$.
 However, actually $i^\star$ is trivial:
-
 $$i^\star=0.$$ {#eq:eq-i-star-0}
-
 This is because [@eq:eq-pi-star] shows that
 $\rho\!\left(W^{\star\parallel(1)}_e\right)=W^{\star\parallel(2)}_e$,
 and thus
-
 $$\vec\rho^{-1}\!\left(\vec\rho^\star\!\left(\vec W^{\star\parallel(1)}\right)\right)
 =\vec W^{\star\parallel(1)},$$
-
 which is the kernel of $i$ by definition.
 
 Because $i^\star$ is trivial, it is irrelevant to the temperature of the bath
@@ -262,15 +244,11 @@ because it is zero no matter what temperature the bath is at.
 Suppose a system described by $U_1,V_1,N_1$ is in non-thermal contact with a pressure bath,
 and they can exchange energy and volume.
 The projection $\pi$ is
-
 $$\pi\!\left(U_1,V_1,N_1,U_2,V_2,N_2\right)
 =\left(\frac{U_1+U_2}2,\frac{V_1+V_2}2,N_1,\frac{U_1+U_2}2,\frac{V_1+V_2}2,N_2\right).$$
-
 Then, the projection $\pi^\star$ can be
-
 $$\pi^\star\!\left(U_1,V_1,N_1,U_2,V_2,N_2\right)
 =\left(U_1+pV_1,0,N_1,U_2-pV_1,V_1+V_2,N_2\right).$$
-
 By choosing a different $\pi^{\star(1)}$ or a different $\pi$,
 we can get a different $\pi^\star$.
 They physically mean the same composite system.
@@ -280,43 +258,32 @@ We can denote the five degrees of freedom as
 $U,V,H_1,N_1,N_2$, where $U\coloneqq U_1+U_2$ is the total energy, $V\coloneqq V_1+V_2$ is the total volume,
 and $H_1\coloneqq U_1+pV_1$ is the enthalpy of subsystem 1.
 Then, the projection $\pi^\star$ can be written as
-
 $$\pi^\star\!\left(U_1,V_1,N_1,U_2,V_2,N_2\right)
 =\left(H_1,0,N_1,U-H_1,V,N_2\right).$$
-
 We can get $W^{\star\parallel}_e$ by finding the inverse of the projection,
 where $e\coloneqq\left(H_1,0,N_1,U-H_1,V,N_2\right)$:
-
 $$W^{\star\parallel}_e\coloneqq\pi^{\star-1}\!\left(e\right)
 =\left\{\left(H_1-pV_1,V_1,N_1,U-H_1+pV_1,V-V_1,N_2\right)\middle|\,V_1\in\mathbb R\right\}.$$
-
 Because it is parameterized by one real parameter $V_1$,
 it is a one-dimensional affine subspace of $W$.
 Projecting it under $c^{(1)}$ and $c^{(2)}$ will respectively give us
 $W^{\star\parallel(1)}_e$ and $W^{\star\parallel(2)}_e$:
-
 $$W^{\star\parallel(1)}_e
 \coloneqq\left\{\left(H_1-pV_1,V_1,N_1\right)\middle|\,V_1\in\mathbb R\right\},$$
-
 $$W^{\star\parallel(2)}_e
 \coloneqq\left\{\left(U-H_1+pV_1,V-V_1,N_2\right)\middle|\,V_1\in\mathbb R\right\}.$$
 
 The affine isomorphism $\rho^\star_e$ is then naturally
-
 $$\rho^\star_e\!\left(H_1-pV_1,V_1,N_1\right)=\left(U-H_1+pV_1,V-V_1,N_2\right).$$
-
 Its vectoric form is then
-
 $$\vec\rho^\star\!\left(-p\,\mathrm dV_1,\mathrm dV_1,0\right)
 =\left(p\,\mathrm dV_1,-\mathrm dV_1,0\right).$$
 
 Our fixed intensive quantities are $i$, which is defined as
 $i\!\left(\mathrm dU_1,\mathrm dV_1,0\right)=\frac1T\,\mathrm dU_1+\frac pT\,\mathrm dV_1$.
 We can then get $i^\star$ by
-
 $$i^\star\coloneqq i\circ\vec\rho^{-1}\circ\vec\rho^\star
 =\left(-p\,\mathrm dV_1,\mathrm dV_1,0\right)\mapsto0.$$
-
 This is consistent with Equation [@eq:eq-i-star-0].
 
 ## Non-thermal ensembles (bath version)
@@ -325,13 +292,15 @@ Now, we can define the non-thermal contact with a bath
 to be the same as the thermal contact with a bath under $\pi^\star$.
 Utilizing this definition, we can define the composite system for non-thermal ensembles.
 
-*Definition.*
+<p class="no-indent">
+**Definition.**
 A **composite system for the non-thermal $\vec W^{\parallel(1)}$-ensemble**
 of the system $\left(\mathcal E^{(1)},\mathcal M^{(1)}\right)$
 with fixed intensive quantities $i$
 is the same as the composite system for the thermal $\vec W^{\star\parallel(1)}$-ensemble
 with fixed intensive quantities $i^\star=0$ (given by Equation [@eq:eq-i-star-0]),
 where $\vec W^{\star\parallel(1)}$ is defined by Equation [@eq:eq-W-star-parallel].
+</p>
 
 This definition looks very neat.
 Also, just like how we define the domain of fixed intensive quantities of a thermal ensemble,
@@ -343,48 +312,40 @@ Because we already derived the formula of the partition function in
 that does not involve information about the bath anymore,
 we can drop the "$(1)$" in the superscripts.
 The partition function of the non-thermal ensemble is then
-
 $$Z^\star\!\left(e,i^\star\right)=\int_{s\in\vec E^{\star\parallel}_e}
 \Omega\!\left(e+s\right)
 \mathrm e^{-i^\star\left(s\right)}\,\mathrm d\lambda^{\parallel}\!\left(s\right),\quad
 e\in E^{\star\perp},\quad i^\star\in I^\star_e\subseteq\vec W^{\star\parallel\prime}.$$
-
 Here, the $i^\star$ is not fixed at the trivial value $0$ (I abused the notation here)
 but actually is an independent variable
 serving as one of the arguments of the partition function that takes values in $I^\star_e$
 (which is not the domain of fixed intensive quantities of the non-thermal ensemble that was mentioned above).
+
 However, the only meaningful information about this non-thermal ensemble
 is in the behavior of $Z^\star$ at $i^\star=0$ instead of any arbitrary $i^\star\in I^\star_e$,
 but we do not know whether $0\in I^\star_e$ or not.
 This is then a criterion of judge whether $i$ is
 in the domain of fixed intensive quantities of the non-thermal ensemble or not.
 To be clear, we define
-
 $$J\coloneqq\left\{i\in\vec W^{\parallel\prime}\,\middle|\,
 \exists e\in E^{\star\perp}:0\in I^\star_{e}\right\}.$$
-
 A problem about this formulation is that it is possible to have two $i$'s that share the same
 thermal equilibrium state.
 In that case, the non-thermal ensemble is not defined.
 
 Because $i^\star=0$, the observed extensive quantities in thermal equilibrium are just
-
 $$\varepsilon^\circ
 =e+\left.\frac{\partial\ln Z^\star\!\left(e,i^\star\right)}{\partial i^\star}\right|_{i^\star=0}
 =e+\frac{\int_{s\in\left(E-e\right)\cap\vec W^{\star\parallel}}
 s\Omega\!\left(e+s\right)\mathrm d\lambda^{\parallel}\!\left(s\right)}
 {\int_{s\in\left(E-e\right)\cap\vec W^{\star\parallel}}
 \Omega\!\left(e+s\right)\mathrm d\lambda^{\parallel}\!\left(s\right)},$$ {#eq:eq-epsilon-circ}
-
 and the entropy in thermal equilibrium is just
-
 $$S^\circ=\ln Z^\star\!\left(e,0\right)
 =\ln\int_{s\in\left(E-e\right)\cap\vec W^{\star\parallel}}
 \Omega\!\left(e+s\right)\mathrm d\lambda^{\parallel}\!\left(s\right).$$ {#eq:eq-S-circ}
-
 We can cancel the parameter $e$ by Equation [@eq:eq-epsilon-circ] and [@eq:eq-S-circ]
 to get
-
 $$S^\circ=\ln Z^\star\!\left(\pi^\star\!\left(\varepsilon^\circ\right),0\right)
 =\ln\int_{s\in\left(E-\varepsilon^\circ\right)\cap\vec W^{\star\parallel}}
 \Omega\!\left(\varepsilon^\circ+s\right)\mathrm d\lambda^{\parallel}\!\left(s\right).$$ {#eq:eq-S-circ-vs-epsilon-circ}

@@ -61,6 +61,7 @@ Active:
 * [BeReal.](https://bere.al/ulysseszhan) (ulysseszhan)
 * [Bilibili](https://space.bilibili.com/226047082/dynamic)
 * [小红书](https://xiaohongshu.com/user/profile/61accfa9000000001000f798) (8076302547)
+* [简书](https://jianshu.com/u/ccbbd031f85b)
 
 </details>
 
@@ -128,6 +129,7 @@ Specific:
 * [MiraiForum](https://mirai.mamoe.net/user/%E6%9C%89%E4%B8%98%E7%9B%B4%E6%96%B9) (有丘直方)
 * [超理论坛](https://chaoli.club/index.php/member/14584) (有丘直方)
 * [GNOME Discourse](https://discourse.gnome.org/u/ulysseszhan) (UlyssesZhan)
+* [X Developers Forums](https://devcommunity.x.com/u/ulysseszhan) (UlyssesZhan)
 
 </details>
 

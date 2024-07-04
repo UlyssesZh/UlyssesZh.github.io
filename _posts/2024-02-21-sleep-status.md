@@ -49,7 +49,9 @@ for [GitHub CLI](https://cli.github.com/):
 gh extension install vilmibm/gh-user-status
 ```
 
+<p class="no-indent">
 Then, you can set the status with:
+</p>
 
 ```shell
 # Set sleeping status
@@ -67,14 +69,14 @@ MacroDroid supports using
 the return value of [the sleep API](https://developers.google.com/location-context/sleep) to trigger an action,
 but this tends to be quite unreliable on my device.
 Therefore, I use it in conjunction with a quick setting tile that I can toggle manually.
-The macro is like this:
+The macro has two triggers:
 
-Triggers:
+- Fell Asleep / Woke Up (Android sleep API),
+- Quick Tile On/Off,
 
-- Fell Asleep / Woke Up (Android sleep API)
-- Quick Tile On/Off
-
-Actions:
+<p class="no-indent">
+and it has these actions:
+</p>
 
 ```plain
 If Trigger Fired: Woke Up, or Quick Tile Off
