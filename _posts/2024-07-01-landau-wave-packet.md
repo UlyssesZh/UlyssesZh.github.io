@@ -27,15 +27,11 @@ First, for readers who are not familiar with the
 [Landau levels](https://en.wikipedia.org/wiki/Landau_levels#In_the_Landau_gauge), here is a brief introduction.
 For an electron confined in the $xy$ plane under a magnetic field $\mbf B=B\bhat z$,
 its Hamiltonian is
-
 $$H=\fr1{2m_e}\p{p_x^2+\p{p_y-\fr{eB}cx}^2}$$
-
 under the Landau gauge $\mbf A=Bx\bhat y$.
 Its eigenstates in the position representation are
-
 $$\fc{\psi_{nk}}{x,y}=\e^{\i ky}\fc{H_n}{\fr xl-kl}
 \e^{-\p{x-kl^2}^2/2l^2}$$
-
 labeled by $n\in\bN$ and $k\in\bR$,
 where $H_n$ is the Hermite polynomial of degree $n$
 and $l\ceq\sqrt{\hbar c/eB}$.
@@ -44,24 +40,20 @@ States with the same $n$ are degenerate in energy
 The Landau level with $n=0$ is called the lowest Landau level.
 
 The problem, now, is this optimization problem:
-
 $$\begin{align*}
 	\min_{a_k}\quad&\mel{\Psi}{x^2+y^2}{\Psi}\\
 	\st\quad&\braket{\Psi}{\Psi}=1,\\
 	&\mel{\Psi}{x}{\Psi}=R_x,\\
 	&\mel{\Psi}{y}{\Psi}=R_y
 \end{align*}$$
-
 (optimizing $\a{x^2+y^2}$ is equivalent to optimizing $\sgm_x^2+\sgm_y^2$
 because $\a x$ and $\a y$ are both fixed),
 where $\ket\Psi$ is defined as the state whose position representation is
-
 $$\fc\Psi{x,y}=\int\d k\,a_k\e^{\i ky}\e^{-\p{x-kl^2}^2/2l^2}.$$
 
 ## The solution
 
 Consider the [moment-generating function](https://en.wikipedia.org/wiki/Moment_generating_function)
-
 $$\begin{align*}
 	\fc M{u,v}&\ceq\mel{\Psi}{\e^{ux+vy}}{\Psi}\\
 	&=\iint\d x\d y\,\e^{ux+vy}
@@ -82,14 +74,10 @@ $$\begin{align*}
 		+\fr\i2l^2\p{a_k+2ka_k'}uv+\cdots
 	\right),
 \end{align*}$$
-
 where $a_k'\ceq\d a_k/\d k$ and $a_k''\ceq\d^2a_k/\d k^2$.
 On the other hand, we have
-
 $$\fc M{u,v}=\mel{\Psi}{1+ux+uy+\fr12u^2x^2+\fr12v^2y^2+uvxy+\cdots}{\Psi}.$$
-
 Compare the expansion coefficients, and we have
-
 $$\begin{align*}
 	\braket{\Psi}{\Psi}&=2\pi^{3/2}l\int\d k\,a_k^*a_k,\\
 	\mel{\Psi}{x}{\Psi}&=2\pi^{3/2}l^3\int\d k\,a_k^*ka_k,\\
@@ -100,35 +88,26 @@ $$\begin{align*}
 
 Define $\fc\vphi k\ceq a_k\sqrt{2\pi^{3/2}l}$.
 Define fictitious position and momentum operators acting on $\vphi$ as
-
 $$\Xi\vphi:k\mapsto k\fc\vphi k,\quad
 \Pi\vphi:k\mapsto-\i\fc{\vphi'}k.$$
-
 Using the constraints of the original optimization problem
 and abusing the bra--ket notation on $\vphi$, we have
-
 $$\braket{\vphi}{\vphi}=1,\quad\mel\vphi\Xi\vphi=\fr{R_x}{l^2},\quad
 \mel\vphi\Pi\vphi=-R_y.$$
-
 The objective function then becomes
-
 $$\mel{\Psi}{x^2+y^2}{\Psi}=\fr12l^2+\mel{\vphi}{\mcal H}{\vphi},$$
-
 where $\mcal H\ceq \Pi^2/2+l^4\Xi^2/2$ is a fictitious Hamiltonian,
 which is the Hamiltonian of a harmonic oscillator with
 mass $1$ and angular frequency $\omg\ceq l^2$.
 
 The optimization problem can now be re-stated in terms of $\ket\vphi$ as
-
 $$\begin{align*}
 	\min_{\ket\vphi}\quad&\mel\vphi{\mcal H}{\vphi}\\
 	\st\quad&\braket\vphi\vphi=1,\quad\mel\vphi\Xi\vphi=R_x/\omg,\quad\mel\vphi\Pi\vphi=-R_y.
 \end{align*}$$
-
 Physically, this means that we want to find the state of a harmonic oscillator
 with the given expectation values of position and momentum and the lowest energy.
 To find it, we can use Hisenberg's uncertainty principle:
-
 $$\begin{align*}
 	\a{\mcal H}&=\fr12\a{\Pi^2}+\fr12\omg^2\a{\Xi^2}\\
 	&=\fr12\p{\a\Pi^2+\sgm_\Pi^2}+\fr12\omg^2\p{\a{\Xi^2}+\sgm_\Xi^2}\\
@@ -136,27 +115,20 @@ $$\begin{align*}
 	&\ge\omg\sgm_\Pi\sgm_\Xi+\fr12R^2
 	\ge\fr12\omg+\fr12R^2.
 \end{align*}$$
-
 The equality in the first "$\ge$" is achieved when $\sgm_\Pi=\omg\sgm_\Xi$,
 and that in the second "$\ge$" is achieved when the uncertainty principle is saturated.
 As we know from quantum mechanics, the
 [coherent state](https://en.wikipedia.org/wiki/Coherent_state)
 of a harmonic oscillator satisfies both conditions.
 The wavefunction of this state is
-
 $$\fc\vphi k=\p{\fr\omg\pi}^{1/4}
 \fc\exp{-\fr12\omg\p{k-\fr{R_x}{\omg}}^2-\i R_yk}.$$
-
 Express the final result in terms of $a_k$:
-
 $$a_k=\fr1{\sqrt2\pi}\e^{-\i kR_y}\e^{-\fr1{2l^2}\p{R_x-kl^2}^2}.$$
-
 We may work out the integral to get the wave function of the wave packet:
-
 $$\fc{\Psi}{x,y}=\fr1{\sqrt{2\pi}l}\fc\exp{-\fr1{4l^2}\p{
 	\p{x-R_x}^2+\p{y-R_y}^2-2\i\p{x+R_x}\p{y-R_y}
 }}.$$
-
 This is a Gaussian wave packet centered at $\mbf R$ with covariance matrix
 $\opc{Diag}{l^2,l^2}$.
 
