@@ -29,6 +29,7 @@ $lm-details-background-color: #fef0f1 !default;
 $lm-local-link-color: #fca25e !default;
 $lm-selection-color: #ffffff !default;
 $lm-selection-background-color: #ffa2a5 !default;
+$lm-target-background-color: #fcc3f6 !default;
 
 $dm-kbd-border-color: #333333 !default;
 $dm-kbd-color: #cccccc !default;
@@ -40,10 +41,11 @@ $dm-search-border-color: #862333 !default;
 $dm-search-background-color: #000 !default;
 $dm-lineno-color: #777 !default;
 $dm-lineno-background-color: #202020 !default;
-$dm-details-background-color: #1e0b10 !default;
+$dm-details-background-color: #200b15 !default;
 $dm-local-link-color: #fca25e !default;
 $dm-selection-color: #000000 !default;
-$dm-selection-background-color: #ce70a0 !default;
+$dm-selection-background-color: #be7090 !default;
+$dm-target-background-color: #901680 !default;
 
 @function str-replace($string, $search, $replace: '') {
 	$index: str-index($string, $search);
@@ -86,6 +88,7 @@ $dm-summary-image-brand: summary-image($dm-brand-color, 1px) !default;
 	--local-link-color: #{$lm-local-link-color};
 	--selection-color: #{$lm-selection-color};
 	--selection-background-color: #{$lm-selection-background-color};
+	--target-background-color: #{$lm-target-background-color};
 
 	--hr-image: #{$lm-hr-image};
 	--summary-image: #{$lm-summary-image};
@@ -107,6 +110,7 @@ $dm-summary-image-brand: summary-image($dm-brand-color, 1px) !default;
 		--local-link-color: #{$dm-local-link-color};
 		--selection-color: #{$dm-selection-color};
 		--selection-background-color: #{$dm-selection-background-color};
+		--target-background-color: #{$dm-target-background-color};
 
 		--hr-image: #{$dm-hr-image};
 		--summary-image: #{$dm-summary-image};
@@ -128,6 +132,7 @@ $details-background-color: var(--details-background-color);
 $local-link-color: var(--local-link-color);
 $selection-color: var(--selection-color);
 $selection-background-color: var(--selection-background-color);
+$target-background-color: var(--target-background-color);
 
 $hr-image: var(--hr-image);
 $summary-image: var(--summary-image);
@@ -235,6 +240,14 @@ hr {
 		left: 50%;
 		translate: -50% -50%;
 	}
+}
+
+//==========
+// Target
+//==========
+
+:target:not(#gitalk-container), ::target-text {
+	background-color: $target-background-color;
 }
 
 //==========
