@@ -130,6 +130,7 @@ Specific:
 * [超理论坛](https://chaoli.club/index.php/member/14584) (有丘直方)
 * [GNOME Discourse](https://discourse.gnome.org/u/ulysseszhan) (UlyssesZhan)
 * [X Developers Forums](https://devcommunity.x.com/u/ulysseszhan) (UlyssesZhan)
+* [Syncthing Community Forum](https://forum.syncthing.net/u/ulysseszhan) (UlyssesZhan)
 
 </details>
 
