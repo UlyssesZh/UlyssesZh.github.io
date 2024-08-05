@@ -112,11 +112,11 @@ $gt-mask-z-index: 9999 !default;
 
 /* functions & mixins */
 @mixin clearfix() {
-	&:before, &:after {
+	&::before, &::after {
 		content: " ";
 		display: table;
 	}
-	&:after {
+	&::after {
 		clear: both;
 	}
 }
@@ -223,7 +223,7 @@ $gt-size-avatar-mobi: em(32px) !default;
 
 		line-height: $gt-size-loader;
 		border-radius: 50%;
-		&:before {
+		&::before {
 			content: '';
 			position: absolute;
 			display: block;
@@ -413,7 +413,7 @@ $gt-size-avatar-mobi: em(32px) !default;
 			position: relative;
 			text-decoration: none;
 			&.is--active {
-				&:before {
+				&::before {
 					content: '';
 					width: em(4px);
 					height: em(4px);

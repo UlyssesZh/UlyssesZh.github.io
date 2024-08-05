@@ -233,7 +233,7 @@ hr {
 		color-mix(in srgb, $hr-background-color 0%, transparent)
 	);
 
-	&:before {
+	&::before {
 		content: $hr-image;
 		position: absolute;
 		top: 50%;
