@@ -69,7 +69,6 @@ Active:
 
 Active:
 
-* [GitHub](https://github.com/UlyssesZh) (UlyssesZh)
 * [知乎](https://zhihu.com/people/ulysseszhan)
 * [Bilibili](https://space.bilibili.com/226047082)
 * [YouTube](https://youtube.com/@ulysseszhan) (ulysseszhan)
@@ -78,11 +77,8 @@ Active:
 <summary>Inactive:</summary>
 
 * [MuseScore](https://musescore.com/ulysseszhan) (ulysseszhan)
-* [Codeberg](https://codeberg.org/UlyssesZhan) (UlyssesZhan)
-* [GitLab](https://gitlab.com/UlyssesZhan) (UlyssesZhan)
 * [Pinterest](https://pinterest.com/ulysseszhan) (ulysseszhan)
 * [Medium](https://medium.com/@ulysseszhan) (ulysseszhan)
-* [SourceForge](https://sourceforge.net/u/ulysseszhan) (ulysseszhan)
 * [OnlyFans](https://onlyfans.com/ulysseszhan) (ulysseszhan)
 * [Flickr](https://flickr.com/photos/UlyssesZhan) (UlyssesZhan)
 * [DeviantArt](https://deviantart.com/ulysseszhan) (UlyssesZhan)
@@ -93,6 +89,22 @@ Active:
 * [TikTok](https://tiktok.com/@ulysseszhan) (ulysseszhan)
 * [CSDN博客](https://blog.csdn.net/qq_33904752)
 * [虫虫钢琴网](https://gangqinpu.com/member/634972.html)
+
+</details>
+
+## Programming
+
+Active:
+
+* [GitHub](https://github.com/UlyssesZh) (UlyssesZh)
+* [Codeium](https://codeium.com/profile/ulysseszhan) (ulysseszhan)
+
+<details>
+<summary>Inactive:</summary>
+
+* [Codeberg](https://codeberg.org/UlyssesZhan) (UlyssesZhan)
+* [GitLab](https://gitlab.com/UlyssesZhan) (UlyssesZhan)
+* [SourceForge](https://sourceforge.net/u/ulysseszhan) (ulysseszhan)
 
 </details>
 
