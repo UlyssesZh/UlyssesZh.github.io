@@ -160,6 +160,7 @@ Specific:
 Useful:
 
 * [Steam](https://steamcommunity.com/id/ulysseszhan) (ulysseszhan)
+* [GameBanana](https://gamebanana.com/members/3710374)
 
 <details>
 <summary>Probably useless:</summary>
