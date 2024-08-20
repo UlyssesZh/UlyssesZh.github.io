@@ -62,6 +62,7 @@ Active:
 * [Bilibili](https://space.bilibili.com/226047082/dynamic)
 * [小红书](https://xiaohongshu.com/user/profile/61accfa9000000001000f798) (8076302547)
 * [简书](https://jianshu.com/u/ccbbd031f85b)
+* [OnlyFans](https://onlyfans.com/ulysseszhan) (ulysseszhan)
 
 </details>
 
@@ -98,7 +99,6 @@ Active:
 Active:
 
 * [GitHub](https://github.com/UlyssesZh) (UlyssesZh)
-* [Codeium](https://codeium.com/profile/ulysseszhan) (ulysseszhan)
 
 <details>
 <summary>Inactive:</summary>
@@ -106,6 +106,7 @@ Active:
 * [Codeberg](https://codeberg.org/UlyssesZhan) (UlyssesZhan)
 * [GitLab](https://gitlab.com/UlyssesZhan) (UlyssesZhan)
 * [SourceForge](https://sourceforge.net/u/ulysseszhan) (ulysseszhan)
+* [Codeium](https://codeium.com/profile/ulysseszhan) (ulysseszhan)
 
 </details>
 
@@ -149,12 +150,14 @@ Specific:
 
 ## Payment methods
 
-* [Zelle](enroll.zellepay.com/qr-codes?data=eyJuYW1lIjoiWU9VUUlVIiwidG9rZW4iOiI4MDU4MjU4NDA3IiwiYWN0aW9uIjoicGF5bWVudCJ9)
+* [Zelle](https://enroll.zellepay.com/qr-codes?data=eyJuYW1lIjoiWU9VUUlVIiwidG9rZW4iOiI4MDU4MjU4NDA3IiwiYWN0aW9uIjoicGF5bWVudCJ9) (ulysseszhan@pm.me)
 * [PayPal](https://paypal.me/youqiuzhan) (youqiuzhan)
 * [Ko-fi](https://ko-fi.com/ulysseszhan) (UlyssesZhan)
 * [Venmo](https://venmo.com/UlyssesZhan) (UlyssesZhan)
 * [Cash App](https://cash.app/$UlyssesZhan) (UlyssesZhan)
 * [Liberapay](https://liberapay.com/UlyssesZhan/) (UlyssesZhan)
+* [Patreon](https://patreon.com/ulysseszhan) (ulysseszhan)
+* [爱发电](https://ifdian.net/a/ulysseszhan) (ulysseszhan)
 
 ## Gaming
 

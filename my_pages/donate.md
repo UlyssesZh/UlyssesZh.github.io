@@ -31,3 +31,5 @@ layout: my_page
 ## [WeChat](wxp://f2f6uscqtGWWpvPL9ExIDJhbs_HEXE0axuOlfBRcNpOBctU)
 
 <p style="text-align: center">{% include donate/wechat.svg %}</p>
+
+## [Patreon](https://patreon.com/ulysseszhan)
