@@ -5,11 +5,11 @@ require 'highline/import'
 task default: :serve
 
 task :serve do
-	sh 'bundle exec jekyll serve --host 0.0.0.0 --port 4001 --verbose --trace --livereload'
+	sh 'bundle exec jekyll serve --host 0.0.0.0 --port 4001 --verbose --trace --livereload --livereload-port 35730'
 end
 
 task :serve_i do
-	sh 'JEKYLL_AVOID_MARKDOWN=1 JEKYLL_NO_ARCHIVE=1 bundle exec jekyll serve --host 0.0.0.0 --port 4001 --incremental --verbose --trace --livereload'
+	sh 'JEKYLL_AVOID_MARKDOWN=1 JEKYLL_NO_ARCHIVE=1 bundle exec jekyll serve --host 0.0.0.0 --port 4001 --incremental --verbose --trace --livereload --livereload-port 35730'
 end
 
 def which cmd
