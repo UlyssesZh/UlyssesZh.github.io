@@ -148,10 +148,10 @@ $gt-size-avatar-mobi: em(32px) !default;
 /* styles */
 .gt-container {
 	box-sizing: border-box;
+	font-size: $gt-size-base;
 	* {
 		box-sizing: border-box;
 	}
-	font-size: $gt-size-base;
 	a {
 		color: $gt-color-main;
 		&:hover {
@@ -438,9 +438,6 @@ $gt-size-avatar-mobi: em(32px) !default;
 		}
 		&-textarea {
 			color: $gt-color-input;
-			&::placeholder {
-				color: $gt-color-input-placeholder;
-			}
 			padding: em(12px);
 			display: block;
 			box-sizing: border-box;
@@ -457,6 +454,9 @@ $gt-size-avatar-mobi: em(32px) !default;
 			transition: all 0s ease;
 			&:hover { // changed from 0.25s to 0s
 				background-color: $gt-color-input-bg-hover;
+			}
+			&::placeholder {
+				color: $gt-color-input-placeholder;
 			}
 		}
 		&-preview {
