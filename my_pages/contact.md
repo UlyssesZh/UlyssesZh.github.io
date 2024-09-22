@@ -146,6 +146,7 @@ Specific:
 * [GNOME Discourse](https://discourse.gnome.org/u/ulysseszhan) (UlyssesZhan)
 * [X Developers Forums](https://devcommunity.x.com/u/ulysseszhan) (UlyssesZhan)
 * [Syncthing Community Forum](https://forum.syncthing.net/u/ulysseszhan) (UlyssesZhan)
+* [rclone forum](https://forum.rclone.org/u/ulysseszhan) (UlyssesZhan)
 
 </details>
 
