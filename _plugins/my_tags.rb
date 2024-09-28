@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require 'rqrcode'
+
 module Jekyll::UlyssesZhan
 end
 
@@ -31,6 +33,30 @@ module Jekyll
 
 			def render context
 				'<sup>&copy;</sup>'
+			end
+		end
+
+		class QrCodeTag < Liquid::Tag
+			def self.tag_name
+				'qrcode'
+			end
+
+			def initialize tag_name, text, tokens
+				super
+				@title, @text = text.match(/(.*)\s+(\S+)/)[1..]
+			end
+
+			def render context
+				<<~RESULT
+					<figure>
+					#{RQRCode::QRCode.new(@text).as_svg(
+						color: :currentColor,
+						module_size: 8,
+						use_path: true
+					)}
+					<figcaption><a href="#{@text}" rel="external">#{@title}</a></figcaption>
+					</figure>
+				RESULT
 			end
 		end
 

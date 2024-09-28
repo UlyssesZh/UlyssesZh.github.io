@@ -254,10 +254,6 @@ hr {
 // Useful classes
 //==========
 
-.qrcode {
-	fill: $text-color;
-}
-
 .line-block {
 	margin-bottom: 15px;
 }
@@ -570,12 +566,13 @@ summary {
 }
 
 figure {
-	img {
+	img, svg {
 		margin-left: auto;
 		margin-right: auto;
-	}
-	img + figcaption {
-		text-align: center;
+		display: block;
+		+ figcaption {
+			text-align: center;
+		}
 	}
 	blockquote + figcaption {
 		text-align: right;
