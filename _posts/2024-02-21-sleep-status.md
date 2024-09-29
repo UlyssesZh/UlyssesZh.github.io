@@ -65,6 +65,13 @@ Now, the next step is to run these commands automatically when I fall asleep and
 This can be done with [MacroDroid](https://www.macrodroid.com/),
 which can trigger actions based on various triggers.
 To run arbitrary commands, you can use [the Tasker plugin for Termux](https://f-droid.org/en/packages/com.termux.tasker/).
+To have it working, one also needs to uncomment `allow-external-apps = true` in `~/.termux/termux.properties`,
+and grant MacroDroid the permission to run Termux commands by
+
+```shell
+adb shell pm grant com.arlosoft.macrodroid com.termux.permission.RUN_COMMAND
+```
+
 MacroDroid supports using
 the return value of [the sleep API](https://developers.google.com/location-context/sleep) to trigger an action,
 but this tends to be quite unreliable on my device.
