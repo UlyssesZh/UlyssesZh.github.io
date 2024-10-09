@@ -147,6 +147,8 @@ Specific:
 * [X Developers Forums](https://devcommunity.x.com/u/ulysseszhan) (UlyssesZhan)
 * [Syncthing Community Forum](https://forum.syncthing.net/u/ulysseszhan) (UlyssesZhan)
 * [rclone forum](https://forum.rclone.org/u/ulysseszhan) (UlyssesZhan)
+* [GrapheneOS Discussion Forum](https://discuss.grapheneos.org/u/UlyssesZhan) (UlyssesZhan)
+* [XDA Forums](https://xdaforums.com/m/ulysseszhan.12965022/)
 
 </details>
 
