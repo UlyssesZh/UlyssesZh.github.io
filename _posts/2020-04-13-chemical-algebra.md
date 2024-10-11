@@ -5,6 +5,7 @@ categories:
 - chemistry
 tags:
 - linear algebra
+- abstract algebra
 layout: post
 excerpt: 'Regarding balancing chemical equations,
 actually we are trying to find a non-trivial linear combination of some chemicals to get zero.

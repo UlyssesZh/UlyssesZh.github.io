@@ -7,6 +7,7 @@ tags:
 - music theory
 - number sequence
 - long paper
+- abstract algebra
 layout: post
 excerpt: 'This article explores the concept which I call the frequency assignment,
 which is a mapping from $N$ (the set of notes) to $\mathbb R^+$ (the set of frequencies).
