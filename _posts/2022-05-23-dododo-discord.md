@@ -6,6 +6,7 @@ categories:
 tags:
 - update
 - rhythm game
+- web
 layout: post
 excerpt: 'I have created a [community rhythm game called Dododo](https://dododogame.github.io).
 It is a rhythm game with musical rhythm notations.'

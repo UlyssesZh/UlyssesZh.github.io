@@ -10,6 +10,7 @@ tags:
 - calculus
 - ode
 - web
+- fourier transform
 layout: post
 excerpt: 'Continuing my last work of simulating a mechanical system using RGSS3,
 I made a new version using rpg_core.js, the game scripting system shipped with RPG Maker MV.

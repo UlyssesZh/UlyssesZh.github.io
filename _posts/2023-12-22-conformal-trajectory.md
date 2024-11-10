@@ -279,7 +279,7 @@ $$\fr{\d w}{\d z}=\sqrt U\e^{\i\vphi/2},$$
 which is also a holomorphic function.
 {% qed %}
 
-From now on, we will call this requirement on $U$ as being **log-harmonic** for obvious resons.
+From now on, we will call this requirement on $U$ as being <dfn>log-harmonic</dfn> for obvious resons.
 
 We should notice that whether $U$ is log-harmonic does not respect
 that any potential can have an additive constant and still be essentially the same potential.
@@ -421,7 +421,7 @@ $$S=\int_{t_1}^{t_2}\fc L{q,\dot q}\d t.$$
 The same integral can be expressed in terms of a new time variable $\tau$ as
 $$S=\int_{\tau_1}^{\tau_2}\fc L{q,\mathring q\dot\tau}\fr{\d\tau}{\dot\tau},$$
 where $\mathring q\ceq\d q/\d\tau$ is the generalized velocity in the new time variable.
-The transformed Lagrangian, or what I want to call the **Magrangian**[^magrangian], is then
+The transformed Lagrangian, or what I want to call the <dfn>Magrangian</dfn>[^magrangian], is then
 $$\fc M{q,\mathring q}\ceq\fc L{q,\mathring q\dot\tau}\fr1{\dot\tau}.$$ {#eq:magrangian}
 For the case that we are concerning, $\dot\tau$ is a positive real function of $q$
 but does not (explicitly) depend on $t$.

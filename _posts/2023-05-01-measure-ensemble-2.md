@@ -45,9 +45,9 @@ if we continue to use the same method as in the theory of thermal ensembles.
 
 ## Introducing non-thermal contact with an example
 
-A **thermal contact** is a contact between thermal system that conducts heat
+A <dfn>thermal contact</dfn> is a contact between thermal system that conducts heat
 (while exchanging some extensive quantities).
-A **non-thermal contact** is a contact between thermal system that does not conduct heat
+A <dfn>non-thermal contact</dfn> is a contact between thermal system that does not conduct heat
 (while exchanging some extensive quantities).
 For reversible processes, thermodynamically and mathematically,
 heat is equivalent to a form of work,
@@ -294,7 +294,7 @@ Utilizing this definition, we can define the composite system for non-thermal en
 
 <p class="no-indent">
 **Definition.**
-A **composite system for the non-thermal $\vec W^{\parallel(1)}$-ensemble**
+A <dfn>composite system for the non-thermal $\vec W^{\parallel(1)}$-ensemble</dfn>
 of the system $\left(\mathcal E^{(1)},\mathcal M^{(1)}\right)$
 with fixed intensive quantities $i$
 is the same as the composite system for the thermal $\vec W^{\star\parallel(1)}$-ensemble

@@ -67,7 +67,7 @@ The contents of the challenge is:{%copy%}
 >
 > - Must use Ruby
 > - Decrypt the message
-> - **Determine the hidden message _within_ the decrypted message**
+> - **Determine the hidden message *within* the decrypted message**
 >
 
 ## My solution

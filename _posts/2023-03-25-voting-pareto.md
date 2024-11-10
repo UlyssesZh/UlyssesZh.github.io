@@ -19,23 +19,23 @@ the Pareto set of $q$ of the voters.'
 Voting system is a concept in political science.
 Here I give the mathematical definition of a voting system.
 
-A **(binary) voting system** is a tuple $(P,V,q)$, where
-$P$ is any set, called the set of **proposals**,
-and $V$ is a finite set of preference relations on $P$, called the set of **voters**,
+A <dfn>(binary) voting system</dfn> is a tuple $(P,V,q)$, where
+$P$ is any set, called the set of <dfn>proposals</dfn>,
+and $V$ is a finite set of preference relations on $P$, called the set of <dfn>voters</dfn>,
 and $q$ is an integer between (inclusive) $0$ and $\left|V\right|$,
-called the **quota**.
+called the <dfn>quota</dfn>.
 
 For each voter $v\in V$ and two proposals $x,y\in P$,
 we denote "$v$ prefers $x$ to $y$" by
 $$x\succeq_vy.$$
-A proposal $x\in P$ is a **defeat** of $y\in P$ if
+A proposal $x\in P$ is a <dfn>defeat</dfn> of $y\in P$ if
 $$\left|\left\{v\in V\,\middle|\,x\succeq_vy\right\}\right|\geq q,$$
 denoted as $x\succsim_{V,q}y$
 (despite this notation, $\succsim_{V,q}$ is *not* necessarily a preference relation on $P$
 because it is not transitive generally,
 which is actually a well-known example of irrationality).
 
-The **core** $\mathcal C(P,V,q)$ of the voting system is the set of such element $x\in P$:
+The <dfn>core</dfn> $\mathcal C(P,V,q)$ of the voting system is the set of such element $x\in P$:
 $x$ does not have any defeat other than $x$ itself (non-trivial defeat).
 
 ---
@@ -44,11 +44,11 @@ Pareto sets are common concepts in economics.
 To clarify, I also give the mathematical definition of them here.
 
 Let $P$ be a set and $Q$ be a family of preference relations on $P$.
-Then, $x\in P$ is called a (weak) **$Q$-Pareto improvement** of $y\in P$ if $\forall v\in V:x\succeq_vy$,
+Then, $x\in P$ is called a (weak) <dfn>$Q$-Pareto improvement</dfn> of $y\in P$ if $\forall v\in V:x\succeq_vy$,
 denoted as $x\succsim_Qy$
 (despite the notation, $\succsim_Q$ is *not* necessarily a preference relation on $P$).
 
-The **Pareto set** $\mathcal P(P,Q)$ is the set of all such element $x\in P$:
+The <dfn>Pareto set</dfn> $\mathcal P(P,Q)$ is the set of all such element $x\in P$:
 $x$ does not have any $Q$-Pareto improvement other than $x$ itself
 (non-trivial $Q$-Pareto improvement).
 

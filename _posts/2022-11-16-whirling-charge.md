@@ -4,6 +4,7 @@ date: 2022-11-16 16:47:57 -0800
 categories:
 - physics
 tags:
+- electrodynamics
 - from zhihu
 layout: post
 excerpt: 'In the vacuum, inside a fixed ring of radius $R$ with fixed charge $Q$ uniformly distributed,

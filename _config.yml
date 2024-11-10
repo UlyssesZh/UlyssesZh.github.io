@@ -129,6 +129,7 @@ paru:
 
       '\Re': '\opn{Re}'
       '\Im': '\opn{Im}'
+      '\sgn': '\opn{sgn}'
 
       '\O': '\fc{\mrm O}{#1}'
       '\SO': '\fc{\mrm{SO}}{#1}'

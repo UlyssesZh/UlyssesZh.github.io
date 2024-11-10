@@ -149,6 +149,7 @@ Specific:
 * [rclone forum](https://forum.rclone.org/u/ulysseszhan) (UlyssesZhan)
 * [GrapheneOS Discussion Forum](https://discuss.grapheneos.org/u/UlyssesZhan) (UlyssesZhan)
 * [XDA Forums](https://xdaforums.com/m/ulysseszhan.12965022/)
+* [NETGEAR Communities](https://community.netgear.com/t5/user/viewprofilepage/user-id/1144683)
 
 </details>
 

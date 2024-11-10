@@ -39,7 +39,7 @@ For convenience, for any $k\in\bN$, define $\mbb G_k\ceq\mbb G_{k\bmod2}$.
 Define a multiplication on $\mbb G_0\cup\mbb G_1$ such that
 
 - multiplication is associative, non-degenerate, and distributive over addition;
-- $\mbb G_0$ are **commuting numbers** and $\mbb G_1$ are **anticommuting numbers**:
+- $\mbb G_0$ are <dfn>commuting numbers</dfn> and $\mbb G_1$ are <dfn>anticommuting numbers</dfn>:
 $$\forall\psi_1\in\mbb G_{k_1},\psi_2\in\mbb G_{k_2}:
 \psi_1\psi_2=\p{-}^{k_1k_2}\psi_2\psi_1;$$
 - and there is a unity $1\in\mbb G_0$ such that $1+\cdots+1\ne0$ for any finite number of summands.
@@ -61,13 +61,13 @@ I will introduce more properties as axioms later.
 It seems that we need this property as an axiom:
 for any linear function $\func\lmd{\mbb G_k}{\mbb G_0}$,
 $$\exists!\vphi\in\mbb G_k:\lmd=\p{\psi\mapsto\vphi\psi}.$$
-I call this property the **first representation property**,
+I call this property the <dfn>first representation property</dfn>,
 analog to the Riez representation theorem.
-I will call linear functions that maps objects to $\mbb G_0$ **linear functionals**,
-and the **dual space** of a $\mbb G_0$-module as the set of all linear functionals on it.
+I will call linear functions that maps objects to $\mbb G_0$ <dfn>linear functionals</dfn>,
+and the <dfn>dual space</dfn> of a $\mbb G_0$-module as the set of all linear functionals on it.
 
 With the fist representation property, we can identify $\mbb G_k$ with its dual space
-so that any **multilinear map (tensor)** have well-defined components.
+so that any <dfn>multilinear map (tensor)</dfn> have well-defined components.
 For any $k$-linear map $\func T{\p{\mbb G_1^n}^k}{\mbb G_0}$
 (or alternatively called a rank-$k$ tensor on $\mbb G_1^n$),
 we can write it uniquely in the form
@@ -90,7 +90,7 @@ but some tensor that takes arguments from both $\mbb G_0^n$ and $\mbb G_1^n$.
 Here we will need another property as an axiom:
 for any linear function $\func\lmd{\mbb G_k}{\mbb G_k}$,
 $$\exists!\vphi\in\mbb G_0:\lmd=\p{\psi\mapsto\vphi\psi}.$$
-I call this property the **second representation property**.
+I call this property the <dfn>second representation property</dfn>.
 This is very similar to the first representation property,
 but it covers linear endomorphisms on $\mbb G_k$ instead of linear functionals on $\mbb G_k$.
 
@@ -111,7 +111,7 @@ whose components take values in $\B{-1,0,1}\subset\mbb G_0$.
 
 ## Analytic functions
 
-For any $T\in\mcal T_1^{nk}$, define a degree-$k$ **monomial** on $\mbb G_1^n$ as
+For any $T\in\mcal T_1^{nk}$, define a degree-$k$ <dfn>monomial</dfn> on $\mbb G_1^n$ as
 $$\vfunc{M_T}{\mbb G_1^n}{\mbb G_0}{\psi}{\fc T{\psi,\dots,\psi}},$$
 which is a degree-$k$ homogeneous function on $\mbb G_1^n$.
 Note that different tensors may correspond to the same monomial.
@@ -124,10 +124,10 @@ Denote the set of all completely antisymmetric rank-$k$ tensors on $\mbb G_1^n$ 
 and then the fact that we only need antisymmetric tensors to define monomials can be written as
 $M_{\mcal T_1^{n\b k}}=M_{\mcal T_1^{nk}}$.
 
-An **analytic function** $f$ on $\mbb G_1^n$ is defined as a sum of monomials:
+An <dfn>analytic function</dfn> $f$ on $\mbb G_1^n$ is defined as a sum of monomials:
 $$\vfunc f{\mbb G_1^n}{\mbb G_0}\psi{\sum_k \fc{M_{T^{\b k}}}\psi},$$
 where $T^{\b k}\in\mcal T_1^{n\b k}$,
-whose components may be referred to as **expansion coefficients**.
+whose components may be referred to as <dfn>expansion coefficients</dfn>.
 We do not need to worry about the convergence because this is a finite sum
 ($k\le n$).
 Denote the set of all analytic functions on $\mbb G_1^n$ as $\mcal A_n$.
@@ -141,7 +141,7 @@ $f\circ J\in\mcal A_n$.
 
 ## Integrals
 
-Now we define that a linear function $\int:\mcal A_n\to\mbb G_n$ is called an **integral**
+Now we define that a linear function $\int:\mcal A_n\to\mbb G_n$ is called an <dfn>integral</dfn>
 if it satisfies the following property:
 $$\forall f\in\mcal A_n,\dlt\in\mbb G_1^n:\int f=\int\psi\mapsto\fc f{\psi+\dlt},$$
 which intuitively means that an integral is invariant under translation.

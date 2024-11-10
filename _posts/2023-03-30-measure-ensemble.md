@@ -103,7 +103,7 @@ $$\begin{align*}
 </details>
 
 Here, the family of measures $\left\{\mu_x\right\}$ is called
-the **disintegration** of $\mu$ w.r.t. $\pi$ and $\nu$.
+the <dfn>disintegration</dfn> of $\mu$ w.r.t. $\pi$ and $\nu$.
 
 ---
 
@@ -209,7 +209,7 @@ we do not need to try to assign physical meanings to anything we construct.
 This new equation is purely mathematical, and the only way we use it is to relate intensive variables
 to derivatives of $S$ w.r.t. extensive quantities.
 
-From now on, I will call quantities like $U,V,N$ the **extensive quantities**,
+From now on, I will call quantities like $U,V,N$ the <dfn>extensive quantities</dfn>,
 not including $S$.
 However, this is not a good statement as part of our mathematical formulation.
 Considering that there is a good notion of how different systems
@@ -237,7 +237,7 @@ I have generalized the notion of extensive quantities so that now the notion "ex
 includes some quantities that are not really extensive quantities in any traditional sense.
 They are no longer meant to be scaled because they simply cannot.
 Actually, rather than calling them extensive quantities, I would like to call them
-a **macrostate**, with the only difference from the general notion macrostate being that
+a <dfn>macrostate</dfn>, with the only difference from the general notion macrostate being that
 it has an affine structure so that I can take the ensemble average of it to get its macroscopic value.
 I would stick to the term "extensive quantities" because they are actual extensive quantities in all my examples
 and because it is a good way to understand its physical meaning with this name,
@@ -298,7 +298,7 @@ Here is our final definition of the space of extensive quantities:
 
 <p class="no-indent">
 **Definition.**
-A **space of extensive quantities** is a tuple $(W,E,\lambda)$, where
+A <dfn>space of extensive quantities</dfn> is a tuple $(W,E,\lambda)$, where
 </p>
 
 - $W$ is an affine space associated with a reflexive vector space $\vec W$ over $\mathbb R$,
@@ -363,7 +363,7 @@ Recall that in microcanonical ensemble,
 we allow the energy to fluctuate.
 The number of microstates at exactly a certain energy is actually zero in most cases,
 so we are actually considering those microstates with some certain small range of energy.
-In other words, we are considering the **microstate density**:
+In other words, we are considering the <dfn>microstate density</dfn>:
 the number of microstates inside unit range of energy.
 Similarly, we should define a measure on $M_e$ to represent the microstate density,
 which is the number of microstates inside unit volume of extensive quantities,
@@ -398,7 +398,7 @@ Then, the disjoint union of all of them (the family of measure spaces) is the th
 
 <p class="no-indent">
 **Definition.**
-A **thermal system** is a pair $\left(\mathcal E,\mathcal M\right)$,
+A <dfn>thermal system</dfn> is a pair $\left(\mathcal E,\mathcal M\right)$,
 where
 </p>
 
@@ -451,24 +451,24 @@ To understand, the expression $H^{6N-1}(A)$ is just the $(6N-1)$-dimensional "vo
 
 ---
 
-Since we have microstate density, why do not we have the true **number of microstates**?
+Since we have microstate density, why do not we have the true <dfn>number of microstates</dfn>?
 We can define a measure on $\mathcal M$ to represent the number of microstates.
 
 <p class="no-indent">
 **Definition.**
-The **measure of number of microstates** is a measure $\mu:\sigma(\mathcal M)\to\left[0,+\infty\right]$,
+The <dfn>measure of number of microstates</dfn> is a measure $\mu:\sigma(\mathcal M)\to\left[0,+\infty\right]$,
 where
 $$\sigma(\mathcal M)\coloneqq\left\{\bigsqcup_{e\in A}B_e\,\middle|\,A\in\sigma(E),\,B_e\in\sigma(M_e)\right\},$$
 and the measure is defined by
 $$\mu(A)\coloneqq\iint\limits_{(e,m)\in A}\mathrm d\mu_e(m)\,\mathrm d\lambda(e).$$
 The uniqueness of $\mu$ is guaranteed by the &sigma;-finiteness of $\lambda$ and $\mu_e$.
-The expression $\mu(A)$ is called the **number of microstates** in $A$.
+The expression $\mu(A)$ is called the <dfn>number of microstates</dfn> in $A$.
 </p>
 
 ## States and the entropy
 
 Here is a central idea in statistical ensembles:
-a **state** is a probability distribution on the microstates of a thermal system.
+a <dfn>state</dfn> is a probability distribution on the microstates of a thermal system.
 It is among the ideas upon which the whole theory of statistical ensembles is built.
 I will take this idea, too.
 
@@ -477,7 +477,7 @@ Therefore, a state is just a probability density function.
 
 <p class="no-indent">
 **Definition.**
-A **state** of a thermal system $(\mathcal E,\mathcal M)$ is a function
+A <dfn>state</dfn> of a thermal system $(\mathcal E,\mathcal M)$ is a function
 $p:\mathcal M\to\left[0,+\infty\right]$ such that $(\mathcal M,\sigma(\mathcal M),P)$ is a probability space,
 where $P:\sigma(\mathcal M)\to\left[0,1\right]$ is defined by
 $$P(A)\coloneqq\int_Ap\,\mathrm d\mu.$$ {#eq:eq-probability-measure}
@@ -493,7 +493,7 @@ We will introduce the concept of equilibrium states later.
 
 ---
 
-Now we may introduce the concept of **entropy**.
+Now we may introduce the concept of <dfn>entropy</dfn>.
 
 I need to clarify that the entropy that we are talking about here is just
 the entropy in statistical mechanics.
@@ -516,7 +516,7 @@ A quick check is that the entropy of the uniform distribution over $[0,1]$ is $+
 
 <p class="no-indent">
 **Definition.**
-The **entropy** of a state $p$ is defined by
+The <dfn>entropy</dfn> of a state $p$ is defined by
 $$S[p]\coloneqq\int_\mathcal M-p\ln p\,\mathrm d\mu.$$
 </p>
 
@@ -542,7 +542,7 @@ by taking the $P$-expectation of the extensive quantities.
 <p class="no-indent">
 **Definition.**
 For a thermal system $(\mathcal E,\mathcal M)$
-and a state $p$ of it, the **measured value of extensive quantities** of the state $p$ is
+and a state $p$ of it, the <dfn>measured value of extensive quantities</dfn> of the state $p$ is
 the $P$-expectation of the $E$-valued random variable $(e,m)\mapsto e$.
 Explicitly, the definition is
 $$\varepsilon[p]\coloneqq\mathrm E_P\!\left[\left(e,m\right)\mapsto e\right],$$
@@ -557,7 +557,7 @@ and such a function must be Pettis-integrable on a reflexive space.
 Note that $\varepsilon[p]\in W$, and it is not necessarily in $E$.
 
 The usage of the measured value of extensive quantities is that we can use it to get the
-**fundamental equation** of a thermal system,
+<dfn>fundamental equation</dfn> of a thermal system,
 which describes the relationship between the extensive quantities and the entropy
 at any equilibrium state.
 Suppose that we postulate a family of states $p_t^\circ$ of the thermal system
@@ -577,7 +577,7 @@ If we can possibly define some differential structure on $E^\circ$
 so that we can possibly take the differential of $S^\circ$ and write something sensible like
 $$\mathrm dS^\circ=i\!\left(\varepsilon^\circ\right)(\mathrm d\varepsilon^\circ),$$
 where $i^\circ\!\left(\varepsilon^\circ\right)\in\vec W'$ is a continuous linear functional,
-then we can define $i^\circ\!\left(\varepsilon^\circ\right)$ to be the **intensive quantities**
+then we can define $i^\circ\!\left(\varepsilon^\circ\right)$ to be the <dfn>intensive quantities</dfn>
 at $\varepsilon^\circ$.
 A proper comparison with differential geometry is that we may analogly call $i^\circ$
 be a covector field on $E^\circ$ defined as the differential of the scalar field $S^\circ$.
@@ -593,9 +593,9 @@ they have different mathematical structure and contain different amount of infor
 There are two ways of constructing new thermal systems from existing ones:
 
 - By fixing some extensive quantities.
-I call this way **slicing**.
+I call this way <dfn>slicing</dfn>.
 - By allowing some extensive quantities to change freely.
-I call this way **contracting**.
+I call this way <dfn>contracting</dfn>.
 
 <p class="no-indent">
 I chose the words "slicing" and "contracting".
@@ -615,7 +615,7 @@ within that piece to form our new thermal system.
 
 <p class="no-indent">
 **Definition.**
-A **slicing** of a space of extensive quantities $\left(W,E,\lambda\right)$
+A <dfn>slicing</dfn> of a space of extensive quantities $\left(W,E,\lambda\right)$
 is a pair $\left(W^\parallel,\lambda^\parallel\right)$, where
 </p>
 
@@ -628,12 +628,12 @@ is a &sigma;-algebra on $E^\parallel$ that contains the Borel &sigma;-algebra on
 
 <p class="no-indent">
 This constructs a new space of extensive quantities $\left(W^\parallel,E^\parallel,\lambda^\parallel\right)$,
-called a **slice** of the original space of extensive quantities $\left(W,E,\lambda\right)$.
+called a <dfn>slice</dfn> of the original space of extensive quantities $\left(W,E,\lambda\right)$.
 </p>
 
 <p class="no-indent">
 **Definition.**
-A **slice** of a thermal system $\left(\mathcal E,\mathcal M\right)$
+A <dfn>slice</dfn> of a thermal system $\left(\mathcal E,\mathcal M\right)$
 defined by the slicing $\left(W^\parallel,\lambda^\parallel\right)$ of $\mathcal E$
 is a new thermal system $\left(\mathcal E^\parallel,\mathcal M^\parallel\right)$ constructed as such:
 </p>
@@ -672,16 +672,16 @@ we may slice the space of extensive quantities to the slice $V=1$ to fix the vol
 Here is a special type of slicing.
 Because a single point is an (zero-dimensional) affine subspace, it may form a slicing.
 Such a slicing fixes all of the extensive quantities.
-We may call it an **isolating**.
+We may call it an <dfn>isolating</dfn>.
 
-A thermal system with a zero-dimensional space of extensive quantities is called an **isolated system**.
+A thermal system with a zero-dimensional space of extensive quantities is called an <dfn>isolated system</dfn>.
 The physical meaning of such a system is that it is isolated from the outside
 so that it cannot exchange any extensive quantities with the outside.
 We may construct an isolated system out of an existing thermal system by the process of isolating.
 
 <p class="no-indent">
 **Definition.**
-An **isolating** (at $e^\circ$) of a space of extensive quantities $\left(W,E,\lambda\right)$
+An <dfn>isolating</dfn> (at $e^\circ$) of a space of extensive quantities $\left(W,E,\lambda\right)$
 is a slicing $\left(W^\parallel,\lambda^\parallel\right)$ of it, constructed as
 $$\begin{align*}
 W^\parallel&\coloneqq\left\{e^\circ\right\},\\
@@ -692,13 +692,13 @@ where $e^\circ\in E$.
 
 <p class="no-indent">
 **Definition.**
-An **isolated system** is a thermal system whose underlying affine space of its space of extensive quantities
+An <dfn>isolated system</dfn> is a thermal system whose underlying affine space of its space of extensive quantities
 is a single-element set.
 </p>
 
 <p class="no-indent">
 **Definition.**
-An **isolation** (at $e^\circ$) of a thermal system $\left(\mathcal E,\mathcal M\right)$
+An <dfn>isolation</dfn> (at $e^\circ$) of a thermal system $\left(\mathcal E,\mathcal M\right)$
 is the slice of it corresponding to the isolating at $e^\circ$ of $\mathcal E$.
 An isolation is an isolated system.
 </p>
@@ -710,15 +710,15 @@ is $e^\circ$, the only possible value of the extensive quantities.
 ---
 
 After introducing isolated systems,
-we can now introduce the **equal a priori probability postulate**.
+we can now introduce the <dfn>equal *a priori* probability postulate</dfn>.
 Although we may alternatively use other set of axioms to develop the theory of statistical ensembles,
-using the equal a priori probability postulate is a simple and traditional way to do it.
+using the equal *a priori* probability postulate is a simple and traditional way to do it.
 Most importantly, this is a way that does not require us to define concepts like the temperature
 beforehand, which is a good thing for a mathematical formulation because it would require
 less mathematical structures or objects that are hard to well define at this stage.
 
 <p class="no-indent">
-**Axiom** (the equal a priori probability postulate)**.**
+**Axiom** (the equal *a priori* probability postulate)**.**
 The equilibrium state of an isolated system is the uniform distribution.
 </p>
 
@@ -731,7 +731,7 @@ The equilibrium state of an isolated system $\left(\mathcal E,\mathcal M\right)$
 may be written mathematically as
 $$p^\circ\!\left(\cdot\right)\coloneqq\frac1{\mu\!\left(\mathcal M\right)}$$
 (the circle in the superscript denotes equilibrium state).
-After writing this out, we have successfully derived the **microcanonical ensemble**.
+After writing this out, we have successfully derived the <dfn>microcanonical ensemble</dfn>.
 We can then calculate the entropy of the state, which is
 $$S^\circ\coloneqq S\!\left[p^\circ\right]=\ln\mu(\mathcal M).$$ {#eq:eq-microcanonical-entropy}
 Mentioning the entropy, a notable feature about
@@ -795,11 +795,11 @@ Define a family of states $\left\{p^\circ_e\right\}_{e\in E}$,
 where each state $p^\circ_e$ is the equilibrium state of the system isolated at $e$.
 Then, we have the fundamental equation
 $$S^\circ(e)=\ln\Omega(e),$$ {#eq:eq-mce-fundamental-eq}
-where $\Omega(e)\coloneqq\mu_e\!\left(M_e\right)$ is called the **counting function** (I invented the phrase),
-which is the **microscopic characteristic function** of microcanonical ensembles.
+where $\Omega(e)\coloneqq\mu_e\!\left(M_e\right)$ is called the <dfn>counting function</dfn> (I invented the phrase),
+which is the <dfn>microscopic characteristic function</dfn> of microcanonical ensembles.
 This defines a function $S^\circ:E\to\mathbb R$,
 which may be used to give a fundamental equation in the form of Equation [@eq:eq-fundamental-equation],
-and it is the **macroscopic characteristic function** of microcanonical ensembles.
+and it is the <dfn>macroscopic characteristic function</dfn> of microcanonical ensembles.
 
 We will encounter microscopic or macroscopic characteristic functions for other ensembles later.
 
@@ -840,7 +840,7 @@ contraction of the space of extensive quantities or the system.
 
 <p class="no-indent">
 **Definition.**
-A **contracting** of a space of extensive quantities $\left(W,E,\lambda\right)$
+A <dfn>contracting</dfn> of a space of extensive quantities $\left(W,E,\lambda\right)$
 is given by a tuple $\left(\pi,\lambda^\perp\right)$, where
 </p>
 
@@ -857,13 +857,13 @@ $\lambda^{\perp}(A)=0$ iff $\lambda\!\left(\pi^{-1}(A)\right)=0$.
 
 <p class="no-indent">
 This contracting defines a new space of extensive quantities
-$\left(W^\perp,E^\perp,\lambda^\perp\right)$, called a **contraction** of
+$\left(W^\perp,E^\perp,\lambda^\perp\right)$, called a <dfn>contraction</dfn> of
 the original space of extensive quantities $\left(W,E,\lambda\right)$.
 </p>
 
 <p class="no-indent">
 **Definition.**
-The **contractive slicings** of a space of extensive quantities $\left(W,E,\lambda\right)$
+The <dfn>contractive slicings</dfn> of a space of extensive quantities $\left(W,E,\lambda\right)$
 defined by a contracting $\left(\pi,\lambda^\perp\right)$ of it is a family of slicings
 $\bigsqcup_{e\in W^\perp}\left(W^\parallel_e,\lambda^\parallel_e\right)$, where
 </p>
@@ -875,7 +875,7 @@ the family of measures is the disintegration of $\lambda$ w.r.t. $\pi$ and $\lam
 
 <p class="no-indent">
 **Definition.**
-A **contraction** of a thermal system $\left(\mathcal E,\mathcal M\right)$
+A <dfn>contraction</dfn> of a thermal system $\left(\mathcal E,\mathcal M\right)$
 defined by the contracting $\left(\pi,\lambda^\perp\right)$ of $\mathcal E$
 is a new thermal system $\left(\mathcal E^\perp,\mathcal M^\perp\right)$ constructed as such:
 </p>
@@ -936,8 +936,8 @@ Using this map, we can pull back any function $f^\perp$ on $\mathcal M^\perp$
 to become a function on $\mathcal M$ by
 $$f\!\left(e,m\right)\coloneqq f^\perp\!\left(\pi(e),\left(e,m\right)\right)$$
 and the other way around.
-I want to call $f$ the **contractional pullback** of $f^\perp$ under $\pi$
-and call $f^\perp$ the **contractional pushforward** of $f$ under $\pi$.
+I want to call $f$ the <dfn>contractional pullback</dfn> of $f^\perp$ under $\pi$
+and call $f^\perp$ the <dfn>contractional pushforward</dfn> of $f$ under $\pi$.
 Specially, we may pull back any state $p^\perp$ of a contraction
 to become a state $p$ on the original thermal system.
 We will see that pullbacks of states are rather useful.
@@ -1008,12 +1008,12 @@ To consider them as a whole system, we need to define composite systems.
 The simplest case of a composite system is where
 the subsystems are independent of each other.
 Physically, this means that the subsystems do not have any thermodynamic contact between each other.
-I would like to call the simplest case a **product thermal system**
+I would like to call the simplest case a <dfn>product thermal system</dfn>
 just as how mathematicians name their product spaces constructed out of existing spaces.
 
 <p class="no-indent">
 **Definition.**
-The **product space of extensive quantities** of two spaces of extensive quantities
+The <dfn>product space of extensive quantities</dfn> of two spaces of extensive quantities
 $\left(W^{(1)},E^{(1)},\lambda^{(1)}\right)$ and $\left(W^{(2)},E^{(2)},\lambda^{(2)}\right)$
 is a space of extensive quantities $\left(W,E,\lambda\right)$ constructed as such:
 </p>
@@ -1026,7 +1026,7 @@ whose uniqueness is guaranteed by the &sigma;-finiteness of $\lambda^{(1)}$ and 
 
 <p class="no-indent">
 **Definition.**
-The **product thermal system** of two thermal systems
+The <dfn>product thermal system</dfn> of two thermal systems
 $\left(\mathcal E^{(1)},\mathcal M^{(1)}\right)$ and $\left(\mathcal E^{(2)},\mathcal M^{(2)}\right)$
 is a thermal system $\left(\mathcal E,\mathcal M\right)$ constructed as such:
 </p>
@@ -1052,7 +1052,7 @@ can be viewed as a joint probability distribution of the two random variables on
 $(e_1,e_2,m_1,m_2)\mapsto(e_1,m_1)$ and $(e_1,e_2,m_1,m_2)\mapsto(e_2,m_2)$.
 As we all know, a joint distribution encodes conditional distributions and marginal distributions.
 Therefore, given any state of a product thermal system,
-we can define its **conditional states** and **marginal states** of the subsystems.
+we can define its <dfn>conditional states</dfn> and <dfn>marginal states</dfn> of the subsystems.
 Conditional states are not very useful because they are not physically observed states of subsystems.
 The physically observed states of subsystems are marginal states,
 so marginal states are of special interest.
@@ -1061,7 +1061,7 @@ so marginal states are of special interest.
 **Definition.**
 Given a state $p$ of the product thermal system $(\mathcal E,\mathcal M)$
 of $\left(\mathcal E^{(1)},\mathcal M^{(1)}\right)$ and $\left(\mathcal E^{(2)},\mathcal M^{(2)}\right)$,
-its **marginal state** of the subsystem $\left(\mathcal E^{(1)},\mathcal M^{(1)}\right)$
+its <dfn>marginal state</dfn> of the subsystem $\left(\mathcal E^{(1)},\mathcal M^{(1)}\right)$
 is a state $p^{(1)}$ of the system $\left(\mathcal E^{(1)},\mathcal M^{(1)}\right)$ defined by
 $$p^{(1)}\!\left(e_1,m_1\right)\coloneqq\int_{\left(e_2,m_2\right)\in\mathcal M^{(2)}}
 p\!\left(e_1,e_2,m_1,m_2\right)\mathrm d\mu^{(2)}\!\left(e_2,m_2\right).$$
@@ -1110,7 +1110,7 @@ are both injections.
 
 <p class="no-indent">
 **Definition.**
-A **(thermally) composite thermal system** of two thermal systems
+A <dfn>(thermally) composite thermal system</dfn> of two thermal systems
 is the contraction of their product thermal system
 corresponding to a contracting $(\pi,\lambda^\perp)$, where
 $\pi:W\to W^\perp:(e_1,e_2)\mapsto e$ satisfies that
@@ -1174,7 +1174,7 @@ and we can get a slice $\left(\mathcal E^{\parallel(1)}_e,\mathcal M^{\parallel(
 of $\left(\mathcal E^{(1)},\mathcal M^{(1)}\right)$
 out of this slicing.
 I would like to call this slice the
-**compositing slice** of $\left(\mathcal E^{(1)},\mathcal M^{(1)}\right)$ at $e$.
+<dfn>compositing slice</dfn> of $\left(\mathcal E^{(1)},\mathcal M^{(1)}\right)$ at $e$.
 Similarly, we define compositing slices of $\left(\mathcal E^{(2)},\mathcal M^{(2)}\right)$,
 denoted as $\left(\mathcal E^{\parallel(2)}_e,\mathcal M^{\parallel(2)}_e\right)$.
 
@@ -1274,7 +1274,7 @@ As we know, $i_1$ and $i_2$ are actually intensive quantities.
 The physical meaning of them being each other's image/preimage under this isomorphism is that,
 if the two subsystems in thermal contact have intensive quantities $-i_1$ and $i_2$ respectively,
 then they are in equilibrium with each other.
-Therefore, I would like to call this pair of intensive quantities to be **anticonsistent**.
+Therefore, I would like to call this pair of intensive quantities to be <dfn>anticonsistent</dfn>.
 
 ---
 
@@ -1539,7 +1539,7 @@ $$\pi^\perp\!\left(\frac U2,\frac U2,N_1,N_2\right)=\left(0,0,N_1,N_2\right).$$
 
 ## Baths
 
-**Bath**s are a special class of thermal systems.
+<dfn>Bath</dfn>s are a special class of thermal systems.
 They are systems that have some of their intensive quantities well-defined and constant.
 
 According to Equation [@eq:eq-mce-fundamental-eq],
@@ -1558,7 +1558,7 @@ Then, here comes the definition of a bath:
 <p class="no-indent">
 **Definition.**
 A thermal system $(\mathcal E,\mathcal M)$ is called
-a **$\left(\vec W^\parallel,i\right)$-bath**,
+a <dfn>$\left(\vec W^\parallel,i\right)$-bath</dfn>,
 where $\mathcal E=(W,E,\lambda)$ and $\mathcal M=\bigsqcup_{e\in W}M_e$, if
 </p>
 
@@ -1567,7 +1567,7 @@ where $\mathcal E=(W,E,\lambda)$ and $\mathcal M=\bigsqcup_{e\in W}M_e$, if
 - $\lambda$ is invariant under translations in $\vec W^\parallel$;
 in other words, for any $s\in\vec W^\parallel$ and $A\in\sigma(E)$, we have $\lambda(A+s)=\lambda(A)$;
 - $i\in\vec W^{\parallel\prime}$ is a continuous linear functional on $\vec W^\parallel$,
-called the **constant intensive quantities** of the bath; and
+called the <dfn>constant intensive quantities</dfn> of the bath; and
 - For any $e\in E$ and $s\in\vec W^\parallel$,
 $$\ln\mu_{e+s}\!\left(M_{e+s}\right)=i(s)+\ln\mu_e\!\left(M_e\right).$$
 
@@ -1610,7 +1610,7 @@ $$\int_Ef\,\mathrm d\lambda=
 ## Thermal ensembles
 
 Different from microcanonical ensembles,
-**thermal ensemble**s are ensembles where the system we study is in thermal contact with a bath.
+<dfn>thermal ensemble</dfn>s are ensembles where the system we study is in thermal contact with a bath.
 For example, canonical ensembles and grand canonical ensembles are thermal ensembles.
 There are also non-thermal ensembles,
 which will be introduced later after we introduce non-thermal contacts
@@ -1626,14 +1626,14 @@ The physical meaning of $i$ is the intensive variables
 that the system is fixed at by contacting the bath.
 
 This composite system is called the
-**composite system for the $\vec W^{\parallel(1)}$-ensemble**.
+<dfn>composite system for the $\vec W^{\parallel(1)}$-ensemble</dfn>.
 It is called that because we will see that the only important thing
 that distinguishes different thermal ensembles is the choice of $\vec W^{\parallel(1)}$,
 and the choices of $\pi,\lambda^\perp,W^{\perp(1)},W^{\perp(2)}$ are not important.
 
 <p class="no-indent">
 **Definition.**
-The **composite system for the $\vec W^{\parallel(1)}$-ensemble**
+The <dfn>composite system for the $\vec W^{\parallel(1)}$-ensemble</dfn>
 of the system $\left(\mathcal E^{(1)},\mathcal M^{(1)}\right)$ is the composite system
 of $\left(\mathcal E^{(1)},\mathcal M^{(1)}\right)$ and $\left(\mathcal E^{(2)},\mathcal M^{(2)}\right)$,
 where
@@ -1641,7 +1641,7 @@ where
 
 - $\left(\mathcal E^{(2)},\mathcal M^{(2)}\right)$
 is a $\left(\vec W^{\parallel(2)},-i\circ\vec\rho^{-1}\right)$-bath,
-where $i\in\vec W^{\parallel(1)\prime}$ is a parameter called the **fixed intensive quantities**;
+where $i\in\vec W^{\parallel(1)\prime}$ is a parameter called the <dfn>fixed intensive quantities</dfn>;
 - Equation [@eq:eq-W2-translationally-invariant] holds.
 
 ---
@@ -1840,7 +1840,7 @@ Therefore, we can use the microcanonical ensemble to find the equilibrium state 
 Then, we can use the marginal state of each contractive slice to get the equilibrium state of
 each compositing slice in the subsystem.
 
-Because the equal a priori probability postulate,
+Because the equal *a priori* probability postulate,
 the equilibrium state $p^{\parallel\circ}_e$ on the contractive slice
 $$\left(\mathcal E^\parallel_e,\mathcal M^\parallel_e\right)$$ is
 $$p^{\parallel\circ}_e\!\left(e_1,e_2,m_1,m_2\right)
@@ -1902,7 +1902,7 @@ $\vec E^{\parallel(1)}_{e_1}\coloneqq\left(E^{(1)}-e_1\right)\cap\vec W^{\parall
 is the region of $s_1\in\vec W^{\parallel(1)}$ in which $e_1+s_1$ is in $E^{(1)}$.
 
 Next, what we need to do is to normalize Equation [@eq:eq-p-1-propto-e-i-e1].
-The denominator in the normalization factor, which we could call the **partition function**
+The denominator in the normalization factor, which we could call the <dfn>partition function</dfn>
 $Z:\bigsqcup_{e_1\in E^{\perp(1)}}I^{(1)}_{e_1}\to\mathbb R$, is
 $$\begin{align*}
 Z\!\left(e_1,i\right)&\coloneqq\int_{s_1\in\vec E^{\parallel(1)}_{e_1}}
