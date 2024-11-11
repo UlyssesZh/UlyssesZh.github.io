@@ -34,13 +34,12 @@ paru:
     table_eqns: false
     set_label_attribute: true
     eqn_prefix_template: $$i$$
-    # https://github.com/lierdakil/pandoc-crossref/issues/444#issuecomment-2201090324
-    eqn_inline_template: >-
-      very_unlikely_numbered_equation_start
-      $$e$$
-      very_unlikely_numbered_equation_middle
-      $$ri$$
-      very_unlikely_numbered_equation_finish
+    eqn_display_template: >-
+      <span class="katex-display-table">
+        <span class="katex-display-numbered">$$e$$</span>
+        <span class="katex-display-number">$$i$$</span>
+      </span>
+    eqnInlineTemplate: $$e$$
   rouge:
     formatter: table
     formatter_options:

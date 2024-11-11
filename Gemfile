@@ -8,14 +8,14 @@ gem 'tomlib'
 gem 'rqrcode'
 
 gem 'jekyll', '~> 4'
-gem 'minima', github: 'jekyll/minima', ref: '85374864e0311f544f49139078927b41ecbe8792'
+gem 'minima', github: 'jekyll/minima', ref: 'master'
 group :jekyll_plugins do
 	install_if !ENV['JEKYLL_NO_ARCHIVE'] do
 		gem 'jekyll-archives'
 		gem 'jekyll-feed'
 		gem 'jekyll-sitemap'
 	end
-	gem 'jekyll-paginate-v2', github: 'sverrirs/jekyll-paginate-v2', ref: '7bc2634c04c49120b674cc3506275f85c4389f5c'
+	gem 'jekyll-paginate-v2', github: 'sverrirs/jekyll-paginate-v2', ref: 'master'
 	gem 'jekyll-toc'
 	gem 'jekyll-paru'
 	gem 'jekyll-seo-tag'

@@ -1,5 +1,8 @@
 // adapted from https://github.com/gitalk/gitalk/blob/ca06b9ff87e2bbc5553b86cd3bc5dcff9b0e8152/src/style/index.styl
 
+@use 'sass:color';
+@use 'sass:math';
+
 /* variables */
 $lm-gt-color-main: #e86195 !default;
 $lm-gt-color-sub: #a1a1a1 !default;
@@ -17,9 +20,9 @@ $lm-gt-color-link-active: #333333 !default;
 $lm-gt-color-btn: #ffffff !default;
 $lm-gt-color-popbg: #ffffff !default;
 
-$lm-gt-color-main-hover: lighten($lm-gt-color-main, 20%) !default;
-$lm-gt-color-input-bg-hover: lighten($lm-gt-color-input-bg, 50%) !default;
-$lm-gt-color-btn-hover: darken($lm-gt-color-btn, 5%) !default;
+$lm-gt-color-main-hover: color.adjust($lm-gt-color-main, $lightness: 20%) !default;
+$lm-gt-color-input-bg-hover: color.adjust($lm-gt-color-input-bg, $lightness: 50%) !default;
+$lm-gt-color-btn-hover: color.adjust($lm-gt-color-btn, $lightness: -5%) !default;
 
 $dm-gt-color-main: #e86195 !default;
 $dm-gt-color-sub: #5e5e5e !default;
@@ -37,9 +40,9 @@ $dm-gt-color-link-active: #cccccc !default;
 $dm-gt-color-btn: #000000 !default;
 $dm-gt-color-popbg: #000000 !default;
 
-$dm-gt-color-main-hover: lighten($dm-gt-color-main, 20%) !default;
-$dm-gt-color-input-bg-hover: lighten($dm-gt-color-input-bg, 10%) !default;
-$dm-gt-color-btn-hover: darken($dm-gt-color-btn, 5%) !default;
+$dm-gt-color-main-hover: color.adjust($dm-gt-color-main, $lightness: 20%) !default;
+$dm-gt-color-input-bg-hover: color.adjust($dm-gt-color-input-bg, $lightness: 10%) !default;
+$dm-gt-color-btn-hover: color.adjust($dm-gt-color-btn, $lightness: -5%) !default;
 
 :root {
 	--gt-color-main: #{$lm-gt-color-main};
@@ -123,11 +126,11 @@ $gt-mask-z-index: 9999 !default;
 
 // https://css-tricks.com/snippets/sass/px-to-em-functions/
 @function em($pixels, $context: $gt-size-base) {
-	@if (unitless($pixels)) {
+	@if (math.is-unitless($pixels)) {
 		$pixels: $pixels * 1px;
 	}
 
-	@if (unitless($context)) {
+	@if (math.is-unitless($context)) {
 		$context: $context * 1px;
 	}
 

@@ -150,6 +150,8 @@ Specific:
 * [GrapheneOS Discussion Forum](https://discuss.grapheneos.org/u/UlyssesZhan) (UlyssesZhan)
 * [XDA Forums](https://xdaforums.com/m/ulysseszhan.12965022/)
 * [NETGEAR Communities](https://community.netgear.com/t5/user/viewprofilepage/user-id/1144683)
+* [Haskell Community](https://discourse.haskell.org/u/ulysseszhan) (UlyssesZhan)
+* [Fairphone Community Forum](https://forum.fairphone.com/u/ulysseszhan) (UlyssesZhan)
 
 </details>
 

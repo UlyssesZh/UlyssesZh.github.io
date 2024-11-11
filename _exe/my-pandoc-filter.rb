@@ -111,20 +111,4 @@ Paru::Filter.run do
 		link.attr['rel'] = rel.join ' '
 	end
 
-	# https://github.com/lierdakil/pandoc-crossref/issues/444#issuecomment-2201090324
-	with 'Math' do |math|
-		next unless math.display?
-		next unless math.parent.is_a? Paru::PandocFilter::Span
-		next unless math.parent.children.size == 1
-		next unless /\A#{START} (.+) #{MIDDLE} (\d+) #{FINISH}\z/m =~ math.string
-		eq, num = $1, $2
-		math.parent.attr.classes.push 'katex-display-table'
-		numbered = Paru::PandocFilter::Math.new [{'t'=>'DisplayMath'}, eq]
-		numbered_span = Paru::PandocFilter::Span.new [['', 'katex-display-numbered', {}], []]
-		numbered_span.append numbered
-		number = Paru::PandocFilter::Math.new [{'t'=>'DisplayMath'}, "\\p{#{num}}"]
-		number_span = Paru::PandocFilter::Span.new [['', 'katex-display-number', {}], []]
-		number_span.append number
-		math.replace_self numbered_span, number_span
-	end
 end

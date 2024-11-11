@@ -3,8 +3,7 @@ name: Deploy to pages
 on:
   workflow_dispatch: {}
   push:
-    branches:
-      - master
+    branches: [master]
 
 permissions:
   contents: read
@@ -29,14 +28,14 @@ jobs:
         uses: ruby/setup-ruby@v1
         id: setup-ruby
         with:
-          ruby-version: 3.2.2
+          ruby-version: '3.2'
           bundler-cache: true
 
       - name: Set up GHC
         uses: haskell-actions/setup@v2
         id: setup-ghc
         with:
-          ghc-version: 9.4.7
+          ghc-version: '9.8'
 
       - name: Restore Cabal cache
         uses: actions/cache/restore@v4
@@ -46,7 +45,7 @@ jobs:
             ${{ github.workspace }}/bin-dev
             ${{ steps.setup-ghc.outputs.cabal-store }}
           key: ${{ runner.os }}-cabal-${{ hashFiles('**/cabal.lock') }}
-      
+
       - name: Install Haskell packages
         if: steps.cache-cabal-restore.outputs.cache-hit != 'true'
         run: cabal v2-install pandoc-cli pandoc-crossref --install-method=copy --installdir=$GITHUB_WORKSPACE/bin-dev
@@ -59,7 +58,7 @@ jobs:
             ${{ github.workspace }}/bin-dev
             ${{ steps.setup-ghc.outputs.cabal-store }}
           key: ${{ runner.os }}-cabal-${{ hashFiles('**/cabal.lock') }}
-      
+
       - name: Install cargo packages
         uses: baptiste0928/cargo-install@v3
         with:
@@ -80,7 +79,8 @@ jobs:
           JEKYLL_ENV: production
           GITHUB_RUN_ID: ${{ github.run_id }}
 
-      - uses: actions/upload-pages-artifact@v3
+      - name: Upload
+        uses: actions/upload-pages-artifact@v3
 
   deploy:
     environment:

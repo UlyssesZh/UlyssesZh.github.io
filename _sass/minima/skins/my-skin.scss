@@ -1,19 +1,30 @@
-@charset "utf-8";
+@charset 'utf-8';
 
-$lm-brand-color: #828282 !default;
-$lm-text-color: #665e7b !default;
-$lm-background-color: #fefbf1 !default;
-$lm-code-background-color: #eeeeff !default;
-$lm-link-base-color: #db3168 !default;
-$lm-table-text-color: $lm-text-color !default;
+@use 'sass:color';
+@use 'sass:string';
 
-$dm-brand-color: #929292 !default;
-$dm-text-color: #ac94b1 !default;
-$dm-background-color: #0e0b01 !default;
-$dm-code-background-color: #271b20 !default;
-$dm-link-base-color: #de446f !default;
-$dm-link-visited-color: darken($dm-link-base-color, 12%) !default;
-$dm-table-text-color: $dm-text-color !default;
+@use 'gitalk';
+
+$--lm-text-color: #665e7b;
+$--dm-text-color: #ac94b1;
+$--dm-link-base-color: #de446f;
+@forward 'minima/skins/auto' with (
+	$lm-brand-color: #828282 !default,
+	$lm-text-color: $--lm-text-color !default,
+	$lm-background-color: #fefbf1 !default,
+	$lm-code-background-color: #eeeeff !default,
+	$lm-link-base-color: #db3168 !default,
+	$lm-table-text-color: $--lm-text-color !default,
+	
+	$dm-brand-color: #929292 !default,
+	$dm-text-color: $--dm-text-color !default,
+	$dm-background-color: #0e0b01 !default,
+	$dm-code-background-color: #271b20 !default,
+	$dm-link-base-color: $--dm-link-base-color !default,
+	$dm-link-visited-color: color.adjust($--dm-link-base-color, $lightness: -12%) !default,
+	$dm-table-text-color: $--dm-text-color !default,
+);
+@use 'minima/skins/auto' as *;
 
 $lm-kbd-border-color: #cccccc !default;
 $lm-kbd-color: #333333 !default;
@@ -48,9 +59,9 @@ $dm-selection-background-color: #be7090 !default;
 $dm-target-background-color: #901680 !default;
 
 @function str-replace($string, $search, $replace: '') {
-	$index: str-index($string, $search);
+	$index: string.index($string, $search);
 	@if $index {
-		@return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+		@return string.slice($string, 1, $index - 1) + $replace + str-replace(string.slice($string, $index + string.length($search)), $search, $replace);
 	}
 	@return $string;
 }
@@ -137,8 +148,6 @@ $target-background-color: var(--target-background-color);
 $hr-image: var(--hr-image);
 $summary-image: var(--summary-image);
 $summary-image-brand: var(--summary-image-brand);
-
-@import "minima/skins/auto";
 
 @media (prefers-color-scheme: dark) {
 	.dark-adaptive {
@@ -578,5 +587,3 @@ figure {
 		text-align: right;
 	}
 }
-
-@import "gitalk";
