@@ -5,6 +5,7 @@ categories:
 - guide
 tags:
 - javascript
+- github
 layout: post
 excerpt: 'I was creating my first GitHub Action.
 According to the official documentation, I should commit the `node_modules` to the repo
@@ -91,3 +92,6 @@ I manually use `actions/cache` to cache the `node_modules` directory although `a
 This is because it [is not good yet](https://github.com/actions/setup-node/issues/819).
 Also, because `github.action_path` ends with `/./`, it can cause some problem due to the relative pathing.
 My workflow here works around those problems.
+
+The hash in the cache key is calculated using JavaScript because there is no `sha256sum` command
+on macOS and Ubuntu runners.
