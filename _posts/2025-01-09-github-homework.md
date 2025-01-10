@@ -6,6 +6,7 @@ categories:
 tags:
 - programming
 - github
+- school
 layout: post
 excerpt: 'It is common for school courses to require students to submit their homework using GitHub.
 However, this is usually a bad idea for several reasons.'

@@ -5,6 +5,7 @@ categories:
 - guide
 tags:
 - linux
+- school
 layout: post
 excerpt: 'Use nmcli to connect to eduroam in UCSB
 without using the configuration assistant tool provided by eduroam.'

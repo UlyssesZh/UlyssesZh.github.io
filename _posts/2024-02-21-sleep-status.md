@@ -5,6 +5,7 @@ categories:
 - guide
 tags:
 - android
+- github
 layout: post
 excerpt: 'While you are asleep, indicate that on your Discord and GitHub user status.'
 ---

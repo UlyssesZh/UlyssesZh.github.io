@@ -6,6 +6,7 @@ categories:
 - misc
 tags:
 - chinese
+- school
 layout: post
 excerpt: 'I summarized my methods for studying.
 This can be served as a guide for those who have started learning math and science.'

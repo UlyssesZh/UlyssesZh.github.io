@@ -10,8 +10,9 @@ module Jekyll
 	module UlyssesZhan::ArchivePatch
 		Archives::Archive.prepend self
 
-		def title
-			case @type
+		def initialize *args
+			super
+			@title = case @type
 			when 'year', 'month', 'day'
 				date.strftime @config['titles'][@type]
 			when 'category', 'tag'
