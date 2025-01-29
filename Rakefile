@@ -5,7 +5,7 @@ require 'highline/import'
 task default: :serve
 
 task :serve do
-	sh 'bundle exec jekyll serve --host 0.0.0.0 --port 4001 --verbose --trace --livereload --livereload-port 35730'
+	sh 'bundle exec jekyll serve --host 0.0.0.0 --port 3999 --verbose --trace --livereload --livereload-port 35730'
 end
 
 task :serve_i do

@@ -10,6 +10,7 @@ tags:
 layout: post
 excerpt: 'It is common for school courses to require students to submit their homework using GitHub.
 However, this is usually a bad idea for several reasons.'
+hidden: true
 ---
 
 *Do not take this artical as legal advice because I am not a lawyer.*
@@ -28,9 +29,9 @@ but the course instructors may be
 by "threatening" that they will get a bad grade otherwise.
 There are different possible reasons why the instructors may be doing this.
 Maybe they are not familiar with the TOS enough;
-maybe they are just not capable enough or familar enough with GitHub
+maybe they are just not familar enough with GitHub
 to come up with an actually good way of managing homework;
-or maybe they are just outright bad people and do not care about the students.
+or maybe they are aware of that but do not care.
 
 What is the big deal?
 Why is it bad to violate the TOS?
@@ -117,7 +118,7 @@ grants the right for other GitHub users to freely use and create their own copie
 <p class="no-indent">
 While this can be circumvented by making the repositories private,
 many instructors do not allow using private repositories for homework for some reasons.
-Maybe they are too lazy to manage the access to many students' private repositories,
+Maybe they do not want to bother managing the access permissions to many students' private repositories,
 or maybe they are only coping with the academic integrity codes
 without actually enforcing it.
 </p>
@@ -126,12 +127,12 @@ without actually enforcing it.
 
 Besides violation of the TOS, the instructors may also be
 **forcing students to do harm to their own**.
-One common example is that
+One example is that
 some instructors force the names of the repositories that students create for homework,
 and the repositories must be under the account of the student
 (so no designated GitHub organization for that).
 However, the names of the repositories under the same account must be unique,
-which means that students will have to delete or rename their old repositories.
+which means that students may have to delete or rename their old repositories.
 This definitely is doing harm to the account as well as the community
 because it breaks the links to the old repositories,
 and students have to do this because their grades are at stake.
@@ -147,7 +148,7 @@ other people in the open-source community on the internet,
 the partial disclosure of these information may cause harm to the student
 by enabling others to identify his real-life identity.
 
-Another harm is that the school activities may be polluting the GitHub account activities
+Another harm is that the school activities may be "polluting" the GitHub account activities
 and thus affecting the students' reputation in the community.
 Some people may be following the account because they are interested in the work of the student,
 but if the student starts using the account for schoolwork,
@@ -207,7 +208,7 @@ but it would also have to take up a considerable part of a course
 to teach all the relevant best practices of Git and GitHub to students.
 This leads to the problem of
 **students actually misusing Git and GitHub when learning it in school**
-because instructors may not bother to spend time to teach them
+because instructors may not bother to spend time to teach them Git
 instead of teaching the actually relevant course materials.
 Not to mention that the instructors may intentionally tell students to follow bad practices
 because GitHub is missing on LMS (learning management system) features
@@ -279,8 +280,3 @@ there is a LMS provided GitHub dedicated for that purpose called GitHub Classroo
 Though it looks very promising,
 it seems rare for schools to actually use it,
 so I have never used it myself.
-
----
-
-Because I cannot change the current situation of the usage of GitHub in schools,
-maybe this is just a rant of mine.
