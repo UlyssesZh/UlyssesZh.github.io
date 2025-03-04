@@ -129,6 +129,10 @@ paru:
       '\Re': '\opn{Re}'
       '\Im': '\opn{Im}'
       '\sgn': '\opn{sgn}'
+      '\Tr': '\opn{Tr}'
+      '\card': '\opn{card}'
+
+      '\order': '\fc{\mrm O}{#1}'
 
       '\O': '\fc{\mrm O}{#1}'
       '\SO': '\fc{\mrm{SO}}{#1}'
@@ -148,39 +152,43 @@ gitalk:
   owner: UlyssesZh
   admin:
     - UlyssesZh
-header_pages:
-  - my_pages/about.md
-  - my_pages/archives.html
-  - my_pages/contact.md
-  - my_pages/friends.md
 theme: minima
 minima:
   skin: my-skin
   date_format: '%b %-d, %Y'
+  nav_pages:
+    - my_pages/about.md
+    - my_pages/archives.html
+    - my_pages/contact.md
+    - my_pages/friends.md
   social_links:
-    - platform: mastodon
-      user_url: https://mastodon.social/@ulysseszhan
-      account_id: 111291458352797823
-    - platform: github
-      user_url: https://github.com/UlyssesZh
-    - platform: telegram
-      user_url: https://t.me/ulysseszhan
-    - platform: youtube
-      user_url: https://youtube.com/@ulysseszhan
-    - platform: linkedin
-      user_url: https://linkedin.com/in/%E6%9C%89%E4%B8%98-%E8%A9%B9-7715a4155
-    - platform: stackoverflow
-      user_url: https://stackoverflow.com/u/10245493
-    - platform: x
-      user_url: https://x.com/UlyssesZhan
-    - platform: facebook
-      user_url: https://facebook.com/YouqiuZhan
-    - platform: instagram
-      user_url: https://instagram.com/ulysseszhan
-    - platform: pinterest
-      user_url: https://pinterest.com/ulysseszhan
-    - platform: flickr
-      user_url: https://flickr.com/ulysseszhan
+    - title: Mastodon
+      icon: mastodon
+      url: https://mastodon.social/@ulysseszhan
+    - title: GitHub
+      icon: github
+      url: https://github.com/UlyssesZh
+    - title: Telegram
+      icon: telegram
+      url: https://t.me/ulysseszhan
+    - title: YouTube
+      icon: youtube
+      url: https://youtube.com/@ulysseszhan
+    - title: LinkedIn
+      icon: linkedin
+      url: https://linkedin.com/in/%E6%9C%89%E4%B8%98-%E8%A9%B9-7715a4155
+    - title: Stack Overflow
+      icon: stack-overflow
+      url: https://stackoverflow.com/u/10245493
+    - title: X
+      icon: x-twitter
+      url: https://x.com/UlyssesZhan
+    - title: Facebook
+      icon: facebook
+      url: https://facebook.com/YouqiuZhan
+    - title: Instagram
+      icon: instagram
+      url: https://instagram.com/ulysseszhan
 future: true
 defaults:
   - scope:
@@ -240,6 +248,10 @@ pagination:
     after: 2
 sass:
   sourcemap: development
+  silence_deprecations:
+    - import # https://github.com/jekyll/minima/issues/815
+    - global-builtin # https://github.com/jekyll/minima/pull/849
+    - color-functions
 rpg-map:
   enabled:
     - test

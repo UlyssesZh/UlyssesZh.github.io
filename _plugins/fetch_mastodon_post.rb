@@ -17,7 +17,7 @@ module Jekyll
 		end
 
 		def setup
-			@url = @site.config['minima']['social_links'].find { _1['platform'] == 'mastodon' }['user_url']
+			@url = @site.config['minima']['social_links'].find { _1['icon'] == 'mastodon' }['url']
 			@rss_url = @url + '.rss'
 		end
 

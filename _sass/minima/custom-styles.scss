@@ -1,3 +1,7 @@
+.site-header {
+	z-index: 1; // Otherwise it's behind KaTeX
+}
+
 hr {
 	margin: $spacing-unit auto;
 }
@@ -45,6 +49,7 @@ details[open] > summary {
 .post-meta time {
 	display: block;
 	margin-bottom: $spacing-unit * .5;
+	text-align: left;
 }
 
 dl {
