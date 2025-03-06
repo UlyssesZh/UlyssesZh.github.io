@@ -7,4 +7,4 @@
 	<span class="mastodon-date">{{ post.date | date: "%b %-d, %Y, %H:%M:%S" }}</span>
 	{{ post.description | external_links }}
 </div>
-<p class="mastodon-subscribe">follow me <a href="{{ mastodon.user_url }}" target="_blank" rel="external me">on Mastodon</a></p>
+<p class="mastodon-subscribe">follow me <a href="{{ post.user_url }}" target="_blank" rel="external me">on Mastodon</a></p>

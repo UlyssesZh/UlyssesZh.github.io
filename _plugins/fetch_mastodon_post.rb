@@ -42,7 +42,8 @@ module Jekyll
 				'description' => @description,
 				'images' => @images,
 				'link' => @link,
-				'date' => @date
+				'date' => @date,
+				'user_url' => @url
 			}
 		end
 	end

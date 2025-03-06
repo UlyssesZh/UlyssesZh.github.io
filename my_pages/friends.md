@@ -23,6 +23,7 @@ and
 
 - You.
 
-Other links:
+Other friendly links:
 
-- [博友圈](https://www.boyouquan.com).
+- [博友圈](https://www.boyouquan.com),
+- [BlogsClub](https://www.blogsclub.org).
