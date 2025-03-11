@@ -108,6 +108,7 @@ Active:
 * [GitLab](https://gitlab.com/UlyssesZhan) (UlyssesZhan)
 * [SourceForge](https://sourceforge.net/u/ulysseszhan) (ulysseszhan)
 * [Codeium](https://codeium.com/profile/ulysseszhan) (ulysseszhan)
+* [Kaggle](https://kaggle.com/ulysseszhan) (ulysseszhan)
 
 </details>
 
