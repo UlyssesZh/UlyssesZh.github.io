@@ -194,6 +194,7 @@ Useful:
 * [Malody](https://m.mugzone.net/accounts/user/474907)
 * Colorful Stage (en) (207422022240731139)
 * [Phira](https://phira.moe/user/1803)
+* [Foldit](https://fold.it/users/1067243)
 
 </details>
 
