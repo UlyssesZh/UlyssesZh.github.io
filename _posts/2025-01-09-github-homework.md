@@ -10,7 +10,6 @@ tags:
 layout: post
 excerpt: 'It is common for school courses to require students to submit their homework using GitHub.
 However, this is usually a bad idea for several reasons.'
-hidden: true
 ---
 
 *Do not take this artical as legal advice because I am not a lawyer.*

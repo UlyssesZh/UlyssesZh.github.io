@@ -10,6 +10,7 @@ $--dm-text-color: #ac94b1;
 $--dm-link-base-color: #de446f;
 @forward 'minima/skins/auto' with (
 	$lm-brand-color: #828282 !default,
+	$lm-heading-color: $--lm-text-color !default,
 	$lm-text-color: $--lm-text-color !default,
 	$lm-background-color: #fefbf1 !default,
 	$lm-code-background-color: #eeeeff !default,
@@ -17,6 +18,7 @@ $--dm-link-base-color: #de446f;
 	$lm-table-text-color: $--lm-text-color !default,
 	
 	$dm-brand-color: #929292 !default,
+	$dm-heading-color: $--dm-text-color !default,
 	$dm-text-color: $--dm-text-color !default,
 	$dm-background-color: #0e0b01 !default,
 	$dm-code-background-color: #271b20 !default,
