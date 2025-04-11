@@ -447,6 +447,9 @@ which means $\fc\tht{z>m/r}>0$.
 This means that $z_{m0}<m/r$.
 This also implies the nonexistence of $z_{00}$.
 
+Maybe we can still formally define $z_{00}=0$, and the eigenfunction would be the trivial
+$\fc{\Phi_{00}}{\rho,\vphi}=\mrm{const}$ with a zero eigenvalue.
+
 ### Numerical root-finding
 
 A key thing to note about the asymptotic series truncated to the first two terms is that
@@ -518,9 +521,10 @@ When $r\to1$, we then get $z_{m0}=m$ by the squeeze theorem.
 The eigenvalue of the Laplacian is then
 $\lmd_{m0}=-z_{m0}^2/R^2=-m^2/R^2=\lmd^\mrm{circle}_m$.
 
-However, a peculiar thing to note is that we cannot obtain the $m=0$ mode on a circle
-by taking the limit of $r\to1$
-because there is no $n=0$ mode when $m=0$ in the annulus.
-The seemingly peculiar behavior is due to the fact that actually $z=0$ is also a root of $g$,
-which is not feasible for a practical annulus with $r<1$,
-but it becomes a feasible solution when $r=1$.
+For the case of $m=0$, there are two ways to look at it.
+If we do not regard the trivial mode $\fc{\Phi_0}{\vphi}=\mrm{const}$ as a mode,
+then we can say that the $m=0$ mode does not exist on a circle,
+which fits nicely with the fact that the $n=0$ mode does not exist for $m=0$ in the annulus.
+With the other way, if we regard the $m=0$ and $n=0$ mode on the annulus as the trivial mode
+$\fc{\Phi_{00}}{\rho,\vphi}=\mrm{const}$,
+then it also nicely tends to the trivial mode $m=0$ on the circle in the limit $r\to1$.

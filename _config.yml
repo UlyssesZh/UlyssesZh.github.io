@@ -189,6 +189,7 @@ minima:
     - title: Instagram
       icon: instagram
       url: https://instagram.com/ulysseszhan
+  hide_site_feed_link: true
 future: true
 defaults:
   - scope:
