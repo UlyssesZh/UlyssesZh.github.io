@@ -7,3 +7,7 @@
 [submodule "doc/alda-rb"]
 	path = doc/alda-rb
 	url = https://github.com/UlyssesZh/alda-rb.git
+[submodule "doc/google-play"]
+	path = doc/google-play
+	url = https://github.com/UlyssesZh/google-play.git
+	branch = doc
