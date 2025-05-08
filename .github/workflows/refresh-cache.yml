@@ -1,0 +1,46 @@
+# Cache not accessed for 7 days will be evicted by GitHub.
+# The purpose of this workflow is to prevent that.
+name: Refresh cache
+
+on:
+  workflow_dispatch: {}
+  schedule:
+    - cron: '11 8 */6 * *'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+          token: ${{ secrets.JEKYLL_PAT }}
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        id: setup-ruby
+        with:
+          ruby-version: '3.4'
+          bundler-cache: true
+
+      - name: Set up GHC
+        uses: haskell-actions/setup@v2
+        id: setup-ghc
+        with:
+          ghc-version: '9.8'
+
+      - name: Restore Cabal cache
+        uses: actions/cache/restore@v4
+        id: cache-cabal-restore
+        with:
+          path: |
+            ${{ github.workspace }}/bin-dev
+            ${{ steps.setup-ghc.outputs.cabal-store }}
+          key: ${{ runner.os }}-cabal-${{ hashFiles('**/cabal.lock') }}
+
+      - name: Install cargo packages
+        uses: baptiste0928/cargo-install@v3
+        with:
+          crate: pandoc-katex
+          cache-key: ${{ runner.os }}-cargo-${{ hashFiles('**/cargo.lock') }}
