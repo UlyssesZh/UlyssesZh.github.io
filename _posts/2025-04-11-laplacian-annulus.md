@@ -528,3 +528,27 @@ which fits nicely with the fact that the $n=0$ mode does not exist for $m=0$ in 
 With the other way, if we regard the $m=0$ and $n=0$ mode on the annulus as the trivial mode
 $\fc{\Phi_{00}}{\rho,\vphi}=\mrm{const}$,
 then it also nicely tends to the trivial mode $m=0$ on the circle in the limit $r\to1$.
+
+### The homogeneous Dirichlet boundary condition
+
+So far I only talked about the homogeneous Neumann boundary condition.
+In the case of homogeneous Dirichlet boundary condition,
+most of the derivation is the same, but with
+$$\fc fz\ceq\fc{J_m}{rz}\fc{Y_m}z+\fc{Y_m}{rz}\fc{J_m}z,\quad
+\fc gz\ceq\fc{J_m}{rz}\fc{Y_m}z-\fc{Y_m}{rz}\fc{J_m}z.$$
+
+There is a qualitative difference from the Neumann case, though,
+which comes from the limiting behavior of $\fc \tht{z\to0}$:
+$$\fc\tht{z\to0}=\begin{dcases}
+\fr{\pi\fc\ln{1/r}}{2\ln rz\ln z},&m=0,\\
+\fr{\pi\p{1-r^{2m}}}{4^mm!\p{m-1}!}z^{2m},&m>0.
+\end{dcases}$$
+We can see that they are positive in both cases,
+which means that $\fc\tht z=0$ does not have a positive solution in both cases.
+Therefore, the radial modes start at $n=1$ for all $m$
+(in contrast to the Neumann case where $n=0$ mode exists for $m>0$).
+The traditional naming of the eigenmodes then agrees with $\p{m,n}$.
+
+An implication of the difference is that there is no longer a non-trivial circle limit.
+This is because the eigenvalue of any mode with positive $n$ would tend to infinity
+as $r\to1$.
