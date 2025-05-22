@@ -532,7 +532,8 @@ then it also nicely tends to the trivial mode $m=0$ on the circle in the limit $
 ### The homogeneous Dirichlet boundary condition
 
 So far I only talked about the homogeneous Neumann boundary condition.
-In the case of homogeneous Dirichlet boundary condition,
+In the case of homogeneous Dirichlet boundary condition
+$$\fc\Phi{\rho=R_\mrm{in},\vphi}=\fc\Phi{\rho=R_\mrm{out},\vphi}=0,$$
 most of the derivation is the same, but with
 $$\fc fz\ceq\fc{J_m}{rz}\fc{Y_m}z+\fc{Y_m}{rz}\fc{J_m}z,\quad
 \fc gz\ceq\fc{J_m}{rz}\fc{Y_m}z-\fc{Y_m}{rz}\fc{J_m}z.$$
