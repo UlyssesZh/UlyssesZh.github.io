@@ -153,6 +153,7 @@ Specific:
 * [NETGEAR Communities](https://community.netgear.com/t5/user/viewprofilepage/user-id/1144683)
 * [Haskell Community](https://discourse.haskell.org/u/ulysseszhan) (UlyssesZhan)
 * [Fairphone Community Forum](https://forum.fairphone.com/u/ulysseszhan) (UlyssesZhan)
+* [Atuin Community](https://forum.atuin.sh/u/ulysseszhan) (UlyssesZhan)
 
 </details>
 
@@ -182,6 +183,7 @@ Useful:
 * [itch.io](https://ulysseszhan.itch.io) (UlyssesZhan)
 * (taptap.io) [TapTap](https://taptap.io/user/483441132)
 * (taptap.cn) [TapTap](https://taptap.cn/user/17520255)
+* [Smule](https://www.smule.com/UlyssesZhan) (UlyssesZhan)
 
 </details>
 
@@ -219,5 +221,6 @@ Useful:
 * [Disqus](https://disqus.com/by/ulysseszhan) (ulysseszhan)
 * [AUR](https://aur.archlinux.org/account/UlyssesZhan) (UlyssesZhan)
 * [16Personalities](https://www.16personalities.com/profiles/c926b68f51625)
+* [Last.fm](https://www.last.fm/user/UlyssesZhan) (UlyssesZhan)
 
 </details>
