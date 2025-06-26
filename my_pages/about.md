@@ -44,6 +44,14 @@ can be rendered nicely without JavaScript.
 The only broken things would be comments, click-to-copy functionalities,
 the search engine, and (well-hated) trackings.
 
+About web crawling and AI training on the contents of this blog.
+Web crawling is totally allowed
+(because it does not add costs to me anyway but to GitHub instead).
+About AI training, most of the contents are licensed under CC-BY-4.0,
+which was not drafted with AI in mind,
+so I think it is up to me to decide whether to allow it.
+In my opinion, training AI on my contents should totally be allowed.
+
 Finally, I would like to tell you what I think is the most beautiful
 equations of all.
 Yes, it is Hamilton's principle

@@ -92,6 +92,7 @@ Active:
 * [CSDN博客](https://blog.csdn.net/qq_33904752)
 * [虫虫钢琴网](https://gangqinpu.com/member/634972.html)
 * [抖音](https://douyin.com/user/MS4wLjABAAAAg87JO6iwq_XYXUaX7nX2aApcR2ngBHhXSI3Axc9pLrI) (youqiu_)
+* [Vimeo](https://vimeo.com/ulysseszhan) (ulysseszhan)
 
 </details>
 
