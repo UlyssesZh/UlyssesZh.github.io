@@ -4,7 +4,8 @@ date: 2025-06-22 00:31:43 -0700
 categories:
 - music
 tags:
-- programming
+- fourier transform
+- python
 layout: post
 excerpt: 'There is a gradually-accelerating buildup kickroll at 1:18 in the song <cite>Time to beat the odds</cite> by 影虎。.
 In order to know the details of this rhythm, I have to analyze the sample using Python.'

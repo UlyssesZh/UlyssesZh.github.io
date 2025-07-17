@@ -4,7 +4,6 @@ date: 2025-01-09 23:51:35 -0800
 categories:
 - misc
 tags:
-- programming
 - github
 - school
 layout: post
