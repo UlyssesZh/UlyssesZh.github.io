@@ -30,6 +30,36 @@ For Discord, this is as simple as invoking a REST API
 curl -X PATCH \
 	-H "Content-Type: application/json" \
 	-H "Authorization: YoUr.DiScOrD.ToKeN" \
+	-d '{"settings":"WhwKBQoDZG5kEhMKC1NsZWVwaW5nLi4uGgTwn5i0"}' \
+	https://discord.com/api/v9/users/@me/settings-proto/1
+
+
+# Clear sleeping status
+curl -X PATCH \
+	-H "Content-Type: application/json" \
+	-H "Authorization: YoUr.DiScOrD.ToKeN" \
+	-d '{"settings":"WgoKCAoGb25saW5l"}' \
+	https://discord.com/api/v9/users/@me/settings-proto/1
+```
+
+If you wonder what those base64-encoded strings mean,
+they are actually the binary contents of protobuf-encoded messages.
+See [this `.proto` file](https://github.com/discord-userdoccers/discord-protos/blob/master/discord_protos/discord_users/v1/PreloadedUserSettings.proto)
+for the definition of the message structure.
+
+<details><summary>API v8</summary>
+
+The commands written above was added when editing this article on July 20, 2025,
+which uses API v9.
+The latest API version as of originally writing this article was v8,
+but now **using API v8 will get your account disabled**,
+so do not use it!
+
+```shell
+# Set sleeping status
+curl -X PATCH \
+	-H "Content-Type: application/json" \
+	-H "Authorization: YoUr.DiScOrD.ToKeN" \
 	-d '{"custom_status":{"text":"Sleeping...","emoji_id":null,"emoji_name":"😴","expires_at":null},"status":"dnd"}' \
 	https://discordapp.com/api/v8/users/@me/settings
 
@@ -41,6 +71,8 @@ curl -X PATCH \
 	-d '{"custom_status":null,"status":"online"}' \
 	https://discordapp.com/api/v8/users/@me/settings
 ```
+
+</details>
 
 For GitHub, [there is not a REST API for that](https://github.com/orgs/community/discussions/108473),
 but you can install the [user-status plugin](https://github.com/vilmibm/gh-user-status)

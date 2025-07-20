@@ -97,7 +97,7 @@ The total number of times to fetch the texture is $\p{n+1}N/n$ to render the who
 which decreases as $n$ increases.
 
 By utilizing the linear sampling feature of the GPU,
-this number can be further reduced (by half) if $\sgm/\sqrt N$ is an integer.
+this number can be further reduced (by half) if $\sgm/\sqrt N=1$.
 One can read further about this in
 [this article](https://www.rastergrid.com/blog/2010/09/efficient-gaussian-blur-with-linear-sampling/).
 
