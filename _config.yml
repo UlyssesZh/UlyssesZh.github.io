@@ -27,8 +27,8 @@ paru:
       - _exe/my-pandoc-filter.rb
       - pandoc-katex
     metadata:
-      - crossrefYaml=bootstrap/crossref.yml
-      - rougeConfig=bootstrap/rouge.yml
+      - crossrefYaml=_bootstrap/crossref.yml
+      - rougeConfig=_bootstrap/rouge.yml
   crossref:
     link_references: true
     table_eqns: false

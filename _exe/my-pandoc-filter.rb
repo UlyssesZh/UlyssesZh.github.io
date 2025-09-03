@@ -80,7 +80,7 @@ START, MIDDLE, FINISH = %w[start middle finish].map { "very_unlikely_numbered_eq
 Paru::Filter.run do
 	before do |doc|
 		@config = DEFAULT_CONFIG.dup
-		if config_file = metadata['rougeConfig']
+		if config_file = metadata['rougeConfig']&.gsub(?\\, '') # Markdown escape backslashes; see https://github.com/jgm/pandoc/issues/7414
 			@config.merge_r! YAML.load_file config_file, symbolize_names: true
 		end
 	end

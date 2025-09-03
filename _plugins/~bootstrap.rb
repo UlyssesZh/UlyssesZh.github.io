@@ -10,7 +10,7 @@ end
 module Jekyll
 	module UlyssesZhan::Bootstrap
 
-		BOOTSTRAP_DIR = 'bootstrap'
+		BOOTSTRAP_DIR = '_bootstrap'
 
 		module_function
 
