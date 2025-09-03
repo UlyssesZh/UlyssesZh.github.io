@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 require 'table_of_contents/parser'
 
 module Jekyll::UlyssesZhan
