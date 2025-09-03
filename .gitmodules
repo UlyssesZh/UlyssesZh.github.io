@@ -11,3 +11,6 @@
 	path = doc/google-play
 	url = https://github.com/UlyssesZh/google-play.git
 	branch = doc
+[submodule "tools/eatcat"]
+	path = tools/eatcat
+	url = https://github.com/Atopos1331/eatcat.git
