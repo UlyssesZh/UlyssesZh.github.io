@@ -14,4 +14,4 @@
 	branch = doc
 [submodule "_public/tools/eatcat"]
 	path = _public/tools/eatcat
-	url = https://github.com/Atopos1331/eatcat.git
+	url = https://github.com/UlyssesZh/eatcat.git
