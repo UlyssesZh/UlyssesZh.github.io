@@ -1,0 +1,176 @@
+---
+title: Public cryptographic information
+permalink: "/crypt/"
+layout: my_page
+---
+
+This page provides some public cryptographic information about me.
+
+## Primary PGP public key
+
+This public key can be used to encrypt messages sent to my email address
+[ulysseszhan@gmail.com](mailto:UlyssesZhan <ulysseszhan@gmail.com>).
+My email client will read the Autocrypt header in the emails sent to me.
+The key is also available on
+[keys.openpgp.org](https://keys.openpgp.org/vks/v1/by-fingerprint/D6046E7D2DD8A2C83F74098C36F32687C05F4986).
+
+<details><summary>Armor format</summary>
+
+```plain
+-----BEGIN PGP PUBLIC KEY BLOCK-----
+
+mQGNBGTnzrQBDAC7Z/WXmuduR7EUyKBqvwuNAlWmMWoaCqtfl47I6umGcg+7KFwg
+oENeqcTEjzZJHl4K+mQvQiOaSNDv4KMFQ3Qh7s3SPq+MR/JYtTYybgoNs77YwInR
+jFFJ07MDxfUtcz/vj4A4kbWdG1ZhFi9tXLNVXhQ9/EXV8EBaWX2dfDpXBv1bHJWf
+Z343rYTikoYxTqQXCX0WVVswckSO8xqkK41gogk3sUHt0a4HFagIEqiaN+yOCy3Y
+2ypr74lgQ75rsewezqJ6LAfLc+ouiNkzy/wMY1GXJ5mS119q9qczxiWt5GsS661Q
+GILrvVORF0sJJ2S4/PRIJXtEnUFOR5X6qvg3nP5tXl8PSOMcD4wWZmdLKNpRRKgg
+dD8+2UTbY0wOPPLqEePLc0W1zqMboAAiqcwrWce2dqi6HvnRfombCFSHtV9DODwU
+u3BQObv1rvSRHDqoBsthQuoCTJu9n4Mf2XiPl5JAPeUa5Z6K7vcMyIDjLT4uuf3/
+3o8+ZObaQyS9qNcAEQEAAbQjWW91cWl1IFpoYW4gPFVseXNzZXNaaGFuQGdtYWls
+LmNvbT6JAc4EEwEKADgWIQTWBG59LdiiyD90CYw28yaHwF9JhgUCZOfOtAIbAwUL
+CQgHAgYVCgkICwIEFgIDAQIeAQIXgAAKCRA28yaHwF9JhsxeC/9osqCwJiQnQ6V8
+59Jis2pUm7y627zn//HHR2m8OzSSNV8sbvnokVOCpwT5G2PjFgD4CyKRHqKwyo91
+RtweznMoliyrqFfcJLWs/rq4P/S3AqE9obDrzksbnwFsoqY/rCp3FWrYPfqGsALs
+VpzKF8+SmSFIpzfHNpGdTQgZeQAyJlAESU6LiEvLXDgQwLOhkdwy/fqVJi0Xkzm3
+Irm10Uusorxkj3RhycQoytjjVLZW/85bANc6p9Tf8qs+hDjTS4Q4tfAci4uhX/st
+o+ObMYG1gnWrMrkVspmfJE+A7o1x4tnYNjNQZp0bTECruc9+QpsZeQi7MwRhAey6
+83djAT/HKgBrXGmuiPzOkNCqkxhs2GMCeVaZpMMGvlx8K8UJwbF1TL5hLw7R23SS
+WJOQIdqBddEuzUK9CzaiN3ggAzUN2kIOPp8RlhbOFNcVe7hlvrkwyO6lyzQFx9IO
+/eWJu8mgDTAZLLqPreZEhHoqfrYEo53hsvsR/eGla09rrgHnR0W5AY0EZOfOtAEM
+AMXVN4ATLZYs0grQQFhz4EHEE9nnwrY47TWJQrO8QHpVOIf0uhYPbouiDK4ELxhp
+O1XX+sh43vJlnROS/rzjmXfuZQBfugjHNVTwCvejtuC/wIkuA8JnTvBVH5Ku1hnZ
+2WTtodGjs2dpYDB2/wMaJGGyo6+OyHBhgVdwBnLXxVPD39tN+GLzv/ixEafbNrzP
+PRRvHgZZImMERJPCgVrOcw3n0JDIysPlRmD9QBB0Jcfo3jzatHJiX2Ma6kEAD1HI
+b667qV+LuzCtx0bFzrx/HqywpWFze9/1ijJ97tEtJsU+4uPPioy8IpDeTXLj8Jnn
+72TwBE2jcyKOTTAhdj+UF0Wzgo56PXgWm9v5CZMYNCEyxOAHYH7/BsFl7TMHjC1v
+7DEvEJAqoT4A9HjMr4ZPpV5ONcVRxJUVRO0GDL2I/6cAyqtWp95MllibkGYjahvv
+I5M8qWS1d0Tl/jrmuxBruGpkIbaw04C7pkXu165xZlBdFTKzUJmE5NPGh6IAj1dt
+mQARAQABiQG2BBgBCgAgFiEE1gRufS3Yosg/dAmMNvMmh8BfSYYFAmTnzrQCGwwA
+CgkQNvMmh8BfSYbCgAv/U/egtELCEMa6kBqz/ZS8jSU9OQKZVVg4zZUJr3Zh87C1
+X52ERVzwzrm6/TvczYJP7vGwtLqLPScojSgITa3fZ2pGRrYvKSf6B1RpPOhEkcz3
+NiCPqIWUVIB2bW8SStPLETLM3E/jxR7yy3YkFNekrSFqjtxAF67Eqjt6VmxfwdL1
+8dsaRrWMDeJ3tUH8nRrvjL1nOy8tSa0gyHeMreGD27qv+y9nFXUuFl8C0lP1M32r
+8XlTdSAMmflH1qHeNA66tIu+bbXqTteHtSjsJPs9XkQhCNb/jkVmFFW+2y8pgloj
+zWKKz/NfMZ9Oiw8HoFqn7FXNeMUuqyChOC250faMmG9EL5TdRsiuLHQML2cDcuUg
+fneGP6UNMku/SngJ//tagnfXE3w+05ratv0OjH1XEPc7553IjyeYJDCH/4IPE2RS
+Lcwj/sZJ+1S1WMLHclM5dchoNyC3msc1fTTXrPBM58DyUWDKYdQImDUoit8uRylA
+K7TvWM/5ZmbzlQBFb/YW
+=XdmV
+-----END PGP PUBLIC KEY BLOCK-----
+```
+
+</details>
+
+## PGP public key for ProtonMail
+
+These keys are for use with my ProtonMail addresses.
+When sending emails to my ProtonMail addresses,
+using these keys for encryption is preferred over using the primary key above
+because it is more convenient for me to decrypt them
+(although I can still decrypt messages encrypted with the primary key).
+
+<details><summary>Armor format of the key for ulysseszhan@pm.me</summary>
+
+```plain
+-----BEGIN PGP PUBLIC KEY BLOCK-----
+
+mDMEYw5QnRYJKwYBBAHaRw8BAQdApsayumB3phxeYYedhsXxU4qu0nYHrMxMXkC/
+xA2P1XC0JXVseXNzZXN6aGFuQHBtLm1lIDx1bHlzc2VzemhhbkBwbS5tZT6IjwQQ
+FgoAIAUCYw5QnQYLCQcIAwIEFQgKAgQWAgEAAhkBAhsDAh4BACEJELblyllXEHwH
+FiEEmpqz46LBh35Hqdx4tuXKWVcQfAc/qgEA/JEXnCyTqikBi7XqG+A5P+5EH6f6
+u18k8cQKQpqxo2EA/2oYIks6H6b04gdpO7hvdqBI5UDyIu8obQIw/5zvq90PiQGz
+BBABCgAdFiEE1gRufS3Yosg/dAmMNvMmh8BfSYYFAmi40BoACgkQNvMmh8BfSYZN
+Awv8DV8XjUVbuSWG65NeXJuFk/sgVTYWAs4YHKctq2s25Z6/pOzhS+NezEenJhxE
+iLcsOPzdiMs4sWMZWTiimlIhs/4GpCb+ivIXEo8h2EA+9nWamLWgzU2RwvJLteZA
+E4pClH9ZROBGyK+EroUyr7XIThSsBqYGcM9Z1gUUuw1PKIDX4fr12J9AwuXte2xT
+VfyQJscxgQBbu91CO13528ItASf7J3SxjRI6QJ5zQnWGnD/X/tLcuJwv9sAxq0lt
+RSVmJCMnl9eruSy2AteqAGR31F390JB2WcWUPe4zWUGfN7BTMcZBoJASdaX2JbnM
+Ql3QGqSji9s8NQNsvTpEvDZS2nvloiZtgoLdc9UJtaG20D42MGhEntOKhc4f6olP
+1RVZ7hb9czE9Heuyp7Aj7Xrj3CuJ3C6bvP21JyRDluOCND2fBRrzWSC8EJBLJlme
+QGKx+Fqk1Ya57qlfJIr84ol/HpBnZv6saGGpVWV5oFtDGTYwWSgszZlJjaSb899U
+d4ZeuDgEYw5QnRIKKwYBBAGXVQEFAQEHQLn2MLvmmPekMQVs6B69m5DRSopsrUiH
+jGFVzOasmcZxAwEIB4h4BBgWCAAJBQJjDlCdAhsMACEJELblyllXEHwHFiEEmpqz
+46LBh35Hqdx4tuXKWVcQfAdRJAEA0tGZkwlkftX2Dm8ar8bGlRBAfGoTxlt4dSIU
+N9CekMYA/1Vv679XVB04DYDNuLOkapmw54AssEXaFh/m0D7SV3wK
+=AnPS
+-----END PGP PUBLIC KEY BLOCK-----
+```
+
+</details>
+
+<details><summary>Armor format of the key for ulysseszhan@proton.me</summary>
+
+```plain
+-----BEGIN PGP PUBLIC KEY BLOCK-----
+
+mDMEYw5EKRYJKwYBBAHaRw8BAQdAR0scm/R71Jx+gS99odj7P3xMva8hrq+FOTnB
+EQpBLFS0LXVseXNzZXN6aGFuQHByb3Rvbi5tZSA8dWx5c3Nlc3poYW5AcHJvdG9u
+Lm1lPoiPBBAWCgAgBQJjDkQpBgsJBwgDAgQVCAoCBBYCAQACGQECGwMCHgEAIQkQ
+ZKeZRolgaBgWIQS/5Rgc9t8auj2++7tkp5lGiWBoGE5LAQD1LAnDufEReqOy6Bud
+8OqrhcCuxG3rySjpnWNhX3XtiAD/T++iI5L/SPiHni4BbXDBjGAkLhgOS0Rx1c08
+yaElkQ+JAbMEEAEKAB0WIQTWBG59LdiiyD90CYw28yaHwF9JhgUCaLjQPwAKCRA2
+8yaHwF9Jhm67C/4jUloMJ+HRIVn454o1VLWBbV3NEmPO7rLY5G6amxHsbzS3tqtg
+7G9k747TKIKzsI1c1yv/a/cpz7oDYdr+L/hP0VE/0fEu1jrUCUXGbVmnUNUo1q5b
+7nfds1STDylXpjTowSkpNOydKSiNiFuCuoghGl4g2iM7CUO8sbvwENwy5C3n8Akt
+3N4Z1Nk/VxxWeXM/SUa9SvjjPcCp7HdrlyF39QRcKpCBhVjWYEXwpQmSF+iqfmcM
+OQ6Qvv5XAVAswdOiDKBU0ve/GsqhVchkJTkFZeaqMkTFa5YdCXmoeJZzG0+qS5NR
+AU+3dStWzK7wlwCJgNik6g9KT95VJqdPFWUC2JvoV5e16eu0isBE1PRtmL2wWGZu
+1OPm49nf5skwnFQ4wxJg2FJpyNm2u6k7wu5YwPQovMAN2XEUwobhsR/vK5Dy3jMg
+1YWMOG7tE4lirF52YmX1uUJGiuOj2JattmN5pao1X9WZeSI/0pvNkuh0TeOm0+yz
+BMVp92yGaLB53tW4OARjDkQpEgorBgEEAZdVAQUBAQdAXQ494eeWVoZF5/rl2Y23
+POgD52HJ6KF3HcIEP2lk4W4DAQgHiHgEGBYIAAkFAmMORCkCGwwAIQkQZKeZRolg
+aBgWIQS/5Rgc9t8auj2++7tkp5lGiWBoGO/6AP9R+YF7Vp8euVaffTPaDh0WAW37
+hgPVbBrx/CbWQBGILQD/Tc4cmBUuhqaJqfEONkDtcqePiQ3bqcqg01Wy54j9XgY=
+=GUBF
+-----END PGP PUBLIC KEY BLOCK-----
+```
+
+</details>
+
+## PGP public key for Delta Chat
+
+My Delta Chat ID is
+[j57fp6497@nine.testrun.org](https://i.delta.chat/#02212264479987EEDC27B9121A436F47117ED58E&a=j57fp6497%40nine.testrun.org&n=UlyssesZhan&i=2znJFoRaP-ZrOojKrZfDts7r&s=uPGSR0jnPtoMdXDtbOEa5A5N).
+
+<details><summary>Armor format</summary>
+
+```plain
+-----BEGIN PGP PUBLIC KEY BLOCK-----
+
+mDMEaLiX6BYJKwYBBAHaRw8BAQdABS9WGFl9adMRiZgXLQmH58/8qLKn5wMWZbU7
+18AwLCu0HDxqNTdmcDY0OTdAbmluZS50ZXN0cnVuLm9yZz6IjQQQFggANQIZAQUC
+aLiX6AIbAwQLCQgHBhUICQoLAgMWAgEBJxYhBAIhImRHmYfu3Ce5EhpDb0cRftWO
+AAoJEBpDb0cRftWORwkBAPl10gr7+6KYW/XspDh8MsdK/7gyskd3EDK0ubo1s/hQ
+AQCy5WAZxJFksBBmK2zH0Oju3CVd31n0nWot+KNZDPfNC4kBswQQAQoAHRYhBNYE
+bn0t2KLIP3QJjDbzJofAX0mGBQJouM/dAAoJEDbzJofAX0mGFQUL/2kEN0V0R93H
+98GLNcRyHPuPmoJAWrapPKhEo11v7DmUfRkoqO/0t1l0oLIPccKTrogziOlPFBNW
+SrEZiiGZrBdsrBubMnLhymPmdiHEuQFHHRV/JvalVazinkN4YvayENNYd50ng9bX
+HCR7JoVoxun8zSTcI0JNR72lZUrhU3jozv0hjd3XVN4khIeBOIwQNIT++YDDGYiT
+xMWb7nm2ApzwkqgaBIyQ9+WpaJbsLlK0zTqCJNOgN1r0Fw4GAsaPbEMcnTU5c/NS
+sRqrFLvSLje4xBTtNsqa23Z7zEEJtLlabW4U6OJTZnpNdGHmqrYja0B9nYd/YVPG
+hM0TwT9GQheHl7L88g8/NfYhdNmhXYVu/aD94zWz/fokOdRvSSx6K7+6Ch9AUctm
+h7elpW9nLgwARHXTdqSZveiv5gc8nLdHfDPGhOz1wpB7a1C3WBUeE3Y8goGwyfK6
+/mI0VccBgjXdxplTDkOxffa7MuJTc04gSmHx2LgCrs4JfWeBIsbXrbg4BGi4l+gS
+CisGAQQBl1UBBQEBB0CedPHmaX8druhqbQ3gfFvKE8RKlOkNO2a05SxWvW5wRQMB
+CAeIeAQYFggAIAUCaLiX6AIbDBYhBAIhImRHmYfu3Ce5EhpDb0cRftWOAAoJEBpD
+b0cRftWO730BAKBEU0G1fSiymnukhdR0nH7MEpSl7xBsTZWa8e6ToWi5AQD+uNY0
+dBXO87E9Am3Hb+R4h0UqpM5rsl8+LJheAUsvBA==
+=u50z
+-----END PGP PUBLIC KEY BLOCK-----
+```
+
+</details>
+
+## SSH public keys
+
+These keys can be used to authenticate me on SSH servers.
+
+<details><summary>Keys</summary>
+
+```plain
+ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIN4UNDbPgbIaReufopFlFg0FuJ8n4xeRglaeCZ3W2F84
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDMMWAvLPv8ZOY+hsktZcm6vdsXSEX4lmxN36++y4ZYt4U9yqmQirdll2n09mbNJq7/rZZMfCjF6pXjWKbGBc/q0D+0G0c/a4BA687+L19Q8JFwlMPlJYwUmogij3prA348oJTAoTHNN9yPiejBvuYWip7cIRkKs9P+2bs6v2sqBeaJPvm9BkmcaS4a446xFxEBtBz7B7CU0p32Rui/3FJSs2mjaDHqVyBb/5k4VHmhE0IOdr6ArM+WCVmjfxO+xl9F7me3EkMEfy8Dkd0DhqUY9Lbn9kjewle5LQjd5DLcaBtEmyHBKwpoWTKDnT3OnI1JZmxMh0dH8uWGpUpy91DBbodBA8NnsIfAPMbAhNHw/Qwh3IrQ+oYnePDA4C0wE5R2GiFMGQTi+2Gv2lmTlRT7l4eGS3V948KBCCj+HabCaSPcl34SutCRMwFyMBM77qEs0Swbr2sjiYfkGvrEreYEKCU6hwylLGOJ+KjdZZihm9+GUZDHkg4P8/UWdZ50fUM=
+```
+
+</details>
