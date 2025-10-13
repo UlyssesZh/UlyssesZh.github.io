@@ -144,6 +144,7 @@ General:
 * [StackExchange](https://stackexchange.com/users/14182367)
 * [百度贴吧](https://tieba.baidu.com/home/main?id=tb.1.60c23df.ZeK_nGL220R_urGB_jdd3w)
 * [Quora](https://quora.com/profile/Ulysses-Zhan) (Ulysses Zhan)
+* [Lemmy.World](https://lemmy.world/u/UlyssesZhan) (UlyssesZhan)
 
 Specific:
 
@@ -175,6 +176,8 @@ Specific:
 * [Fairphone Community Forum](https://forum.fairphone.com/u/ulysseszhan) (UlyssesZhan)
 * [Atuin Community](https://forum.atuin.sh/u/ulysseszhan) (UlyssesZhan)
 * [Hacker News](https://news.ycombinator.com/user?id=UlyssesZhan) (UlyssesZhan)
+* [Audacity Forum](https://forum.audacityteam.org/u/ulysseszhan/summary) (UlyssesZhan)
+* [F-Droid Forum](https://forum.f-droid.org/u/ulysseszhan/summary) (UlyssesZhan)
 
 </details>
 
