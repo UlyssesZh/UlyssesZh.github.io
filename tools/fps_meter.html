@@ -26,10 +26,17 @@ layout: tool
 		margin: 0px;
 		font-size: 8px;
 		font-family: monospace;
+		color: black;
 		position: absolute;
 		user-select: none;
-		&.current {
+	}
+
+	.current {
+		.frame-fg {
 			color: red;
+		}
+		.frame-bg {
+			background-color: pink;
 		}
 	}
 
@@ -42,7 +49,7 @@ layout: tool
 <div id="average"></div>
 <div>
 	<div>Frame count: <input type="number" id="frame-count" value="60"></div>
-	<div>Max frame time: <input type="number" id="max-frame-time" value="66.66667"> ms</div>
+	<div>Max frame time: <input type="number" id="max-frame-time" value="60"> ms</div>
 	<div><button type="button" onclick="start();">Go</button></div></div>
 </div>
 
@@ -63,7 +70,7 @@ layout: tool
 		const frame = frames[index];
 		frame.time = currentTime - lastTime;
 		frame.fg.textContent = format('{} ms, {} Hz', frame.time, 1000 / frame.time);
-		frame.fg.classList.add('current');
+		frame.div.classList.add('current');
 		frame.bg.style.width = `${frame.time / maxFrameTime * 100}%`;
 		const averageTime = frames.reduce((s, {time}) => s + time, 0) / frames.length;
 		averageDiv.textContent = format('Average: {} ms, {} Hz', averageTime, 1000 / averageTime);
@@ -91,11 +98,11 @@ layout: tool
 			div.appendChild(bg);
 			div.appendChild(fg);
 			container.appendChild(div);
-			return {bg, fg, time: NaN};
+			return {div, bg, fg, time: NaN};
 		});
-		lastTime = performance.now();
 		index = 0;
-		update();
+		lastTime = NaN;
+		update(NaN);
 	}
 
 	start();
