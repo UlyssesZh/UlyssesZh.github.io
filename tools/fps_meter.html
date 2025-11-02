@@ -43,25 +43,38 @@ layout: tool
 	#average {
 		font-family: monospace;
 	}
+
+	.move {
+		background-repeat: repeat-x;
+		background-image: url("../assets/images/logos/78(.svg");
+		background-size: contain;
+		width: 100%;
+		height: 100px;
+		margin: 0px;
+	}
 </style>
 
 <div id="frames"></div>
 <div id="average"></div>
+<div id="move"></div>
+
 <div>
 	<div>Frame count: <input type="number" id="frame-count" value="60"></div>
 	<div>Max frame time: <input type="number" id="max-frame-time" value="60"> ms</div>
+	<div>Moving speed: <input type="number" id="moving-speed" value="1" step="0.1"> px/ms</div>
+	<div>Move per <input type="text" id="move-per" pattern="(\d+,)*\d+" value="1,2,4"> frames</div>
 	<div><input type="checkbox" id="use-performance-now"> Use <code>performance.now()</code></div>
-	<div><button type="button" onclick="start();">Go</button></div></div>
+	<div><button type="button" onclick="start();">Go</button></div>
 </div>
 
 <script>
 	const currentFrames = document.getElementsByClassName('current');
 	const averageDiv = document.getElementById('average');
-	let index, lastTime, frames, animationFrame, maxFrameTime, usePerformanceNow;
+	let index, moveIndex, lastTime, frames, movePer, moveDivs, animationFrame, maxFrameTime, movingSpeed, moveX, usePerformanceNow;
 
 	function format(string, ...numbers) {
 		while (string.includes('{}')) {
-			string = string.replace('{}', numbers.shift().toFixed(3).padStart(7, ' '));
+			string = string.replace('{}', numbers.shift().toFixed(3).padStart(7, '0'));
 		}
 		return string;
 	}
@@ -72,28 +85,45 @@ layout: tool
 		}
 		currentFrames.item(0)?.classList.remove('current');
 		const frame = frames[index];
-		frame.time = currentTime - lastTime;
-		frame.fg.textContent = format('{} ms, {} Hz', frame.time, 1000 / frame.time);
 		frame.div.classList.add('current');
+		frame.time = currentTime - lastTime;
+	
+		frame.fg.textContent = format('{} ms, {} Hz', frame.time, 1000 / frame.time);
 		frame.bg.style.width = `${frame.time / maxFrameTime * 100}%`;
+
 		const averageTime = frames.reduce((s, {time}) => s + time, 0) / frames.length;
 		averageDiv.textContent = format('Average: {} ms, {} Hz', averageTime, 1000 / averageTime);
+
+		if (moveX == null || Number.isNaN(moveX)) {
+			moveX = 0;
+		} else if (moveDivs.length) {
+			// assuming that the background image has the same width and height and its height is the same as the div
+			moveX = (moveX + movingSpeed * frame.time) % moveDivs[0].clientHeight;
+		}
+		moveDivs.forEach((div, i) => {
+			if (moveIndex % movePer[i] === 0) {
+				div.style.backgroundPositionX = `${moveX}px`;
+			}
+		});
+
 		lastTime = currentTime;
 		animationFrame = requestAnimationFrame(update);
 		index = (index + 1) % frames.length;
+		moveIndex = (moveIndex + 1) % movePer.reduce((a, b) => a * b, 1);
 	}
 
 	function start() {
 		if (animationFrame) {
 			cancelAnimationFrame(animationFrame);
 		}
-		const container = document.getElementById('frames');
-		container.innerHTML = '';
 
 		const length = parseInt(document.getElementById('frame-count').value);
 		maxFrameTime = Number(document.getElementById('max-frame-time').value);
+		movingSpeed = Number(document.getElementById('moving-speed').value);
 		usePerformanceNow = document.getElementById('use-performance-now').checked;
 
+		const container = document.getElementById('frames');
+		container.innerHTML = '';
 		frames = Array.from({length}, i => {
 			const div = document.createElement('div');
 			div.className = 'frame';
@@ -108,7 +138,18 @@ layout: tool
 			return {div, bg, fg, time: NaN};
 		});
 
+		const moveContainer = document.getElementById('move');
+		moveContainer.innerHTML = '';
+		movePer = document.getElementById('move-per').value.split(',').map(s => parseInt(s.trim()));
+		moveDivs = movePer.map(n => {
+			const div = document.createElement('div');
+			div.className = 'move';
+			moveContainer.appendChild(div);
+			return div;
+		});
+
 		index = 0;
+		moveIndex = 0;
 		lastTime = NaN;
 		update(NaN);
 	}
