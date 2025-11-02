@@ -50,13 +50,14 @@ layout: tool
 <div>
 	<div>Frame count: <input type="number" id="frame-count" value="60"></div>
 	<div>Max frame time: <input type="number" id="max-frame-time" value="60"> ms</div>
+	<div><input type="checkbox" id="use-performance-now"> Use <code>performance.now()</code></div>
 	<div><button type="button" onclick="start();">Go</button></div></div>
 </div>
 
 <script>
 	const currentFrames = document.getElementsByClassName('current');
 	const averageDiv = document.getElementById('average');
-	let index, lastTime, frames, animationFrame, maxFrameTime;
+	let index, lastTime, frames, animationFrame, maxFrameTime, usePerformanceNow;
 
 	function format(string, ...numbers) {
 		while (string.includes('{}')) {
@@ -66,6 +67,9 @@ layout: tool
 	}
 
 	function update(currentTime) {
+		if (usePerformanceNow) {
+			currentTime = performance.now();
+		}
 		currentFrames.item(0)?.classList.remove('current');
 		const frame = frames[index];
 		frame.time = currentTime - lastTime;
@@ -85,8 +89,11 @@ layout: tool
 		}
 		const container = document.getElementById('frames');
 		container.innerHTML = '';
+
 		const length = parseInt(document.getElementById('frame-count').value);
 		maxFrameTime = Number(document.getElementById('max-frame-time').value);
+		usePerformanceNow = document.getElementById('use-performance-now').checked;
+
 		frames = Array.from({length}, i => {
 			const div = document.createElement('div');
 			div.className = 'frame';
@@ -100,6 +107,7 @@ layout: tool
 			container.appendChild(div);
 			return {div, bg, fg, time: NaN};
 		});
+
 		index = 0;
 		lastTime = NaN;
 		update(NaN);
