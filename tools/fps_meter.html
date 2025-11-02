@@ -1,0 +1,102 @@
+---
+title: FPS meter
+layout: tool
+---
+
+<style>
+	.frame {
+		width: 100%;
+		height: 10px;
+		margin: 0px;
+		padding: 0px;
+		position: relative;
+	}
+
+	.frame-bg {
+		height: 10px;
+		padding: 0px;
+		margin: 0px;
+		background-color: lightgray;
+		position: absolute;
+	}
+
+	.frame-fg {
+		height: 100%;
+		padding: 1px;
+		margin: 0px;
+		font-size: 8px;
+		font-family: monospace;
+		position: absolute;
+		user-select: none;
+		&.current {
+			color: red;
+		}
+	}
+
+	#average {
+		font-family: monospace;
+	}
+</style>
+
+<div id="frames"></div>
+<div id="average"></div>
+<div>
+	<div>Frame count: <input type="number" id="frame-count" value="60"></div>
+	<div>Max frame time: <input type="number" id="max-frame-time" value="66.66667"> ms</div>
+	<div><button type="button" onclick="start();">Go</button></div></div>
+</div>
+
+<script>
+	const currentFrames = document.getElementsByClassName('current');
+	const averageDiv = document.getElementById('average');
+	let index, lastTime, frames, animationFrame, maxFrameTime;
+
+	function format(string, ...numbers) {
+		while (string.includes('{}')) {
+			string = string.replace('{}', numbers.shift().toFixed(3).padStart(7, ' '));
+		}
+		return string;
+	}
+
+	function update(currentTime) {
+		currentFrames.item(0)?.classList.remove('current');
+		const frame = frames[index];
+		frame.time = currentTime - lastTime;
+		frame.fg.textContent = format('{} ms, {} Hz', frame.time, 1000 / frame.time);
+		frame.fg.classList.add('current');
+		frame.bg.style.width = `${frame.time / maxFrameTime * 100}%`;
+		const averageTime = frames.reduce((s, {time}) => s + time, 0) / frames.length;
+		averageDiv.textContent = format('Average: {} ms, {} Hz', averageTime, 1000 / averageTime);
+		lastTime = currentTime;
+		animationFrame = requestAnimationFrame(update);
+		index = (index + 1) % frames.length;
+	}
+
+	function start() {
+		if (animationFrame) {
+			cancelAnimationFrame(animationFrame);
+		}
+		const container = document.getElementById('frames');
+		container.innerHTML = '';
+		const length = parseInt(document.getElementById('frame-count').value);
+		maxFrameTime = Number(document.getElementById('max-frame-time').value);
+		frames = Array.from({length}, i => {
+			const div = document.createElement('div');
+			div.className = 'frame';
+			const bg = document.createElement('div');
+			bg.className = 'frame-bg';
+			bg.style.width = '0%';
+			const fg = document.createElement('div');
+			fg.className = 'frame-fg';
+			div.appendChild(bg);
+			div.appendChild(fg);
+			container.appendChild(div);
+			return {bg, fg, time: NaN};
+		});
+		lastTime = performance.now();
+		index = 0;
+		update();
+	}
+
+	start();
+</script>

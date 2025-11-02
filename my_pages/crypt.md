@@ -174,3 +174,20 @@ ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDMMWAvLPv8ZOY+hsktZcm6vdsXSEX4lmxN36++y4ZY
 ```
 
 </details>
+
+## APK signing keys
+
+If an APK file is signed by this key, it is from me:
+
+```plain
+Signer #1 certificate DN: CN=Ulysses Zhan
+Signer #1 certificate SHA-256 digest: 2e25e943f5525f6f26335d9b7bd8b71ee4e707f0a3226da6bf7bce039490f4fd
+Signer #1 certificate SHA-1 digest: 09a44f66cc801106b4f481721d0c1466eced1a3a
+Signer #1 certificate MD5 digest: b9c314cf3601b9aa9880523d550e5f3b
+```
+
+To check, run
+
+```shell
+apksigner verify --print-certs app-release.apk
+```
