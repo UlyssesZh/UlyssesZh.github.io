@@ -382,8 +382,6 @@ You can now do something like this:
 ]
 ```
 
-where the program written in another file is run:
-
 ```nix
 # other-program.nix
 [
@@ -429,7 +427,8 @@ and the command line arguments will be available in the list `_.argv`.
 
 Finally, we can use `try` instead of `do` in the ultimate `builtins.seq` call
 to catch any uncaught exceptions in the program.
-Here is the final version of `imperative.nix`:
+Here is the final version of `imperative.nix`
+and an example `program.nix` that uses most of the features we introduced:
 
 ```nix
 #!/usr/bin/env nix-shell
@@ -470,10 +469,6 @@ in builtins.seq (
 	{ inherit assign if' while print throw break continue return function read try import builtins argv; }
 ) { }
 ```
-
-<p class="no-indent">
-and an example `program.nix` that uses most of the features we introduced:
-</p>
 
 ```nix
 #!/usr/bin/env imperative.nix
