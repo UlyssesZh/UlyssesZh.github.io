@@ -387,7 +387,7 @@ hr {
 .highlight {
 	width: 100%;
 	tab-size: 4;
-	&.language-ruby {
+	&.language-ruby, &.language-nix {
 		tab-size: 2;
 	}
 }
