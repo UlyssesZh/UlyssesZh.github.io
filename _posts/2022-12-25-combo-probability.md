@@ -8,6 +8,7 @@ tags:
 - rhythm game
 - algorithm
 - probability
+- stochastic process
 layout: post
 excerpt: 'Given your probability of breaking the combo at each note,
 what is the probability distribution of your max combo in the rhythm game chart?

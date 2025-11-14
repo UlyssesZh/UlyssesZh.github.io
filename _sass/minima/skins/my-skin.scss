@@ -588,3 +588,8 @@ figure {
 		text-align: right;
 	}
 }
+
+#toc:not(:has(> li))::before {
+	content: "The table of contents is empty.";
+	font-style: italic;
+}
