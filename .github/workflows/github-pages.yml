@@ -38,7 +38,7 @@ jobs:
           ghc-version: '9.8'
 
       - name: Restore Cabal cache
-        uses: actions/cache/restore@v4
+        uses: actions/cache/restore@v5
         id: cache-cabal-restore
         with:
           path: |
@@ -51,7 +51,7 @@ jobs:
         run: cabal v2-install pandoc-cli pandoc-crossref --install-method=copy --installdir=$GITHUB_WORKSPACE/bin-dev
 
       - name: Save Cabal cache
-        uses: actions/cache/save@v4
+        uses: actions/cache/save@v5
         if: steps.cache-cabal-restore.outputs.cache-hit != 'true'
         with:
           path: |
