@@ -612,7 +612,7 @@ Another thing to note is that the result of the regularizations depend on whethe
 We can "flatten" all the energy levels: pretend no degeneracies exist.
 For example, suppose a system with $g_n\ceq n$ and $E_n\ceq n$.
 However, we can rewrite the same system as $E_n\ceq1,2,2,3,3,3,\ldots$
-(or equivalently $E_n\ceq\floor{\sqrt{2n}+1/2}$)[^A002024],
+(or equivalently $E_n\ceq\floor{\sqrt{2n}+1/2}$) [^A002024],
 with no degeneracies.
 This "re-grouping" of the energy levels can affect the result of regularizations
 and whether a zeta function regularization exists.
