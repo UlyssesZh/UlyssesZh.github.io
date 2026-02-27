@@ -15,7 +15,7 @@ Here are some of my friends (ordered lexicographically):
 - [Silent](https://not-hentai.com){title=静寂之夜},
 - [Taroxd](https://taroxd.github.io){title=状元},
 - [Xiang](https://orashshi.github.io){title=Orash},
-- [后马勒音乐文库](https://musiknachmahler.xyz){title=Jiewei},
+- [Jiewei Xiong](https://jiewei.xyz){title=Jiewei},
 
 <p class="no-indent">
 and
@@ -25,5 +25,6 @@ and
 
 Other friendly links:
 
+- [后马勒音乐文库](https://musiknachmahler.xyz),
 - [博友圈](https://www.boyouquan.com),
 - [BlogsClub](https://www.blogsclub.org).

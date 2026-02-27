@@ -81,6 +81,9 @@ Active:
 * [简书](https://jianshu.com/u/ccbbd031f85b)
 * [OnlyFans](https://onlyfans.com/ulysseszhan) (ulysseszhan)
 * [Bluesky](https://bsky.app/profile/ulysseszhan.bsky.social) (\@ulysseszhan.bsky.social)
+* [pixelfed](https://pixelfed.social/UlyssesZhan) (UlyssesZhan)
+* [PieFed](https://piefed.social/u/UlyssesZhan) (UlyssesZhan)
+* [Loops](https://loops.video/@UlyssesZhan) (UlyssesZhan)
 
 </details>
 
