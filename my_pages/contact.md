@@ -22,6 +22,8 @@ See [my public cryptographic information](/crypt/) for details.
 * Phone numbers:
   * Old: +86 159-0178-4907
   * New: +1 (805) 825-8407
+* Jabber/XMPP addresses:
+  * Personal: [ulysseszhan@xmpp.is](xmpp:ulysseszhan@xmpp.is)
 
 [^proton]: If you want to send me encrypted emails through this email address,
 please use a different
@@ -114,6 +116,7 @@ Active:
 * [抖音](https://douyin.com/user/MS4wLjABAAAAg87JO6iwq_XYXUaX7nX2aApcR2ngBHhXSI3Axc9pLrI) (youqiu_)
 * [Vimeo](https://vimeo.com/ulysseszhan) (ulysseszhan)
 * [Kick](https://kick.com/ulysseszhan) (UlyssesZhan)
+* [Bandcamp](https://bandcamp.com/ulysseszhan) (ulysseszhan)
 
 </details>
 
