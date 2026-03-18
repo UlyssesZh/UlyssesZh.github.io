@@ -256,5 +256,6 @@ Useful:
 * [16Personalities](https://www.16personalities.com/profiles/c926b68f51625)
 * [Last.fm](https://www.last.fm/user/UlyssesZhan) (UlyssesZhan)
 * [迅雷](https://misc-xl9-ssl.xunlei.com/personal-center/dist/#/664102913/profile)
+* [Gravatar](https://gravatar.com/ulysseszhan) (ulysseszhan)
 
 </details>

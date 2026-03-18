@@ -16,6 +16,7 @@ Here are some of my friends (ordered lexicographically):
 - [Taroxd](https://taroxd.github.io){title=状元},
 - [Xiang](https://orashshi.github.io){title=Orash},
 - [Jiewei Xiong](https://jiewei.xyz){title=Jiewei},
+- [Cothlory](https://changhuang.dev){title=Chang}
 
 <p class="no-indent">
 and
