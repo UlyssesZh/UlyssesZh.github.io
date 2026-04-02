@@ -229,7 +229,10 @@ Useful:
 * [Malody](https://m.mugzone.net/accounts/user/474907)
 * Colorful Stage (en) (207422022240731139)
 * [Phira](https://phira.moe/user/1803)
+* Rotaeno (492975808064069633)
 * [Foldit](https://fold.it/users/1067243)
+* [Rizu](https://rizu.su/users/734) (UlyssesZhan)
+* [Quaver](https://quavergame.com/user/857627) (UlyssesZhan)
 
 </details>
 
