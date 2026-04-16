@@ -16,7 +16,7 @@ $--dm-link-base-color: #de446f;
 	$lm-code-background-color: #eeeeff !default,
 	$lm-link-base-color: #db3168 !default,
 	$lm-table-text-color: $--lm-text-color !default,
-	
+
 	$dm-brand-color: #929292 !default,
 	$dm-heading-color: $--dm-text-color !default,
 	$dm-text-color: $--dm-text-color !default,
@@ -175,7 +175,6 @@ kbd {
 	line-height: 1.4;
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 12px;
-	display: inline-block;
 	position: relative;
 	top: -2px;
 	box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.2), inset 0px 0px 0px 2px #ffffff;
@@ -479,7 +478,7 @@ $float-image-padding-vertical: 6px;
 	padding: 0 2.2em;
 	width: 50%;
 	position: relative;
-	
+
 	&.navi-prev {
 		text-align: left;
 		&::before {
@@ -563,7 +562,7 @@ summary {
 
 .e-content {
 	p {
-		text-indent: 2em;
+		text-indent: 30px;
 		&.no-indent {
 			text-indent: 0;
 		}
