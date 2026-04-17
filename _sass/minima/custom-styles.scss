@@ -15,10 +15,8 @@ blockquote {
 	}
 }
 
-pre.highlight {
-	padding-left: 0;
-	padding-top: 0;
-	padding-bottom: 0;
+pre {
+	padding: 5px 10px;
 }
 
 dfn {
@@ -26,7 +24,7 @@ dfn {
 	font-weight: bold;
 }
 
-pre, code {
+code {
 	font-size: inherit;
 }
 
@@ -43,7 +41,7 @@ details[open] > summary {
 }
 
 .post-meta details {
-	margin-bottom: 0px;
+	margin-bottom: 0;
 }
 
 .post-meta time {
@@ -63,6 +61,7 @@ dl {
 table {
 	margin-bottom: $spacing-unit * .5;
 	width: fit-content;
+	max-width: 100%;
 	text-align: initial;
 	overflow-x: auto;
 	position: relative;

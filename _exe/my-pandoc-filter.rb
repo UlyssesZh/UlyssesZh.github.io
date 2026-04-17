@@ -13,6 +13,12 @@ class Hash
 			end
 		end
 	end
+
+	def clone_r
+		transform_values do |item|
+			item.is_a?(Hash) ? item.clone_r : item.clone
+		end
+	end
 end
 
 class Paru::PandocFilter::Attr
@@ -64,12 +70,18 @@ class Paru::PandocFilter::Node
 	end
 end
 
-AVAILABLE_FORMATTERS = %w[linewise line_highlighter line_table pygments table]
+def get_formatter lang, config
+	tag, options, formatter = config.values_at :tag, :options, :formatter
+	options = options&.clone_r
+	options.each_value { _1.gsub! '%{lang}', lang if _1.is_a? String } if options.is_a? Hash
+	formatter_class = Rouge::Formatter.find tag
+	formatter_class ||= Rouge::Formatters::HTMLLinewise if tag == 'html_linewise' # https://github.com/rouge-ruby/rouge/pull/2273
+	return formatter_class.new options unless formatter
+	formatter_class.new get_formatter(lang, formatter), options
+end
 
 DEFAULT_CONFIG = {
-	inline_theme: nil,
-	formatter: 'pygments',
-	formatter_options: {},
+	formatter: {tag: 'pygments'},
 	lexer_options: {}
 }
 
@@ -86,19 +98,13 @@ Paru::Filter.run do
 	with 'CodeBlock' do |code_block|
 		lang = code_block.attr.classes.first
 		code = code_block.to_code_string
+		code += ?\n unless code.end_with? ?\n # https://github.com/rouge-ruby/rouge/pull/2274
 		lexer = Rouge::Lexer.find_fancy lang, code, @config[:lexer_options]
 		lexer ||= Rouge::Lexers::PlainText.new @config[:lexer_options]
-		base_formatter = if @config[:inline_theme]
-			Rouge::Formatters::HTMLInline.new @config[:inline_theme]
-		else
-			Rouge::Formatters::HTML.new
-		end
-		abort "Unknown formatter #{@config[:formatter]}" unless AVAILABLE_FORMATTERS.include? @config[:formatter]
-		formatter_options = @config[:formatter_options]
-		formatter_options = formatter_options.transform_values { _1.is_a?(String) ? _1 % { lang: lexer.class.tag } : _1 }
-		formatter_options = formatter_options[:css_class] if @config[:formatter] == 'pygments'
-		formatter = Rouge::Formatter.find("html_#{@config[:formatter]}").new base_formatter, formatter_options
-		code_block.replace_self Paru::PandocFilter::RawBlock.new ['html', formatter.format(lexer.lex code)]
+		html = get_formatter(lang, @config[:formatter]).format lexer.lex code
+		# the preservation of newlines in <pre> is very hard to deal with when styling
+		html.gsub!(%r{<pre class="lineno">(.+?)</pre>}m) { %{<div class="lineno">#$1</div>} }
+		code_block.replace_self Paru::PandocFilter::RawBlock.new ['html', html]
 	end
 
 	with 'Link' do |link|

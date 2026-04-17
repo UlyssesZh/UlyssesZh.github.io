@@ -15,8 +15,7 @@ layout: base
 					<dt>Title</dt><dd>{{ page.title | markdownify_no_p }}</dd>
 					<dt>Permalink</dt><dd>
 						{% assign url = page.url | absolute_url %}
-						<a href="{{ url }}">{{ url }}</a>
-						(<a href="javascript:navigator.clipboard.writeText('{{ url }}')">copy</a>)
+						<a class="copiable" href="{{ url }}">{{ url }}</a>
 					</dd>
 					<dt>Author</dt><dd>
 						{% assign author_name = page.author.name | default: site.author.name %}

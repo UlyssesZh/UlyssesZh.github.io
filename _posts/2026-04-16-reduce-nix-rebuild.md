@@ -625,7 +625,7 @@ However, tests are still important, so we still need to include them somewhere.
 Fortunately, people conventionally put such tests in `passthru.tests` for this very purpose.
 Therefore, all we have to do is to put the tests in `passthru.tests` instead.
 
-<details><summary>Supposed packaging in Nixpkgs</summary>
+<details><summary>Implementation</summary>
 
 ```nix
 # bar.nix

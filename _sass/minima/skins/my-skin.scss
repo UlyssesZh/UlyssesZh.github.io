@@ -36,13 +36,18 @@ $lm-search-color: #883e6b !default;
 $lm-search-focus-color: #db5568 !default;
 $lm-search-border-color: #ff92a5 !default;
 $lm-search-background-color: #fff !default;
-$lm-lineno-color: #bbb !default;
+$lm-lineno-color: #777 !default;
 $lm-lineno-background-color: #eeeef0 !default;
 $lm-details-background-color: #fef0f1 !default;
 $lm-local-link-color: #fca25e !default;
 $lm-selection-color: #ffffff !default;
 $lm-selection-background-color: #ffa2a5 !default;
 $lm-target-background-color: #fcc3f6 !default;
+$lm-button-color: #443333 !default;
+$lm-button-background-color: #ffd7e3 !default;
+$lm-button-border-color: #443333 !default;
+$lm-button-hover-background-color: #ffe5f2 !default;
+$lm-button-active-background-color: #f7b0c8 !default;
 
 $dm-kbd-border-color: #333333 !default;
 $dm-kbd-color: #cccccc !default;
@@ -59,6 +64,11 @@ $dm-local-link-color: #fca25e !default;
 $dm-selection-color: #000000 !default;
 $dm-selection-background-color: #be7090 !default;
 $dm-target-background-color: #901680 !default;
+$dm-button-color: #b78 !default;
+$dm-button-background-color: #6d1540 !default;
+$dm-button-border-color: #b78 !default;
+$dm-button-hover-background-color: #8b3d57 !default;
+$dm-button-active-background-color: #300010 !default;
 
 @function str-replace($string, $search, $replace: '') {
 	$index: string.index($string, $search);
@@ -69,22 +79,36 @@ $dm-target-background-color: #901680 !default;
 }
 
 @function hr-image($color) {
-	$svg: 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12"><path style="fill:#{$color}" d="m 3.8525389,1.6289069 q 1.189453,0 1.8691405,1.3769532 0.2460938,0.5449218 0.2578125,0.8320313 h 0.017578 Q 6.2021481,2.8886725 6.7412106,2.2617194 7.3740231,1.6289069 8.1650393,1.6289069 q 1.224609,0 1.9628907,1.3125 0.1875,0.4863282 0.1875,0.9140625 0,1.4648438 -1.2187507,2.7949219 L 5.9970701,10.371093 H 5.9619138 L 2.6689452,6.333985 Q 1.6845701,5.1328132 1.6845701,3.8554694 q 0,-1.2363281 1.1660158,-1.9628906 0.4921874,-0.2636719 1.001953,-0.2636719 z"/></svg>';
+	$svg: 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12" width="12" height="12"><path fill="#{$color}" d="m 3.8525389,1.6289069 q 1.189453,0 1.8691405,1.3769532 0.2460938,0.5449218 0.2578125,0.8320313 h 0.017578 Q 6.2021481,2.8886725 6.7412106,2.2617194 7.3740231,1.6289069 8.1650393,1.6289069 q 1.224609,0 1.9628907,1.3125 0.1875,0.4863282 0.1875,0.9140625 0,1.4648438 -1.2187507,2.7949219 L 5.9970701,10.371093 H 5.9619138 L 2.6689452,6.333985 Q 1.6845701,5.1328132 1.6845701,3.8554694 q 0,-1.2363281 1.1660158,-1.9628906 0.4921874,-0.2636719 1.001953,-0.2636719 z"/></svg>';
 	@return url(str-replace($svg, '#', '%23'));
 }
 
 @function summary-image($color, $thickness) {
-	$svg: 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12"><path d="M 1,5 6,10 11,5" style="fill:none;stroke:#{$color};stroke-width:#{$thickness};stroke-linecap:round;stroke-linejoin:round"/></svg>';
+	$svg: 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12" width="12" height="12"><path d="M 1,5 6,10 11,5" fill="none" stroke="#{$color}" stroke-width="#{$thickness}"/></svg>';
+	@return url(str-replace($svg, '#', '%23'));
+}
+
+@function copy-image($color) {
+	$svg: 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="#{$color}" stroke-width="2" stroke-linejoin="round"><rect width="13" height="13" x="1.5" y="9.5"/><path d="M 9.5,6 V 1.5 h 13 v 13 h -4.5"/></svg>';
+	@return url(str-replace($svg, '#', '%23'));
+}
+
+@function copy-done-image($color) {
+	$svg: 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="12" height="12"><path fill="none" stroke="#{$color}" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" d="M 2,14 8,20 22,6"/></svg>';
 	@return url(str-replace($svg, '#', '%23'));
 }
 
 $lm-hr-image: hr-image($lm-hr-background-color) !default;
-$lm-summary-image: summary-image($lm-text-color, 1.5px) !default;
-$lm-summary-image-brand: summary-image($lm-brand-color, 1px) !default;
+$lm-summary-image: summary-image($lm-text-color, 2px) !default;
+$lm-summary-image-brand: summary-image($lm-brand-color, 1.5px) !default;
+$lm-copy-image: copy-image($lm-button-color) !default;
+$lm-copy-done-image: copy-done-image($lm-button-color) !default;
 
 $dm-hr-image: hr-image($dm-hr-background-color) !default;
-$dm-summary-image: summary-image($dm-text-color, 1.5px) !default;
-$dm-summary-image-brand: summary-image($dm-brand-color, 1px) !default;
+$dm-summary-image: summary-image($dm-text-color, 2px) !default;
+$dm-summary-image-brand: summary-image($dm-brand-color, 1.5px) !default;
+$dm-copy-image: copy-image($dm-button-color) !default;
+$dm-copy-done-image: copy-done-image($dm-button-color) !default;
 
 :root {
 	--kbd-color: #{$lm-kbd-color};
@@ -102,10 +126,17 @@ $dm-summary-image-brand: summary-image($dm-brand-color, 1px) !default;
 	--selection-color: #{$lm-selection-color};
 	--selection-background-color: #{$lm-selection-background-color};
 	--target-background-color: #{$lm-target-background-color};
+	--button-color: #{$lm-button-color};
+	--button-background-color: #{$lm-button-background-color};
+	--button-border-color: #{$lm-button-border-color};
+	--button-hover-background-color: #{$lm-button-hover-background-color};
+	--button-active-background-color: #{$lm-button-active-background-color};
 
 	--hr-image: #{$lm-hr-image};
 	--summary-image: #{$lm-summary-image};
 	--summary-image-brand: #{$lm-summary-image-brand};
+	--copy-image: #{$lm-copy-image};
+	--copy-done-image: #{$lm-copy-done-image};
 }
 @media (prefers-color-scheme: dark) {
 	:root {
@@ -124,10 +155,17 @@ $dm-summary-image-brand: summary-image($dm-brand-color, 1px) !default;
 		--selection-color: #{$dm-selection-color};
 		--selection-background-color: #{$dm-selection-background-color};
 		--target-background-color: #{$dm-target-background-color};
+		--button-color: #{$dm-button-color};
+		--button-background-color: #{$dm-button-background-color};
+		--button-border-color: #{$dm-button-border-color};
+		--button-hover-background-color: #{$dm-button-hover-background-color};
+		--button-active-background-color: #{$dm-button-active-background-color};
 
 		--hr-image: #{$dm-hr-image};
 		--summary-image: #{$dm-summary-image};
 		--summary-image-brand: #{$dm-summary-image-brand};
+		--copy-image: #{$dm-copy-image};
+		--copy-done-image: #{$dm-copy-done-image};
 	}
 }
 
@@ -146,10 +184,17 @@ $local-link-color: var(--local-link-color);
 $selection-color: var(--selection-color);
 $selection-background-color: var(--selection-background-color);
 $target-background-color: var(--target-background-color);
+$button-color: var(--button-color);
+$button-background-color: var(--button-background-color);
+$button-border-color: var(--button-border-color);
+$button-hover-background-color: var(--button-hover-background-color);
+$button-active-background-color: var(--button-active-background-color);
 
 $hr-image: var(--hr-image);
 $summary-image: var(--summary-image);
 $summary-image-brand: var(--summary-image-brand);
+$copy-image: var(--copy-image);
+$copy-done-image: var(--copy-done-image);
 
 @media (prefers-color-scheme: dark) {
 	.dark-adaptive {
@@ -253,6 +298,37 @@ hr {
 }
 
 //==========
+// Button
+//==========
+
+button {
+	color: $button-color;
+	background-color: $button-background-color;
+	border: 1px solid $button-border-color;
+	border-radius: 5px;
+	&:hover {
+		background-color: $button-hover-background-color;
+	}
+	&:active {
+		background-color: $button-active-background-color;
+	}
+}
+
+.attached-copy {
+	margin-inline-start: 10px;
+}
+
+.copy-button {
+	&::before {
+		content: $copy-image;
+		margin: 5px;
+	}
+	&.done::before {
+		content: $copy-done-image;
+	}
+}
+
+//==========
 // Target
 //==========
 
@@ -343,13 +419,17 @@ hr {
 //==========
 
 .rouge-table {
-	border: none;
-	margin: 0px 0px 15px 0px;
-	overflow-x: auto;
+	// Unset overflow-x but use tbody for overflow.
+	// Note that it inherits `translate` from table,
+	// which create a new coordinate system for .code-block-copy to be fixed to.
+	overflow-x: unset;
 	display: block;
 	width: 100%;
 
 	tbody {
+		display: block; // otherwise cannot overflow
+		overflow-x: auto;
+		max-width: 100%;
 		border: none;
 
 		tr {
@@ -373,13 +453,16 @@ hr {
 	position: sticky;
 	left: 0;
 	color: $lineno-color;
-	text-align: right;
 	background: $lineno-background-color;
 	width: 1px;
 	user-select: none;
 
-	pre {
-		background: transparent;
+	.line {
+		padding: 0px 5px;
+		text-align: right;
+		// make sure font size and line height match those in <pre>
+		line-height: 1.4;
+		font-size: 15px;
 	}
 }
 
@@ -388,6 +471,19 @@ hr {
 	tab-size: 4;
 	&.language-ruby, &.language-nix {
 		tab-size: 2;
+	}
+}
+
+.code-block-copy {
+	position: fixed;
+	top: 5px;
+	right: 10px;
+	z-index: 10;
+	opacity: 0;
+	pointer-events: none;
+	&.show {
+		opacity: 1;
+		pointer-events: auto;
 	}
 }
 
@@ -517,7 +613,7 @@ summary {
 		float: right;
 		margin-left: .75em;
 		details[open] > & {
-			transform: rotate(180deg);
+			transform: scaleY(-1);
 		}
 	}
 }
@@ -537,6 +633,10 @@ summary {
 //==========
 // Article
 //==========
+
+.post-excerpt {
+	margin-bottom: 0px;
+}
 
 .post-meta dl {
 	> dt {

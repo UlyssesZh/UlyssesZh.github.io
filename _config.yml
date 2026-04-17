@@ -41,9 +41,18 @@ paru:
       </span>
     eqnInlineTemplate: $$e$$
   rouge:
-    formatter: table
-    formatter_options:
-      code_class: highlight language-%{lang}
+    formatter:
+      tag: html_table
+      options:
+        code_class: highlight language-%{lang}
+        line_format: <div class="line line-%1$i">%1$i</div>
+      formatter:
+        tag: html_linewise
+        options:
+          class: line line-%i
+          tag_name: span
+        formatter:
+          tag: html
   katex:
     output: html
     trust: true
