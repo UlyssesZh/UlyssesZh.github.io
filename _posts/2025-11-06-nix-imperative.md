@@ -9,7 +9,8 @@ tags:
 layout: post
 excerpt: 'Nix is a functional programming language primarily used for package management and system configuration.
 However, it may be interesting to emulate imperative programming constructs within Nix.
-This post explores how to achieve imperative-style programming in Nix.'
+This post explores how to achieve imperative-style programming in Nix,
+ipmlementing control flow, exception handling, and interactive IO.'
 ---
 
 Nix, a purely functional language best known for describing reproducible systems,

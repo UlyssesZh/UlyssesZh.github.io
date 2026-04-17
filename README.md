@@ -1,6 +1,6 @@
 # UlyssesZh.github.io
 
-Ulysses Zhan's blog!
+UlyssesZhan's blog!
 
 ## Build
 

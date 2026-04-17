@@ -8,7 +8,10 @@ tags:
 - python
 layout: post
 excerpt: 'There is a gradually-accelerating buildup kickroll at 1:18 in the song <cite>Time to beat the odds</cite> by 影虎。.
-In order to know the details of this rhythm, I have to analyze the sample using Python.'
+In order to know the details of this rhythm, I have to analyze the sample using Python.
+The main method is to do a short-time Fourier transform and to find the peaks
+in the high-frequency region of the spectrogram.
+A linear regression shows that the time intervals decay geometrically.'
 ---
 
 <details><summary>Python preamble</summary>

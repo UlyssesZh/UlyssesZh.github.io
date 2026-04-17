@@ -7,10 +7,10 @@ tags:
 - nix
 layout: post
 excerpt: 'One serious problem with Nix is the amount of mass rebuilds happening in Nixpkgs
-every time some package with many dependents and indirect dependents gets an update.
-Such updates often result in headaches in package maintaining
-as they cost much time on both the package maintainers and the CI machines that actually run the rebuilds.
-Is there any way to reduce mass rebuilds?'
+every time some package with many dependents gets an update.
+I thought about three ideas to reduce mass rebuilds:
+store path replacements, separating compiling and linking, and ditching check phases.
+Each of them has some degree of impracticality.'
 ---
 
 ## Introduction

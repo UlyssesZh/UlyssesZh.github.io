@@ -27,7 +27,7 @@ I tried various different things to fix it without luck.
 Therefore, I was like, screw it, I will just reinstall the OS.
 
 The reason that I chose NixOS as the new distrohop target
-is that I was aware that nixpkgs is the largest package repository in the world.
+is that I was aware that Nixpkgs is the largest package repository in the world.
 At that time, I like AUR very much because of its large number of packages,
 and I thought that NixOS may even be better than Arch Linux in this regard.
 
@@ -53,10 +53,10 @@ and running `nixos-rebuild switch` to apply the changes.
 
 ## Packaging
 
-Although nixpkgs has more packages than AUR by the numbers,
+Although Nixpkgs has more packages than AUR by the numbers,
 in practice, I do not feel that way.
 While the applications that I want to use are usually available on AUR,
-it is often not the case for nixpkgs.
+it is often not the case for Nixpkgs.
 Besides, because NixOS does not obey the FHS,
 applications usually cannot run out of the box as the developers distributed them.
 For both of these reasons,
@@ -64,20 +64,20 @@ I find it more necessary to package applications myself on NixOS
 than on any other Linux distro.
 
 However, packaging applications for Nix/NixOS is not an easy task.
-An important knowledge to know is that Nix is different from nixpkgs.
+An important knowledge to know is that Nix is different from Nixpkgs.
 Nix is a functional programming language and a package manager,
-while nixpkgs is a very large Nix expression that contains many packages
+while Nixpkgs is a very large Nix expression that contains many packages
 and convenience tools for packaging them.
-Packaging applications with Nix without using nixpkgs is very tedious and difficult,
-so normally one would use nixpkgs to package applications.
+Packaging applications with Nix without using Nixpkgs is very tedious and difficult,
+so normally one would use Nixpkgs to package applications.
 
-There are several problems with nixpkgs, though, that makes packaging somewhat difficult.
+There are several problems with Nixpkgs, though, that makes packaging somewhat difficult.
 The first problem is that it is not well documented.
-There is an official nixpkgs manual,
+There is an official Nixpkgs manual,
 but it hardly covers everything and it is very hard to navigate
 (and you need a good browser to read it properly
 because the HTML is so large that browsers that are not well-optimized
-often gets stuck when rendering it).
+often get stuck when rendering it).
 Many good practices cannot be learnt from the manual
 but must be learnt from others when they review your pull requests.
 
@@ -85,13 +85,13 @@ The second problem is that it is simply too large.
 Cloning such a large Git repository with so many files and commits
 can be very slow on a computer with a slow CPU, a slow disk, or a slow network connection.
 Also because of its size,
-evaluating nixpkgs as a Nix expression takes a long time.
+evaluating Nixpkgs as a Nix expression takes a long time.
 
 Anyway, in the end, I managed to package some applications that I use
-and got them merged into nixpkgs.
-Up until now, I have opened 40 pull requests to nixpkgs,
+and got them merged into Nixpkgs.
+Up until now, I have opened 40 pull requests to Nixpkgs,
 among which 26 have been merged.
-I can say that I am a mildly experienced package maintainer for nixpkgs now,
+I can say that I am a mildly experienced package maintainer for Nixpkgs now,
 but packaging is still a challenging task for me.
 
 ## Storage hunger

@@ -7,7 +7,8 @@ tags:
 - android
 - github
 layout: post
-excerpt: 'While you are asleep, indicate that on your Discord and GitHub user status.'
+excerpt: 'While I am asleep, the sleeping state is indicated on my Discord and GitHub user status.
+I achieve this by using MacroDroid.'
 ---
 
 While I have been trying to respond whenever people reach out to me,
