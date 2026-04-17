@@ -2,16 +2,17 @@
 title: I restructured my blog
 date: 2023-11-06 00:06:52 -0800
 categories:
-- update
+  - update
 tags:
-- jekyll
-- tex
-- update
-- web
+  - jekyll
+  - tex
+  - update
+  - web
 layout: post
-excerpt: 'If you have not noticed, the equations on my blog are now rendered server-side.
-This change makes it possible for those who turn off JavaScript on their browsers to see the equations.
-I also updated the theme from Minima v2 to Minima v3.'
+excerpt: >
+  If you have not noticed, the equations on my blog are now rendered server-side.
+  This change makes it possible for those who turn off JavaScript on their browsers to see the equations.
+  I also updated the theme from Minima v2 to Minima v3.
 ---
 
 ## Rendering equations server-side

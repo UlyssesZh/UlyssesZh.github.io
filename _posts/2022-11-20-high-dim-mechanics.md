@@ -1,16 +1,17 @@
 ---
-title: 'How to construct mechanics in higher dimensions?'
+title: How to construct mechanics in higher dimensions?
 date: 2022-11-20 17:56:52 -0800
 categories:
-- physics
+  - physics
 tags:
-- from zhihu
-- classical mechanics
-- imagination
+  - from zhihu
+  - classical mechanics
+  - imagination
 layout: post
-excerpt: 'We can derive the equation of motion for mechanical systems
-in a Galileo universe with $\iota$ time dimensions and $\chi$ space dimensions
-by generalizing the principle of relativity and Hamilton''s principle.'
+excerpt: >
+  We can derive the equation of motion for mechanical systems
+  in a Galileo universe with $\iota$ time dimensions and $\chi$ space dimensions
+  by generalizing the principle of relativity and Hamilton's principle.
 ---
 
 *This article is translated from a

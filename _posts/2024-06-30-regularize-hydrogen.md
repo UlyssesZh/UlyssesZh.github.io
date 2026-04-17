@@ -2,20 +2,21 @@
 title: Regularizing the partition function of a hydrogen atom
 date: 2024-06-30 21:18:12 -0700
 categories:
-- physics
+  - physics
 tags:
-- statistical mechanics
-- complex
-- regularization
-- long paper
+  - statistical mechanics
+  - complex
+  - regularization
+  - long paper
 layout: post
-excerpt: 'The partition function of a hydrogen atom diverges
-(only considering bound states).
-However, we can regularize it to get finite answers.
-Different regularizations give the same result.
-They largely agree with the physical arguments for the case of the hydrogen atom at room or cold temperature,
-but this should be considered a mere coincidence.
-The results from regularized partition functions cannot generally be trusted.'
+excerpt: >
+  The partition function of a hydrogen atom diverges
+  (only considering bound states).
+  However, we can regularize it to get finite answers.
+  Different regularizations give the same result.
+  They largely agree with the physical arguments for the case of the hydrogen atom at room or cold temperature,
+  but this should be considered a mere coincidence.
+  The results from regularized partition functions cannot generally be trusted.
 ---
 
 ## Introduction

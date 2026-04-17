@@ -1,14 +1,15 @@
 ---
-title: 'Using ntfy to warn me when my computer is discharging'
+title: Using ntfy to warn me when my computer is discharging
 date: 2022-11-28 15:50:50 -0800
 categories:
-- programming
+  - programming
 tags:
-- selfhosting
-- linux
+  - selfhosting
+  - linux
 layout: post
-excerpt: 'I use udev and systemd to send a notification to my phone via ntfy automatically
-whenever my laptop is discharging.'
+excerpt: >
+  I use udev and systemd to send a notification to my phone via ntfy automatically
+  whenever my laptop is discharging.
 ---
 
 I need to thank [one of my friends](https://orashshi.github.io)

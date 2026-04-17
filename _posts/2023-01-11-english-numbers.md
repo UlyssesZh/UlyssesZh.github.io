@@ -1,13 +1,14 @@
 ---
-title: 'I want to invent a better way to read numbers'
+title: I want to invent a better way to read numbers
 date: 2023-01-11 22:51:41 -0800
 categories:
-- language
+  - language
 tags:
-- imagination
+  - imagination
 layout: post
-excerpt: 'Reading numbers in English is a pain.
-I want to invent a better way to read numbers!'
+excerpt: >
+  Reading numbers in English is a pain.
+  I want to invent a better way to read numbers!
 ---
 
 First, play a simple game. Read the number 7777 in English.

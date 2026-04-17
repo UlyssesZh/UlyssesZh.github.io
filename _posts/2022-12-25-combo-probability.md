@@ -1,18 +1,19 @@
 ---
-title: 'The longest all-$1$ substring of a random bit string'
+title: The longest all-$1$ substring of a random bit string
 date: 2022-12-25 12:00:00 -0800
 categories:
-- math
+  - math
 tags:
-- long paper
-- rhythm game
-- algorithm
-- probability
-- stochastic process
+  - long paper
+  - rhythm game
+  - algorithm
+  - probability
+  - stochastic process
 layout: post
-excerpt: 'Given your probability of breaking the combo at each note,
-what is the probability distribution of your max combo in the rhythm game chart?
-I considered the problem seriously!'
+excerpt: >
+  Given your probability of breaking the combo at each note,
+  what is the probability distribution of your max combo in the rhythm game chart?
+  I considered the problem seriously!
 ---
 
 ## Introduction

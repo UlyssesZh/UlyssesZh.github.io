@@ -2,15 +2,16 @@
 title: A polynomial whose sum of coefficients is a factorial
 date: 2022-11-09 10:04:43 -0800
 categories:
-- math
+  - math
 tags:
-- combinatorics
-- number sequence
-- from zhihu
+  - combinatorics
+  - number sequence
+  - from zhihu
 layout: post
-excerpt: 'The function $\left(1-z\right)^{n+1}\sum_{k=1}^\infty k^nz^k$ is a polynomial of degree $n$ w.r.t. $z$,
-and the sum of its coefficients is $n!$.
-This turns out to be properties of Eulerian numbers.'
+excerpt: >
+  The function $\left(1-z\right)^{n+1}\sum_{k=1}^\infty k^nz^k$ is a polynomial of degree $n$ w.r.t. $z$,
+  and the sum of its coefficients is $n!$.
+  This turns out to be properties of Eulerian numbers.
 ---
 
 *This article is translated from a

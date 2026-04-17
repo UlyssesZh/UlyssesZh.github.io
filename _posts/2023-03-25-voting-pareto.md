@@ -1,19 +1,20 @@
 ---
-title: 'The core of a voting system is the intersection of Pareto sets'
+title: The core of a voting system is the intersection of Pareto sets
 date: 2023-03-25 23:28:53 -0700
 categories:
-- economics
+  - economics
 tags:
-- voting system
-- preference relation
-- pareto efficiency
+  - voting system
+  - preference relation
+  - pareto efficiency
 layout: post
-excerpt: 'There is a very neat relation between the core
-(the set of proposals that defeats every proposal)
-of a voting system and the Pareto sets of the voters.
-Suppose there is a voting system of quota $q$,
-then the core is the intersection of all such sets:
-the Pareto set of $q$ of the voters.'
+excerpt: >
+  There is a very neat relation between the core
+  (the set of proposals that defeats every proposal)
+  of a voting system and the Pareto sets of the voters.
+  Suppose there is a voting system of quota $q$,
+  then the core is the intersection of all such sets:
+  the Pareto set of $q$ of the voters.
 ---
 
 Voting system is a concept in political science.

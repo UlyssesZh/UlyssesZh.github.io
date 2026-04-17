@@ -2,17 +2,18 @@
 title: The gauge covariant derivative and the covariant derivative
 date: 2024-05-27 17:39:22 -0700
 categories:
-- physics
+  - physics
 tags:
-- field theory (physics)
-- gauge theory (physics)
-- differential geometry
-- general relativity
+  - field theory (physics)
+  - gauge theory (physics)
+  - differential geometry
+  - general relativity
 layout: post
-excerpt: 'The name "guage covariant derivative" may have reminded you
-of the covariant derivative (connection) in general relativity or differential geometry.
-Do they necessary have something in common?
-It turns out that they do.'
+excerpt: >
+  The name "guage covariant derivative" may have reminded you
+  of the covariant derivative (connection) in general relativity or differential geometry.
+  Do they necessary have something in common?
+  It turns out that they do.
 ---
 
 (The word *field* in this article refers to the field as in classical field theory and quantum field theory in physics,

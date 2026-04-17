@@ -1,17 +1,18 @@
 ---
-title: 'Labeled `break`, `next`, and `redo` in Ruby'
+title: Labeled `break`, `next`, and `redo` in Ruby
 date: 2023-05-07 13:36:16 -0700
 categories:
-- programming
+  - programming
 tags:
-- meta programming
-- ruby
+  - meta programming
+  - ruby
 layout: post
-excerpt: 'Many languages support breaking out of nested loops,
-such as Perl, Java, JavaScript, C#, etc.
-Languages that have `goto` can also do this easily.
-However, in most other languages, it is not easy to break out of nested loops.
-I want to introduce a way to do this in Ruby.'
+excerpt: >
+  Many languages support breaking out of nested loops,
+  such as Perl, Java, JavaScript, C#, etc.
+  Languages that have `goto` can also do this easily.
+  However, in most other languages, it is not easy to break out of nested loops.
+  I want to introduce a way to do this in Ruby.
 ---
 
 Many languages support breaking out of nested loops.

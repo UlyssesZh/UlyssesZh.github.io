@@ -2,22 +2,23 @@
 title: Mapping from Kepler problem to free particle on 3-sphere
 date: 2022-11-07 16:12:09 -0800
 categories:
-- physics
+  - physics
 tags:
-- classical mechanics
-- canonical transformation
-- letter
-- kepler problem
+  - classical mechanics
+  - canonical transformation
+  - letter
+  - kepler problem
 layout: post
-excerpt: 'There is a canonical transform of the Kepler problem which is the same as
-the problem of motion of a free particle on 3-sphere.
-The explicit formula of the transform as well as some links about this topic is written in the article.
-The explicit formula for $E<0$ is
-$\mathbf u\coloneqq\frac{p^2-p_0^2}{p^2+p_0^2}\hat{\mathbf n}+\frac{2p_0}{p^2+p_0^2}\mathbf p,$
-where $\mathbf u$ is the position of the particle on 3-sphere (a 4-dimensional vector),
-$\mathbf p$ is the momentum of the original particle in Kepler problem,
-$\hat{\mathbf n}$ is a vector perpendicular to the 3-dimensional hyperplane where $\mathbf p$ lies,
-and $p_0\coloneqq\sqrt{-2mE}$.'
+excerpt: >
+  There is a canonical transform of the Kepler problem which is the same as
+  the problem of motion of a free particle on 3-sphere.
+  The explicit formula of the transform as well as some links about this topic is written in the article.
+  The explicit formula for $E<0$ is
+  $\mathbf u\coloneqq\frac{p^2-p_0^2}{p^2+p_0^2}\hat{\mathbf n}+\frac{2p_0}{p^2+p_0^2}\mathbf p,$
+  where $\mathbf u$ is the position of the particle on 3-sphere (a 4-dimensional vector),
+  $\mathbf p$ is the momentum of the original particle in Kepler problem,
+  $\hat{\mathbf n}$ is a vector perpendicular to the 3-dimensional hyperplane where $\mathbf p$ lies,
+  and $p_0\coloneqq\sqrt{-2mE}$.
 ---
 
 *This article is adapted from the letter that I wrote to my professor of classical mechanics.

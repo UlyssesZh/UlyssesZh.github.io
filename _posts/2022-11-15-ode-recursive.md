@@ -1,16 +1,17 @@
 ---
-title: 'Solving ODE by recursive integration'
+title: Solving ODE by recursive integration
 date: 2022-11-15 15:02:30 -0800
 categories:
-- math
+  - math
 tags:
-- ode
-- calculus
+  - ode
+  - calculus
 layout: post
-excerpt: 'By recursively integrating according to $x_{n+1}\!\left(t\right)\coloneqq\int_{t_0}^tf\!\left(x_n\!\left(s\right),s\right)\,\mathrm ds+C$
-from $x_0\!\left(t_0\right)\coloneqq C$,
-we can get the solution of the ODE $x''\!\left(t\right)=f\!\left(x\!\left(t\right),t\right)$
-with initial conditions $x\!\left(t_0\right)=C$ as the limit of the sequence of functions.'
+excerpt: >
+  By recursively integrating according to $x_{n+1}\!\left(t\right)\coloneqq\int_{t_0}^tf\!\left(x_n\!\left(s\right),s\right)\,\mathrm ds+C$
+  from $x_0\!\left(t_0\right)\coloneqq C$,
+  we can get the solution of the ODE $x'\!\left(t\right)=f\!\left(x\!\left(t\right),t\right)$
+  with initial conditions $x\!\left(t_0\right)=C$ as the limit of the sequence of functions.
 ---
 
 ## The method

@@ -2,16 +2,17 @@
 title: The frequency assignment of musical notes
 date: 2020-03-27 15:31:55 +0800
 categories:
-- music
+  - music
 tags:
-- music theory
-- number sequence
-- long paper
-- abstract algebra
+  - music theory
+  - number sequence
+  - long paper
+  - abstract algebra
 layout: post
-excerpt: 'This article explores the concept which I call the frequency assignment,
-which is a mapping from $N$ (the set of notes) to $\mathbb R^+$ (the set of frequencies).
-Concepts such as octaves, intervals, and equal temperaments are introduced.'
+excerpt: >
+  This article explores the concept which I call the frequency assignment,
+  which is a mapping from $N$ (the set of notes) to $\mathbb R^+$ (the set of frequencies).
+  Concepts such as octaves, intervals, and equal temperaments are introduced.
 ---
 
 ## The notes

@@ -2,17 +2,18 @@
 title: Normal vectors of a scalar field
 date: 2020-03-03 20:56:59 +0800
 categories:
-- math
+  - math
 tags:
-- calculus
-- vector analysis
+  - calculus
+  - vector analysis
 layout: post
-excerpt: 'This article gives the formula for the normal vectors of a surface defined by a scalar field on $\mathbb R^n$.
-The normal vector of the graph of the function $y=f\!\left(\mathbf x\right)$ at
-$\left(\mathbf x_0,f\!\left(\mathbf x_0\right)\right)$ is
-$\left(\nabla f\!\left(\mathbf x_0\right),-1\right)$.
-This also provides us a way to recover a scalar field from the normal vectors of its graph:
-normalizing the vectors so that the last component is $-1$, and then integrate the rest components.'
+excerpt: >
+  This article gives the formula for the normal vectors of a surface defined by a scalar field on $\mathbb R^n$.
+  The normal vector of the graph of the function $y=f\!\left(\mathbf x\right)$ at
+  $\left(\mathbf x_0,f\!\left(\mathbf x_0\right)\right)$ is
+  $\left(\nabla f\!\left(\mathbf x_0\right),-1\right)$.
+  This also provides us a way to recover a scalar field from the normal vectors of its graph:
+  normalizing the vectors so that the last component is $-1$, and then integrate the rest components.
 ---
 
 Consider the function $y=f\!\left(\mathbf x\right)$, where the domain

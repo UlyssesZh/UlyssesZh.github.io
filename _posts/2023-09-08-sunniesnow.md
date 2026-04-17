@@ -1,16 +1,17 @@
 ---
-title: 'I created Sunniesnow, a rhythm game similar to Lyrica'
+title: I created Sunniesnow, a rhythm game similar to Lyrica
 date: 2023-09-08 21:38:26 -0700
 categories:
-- update
+  - update
 tags:
-- update
-- rhythm game
-- web
+  - update
+  - rhythm game
+  - web
 layout: post
-excerpt: 'In order to build a better player community for the rhythm game Lyrica,
-I created a new rhythm game called [Sunniesnow](https://sunniesnow.github.io).
-Learn more about Sunniesnow by [joining our Discord server](https://discord.gg/6ZHRU9teju).'
+excerpt: >
+  In order to build a better player community for the rhythm game Lyrica,
+  I created a new rhythm game called [Sunniesnow](https://sunniesnow.github.io).
+  Learn more about Sunniesnow by [joining our Discord server](https://discord.gg/6ZHRU9teju).
 ---
 
 Lyrica is one of my favorite mobile rhythm games.

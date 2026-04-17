@@ -1,15 +1,16 @@
 ---
-title: 'When a supersonic airplane flies over your head'
+title: When a supersonic airplane flies over your head
 date: 2022-11-18 14:11:10 -0800
 categories:
-- physics
+  - physics
 tags:
-- from zhihu
+  - from zhihu
 layout: post
-excerpt: 'Suppose a supersonic airplane has Mach number $M$.
-It flies horizontally.
-At some time, it flies past over your head at height $h$.
-Then, the distance between you and it when you have just heard it is $Mh$.'
+excerpt: >
+  Suppose a supersonic airplane has Mach number $M$.
+  It flies horizontally.
+  At some time, it flies past over your head at height $h$.
+  Then, the distance between you and it when you have just heard it is $Mh$.
 ---
 
 *This article is translated from a

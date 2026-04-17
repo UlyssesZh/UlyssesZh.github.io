@@ -2,15 +2,16 @@
 title: Using electrostatics to calculate the Fourier transform of inverse square
 date: 2024-10-14 22:40:02 -0700
 categories:
-- math
+  - math
 tags:
-- electrodynamics
-- fourier transform
-- pde
+  - electrodynamics
+  - fourier transform
+  - pde
 layout: post
-excerpt: 'The Fourier transform of $1/x^2$ looks like an electric field:
-in 1D, it is that of a uniformly charged plane; in 2D, it is a uniformly charged line;
-in 3D, it is a point charge.'
+excerpt: >
+  The Fourier transform of $1/x^2$ looks like an electric field:
+  in 1D, it is that of a uniformly charged plane; in 2D, it is a uniformly charged line;
+  in 3D, it is a point charge.
 ---
 
 <details>

@@ -2,12 +2,13 @@
 title: 'Snippet: O, &rsquo;tis too true!'
 date: 2020-04-11 16:34:42 +0800
 categories:
-- literature
+  - literature
 tags:
-- snippet
-- chinese
+  - snippet
+  - chinese
 layout: post
-excerpt: 'O, &rsquo;tis too true!'
+excerpt: >
+  O, &rsquo;tis too true!
 ---
 
 <figure>

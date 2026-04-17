@@ -2,15 +2,16 @@
 title: 'An example of non-uniform elements: heavy elastic rope'
 date: 2022-11-13 10:15:12 -0800
 categories:
-- physics
+  - physics
 tags:
-- from zhihu
+  - from zhihu
 layout: post
-excerpt: 'To illustrate the concept about non-uniform elements,
-we study a simple problem: suppose a uniform heavy elastic rope has mass $m$, original length $L_0$, and stiffness $k$,
-and find the mass distribution and length of it when hung vertically.
-We can use the element method to solve this problem, but the elements are non-uniform in terms of length.
-The elements add up to get the total length $L=\frac{mg}{2k}+L_0$.'
+excerpt: >
+  To illustrate the concept about non-uniform elements,
+  we study a simple problem: suppose a uniform heavy elastic rope has mass $m$, original length $L_0$, and stiffness $k$,
+  and find the mass distribution and length of it when hung vertically.
+  We can use the element method to solve this problem, but the elements are non-uniform in terms of length.
+  The elements add up to get the total length $L=\frac{mg}{2k}+L_0$.
 ---
 
 *This article is translated from a

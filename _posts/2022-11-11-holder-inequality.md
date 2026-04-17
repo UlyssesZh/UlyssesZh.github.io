@@ -2,16 +2,17 @@
 title: H&ouml;lder means inequality
 date: 2022-11-11 16:42:37 -0800
 categories:
-- math
+  - math
 tags:
-- calculus
-- from zhihu
+  - calculus
+  - from zhihu
 layout: post
-excerpt: 'The H&ouml;lder mean of $\vec x$ with weights $\vec w$ and a parameter $p$ is defined as
-$M_{p,\vec w}\!\left(\vec x\right)\coloneqq\left(\vec w\cdot\vec x^p\right)^{\frac 1p}$,
-and the value at $p=-\infty,0,+\infty$ are defined by the limits.
-We can prove using Jensen''s inquality that the H&ouml;lder mean increases as $p$ increases.
-This property can be used to prove HM-GM-AM-QM inequalities.'
+excerpt: >
+  The H&ouml;lder mean of $\vec x$ with weights $\vec w$ and a parameter $p$ is defined as
+  $M_{p,\vec w}\!\left(\vec x\right)\coloneqq\left(\vec w\cdot\vec x^p\right)^{\frac 1p}$,
+  and the value at $p=-\infty,0,+\infty$ are defined by the limits.
+  We can prove using Jensen's inquality that the H&ouml;lder mean increases as $p$ increases.
+  This property can be used to prove HM-GM-AM-QM inequalities.
 ---
 
 *This article is translated from a

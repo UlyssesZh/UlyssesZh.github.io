@@ -2,14 +2,15 @@
 title: The notational convenience of imaginary time in the derivation of the metric in Poincar&eacute; coordinates
 date: 2024-09-10 14:19:33 -0700
 categories:
-- physics
+  - physics
 tags:
-- general relativity
-- ads space
+  - general relativity
+  - ads space
 layout: post
-excerpt: 'In general relativity, people usually choose one of the two major metric signatures.
-However, in certain cases, the imaginary time convention can be more convenient.
-Here is one of such cases: the derivation of the metric in Poincar&eacute; coordinates for the anti-de Sitter space.'
+excerpt: >
+  In general relativity, people usually choose one of the two major metric signatures.
+  However, in certain cases, the imaginary time convention can be more convenient.
+  Here is one of such cases: the derivation of the metric in Poincar&eacute; coordinates for the anti-de Sitter space.
 ---
 
 ## Introduction

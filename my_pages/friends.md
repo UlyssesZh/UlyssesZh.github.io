@@ -1,6 +1,6 @@
 ---
 title: Friends
-permalink: "/friends/"
+permalink: /friends/
 layout: my_page
 ---
 

@@ -1,15 +1,16 @@
 ---
 lang: zh-CN
-title: 'Summarizing my methods for studying'
+title: Summarizing my methods for studying
 date: 2023-04-05 11:38:17 -0700
 categories:
-- misc
+  - misc
 tags:
-- chinese
-- school
+  - chinese
+  - school
 layout: post
-excerpt: 'I summarized my methods for studying.
-This can be served as a guide for those who have started learning math and science.'
+excerpt: >
+  I summarized my methods for studying.
+  This can be served as a guide for those who have started learning math and science.
 ---
 
 *This post is in Chinese.*

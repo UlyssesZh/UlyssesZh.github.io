@@ -1,6 +1,6 @@
 ---
 title: About
-permalink: "/about/"
+permalink: /about/
 layout: my_page
 ---
 
@@ -12,9 +12,9 @@ I share interesting thoughts of mine here.
 Some of my basic (and improbably changing) information:
 
 - Gender: **male**;
-sex: **male**;
-orientation: **heterosexual**;
-pronouns: **he/him/his**.
+  sex: **male**;
+  orientation: **heterosexual**;
+  pronouns: **he/him/his**.
 - Birthday: **2003-09-07T10:41+08:00**.
 - Nationality: **Chinese**.
 - Hometown: **Shanghai**.

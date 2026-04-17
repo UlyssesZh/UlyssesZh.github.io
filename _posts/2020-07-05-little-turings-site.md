@@ -2,14 +2,15 @@
 title: New website for Little Turings (club)
 date: 2020-07-05 10:10:46 +0800
 categories:
-- update
+  - update
 tags:
-- update
+  - update
 layout: post
-excerpt: 'I, the president and one of the founders of Little Turings,
-created a [website](https://littleturings.github.io)
-to distribute information about it.
-The website is bilingual (Chinese and English).'
+excerpt: >
+  I, the president and one of the founders of Little Turings,
+  created a [website](https://littleturings.github.io)
+  to distribute information about it.
+  The website is bilingual (Chinese and English).
 ---
 
 I, the president and one of the founders of Little Turings,

@@ -1,6 +1,6 @@
 ---
 title: Public cryptographic information
-permalink: "/crypt/"
+permalink: /crypt/
 layout: my_page
 ---
 

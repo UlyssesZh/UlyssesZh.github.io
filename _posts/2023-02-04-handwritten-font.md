@@ -1,19 +1,20 @@
 ---
-title: 'Distinguishing all the letters in handwritten math/physics notes'
+title: Distinguishing all the letters in handwritten math/physics notes
 date: 2023-02-04 09:43:02 -0800
 categories:
-- misc
+  - misc
 tags:
-- from zhihu
-- font
-- tex
-- handwriting
-- long paper
+  - from zhihu
+  - font
+  - tex
+  - handwriting
+  - long paper
 layout: post
-excerpt: 'Personally, I have the demand of handwriting math/physics notes,
-but an annoying fact about this is that
-I usually cannot distinguish every letter that may be possibly used well enough.
-In this article, I will try to settle this problem.'
+excerpt: >
+  Personally, I have the demand of handwriting math/physics notes,
+  but an annoying fact about this is that
+  I usually cannot distinguish every letter that may be possibly used well enough.
+  In this article, I will try to settle this problem.
 ---
 
 *This article is adapted from a

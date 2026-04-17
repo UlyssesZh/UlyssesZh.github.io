@@ -2,13 +2,14 @@
 title: Generalization of Euler--Lagrange equation
 date: 2020-05-31 12:53:17 +0800
 categories:
-- math
+  - math
 tags:
-- calculus
+  - calculus
 layout: post
-excerpt: 'We may generalize Euler--Lagrange equation to higher dimensional optimization problems:
-find a function defined inside a region to extremize a functional defined as an integral over that region,
-with the constraint that the value of the function is fixed on the boundary of the region.'
+excerpt: >
+  We may generalize Euler--Lagrange equation to higher dimensional optimization problems:
+  find a function defined inside a region to extremize a functional defined as an integral over that region,
+  with the constraint that the value of the function is fixed on the boundary of the region.
 ---
 
 $\Omega\in\mathbb R^m$ is a closed region.

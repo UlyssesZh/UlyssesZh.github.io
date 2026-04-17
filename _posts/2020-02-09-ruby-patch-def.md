@@ -2,17 +2,18 @@
 title: Monkey-patching graciously
 date: 2020-02-09 13:16:31 +0800
 categories:
-- programming
+  - programming
 tags:
-- ruby
-- meta programming
-- long paper
+  - ruby
+  - meta programming
+  - long paper
 layout: post
-excerpt: 'Monkey-patching is a powerful tool in programming.
-In this article, I used techniques of Ruby metaprogramming to define a series of methods
-`def_after`, `def_before`, etc. to help monkey-patching.
-They look graciously in that we can use it to shorten the codes for monkey-patching
-(avoiding aliasing and repeating codes).'
+excerpt: >
+  Monkey-patching is a powerful tool in programming.
+  In this article, I used techniques of Ruby metaprogramming to define a series of methods
+  `def_after`, `def_before`, etc. to help monkey-patching.
+  They look graciously in that we can use it to shorten the codes for monkey-patching
+  (avoiding aliasing and repeating codes).
 ---
 
 I am going to show how to monkey-patch graciously using

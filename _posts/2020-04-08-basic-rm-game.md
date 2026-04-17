@@ -2,15 +2,16 @@
 title: The structure of a basic RM game
 date: 2020-04-08 09:28:05 +0800
 categories:
-- programming
+  - programming
 tags:
-- ruby
-- javascript
-- rgss
+  - ruby
+  - javascript
+  - rgss
 layout: post
-excerpt: 'In this article, I present minimal examples of a RM game.
-They only illustrate the basic concepts of how a RM game is structured
-and what is the running logic of it.'
+excerpt: >
+  In this article, I present minimal examples of a RM game.
+  They only illustrate the basic concepts of how a RM game is structured
+  and what is the running logic of it.
 ---
 
 [RPG Maker (RM)](https://tkool.jp/)

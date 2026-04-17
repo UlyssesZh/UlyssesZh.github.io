@@ -1,16 +1,17 @@
 ---
-title: 'Relationship between the Gini coefficient and the variance'
+title: Relationship between the Gini coefficient and the variance
 date: 2023-02-06 16:38:25 -0800
 categories:
-- economics
+  - economics
 tags:
-- from zhihu
-- calculus
-- probability
+  - from zhihu
+  - calculus
+  - probability
 layout: post
-excerpt: 'Both the Gini coefficient and the variance are measures of statistical dispersion.
-We are then motivated to find the relationship between them.
-It turns out that there is a neat mathematical relationship between them.'
+excerpt: >
+  Both the Gini coefficient and the variance are measures of statistical dispersion.
+  We are then motivated to find the relationship between them.
+  It turns out that there is a neat mathematical relationship between them.
 ---
 
 *This article is translated from a

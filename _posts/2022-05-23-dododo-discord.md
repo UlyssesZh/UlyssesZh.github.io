@@ -2,14 +2,15 @@
 title: I created a community rhythm game called Dododo
 date: 2022-05-23 16:49:27 +0800
 categories:
-- update
+  - update
 tags:
-- update
-- rhythm game
-- web
+  - update
+  - rhythm game
+  - web
 layout: post
-excerpt: 'I have created a [community rhythm game called Dododo](https://dododogame.github.io).
-It is a rhythm game with musical rhythm notations.'
+excerpt: >
+  I have created a [community rhythm game called Dododo](https://dododogame.github.io).
+  It is a rhythm game with musical rhythm notations.
 ---
 
 I have created a [community rhythm game called Dododo](https://dododogame.github.io).

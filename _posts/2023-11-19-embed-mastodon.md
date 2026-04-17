@@ -2,15 +2,16 @@
 title: Embed the latest Mastodon post in my website
 date: 2023-11-19 13:51:36 -0800
 categories:
-- update
+  - update
 tags:
-- web
-- jekyll
-- selfhosting
+  - web
+  - jekyll
+  - selfhosting
 layout: post
-excerpt: 'I show the latest Mastodon post in my website hosted on GitHub Pages,
-and it does not require JavaScript on the client side.
-How do I do that?'
+excerpt: >
+  I show the latest Mastodon post in my website hosted on GitHub Pages,
+  and it does not require JavaScript on the client side.
+  How do I do that?
 ---
 
 As we all know you can [embed a Twitter timeline](https://help.twitter.com/en/using-x/embed-x-feed)

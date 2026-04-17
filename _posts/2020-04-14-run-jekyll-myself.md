@@ -2,14 +2,15 @@
 title: Running Jekyll myself
 date: 2020-04-14 14:22:15 +0800
 categories:
-- programming
+  - programming
 tags:
-- jekyll
+  - jekyll
 layout: post
-excerpt: 'I have got tired of letting GitHub Pages to run Jekyll for me.
-I cannot use custom plugins!
-I decide to run Jekyll myself and push the built result to GitHub repo.
-I wrote a script to do this.'
+excerpt: >
+  I have got tired of letting GitHub Pages to run Jekyll for me.
+  I cannot use custom plugins!
+  I decide to run Jekyll myself and push the built result to GitHub repo.
+  I wrote a script to do this.
 ---
 
 It is an annoying thing that I cannot add custom plugins

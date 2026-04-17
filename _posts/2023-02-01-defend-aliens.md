@@ -1,19 +1,20 @@
 ---
-title: 'Defend our earth against aliens'' bullets!'
+title: Defend our earth against aliens' bullets!
 date: 2023-02-01 11:11:11 -0800
 categories:
-- physics
+  - physics
 tags:
-- calculus
-- classical mechanics
-- kepler problem
-- from zhihu
+  - calculus
+  - classical mechanics
+  - kepler problem
+  - from zhihu
 layout: post
-excerpt: 'The aliens intiated their attack to the earth!
-They shoot bullets with mass $m$ and speed $v$ from a far-awar planet.
-To defend, humans built a field $U=\alpha/r$ that can repel the bullets.
-What regions are safe?
-The answer turns out to be the interior of a circular paraboloid.'
+excerpt: >
+  The aliens intiated their attack to the earth!
+  They shoot bullets with mass $m$ and speed $v$ from a far-awar planet.
+  To defend, humans built a field $U=\alpha/r$ that can repel the bullets.
+  What regions are safe?
+  The answer turns out to be the interior of a circular paraboloid.
 ---
 
 *This article solves the first part of the problem proposed in a

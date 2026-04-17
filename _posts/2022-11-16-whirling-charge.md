@@ -1,18 +1,19 @@
 ---
-title: 'A whirling point charge'
+title: A whirling point charge
 date: 2022-11-16 16:47:57 -0800
 categories:
-- physics
+  - physics
 tags:
-- electrodynamics
-- from zhihu
+  - electrodynamics
+  - from zhihu
 layout: post
-excerpt: 'In the vacuum, inside a fixed ring of radius $R$ with fixed charge $Q$ uniformly distributed,
-there is a point charge with charge $q$ and mass $m$ moving in the plane of the ring due tue the electrostatic force.
-It moves in the small region around the center of the ring, and the motion is periodic along a closed curve.
-The area of the region enclosed by the curve is $S$.
-Denote the distance from the center to the point charge as $r$, and $r\ll R$.
-Find the magnetic induction $B$ at the center of the ring.'
+excerpt: >
+  In the vacuum, inside a fixed ring of radius $R$ with fixed charge $Q$ uniformly distributed,
+  there is a point charge with charge $q$ and mass $m$ moving in the plane of the ring due tue the electrostatic force.
+  It moves in the small region around the center of the ring, and the motion is periodic along a closed curve.
+  The area of the region enclosed by the curve is $S$.
+  Denote the distance from the center to the point charge as $r$, and $r\ll R$.
+  Find the magnetic induction $B$ at the center of the ring.
 ---
 
 *This article is translated from a

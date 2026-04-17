@@ -2,16 +2,17 @@
 title: The image of a circular object through a thin lens
 date: 2022-11-09 09:37:41 -0800
 categories:
-- physics
+  - physics
 tags:
-- geometrical optics
-- from zhihu
+  - geometrical optics
+  - from zhihu
 layout: post
-excerpt: 'The image of a circle with radius $r$ and centered at $C\left(-2f,0\right)$
-through a thin lens at $x=0$ with focal length $f$ and centered at $O\left(0,0\right)$
-is a conic section with the focus being $\left(2f,0\right)$,
-the directrix being line $x=f$,
-and the eccentricity being $\frac rf$.'
+excerpt: >
+  The image of a circle with radius $r$ and centered at $C\left(-2f,0\right)$
+  through a thin lens at $x=0$ with focal length $f$ and centered at $O\left(0,0\right)$
+  is a conic section with the focus being $\left(2f,0\right)$,
+  the directrix being line $x=f$,
+  and the eccentricity being $\frac rf$.
 ---
 
 *This article is translated from a

@@ -2,12 +2,13 @@
 title: Drawing a heart using Joukowsky transformation
 date: 2020-06-13 16:19:58 +0800
 categories:
-- math
+  - math
 tags:
-- complex
+  - complex
 layout: post
-excerpt: 'Joukowsky transformation of a circle centered at $\left(1,1\right)$ of radius $1$
-is a curve resembling a heart.'
+excerpt: >
+  Joukowsky transformation of a circle centered at $\left(1,1\right)$ of radius $1$
+  is a curve resembling a heart.
 ---
 
 Joukowsky transformation of a circle centered at $\left(1,1\right)$ of radius $1$

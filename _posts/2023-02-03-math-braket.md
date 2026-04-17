@@ -1,15 +1,16 @@
 ---
-title: 'Introducing bra--ket notation to math learners'
+title: Introducing bra--ket notation to math learners
 date: 2023-02-03 15:12:53 -0800
 categories:
-- math
+  - math
 tags:
-- from zhihu
-- quantum mechanics
+  - from zhihu
+  - quantum mechanics
 layout: post
-excerpt: 'Bra--ket notation is a good-looking notation!
-I am sad that it is not generally taught in math courses.
-Let me introduce it to you.'
+excerpt: >
+  Bra--ket notation is a good-looking notation!
+  I am sad that it is not generally taught in math courses.
+  Let me introduce it to you.
 ---
 
 *This article is translated from a

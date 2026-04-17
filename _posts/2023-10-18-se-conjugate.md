@@ -2,16 +2,17 @@
 title: You can replace $\mathrm i$ with $-\mathrm i$ in the Schr&ouml;dinger equation?
 date: 2023-10-18 09:57:54 -0700
 categories:
-- physics
+  - physics
 tags:
-- quantum mechanics
-- letter
-- complex
+  - quantum mechanics
+  - letter
+  - complex
 layout: post
-excerpt: 'When someone asks you why it is $-\mathrm i$ here instead of $\mathrm i$
-or the other way around, you can say that this is just a convention.
-My professor of quantum mechanics once asked the class similar a question,
-and I replied with this letter.'
+excerpt: >
+  When someone asks you why it is $-\mathrm i$ here instead of $\mathrm i$
+  or the other way around, you can say that this is just a convention.
+  My professor of quantum mechanics once asked the class similar a question,
+  and I replied with this letter.
 ---
 
 *This article is adapted from the letter that I wrote to my professor of quantum mechanics.

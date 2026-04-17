@@ -2,20 +2,21 @@
 title: Rotational symmetry of plane lattices as a simple example of algebraic number theory
 date: 2023-11-09 23:53:41 -0800
 categories:
-- math
+  - math
 tags:
-- complex
-- condensed matter physics
-- algebraic number theory
-- lattice
-- mathematical physics
+  - complex
+  - condensed matter physics
+  - algebraic number theory
+  - lattice
+  - mathematical physics
 layout: post
-excerpt: 'For a plane lattice,
-there is only a finite number of different rotational symmetries
-that are compatible with the discrete translational symmetry.
-For example, the 5-fold rotational symmetry is not one of them.
-Why is that? It turns out that whether an $m$-fold symmetry is compatible with translational symmetry
-is the same as whether $\varphi(m)\le2$.'
+excerpt: >
+  For a plane lattice,
+  there is only a finite number of different rotational symmetries
+  that are compatible with the discrete translational symmetry.
+  For example, the 5-fold rotational symmetry is not one of them.
+  Why is that? It turns out that whether an $m$-fold symmetry is compatible with translational symmetry
+  is the same as whether $\varphi(m)\le2$.
 ---
 
 Here is an exercise problem from *Modern Condensed Matter Physics* (Girvin and Yang, 2019):{%copy%}

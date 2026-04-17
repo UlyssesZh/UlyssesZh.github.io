@@ -2,16 +2,17 @@
 title: Simulating a mechanical system using RGSS3
 date: 2020-04-28 11:51:17 +0800
 categories:
-- physics
+  - physics
 tags:
-- ruby
-- rgss
-- hamiltonian
-- calculus
-- ode
+  - ruby
+  - rgss
+  - hamiltonian
+  - calculus
+  - ode
 layout: post
-excerpt: 'Hamiltonian mechanics gives us a good way to simulate mechanical systems as long as we can get its Hamiltonian and its initial conditions.
-I implemented this simulation in RGSS3, the game scripting system shipped with RPG Maker VX Ace.'
+excerpt: >
+  Hamiltonian mechanics gives us a good way to simulate mechanical systems as long as we can get its Hamiltonian and its initial conditions.
+  I implemented this simulation in RGSS3, the game scripting system shipped with RPG Maker VX Ace.
 ---
 
 Our goal is to simulate a mechanical system according to its Hamiltonian

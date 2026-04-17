@@ -2,18 +2,19 @@
 title: Determining the stabilizability of the abelian sandpile model
 date: 2026-01-03 14:56:49 -0800
 categories:
-- math
+  - math
 tags:
-- graph theory
-- linear programming
-- long paper
+  - graph theory
+  - linear programming
+  - long paper
 layout: post
-excerpt: 'The abelian sandpile model is a cellular automaton
-where each cell is a sandpile that can topple to put grains on neighboring cells
-when having enough grains. It is stable if none of the sandpiles can topple.
-A natural question to ask is whether it can become stable eventually.
-In this article, I will show that one can determine the stabilizibility usiung integer linear programming
-for the abelian sandpile model on an arbitrary finite graph.'
+excerpt: >
+  The abelian sandpile model is a cellular automaton
+  where each cell is a sandpile that can topple to put grains on neighboring cells
+  when having enough grains. It is stable if none of the sandpiles can topple.
+  A natural question to ask is whether it can become stable eventually.
+  In this article, I will show that one can determine the stabilizibility usiung integer linear programming
+  for the abelian sandpile model on an arbitrary finite graph.
 ---
 
 ## Introduction

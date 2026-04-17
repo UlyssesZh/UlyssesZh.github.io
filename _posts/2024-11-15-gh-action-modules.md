@@ -2,16 +2,17 @@
 title: How to use JavaScript in GitHub Actions without committing `node_modules`
 date: 2024-11-15 16:34:55 -0800
 categories:
-- guide
+  - guide
 tags:
-- javascript
-- github
+  - javascript
+  - github
 layout: post
-excerpt: 'I was creating my first GitHub Action.
-According to the official documentation, I should commit the `node_modules` to the repo
-or generate a script that bundles the whole `node_modules` if I want to create a JavaScript action.
-I think this is not good practice, so I try to find another way:
-manually managing the caches for the dependencies in `node_modules`.'
+excerpt: >
+  I was creating my first GitHub Action.
+  According to the official documentation, I should commit the `node_modules` to the repo
+  or generate a script that bundles the whole `node_modules` if I want to create a JavaScript action.
+  I think this is not good practice, so I try to find another way:
+  manually managing the caches for the dependencies in `node_modules`.
 ---
 
 I was creating my first GitHub Action

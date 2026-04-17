@@ -2,15 +2,16 @@
 title: Some understanding of Grassmann numbers out of intuition
 date: 2024-10-10 22:40:02 -0700
 categories:
-- math
+  - math
 tags:
-- quantum field theory
-- linear algebra
-- abstract algebra
+  - quantum field theory
+  - linear algebra
+  - abstract algebra
 layout: post
-excerpt: 'I was briefly introduced to Grassmann numbers when I studied quantum field theory.
-I then had the natural question of how we can formally define them.
-In this article, I went with my intuition and tried to answer this question.'
+excerpt: >
+  I was briefly introduced to Grassmann numbers when I studied quantum field theory.
+  I then had the natural question of how we can formally define them.
+  In this article, I went with my intuition and tried to answer this question.
 ---
 
 *This article (except the introduction and the afterwords)

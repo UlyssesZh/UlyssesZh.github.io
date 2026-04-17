@@ -2,13 +2,14 @@
 title: Using nmcli to connect to eduroam in UCSB
 date: 2024-01-08 09:03:36
 categories:
-- guide
+  - guide
 tags:
-- linux
-- school
+  - linux
+  - school
 layout: post
-excerpt: 'Use nmcli to connect to eduroam in UCSB
-without using the configuration assistant tool provided by eduroam.'
+excerpt: >
+  Use nmcli to connect to eduroam in UCSB
+  without using the configuration assistant tool provided by eduroam.
 ---
 
 Save this certificate to some file, say `/YOUR/PATH/TO/ca.pem`:

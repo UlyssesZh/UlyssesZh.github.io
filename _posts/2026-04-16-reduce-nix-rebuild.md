@@ -2,15 +2,16 @@
 title: Ways of reducing mass rebuilds in Nix without changing Nix
 date: 2026-04-16 09:45:36 -0700
 categories:
-- programming
+  - programming
 tags:
-- nix
+  - nix
 layout: post
-excerpt: 'One serious problem with Nix is the amount of mass rebuilds happening in Nixpkgs
-every time some package with many dependents gets an update.
-I thought about three ideas to reduce mass rebuilds:
-store path replacements, separating compiling and linking, and ditching check phases.
-Each of them has some degree of impracticality.'
+excerpt: >
+  One serious problem with Nix is the amount of mass rebuilds happening in Nixpkgs
+  every time some package with many dependents gets an update.
+  I thought about three ideas to reduce mass rebuilds:
+  store path replacements, separating compiling and linking, and ditching check phases.
+  Each of them has some degree of impracticality.
 ---
 
 ## Introduction

@@ -2,13 +2,14 @@
 title: Letting people know when you are asleep
 date: 2024-02-21 02:26:45 -0800
 categories:
-- guide
+  - guide
 tags:
-- android
-- github
+  - android
+  - github
 layout: post
-excerpt: 'While I am asleep, the sleeping state is indicated on my Discord and GitHub user status.
-I achieve this by using MacroDroid.'
+excerpt: >
+  While I am asleep, the sleeping state is indicated on my Discord and GitHub user status.
+  I achieve this by using MacroDroid.
 ---
 
 While I have been trying to respond whenever people reach out to me,

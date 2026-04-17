@@ -1,15 +1,16 @@
 ---
-title: 'How to self-host Overleaf (ShareLaTeX)'
+title: How to self-host Overleaf (ShareLaTeX)
 date: 2023-09-29 11:11:38 -0700
 categories:
-- guide
+  - guide
 tags:
-- linux
-- selfhosting
-- tex
+  - linux
+  - selfhosting
+  - tex
 layout: post
-excerpt: 'It has been a pain setting up Overleaf on my own server.
-I have finally figured it out and I am sharing my notes here.'
+excerpt: >
+  It has been a pain setting up Overleaf on my own server.
+  I have finally figured it out and I am sharing my notes here.
 ---
 
 Install Docker and NGINX before you go.

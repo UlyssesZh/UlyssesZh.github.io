@@ -1,16 +1,17 @@
 ---
 lang: zh-CN
-title: '手纸本'
+title: 手纸本
 date: 2023-02-03 15:57:53 -0800
 categories:
-- literature
+  - literature
 tags:
-- from zhihu
-- literary composition
-- short story
-- chinese
+  - from zhihu
+  - literary composition
+  - short story
+  - chinese
 layout: post
-excerpt: '何为*手纸本*?'
+excerpt: >
+  何为*手纸本*?
 ---
 
 *This article is copied from the original

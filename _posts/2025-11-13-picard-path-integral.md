@@ -2,20 +2,21 @@
 title: From Picard iteration to Feynman path integral
 date: 2025-11-13 17:31:24 -0800
 categories:
-- physics
+  - physics
 tags:
-- ode
-- quantum mechanics
-- graph theory
-- stochastic process
-- long paper
+  - ode
+  - quantum mechanics
+  - graph theory
+  - stochastic process
+  - long paper
 layout: post
-excerpt: 'The Schr&ouml;dinger equation is an ODE,
-so we can approach its solution through Picard iteration.
-This approach leads to a sum over walks on the graph formed by an orthonormal basis as vertices
-and the Hamiltonian matrix elements as edge weights.
-This sum is exactly the Feynman path integral
-if we choose the position basis and take the continuum limit.'
+excerpt: >
+  The Schr&ouml;dinger equation is an ODE,
+  so we can approach its solution through Picard iteration.
+  This approach leads to a sum over walks on the graph formed by an orthonormal basis as vertices
+  and the Hamiltonian matrix elements as edge weights.
+  This sum is exactly the Feynman path integral
+  if we choose the position basis and take the continuum limit.
 ---
 
 ## Discrete path integral

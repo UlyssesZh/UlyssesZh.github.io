@@ -1,18 +1,19 @@
 ---
-title: 'I made this, for the number of days in a week is prime'
+title: I made this, for the number of days in a week is prime
 date: 2022-12-05 10:23:34 -0800
 categories:
-- programming
+  - programming
 tags:
-- selfhosting
-- linux
-- ruby
+  - selfhosting
+  - linux
+  - ruby
 layout: post
-excerpt: 'The number of days in a week is prime,
-so we cannot utilize weekly periods to help us remember periodical events unless the period is a multiple of 7.
-However, there may be something that we need to get reminded of which happens once per two days or three days.
-For example, I wash my hair once per two days and wash my clothes once per eight days.
-To solve the problem, I wrote a Ruby program to help remind me of those routines.'
+excerpt: >
+  The number of days in a week is prime,
+  so we cannot utilize weekly periods to help us remember periodical events unless the period is a multiple of 7.
+  However, there may be something that we need to get reminded of which happens once per two days or three days.
+  For example, I wash my hair once per two days and wash my clothes once per eight days.
+  To solve the problem, I wrote a Ruby program to help remind me of those routines.
 ---
 
 The number of days in a week is prime,

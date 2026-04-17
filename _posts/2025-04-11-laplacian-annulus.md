@@ -2,18 +2,19 @@
 title: Eigenfunctions of the Laplacian on an annulus with homogeneous Neumann boundary condition
 date: 2025-04-11 00:40:49 -0700
 categories:
-- math
+  - math
 tags:
-- mathematical physics
-- pde
-- ode
-- long paper
+  - mathematical physics
+  - pde
+  - ode
+  - long paper
 layout: post
-excerpt: 'Several features of the eigenfunctions of the Laplacian
-on an annulus with homogeneous Neumann boundary condition are discussed.
-The distribution of the eigenvalues is discussed in detail,
-making use of a phase angle function called $\tht$.
-The limiting cases of a disk and a circle are discussed.'
+excerpt: >
+  Several features of the eigenfunctions of the Laplacian
+  on an annulus with homogeneous Neumann boundary condition are discussed.
+  The distribution of the eigenvalues is discussed in detail,
+  making use of a phase angle function called $\tht$.
+  The limiting cases of a disk and a circle are discussed.
 ---
 
 ## The problem and the solution

@@ -1,20 +1,21 @@
 ---
-title: 'A measure-theoretic formulation of statistical ensembles (part 2)'
+title: A measure-theoretic formulation of statistical ensembles (part 2)
 date: 2023-05-01 16:26:42 -0700
 categories:
-- physics
+  - physics
 tags:
-- mathematical physics
-- statistical mechanics
-- functional analysis
-- measure theory
-- probability
-- long paper
+  - mathematical physics
+  - statistical mechanics
+  - functional analysis
+  - measure theory
+  - probability
+  - long paper
 layout: post
-excerpt: 'For sake of rigor and generalizability,
-I feel it necessary to try to have a mathematical formulation for statistical ensembles.
-I chose measure spaces as the underlying mathematical structure of thermal systems
-and tried to justify the method of statistical ensembles by deducing them from some axioms.'
+excerpt: >
+  For sake of rigor and generalizability,
+  I feel it necessary to try to have a mathematical formulation for statistical ensembles.
+  I chose measure spaces as the underlying mathematical structure of thermal systems
+  and tried to justify the method of statistical ensembles by deducing them from some axioms.
 ---
 
 *This article follows [part 1]({% post_url 2023-03-30-measure-ensemble %}).*

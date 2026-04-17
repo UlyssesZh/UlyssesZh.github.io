@@ -1,16 +1,17 @@
 ---
-title: 'Finding curvature radius physically'
+title: Finding curvature radius physically
 date: 2022-11-16 17:54:36 -0800
 categories:
-- physics
+  - physics
 tags:
-- from zhihu
+  - from zhihu
 layout: post
-excerpt: 'Sometimes the curvature radius of a curve can be found by using physical methods
-although it seems that you must use calculus to find it.
-In this article, the curvature radius of the curve $x^2=2py$ at the point where the curvature radius is smallest
-is found by using physical methods without using calculus (with only high school knowledge).
-The answer is that the smallest curvature is exactly $p$, and the point with smallest curvature is the vertex.'
+excerpt: >
+  Sometimes the curvature radius of a curve can be found by using physical methods
+  although it seems that you must use calculus to find it.
+  In this article, the curvature radius of the curve $x^2=2py$ at the point where the curvature radius is smallest
+  is found by using physical methods without using calculus (with only high school knowledge).
+  The answer is that the smallest curvature is exactly $p$, and the point with smallest curvature is the vertex.
 ---
 
 *This article is translated from a

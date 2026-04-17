@@ -2,13 +2,14 @@
 title: Typesetting math in emails
 date: 2022-11-08 11:12:09 -0800
 categories:
-- programming
+  - programming
 tags:
-- jekyll
-- ruby
-- tex
+  - jekyll
+  - ruby
+  - tex
 layout: post
-excerpt: 'After some comparison among solutions, I use KaTeX to typeset math in my emails.'
+excerpt: >
+  After some comparison among solutions, I use KaTeX to typeset math in my emails.
 ---
 
 After I become a university student,

@@ -2,15 +2,16 @@
 title: An 🎃 easy 👻 but 🍬 *spooky* 💀 Ruby challenge
 date: 2023-10-31 17:30:48 -0700
 categories:
-- programming
+  - programming
 tags:
-- ruby
-- code golf
-- fooling around
+  - ruby
+  - code golf
+  - fooling around
 layout: post
-excerpt: '"It''s the weekend and you''ve just completed a seance with friends.
-After communing with the dead, you realize a mysterious message was left behind."
-What is the decoded message? Use your Ruby skills to find out!'
+excerpt: >
+  "It's the weekend and you've just completed a seance with friends.
+  After communing with the dead, you realize a mysterious message was left behind."
+  What is the decoded message? Use your Ruby skills to find out!
 ---
 
 This was a challenge in the [Ruby Discord server](https://discord.gg/ad2acQFtkh).

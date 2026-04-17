@@ -2,20 +2,21 @@
 title: The duality between two plane trajectories related by a conformal map
 date: 2023-12-22 11:19:04 -0800
 categories:
-- physics
+  - physics
 tags:
-- complex
-- classical mechanics
-- canonical transformation
-- kepler problem
-- mathematical physics
-- vector analysis
-- long paper
+  - complex
+  - classical mechanics
+  - canonical transformation
+  - kepler problem
+  - mathematical physics
+  - vector analysis
+  - long paper
 layout: post
-excerpt: 'The conformal map $\fc wz$ transforms the trajectory with energy $-B$ in potential
-$\fc Uz\ceq A\v{\d w/\d z}^2$ into the trajectory with energy $-A$ in potential
-$\fc Vw\ceq B\v{\d z/\d w}^2$.
-I will prove this beautiful result and show some implications of it.'
+excerpt: >
+  The conformal map $\fc wz$ transforms the trajectory with energy $-B$ in potential
+  $\fc Uz\ceq A\v{\d w/\d z}^2$ into the trajectory with energy $-A$ in potential
+  $\fc Vw\ceq B\v{\d z/\d w}^2$.
+  I will prove this beautiful result and show some implications of it.
 ---
 
 I always feel amazed about how 2D physics can often be fascinating due to theorems in complex analysis.

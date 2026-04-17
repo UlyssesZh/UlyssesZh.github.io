@@ -1,19 +1,20 @@
 ---
-title: 'The distribution when indistinguishable balls are put into boxes'
+title: The distribution when indistinguishable balls are put into boxes
 date: 2023-05-09 12:19:26 -0700
 categories:
-- math
+  - math
 tags:
-- probability
-- combinatorics
-- ruby
+  - probability
+  - combinatorics
+  - ruby
 layout: post
-excerpt: 'Suppose there are $n$ distinguishable boxes and $k$ indistinguishable balls.
-Now, we randomly put the balls into the boxes.
-For each of the boxes, what is the probability that it contains $m$ balls?
-This is a simple combanitorics problem that can be solved by the stars and bars method.
-It turns out that in the limit $n,k\to\infty$ with $k/n$ fixed, 
-the distribution tends to be a geometric distribution.'
+excerpt: >
+  Suppose there are $n$ distinguishable boxes and $k$ indistinguishable balls.
+  Now, we randomly put the balls into the boxes.
+  For each of the boxes, what is the probability that it contains $m$ balls?
+  This is a simple combanitorics problem that can be solved by the stars and bars method.
+  It turns out that in the limit $n,k\to\infty$ with $k/n$ fixed, 
+  the distribution tends to be a geometric distribution.
 ---
 
 > If there are 200 typographical errors randomly distributed in a 500 page manuscript,

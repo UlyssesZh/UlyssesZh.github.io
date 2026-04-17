@@ -2,14 +2,15 @@
 title: Why it is a bad idea to use GitHub for submiting school homework
 date: 2025-01-09 23:51:35 -0800
 categories:
-- misc
+  - misc
 tags:
-- github
-- school
+  - github
+  - school
 layout: post
-excerpt: 'It is common for school courses to require students to submit their homework using GitHub.
-However, this is usually a bad idea for several reasons,
-potentially including TOS violation, community degradation, and reliability.'
+excerpt: >
+  It is common for school courses to require students to submit their homework using GitHub.
+  However, this is usually a bad idea for several reasons,
+  potentially including TOS violation, community degradation, and reliability.
 ---
 
 *Do not take this artical as legal advice because I am not a lawyer.*

@@ -1,14 +1,15 @@
 ---
-title: 'Free trade (single good case)'
+title: Free trade (single good case)
 date: 2023-05-01 17:10:11 -0700
 categories:
-- economics
+  - economics
 tags:
-- global economy
-- from zhihu
+  - global economy
+  - from zhihu
 layout: post
-excerpt: 'I set up a simple model to determine the production and consumption
-in free trade between nations.'
+excerpt: >
+  I set up a simple model to determine the production and consumption
+  in free trade between nations.
 ---
 
 *This article is translated from a Chinese [article](https://zhuanlan.zhihu.com/p/424773907) on my Zhihu account.

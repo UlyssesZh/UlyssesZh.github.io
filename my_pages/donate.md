@@ -1,6 +1,6 @@
 ---
 title: Donate
-permalink: "/donate/"
+permalink: /donate/
 layout: my_page
 ---
 

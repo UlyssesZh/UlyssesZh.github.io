@@ -2,19 +2,20 @@
 title: The concentration change of gas in reversible reactions
 date: 2020-04-12 10:00:01 +0800
 categories:
-- chemistry
+  - chemistry
 tags:
-- calculus
-- ode
-- chemical reaction
-- long paper
+  - calculus
+  - ode
+  - chemical reaction
+  - long paper
 layout: post
-excerpt: 'A reversible elementary reaction takes place inside a closed,
-highly thermally conductive container of constant volume,
-whose reactants are all gases.
-Given the reaction equations and the reaction rate constants,
-a natural question to ask is how the concentration of each gas changes w.r.t. time.
-In this article, I will answer this question by proposing a general approach to solve it.'
+excerpt: >
+  A reversible elementary reaction takes place inside a closed,
+  highly thermally conductive container of constant volume,
+  whose reactants are all gases.
+  Given the reaction equations and the reaction rate constants,
+  a natural question to ask is how the concentration of each gas changes w.r.t. time.
+  In this article, I will answer this question by proposing a general approach to solve it.
 ---
 
 ## Introduction

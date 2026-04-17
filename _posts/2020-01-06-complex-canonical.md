@@ -2,33 +2,34 @@
 title: Use complex numbers as canonical variables
 date: 2020-01-06 14:09:47 +0800
 categories:
-- physics
+  - physics
 tags:
-- classical mechanics
-- canonical transformation
-- hamiltonian
-- complex
-- long paper
+  - classical mechanics
+  - canonical transformation
+  - hamiltonian
+  - complex
+  - long paper
 layout: post
-excerpt: 'In this article, I try exploring an idea:
-using complex numbers to combine pairs of canonical variables into complex variables:
-$\mathbf c\coloneqq\alpha\mathbf q+\mathrm i\beta\mathbf p$.
-It turns out that we can write canonical equations
-$\frac{\mathrm d\mathbf c}{\mathrm dt}=-2\mathrm i\alpha\beta\frac{\partial\mathcal H}{\partial\mathbf c^*}$,
-Poisson brackets
-$\left\{f,g\right\}=-2\mathrm i\alpha\beta
-\left(\frac{\partial f}{\partial\mathbf c}\cdot
-\frac{\partial g}{\partial\mathbf c^*}-
-\frac{\partial f}{\partial\mathbf c^*}\cdot
-\frac{\partial g}{\partial\mathbf c}\right)$,
-and canonical transformations
-$\frac{\partial\mathbf c^*}{\partial\mathbf c''^*}=
-\frac{\partial\mathbf c''}{\partial\mathbf c},
-\frac{\partial\mathbf c}{\partial\mathbf c''^*}=
--\frac{\partial\mathbf c''}{\partial\mathbf c^*}$
-in these complex numbers.
-Finally, I show two examples of using them in real problems:
-a free particle, and a harmonic oscillator.'
+excerpt: >
+  In this article, I try exploring an idea:
+  using complex numbers to combine pairs of canonical variables into complex variables:
+  $\mathbf c\coloneqq\alpha\mathbf q+\mathrm i\beta\mathbf p$.
+  It turns out that we can write canonical equations
+  $\frac{\mathrm d\mathbf c}{\mathrm dt}=-2\mathrm i\alpha\beta\frac{\partial\mathcal H}{\partial\mathbf c^*}$,
+  Poisson brackets
+  $\left\{f,g\right\}=-2\mathrm i\alpha\beta
+  \left(\frac{\partial f}{\partial\mathbf c}\cdot
+  \frac{\partial g}{\partial\mathbf c^*}-
+  \frac{\partial f}{\partial\mathbf c^*}\cdot
+  \frac{\partial g}{\partial\mathbf c}\right)$,
+  and canonical transformations
+  $\frac{\partial\mathbf c^*}{\partial\mathbf c'^*}=
+  \frac{\partial\mathbf c'}{\partial\mathbf c},
+  \frac{\partial\mathbf c}{\partial\mathbf c'^*}=
+  -\frac{\partial\mathbf c'}{\partial\mathbf c^*}$
+  in these complex numbers.
+  Finally, I show two examples of using them in real problems:
+  a free particle, and a harmonic oscillator.
 ---
 
 ## Introduction

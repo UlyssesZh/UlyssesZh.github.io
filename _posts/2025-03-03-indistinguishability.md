@@ -2,19 +2,20 @@
 title: The role of particle indistinguishability in statistical mechanics
 date: 2025-03-03 22:53:47 -0800
 categories:
-- physics
+  - physics
 tags:
-- mathematical physics
-- statistical mechanics
-- probability
-- long paper
-- combinatorics
-- quantum mechanics
+  - mathematical physics
+  - statistical mechanics
+  - probability
+  - long paper
+  - combinatorics
+  - quantum mechanics
 layout: post
-excerpt: 'Indistinguishability plays an important role
-in enumerative problems in combinatorics.
-This article explains the concept and significance of particle indistinguishability
-in statistical mechanics.'
+excerpt: >
+  Indistinguishability plays an important role
+  in enumerative problems in combinatorics.
+  This article explains the concept and significance of particle indistinguishability
+  in statistical mechanics.
 ---
 
 ## Classical vs. quantum statistical mechanics

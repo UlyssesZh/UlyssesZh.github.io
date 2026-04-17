@@ -1,21 +1,22 @@
 ---
-title: 'This is what will happen after you get a haircut'
+title: This is what will happen after you get a haircut
 date: 2023-01-18 12:11:41 -0800
 categories:
-- math
+  - math
 tags:
-- calculus
-- probability
-- pde
+  - calculus
+  - probability
+  - pde
 layout: post
-excerpt: 'Denote the length distribution of one''s hair to be $f(l,t)$,
-where $l$ is hair length, and $t$ is time.
-Considering that each hair may be lost naturally from time to time
-(there is a probability of $\lambda\,\mathrm dt$ for each hair to be lost
-within time range from $t$ to $t+\mathrm dt$)
-and then restart growing from zero length,
-how will the length distribution of hair evolve with time?
-It turns out that we may model it with a first-order PDE.'
+excerpt: >
+  Denote the length distribution of one's hair to be $f(l,t)$,
+  where $l$ is hair length, and $t$ is time.
+  Considering that each hair may be lost naturally from time to time
+  (there is a probability of $\lambda\,\mathrm dt$ for each hair to be lost
+  within time range from $t$ to $t+\mathrm dt$)
+  and then restart growing from zero length,
+  how will the length distribution of hair evolve with time?
+  It turns out that we may model it with a first-order PDE.
 ---
 
 Denote the length distribution of one's hair to be $f(l,t)$.

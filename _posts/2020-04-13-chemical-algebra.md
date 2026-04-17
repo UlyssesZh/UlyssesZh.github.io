@@ -2,17 +2,18 @@
 title: Algebraic structure of chemicals
 date: 2020-04-13 21:59:28 +0800
 categories:
-- chemistry
+  - chemistry
 tags:
-- linear algebra
-- abstract algebra
+  - linear algebra
+  - abstract algebra
 layout: post
-excerpt: 'Regarding balancing chemical equations,
-actually we are trying to find a non-trivial linear combination of some chemicals to get zero.
-The interesting thing is that the coefficients can only be integers ($\mathbb Z$),
-which is not a field, so the algebraic structure of chemicals is not linear space.
-They actually live in a free $\mathbb Z$-module.
-See how I formalize this idea in mathematical language.'
+excerpt: >
+  Regarding balancing chemical equations,
+  actually we are trying to find a non-trivial linear combination of some chemicals to get zero.
+  The interesting thing is that the coefficients can only be integers ($\mathbb Z$),
+  which is not a field, so the algebraic structure of chemicals is not linear space.
+  They actually live in a free $\mathbb Z$-module.
+  See how I formalize this idea in mathematical language.
 ---
 
 When we are writing reaction equations,

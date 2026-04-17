@@ -2,16 +2,17 @@
 title: Hyperellipsoids in barycentric coordinates
 date: 2020-01-25 17:13:57 +0800
 categories:
-- math
+  - math
 tags:
-- linear algebra
-- long paper
+  - linear algebra
+  - long paper
 layout: post
-excerpt: 'In this article, I introduce the barycentric coordinates:
-it is an elegant way to represent geometric shapes related to a simplex.
-By using it, given a simplex, we can construct a hyperellipsoid with the properties:
-its surface passes every vertex of the simplex,
-and its tangent hyperplane at each vertex is parallel to the hyperplane containing all other vertices.'
+excerpt: >
+  In this article, I introduce the barycentric coordinates:
+  it is an elegant way to represent geometric shapes related to a simplex.
+  By using it, given a simplex, we can construct a hyperellipsoid with the properties:
+  its surface passes every vertex of the simplex,
+  and its tangent hyperplane at each vertex is parallel to the hyperplane containing all other vertices.
 ---
 
 ## Some notations

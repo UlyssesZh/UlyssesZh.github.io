@@ -2,18 +2,19 @@
 title: Multi-pass Gaussian blur filter
 date: 2025-07-17 01:06:08 -0700
 categories:
-- programming
+  - programming
 tags:
-- algorithm
-- shader
-- probability
-- pde
+  - algorithm
+  - shader
+  - probability
+  - pde
 layout: post
-excerpt: 'According to the central limit theorem, the sum of some i.i.d. samples is normally distributed in the limit of large sample size.
-This fact can be used to implement a multi-pass Gaussian blur filter,
-where the total number of passes is equal to the number of samples used in the averaging.
-Through this, we can also see a nice relation to the heat equation,
-which is not surprising since the heat kernel is a Gaussian function.'
+excerpt: >
+  According to the central limit theorem, the sum of some i.i.d. samples is normally distributed in the limit of large sample size.
+  This fact can be used to implement a multi-pass Gaussian blur filter,
+  where the total number of passes is equal to the number of samples used in the averaging.
+  Through this, we can also see a nice relation to the heat equation,
+  which is not surprising since the heat kernel is a Gaussian function.
 ---
 
 In image processing, a Gaussian blur filter is the transformation of an image that blurs it by a Gaussian function.

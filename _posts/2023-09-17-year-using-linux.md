@@ -1,17 +1,18 @@
 ---
-title: 'My old computers and my experience of daily driving Linux and self-hosting'
+title: My old computers and my experience of daily driving Linux and self-hosting
 date: 2023-09-17 10:07:45 -0700
 categories:
-- misc
+  - misc
 tags:
-- linux
-- selfhosting
+  - linux
+  - selfhosting
 layout: post
-excerpt: 'I have been using Linux and self-hosting for over a year now.
-Overall, I would like to say that it is rather satisfactory and
-that I will continue to use Linux as my daily driver in future.
-Thinking of that, I felt a little bit nostalgic about my old computers.
-So I decided to write an article about my old computers and my experience of daily driving Linux now.'
+excerpt: >
+  I have been using Linux and self-hosting for over a year now.
+  Overall, I would like to say that it is rather satisfactory and
+  that I will continue to use Linux as my daily driver in future.
+  Thinking of that, I felt a little bit nostalgic about my old computers.
+  So I decided to write an article about my old computers and my experience of daily driving Linux now.
 ---
 
 ## My old computers

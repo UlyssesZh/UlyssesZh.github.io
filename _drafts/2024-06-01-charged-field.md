@@ -2,14 +2,15 @@
 title: Charged fields
 date: 2024-02-21 02:26:45 -0800
 categories:
-- physics
+  - physics
 tags:
-- field theory (physics)
-- group theory
+  - field theory (physics)
+  - group theory
 layout: post
-excerpt: 'Charged fields are fields that possess internal symmetries.
-The Noether current that corresponds to this symmetry
-shows the conservation of charge.'
+excerpt: >
+  Charged fields are fields that possess internal symmetries.
+  The Noether current that corresponds to this symmetry
+  shows the conservation of charge.
 ---
 
 ## The starting confusion

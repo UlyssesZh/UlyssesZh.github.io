@@ -2,19 +2,20 @@
 title: Simulating a mechanical system using rpg_core.js
 date: 2020-05-14 00:57:39 +0800
 categories:
-- physics
+  - physics
 tags:
-- javascript
-- rgss
-- hamiltonian
-- calculus
-- ode
-- web
-- fourier transform
+  - javascript
+  - rgss
+  - hamiltonian
+  - calculus
+  - ode
+  - web
+  - fourier transform
 layout: post
-excerpt: 'Continuing my last work of simulating a mechanical system using RGSS3,
-I made a new version using rpg_core.js, the game scripting system shipped with RPG Maker MV.
-This version is live [on web](/rpg/mechsimul)!'
+excerpt: >
+  Continuing my last work of simulating a mechanical system using RGSS3,
+  I made a new version using rpg_core.js, the game scripting system shipped with RPG Maker MV.
+  This version is live [on web](/rpg/mechsimul)!
 ---
 
 This post is the continuation of

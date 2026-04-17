@@ -1,17 +1,18 @@
 ---
-title: 'The Pareto set of spatial preference relations is the convex hull of ideal points'
+title: The Pareto set of spatial preference relations is the convex hull of ideal points
 date: 2023-03-26 16:03:46 -0700
 categories:
-- economics
+  - economics
 tags:
-- functional analysis
-- preference relation
-- pareto efficiency
+  - functional analysis
+  - preference relation
+  - pareto efficiency
 layout: post
-excerpt: 'The spatial preference relation is the preference relation over a metric space
-where points nearer to the ideal point are preferred.
-Suppose there are some agents with spatial preference relations over a strictly convex space,
-then the Pareto set of them is the convex hull of their ideal points.'
+excerpt: >
+  The spatial preference relation is the preference relation over a metric space
+  where points nearer to the ideal point are preferred.
+  Suppose there are some agents with spatial preference relations over a strictly convex space,
+  then the Pareto set of them is the convex hull of their ideal points.
 ---
 
 A **spatial preference relation** (with ideal point $a$)

@@ -2,18 +2,19 @@
 title: Kinetic energy, momentum, and angular momentum of rigid bodies
 date: 2022-11-12 19:29:40 -0800
 categories:
-- physics
+  - physics
 tags:
-- rigid body
-- linear algebra
-- classical mechanics
-- from zhihu
+  - rigid body
+  - linear algebra
+  - classical mechanics
+  - from zhihu
 layout: post
-excerpt: 'In this article, we will find that the inertia matrix naturally appears
-when we calculate the kinetic energy $T$ or the angular momentum $\mathbf M$ of a rigid body.
-Then, we introduce the concept of principal inertia $\mathbf J_{\mathrm{pri}}$.
-We also study how the inertia matrix changes under translations and rotations
-and how those transformations may lead to conclusions that can help us simplify the calculation of inertia matrices.'
+excerpt: >
+  In this article, we will find that the inertia matrix naturally appears
+  when we calculate the kinetic energy $T$ or the angular momentum $\mathbf M$ of a rigid body.
+  Then, we introduce the concept of principal inertia $\mathbf J_{\mathrm{pri}}$.
+  We also study how the inertia matrix changes under translations and rotations
+  and how those transformations may lead to conclusions that can help us simplify the calculation of inertia matrices.
 ---
 
 *This article is translated from a

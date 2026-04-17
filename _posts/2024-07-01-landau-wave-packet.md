@@ -2,14 +2,15 @@
 title: The smallest wave packet in the lowest Landau level
 date: 2024-07-01 01:01:46 -0700
 categories:
-- physics
+  - physics
 tags:
-- quantum mechanics
-- condensed matter physics
+  - quantum mechanics
+  - condensed matter physics
 layout: post
-excerpt: 'The smallest wave packet in the lowest Landau level
-exists, and is a Gaussian wave packet.
-This turns out to be related to the coherent state of the harmonic oscillator.'
+excerpt: >
+  The smallest wave packet in the lowest Landau level
+  exists, and is a Gaussian wave packet.
+  This turns out to be related to the coherent state of the harmonic oscillator.
 ---
 
 ## Introduction
