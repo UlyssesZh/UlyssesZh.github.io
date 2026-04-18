@@ -153,6 +153,23 @@ paru:
       '\Pin': '\fc{\mrm{Pin}}{#1}'
       '\Cl': '\fc{\mrm{Cl}}{#1}'
 
+feed:
+  posts_limit: 20
+  categories:
+    - chemistry
+    - economics
+    - guide
+    - language
+    - literature
+    - math
+    - misc
+    - music
+    - physics
+    - programming
+    - update
+  tags:
+    path: /feed/tags/
+
 gitalk:
   enable_in_development: false
   client_id: 49611570ab5cf827576b

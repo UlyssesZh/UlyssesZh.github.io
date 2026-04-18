@@ -1,18 +1,19 @@
 require 'nokogiri'
 
 module Jekyll::UlyssesZhan
-	@markdown_snippet_cache = {}
-	def self.markdown_snippet_cache
-		@markdown_snippet_cache
-	end
+	@markdownify_cache = {}
+	@markdownify_strip_cache = {}
+	singleton_class.attr_reader :markdownify_cache, :markdownify_strip_cache
 end
 
 module Jekyll
 	module UlyssesZhan::Filters
 
+		SeoTag::Filters.include self
+
 		def markdownify input
 			return input if @context.registers[:site].config['avoid_markdown']
-			UlyssesZhan.markdown_snippet_cache[input] ||= Filters.instance_method(:markdownify).bind_call self, input
+			UlyssesZhan.markdownify_cache[input] ||= Filters.instance_method(:markdownify).bind_call self, input
 		end
 
 		def markdownify_no_p input
@@ -23,8 +24,31 @@ module Jekyll
 			input.gsub ?\n, ?\s
 		end
 
-		def strip_lineno input
-			input.gsub %r{<td class="rouge-gutter gl">.*?</td>}m, ''
+		def markdownify_strip input
+			return input if @context.registers[:site].config['avoid_markdown']
+			UlyssesZhan.markdownify_strip_cache[input] ||= strip_html2 markdownify input
+		end
+
+		# also strips aria-hidden and annotation (in MathML)
+		# see discussion about .rouge-gutter: https://github.com/rouge-ruby/rouge/pull/2275
+		def strip_html2 input
+			doc = Nokogiri::HTML::DocumentFragment.parse "<body>#{input}</body>"
+			doc.css('annotation, .rouge-gutter, [aria-hidden="true"]').remove
+			doc.text.strip
+		end
+
+		def strip_aria_hidden input
+			doc = Nokogiri::HTML::DocumentFragment.parse input
+			doc.css('.rouge-gutter, [aria-hidden="true"]').remove
+			doc.to_xml.strip
+		end
+
+		def strip_aria_hidden_no_p input
+			strip_aria_hidden(input).sub %r{^\s*<p>\s*(.*?)\s*</p>\s*$}m, '\1'
+		end
+
+		def cdata input
+			"<![CDATA[#{input.gsub ']]>', ']]]]><![CDATA[>'}]]>"
 		end
 
 		def strip_index input

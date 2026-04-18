@@ -15,12 +15,12 @@ window.store = {
 		{% assign excerpt = post.excerpt | markdownify_no_p %}
 		{% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
 		"{{ post.url | slugify }}": {
-			titleStripped: {{ title | strip_html | jsonify }},
+			titleStripped: {{ title | strip_html2 | jsonify }},
 			title: {{ title | jsonify }},
 			date: {{ post.date | date: date_format | jsonify }},
-			excerptStripped: {{ excerpt | strip_html | jsonify }},
+			excerptStripped: {{ excerpt | strip_html2 | jsonify }},
 			excerpt: {{ excerpt | jsonify }},
-			content: {{ post.content | strip_lineno | strip_html | jsonify }},
+			content: {{ post.content | strip_html2 | jsonify }},
 			tags: {{ post.tags | jsonify }},
 			categories: {{ post.categories | jsonify }},
 			url: {{ post.url | jsonify }},

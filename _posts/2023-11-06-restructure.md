@@ -62,7 +62,7 @@ in the future, which will entirely skip the building phase and build the files a
 I found another way to partially mitigate this issue.
 On my blog, I have been extensively utilizing the `markdownify` filter to render Markdown inside the templates,
 including the title of the posts, the excerpt of the posts, and something else.
-Those are rendered in multiple places, including the homepage, the archive page, the RSS feed, and the search page.
+Those are rendered in multiple places, including the homepage, the archive page, the Atom feed, and the search page.
 Since now rendering Markdown is being very slow, I decided to cache the rendered Markdowns.
 A very simple strategy is as follows:
 

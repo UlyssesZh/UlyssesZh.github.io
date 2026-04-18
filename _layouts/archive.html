@@ -6,3 +6,6 @@ no_gitalk: true
 
 <h2 class="post-list-heading">{{ page.title | markdownify_no_p }}</h2>
 {%- include posts_list.html -%}
+{% if page.feed -%}
+	<p class="feed-subscribe">subscribe <a href="{{ page.feed | relative_url }}">via Atom</a></p>
+{%- endif -%}

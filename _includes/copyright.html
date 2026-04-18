@@ -1,12 +1,12 @@
 <p>
 	All contents inside
-	{% if page.license %}
-		{% assign license = page.license | markdownify_no_p %}
+	{%- if page.license %}
+		{%- assign license = page.license | markdownify_no_p %}
 		this particular blog article
-	{% else %}
-		{% assign license = site.license | markdownify_no_p %}
+	{%- else %}
+		{%- assign license = site.license | markdownify_no_p %}
 		blog articles
-	{% endif %}
+	{%- endif %}
 	are licensed under {{ license }}
 	unless stated otherwise or marked with this symbol: &copy;.
 </p>

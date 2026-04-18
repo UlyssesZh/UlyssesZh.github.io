@@ -1,47 +1,47 @@
 <link id="fa-stylesheet" rel="stylesheet" href="https://fastly.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css">
 
 <footer class="site-footer h-card">
-  <data class="u-url" value="{{ "/" | relative_url }}"></data>
+	<data class="u-url" value="{{ "/" | relative_url }}"></data>
 
-  <div class="wrapper">
+	<div class="wrapper">
 
-    <h2 class="footer-heading">{{ site.title | escape }}</h2>
+		<h2 class="footer-heading">{{ site.title | markdownify_no_p }}</h2>
 
-    <div class="footer-col-wrapper">
-      <div class="footer-col footer-col-1">
-        <p>{{- site.description | escape -}}</p>
-        <ul class="contact-list">
-          <li class="p-name">
-            {%- if site.author -%}
-              {{ site.author.name | escape }}
-            {%- else -%}
-              {{ site.title | escape }}
-            {%- endif -%}
-            </li>
-            {%- if site.author.email -%}
-            <li><a class="u-email" href="mailto:{{ site.author.name }} <{{ site.author.email }}>" rel="author">{{ site.author.email | escape }}</a></li>
-            {%- endif -%}
-        </ul>
-      </div>
+		<div class="footer-col-wrapper">
+			<div class="footer-col footer-col-1">
+				{{- site.description | markdownify -}}
+				<ul class="contact-list">
+					<li class="p-name">
+						{%- if site.author -%}
+							{{ site.author.name | escape }}
+						{%- else -%}
+							{{ site.title | markdownify_strip | escape_once }}
+						{%- endif -%}
+					</li>
+					{%- if site.author.email -%}
+						<li><a class="u-email" href="mailto:{{ site.author.name }} <{{ site.author.email }}>" rel="author">{{ site.author.email | escape }}</a></li>
+					{%- endif -%}
+				</ul>
+			</div>
 
-      <div class="footer-col footer-col-2 social-links">
-        {%- include social.html -%}
-      </div>
+			<div class="footer-col footer-col-2 social-links">
+				{%- include social.html -%}
+			</div>
 
-      <div class="footer-col footer-col-3">
-        {% include copyright.html %}
+			<div class="footer-col footer-col-3">
+				{%- include copyright.html -%}
 
-        <div class="update-info">
-          {% if site.github_run_id %}
-              <a href="{{ site.git_repo }}/actions/runs/{{ site.github_run_id }}" target="_blank" rel="external">Build</a>
-              {{ "now" | date: "%FT%T%z" }}<br>
-          {% endif %}
-          <a href="{{ site.git_repo }}/commit/{{ site.commit_hash }}" target="_blank" rel="external">Commit</a>
-          {{ site.commit_time | date: "%FT%T%z" }}
-        </div>
-      </div>
-    </div>
+				<div class="update-info">
+					{%- if site.github_run_id %}
+							<a href="{{ site.git_repo }}/actions/runs/{{ site.github_run_id }}" target="_blank" rel="external">Build</a>
+							{{ "now" | date: "%FT%T%z" }}<br>
+					{%- endif %}
+					<a href="{{ site.git_repo }}/commit/{{ site.commit_hash }}" target="_blank" rel="external">Commit</a>
+					{{ site.commit_time | date: "%FT%T%z" }}
+				</div>
+			</div>
+		</div>
 
-  </div>
+	</div>
 
 </footer>

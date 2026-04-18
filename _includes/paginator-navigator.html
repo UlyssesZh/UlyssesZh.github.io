@@ -1,35 +1,35 @@
-{% if paginator and paginator.total_pages > 1 %}
+{% if paginator and paginator.total_pages > 1 -%}
 <ul class="pager">
-	{% if paginator.previous_page %}
-		{% if paginator.first_page %}
+	{%- if paginator.previous_page %}
+		{%- if paginator.first_page %}
 			<li class="previous">
 				<a href="{{ paginator.first_page_path | strip_index }}" title="Page 1">&lt;&lt;</a>
 			</li>
-		{% endif %}
+		{%- endif %}
 
 		<li class="previous">
 			<a href="{{ paginator.previous_page_path | strip_index }}" title="Page {{ paginator.page - 1 }}">&lt;</a>
 		</li>
-	{% endif %}
+	{%- endif %}
 
-	{% if paginator.page_trail %}
-		{% for trail in paginator.page_trail %}
+	{%- if paginator.page_trail %}
+		{%- for trail in paginator.page_trail %}
 			<li{% if page.url == trail.path %} class="selected" {% endif %}>
 				<a href="{{ trail.path | strip_index }}" title="Page {{ trail.num }}">{{ trail.num }}</a>
 			</li>
-		{% endfor %}
-	{% endif %}
+		{%- endfor %}
+	{%- endif %}
 
-	{% if paginator.next_page %}
+	{%- if paginator.next_page %}
 		<li class="next">
 			<a href="{{ paginator.next_page_path | strip_index }}" title="Page {{ paginator.page + 1 }}">&gt;</a>
 		</li>
 
-		{% if paginator.last_page %}
+		{%- if paginator.last_page %}
 			<li class="previous">
 				<a href="{{ paginator.last_page_path | strip_index }}" title="Page {{ paginator.total_pages }}">&gt;&gt;</a>
 			</li>
-		{% endif %}
-	{% endif %}
+		{%- endif %}
+	{%- endif %}
 </ul>
-{% endif %}
+{%- endif %}
