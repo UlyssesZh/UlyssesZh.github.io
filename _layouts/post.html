@@ -41,10 +41,10 @@ layout: base
 							{%- unless forloop.last %}, {% endunless %}
 						{%- endfor %}
 					</dd>
-					<dt>Excerpt</dt><dd>{{ page.excerpt | markdownify_no_p }}</dd>
+					<dt>Abstract</dt><dd>{{ page.excerpt | markdownify_no_p }}</dd>
 					{%- if page.image %}
 						<dt>Cover</dt><dd>
-							<a href="{{ page.image }}" target="_blank"><img src="{{ page.image }}" width="16"></a>
+							<a href="{{ page.image }}" target="_blank"><img src="{{ page.image }}" width="16" alt="Article cover image with no practical usage"></a>
 							(<a href="{{ site.git_repo }}/blob/master{{ page.image | replace: '.png', '.txt' }}" target="_blank" rel="external">prompts</a>)
 						</dd>
 					{%- endif %}
@@ -69,10 +69,12 @@ layout: base
 		{{ content | inject_anchors }}
 	</div>
 
-	{%- if page.image %}
-		<p style="text-align: center"><img src="{{ page.image }}"></p>
-	{%- endif %}
+	<footer>
+		{%- if page.image %}
+			<p style="text-align: center"><img src="{{ page.image }}" alt="Post cover image with no practical usage"></p>
+		{%- endif %}
 
-	{%- include navlinks.html %}
+		{%- include navlinks.html %}
+	</footer>
 
 </article>

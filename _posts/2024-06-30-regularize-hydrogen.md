@@ -84,7 +84,7 @@ so I want to quote it, too:
 
 <figure class="no-indent">
 
-> Divergente Rækker er i det Hele noget Fandenskap,
+> Divergente R&aelig;kker er i det Hele noget Fandenskap,
 og det er en Skam at man vover at grunde nogen Demonstrasjon derpaa.
 
 <figcaption>---N. H. Abel</figcaption>

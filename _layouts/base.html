@@ -4,10 +4,11 @@
 {%- include head.html -%}
 
 <body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
 
 {%- include header.html -%}
 
-<main class="page-content" aria-label="Content">
+<main class="page-content" id="main-content" aria-label="Content">
 	<div class="wrapper">
 		{{ content }}
 		{%- include gitalk_body.html -%}

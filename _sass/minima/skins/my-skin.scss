@@ -98,17 +98,24 @@ $dm-button-active-background-color: #300010 !default;
 	@return url(str-replace($svg, '#', '%23'));
 }
 
+@function link-image($color) {
+	$svg: 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" stroke="#{$color}" fill="none" stroke-width="2" stroke-linecap="round"><path d="M13 11A4.242641 4.242641 0 0 0 7 11L3 15A4.242641 4.242641 0 0 0 9 21L13 17"/><path d="M11 13A4.242641 4.242641 0 0 0 16 13L21 9A4.242641 4.242641 0 0 0 15 3L11 7"/></svg>';
+	@return url(str-replace($svg, '#', '%23'));
+}
+
 $lm-hr-image: hr-image($lm-hr-background-color) !default;
 $lm-summary-image: summary-image($lm-text-color, 2px) !default;
 $lm-summary-image-brand: summary-image($lm-brand-color, 1.5px) !default;
 $lm-copy-image: copy-image($lm-button-color) !default;
 $lm-copy-done-image: copy-done-image($lm-button-color) !default;
+$lm-link-image: link-image($lm-heading-color) !default;
 
 $dm-hr-image: hr-image($dm-hr-background-color) !default;
 $dm-summary-image: summary-image($dm-text-color, 2px) !default;
 $dm-summary-image-brand: summary-image($dm-brand-color, 1.5px) !default;
 $dm-copy-image: copy-image($dm-button-color) !default;
 $dm-copy-done-image: copy-done-image($dm-button-color) !default;
+$dm-link-image: link-image($dm-heading-color) !default;
 
 :root {
 	--kbd-color: #{$lm-kbd-color};
@@ -137,6 +144,7 @@ $dm-copy-done-image: copy-done-image($dm-button-color) !default;
 	--summary-image-brand: #{$lm-summary-image-brand};
 	--copy-image: #{$lm-copy-image};
 	--copy-done-image: #{$lm-copy-done-image};
+	--link-image: #{$lm-link-image};
 }
 @media (prefers-color-scheme: dark) {
 	:root {
@@ -166,6 +174,7 @@ $dm-copy-done-image: copy-done-image($dm-button-color) !default;
 		--summary-image-brand: #{$dm-summary-image-brand};
 		--copy-image: #{$dm-copy-image};
 		--copy-done-image: #{$dm-copy-done-image};
+		--link-image: #{$dm-link-image};
 	}
 }
 
@@ -195,6 +204,7 @@ $summary-image: var(--summary-image);
 $summary-image-brand: var(--summary-image-brand);
 $copy-image: var(--copy-image);
 $copy-done-image: var(--copy-done-image);
+$link-image: var(--link-image);
 
 @media (prefers-color-scheme: dark) {
 	.dark-adaptive {
@@ -328,11 +338,47 @@ button {
 	}
 }
 
+.anchor {
+	position: absolute;
+	translate: -100% 0;
+}
+h2, h3, h4, h5, h6 {
+	&:hover .anchor, .anchor:focus, .anchor:hover {
+		&::before {
+			content: $link-image;
+		}
+	}
+}
+
 //==========
-// Target
+// Target and skip link
 //==========
 
-:target:not(#gitalk-container), ::target-text {
+.skip-link {
+	position: absolute;
+	display: block;
+	width: 100%;
+	height: fit-content;
+	background: $background-color;
+	z-index: 100;
+	font-size: 40px;
+	text-align: center;
+	opacity: 0;
+	pointer-events: none;
+	&:focus {
+		opacity: 1;
+		pointer-events: all;
+	}
+}
+
+@keyframes target-fade {
+	0% { background-color: $target-background-color; }
+	100% { background-color: transparent; }
+}
+:target:not(#gitalk-container) {
+	animation: target-fade 0.5s step-end;
+}
+::target-text {
 	background-color: $target-background-color;
 }
 
@@ -499,16 +545,20 @@ button {
 	.katex-display-numbered {
 		width: 100%;
 		overflow-x: auto;
-		overflow-y: hidden;
+		overflow-y: hidden; // https://github.com/KaTeX/KaTeX/issues/3965
+	}
+	.katex-display-number {
+		overflow-x: visible; // prevent focus
 	}
 	.katex-display {
 		margin: 0;
+		overflow: visible; // otherwise outline is invisible
 	}
 }
 
 .katex-display {
 	overflow-x: auto;
-	overflow-y: hidden;
+	overflow-y: hidden; // https://github.com/KaTeX/KaTeX/issues/3965
 }
 
 //==========

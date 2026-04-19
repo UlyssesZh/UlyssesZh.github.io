@@ -1,4 +1,4 @@
-<div class="post-navi">
+<nav class="post-navi">
 	{%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
 	{%- if page.previous %}
 		{%- assign prev = page.previous %}
@@ -14,4 +14,4 @@
 			<div class="post-navi-title"><a href="{{ next.url }}" rel="next">{{ next.title | markdownify_no_p }}</a></div>
 		</div>
 	{%- endif %}
-</div>
+</nav>

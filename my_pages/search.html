@@ -42,7 +42,7 @@ function displaySearchResults(results, store) {
 			var item = store[results[i].ref];
 			appendString += '<li class="post-list-item"><span class="post-meta">' + item.date + '</span>';
 			appendString += '<h3><a class="post-link" href="' + item.url + '">' + item.title + '</a></h3>';
-			appendString += `<p class="post-excerpt"><img src="${item.image}" class="post-image">` + item.excerpt + '</p>';
+			appendString += `<p class="post-excerpt"><img src="${item.image}" class="post-image" alt="Post cover image with no practical usage">` + item.excerpt + '</p>';
 			appendString += '<span class="post-meta">' + item.categories.map(cat => `<a href="/archives/category/${cat.replace(/ /g, '-')}">/${cat}</a>`).join(" ");
 			appendString += ' ' + item.tags.map(tag => `<a href="/archives/tag/${tag.replace(/ /g, '-')}">#${tag}</a>`).join(" ") + '</span>';
 		}

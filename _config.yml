@@ -19,7 +19,7 @@ markdown: Paru
 paru:
   options:
     from: markdown+link_attributes+pipe_tables+escaped_line_breaks+space_in_atx_header+header_attributes+line_blocks+inline_code_attributes+fenced_code_attributes
-    no_highlight: true
+    syntax_highlighting: none
     columns: 10000 # prevent colgroup elements
     preserve_tabs: true
     filter:

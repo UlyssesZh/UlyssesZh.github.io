@@ -262,7 +262,7 @@ which is actually a disaster...
   and there is no standard.)
 - You may know
   [Platform Nine and Three-Quarters](https://harrypotter.fandom.com/wiki/Platform_Nine_and_Three-Quarters)
-  if you are a *Harry Potter* fan,
+  if you are a <cite>Harry Potter</cite> fan,
   but what is the ordinal of $9\frac34$?
 - Because there are multiple suffixes,
   there is a disaster for non-native speakers to write ordinal numerals.

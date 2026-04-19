@@ -104,6 +104,10 @@ Paru::Filter.run do
 		html = get_formatter(lang, @config[:formatter]).format lexer.lex code
 		# the preservation of newlines in <pre> is very hard to deal with when styling
 		html.gsub!(%r{<pre class="lineno">(.+?)</pre>}m) { %{<div class="lineno">#$1</div>} }
+		# accessibility concern (<code> has the semantics and WAI-ARIA role of code)
+		# https://github.com/rouge-ruby/rouge/pull/2276
+		html.gsub! '<pre>', '<pre><code>'
+		html.gsub! '</pre>', '</code></pre>'
 		code_block.replace_self Paru::PandocFilter::RawBlock.new ['html', html]
 	end
 

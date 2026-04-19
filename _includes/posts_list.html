@@ -16,7 +16,7 @@
     {%- if site.show_excerpts and post.excerpt and post.excerpt != "" -%}
       <p class="post-excerpt">
         {%- if post.image -%}
-          <img src="{{ post.image }}" class="post-image">
+          <img src="{{ post.image }}" class="post-image" alt="Article cover image with no practical usage">
         {%- endif -%}
         {{- post.excerpt | markdownify_no_p -}}
       </p>
