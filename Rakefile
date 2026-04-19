@@ -10,6 +10,10 @@ task :serve_i do
 	sh 'JEKYLL_AVOID_MARKDOWN=1 JEKYLL_NO_ARCHIVE=1 jekyll serve --host 0.0.0.0 --port 3999 --incremental --verbose --trace --livereload --livereload-port 35730'
 end
 
+task :mdl do
+	sh 'mdl _posts README.md'
+end
+
 def which cmd
 	exts = ENV['PATHEXT']&.split(';') || ['']
 	ENV['PATH'].split(File::PATH_SEPARATOR).each do |path|

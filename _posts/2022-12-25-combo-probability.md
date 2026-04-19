@@ -70,7 +70,7 @@ There are two cases:
 
 - If $b_n=0$ (has $1-Y$ probability), then this means a combo break, so we have $r'=0$ and $k'=k$.
 - If $b_n=1$ (has $Y$ probability), then the combo continues, so we have $r'=r+1$.
-The max combo needs to be updated if needed, so we have $k'=\max(k,r')$.
+  The max combo needs to be updated if needed, so we have $k'=\max(k,r')$.
 
 However, in actual implementation of the DP algorithm, we need to reverse this transition
 by considering what state can lead to the current state $(n,k,r)$
@@ -81,21 +81,21 @@ First, obviously in any possible case $r\in0\,..k$
 Divide all those cases into three groups:
 
 1. If $r=0$, this is means a combo break, so the last bit is $0$,
-and the previous state can have any possible final combo $r'$.
-Therefore, it can be transitioned from any $(n-1,k,r')$ where $r'\in0\,..k$.
-For each possible previous state, the probability of the transition to this new state is $1-Y$.
-2. If $r\in1\,..k-1$, this means the last bit is $1$, the previous final combo is $r-1$,
-and the previous max combo is already $k$.
-Therefore, the previous state is $(n-1,k,r-1)$, and the probability of the transition is $Y$.
-3. If $r=k$, this means the max combo may (or may not) have been updated.
-In either case, the previous final combo is $r-1=k-1$.
+   and the previous state can have any possible final combo $r'$.
+   Therefore, it can be transitioned from any $(n-1,k,r')$ where $r'\in0\,..k$.
+   For each possible previous state, the probability of the transition to this new state is $1-Y$.
+1. If $r\in1\,..k-1$, this means the last bit is $1$, the previous final combo is $r-1$,
+   and the previous max combo is already $k$.
+   Therefore, the previous state is $(n-1,k,r-1)$, and the probability of the transition is $Y$.
+1. If $r=k$, this means the max combo may (or may not) have been updated.
+   In either case, the previous final combo is $r-1=k-1$.
 
 - If the max combo is updated, the previous max combo must be $k-1$
-because it must not be less than the previous final combo $k-1$
-and must be less than the new max combo $k$.
-Therefore, the previous state is $(n-1,k-1,k-1)$, and the probability of the transition is $Y$.
+  because it must not be less than the previous final combo $k-1$
+  and must be less than the new max combo $k$.
+  Therefore, the previous state is $(n-1,k-1,k-1)$, and the probability of the transition is $Y$.
 - If the max combo is not updated, the previous max combo is the same as the new one, which is $k$.
-Therefore, the previous state is $(n-1,k,k-1)$, and the probability of the transition is $Y$.
+  Therefore, the previous state is $(n-1,k,k-1)$, and the probability of the transition is $Y$.
 
 <p class="no-indent">
 Therefore, we can write a recurrence relation that is valid when $n>k>0$:
@@ -189,10 +189,10 @@ This will finally either decend the note count to $k$ or decend the final combo 
 determined by which comes first.
 
 - If $n-r\le k$, we will decend to the term $P_{k,k,r-(n-k)}$,
-which must be zero according to the case $n=k>r=0$ and the case $n=k>r>0$ in Equation [@eq:eq-dp1],
-so $P_{n,k,r}=0$.
+  which must be zero according to the case $n=k>r=0$ and the case $n=k>r>0$ in Equation [@eq:eq-dp1],
+  so $P_{n,k,r}=0$.
 - If $n-r>k$, then we will decend to the term $P_{n-r,k,0}$,
-which is equal to $\left(1-Y\right)P_{n-r-1,k}$ according to the case $n>k>r=0$ in Equation [@eq:eq-dp1].
+  which is equal to $\left(1-Y\right)P_{n-r-1,k}$ according to the case $n>k>r=0$ in Equation [@eq:eq-dp1].
 
 Therefore, for $n>k>r>0$, we have
 $$P_{n,k,r}=\begin{cases}
@@ -216,9 +216,9 @@ but the substitution of Equation [@eq:eq-dp2-n-g-k-r-0] requires some care becau
 
 - If $n-k>k$, then only the case $n-r>k$ in Equation [@eq:eq-dp2-n-g-k-r-0] will be involved in the summation.
 - If $n-k\le k$, then both cases in Equation [@eq:eq-dp2-n-g-k-r-0] will be involved in the summation.
-To be specific, for $j\in1\,..\,2k-n+1$, we need the case $n-r\le k$ in Equation [@eq:eq-dp2-n-g-k-r-0]
-(where the summed terms are just zero and can be omitted);
-for other terms in the summation, we need the other case.
+  To be specific, for $j\in1\,..\,2k-n+1$, we need the case $n-r\le k$ in Equation [@eq:eq-dp2-n-g-k-r-0]
+  (where the summed terms are just zero and can be omitted);
+  for other terms in the summation, we need the other case.
 
 <p class="no-indent">
 Considering both cases, we may realize that we can just modify the range of the summation to $j\in\max(1,2k-n+1)\,..k$
@@ -308,11 +308,11 @@ Considering the edge cases involved in $\min(k,n-k-1)$ and $\min(k-1,n-k-1)$,
 there are three cases we need to consider:
 
 1. Case $k>n-k-1$:
-Equation [@eq:eq-dp2-n-k-r-0-simplified] can be applied, and $r$ is summed to $n-k-1$.
-2. Case $k=n-k-1$ (can only happen when $n$ is odd):
-Equation [@eq:eq-dp2-n-k-r-0-simplified] can be applied, and $r$ is summed to $k-1$.
-3. Case $k<n-k-1$:
-Equation [@eq:eq-dp2-n-k-r-0-simplified] cannot be applied, and $r$ is summed to $k-1$.
+   Equation [@eq:eq-dp2-n-k-r-0-simplified] can be applied, and $r$ is summed to $n-k-1$.
+1. Case $k=n-k-1$ (can only happen when $n$ is odd):
+   Equation [@eq:eq-dp2-n-k-r-0-simplified] can be applied, and $r$ is summed to $k-1$.
+1. Case $k<n-k-1$:
+   Equation [@eq:eq-dp2-n-k-r-0-simplified] cannot be applied, and $r$ is summed to $k-1$.
 
 Then, use arrays to store the coefficients of the polynomial $P_{n,k}(Y)$,
 and we can write the program to calculate the coefficients:
@@ -347,7 +347,7 @@ def combo_pc m
 		end
 
 		0.upto(n-1) { |k| n.downto(1) { dp[n][k][_1] -= dp[n][k][_1-1] } } # multiply by 1-Y
-		
+
 		# dp[n][n] = Y**n
 		dp[n][n][n] = 1
 	end.last

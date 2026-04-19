@@ -1,0 +1,78 @@
+# issue board:
+# MD032/blanks-around-lists false negative on lazy continuation:
+# https://github.com/DavidAnson/markdownlint/issues/977
+# MD034/no-bare-urls false positive in code blocks and HTML tags:
+# https://github.com/markdownlint/markdownlint/issues/191
+# MD018/no-missing-space-atx false positive in code blocks with attributes:
+# https://github.com/markdownlint/markdownlint/issues/176
+# MD002/first-heading-h1, MD041/first-line-h1 false positive with front matter title:
+# https://github.com/markdownlint/markdownlint/pull/570
+# MD013/line-length false positive on long words:
+# https://github.com/markdownlint/markdownlint/issues/573
+# Temporarily disable rules:
+# https://github.com/markdownlint/markdownlint/issues/571
+
+# header-style
+MD003:
+  style: atx
+
+# ul-style
+MD004:
+  style: dash
+
+# ul-indent
+MD007:
+  indent: 2
+
+# no-trailing-spaces
+MD009:
+  code_blocks: true
+  strict: true
+
+# no-hard-tabs
+MD010:
+  enabled: false
+
+# line-length
+MD013:
+  line_length: 200
+  tables: false
+
+# no-trailing-punctuation
+MD026:
+  punctuation: .,;:!。，；：！
+
+# ol-prefix
+MD029:
+  style: one
+
+# no-inline-html
+MD033:
+  allowed_elements:
+    - blockquote
+    - br
+    - cite
+    - details
+    - dfn
+    - figcaption
+    - figure
+    - kbd
+    - p
+    - sub
+    - summary
+
+# hr-style
+MD035:
+  style: ---
+
+# code-block-style
+MD046:
+  style: fenced
+
+# descriptive-link-text
+MD059:
+  prohibited_texts: []
+
+# table-column-style
+MD060:
+  enabled: false

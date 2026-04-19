@@ -48,10 +48,10 @@ The most common kinds of dependencies between Nix derivations are:
 
 1. The output of the dependent derivation includes the out path of the depended derivation.
    This happens when you use `autoPatchelf` and `patchShebangs`.
-2. Besides the point above, the builder of the dependent derivation actually also needs to
+1. Besides the point above, the builder of the dependent derivation actually also needs to
    look at the file contents of the output of the depended derivation.
    This happens when you compile a software against the depended library.
-3. The builder of the dependent derivation runs executables
+1. The builder of the dependent derivation runs executables
    or calls functions in the depended derivation.
    This happens when the depended software is a compiler
    used to compile the dependent software.

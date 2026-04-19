@@ -18,7 +18,7 @@ show_excerpts: true
 markdown: Paru
 paru:
   options:
-    from: markdown+link_attributes+pipe_tables+escaped_line_breaks+space_in_atx_header+header_attributes+line_blocks+inline_code_attributes
+    from: markdown+link_attributes+pipe_tables+escaped_line_breaks+space_in_atx_header+header_attributes+line_blocks+inline_code_attributes+fenced_code_attributes
     no_highlight: true
     columns: 10000 # prevent colgroup elements
     preserve_tabs: true
@@ -239,6 +239,8 @@ exclude:
   - cargo.lock
   - gemset.nix
   - shell.nix
+  - .markdownlint.yaml
+  - .mdlrc
 google_analytics: G-7TSJ5VM6YC
 webmaster_verifications:
   google: ZuV45Knwuwl49Nvh9UsDzniZ-3qy3bGhBPofLK3SZPw

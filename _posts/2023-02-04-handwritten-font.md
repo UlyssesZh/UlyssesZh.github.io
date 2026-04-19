@@ -61,10 +61,10 @@ I will try to find a handwriting style that satisfies the following conditions
 (in descending order of importance):
 
 1. I am able to write them fast and simply.
-2. I am able to recognize each character at a glance.
-3. The style is consistent for all letters.
-4. The shape is similar to the default mathematical font of $\LaTeX$ (Computer Modern).
-5. If the last condition cannot be satisfied, the shape is similar to some style that ever existed.
+1. I am able to recognize each character at a glance.
+1. The style is consistent for all letters.
+1. The shape is similar to the default mathematical font of $\LaTeX$ (Computer Modern).
+1. If the last condition cannot be satisfied, the shape is similar to some style that ever existed.
 
 <p class="no-indent">
 The reason for the 2nd principle to be lower than the 1st is that
@@ -80,32 +80,32 @@ The following lists all the letters and the styles that I want to distinguish:
 
 - Digits: *0*, *1*, *2*, *3*, *4*, *5*, *6*, *7*, *8*, *9* (they are not letters, but they deserve distinguishing).
 - Roman style of uppercase English letters:
-*A*, *B*, *C*, *D*, *E*, *F*, *G*, *H*, *I*, *J*, *K*, *L*, *M*, *N*, *O*, *P*, *Q*, *R*, *S*, *T*, *U*, *V*, *W*, *X*, *Y*, *Z*.
+  *A*, *B*, *C*, *D*, *E*, *F*, *G*, *H*, *I*, *J*, *K*, *L*, *M*, *N*, *O*, *P*, *Q*, *R*, *S*, *T*, *U*, *V*, *W*, *X*, *Y*, *Z*.
 - Italic style of uppercase English letters:
-*A*, *B*, *C*, *D*, *E*, *F*, *G*, *H*, *I*, *J*, *K*, *L*, *M*, *N*, *P*, *Q*, *R*, *S*, *T*, *U*, *V*, *W*, *X*, *Y*, *Z*
-(not including *O*).
+  *A*, *B*, *C*, *D*, *E*, *F*, *G*, *H*, *I*, *J*, *K*, *L*, *M*, *N*, *P*, *Q*, *R*, *S*, *T*, *U*, *V*, *W*, *X*, *Y*, *Z*
+  (not including *O*).
 - Roman style of lowercase English letters:
-*a*, *b*, *c*, *d*, *e*, *f*, *g*, *h*, *i*, *j*, *k*, *l*, *m*, *n*, *o*, *p*, *q*, *r*, *s*, *t*, *u*, *v*, *w*, *x*, *y*, *z*.
+  *a*, *b*, *c*, *d*, *e*, *f*, *g*, *h*, *i*, *j*, *k*, *l*, *m*, *n*, *o*, *p*, *q*, *r*, *s*, *t*, *u*, *v*, *w*, *x*, *y*, *z*.
 - Italic style of lowercase English letters:
-*a*, *b*, *c*, *d*, *e*, *f*, *g*, *h*, *i*, *j*, *k*, *l*, *m*, *n*, *p*, *q*, *r*, *s*, *t*, *u*, *v*, *w*, *x*, *y*, *z*
-(not including *o*).
+  *a*, *b*, *c*, *d*, *e*, *f*, *g*, *h*, *i*, *j*, *k*, *l*, *m*, *n*, *p*, *q*, *r*, *s*, *t*, *u*, *v*, *w*, *x*, *y*, *z*
+  (not including *o*).
 - Roman style of uppercase Greek letters:
-*Gamma*, *Delta*, *Theta*, *Lambda*, *Xi*, *Pi*, *Sigma*, *Upsilon*, *Phi*, *Psi*, *Omega*
-(not including any letters that cannot be distinguished from english uppercase letters).
+  *Gamma*, *Delta*, *Theta*, *Lambda*, *Xi*, *Pi*, *Sigma*, *Upsilon*, *Phi*, *Psi*, *Omega*
+  (not including any letters that cannot be distinguished from english uppercase letters).
 - Italic style of lowercase Greek letters:
-*alpha*, *beta*, *gamma*, *delta*, *epsilon*, *zeta*, *eta*, *theta*, *iota*, *kappa*, *lambda*, *mu*, *nu*, *xi*, *pi*,
-*rho*, *sigma*, *tau*, *upsilon*, *phi*, *chi*, *psi*, *omega*
-(not including *omicron*).
+  *alpha*, *beta*, *gamma*, *delta*, *epsilon*, *zeta*, *eta*, *theta*, *iota*, *kappa*, *lambda*, *mu*, *nu*, *xi*, *pi*,
+  *rho*, *sigma*, *tau*, *upsilon*, *phi*, *chi*, *psi*, *omega*
+  (not including *omicron*).
 - Blackboard bold style of uppercase English letters:
-*A*, *B*, *C*, *D*, *E*, *F*, *G*, *H*, *I*, *J*, *K*, *L*, *M*, *N*, *O*, *P*, *Q*, *R*, *S*, *T*, *U*, *V*, *W*, *X*, *Y*, *Z*.
+  *A*, *B*, *C*, *D*, *E*, *F*, *G*, *H*, *I*, *J*, *K*, *L*, *M*, *N*, *O*, *P*, *Q*, *R*, *S*, *T*, *U*, *V*, *W*, *X*, *Y*, *Z*.
 - Calligraphic style of uppercase English letters:
-*A*, *B*, *C*, *D*, *E*, *F*, *G*, *H*, *I*, *J*, *K*, *L*, *M*, *N*, *O*, *P*, *Q*, *R*, *S*, *T*, *U*, *V*, *W*, *X*, *Y*, *Z*.
+  *A*, *B*, *C*, *D*, *E*, *F*, *G*, *H*, *I*, *J*, *K*, *L*, *M*, *N*, *O*, *P*, *Q*, *R*, *S*, *T*, *U*, *V*, *W*, *X*, *Y*, *Z*.
 - Script style of uppercase English letters:
-*A*, *B*, *C*, *D*, *E*, *F*, *G*, *H*, *I*, *J*, *K*, *L*, *M*, *N*, *O*, *P*, *Q*, *R*, *S*, *T*, *U*, *V*, *W*, *X*, *Y*, *Z*.
+  *A*, *B*, *C*, *D*, *E*, *F*, *G*, *H*, *I*, *J*, *K*, *L*, *M*, *N*, *O*, *P*, *Q*, *R*, *S*, *T*, *U*, *V*, *W*, *X*, *Y*, *Z*.
 - Fraktur style of uppercase English letters:
-*A*, *B*, *C*, *D*, *E*, *F*, *G*, *H*, *I*, *J*, *K*, *L*, *M*, *N*, *O*, *P*, *Q*, *R*, *S*, *T*, *U*, *V*, *W*, *X*, *Y*, *Z*.
+  *A*, *B*, *C*, *D*, *E*, *F*, *G*, *H*, *I*, *J*, *K*, *L*, *M*, *N*, *O*, *P*, *Q*, *R*, *S*, *T*, *U*, *V*, *W*, *X*, *Y*, *Z*.
 - Fraktur style of lowercase English letters:
-*a*, *b*, *c*, *d*, *e*, *f*, *g*, *h*, *i*, *j*, *k*, *l*, *m*, *n*, *o*, *p*, *q*, *r*, *s*, *t*, *u*, *v*, *w*, *x*, *y*, *z*.
+  *a*, *b*, *c*, *d*, *e*, *f*, *g*, *h*, *i*, *j*, *k*, *l*, *m*, *n*, *o*, *p*, *q*, *r*, *s*, *t*, *u*, *v*, *w*, *x*, *y*, *z*.
 
 <p class="no-indent">
 In terms of linguistic terminology,
@@ -119,12 +119,12 @@ to provide extra distinguishability in extreme cases.
 Here are some of the general rules that I set up:
 
 - We do not write any serif
-unless it is a must for distinguishing letters.
-(This is also why I did not plan to distinguish sans-serif styles.)
+  unless it is a must for distinguishing letters.
+  (This is also why I did not plan to distinguish sans-serif styles.)
 - The roman style of all english letters does not have tails
-(either ornamental or used for ligatures in connected writing).
+  (either ornamental or used for ligatures in connected writing).
 - For both roman and italic styles,
-all uppercase letters (both English and Greek) have the same position of bottom and top.
+  all uppercase letters (both English and Greek) have the same position of bottom and top.
 
 For other details, look at this image:
 
@@ -440,7 +440,7 @@ The general rules are as follows:
 - If there are multiple vertical strokes, add a vertical stroke next to each of them, and we are done.
 - Otherwise, if there is a non-horizontal stroke that starts from the top-left, add a stroke next to it.
 - Otherwise, if the leftmost stroke is a curve that span from top to bottom, at a vertical stroke in the inner,
-next to the leftmost part of the curve.
+  next to the leftmost part of the curve.
 - Otherwise, this is a special letter!
 
 There are some special letters as well as some exceptions to the general rules listed below.

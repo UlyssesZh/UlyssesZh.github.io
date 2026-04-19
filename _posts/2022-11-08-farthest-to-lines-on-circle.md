@@ -216,23 +216,23 @@ if it is in the exterior, then the case is identical to Case 1.
 We finally got the method of determining whether the point $P$ on $\odot C$ has the extremal sum of distances to $l_1$ and $l_2$:
 
 - If $P$ is in the interior of $\angle O$ or its opposite angle
-(or, $P$ is on the tangent point of $\odot C$ and one of the sides of $\angle O$
-while $P$ is in the interior of $\angle O$ or its opposite angle when it moves near the tangent point),
-then we can see whether it is the intersection of $\odot C$ and the bisector of $\angle O$.
-If it is, then the sum of distances is extremal;
-if it is not, then the sum of distances is not extremal.
+  (or, $P$ is on the tangent point of $\odot C$ and one of the sides of $\angle O$
+  while $P$ is in the interior of $\angle O$ or its opposite angle when it moves near the tangent point),
+  then we can see whether it is the intersection of $\odot C$ and the bisector of $\angle O$.
+  If it is, then the sum of distances is extremal;
+  if it is not, then the sum of distances is not extremal.
 - If $P$ is in the interior of an adjacent supplementary angle of $\angle O$
-(or, $P$ is on the tangent point of $\odot C$ and one of the sides of $\angle O$
-while $P$ is in the interior of an adjacent supplementary angle of $\angle O$ when it moves near the tangent point),
-then we can see whether it is the intersection of $\odot C$ and the bisector of the adjacent supplementary angle $\angle O$.
-If it is, then the sum of distances is extremal;
-if it is not, then the sum of distances is not extremal.
+  (or, $P$ is on the tangent point of $\odot C$ and one of the sides of $\angle O$
+  while $P$ is in the interior of an adjacent supplementary angle of $\angle O$ when it moves near the tangent point),
+  then we can see whether it is the intersection of $\odot C$ and the bisector of the adjacent supplementary angle $\angle O$.
+  If it is, then the sum of distances is extremal;
+  if it is not, then the sum of distances is not extremal.
 - If $P$ is on the intersection of $\odot C$ and one of the edge $l_2$ of $\angle O$,
-then we can divide the plane into four parts by drawing the bisector of $\angle O$
-and that of the adjacent supplementary angle of $\angle O$,
-call the union of the two divided parts with $l_2$ passing through as $D_2$.
-Then, translate $D_2$ to make the intersection of its boundary lines overlap with $C$,
-and see whether $P$ belongs to the translated $D_2$.
-If it is an interior point of the region, then the sum of distances is extremal;
-if it is an exterior point of the region, then the sum of distances is not extremal;
-if it is a boundary point of the region, then the sum of distances may be extremal or not.
+  then we can divide the plane into four parts by drawing the bisector of $\angle O$
+  and that of the adjacent supplementary angle of $\angle O$,
+  call the union of the two divided parts with $l_2$ passing through as $D_2$.
+  Then, translate $D_2$ to make the intersection of its boundary lines overlap with $C$,
+  and see whether $P$ belongs to the translated $D_2$.
+  If it is an interior point of the region, then the sum of distances is extremal;
+  if it is an exterior point of the region, then the sum of distances is not extremal;
+  if it is a boundary point of the region, then the sum of distances may be extremal or not.

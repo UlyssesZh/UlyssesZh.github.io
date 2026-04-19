@@ -22,13 +22,13 @@ The original article was posted at 2021-01-16 15:52 +0800.*
 To keep you guys that have read different textbooks from fighting with each other, we say:
 
 - The definition of inner products is opposite in math and physics,
-and we take the customary definition in math as the standard:
-inner products are linear in the first element and conjugate-linear in the second element.
+  and we take the customary definition in math as the standard:
+  inner products are linear in the first element and conjugate-linear in the second element.
 - Denote Hilbert space by $\mathscr H$.
-Denote inner products by $\left(\cdot,\cdot\right)$.
+  Denote inner products by $\left(\cdot,\cdot\right)$.
 - Denote the dual space of $V$ as $V^*$.
-Denote the Hermite adjoint of $\hat T$ as $\hat T^\dagger$.
-Denote the complex conjugate of $\alpha$ as $\bar\alpha$.
+  Denote the Hermite adjoint of $\hat T$ as $\hat T^\dagger$.
+  Denote the complex conjugate of $\alpha$ as $\bar\alpha$.
 - Denote the set of all bounded linear operators in $V\to V$ as $\mathcal L(V)$.
 
 ---

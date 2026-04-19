@@ -28,7 +28,7 @@ Some stipulations:
 - $\operatorname{sum}\vec\xi\coloneqq\sum_k\xi_k$;
 - $\operatorname{prod}\vec\xi\coloneqq\prod_k\xi_k$;
 - If the independent and dependent variables of function $f$ are both scalars, then define
-$f\!\left(\vec\xi\right)\coloneqq\left(f\!\left(\xi_0\right),f\!\left(\xi_1\right),\ldots,f\!\left(\xi_n\right)\right)$;
+  $f\!\left(\vec\xi\right)\coloneqq\left(f\!\left(\xi_0\right),f\!\left(\xi_1\right),\ldots,f\!\left(\xi_n\right)\right)$;
 - $\vec\xi^{\vec\eta}\coloneqq\prod_k\xi_k^{\eta_k}$;
 - $\min\vec\xi\coloneqq\min_k\xi_k$;
 - $\max\vec\xi\coloneqq\max_k\xi_k$;

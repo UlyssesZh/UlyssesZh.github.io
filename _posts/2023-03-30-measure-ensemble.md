@@ -190,14 +190,14 @@ However, this is not the case.
 The entropy $S$ is different from $U,V,N$ in the following sense:
 
 - The entropy is a derived quantity due to a mathematical construction from the second law of thermodynamics,
-while $U,V,N$ are observable quantities
-that have solid physical meanings before we introduce anything about thermodynamics.
+  while $U,V,N$ are observable quantities
+  that have solid physical meanings before we introduce anything about thermodynamics.
 - The entropy may change in an isolated system, while $U,V,N$ do not.
 - We may have an intuitive understanding of how different systems in contact
-may exchange $U,V,N$ with each other, but $S$ cannot be "exchanged" in such a sense.
+  may exchange $U,V,N$ with each other, but $S$ cannot be "exchanged" in such a sense.
 - In statistical mechanics, $U,V,N$ restrict what microstates are possible for a thermal system,
-but $S$ serves as a totally different role:
-it represents something about the probability distribution over all the possible microstates.
+  but $S$ serves as a totally different role:
+  it represents something about the probability distribution over all the possible microstates.
 
 Therefore, I would rather rewrite the fundamental equation of thermodynamics as
 $$\mathrm dS=\frac1T\,\mathrm dU+\frac pT\,\mathrm dV-\frac\mu T\,\mathrm dN.$$ {#eq:eq-fundamental}
@@ -303,13 +303,13 @@ A <dfn>space of extensive quantities</dfn> is a tuple $(W,E,\lambda)$, where
 </p>
 
 - $W$ is an affine space associated with a reflexive vector space $\vec W$ over $\mathbb R$,
-and it is equipped with topology $\tau(W)$ that is naturally constructed from
-the topology $\tau\!\left(\vec W\right)$ on $\vec W$;
+  and it is equipped with topology $\tau(W)$ that is naturally constructed from
+  the topology $\tau\!\left(\vec W\right)$ on $\vec W$;
 - $E\subseteq V$ is a topological subspace of $W$,
-and its topology $\tau(E)$ makes $E$ a Polish space; and
+  and its topology $\tau(E)$ makes $E$ a Polish space; and
 - $\lambda:\sigma(E)\to[0,+\infty]$ is a non-trivial &sigma;-finite Borel measure,
-where $\sigma(E)\supseteq\mathfrak B(E)$ is a &sigma;-algebra on $E$
-that contains the Borel &sigma;-algebra on $E$.
+  where $\sigma(E)\supseteq\mathfrak B(E)$ is a &sigma;-algebra on $E$
+  that contains the Borel &sigma;-algebra on $E$.
 
 Here, I also added a requirement of &sigma;-finiteness.
 This is necessary when constructing product measures.
@@ -406,7 +406,7 @@ where
 - $\mathcal E\coloneqq\left(W,E,\lambda\right)$ is a space of extensive quantities;
 - $\mathcal M\coloneqq\bigsqcup_{e\in E}M_e$ is a family of measure spaces; and
 - For each $e\in E$, $M_e$ is a measure space equipped with a measure $\mu_e$ such that
-$\mu_e\!\left(M_e\right)$ is finite and nonzero.
+  $\mu_e\!\left(M_e\right)$ is finite and nonzero.
 
 From now on, I will use a pair $(e,m)\in\mathcal M$ to specify a single microstate,
 where $e\in E$ and $m\in M_e$.
@@ -594,9 +594,9 @@ they have different mathematical structure and contain different amount of infor
 There are two ways of constructing new thermal systems from existing ones:
 
 - By fixing some extensive quantities.
-I call this way <dfn>slicing</dfn>.
+  I call this way <dfn>slicing</dfn>.
 - By allowing some extensive quantities to change freely.
-I call this way <dfn>contracting</dfn>.
+  I call this way <dfn>contracting</dfn>.
 
 <p class="no-indent">
 I chose the words "slicing" and "contracting".
@@ -623,9 +623,9 @@ is a pair $\left(W^\parallel,\lambda^\parallel\right)$, where
 - $W^\parallel\subseteq W$ is an affine subspace of $W$;
 - $E^\parallel\coloneqq E\cap W^\parallel$ is non-empty, and it is Polish as a topological subspace of $E$; and
 - $\lambda^\parallel:\sigma\!\left(E^\parallel\right)\to\left[0,+\infty\right)$
-is a non-trivial &sigma;-finite Borel measure on $E^\parallel$, where
-$\sigma\!\left(E^\parallel\right)\subseteq\mathfrak B\!\left(E^\parallel\right)$
-is a &sigma;-algebra on $E^\parallel$ that contains the Borel &sigma;-algebra on $E^\parallel$.
+  is a non-trivial &sigma;-finite Borel measure on $E^\parallel$, where
+  $\sigma\!\left(E^\parallel\right)\subseteq\mathfrak B\!\left(E^\parallel\right)$
+  is a &sigma;-algebra on $E^\parallel$ that contains the Borel &sigma;-algebra on $E^\parallel$.
 
 <p class="no-indent">
 This constructs a new space of extensive quantities $\left(W^\parallel,E^\parallel,\lambda^\parallel\right)$,
@@ -640,7 +640,7 @@ is a new thermal system $\left(\mathcal E^\parallel,\mathcal M^\parallel\right)$
 </p>
 
 - $\mathcal E^\parallel\coloneqq\left(W^\parallel,E^\parallel,\lambda^\parallel\right)$ is the slice of $\mathcal E$
-corrsponding to the given slicing; and
+  corrsponding to the given slicing; and
 - $\mathcal M^\parallel\coloneqq\bigsqcup_{e\in E^\parallel}M_e$.
 
 The idea behind slicing is to make some extensive quantities become extrinsic parameters
@@ -847,14 +847,14 @@ is given by a tuple $\left(\pi,\lambda^\perp\right)$, where
 
 - $\pi:W\to W^\perp$ is a projection map from $W$ to an affine subspace $W^\perp$ of $W$;
 - $E^\perp\coloneqq\pi(E)$, the image of $E$ under $\pi$, is equipped with the minimal topology
-$\tau\!\left(E^\perp\right)$ so that $\pi$ is continuous,
-and the topology makes $E^\perp$ Polish;
+  $\tau\!\left(E^\perp\right)$ so that $\pi$ is continuous,
+  and the topology makes $E^\perp$ Polish;
 - $\lambda^\perp:\sigma\!\left(E^\perp\right)\to\left[0,+\infty\right]$
-is a non-trivial &sigma;-finite Borel measure on $E^\perp$,
-where $\sigma\!\left(E^\perp\right)\supseteq\mathfrak B\!\left(E^\perp\right)$
-is a &sigma;-algebra of $E^\perp$ that contains the Borel &sigma;-algebra of $E^\perp$; and
+  is a non-trivial &sigma;-finite Borel measure on $E^\perp$,
+  where $\sigma\!\left(E^\perp\right)\supseteq\mathfrak B\!\left(E^\perp\right)$
+  is a &sigma;-algebra of $E^\perp$ that contains the Borel &sigma;-algebra of $E^\perp$; and
 - For any $A\in\sigma\!\left(E^\perp\right)$,
-$\lambda^{\perp}(A)=0$ iff $\lambda\!\left(\pi^{-1}(A)\right)=0$.
+  $\lambda^{\perp}(A)=0$ iff $\lambda\!\left(\pi^{-1}(A)\right)=0$.
 
 <p class="no-indent">
 This contracting defines a new space of extensive quantities
@@ -870,9 +870,9 @@ $\bigsqcup_{e\in W^\perp}\left(W^\parallel_e,\lambda^\parallel_e\right)$, where
 </p>
 
 - $W^\parallel_e\coloneqq\pi^{-1}(e)$ is the preimage of $\left\{e\right\}$ under $\pi$,
-an affine subspace of $W$; and
+  an affine subspace of $W$; and
 - $\lambda_e^\parallel:\sigma\!\left(E_e^\parallel\right)\to\left[0,+\infty\right]$ is a Borel measure;
-the family of measures is the disintegration of $\lambda$ w.r.t. $\pi$ and $\lambda^\perp$.
+  the family of measures is the disintegration of $\lambda$ w.r.t. $\pi$ and $\lambda^\perp$.
 
 <p class="no-indent">
 **Definition.**
@@ -882,15 +882,15 @@ is a new thermal system $\left(\mathcal E^\perp,\mathcal M^\perp\right)$ constru
 </p>
 
 - $\mathcal E^\perp\coloneqq\left(W^\perp,E^\perp,\lambda^\perp\right)$
-is the contraction of $\mathcal E$ corresponding to the given contracting;
+  is the contraction of $\mathcal E$ corresponding to the given contracting;
 - $\mathcal M^\perp\coloneqq\bigsqcup_{e\in E^\perp}M_e^\perp$,
-where for each $e\in E^\perp$, $M_e^\perp\coloneqq\mathcal M_e^\parallel$;
-the family of systems $\left(\mathcal E_e^\parallel,\mathcal M_e^\parallel\right)$
-(labeled by $e\in E^\perp$)
-are slices of $\left(\mathcal E,\mathcal M\right)$ corresponding to the contractive slicings
-of $\mathcal E$ defined by the contracting $\left(\pi,\lambda^\perp\right)$;
-the measure equipped on $\mathcal M_e^\parallel$ is the measure of number of microstates
-of $\left(\mathcal E_e^\parallel,\mathcal M_e^\parallel\right)$.
+  where for each $e\in E^\perp$, $M_e^\perp\coloneqq\mathcal M_e^\parallel$;
+  the family of systems $\left(\mathcal E_e^\parallel,\mathcal M_e^\parallel\right)$
+  (labeled by $e\in E^\perp$)
+  are slices of $\left(\mathcal E,\mathcal M\right)$ corresponding to the contractive slicings
+  of $\mathcal E$ defined by the contracting $\left(\pi,\lambda^\perp\right)$;
+  the measure equipped on $\mathcal M_e^\parallel$ is the measure of number of microstates
+  of $\left(\mathcal E_e^\parallel,\mathcal M_e^\parallel\right)$.
 
 <p class="no-indent">
 In some cases, the total number of microstates in $\mathcal M^\parallel_e$ is not finite for some $e$,
@@ -1021,9 +1021,9 @@ is a space of extensive quantities $\left(W,E,\lambda\right)$ constructed as suc
 
 - $W\coloneqq W^{(1)}\times W^{(2)}$ is the product affine space of $W^{(1)}$ and $W^{(2)}$;
 - $E\coloneqq E^{(1)}\times E^{(2)}$ is the product topological space as well as the product measure space
-of $E^{(1)}$ and $E^{(2)}$; and
+  of $E^{(1)}$ and $E^{(2)}$; and
 - $\lambda$ is the product measure of $\lambda^{(1)}$ and $\lambda^{(2)}$,
-whose uniqueness is guaranteed by the &sigma;-finiteness of $\lambda^{(1)}$ and $\lambda^{(2)}$.
+  whose uniqueness is guaranteed by the &sigma;-finiteness of $\lambda^{(1)}$ and $\lambda^{(2)}$.
 
 <p class="no-indent">
 **Definition.**
@@ -1033,12 +1033,12 @@ is a thermal system $\left(\mathcal E,\mathcal M\right)$ constructed as such:
 </p>
 
 - $\mathcal E\coloneqq\left(W,E,\lambda\right)$ is the product space of extensive quantities
-of $\mathcal E^{(1)}$ and $\mathcal E^{(2)}$; and
+  of $\mathcal E^{(1)}$ and $\mathcal E^{(2)}$; and
 - $\mathcal M\coloneqq\bigsqcup_{(e_1,e_2)\in E}M_{e_1,e_2}$,
-where $M_{e_1,e_2}\coloneqq M^{(1)}_{e_1}\times M^{(2)}_{e_2}$
-is the product measure space of $M^{(1)}_{e_1}$ and $M^{(2)}_{e_2}$,
-equipped with measure $\mu_{e_1,e_2}$,
-the product measure of $\mu^{(1)}_{e_1}$ and $\mu^{(2)}_{e_2}$.
+  where $M_{e_1,e_2}\coloneqq M^{(1)}_{e_1}\times M^{(2)}_{e_2}$
+  is the product measure space of $M^{(1)}_{e_1}$ and $M^{(2)}_{e_2}$,
+  equipped with measure $\mu_{e_1,e_2}$,
+  the product measure of $\mu^{(1)}_{e_1}$ and $\mu^{(2)}_{e_2}$.
 
 By this definition, $\mathcal M$ is naturally identified with $\mathcal M^{(1)}\times\mathcal M^{(2)}$,
 and the measure of number of microstates $\mu$ on $\mathcal M$ is in this sense
@@ -1364,9 +1364,9 @@ This is our second difficulty.
 Therefore, in order to construct a contracting, we need to following assumptions:
 
 - For different $e\in E^\perp$,
-$\lambda^{\parallel(1)}_e$ is the same measure whenever $W^{\parallel(1)}_e$ is the same subspace.
+  $\lambda^{\parallel(1)}_e$ is the same measure whenever $W^{\parallel(1)}_e$ is the same subspace.
 - There exists a measure $\lambda^{\perp(1)}$ on $E^{\perp(1)}$ so that $\lambda^\perp$
-is the pushforward of the product measure of $\lambda^{\perp(1)}$ and $\lambda^{(2)}$ under $\pi$.
+  is the pushforward of the product measure of $\lambda^{\perp(1)}$ and $\lambda^{(2)}$ under $\pi$.
 
 Given those assumptions, if we define $\lambda^{\parallel(1)\prime}_{e_1}$ to be the measures from
 the disintegration of $\lambda^{(1)}$ w.r.t. $\pi^{(1)}$ and $\lambda^{\perp(1)}$
@@ -1530,6 +1530,7 @@ here is a diagram of the relation between (some of) them
 
 <details>
 <summary>Diagrarm</summary>
+<!-- markdownlint-disable-next-line no-inline-html line-length -->
 <iframe class="quiver-embed dark-adaptive" src="https://q.uiver.app/?q=WzAsMTEsWzIsMCwiVyJdLFswLDIsIldeeygxKX0iXSxbNCwyLCJXXnsoMil9Il0sWzAsNCwiV157XFxwZXJwKDEpfSJdLFs0LDQsIldee1xccGVycCgyKX0iXSxbMCw2LCJcXHZlYyBXXntcXHBhcmFsbGVsKDEpfSJdLFs0LDYsIlxcdmVjIFdee1xccGFyYWxsZWwoMil9Il0sWzIsOCwiXFx2ZWMgV15cXHBhcmFsbGVsIl0sWzIsMTAsIldeXFxwZXJwIl0sWzEsMTEsIlxcdmVjIFdee1xccGVycFxccGFyYWxsZWx9Il0sWzMsMTEsIldee1xccGVycFxccGVycH0iXSxbMSwyLCJcXHRpbWVzIiwyLHsiY3VydmUiOi00LCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzEsNCwiXFx0aW1lcyIsMCx7ImN1cnZlIjo1LCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzMsMiwiXFx0aW1lcyIsMCx7ImN1cnZlIjo1LCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzMsNCwiXFx0aW1lcyIsMCx7ImN1cnZlIjo1LCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzksMTAsIisiLDIseyJjdXJ2ZSI6LTEsInN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbNSw2LCJcXHZlY1xccmhvIiwyLHsiY3VydmUiOjMsInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImJhcnJlZCJ9fX1dLFs3LDUsIlxcdmVjIGNeeygxKX0iLDAseyJjdXJ2ZSI6LTEsInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImJhcnJlZCJ9fX1dLFs3LDYsIlxcdmVjIGNeeygyKX0iLDIseyJjdXJ2ZSI6MSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiYmFycmVkIn19fV0sWzcsOCwiKyIsMCx7ImN1cnZlIjo0LCJzdHlsZSI6eyJoZWFkIjp7Im5hbWUiOiJub25lIn19fV0sWzQsNiwiKyIsMix7ImN1cnZlIjotMiwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFszLDUsIisiLDAseyJjdXJ2ZSI6Miwic3R5bGUiOnsiaGVhZCI6eyJuYW1lIjoibm9uZSJ9fX1dLFs1LDYsIlxcdGltZXMvKyIsMCx7InN0eWxlIjp7ImhlYWQiOnsibmFtZSI6Im5vbmUifX19XSxbMCw4LCJcXHBpIiwwLHsiY3VydmUiOi01fV0sWzUsOSwiXFx2ZWNcXHBpIiwyLHsiY3VydmUiOjMsInN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImJhcnJlZCJ9fX1dLFs2LDksIlxcdmVjXFxwaSIsMCx7ImN1cnZlIjotNSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiYmFycmVkIn19fV0sWzEsMywiXFxwaV57KDEpfSJdLFsyLDQsIlxccGleeygyKX0iXSxbMTEsMCwiIiwwLHsibGV2ZWwiOjF9XSxbMTIsOCwiXFxwaSIsMCx7ImN1cnZlIjoxLCJsZXZlbCI6MSwic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiYmFycmVkIn19fV0sWzEzLDgsIlxccGkiLDAseyJjdXJ2ZSI6LTEsImxldmVsIjoxLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJiYXJyZWQifX19XSxbMTQsMTAsIlxccGkiLDIseyJjdXJ2ZSI6LTMsImxldmVsIjoxLCJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJiYXJyZWQifX19XSxbMTUsOCwiIiwyLHsibGV2ZWwiOjF9XSxbMTksMCwiIiwwLHsiY3VydmUiOi0zLCJsZXZlbCI6MX1dLFsyMCwyLCIiLDIseyJjdXJ2ZSI6MywibGV2ZWwiOjF9XSxbMjEsMSwiIiwyLHsiY3VydmUiOi0zLCJsZXZlbCI6MX1dLFsyMiw5LCJcXHZlY1xccGkiLDIseyJjdXJ2ZSI6NCwibGV2ZWwiOjF9XV0=&embed" style="border-radius: 8px; border: none; width: 100%; aspect-ratio: 1/2"></iframe>
 </details>
 
@@ -1566,11 +1567,11 @@ where $\mathcal E=(W,E,\lambda)$ and $\mathcal M=\bigsqcup_{e\in W}M_e$, if
 - $\vec W^\parallel$ is a vector subspace of $\vec W$ and is a Polish reflexive space;
 - For any $e\in E$ and $s\in\vec W^\parallel$, $e+s\in E$.
 - $\lambda$ is invariant under translations in $\vec W^\parallel$;
-in other words, for any $s\in\vec W^\parallel$ and $A\in\sigma(E)$, we have $\lambda(A+s)=\lambda(A)$;
+  in other words, for any $s\in\vec W^\parallel$ and $A\in\sigma(E)$, we have $\lambda(A+s)=\lambda(A)$;
 - $i\in\vec W^{\parallel\prime}$ is a continuous linear functional on $\vec W^\parallel$,
-called the <dfn>constant intensive quantities</dfn> of the bath; and
+  called the <dfn>constant intensive quantities</dfn> of the bath; and
 - For any $e\in E$ and $s\in\vec W^\parallel$,
-$$\ln\mu_{e+s}\!\left(M_{e+s}\right)=i(s)+\ln\mu_e\!\left(M_e\right).$$
+  $$\ln\mu_{e+s}\!\left(M_{e+s}\right)=i(s)+\ln\mu_e\!\left(M_e\right).$$
 
 ---
 
@@ -1641,8 +1642,8 @@ where
 </p>
 
 - $\left(\mathcal E^{(2)},\mathcal M^{(2)}\right)$
-is a $\left(\vec W^{\parallel(2)},-i\circ\vec\rho^{-1}\right)$-bath,
-where $i\in\vec W^{\parallel(1)\prime}$ is a parameter called the <dfn>fixed intensive quantities</dfn>;
+  is a $\left(\vec W^{\parallel(2)},-i\circ\vec\rho^{-1}\right)$-bath,
+  where $i\in\vec W^{\parallel(1)\prime}$ is a parameter called the <dfn>fixed intensive quantities</dfn>;
 - Equation [@eq:eq-W2-translationally-invariant] holds.
 
 ---

@@ -373,10 +373,10 @@ the contraction satisfy the equal a priori probability principle.
 We make this guess because of the following arguments:
 
 - Mathematically, contraction is a legal new system,
-so it should also satisfy the axioms that we proposed before.
+  so it should also satisfy the axioms that we proposed before.
 - Physically, because the temperature of the bath is arbitrary,
-the different accessible macrostates should not be too different
-because otherwise the temperature would matter (as appears in the expression of the partition function).
+  the different accessible macrostates should not be too different
+  because otherwise the temperature would matter (as appears in the expression of the partition function).
 
 After finding the equilibrium state of the contraction, we can use the contractional pullback
 to find the equilibrium state of the original system.

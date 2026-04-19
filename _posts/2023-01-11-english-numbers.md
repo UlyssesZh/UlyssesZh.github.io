@@ -50,13 +50,13 @@ Here are several problems:
 </p>
 
 - Some words have more than one syllable or end with a consonant,
-this makes it hard to pronounce them fast in continuous speech.
+  this makes it hard to pronounce them fast in continuous speech.
 - What do 10, 11, and 12 do here?
-They are not single-digit numbers and should not appear here.
+  They are not single-digit numbers and should not appear here.
 - Some of the words have strange spelling.
 - *two* has the same pronunciation as *too*,
-and *four* has the same pronunciation as *for*,
-which may be confusing sometimes.
+  and *four* has the same pronunciation as *for*,
+  which may be confusing sometimes.
 
 I want to improve them as follows:
 
@@ -78,18 +78,18 @@ There are some advantages:
 </p>
 
 - Most of the words have similar pronunciation as the original words,
-this makes it easy to remember them.
-The only exceptions are *sou* and *sah*
-because there too many single-syllable English words that start with /s/,
-and I have to avoid the existing words.
+  this makes it easy to remember them.
+  The only exceptions are *sou* and *sah*
+  because there too many single-syllable English words that start with /s/,
+  and I have to avoid the existing words.
 - Each of the words contains only one simple syllable,
-which makes it easy to pronounce fast.
+  which makes it easy to pronounce fast.
 - The spelling pretty much follows the pronunciation
-and avoids large discrepencies among accents.
+  and avoids large discrepencies among accents.
 - The written length of the words are all the same (three letters),
-which makes it easier to sight-read.
+  which makes it easier to sight-read.
 - The words are pretty distinguishable by their pronunciations
-so that they do not confuse when being said in a noisy environment.
+  so that they do not confuse when being said in a noisy environment.
 
 ## Positive integers smaller than 1000
 
@@ -216,10 +216,10 @@ There are various ways to represent fractions in English that do not involve ord
 For example, a half can be represented as
 
 > - 1 in 2,
-- 1 (divided) by 2,
-- 1 over 2,
-- 1 to 2 *(only used for ratios)*,
-- 1 slash 2,
+> - 1 (divided) by 2,
+> - 1 over 2,
+> - 1 to 2 *(only used for ratios)*,
+> - 1 slash 2,
 
 <p class="no-indent">
 etc., but none of them is a good way because they may be ambiguous.
@@ -258,22 +258,22 @@ English uses the suffixes *-th*, *-st*, *-nd*, and *-rd* to represent ordinal nu
 which is actually a disaster...
 
 - [Do you like $(n+1)$st or $(n+1)$th?](https://english.stackexchange.com/q/36512/457522)
-(People surely have personal preferences over these two according to the answers,
-and there is no standard.)
+  (People surely have personal preferences over these two according to the answers,
+  and there is no standard.)
 - You may know
-[Platform Nine and Three-Quarters](https://harrypotter.fandom.com/wiki/Platform_Nine_and_Three-Quarters)
-if you are a *Harry Potter* fan,
-but what is the ordinal of $9\frac34$?
+  [Platform Nine and Three-Quarters](https://harrypotter.fandom.com/wiki/Platform_Nine_and_Three-Quarters)
+  if you are a *Harry Potter* fan,
+  but what is the ordinal of $9\frac34$?
 - Because there are multiple suffixes,
-there is a disaster for non-native speakers to write ordinal numerals.
-You may [Google "21th"](https://www.google.com/search?q=21th)
-to see how many people have made the mistake.
+  there is a disaster for non-native speakers to write ordinal numerals.
+  You may [Google "21th"](https://www.google.com/search?q=21th)
+  to see how many people have made the mistake.
 - How to ask a question w.r.t. an unknown ordinal numeral?
-["The how many-th president is Barack Obama?"](https://english.stackexchange.com/q/21876/457522)
-(Most the answers in this link cannot generalize to other questions like
-"How many-th most beautiful person is Kat in the world?"
-or even weirder questions like
-"You love Kat the how many-th most in the world?")
+  ["The how many-th president is Barack Obama?"](https://english.stackexchange.com/q/21876/457522)
+  (Most the answers in this link cannot generalize to other questions like
+  "How many-th most beautiful person is Kat in the world?"
+  or even weirder questions like
+  "You love Kat the how many-th most in the world?")
 
 <p class="no-indent">
 Therefore, we need to have a consistent way to turn any cardinal numeral into an ordinal numeral,
@@ -302,14 +302,14 @@ Example sentences:
 > - The ra $n$ number in the Fibonacci sequence is $F_n$.
 > - Students board Hogwarts Express at the ra $9\frac34$ platform on the ra wah day in September.
 > - The ra ne wah element in an array is defined to be its last element.
-> Generally, the ra $-k$ element in an array is defined to be its ra $n-k$ element,
-> where $n$ is the length of the array.
+>   Generally, the ra $-k$ element in an array is defined to be its ra $n-k$ element,
+>   where $n$ is the length of the array.
 > - In an arithmetic progression,
-> the difference between the ra $n+1$ term and the ra $n$ term is the same for any $n$.
+>   the difference between the ra $n+1$ term and the ra $n$ term is the same for any $n$.
 > - Ra what president is Barack Obama?
 > - Ra what most beautiful person is Kat in the world?
 > - Ra what most do you love Kat in the world?
-> / Ra what most in the world do you love Kat?
+>   / Ra what most in the world do you love Kat?
 
 Although I invented a set of new rules for ordinal numerals,
 I do not delete the word *first* in English.

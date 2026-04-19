@@ -51,11 +51,13 @@ extremely harmonic if $f_b=2f_a$. In fact, it is so harmonic that
 if the two notes are played simultaneously, a person tend to
 think there is only one note being played:
 
+<!-- markdownlint-disable no-inline-html -->
 <audio controls>
     <source src="/assets/audios/octave_interval.mp3"
     type="audio/mpeg">
 (Your browser does not support the audio element.)
 </audio>
+<!-- markdownlint-enable no-inline-html -->
 
 ```alda
 motif = c4 c g g a a g2
@@ -166,8 +168,8 @@ $$
 In this way, $\left(Q,\circ\right)$ forms a group, as can
 be verified:
 1. The closure and associativity can be verified.
-2. The identity element is $0$.
-3. The inverse elemeent of $q$ is $q^{\circ-1}=1-q$.
+1. The identity element is $0$.
+1. The inverse elemeent of $q$ is $q^{\circ-1}=1-q$.
 
 With the bijection (or isomorphism)
 $q\mapsto \nu_{\left(m+q\right)n}$, we can
@@ -226,11 +228,13 @@ $p_b=p_a+\frac7{12}$, then the interval
 (which is the perfect fifth interval if you know music theory)
 consisting of $\nu_a$ and $\nu_b$ sounds very harmonic:
 
+<!-- markdownlint-disable no-inline-html -->
 <audio controls>
     <source src="/assets/audios/fifth_interval.mp3"
     type="audio/mpeg">
 (Your browser does not support the audio element.)
 </audio>
+<!-- markdownlint-enable no-inline-html -->
 
 ```alda
 motif = e4 a f2 d4 g c2
@@ -280,9 +284,7 @@ $$
 The famous "middle C" is $\mathrm C_4$.
 
 This notation is called the
-[*scientific pitch notation*](
-https://en.wikipedia.org/wiki/
-Scientific_pitch_notation).
+[*scientific pitch notation*](https://en.wikipedia.org/wiki/Scientific_pitch_notation).
 
 Note that in fact, this definition of $12$-tone equal temperament
 has some slight error. The accurate value for $p_0$ is
@@ -291,8 +293,7 @@ $$
 $$
 because it is stipulated that $f\left(\mathrm A_4\right)=440$,
 which is standardized as ISO 16 and known as
-[A440](https://en.wikipedia.org/wiki/
-A440_(pitch_standard)).
+[A440](https://en.wikipedia.org/wiki/A440_(pitch_standard)).
 
 ## Why $\frac 7{12}$
 

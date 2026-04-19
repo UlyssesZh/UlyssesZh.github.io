@@ -33,8 +33,8 @@ The best way to handle this is to make GitHub cache and install all the dependen
 every time the action is run.
 This can be made possible by [creating a composite action](https://docs.github.com/en/actions/sharing-automations/creating-actions/creating-a-composite-action).
 Here is a snippet in `action.yml`:
-
 {% raw %}
+
 ```yaml
 runs:
   using: composite
@@ -88,8 +88,8 @@ runs:
       run: node $GITHUB_ACTION_PATH/index.js
       shell: bash
 ```
-{% endraw %}
 
+{% endraw %}
 I manually use `actions/cache` to cache the `node_modules` directory although `actions/setup-node` has caching functionality.
 This is because it [is not good yet](https://github.com/actions/setup-node/issues/819).
 Also, because `github.action_path` ends with `/./`, it can cause some problem due to the relative pathing.

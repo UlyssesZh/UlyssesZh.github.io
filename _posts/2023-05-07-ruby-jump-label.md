@@ -19,16 +19,16 @@ Many languages support breaking out of nested loops.
 There are some typical ways of doing this:
 
 - Some languages can name loops by providing a label for the loop.
-In those languages, you can use `break` together with a label to specify which loop to break out of.
-Examples: Perl, Java, JavaScript, and some others.
+  In those languages, you can use `break` together with a label to specify which loop to break out of.
+  Examples: Perl, Java, JavaScript, and some others.
 - Some languages can specify the number of layers of loops to break out of.
-In those languages, you can use `break` together with a number
-to specify how many layers of loops to break out of.
-The only example that I know is C#.
+  In those languages, you can use `break` together with a number
+  to specify how many layers of loops to break out of.
+  The only example that I know is C#.
 - Some languages have `goto` statements.
-You can easily break from loops to wherever you want by using `goto`
-(actually breaking out of nested loops is among the only recommended cases for using `goto`).
-Examples: C, C++.
+  You can easily break from loops to wherever you want by using `goto`
+  (actually breaking out of nested loops is among the only recommended cases for using `goto`).
+  Examples: C, C++.
 
 However, in most other languages, it is not easy to break out of nested loops.
 A typical solution is this:

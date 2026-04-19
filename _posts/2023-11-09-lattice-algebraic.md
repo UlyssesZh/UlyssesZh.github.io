@@ -44,7 +44,7 @@ After jiggling around the possible structure of the symmetry group of a plane la
 I finally proved it.
 I found that this proof is actually a simple and good example of how algebraic number theory can be used in physics.
 
-Before dive into the proof, we need to first prove a simple lemma about real analysis:
+Before diving into the proof, we need to first prove a simple lemma about real analysis:
 
 <p class="no-indent">
 **Lemma 1.**

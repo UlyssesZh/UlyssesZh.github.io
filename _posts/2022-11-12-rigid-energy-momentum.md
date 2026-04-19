@@ -26,19 +26,19 @@ The original article was posted at 2019-11-03 20:02 +0800.*
 Some notations:
 
 - $a$ indexes particles. $j,k,l$ are indices of vector components.
-$\mathbf q,\mathbf s,\mathbf t$ are arbitrary vectors.
+  $\mathbf q,\mathbf s,\mathbf t$ are arbitrary vectors.
 - $\mathbf I$ is the unit matrix.
-Matrix $\mathbf q\otimes\mathbf s\coloneqq\mathbf q\mathbf s^\mathrm T$ is the outer product of $\mathbf q$ and $\mathbf s$,
-and $\mathbf q^{\otimes 2}\coloneqq\mathbf q\otimes\mathbf q$.
+  Matrix $\mathbf q\otimes\mathbf s\coloneqq\mathbf q\mathbf s^\mathrm T$ is the outer product of $\mathbf q$ and $\mathbf s$,
+  and $\mathbf q^{\otimes 2}\coloneqq\mathbf q\otimes\mathbf q$.
 - A rigid body consists of some particles with distances between each other fixed.
-$\mu_a$ is the mass of a particle;
-$\mathbf r_a$ is the position of a particle relative to the center of the rigid body
-($\sum_a\mu_a\mathbf r_a=\mathbf 0$);
-and $\mathbf v_a$ is the velocity of a particle.
+  $\mu_a$ is the mass of a particle;
+  $\mathbf r_a$ is the position of a particle relative to the center of the rigid body
+  ($\sum_a\mu_a\mathbf r_a=\mathbf 0$);
+  and $\mathbf v_a$ is the velocity of a particle.
 - The total mass of the rigid body is $m=\sum_a\mu_a$;
-the velocity of its mass center is $\mathbf V$;
-and its angular velocity is $\mathbf\Omega$.
-$\theta_a$ is the angle between $\mathbf r_a$ and $\mathbf\Omega$.
+  the velocity of its mass center is $\mathbf V$;
+  and its angular velocity is $\mathbf\Omega$.
+  $\theta_a$ is the angle between $\mathbf r_a$ and $\mathbf\Omega$.
 - $\mathbf m\coloneqq m\mathbf I$, $\mathbf J\coloneqq\sum_a\mu_a\left(\mathbf r_a^2\mathbf I+\mathbf r_a^{\otimes 2}\right)$.
 
 ---

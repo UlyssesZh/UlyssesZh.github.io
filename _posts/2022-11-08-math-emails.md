@@ -43,7 +43,7 @@ or, write a program to generate the email with all images generated
 The first way have the following disadvantages:
 
 - It requires me to either use some third-party service (like [CODECOGS Equation Renderer](https://latex.codecogs.com))
-or maintain a public server which would be exposed to my email receivers.
+  or maintain a public server which would be exposed to my email receivers.
 - It is hard for me make the position of the baseline of rendered math correctly.
 - Email clients will probably block images from remote sources.
 
@@ -52,7 +52,7 @@ Both ways have the following disadvantages:
 </p>
 
 - There is no "half-working"---either the math is rendered, or it cannot be read at all
-(on email clients that do not support or block `<img>` or `<svg>` elements).
+  (on email clients that do not support or block `<img>` or `<svg>` elements).
 - Math expressions cannot have line breaks in the middle.
 - Images normally have a larger bandwidth burden.
 - It is hard to get them aware of the context (text size, color, etc.).

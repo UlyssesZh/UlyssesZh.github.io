@@ -54,21 +54,21 @@ One can define the concept of "rank" in $\mathscr M^n$.
 Let $r\coloneqq\operatorname{rank}C$.
 
 1. $r\ge n$. In this case, $x$ has the only solution $x=0$.
-A mistake made when writing out the reaction equation may lead to this case.
-2. $r=n-1$. In this case, $x$ has infinite solutions,
-all with the form $x=ts$,
-where $s\in\mathbb Z^n$ is the solution basis,
-and $t\in\mathbb Z$ is an arbitrary parameter.
-Then $s$ is the result of balancing.
-Usually, it is required that components of $s$ be mutually prime.
-Such chemical reactions can be called "simple reactions".
-3. $r<n-1$. In this case, $x$ has infinite solutions,
-with multiple (to be clear, $n-r$) solution basis.
-Such chemical reactions can be called "complicated reactions".
-This means the reaction equation can be decomposed into
-$n-r$ linearly independent simple reaction equations,
-where the stoichiometries are the solution basis
-we previously solved out.
+   A mistake made when writing out the reaction equation may lead to this case.
+1. $r=n-1$. In this case, $x$ has infinite solutions,
+   all with the form $x=ts$,
+   where $s\in\mathbb Z^n$ is the solution basis,
+   and $t\in\mathbb Z$ is an arbitrary parameter.
+   Then $s$ is the result of balancing.
+   Usually, it is required that components of $s$ be mutually prime.
+   Such chemical reactions can be called "simple reactions".
+1. $r<n-1$. In this case, $x$ has infinite solutions,
+   with multiple (to be clear, $n-r$) solution basis.
+   Such chemical reactions can be called "complicated reactions".
+   This means the reaction equation can be decomposed into
+   $n-r$ linearly independent simple reaction equations,
+   where the stoichiometries are the solution basis
+   we previously solved out.
 
 Note that the solution basis of a complicated reaction are not unique,
 so you may derive conclusions of completely different chemical meanings.

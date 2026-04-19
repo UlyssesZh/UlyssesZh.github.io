@@ -563,7 +563,6 @@ y&=\overrightarrow{\frac{\frac{n!}{\left(n-q\right)!}}{n!}}_{n=0}^{\infty}\cdot\
 {% qed span %}
 </p>
 
-
 <p class="no-indent">
 **Corollary of Lemma 18 and 19.**
 The function

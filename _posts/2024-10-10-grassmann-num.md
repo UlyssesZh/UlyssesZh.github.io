@@ -41,8 +41,8 @@ Define a multiplication on $\mbb G_0\cup\mbb G_1$ such that
 
 - multiplication is associative, non-degenerate, and distributive over addition;
 - $\mbb G_0$ are <dfn>commuting numbers</dfn> and $\mbb G_1$ are <dfn>anticommuting numbers</dfn>:
-$$\forall\psi_1\in\mbb G_{k_1},\psi_2\in\mbb G_{k_2}:
-\psi_1\psi_2=\p{-}^{k_1k_2}\psi_2\psi_1;$$
+  $$\forall\psi_1\in\mbb G_{k_1},\psi_2\in\mbb G_{k_2}:
+  \psi_1\psi_2=\p{-}^{k_1k_2}\psi_2\psi_1;$$
 - and there is a unity $1\in\mbb G_0$ such that $1+\cdots+1\ne0$ for any finite number of summands.
 
 <p class="no-indent">
@@ -136,9 +136,9 @@ Denote the set of all analytic functions on $\mbb G_1^n$ as $\mcal A_n$.
 Two properties of analytic functions:
 
 - If $f\in\mcal A_n$, then for any $\dlt\in\mbb G_1^n$, the translation
-$\p{\psi\mapsto\fc f{\psi+\dlt}}\in\mcal A_n$.
+  $\p{\psi\mapsto\fc f{\psi+\dlt}}\in\mcal A_n$.
 - If $f\in\mcal A_n$, then for any $J\in\mbb G_0^{n\times n}$, the linear transformation in the argument
-$f\circ J\in\mcal A_n$.
+  $f\circ J\in\mcal A_n$.
 
 ## Integrals
 
@@ -241,7 +241,7 @@ There are several potential problems in this article:
 - Some axioms are given, but I did not prove that they are consistent.
 - Some claims are made without proof. They may turn out to be wrong.
 - I did not prove that the usual definition of Grassmann numbers
-(with exterior algebra) can be formulated as a special case of my definition.
+  (with exterior algebra) can be formulated as a special case of my definition.
 - I am not educated in supersymmetry, which is where Grassmann numbers are applied most.
-I only made my definition comply with the properties of Grassmann numbers
-that I have learned for doing the path integral of fermionic fields.
+  I only made my definition comply with the properties of Grassmann numbers
+  that I have learned for doing the path integral of fermionic fields.

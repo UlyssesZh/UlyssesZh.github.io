@@ -60,23 +60,23 @@ whenever there is a new post.
 
 Here is then the idea of implementing the roadmap:
 
-#. On the Jekyll side:
-   #. Write a Jekyll hook at `:site` `:after_init` that reads
-   the [RSS feed of my Mastodon account](https://mastodon.social/@ulysseszhan.rss)
-   to get all information I need.
-   #. Write a Liquid template that can be populated with the collected information.
-   #. Include the Liquid template in the home page of my website and write some SCSS to style it.
-#. On the GitHub side:
-   #. Use
-   [GitHub Actions to build and deploy on GitHub Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages)
-   and make the GitHub Actions triggered by
-   [`workflow_dispatch`](https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#workflow_dispatch).
-   #. Create a [GitHub personal access token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#creating-a-personal-access-token-classic).
-   It will then be used to trigger
-   [GitHub Actions through REST API](https://docs.github.com/en/rest/actions/workflows?apiVersion=2022-11-28#create-a-workflow-dispatch-event).
-#. On the Huginn side:
-   #. Create an agent to monitor the RSS feed of my Mastodon account.
-   #. Create an agent to send HTTP requests to invoke GitHub's REST API.
-   It receives events from the first agent and triggers the GitHub Actions workflow.
+1. On the Jekyll side:
+   1. Write a Jekyll hook at `:site` `:after_init` that reads
+      the [RSS feed of my Mastodon account](https://mastodon.social/@ulysseszhan.rss)
+      to get all information I need.
+   1. Write a Liquid template that can be populated with the collected information.
+   1. Include the Liquid template in the home page of my website and write some SCSS to style it.
+1. On the GitHub side:
+   1. Use
+      [GitHub Actions to build and deploy on GitHub Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages)
+      and make the GitHub Actions triggered by
+      [`workflow_dispatch`](https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#workflow_dispatch).
+   1. Create a [GitHub personal access token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#creating-a-personal-access-token-classic).
+      It will then be used to trigger
+      [GitHub Actions through REST API](https://docs.github.com/en/rest/actions/workflows?apiVersion=2022-11-28#create-a-workflow-dispatch-event).
+1. On the Huginn side:
+   1. Create an agent to monitor the RSS feed of my Mastodon account.
+   1. Create an agent to send HTTP requests to invoke GitHub's REST API.
+      It receives events from the first agent and triggers the GitHub Actions workflow.
 
 Great! Now, my website can show my latest Mastodon post on the home page.

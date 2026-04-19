@@ -65,7 +65,6 @@ curl -X PATCH \
 	-d '{"custom_status":{"text":"Sleeping...","emoji_id":null,"emoji_name":"😴","expires_at":null},"status":"dnd"}' \
 	https://discordapp.com/api/v8/users/@me/settings
 
-
 # Clear sleeping status
 curl -X PATCH \
 	-H "Content-Type: application/json" \

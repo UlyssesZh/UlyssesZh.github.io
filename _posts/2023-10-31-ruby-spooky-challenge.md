@@ -17,6 +17,7 @@ excerpt: >
 This was a challenge in the [Ruby Discord server](https://discord.gg/ad2acQFtkh).
 The contents of the challenge is:{%copy%}
 
+<!-- markdownlint-disable line-length blanks-around-fences fenced-code-language no-trailing-spaces -->
 > ## Halloween Challenge
 >
 > It's the weekend and you've just completed a seance with friends. After communing with the dead, you realize a mysterious message was left behind.
@@ -70,16 +71,19 @@ The contents of the challenge is:{%copy%}
 > - Decrypt the message
 > - **Determine the hidden message *within* the decrypted message**
 >
+<!-- markdownlint-enable line-length blanks-around-fences fenced-code-language no-trailing-spaces -->
 
 ## My solution
 
 I am too stupid to think of regular expressions at first, so I wrote this:
 
+<!-- markdownlint-disable line-length -->
 ```ruby
 " 0123456\n SCARY?!\n🎃BDEFGH \n👻IJKLMN'\n🍬OPQTUV,\n💀WXZ.\#$:".split(?\n).map(&:chars).tap{|b|<<M.chars.reduce(nil){|r,e|e==?\n?print(e): r ?print(b[r][b[0].index e]): b.index{_1[0]==e}||print(b[1][b[0].index e])}}
 3🍬4🎃04...
 M
 ```
+<!-- markdownlint-enable line-length -->
 
 <p class="no-indent">
 I did not want to code golf, but I did intend to wrote a one-liner.
@@ -135,14 +139,14 @@ Check them out!
 ### Some explanations for the code golf solution
 
 - The `-p` option basically wraps the code in a `while gets` loop, and you can access the current line with `$_`.
-Ruby will output the contents of `$_` after each iteration.
+  Ruby will output the contents of `$_` after each iteration.
 - The method `Kernel#gsub` modifies `$_` (the current processing input line).
-It is only available when running Ruby with `-p` option.
+  It is only available when running Ruby with `-p` option.
 - The method `String#[]` returns a substring.
-What is good about this method is that, if you use a regular expression to find the substring,
-you can use the second argument to specify which capture group in the regular expression you want to return.
+  What is good about this method is that, if you use a regular expression to find the substring,
+  you can use the second argument to specify which capture group in the regular expression you want to return.
 - In a string literal, you can use `#$some_global_variable` as a shortcut of `#{$some_global_variable}`.
-This is also true for instance variables and class variables.
+  This is also true for instance variables and class variables.
 
 ## The message
 

@@ -406,6 +406,7 @@ at the cost of having to write a little bit of shell script and jq in the sheban
 (so really we cannot call it a "purely Nix" implementation now,
 but the nix-shell shebang is simply too powerful):
 
+<!-- markdownlint-disable line-length -->
 ```nix
 #!/usr/bin/env nix-shell
 #!nix-shell --pure -i "sh -c '_1=\$1; _2=\$2; shift 2; exec nix-build --no-out-link \"\$_1\" --argstr input \"\$_2\" --argstr argvJSON \"\$(printf \"%s\\\\0\" \"\$@\" | jq -Rsc \"split(\\\"\\\\u0000\\\")[:-1]\")\"' --" -p lix jq
@@ -414,6 +415,7 @@ but the nix-shell shebang is simply too powerful):
 	argv = builtins.fromJSON argvJSON;
 in builtins.seq # ...
 ```
+<!-- markdownlint-enable line-length -->
 
 <p class="no-indent">
 The mechanism is that the shell script in the shebang
@@ -432,6 +434,7 @@ to catch any uncaught exceptions in the program.
 Here is the final version of `imperative.nix`
 and an example `program.nix` that uses most of the features we introduced:
 
+<!-- markdownlint-disable line-length -->
 ```nix
 #!/usr/bin/env nix-shell
 #!nix-shell --pure -i "sh -c '_1=\$1; _2=\$2; shift 2; exec nix-build --no-out-link \"\$_1\" --argstr input \"\$_2\" --argstr argvJSON \"\$(printf \"%s\\\\0\" \"\$@\" | jq -Rsc \"split(\\\"\\\\u0000\\\")[:-1]\")\"' --" -p lix jq
@@ -471,6 +474,7 @@ in builtins.seq (
 	{ inherit assign if' while print throw break continue return function read try import builtins argv; }
 ) { }
 ```
+<!-- markdownlint-enable line-length -->
 
 ```nix
 #!/usr/bin/env imperative.nix

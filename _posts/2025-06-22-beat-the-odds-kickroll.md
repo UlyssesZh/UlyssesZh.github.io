@@ -114,6 +114,7 @@ plt.ylabel('Average magnitude for high frequencies')
 plt.plot(SFT.t(N), data)
 plt.plot(peaks, peak_properties['peak_heights'], "o")
 ```
+
 </details>
 
 ![Each peak is approximately at the start of a kick.]({{page.figure}}peaks.svg){.dark-adaptive}
@@ -133,6 +134,7 @@ plt.ylabel('Amplitude')
 plt.xlim(0, 200)
 plt.ylim(-1, 1)
 ```
+
 </details>
 
 ![Waveform with high-frequency spectrogram peaks marked.]({{page.figure}}peaks_on_samples.svg){.dark-adaptive}

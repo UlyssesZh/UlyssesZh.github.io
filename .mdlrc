@@ -1,0 +1,26 @@
+if respond_to? :style
+	ignore_front_matter true
+	parse_block_html true
+	style __FILE__
+	return
+end
+
+require 'yaml'
+
+all
+
+config = YAML.load_file File.join(__dir__, '.markdownlint.yaml'), symbolize_names: true
+config.each do |id, params|
+	id = id.to_s
+	next unless @rules.include? id
+	next exclude_rule id if params[:enabled] == false
+	params.each do |key, value|
+		value = params[key] = value.join ?, if value.is_a? Array
+		value = params[key] = value.to_sym if key == :style && value =~ /\w+/
+	end
+	rule id, **params
+end
+
+# mdl does not support MD041.front_matter_title
+exclude_rule 'MD002' # first-header-h1
+exclude_rule 'MD041' # first-line-h1

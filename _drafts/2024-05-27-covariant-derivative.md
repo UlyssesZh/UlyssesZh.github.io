@@ -133,9 +133,9 @@ and it satisfies the following properties:
 - It is linear;
 - It satisfies the Leibniz product rule (w.r.t. the tensor product);
 - It is compatible with index contraction
-(contracting indices before or after applying $\nabla$ gives the same result);
+  (contracting indices before or after applying $\nabla$ gives the same result);
 - For any $v\in\fc{\mscr F}{1,0}$ (tangent vector field) and $f\in\fc{\mscr F}{0,0}$ (scalar field),
-$\fc vf=v^a\nabla_af$;
+  $\fc vf=v^a\nabla_af$;
 - It is torsion-free.
 
 </details>
@@ -159,15 +159,15 @@ This makes some of the properties that I listed above about the derivative opera
 for a manifold not applicable to the derivative operators in gauge theory:
 
 - The compatibility between the derivative operator
-and the directional derivative (the property that says $\fc vf=v^a\nabla_af$)
-is now nonsense because we now do not let the derivative operator carry a index.
-We can simply throw away this property because it would be related
-to contracting with Lorentz vectors anyway, which is not important here.
+  and the directional derivative (the property that says $\fc vf=v^a\nabla_af$)
+  is now nonsense because we now do not let the derivative operator carry a index.
+  We can simply throw away this property because it would be related
+  to contracting with Lorentz vectors anyway, which is not important here.
 - The torsion-free property is also nonsense because we do not have a notion of torsion
-again due to the lack of the index carried by the derivative operator.
-We can throw away this property as well.
-Actually, if we were to include the Lorentz index,
-the torsion-free property would be violated
-(otherwise the field strength $F_{\mu\nu}$ cannot come to be).
+  again due to the lack of the index carried by the derivative operator.
+  We can throw away this property as well.
+  Actually, if we were to include the Lorentz index,
+  the torsion-free property would be violated
+  (otherwise the field strength $F_{\mu\nu}$ cannot come to be).
 
 </details>
