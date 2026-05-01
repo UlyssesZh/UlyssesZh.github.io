@@ -232,7 +232,7 @@ pronounced as /sɪ/.
 |---|---|
 | $\frac{22}7$ | tueta-tue ci sah |
 | $\frac{114}{514}$ | wahha-wahta-foo ci fahha-wahta-foo |
-| $-\frac12$ | ne wah ci fah |
+| $-\frac15$ | ne wah ci fah |
 
 ## Scientific notation
 

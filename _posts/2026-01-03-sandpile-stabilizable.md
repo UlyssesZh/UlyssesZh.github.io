@@ -285,9 +285,7 @@ can only be a Z-matrix,
 which is defined as a square matrix whose off-diagonal entries are all nonpositive.
 Because of this restriction, it may not be as hard as the general ILP problems,
 which are known to be NP-complete.
-However, because I neither have found any reference discussing the complexity of Z-matrix ILP problems
-nor have devised any polynomial-time algorithm to solve them or reduced any known NP-complete problems to them [^reduce-np-complete],
-I do not know whether the Z-matrix ILP problems are NP-complete or not.
+However, Z-matrix ILP problems are in fact also NP-complete.
 
 [^generality-integer]:
 This "without loss of generality" is actually not very obvious.
@@ -298,12 +296,63 @@ is bounded by a polynomial of the input size of the original problem.
 Fortunately, it is easy to prove for this case if the input size of a rational number $p/q$
 is defined as $1+\ceil{\fc{\log_2}{\v p+1}}+\ceil{\fc{\log_2}{\v q+1}}$.
 
-[^reduce-np-complete]:
-The main difficulty in reducing other computation problems to Z-matrix ILP problems
-is that Z-matrix ILP problems are "monotonic" in the sense that
-two solutions $u_1$ and $u_2$ imply that their componentwise minimum is also a solution.
-If we want to encode the answer to a computation problem into a solution to a Z-matrix ILP problem,
-the original problem must also have this monotonicity property.
+<details><summary>Proving NP-completeness of Z-matrix ILP problems</summary>
+
+To prove that the Z-matrix ILP problem is NP-complete,
+we reduce the good simultaneous approximation problem, which is known to be NP-complete
+([Lagarias, 1985](https://doi.org/10.1137/0214016)),
+to the Z-matrix ILP problem.
+
+The good simultaneous approximation problem states as follows:
+given rational numbers $r_i$ ($i=0,\ldots,n-1$),
+a positive rational number $\veps$, and a positive integer $N$,
+determine whether there exists a positive integer $Q\le N$ such that
+$$\max_i\v{r_iQ-\round{r_iQ}}\le\veps.$$
+
+This problem can be reduced to the following Z-matrix ILP problem.
+Denote $\B{\fc ux}_{x\in V}=\p{\B{p_i},\B{q_i},r}$
+(so it is a $\p{2n+1}$-dimensional vector), and construct $\Dlt$ and $\psi$
+so that $\Dlt u\ge\psi$ is equivalent to the system of the following
+linear inequalities:
+$$\begin{align*}
+	p_i-\v{r_i}q_i&\ge-\veps,\\
+	3\veps\p{q_i-q_{i+1}}-p_i+\v{r_i}q_i&\ge-\veps,\\
+	-q_0-r&\ge-N,
+\end{align*}$$
+where $q_n\ceq q_0$.
+
+Now, we prove that this Z-matrix ILP problem is equivalent
+to the initial good simultaneous approximation problem.
+The equivalence is two-way:
+for any solution $u$ to the Z-matrix ILP problem,
+there exists a solution $Q$ to the good simultaneous approximation problem,
+and vice versa.
+
+Given a solution $Q$ to the good simultaneous approximation problem,
+we can construct a solution to the Z-matrix ILP problem as follows:
+$$q_i\ceq Q,\qquad p_i\ceq\round{\v{r_i}Q},\qquad r\ceq0.$$
+It is trivial to verify that all the linear inequalities are satisfied.
+
+Given a solution $\p{\B{p_i},\B{q_i},r}$ to the Z-matrix ILP problem,
+I will prove that $Q\ceq q_0$ is a solution
+to the good simultaneous approximation problem.
+First, I prove by contradition that $q_i\ge q_{i+1}$.
+Suppose that $q_i<q_{i+1}$. Then,
+$$3\veps\,\underbrace{\p{q_i-q_{i+1}}}_{\le-1}
+-\underbrace{\p{p_i-r_iq_i}}_{\ge-\veps}
+\le-3\veps+\veps<-\veps.$$
+This contradicts with the second inequality in the Z-matrix ILP problem.
+Therefore, we have $q_i\ge q_{i+1}$, and furthermore
+$q_0\ge q_1\ge\cdots\ge q_n\ge q_0$.
+The only way this can be satisfied is that all $q_i$ are equal to $Q$.
+The first inequality and the second inequality then become
+$-\veps\le-p_i+\v{r_i}Q\le\veps$.
+Therefore,
+$$\v{r_iQ-\round{r_iQ}}\le\v{\v{r_i}Q-p_i}\le\veps.$$
+The constraint $Q\le N$ is implied by the third inequality.
+The proof is complete.
+
+</details>
 
 We can design this algorithm
 inspired by [Hochbaum et al. (1994)](https://doi.org/10.1137/S0097539793251876)

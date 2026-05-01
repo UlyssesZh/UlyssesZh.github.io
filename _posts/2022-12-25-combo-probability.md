@@ -360,7 +360,7 @@ $$\begin{array}{r|llllc}
 \hline
 n=0 & 1\\
 1 & 1-Y & Y\\
-2 & 1-2Y+Y^2 & 2Y-Y^2 & Y^2\\
+2 & 1-2Y+Y^2 & 2Y-2Y^2 & Y^2\\
 3 & 1-3Y+3Y^2-Y^3 & 3Y-5Y^2+2Y^3 & 2Y^2-2Y^3 & Y^3\\
 \vdots
 \end{array}$$
@@ -712,7 +712,7 @@ y^{\left(su-1\right)\left(1-\kappa\right)}\ln y^{1-\kappa}
 \sum_{j=0}^s\frac{A_{s,j}}{j!}\left(\ln y^{\left(su-1\right)\left(1-\kappa\right)}\right)^j\,\mathrm du\\
 &=\frac{\left(-1\right)^s}s\sum_{j=0}^s\frac{A_{s,j}}{j!}
 \int_{\frac\kappa{1-\kappa}}^{\frac1s}\left(\ln y^{\left(su-1\right)\left(1-\kappa\right)}\right)^j\,
-\mathrm d\left(\ln y^{\left(su-1\right)\left(1-\kappa\right)}\right)\\
+\mathrm d\left(y^{\left(su-1\right)\left(1-\kappa\right)}\right)\\
 &=\frac{\left(-1\right)^s}s\sum_{j=0}^s\frac{A_{s,j}}{j!}
 \int_{y^{\left(s+1\right)\kappa-1}}^1\left(\ln w\right)^j\,\mathrm dw\\
 &=\frac{\left(-1\right)^s}s\sum_{j=0}^s\frac{A_{s,j}}{j!}
@@ -739,7 +739,7 @@ y^{\frac\kappa v\left(sv-1\right)}\ln y^{\frac\kappa v}
 \sum_{j=0}^s\frac{A_{s,j}}{j!}\left(\ln y^{\frac\kappa v\left(sv-1\right)}\right)^j\frac{\mathrm dv}v\\
 &=\left(-1\right)^s\sum_{j=0}^s\frac{A_{s,j}}{j!}
 \int_\kappa^{\frac\kappa{1-\kappa}}\left(\ln y^{\frac\kappa v\left(sv-1\right)}\right)^j\,
-\mathrm d\left(\ln y^{\frac\kappa v\left(sv-1\right)}\right)\\
+\mathrm d\left(y^{\frac\kappa v\left(sv-1\right)}\right)\\
 &=\left(-1\right)^s\sum_{j=0}^s\frac{A_{s,j}}{j!}
 \int_{y^{s\kappa-1}}^{y^{\left(s+1\right)\kappa-1}}\left(\ln w\right)^j\,\mathrm dw\\
 &=\left(-1\right)^s\sum_{j=0}^s\frac{A_{s,j}}{j!}\left(-1\right)^jj!\left(
@@ -847,7 +847,7 @@ Define the arbitrary parameter
 $$b\coloneqq1-B_{1,0},$$
 then the first few $B_{q,l}$ are
 $$\begin{array}{r|ccccc}
-&k=0&1&2&3&4\\
+&l=0&1&2&3&4\\
 \hline
 q=1&1-b&1\\
 2&2b&2-2b&2\\
