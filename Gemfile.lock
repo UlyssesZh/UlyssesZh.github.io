@@ -23,7 +23,7 @@ GEM
       public_suffix (>= 2.0.2, < 8.0)
     base64 (0.3.0)
     bigdecimal (4.1.1)
-    chef-utils (19.2.12)
+    chef-utils (19.3.15)
       concurrent-ruby
     chunky_png (1.4.0)
     colorator (1.1.0)
@@ -117,8 +117,8 @@ GEM
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
     logger (1.7.0)
-    mdl (0.15.0)
-      kramdown (~> 2.3)
+    mdl (0.16.0)
+      kramdown (~> 2.5)
       kramdown-parser-gfm (~> 1.1)
       mixlib-cli
       mixlib-config
@@ -219,11 +219,10 @@ DEPENDENCIES
   wdm
   webrick
 
-CHECKSUMS
   addressable (2.9.0) sha256=7fdf6ac3660f7f4e867a0838be3f6cf722ace541dd97767fa42bc6cfa980c7af
   base64 (0.3.0) sha256=27337aeabad6ffae05c265c450490628ef3ebd4b67be58257393227588f5a97b
   bigdecimal (4.1.1) sha256=1c09efab961da45203c8316b0cdaec0ff391dfadb952dd459584b63ebf8054ca
-  chef-utils (19.2.12) sha256=0b02a72f05ac5816a81f1443a845611cae47d4971f2e6defddd577fb90a5539e
+  chef-utils (19.3.15) sha256=1c537a9c85b55b6d897de8e8af6b66b017a6dfae2b5e7b25e0bf320637e0b86a
   chunky_png (1.4.0) sha256=89d5b31b55c0cf4da3cf89a2b4ebc3178d8abe8cbaf116a1dba95668502fdcfe
   colorator (1.1.0) sha256=e2f85daf57af47d740db2a32191d1bdfb0f6503a0dfbc8327d0c9154d5ddfc38
   concurrent-ruby (1.3.6) sha256=6b56837e1e7e5292f9864f34b69c5a2cbc75c0cf5338f1ce9903d10fa762d5ab
@@ -266,7 +265,7 @@ CHECKSUMS
   liquid (4.0.4) sha256=4fcfebb1a045e47918388dbb7a0925e7c3893e58d2bd6c3b3c73ec17a2d8fdb3
   listen (3.10.0) sha256=c6e182db62143aeccc2e1960033bebe7445309c7272061979bb098d03760c9d2
   logger (1.7.0) sha256=196edec7cc44b66cfb40f9755ce11b392f21f7967696af15d274dde7edff0203
-  mdl (0.15.0) sha256=5fb62937cf49b3130a6cd0296981f55a8596bf559e65273d346a800ff57cfdf5
+  mdl (0.16.0) sha256=ac09d771ae79d03800a0c6b34119f95b5caf80e8662ca9a444f24b01ae9357e0
   mercenary (0.4.0) sha256=b25a1e4a59adca88665e08e24acf0af30da5b5d859f7d8f38fba52c28f405138
   minima (3.0.0.dev)
   mixlib-cli (2.1.8) sha256=e6f27be34d580f6ed71731ca46b967e57793a627131c1f6e1ed2dad39ea3bdf9
