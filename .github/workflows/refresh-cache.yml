@@ -30,7 +30,7 @@ jobs:
           ghc-version: '9.8'
 
       - name: Restore Cabal cache
-        uses: actions/cache/restore@v5
+        uses: actions/cache/restore@v6
         id: cache-cabal-restore
         with:
           path: |
