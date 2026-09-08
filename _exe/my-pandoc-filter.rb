@@ -85,14 +85,10 @@ DEFAULT_CONFIG = {
 	lexer_options: {}
 }
 
-START, MIDDLE, FINISH = %w[start middle finish].map { "very_unlikely_numbered_equation_#{_1}".freeze }
-
-Paru::Filter.run do
+Paru::Filter.run treat_metadata_strings_as_plain_strings: true do
 	before do |doc|
 		@config = DEFAULT_CONFIG.dup
-		if config_file = metadata['rougeConfig']&.gsub(?\\, '') # Markdown escape backslashes; see https://github.com/jgm/pandoc/issues/7414
-			@config.merge_r! YAML.load_file config_file, symbolize_names: true
-		end
+		@config.merge_r! YAML.load_file metadata['rougeConfig'], symbolize_names: true if metadata['rougeConfig']
 	end
 
 	with 'CodeBlock' do |code_block|
@@ -106,8 +102,12 @@ Paru::Filter.run do
 		html.gsub!(%r{<pre class="lineno">(.+?)</pre>}m) { %{<div class="lineno">#$1</div>} }
 		# accessibility concern (<code> has the semantics and WAI-ARIA role of code)
 		# https://github.com/rouge-ruby/rouge/pull/2276
+		# remove after rouge updates to 5.x: https://github.com/jekyll/jekyll/issues/10003
 		html.gsub! '<pre>', '<pre><code>'
 		html.gsub! '</pre>', '</code></pre>'
+		# https://github.com/rouge-ruby/rouge/pull/2275
+		# remove after rouge updates to 5.x: https://github.com/jekyll/jekyll/issues/10003
+		html.gsub! /(<td class="[^"]+ gl")([ >])/, '\1 aria-hidden="true"\2'
 		code_block.replace_self Paru::PandocFilter::RawBlock.new ['html', html]
 	end
 

@@ -16,7 +16,7 @@ The key is also available on
 
 <details><summary>Armor format</summary>
 
-```plain
+```plaintext
 -----BEGIN PGP PUBLIC KEY BLOCK-----
 
 mQGNBGTnzrQBDAC7Z/WXmuduR7EUyKBqvwuNAlWmMWoaCqtfl47I6umGcg+7KFwg
@@ -72,7 +72,7 @@ because it is more convenient for me to decrypt them
 
 <details><summary>Armor format of the key for ulysseszhan@pm.me</summary>
 
-```plain
+```plaintext
 -----BEGIN PGP PUBLIC KEY BLOCK-----
 
 mDMEYw5QnRYJKwYBBAHaRw8BAQdApsayumB3phxeYYedhsXxU4qu0nYHrMxMXkC/
@@ -101,7 +101,7 @@ N9CekMYA/1Vv679XVB04DYDNuLOkapmw54AssEXaFh/m0D7SV3wK
 
 <details><summary>Armor format of the key for ulysseszhan@proton.me</summary>
 
-```plain
+```plaintext
 -----BEGIN PGP PUBLIC KEY BLOCK-----
 
 mDMEYw5EKRYJKwYBBAHaRw8BAQdAR0scm/R71Jx+gS99odj7P3xMva8hrq+FOTnB
@@ -135,7 +135,7 @@ My Delta Chat ID is
 
 <details><summary>Armor format</summary>
 
-```plain
+```plaintext
 -----BEGIN PGP PUBLIC KEY BLOCK-----
 
 mDMEaLiX6BYJKwYBBAHaRw8BAQdABS9WGFl9adMRiZgXLQmH58/8qLKn5wMWZbU7
@@ -168,7 +168,7 @@ These keys can be used to authenticate me on SSH servers.
 
 <details><summary>Keys</summary>
 
-```plain
+```plaintext
 ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIN4UNDbPgbIaReufopFlFg0FuJ8n4xeRglaeCZ3W2F84
 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDMMWAvLPv8ZOY+hsktZcm6vdsXSEX4lmxN36++y4ZYt4U9yqmQirdll2n09mbNJq7/rZZMfCjF6pXjWKbGBc/q0D+0G0c/a4BA687+L19Q8JFwlMPlJYwUmogij3prA348oJTAoTHNN9yPiejBvuYWip7cIRkKs9P+2bs6v2sqBeaJPvm9BkmcaS4a446xFxEBtBz7B7CU0p32Rui/3FJSs2mjaDHqVyBb/5k4VHmhE0IOdr6ArM+WCVmjfxO+xl9F7me3EkMEfy8Dkd0DhqUY9Lbn9kjewle5LQjd5DLcaBtEmyHBKwpoWTKDnT3OnI1JZmxMh0dH8uWGpUpy91DBbodBA8NnsIfAPMbAhNHw/Qwh3IrQ+oYnePDA4C0wE5R2GiFMGQTi+2Gv2lmTlRT7l4eGS3V948KBCCj+HabCaSPcl34SutCRMwFyMBM77qEs0Swbr2sjiYfkGvrEreYEKCU6hwylLGOJ+KjdZZihm9+GUZDHkg4P8/UWdZ50fUM=
 ```
@@ -179,7 +179,7 @@ ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDMMWAvLPv8ZOY+hsktZcm6vdsXSEX4lmxN36++y4ZY
 
 If an APK file is signed by this key, it is from me:
 
-```plain
+```plaintext
 Signer #1 certificate DN: CN=Ulysses Zhan
 Signer #1 certificate SHA-256 digest: 2e25e943f5525f6f26335d9b7bd8b71ee4e707f0a3226da6bf7bce039490f4fd
 Signer #1 certificate SHA-1 digest: 09a44f66cc801106b4f481721d0c1466eced1a3a

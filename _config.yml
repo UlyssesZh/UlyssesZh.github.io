@@ -18,13 +18,19 @@ show_excerpts: true
 markdown: Paru
 paru:
   options:
-    from: markdown+link_attributes+pipe_tables+escaped_line_breaks+space_in_atx_header+header_attributes+line_blocks+inline_code_attributes+fenced_code_attributes
-    syntax_highlighting: none
+    # Remove yaml_metadata_block because it introduces MetadataInline,
+    # and the frontmatter does not contain useful information for Pandoc anyway.
+    from: markdown-yaml_metadata_block+link_attributes+pipe_tables+escaped_line_breaks+space_in_atx_header+header_attributes+line_blocks+inline_code_attributes+fenced_code_attributes
+    syntax_highlighting: none # uncomment after upgrading to pandoc 3.8+
+    #no_highlight: true # remove after upgrading to pandoc 3.8+
     columns: 10000 # prevent colgroup elements
     preserve_tabs: true
+    # The Ruby filter must come before pandoc-crossref because pandoc-crossref introduces MetadataInline,
+    # which makes `treat_metadata_strings_as_plain_strings: true` broken in Paru. See:
+    # https://github.com/htdebeer/paru/issues/91
     filter:
-      - pandoc-crossref
       - _exe/my-pandoc-filter.rb
+      - pandoc-crossref
       - pandoc-katex
     metadata:
       - crossrefYaml=_bootstrap/crossref.yml
@@ -169,6 +175,7 @@ feed:
     - update
   tags:
     path: /feed/tags/
+  disable_in_development: true
 
 gitalk:
   enable_in_development: false

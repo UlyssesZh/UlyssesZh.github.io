@@ -44,8 +44,8 @@ ULYSSES_PLUGINS.register(1);
 		if (url[0] === '/') return false;
 		var pos = siteStructure;
 		var ary = url.split('/');
-		for (var i in ary) {
-			switch (ary[i]) {
+		for (var name of ary) {
+			switch (name) {
 				case '.':
 					break;
 				case '..':

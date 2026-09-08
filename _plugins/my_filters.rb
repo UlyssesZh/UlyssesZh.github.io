@@ -30,16 +30,15 @@ module Jekyll
 		end
 
 		# also strips aria-hidden and annotation (in MathML)
-		# see discussion about .rouge-gutter: https://github.com/rouge-ruby/rouge/pull/2275
 		def strip_html2 input
 			doc = Nokogiri::HTML::DocumentFragment.parse "<body>#{input}</body>"
-			doc.css('annotation, .rouge-gutter, [aria-hidden="true"]').remove
+			doc.css('annotation, [aria-hidden="true"]').remove
 			doc.text.strip
 		end
 
 		def strip_aria_hidden input
 			doc = Nokogiri::HTML::DocumentFragment.parse input
-			doc.css('.rouge-gutter, [aria-hidden="true"]').remove
+			doc.css('[aria-hidden="true"]').remove
 			doc.to_xml.strip
 		end
 
