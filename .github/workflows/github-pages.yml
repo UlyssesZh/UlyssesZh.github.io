@@ -30,47 +30,63 @@ jobs:
           ruby-version: '4.0'
           bundler-cache: true
 
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '26'
+          cache: npm
+          cache-dependency-path: _lib/katex-bridge/package-lock.json
+
       - name: Set up GHC
         uses: haskell-actions/setup@v2
         id: setup-ghc
         with:
-          ghc-version: '9.8'
+          ghc-version: '9.10'
 
       - name: Restore Cabal cache
         uses: actions/cache/restore@v6
         id: cache-cabal-restore
         with:
           path: |
-            ${{ github.workspace }}/bin-dev
+            ~/.cabal/packages
             ${{ steps.setup-ghc.outputs.cabal-store }}
-          key: ${{ runner.os }}-cabal-${{ hashFiles('**/cabal.lock') }}
+            _lib/pandoc-bridge/dist-newstyle
+          key: ${{ runner.os }}-cabal-${{ hashFiles('_lib/pandoc-bridge/*.cabal') }}
 
-      - name: Install Haskell packages
+      - name: Restore NPM cache
+        uses: actions/cache/restore@v6
+        id: cache-npm-restore
+        with:
+          path: _lib/katex-bridge/node_modules
+          key: ${{ runner.os }}-npm-${{ hashFiles('_lib/katex-bridge/package-lock.json') }}
+
+      - name: Update Cabal package index
         if: steps.cache-cabal-restore.outputs.cache-hit != 'true'
-        run: cabal v2-install pandoc-cli pandoc-crossref --install-method=copy --installdir=$GITHUB_WORKSPACE/bin-dev
+        run: cabal update
+
+      - name: Build libraries
+        run: bundle exec rake build_libs
 
       - name: Save Cabal cache
         uses: actions/cache/save@v6
         if: steps.cache-cabal-restore.outputs.cache-hit != 'true'
         with:
           path: |
-            ${{ github.workspace }}/bin-dev
+            ~/.cabal/packages
             ${{ steps.setup-ghc.outputs.cabal-store }}
-          key: ${{ runner.os }}-cabal-${{ hashFiles('**/cabal.lock') }}
+            _lib/pandoc-bridge/dist-newstyle
+          key: ${{ runner.os }}-cabal-${{ hashFiles('_lib/pandoc-bridge/*.cabal') }}
 
-      - name: Install cargo packages
-        uses: baptiste0928/cargo-install@v3
+      - name: Save NPM cache
+        uses: actions/cache/save@v6
+        if: steps.cache-npm-restore.outputs.cache-hit != 'true'
         with:
-          crate: pandoc-katex
-          cache-key: ${{ runner.os }}-cargo-${{ hashFiles('**/cargo.lock') }}
+          path: _lib/katex-bridge/node_modules
+          key: ${{ runner.os }}-npm-${{ hashFiles('_lib/katex-bridge/package-lock.json') }}
 
       - name: Configure Pages
         id: pages
         uses: actions/configure-pages@v6
-
-      - name: Add development binaries to PATH
-        run: |
-          echo "$GITHUB_WORKSPACE/bin-dev" >> $GITHUB_PATH
 
       - name: Jekyll build
         run: bundle exec jekyll build --verbose --trace --profile --baseurl "${{ steps.pages.outputs.base_path }}"

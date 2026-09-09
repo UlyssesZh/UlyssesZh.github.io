@@ -1,95 +1,67 @@
-require 'highline/import'
+require 'fileutils'
 
-task default: :serve
+ROOT = __dir__
+HASKELL_DIR = File.join ROOT, '_lib/pandoc-bridge'
+HASKELL_LIB = File.join HASKELL_DIR, 'libpandoc_bridge.so'
+KATEX_DIR = File.join ROOT, '_lib/katex-bridge'
+KATEX_BUNDLE = File.join KATEX_DIR, 'dist/katex-bridge.js'
 
-task :serve do
+HASKELL_SOURCES = FileList[
+	File.join(HASKELL_DIR, '*.cabal'),
+	File.join(HASKELL_DIR, 'cabal.project'),
+	File.join(HASKELL_DIR, 'src/**/*.hs')
+]
+KATEX_SOURCES = FileList[
+	File.join(KATEX_DIR, 'package.json'),
+	File.join(KATEX_DIR, 'package-lock.json'),
+	File.join(KATEX_DIR, 'src/**/*.js')
+]
+
+task :default => :serve
+
+desc 'Build the native/JS libraries and serve the site locally'
+task :serve => :build_libs do
 	sh 'jekyll serve --host 0.0.0.0 --port 3999 --verbose --trace --livereload --livereload-port 35730'
 end
 
-task :serve_i do
+desc 'Build the native/JS libraries and serve with incremental, limited features'
+task :serve_i => :build_libs do
 	sh 'JEKYLL_AVOID_MARKDOWN=1 JEKYLL_NO_ARCHIVE=1 jekyll serve --host 0.0.0.0 --port 3999 --incremental --verbose --trace --livereload --livereload-port 35730'
 end
 
+desc 'Run markdownlint on posts and README'
 task :mdl do
 	sh 'mdl _posts README.md'
 end
 
-def which cmd
-	exts = ENV['PATHEXT']&.split(';') || ['']
-	ENV['PATH'].split(File::PATH_SEPARATOR).each do |path|
-		exts.each do |ext|
-			exe = File.join path, "#{cmd}#{ext}"
-			return exe if File.executable?(exe) && !File.directory?(exe)
-		end
+desc 'Build the Haskell pandoc-bridge and the JavaScript katex-bridge'
+task :build_libs => [:build_haskell, :build_katex]
+
+desc 'Alias for build_libs'
+task :build => :build_libs
+
+desc 'Build the Haskell pandoc-bridge shared library'
+task :build_haskell => HASKELL_LIB
+
+file HASKELL_LIB => HASKELL_SOURCES do
+	Dir.chdir HASKELL_DIR do
+		sh 'cabal v2-build flib:pandoc_bridge --enable-shared'
+		built = `cabal list-bin flib:pandoc_bridge --enable-shared`.strip
+		raise 'cabal did not produce the pandoc_bridge foreign library' if built.empty?
+		cp built, HASKELL_LIB
 	end
-	nil
 end
 
-PANDOC_INSTALL_COMMAND = 'cabal v2-install pandoc-cli'
-PANDOC_CROSSREF_INSTALL_COMMAND = 'cabal v2-install pandoc-crossref'
-PANDOC_KATEX_INSTALL_COMMAND = 'cargo install pandoc-katex'
+desc 'Build the bundled KaTeX/MessagePack JavaScript bridge'
+task :build_katex => KATEX_BUNDLE
 
-task :prepare do
-	pandoc_version = 2.times do |i|
-		if which 'pandoc'
-			version_output = `pandoc --version`
-			/pandoc (?<pandoc_version>(\d+\.)+\d+)/ =~ version_output
-			puts "Pandoc found: #{pandoc_version}"
-			#/(?<lua>.)lua/ =~ version_output
-			#if lua == '-'
-			#	puts 'This version of pandoc does not support Lua filters.'
-			#else
-				break pandoc_version
-			#end
+file KATEX_BUNDLE => KATEX_SOURCES do
+	Dir.chdir KATEX_DIR do
+		if File.file?('package-lock.json')
+			sh 'npm ci --no-audit --no-fund'
 		else
-			puts '`pandoc` command not found.'
+			sh 'npm install --no-audit --no-fund'
 		end
-		if i == 0
-			if agree "Install using `#{PANDOC_INSTALL_COMMAND}`?"
-				sh PANDOC_INSTALL_COMMAND
-			else
-				abort 'Aborted.'
-			end
-		else
-			abort "Failed to properly install Pandoc."
-		end
-	end
-
-	pandoc_crossref_version, target_pandoc_version = 2.times do |i|
-		if which 'pandoc-crossref'
-			/pandoc-crossref v(?<pandoc_crossref_version>(\d+\.)+\d+) .* Pandoc v(?<target_pandoc_version>(\d+\.)+\d+)/ =~ `pandoc-crossref --version`
-			puts "pandoc-crossref found: #{pandoc_crossref_version}"
-			break pandoc_crossref_version, target_pandoc_version
-		elsif i == 0
-			if agree "`pandoc-crossref` command not found. Install using `#{PANDOC_CROSSREF_INSTALL_COMMAND}`?"
-				sh PANDOC_CROSSREF_INSTALL_COMMAND
-			else
-				abort 'Aborted.'
-			end
-		else
-			abort "`pandoc-crossref` command still not found after trying to install. You need to install it manually."
-		end
-	end
-
-	if pandoc_version != target_pandoc_version
-		abort "Pandoc version mismatch: #{pandoc_version} != #{target_pandoc_version}."
-	end
-
-	pandoc_katex_version, katex_version = 2.times do |i|
-		if which 'pandoc-katex'
-			version_output = `pandoc-katex --version`
-			/^pandoc-katex (?<pandoc_katex_version>(\d+\.)+\d+)/ =~ version_output
-			/^katex (?<katex_version>(\d+\.)+\d+)/ =~ version_output
-			puts "pandoc-katex found: #{pandoc_katex_version}"
-			break pandoc_katex_version, katex_version
-		elsif i == 0
-			if agree "`pandoc-katex` command not found. Install using `#{PANDOC_KATEX_INSTALL_COMMAND}`?"
-				sh PANDOC_KATEX_INSTALL_COMMAND
-			else
-				abort 'Aborted.'
-			end
-		else
-			abort "`pandoc-katex` command still not found after trying to install. You need to install it manually."
-		end
+		sh 'npm run build'
 	end
 end

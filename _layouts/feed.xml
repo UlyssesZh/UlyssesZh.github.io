@@ -20,7 +20,7 @@
 	{% endif %}
 
 	{% if title %}
-		<title type="html">{{ title | markdownify | strip_aria_hidden_no_p | cdata }}</title>
+		<title type="html">{{ title | markdownify_feed_no_p | cdata }}</title>
 	{% endif %}
 
 	{% if site.description %}
@@ -70,14 +70,14 @@
 	{% assign posts_limit = site.feed.posts_limit | default: 10 %}
 	{% for post in posts limit: posts_limit %}
 		<entry{% if post.lang %}{{" "}}xml:lang="{{ post.lang }}"{% endif %}>
-			<title type="html">{{ post.title | markdownify | strip_aria_hidden_no_p | cdata }}</title>
+			<title type="html">{{ post.title | markdownify_feed_no_p | cdata }}</title>
 			<link href="{{ post.url | absolute_url }}" rel="alternate" type="text/html" title="{{ post.title | markdownify_strip | xml_escape }}" />
 			<published>{{ post.date | date_to_xmlschema }}</published>
 			<updated>{{ post.last_modified_at | default: post.date | date_to_xmlschema }}</updated>
 			<id>{{ post.id | absolute_url | xml_escape }}</id>
 			{% assign excerpt_only = post.feed.excerpt_only | default: site.feed.excerpt_only %}
 			{% unless excerpt_only %}
-				<content type="html" xml:base="{{ post.url | absolute_url | xml_escape }}">{{ post.content | strip_aria_hidden | cdata }}</content>
+				<content type="html" xml:base="{{ post.url | absolute_url | xml_escape }}">{{ post.feed_content | cdata }}</content>
 			{% endunless %}
 
 			{% assign post_author = post.author | default: post.authors[0] | default: site.author %}
@@ -110,7 +110,7 @@
 
 			{% assign post_summary = post.description | default: post.excerpt %}
 			{% if post_summary and post_summary != empty %}
-				<summary type="html">{{ post_summary | markdownify | strip_aria_hidden_no_p | cdata }}</summary>
+				<summary type="html">{{ post_summary | markdownify_feed_no_p | cdata }}</summary>
 			{% endif %}
 
 			{% assign post_image = post.image.path | default: post.image %}

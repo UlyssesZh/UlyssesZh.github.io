@@ -4,17 +4,19 @@ UlyssesZhan's blog!
 
 ## Build
 
-Install Ruby.
-Install [pandoc-crossref](https://github.com/lierdakil/pandoc-crossref)
-and [pandoc-katex](https://github.com/xu-cheng/pandoc-katex) (make their executables available in PATH)
-(alternatively, if you have Cabal and Cargo installed, run `rake prepare`).
-
-Then, run
+Install Ruby 4, Node.js 26, GHC, and Cabal (the pinned versions are in
+`.mise.toml`; `mise install` is the quickest way to get Ruby and Node).
+Then run:
 
 ```shell
 bundle install
+bundle exec rake build_libs
 bundle exec jekyll build
 ```
+
+`rake build_libs` builds the Haskell `pandoc-bridge` shared library and the
+`katex-bridge` JavaScript bundle.  The former runs Pandoc and
+pandoc-crossref in-process; the latter is loaded into MiniRacer by Ruby.
 
 ## Development
 

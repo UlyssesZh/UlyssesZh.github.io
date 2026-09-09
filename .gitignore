@@ -11,5 +11,8 @@ git_backup
 *.swp
 
 .vscode/
-_bootstrap/
 _tmp/
+
+# Generated native/JS bridge artifacts
+_lib/pandoc-bridge/libpandoc_bridge.so
+_lib/katex-bridge/node_modules/

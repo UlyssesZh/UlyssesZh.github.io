@@ -1,6 +1,4 @@
-require 'fileutils'
-require 'yaml'
-require 'tomlib'
+require 'json'
 
 module Jekyll::UlyssesZhan
 end
@@ -8,18 +6,12 @@ end
 module Jekyll
 	module UlyssesZhan::Bootstrap
 
-		BOOTSTRAP_DIR = '_bootstrap'
-
 		module_function
 
 		def run
-			FileUtils.mkdir_p BOOTSTRAP_DIR
 			read_env
 			read_commit
 			read_katex_version
-			write_crossref_config
-			write_rouge_config
-			write_katex_config
 			fetch_mastodon_post
 			read_github_run_id
 		end
@@ -32,21 +24,9 @@ module Jekyll
 		end
 
 		def read_katex_version
-			@site.config['katex_version'] = `pandoc-katex --katex-version`.chomp
-		end
-
-		def write_crossref_config
-			yaml = YAML.dump @site.config['paru']['crossref'].transform_keys { _1.to_s.gsub(/_(\w)/) { $1.upcase } }
-			File.write File.join(BOOTSTRAP_DIR, 'crossref.yml'), yaml.tap { _1["---\n"] = '' }
-		end
-
-		def write_rouge_config
-			File.write File.join(BOOTSTRAP_DIR, 'rouge.yml'), YAML.dump(@site.config['paru']['rouge'])
-		end
-
-		def write_katex_config
-			ENV['PANDOC_KATEX_CONFIG_FILE'] = filename = File.join BOOTSTRAP_DIR, 'katex.toml'
-			File.write filename, Tomlib.dump(@site.config['paru']['katex'])
+			package = File.expand_path '_lib/katex-bridge/node_modules/katex/package.json'
+			version = JSON.parse(File.read(package))['version'] if File.file? package
+			@site.config['katex_version'] = version || '0.16.11'
 		end
 
 		def read_env
@@ -67,7 +47,6 @@ module Jekyll
 			@site.config['github_run_id'] = ENV['GITHUB_RUN_ID']
 		end
 	end
-
 end
 
 Jekyll::UlyssesZhan::Bootstrap.register
