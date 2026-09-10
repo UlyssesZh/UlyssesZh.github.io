@@ -4,22 +4,17 @@ UlyssesZhan's blog!
 
 ## Build
 
-Install Ruby.
-Install [pandoc-crossref](https://github.com/lierdakil/pandoc-crossref)
-and [pandoc-katex](https://github.com/xu-cheng/pandoc-katex) (make their executables available in PATH)
-(alternatively, if you have Cabal and Cargo installed, run `rake prepare`).
-
-Then, run
+Install Ruby, Node.js, GHC, and Cabal. Then run:
 
 ```shell
 bundle install
-bundle exec jekyll build
+bundle exec rake build
 ```
 
 ## Development
 
-Use `rake` to serve the site locally.
-For a faster experience but limited features, use `rake serve_i`.
+Use `bundle exec rake serve` to serve the site locally.
+For a faster experience but limited features, use `bundle exec rake serve_i`.
 
 ## License
 

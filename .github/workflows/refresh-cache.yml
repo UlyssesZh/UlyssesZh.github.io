@@ -3,7 +3,7 @@
 name: Refresh cache
 
 on:
-  workflow_dispatch: {}
+  workflow_dispatch:
   schedule:
     - cron: '11 8 */6 * *'
 
@@ -11,35 +11,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Check out
         uses: actions/checkout@v7
-        with:
-          submodules: recursive
 
-      - name: Set up Ruby
-        uses: ruby/setup-ruby@v1
-        id: setup-ruby
-        with:
-          ruby-version: '4.0'
-          bundler-cache: true
-
-      - name: Set up GHC
-        uses: haskell-actions/setup@v2
-        id: setup-ghc
-        with:
-          ghc-version: '9.8'
-
-      - name: Restore Cabal cache
-        uses: actions/cache/restore@v6
-        id: cache-cabal-restore
-        with:
-          path: |
-            ${{ github.workspace }}/bin-dev
-            ${{ steps.setup-ghc.outputs.cabal-store }}
-          key: ${{ runner.os }}-cabal-${{ hashFiles('**/cabal.lock') }}
-
-      - name: Install cargo packages
-        uses: baptiste0928/cargo-install@v3
-        with:
-          crate: pandoc-katex
-          cache-key: ${{ runner.os }}-cargo-${{ hashFiles('**/cargo.lock') }}
+      - name: Build libs
+        uses: ./.github/actions/build-libs

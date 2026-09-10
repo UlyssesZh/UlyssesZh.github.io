@@ -11,5 +11,4 @@ git_backup
 *.swp
 
 .vscode/
-_bootstrap/
 _tmp/

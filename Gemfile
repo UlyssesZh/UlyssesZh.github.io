@@ -1,8 +1,6 @@
 source 'https://rubygems.org/'
 
-gem 'highline'
 gem 'rake'
-gem 'tomlib'
 gem 'rqrcode'
 
 gem 'jekyll', '~> 4'
@@ -15,10 +13,12 @@ group :jekyll_plugins do
 	end
 	gem 'jekyll-paginate-v2', github: 'sverrirs/jekyll-paginate-v2', ref: 'master'
 	gem 'jekyll-toc'
-	gem 'jekyll-paru'
 	gem 'jekyll-seo-tag'
 end
 gem 'wdm', install_if: Gem.win_platform?
 gem 'webrick', install_if: RUBY_VERSION >= '3.0.0'
 
 gem 'mdl'
+gem 'mini_racer'
+gem 'msgpack'
+gem 'fiddle'

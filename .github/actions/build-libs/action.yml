@@ -1,0 +1,43 @@
+name: Build libs
+description: Build libs in _lib
+
+runs:
+  using: composite
+  steps:
+    - name: Checkout
+      uses: actions/checkout@v7
+      with:
+        submodules: recursive
+
+    - name: Set up Ruby
+      uses: ruby/setup-ruby@v1
+      id: setup-ruby
+      with:
+        ruby-version: '4.0'
+        bundler-cache: true
+
+    - name: Set up Node
+      uses: actions/setup-node@v7
+      with:
+        node-version: '26'
+        cache: npm
+        cache-dependency-path: '**/package-lock.json'
+
+    - name: Set up GHC
+      uses: haskell-actions/setup@v2
+      id: setup-ghc
+      with:
+        ghc-version: '9.10'
+
+    - name: Cabal cache
+      uses: actions/cache@v6
+      with:
+        path: |
+          ~/.cabal/packages
+          ${{ steps.setup-ghc.outputs.cabal-store }}
+          _lib/pandoc-bridge/dist-newstyle
+        key: ${{ runner.os }}-ghc-${{ steps.setup-ghc.outputs.ghc-version }}-cabal-${{ steps.setup-ghc.outputs.cabal-version }}-${{ hashFiles('**/*.cabal', '**/cabal.project', '**/cabal.project.freeze') }}
+
+    - name: Build libraries
+      shell: bash
+      run: bundle exec rake build_libs

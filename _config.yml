@@ -15,32 +15,20 @@ url: https://UlyssesZh.github.io
 domain: UlyssesZh.github.io
 license: '[CC-BY-4.0](https://creativecommons.org/licenses/by/4.0){rel=license}'
 show_excerpts: true
-markdown: Paru
-paru:
-  options:
+markdown: MyMarkdown
+my_markdown:
+  pandoc:
     # Remove yaml_metadata_block because it introduces MetadataInline,
     # and the frontmatter does not contain useful information for Pandoc anyway.
     from: markdown-yaml_metadata_block+link_attributes+pipe_tables+escaped_line_breaks+space_in_atx_header+header_attributes+line_blocks+inline_code_attributes+fenced_code_attributes
-    syntax_highlighting: none # uncomment after upgrading to pandoc 3.8+
-    #no_highlight: true # remove after upgrading to pandoc 3.8+
     columns: 10000 # prevent colgroup elements
-    preserve_tabs: true
-    # The Ruby filter must come before pandoc-crossref because pandoc-crossref introduces MetadataInline,
-    # which makes `treat_metadata_strings_as_plain_strings: true` broken in Paru. See:
-    # https://github.com/htdebeer/paru/issues/91
-    filter:
-      - _exe/my-pandoc-filter.rb
-      - pandoc-crossref
-      - pandoc-katex
-    metadata:
-      - crossrefYaml=_bootstrap/crossref.yml
-      - rougeConfig=_bootstrap/rouge.yml
-  crossref:
-    link_references: true
-    table_eqns: false
-    set_label_attribute: true
-    eqn_prefix_template: $$i$$
-    eqn_display_template: >-
+    preserve-tabs: true
+  pandoc-crossref:
+    linkReferences: true
+    tableEqns: false
+    setLabelAttribute: true
+    eqnPrefixTemplate: $$i$$
+    eqnDisplayTemplate: >-
       <span class="katex-display-table">
         <span class="katex-display-numbered">$$e$$</span>
         <span class="katex-display-number">$$i$$</span>
@@ -60,8 +48,9 @@ paru:
         formatter:
           tag: html
   katex:
-    output: html
+    output: htmlAndMathml
     trust: true
+    throwOnError: false
     macros:
       '\mbb': '\mathbb'
       '\mfk': '\mathfrak'
@@ -239,11 +228,7 @@ exclude:
   - .git/
   - .idea/
   - .github/
-  - '**/*.yml'
   - assets/images/covers/*.txt
-  - bin-dev
-  - cabal.lock
-  - cargo.lock
   - gemset.nix
   - shell.nix
   - .markdownlint.yaml

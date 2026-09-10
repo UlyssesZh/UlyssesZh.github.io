@@ -1,6 +1,4 @@
-require 'fileutils'
-require 'yaml'
-require 'tomlib'
+require 'json'
 
 module Jekyll::UlyssesZhan
 end
@@ -8,48 +6,27 @@ end
 module Jekyll
 	module UlyssesZhan::Bootstrap
 
-		BOOTSTRAP_DIR = '_bootstrap'
-
 		module_function
 
-		def run
-			FileUtils.mkdir_p BOOTSTRAP_DIR
+		def run site
+			@site = site
 			read_env
 			read_commit
 			read_katex_version
-			write_crossref_config
-			write_rouge_config
-			write_katex_config
 			fetch_mastodon_post
 			read_github_run_id
 		end
-
-		def register
-			Hooks.register :site, :after_init do |site|
-				@site = site
-				run
-			end
-		end
+		Hooks.register(:site, :after_init) { run _1 }
 
 		def read_katex_version
-			@site.config['katex_version'] = `pandoc-katex --katex-version`.chomp
-		end
-
-		def write_crossref_config
-			yaml = YAML.dump @site.config['paru']['crossref'].transform_keys { _1.to_s.gsub(/_(\w)/) { $1.upcase } }
-			File.write File.join(BOOTSTRAP_DIR, 'crossref.yml'), yaml.tap { _1["---\n"] = '' }
-		end
-
-		def write_rouge_config
-			File.write File.join(BOOTSTRAP_DIR, 'rouge.yml'), YAML.dump(@site.config['paru']['rouge'])
-		end
-
-		def write_katex_config
-			ENV['PANDOC_KATEX_CONFIG_FILE'] = filename = File.join BOOTSTRAP_DIR, 'katex.toml'
-			File.write filename, Tomlib.dump(@site.config['paru']['katex'])
+			lock = File.expand_path '../_lib/katex-bridge/node_modules/katex/package.json', __dir__
+			@site.config['katex_version'] = JSON.load_file(lock)['version']
 		end
 
 		def read_env
+			@site.config['url'] = ENV['JEKYLL_URL'] if ENV['JEKYLL_URL']
+			@site.config['baseurl'] = ENV['JEKYLL_BASEURL'] if ENV['JEKYLL_BASEURL']
+			@site.config['domain'] = ENV['JEKYLL_DOMAIN'] if ENV['JEKYLL_DOMAIN']
 			@site.config['avoid_markdown'] = !!ENV['JEKYLL_AVOID_MARKDOWN']
 			@site.config['no_archive'] = !!ENV['JEKYLL_NO_ARCHIVE']
 		end
@@ -67,7 +44,4 @@ module Jekyll
 			@site.config['github_run_id'] = ENV['GITHUB_RUN_ID']
 		end
 	end
-
 end
-
-Jekyll::UlyssesZhan::Bootstrap.register

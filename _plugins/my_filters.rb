@@ -2,8 +2,9 @@ require 'nokogiri'
 
 module Jekyll::UlyssesZhan
 	@markdownify_cache = {}
+	@markdownify_feed_cache = {}
 	@markdownify_strip_cache = {}
-	singleton_class.attr_reader :markdownify_cache, :markdownify_strip_cache
+	singleton_class.attr_reader :markdownify_cache, :markdownify_feed_cache, :markdownify_strip_cache
 end
 
 module Jekyll
@@ -20,6 +21,22 @@ module Jekyll
 			markdownify(input).sub %r{^\s*<p>\s*(.*?)\s*</p>\s*$}m, '\1'
 		end
 
+		def markdownify_feed input
+			return input if @context.registers[:site].config['avoid_markdown']
+			UlyssesZhan.markdownify_feed_cache[input] ||= begin
+				converter = @context.registers[:site].find_converter_instance Jekyll::Converters::Markdown
+				if converter.respond_to? :convert_feed
+					converter.convert_feed input
+				else
+					converter.convert input
+				end
+			end
+		end
+
+		def markdownify_feed_no_p input
+			markdownify_feed(input).sub %r{^\s*<p>\s*(.*?)\s*</p>\s*$}m, '\1'
+		end
+
 		def newline_to_space input
 			input.gsub ?\n, ?\s
 		end
@@ -34,16 +51,6 @@ module Jekyll
 			doc = Nokogiri::HTML::DocumentFragment.parse "<body>#{input}</body>"
 			doc.css('annotation, [aria-hidden="true"]').remove
 			doc.text.strip
-		end
-
-		def strip_aria_hidden input
-			doc = Nokogiri::HTML::DocumentFragment.parse input
-			doc.css('[aria-hidden="true"]').remove
-			doc.to_xml.strip
-		end
-
-		def strip_aria_hidden_no_p input
-			strip_aria_hidden(input).sub %r{^\s*<p>\s*(.*?)\s*</p>\s*$}m, '\1'
 		end
 
 		def cdata input

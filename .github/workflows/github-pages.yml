@@ -1,7 +1,7 @@
 name: Deploy to pages
 
 on:
-  workflow_dispatch: {}
+  workflow_dispatch:
   push:
     branches: [master]
 
@@ -18,64 +18,24 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Check out
         uses: actions/checkout@v7
         with:
           submodules: recursive
 
-      - name: Set up Ruby
-        uses: ruby/setup-ruby@v1
-        id: setup-ruby
-        with:
-          ruby-version: '4.0'
-          bundler-cache: true
-
-      - name: Set up GHC
-        uses: haskell-actions/setup@v2
-        id: setup-ghc
-        with:
-          ghc-version: '9.8'
-
-      - name: Restore Cabal cache
-        uses: actions/cache/restore@v6
-        id: cache-cabal-restore
-        with:
-          path: |
-            ${{ github.workspace }}/bin-dev
-            ${{ steps.setup-ghc.outputs.cabal-store }}
-          key: ${{ runner.os }}-cabal-${{ hashFiles('**/cabal.lock') }}
-
-      - name: Install Haskell packages
-        if: steps.cache-cabal-restore.outputs.cache-hit != 'true'
-        run: cabal v2-install pandoc-cli pandoc-crossref --install-method=copy --installdir=$GITHUB_WORKSPACE/bin-dev
-
-      - name: Save Cabal cache
-        uses: actions/cache/save@v6
-        if: steps.cache-cabal-restore.outputs.cache-hit != 'true'
-        with:
-          path: |
-            ${{ github.workspace }}/bin-dev
-            ${{ steps.setup-ghc.outputs.cabal-store }}
-          key: ${{ runner.os }}-cabal-${{ hashFiles('**/cabal.lock') }}
-
-      - name: Install cargo packages
-        uses: baptiste0928/cargo-install@v3
-        with:
-          crate: pandoc-katex
-          cache-key: ${{ runner.os }}-cargo-${{ hashFiles('**/cargo.lock') }}
+      - name: Buid libs
+        uses: ./.github/actions/build-libs
 
       - name: Configure Pages
         id: pages
         uses: actions/configure-pages@v6
 
-      - name: Add development binaries to PATH
-        run: |
-          echo "$GITHUB_WORKSPACE/bin-dev" >> $GITHUB_PATH
-
       - name: Jekyll build
-        run: bundle exec jekyll build --verbose --trace --profile --baseurl "${{ steps.pages.outputs.base_path }}"
+        run: bundle exec rake
         env:
-          JEKYLL_ENV: production
+          JEKYLL_URL: ${{ steps.pages.outputs.origin }}
+          JEKYLL_BASEURL: ${{ steps.pages.outputs.base_path }}
+          JEKYLL_DOMAIN: ${{ steps.pages.outputs.host }}
           GITHUB_RUN_ID: ${{ github.run_id }}
 
       - name: Upload
@@ -84,9 +44,10 @@ jobs:
   deploy:
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+      url: ${{ steps.deploy.outputs.page_url }}
     runs-on: ubuntu-latest
     needs: build
     steps:
-      - id: deployment
+      - name: Deploy
+        id: deploy
         uses: actions/deploy-pages@v5
