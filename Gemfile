@@ -19,9 +19,6 @@ gem 'wdm', install_if: Gem.win_platform?
 gem 'webrick', install_if: RUBY_VERSION >= '3.0.0'
 
 gem 'mdl'
-
-# The Markdown pipeline is implemented in Haskell (FFI) and JavaScript
-# (MiniRacer/KaTeX).  MessagePack is used on the Ruby <-> Haskell boundary.
 gem 'mini_racer'
 gem 'msgpack'
 gem 'fiddle'

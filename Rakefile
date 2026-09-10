@@ -1,15 +1,15 @@
 require 'fileutils'
 
 ROOT = __dir__
-HASKELL_DIR = File.join ROOT, '_lib/pandoc-bridge'
-HASKELL_LIB = File.join HASKELL_DIR, 'libpandoc_bridge.so'
+PANDOC_DIR = File.join ROOT, '_lib/pandoc-bridge'
+PANDOC_LIB = File.join PANDOC_DIR, 'libpandoc_bridge.so'
 KATEX_DIR = File.join ROOT, '_lib/katex-bridge'
 KATEX_BUNDLE = File.join KATEX_DIR, 'dist/katex-bridge.js'
 
-HASKELL_SOURCES = FileList[
-	File.join(HASKELL_DIR, '*.cabal'),
-	File.join(HASKELL_DIR, 'cabal.project'),
-	File.join(HASKELL_DIR, 'src/**/*.hs')
+PANDOC_SOURCES = FileList[
+	File.join(PANDOC_DIR, '*.cabal'),
+	File.join(PANDOC_DIR, 'cabal.project*'),
+	File.join(PANDOC_DIR, 'src/**/*.hs')
 ]
 KATEX_SOURCES = FileList[
 	File.join(KATEX_DIR, 'package.json'),
@@ -17,44 +17,37 @@ KATEX_SOURCES = FileList[
 	File.join(KATEX_DIR, 'src/**/*.js')
 ]
 
-task :default => :serve
+task :default => :build
 
-desc 'Build the native/JS libraries and serve the site locally'
 task :serve => :build_libs do
 	sh 'jekyll serve --host 0.0.0.0 --port 3999 --verbose --trace --livereload --livereload-port 35730'
 end
 
-desc 'Build the native/JS libraries and serve with incremental, limited features'
 task :serve_i => :build_libs do
 	sh 'JEKYLL_AVOID_MARKDOWN=1 JEKYLL_NO_ARCHIVE=1 jekyll serve --host 0.0.0.0 --port 3999 --incremental --verbose --trace --livereload --livereload-port 35730'
 end
 
-desc 'Run markdownlint on posts and README'
+task :build => :build_libs do
+	sh 'JEKYLL_ENV=production jekyll build --verbose --trace'
+end
+
 task :mdl do
 	sh 'mdl _posts README.md'
 end
 
-desc 'Build the Haskell pandoc-bridge and the JavaScript katex-bridge'
-task :build_libs => [:build_haskell, :build_katex]
+task :build_libs => [:build_pandoc, :build_katex]
 
-desc 'Alias for build_libs'
-task :build => :build_libs
-
-desc 'Build the Haskell pandoc-bridge shared library'
-task :build_haskell => HASKELL_LIB
-
-file HASKELL_LIB => HASKELL_SOURCES do
-	Dir.chdir HASKELL_DIR do
+task :build_pandoc => PANDOC_LIB
+file PANDOC_LIB => PANDOC_SOURCES do
+	Dir.chdir PANDOC_DIR do
 		sh 'cabal v2-build flib:pandoc_bridge --enable-shared'
 		built = `cabal list-bin flib:pandoc_bridge --enable-shared`.strip
 		raise 'cabal did not produce the pandoc_bridge foreign library' if built.empty?
-		cp built, HASKELL_LIB
+		cp built, PANDOC_LIB
 	end
 end
 
-desc 'Build the bundled KaTeX/MessagePack JavaScript bridge'
 task :build_katex => KATEX_BUNDLE
-
 file KATEX_BUNDLE => KATEX_SOURCES do
 	Dir.chdir KATEX_DIR do
 		if File.file?('package-lock.json')

@@ -17,18 +17,18 @@ license: '[CC-BY-4.0](https://creativecommons.org/licenses/by/4.0){rel=license}'
 show_excerpts: true
 markdown: MyMarkdown
 my_markdown:
-  options:
+  pandoc:
     # Remove yaml_metadata_block because it introduces MetadataInline,
     # and the frontmatter does not contain useful information for Pandoc anyway.
     from: markdown-yaml_metadata_block+link_attributes+pipe_tables+escaped_line_breaks+space_in_atx_header+header_attributes+line_blocks+inline_code_attributes+fenced_code_attributes
     columns: 10000 # prevent colgroup elements
-    preserve_tabs: true
-  crossref:
-    link_references: true
-    table_eqns: false
-    set_label_attribute: true
-    eqn_prefix_template: $$i$$
-    eqn_display_template: >-
+    preserve-tabs: true
+  pandoc-crossref:
+    linkReferences: true
+    tableEqns: false
+    setLabelAttribute: true
+    eqnPrefixTemplate: $$i$$
+    eqnDisplayTemplate: >-
       <span class="katex-display-table">
         <span class="katex-display-numbered">$$e$$</span>
         <span class="katex-display-number">$$i$$</span>
@@ -50,6 +50,7 @@ my_markdown:
   katex:
     output: htmlAndMathml
     trust: true
+    throwOnError: false
     macros:
       '\mbb': '\mathbb'
       '\mfk': '\mathfrak'

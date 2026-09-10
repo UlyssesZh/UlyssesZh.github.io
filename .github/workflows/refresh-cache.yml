@@ -24,11 +24,11 @@ jobs:
           bundler-cache: true
 
       - name: Set up Node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v7
         with:
           node-version: '26'
           cache: npm
-          cache-dependency-path: _lib/katex-bridge/package-lock.json
+          cache-dependency-path: '**/package-lock.json'
 
       - name: Set up GHC
         uses: haskell-actions/setup@v2
@@ -38,23 +38,16 @@ jobs:
 
       - name: Restore Cabal cache
         uses: actions/cache/restore@v6
-        id: cache-cabal-restore
+        id: cabal-cache-restore
         with:
           path: |
             ~/.cabal/packages
             ${{ steps.setup-ghc.outputs.cabal-store }}
             _lib/pandoc-bridge/dist-newstyle
-          key: ${{ runner.os }}-cabal-${{ hashFiles('_lib/pandoc-bridge/*.cabal') }}
-
-      - name: Restore NPM cache
-        uses: actions/cache/restore@v6
-        id: cache-npm-restore
-        with:
-          path: _lib/katex-bridge/node_modules
-          key: ${{ runner.os }}-npm-${{ hashFiles('_lib/katex-bridge/package-lock.json') }}
+          key: ${{ runner.os }}-cabal-${{ hashFiles('**/cabal.project.freeze') }}
 
       - name: Update Cabal package index
-        if: steps.cache-cabal-restore.outputs.cache-hit != 'true'
+        if: steps.cabal-cache-restore.outputs.cache-hit != 'true'
         run: cabal update
 
       - name: Build libraries
@@ -62,17 +55,10 @@ jobs:
 
       - name: Save Cabal cache
         uses: actions/cache/save@v6
-        if: steps.cache-cabal-restore.outputs.cache-hit != 'true'
+        if: steps.cabal-cache-restore.outputs.cache-hit != 'true'
         with:
           path: |
             ~/.cabal/packages
             ${{ steps.setup-ghc.outputs.cabal-store }}
             _lib/pandoc-bridge/dist-newstyle
-          key: ${{ runner.os }}-cabal-${{ hashFiles('_lib/pandoc-bridge/*.cabal') }}
-
-      - name: Save NPM cache
-        uses: actions/cache/save@v6
-        if: steps.cache-npm-restore.outputs.cache-hit != 'true'
-        with:
-          path: _lib/katex-bridge/node_modules
-          key: ${{ runner.os }}-npm-${{ hashFiles('_lib/katex-bridge/package-lock.json') }}
+          key: ${{ runner.os }}-cabal-${{ hashFiles('**/cabal.project.freeze') }}

@@ -1,6 +1,4 @@
-// MiniRacer's V8 context does not expose TextEncoder/TextDecoder.  The
-// MessagePack codec bundled below uses them for UTF-8 conversion, so provide
-// small standards-compatible shims before @msgpack/msgpack is evaluated.
+// MiniRacer's V8 context does not expose TextEncoder/TextDecoder
 
 if (typeof globalThis.TextEncoder === 'undefined') {
 	globalThis.TextEncoder = class TextEncoder {

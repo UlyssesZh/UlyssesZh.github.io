@@ -4,9 +4,7 @@ UlyssesZhan's blog!
 
 ## Build
 
-Install Ruby 4, Node.js 26, GHC, and Cabal (the pinned versions are in
-`.mise.toml`; `mise install` is the quickest way to get Ruby and Node).
-Then run:
+Install Ruby, Node.js, GHC, and Cabal. Then run:
 
 ```shell
 bundle install
@@ -14,9 +12,7 @@ bundle exec rake build_libs
 bundle exec jekyll build
 ```
 
-`rake build_libs` builds the Haskell `pandoc-bridge` shared library and the
-`katex-bridge` JavaScript bundle.  The former runs Pandoc and
-pandoc-crossref in-process; the latter is loaded into MiniRacer by Ruby.
+`rake build_libs` builds the Haskell `pandoc-bridge` shared library and the `katex-bridge` JavaScript bundle.
 
 ## Development
 

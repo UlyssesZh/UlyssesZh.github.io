@@ -2,8 +2,3 @@ packages: .
 
 package *
   shared: True
-
-constraints:
-  pandoc ==3.9.0.2,
-  pandoc-crossref ==0.3.24,
-  msgpack ==1.0.1.0

@@ -8,28 +8,25 @@ module Jekyll
 
 		module_function
 
-		def run
+		def run site
+			@site = site
 			read_env
 			read_commit
 			read_katex_version
 			fetch_mastodon_post
 			read_github_run_id
 		end
-
-		def register
-			Hooks.register :site, :after_init do |site|
-				@site = site
-				run
-			end
-		end
+		Hooks.register(:site, :after_init) { run _1 }
 
 		def read_katex_version
-			package = File.expand_path '_lib/katex-bridge/node_modules/katex/package.json'
-			version = JSON.parse(File.read(package))['version'] if File.file? package
-			@site.config['katex_version'] = version || '0.16.11'
+			lock = File.expand_path '../_lib/katex-bridge/node_modules/katex/package.json', __dir__
+			@site.config['katex_version'] = JSON.load_file(lock)['version']
 		end
 
 		def read_env
+			@site.config['url'] = ENV['JEKYLL_URL'] if ENV['JEKYLL_URL']
+			@site.config['baseurl'] = ENV['JEKYLL_BASEURL'] if ENV['JEKYLL_BASEURL']
+			@site.config['domain'] = ENV['JEKYLL_DOMAIN'] if ENV['JEKYLL_DOMAIN']
 			@site.config['avoid_markdown'] = !!ENV['JEKYLL_AVOID_MARKDOWN']
 			@site.config['no_archive'] = !!ENV['JEKYLL_NO_ARCHIVE']
 		end
@@ -48,5 +45,3 @@ module Jekyll
 		end
 	end
 end
-
-Jekyll::UlyssesZhan::Bootstrap.register

@@ -1,16 +1,9 @@
-cabal-version:      3.0
-name:               pandoc-bridge
-version:            0.1.0.0
-synopsis:           In-process Pandoc/Markdown bridge for Jekyll
-description:
-  A small shared library that runs the Pandoc Markdown reader and
-  pandoc-crossref in the same Haskell process.  It exchanges Pandoc ASTs
-  with Ruby through MessagePack.
-license:            MIT
-author:             UlyssesZhan
-maintainer:         ulysseszhan@gmail.com
-category:           Text
-build-type:         Simple
+cabal-version: 3.0
+name:          pandoc-bridge
+version:       0.1.0.0
+license:       MIT
+author:        UlyssesZhan
+build-type:    Simple
 
 foreign-library pandoc_bridge
   type:             native-shared
