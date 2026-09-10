@@ -45,6 +45,8 @@ import Text.Pandoc.Format
 import Text.Pandoc.Highlighting (lookupHighlightingStyle)
 import Text.Pandoc.Shared (blocksToInlines, tabFilter)
 
+-- definition of Opt:
+-- https://github.com/jgm/pandoc/blob/3.9.0.2/src/Text/Pandoc/App/Opt.hs#L105-L187
 data BridgeOptions = BridgeOptions
   { boPandoc   :: Opt
   , boCrossref :: A.Value
@@ -152,6 +154,7 @@ extensionsFromSpec spec =
     flavored <- parseFlavoredFormat spec
     applyExtensionsDiff (getExtensionsConfig (formatName flavored)) flavored
 
+-- https://github.com/jgm/pandoc/blob/3.9.0.2/src/Text/Pandoc/App.hs#L230-L240
 readerOptionsFromOpt :: Opt -> ReaderOptions
 readerOptionsFromOpt opt =
   def
@@ -165,6 +168,7 @@ readerOptionsFromOpt opt =
     , readerStripComments = optStripComments opt
     }
 
+-- https://github.com/jgm/pandoc/blob/3.9.0.2/src/Text/Pandoc/App/OutputSettings.hs#L233-L275
 writerOptionsFromOpt :: Opt -> WriterOptions
 writerOptionsFromOpt opt =
   def
@@ -195,6 +199,7 @@ writerOptionsFromOpt opt =
     , writerLinkImages = optLinkImages opt
     }
 
+-- https://github.com/jgm/pandoc/blob/3.9.0.2/src/Text/Pandoc/App/OutputSettings.hs#L169-L173
 highlightMethod :: T.Text -> HighlightMethod
 highlightMethod style = case style of
   "none" -> NoHighlighting
@@ -206,6 +211,7 @@ markdownToAst :: BS.ByteString -> BridgeConfig -> BS.ByteString
 markdownToAst markdown BridgeConfig{..} =
   packPandoc $ runCrossRef bcCrossrefMeta (Just bcFormat) defaultCrossRefAction document
   where
+    -- https://github.com/jgm/pandoc/blob/3.9.0.2/src/Text/Pandoc/App/Input.hs#L53-L58
     markdownText = tabFilter (if bcPreserveTabs then 0 else bcTabStop) (TE.decodeUtf8 markdown)
     document = either (error . show) id $ runPure (readMarkdown bcReaderOptions markdownText)
 
