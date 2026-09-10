@@ -2,7 +2,6 @@ require 'fiddle'
 require 'mini_racer'
 require 'msgpack'
 require 'rouge'
-require 'yaml'
 
 module Jekyll::UlyssesZhan
 end
@@ -72,15 +71,19 @@ module Jekyll
 			ENV['GHCRTS'] = "-N#{number_of_capabilities}"
 			hs_init.call 0, 0
 
-			@markdown_to_ast = function :pandocBridgeMarkdownToAst, %i[voidp size_t voidp size_t voidp voidp], :void
-			@ast_to_html = function :pandocBridgeAstToHtml, %i[voidp size_t voidp size_t voidp voidp], :void
-			@free = function :pandocBridgeFree, %i[voidp], :void
-
 			config = site.config['my_markdown'] || {}
-			options = config['pandoc'] || {}
-			options['from'] ||= 'markdown'
-			options['crossref_yaml'] = YAML.dump(config['pandoc-crossref'] || {}).sub /\A---\n/, ''
-			@options = MessagePack.pack options
+			options = {
+				'pandoc' => config['pandoc'] || {},
+				'crossref' => config['pandoc-crossref'] || {}
+			}
+			options_bytes = MessagePack.pack options
+			function(:pandocBridgeInit, %i[voidp size_t], :void).call(
+				Fiddle::Pointer[options_bytes], options_bytes.bytesize
+			)
+
+			@markdown_to_ast = function :pandocBridgeMarkdownToAst, %i[voidp size_t voidp voidp], :void
+			@ast_to_html = function :pandocBridgeAstToHtml, %i[voidp size_t voidp voidp], :void
+			@free = function :pandocBridgeFree, %i[voidp], :void
 		end
 		Hooks.register(:site, :after_init) { init _1 }
 
@@ -106,7 +109,6 @@ module Jekyll
 			out_length = +?\0 * Fiddle::SIZEOF_SIZE_T
 			function.call(
 				Fiddle::Pointer[input], input.bytesize,
-				Fiddle::Pointer[@options], @options.bytesize,
 				Fiddle::Pointer[out_pointer], Fiddle::Pointer[out_length]
 			)
 			address = out_pointer.unpack1 ?J
