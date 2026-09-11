@@ -1,10 +1,10 @@
-return if ENV['JEKYLL_NO_ARCHIVE']
+return if ENV['JEKYLL_NO_FEED']
 
 module Jekyll::UlyssesZhan
 end
 
 module Jekyll
-	module UlyssesZhan::FeedGeneratorPatches
+	module UlyssesZhan::FeedGeneratorCustomLayoutPatches
 		JekyllFeed::Generator.prepend self
 
 		def feed_source_path

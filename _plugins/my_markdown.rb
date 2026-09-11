@@ -52,11 +52,9 @@ module Jekyll
 		end
 
 		def render content, feed
-			packed = UlyssesZhan::Pandoc.markdown_to_ast content
-			ast = MessagePack.unpack packed
-			ast = UlyssesZhan::PandocFilter.apply ast, feed
-			packed = UlyssesZhan::Katex.render ast, feed
-			UlyssesZhan::Pandoc.ast_to_html(packed).force_encoding 'UTF-8'
+			ast = MessagePack.unpack UlyssesZhan::Pandoc.markdown_to_ast content
+			UlyssesZhan::PandocFilter.apply ast, feed
+			UlyssesZhan::Pandoc.ast_to_html(MessagePack.pack ast).force_encoding 'UTF-8'
 		end
 	end
 
@@ -75,9 +73,8 @@ module Jekyll
 				'pandoc' => config['pandoc'] || {},
 				'crossref' => config['pandoc-crossref'] || {}
 			})
-			function(:pandocBridgeInit, %i[voidp size_t], :void).call(
-				Fiddle::Pointer[options], options.bytesize
-			)
+			# avoid repeated serializations of the same options
+			function(:pandocBridgeInit, %i[voidp size_t], :void).(Fiddle::Pointer[options], options.bytesize)
 
 			@markdown_to_ast = function :pandocBridgeMarkdownToAst, %i[voidp size_t voidp voidp], :void
 			@ast_to_html = function :pandocBridgeAstToHtml, %i[voidp size_t voidp voidp], :void
@@ -106,10 +103,7 @@ module Jekyll
 		def self.call_bridge function, input
 			out_pointer = +?\0 * Fiddle::SIZEOF_VOIDP
 			out_length = +?\0 * Fiddle::SIZEOF_SIZE_T
-			function.call(
-				Fiddle::Pointer[input], input.bytesize,
-				Fiddle::Pointer[out_pointer], Fiddle::Pointer[out_length]
-			)
+			function.(Fiddle::Pointer[input], input.bytesize, Fiddle::Pointer[out_pointer], Fiddle::Pointer[out_length])
 			address = out_pointer.unpack1 ?J
 			length = out_length.unpack1 ?J
 			Fiddle::Pointer.new(address)[0, length]
@@ -118,69 +112,72 @@ module Jekyll
 		end
 	end
 
-	module UlyssesZhan::Katex
-		extend UlyssesZhan::MarkdownUtils
-
-		BUNDLE_PATH = File.expand_path '../_lib/katex-bridge/dist/katex-bridge.js', __dir__
-
-		def self.init site
-			@context = MiniRacer::Context.new
-			@context.eval File.read(BUNDLE_PATH), filename: BUNDLE_PATH
-			@context.call 'setOptions', site.config['my_markdown']&.[]('katex') || {}
-		end
-		Hooks.register(:site, :after_init) { init _1 }
-
-		def self.render ast, feed
-			@context.call feed ? 'renderMathFeed' : 'renderMath', ast
-		end
-	end
-
 	# modifies a Pandoc AST:
 	# - replace code blocks with raw HTML blocks rendered by Rouge
+	# - replace math with raw HTML inlines rendered by KaTeX
 	# - add target="_blank" and rel="external" to external links
 	module UlyssesZhan::PandocFilter
 		extend UlyssesZhan::MarkdownUtils
 
+		KATEX_BRIDGE_BUNDLE_PATH = File.expand_path '../_lib/katex-bridge/dist/katex-bridge.js', __dir__
 		DEFAULT_ROUGE_CONFIG = {
 			formatter: { tag: 'pygments' },
 			lexer_options: {}
 		}.freeze
 
 		def self.init site
-			config = deep_dup site.config['my_markdown']&.[]('rouge') || {}
+			config = site.config['my_markdown']&.[]('rouge') || {}
 			@rouge_config = symbolize_keys({
-				formatter: deep_dup(config['formatter'] || DEFAULT_ROUGE_CONFIG[:formatter]),
-				lexer_options: deep_dup(config['lexer_options'] || DEFAULT_ROUGE_CONFIG[:lexer_options]),
+				formatter: config['formatter'] || DEFAULT_ROUGE_CONFIG[:formatter],
+				lexer_options: config['lexer_options'] || DEFAULT_ROUGE_CONFIG[:lexer_options],
 			})
+			@katex_bridge_bundle = File.read KATEX_BRIDGE_BUNDLE_PATH
+			@katex_config = site.config['my_markdown']&.[]('katex') || {}
 		end
 		Hooks.register(:site, :after_init) { init _1 }
 
 		def self.apply ast, feed
-			ast['blocks'] = walk ast['blocks'], feed
+			walk ast['blocks'], feed
 			ast
 		end
 
 		def self.walk value, feed
 			case value
 			when Array
-				value.map { walk _1, feed }
+				value.map! { walk _1, feed }
 			when Hash
 				case value['t']
 				when 'CodeBlock'
 					return code_block_to_raw value, feed
 				when 'Link'
 					external_link value
+				when 'Math'
+					return math_to_raw value, feed
 				end
-				value.each_key { value[_1] = walk value[_1], feed }
-				value
+				value.transform_values! { walk _1, feed }
 			else
 				value
 			end
 		end
 
+		def self.math_to_raw math, feed
+			attr, tex = math['c']
+			# create one context for each thread to achieve true parallellism, not merely concurrency
+			context = Thread.current[:ulysseszhan_katex_context] ||= new_katex_context
+			html = context.('render', tex, attr['t'] == 'DisplayMath', feed)
+			{ 't' => 'RawInline', 'c' => ['html', html] }
+		end
+
+		def self.new_katex_context
+			MiniRacer::Context.new.tap do |context|
+				context.eval @katex_bridge_bundle, filename: KATEX_BRIDGE_BUNDLE_PATH
+				context.('setOptions', @katex_config) # avoid repeated serializations of the same options
+			end
+		end
+
 		def self.code_block_to_raw code_block, feed
 			attr, code = code_block['c']
-			lang = attr && attr[1] && attr[1].first
+			lang = attr&.[](1)&.first
 			code += ?\n unless code.end_with? ?\n # https://github.com/rouge-ruby/rouge/pull/2274
 			lexer = Rouge::Lexer.find_fancy lang, code, @rouge_config[:lexer_options]
 			lexer ||= Rouge::Lexers::PlainText.new @rouge_config[:lexer_options]
@@ -224,21 +221,19 @@ module Jekyll
 			attr[2] ||= []
 			set_attr attr, 'target', '_blank'
 			rel = (get_attr(attr, 'rel') || '').split
-			rel << 'external' unless rel.include? 'external'
+			rel.push 'external' unless rel.include? 'external'
 			set_attr attr, 'rel', rel.join(' ')
 		end
 
 		def self.get_attr attr, key
-			pair = attr[2].find { |name, _| name == key }
-			pair && pair[1]
+			attr[2].find { |name, _| name == key }&.last
 		end
 
 		def self.set_attr attr, key, value
-			pair = attr[2].find { |name, _| name == key }
-			if pair
+			if pair = attr[2].find { |name, _| name == key }
 				pair[1] = value
 			else
-				attr[2] << [key, value]
+				attr[2].push [key, value]
 			end
 		end
 	end

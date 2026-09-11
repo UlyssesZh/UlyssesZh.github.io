@@ -164,7 +164,6 @@ feed:
     - update
   tags:
     path: /feed/tags/
-  disable_in_development: true
 
 gitalk:
   enable_in_development: false

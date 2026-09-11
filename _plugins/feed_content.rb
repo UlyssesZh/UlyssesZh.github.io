@@ -3,6 +3,8 @@
 # The following patches are for making documents capable of having
 # alternative contents for feed.
 
+return if ENV['JEKYLL_NO_FEED']
+
 module Jekyll::UlyssesZhan
 end
 

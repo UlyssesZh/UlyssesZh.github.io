@@ -4,10 +4,11 @@
 	"private": true,
 	"type": "module",
 	"scripts": {
-		"build": "esbuild src/index.js --bundle --format=iife --global-name=KatexBridge --outfile=dist/katex-bridge.js"
+		"build": "esbuild src/index.js --bundle --format=iife --outfile=dist/katex-bridge.js"
 	},
 	"dependencies": {
 		"@msgpack/msgpack": "^3.0.0",
+		"fastestsmallesttextencoderdecoder": "^1.0.22",
 		"katex": "^0.16.11"
 	},
 	"devDependencies": {
