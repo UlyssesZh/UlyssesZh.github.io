@@ -45,7 +45,7 @@ Pareto sets are common concepts in economics.
 To clarify, I also give the mathematical definition of them here.
 
 Let $P$ be a set and $Q$ be a family of preference relations on $P$.
-Then, $x\in P$ is called a (weak) <dfn>$Q$-Pareto improvement</dfn> of $y\in P$ if $\forall v\in V:x\succeq_vy$,
+Then, $x\in P$ is called a (weak) <dfn>$Q$-Pareto improvement</dfn> of $y\in P$ if $\forall v\in Q:x\succeq_vy$,
 denoted as $x\succsim_Qy$
 (despite the notation, $\succsim_Q$ is *not* necessarily a preference relation on $P$).
 

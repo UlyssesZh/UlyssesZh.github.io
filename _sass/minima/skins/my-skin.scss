@@ -39,6 +39,7 @@ $lm-search-background-color: #fff !default;
 $lm-lineno-color: #777 !default;
 $lm-lineno-background-color: #eeeef0 !default;
 $lm-details-background-color: #fef0f1 !default;
+$lm-details-background-color-2: #f8e4dc !default;
 $lm-local-link-color: #fca25e !default;
 $lm-selection-color: #ffffff !default;
 $lm-selection-background-color: #ffa2a5 !default;
@@ -60,6 +61,7 @@ $dm-search-background-color: #000 !default;
 $dm-lineno-color: #777 !default;
 $dm-lineno-background-color: #202020 !default;
 $dm-details-background-color: #200b15 !default;
+$dm-details-background-color-2: #24160b !default;
 $dm-local-link-color: #fca25e !default;
 $dm-selection-color: #000000 !default;
 $dm-selection-background-color: #be7090 !default;
@@ -129,6 +131,7 @@ $dm-link-image: link-image($dm-heading-color) !default;
 	--lineno-color: #{$lm-lineno-color};
 	--lineno-background-color: #{$lm-lineno-background-color};
 	--details-background-color: #{$lm-details-background-color};
+	--details-background-color-2: #{$lm-details-background-color-2};
 	--local-link-color: #{$lm-local-link-color};
 	--selection-color: #{$lm-selection-color};
 	--selection-background-color: #{$lm-selection-background-color};
@@ -159,6 +162,7 @@ $dm-link-image: link-image($dm-heading-color) !default;
 		--lineno-color: #{$dm-lineno-color};
 		--lineno-background-color: #{$dm-lineno-background-color};
 		--details-background-color: #{$dm-details-background-color};
+		--details-background-color-2: #{$dm-details-background-color-2};
 		--local-link-color: #{$dm-local-link-color};
 		--selection-color: #{$dm-selection-color};
 		--selection-background-color: #{$dm-selection-background-color};
@@ -189,6 +193,7 @@ $search-background-color: var(--search-background-color);
 $lineno-color: var(--lineno-color);
 $lineno-background-color: var(--lineno-background-color);
 $details-background-color: var(--details-background-color);
+$details-background-color-2: var(--details-background-color-2);
 $local-link-color: var(--local-link-color);
 $selection-color: var(--selection-color);
 $selection-background-color: var(--selection-background-color);
@@ -677,6 +682,15 @@ summary {
 	background-color: $details-background-color;
 	&[open] {
 		padding: 8px 8px 0px;
+	}
+	> details {
+		background-color: $details-background-color-2;
+		> details {
+			background-color: $details-background-color;
+			> details {
+				background-color: $details-background-color-2;
+			}
+		}
 	}
 }
 

@@ -19,6 +19,8 @@ Some of my basic (and improbably changing) information:
 - Nationality: **Chinese**.
 - Hometown: **Shanghai**.
 
+You can download [my CV](https://raw.githubusercontent.com/UlyssesZh/cv/pdf/main.pdf).
+
 I am interested in physics, programming, and mathematics.
 I am also interested in other academic fields such as economics, linguistics, etc.
 although I have not studied them seriously.

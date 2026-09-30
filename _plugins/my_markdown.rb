@@ -125,6 +125,8 @@ module Jekyll
 			lexer_options: {}
 		}.freeze
 
+		ToBeFlattened = Struct.new :elements
+
 		def self.init site
 			config = site.config['my_markdown']&.[]('rouge') || {}
 			@rouge_config = symbolize_keys({
@@ -137,14 +139,20 @@ module Jekyll
 		Hooks.register(:site, :after_init) { init _1 }
 
 		def self.apply ast, feed
+			Thread.current[:ulysseszhan_thm_counter] = {}
+			Thread.current[:ulysseszhan_thm_counter_number] = 0
 			walk ast['blocks'], feed
+			post_process
 			ast
 		end
 
 		def self.walk value, feed
 			case value
 			when Array
-				value.map! { walk _1, feed }
+				value.flat_map do |item|
+					item = walk item, feed
+					item.is_a?(ToBeFlattened) ? walk(item.elements, feed) : [item]
+				end
 			when Hash
 				case value['t']
 				when 'CodeBlock'
@@ -153,10 +161,34 @@ module Jekyll
 					external_link value
 				when 'Math'
 					return math_to_raw value, feed
+				when 'Str'
+					new_value = crossref_thm value
+					return ToBeFlattened.new new_value if new_value != [value]
 				end
 				value.transform_values! { walk _1, feed }
 			else
 				value
+			end
+		end
+
+		def self.crossref_thm str_elem
+			str_elem['c'].split(/(\{#thm:[^}]+\}|\[@thm:[^\]]+\])/).map do |part|
+				case part
+				when /^\{#thm:/
+					result = { 't' => 'RawInline' }
+					counter = Thread.current[:ulysseszhan_thm_counter][id = part[2...-1]] ||= { refs: [] }
+					counter.merge! :number => number = Thread.current[:ulysseszhan_thm_counter_number] += 1
+					result.merge! 'c' => ['html', "<span id=\"#{id}\">#{number}</span>"]
+				when /^\[@thm:/
+					counter = Thread.current[:ulysseszhan_thm_counter][id = part[2...-1]] ||= { refs: [] }
+					counter[:refs].push result = {
+						't' => 'Link',
+						'c' => [['', [], []], [{ 't' => 'Str', 'c' => 'missing' }], [?# + id, '']]
+					}
+					result
+				else
+					{ 't' => 'Str', 'c' => part }
+				end
 			end
 		end
 
@@ -234,6 +266,13 @@ module Jekyll
 				pair[1] = value
 			else
 				attr[2].push [key, value]
+			end
+		end
+
+		def self.post_process
+			Thread.current[:ulysseszhan_thm_counter].each do |id, counter|
+				next Jekyll.logger.warn 'Pandoc filter:', "Theorem #{id} is referenced but not defined" unless counter[:number]
+				counter[:refs].each { _1['c'][1][0]['c'] = counter[:number].to_s }
 			end
 		end
 	end
