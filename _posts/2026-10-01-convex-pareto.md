@@ -64,7 +64,8 @@ The complete classification of these properties across all real normed spaces is
 | $\bar P_1^{\mrm f,\mrm b},P_2^{\mrm f,\mrm b}$ | inner product space or strictly convex plane |
 | $P_1^\mrm a$ | inner product space or asymptotically balanced plane |
 | $\bar P_1^\mrm a$ | inner product space or strictly convex asymptotically balanced plane |
-| $P_2^\mrm a,\bar P_2^\mrm a$ | Hilbert space or strictly convex plane |
+| $P_2^\mrm a$ | Hilbert space or strictly convex plane |
+| $\bar P_2^\mrm a$ | Hilbert space or plane |
 
 <p class="no-indent">
 Here, a plane means a two-dimensional real normed space.
@@ -255,12 +256,6 @@ $$\begin{align*}
 </details>
 
 <p class="no-indent">
-**Theorem {#thm:voronoi-cell-closure}.**
-Let $X$ be a strictly convex space and $y\in X\setminus\B0$.
-Then, $\overline{D_y}=\bar D_y$, where $\overline{D_y}$ is the closure of $D_y$.
-</p>
-
-<p class="no-indent">
 **Definition {#thm:subdifferential}.**
 Let $X$ be a normed space. Then, the <dfn>subdifferential</dfn> at $x\in X$ is defined as
 $$\fc Jx\ceq\set{f\in X^*}{\V f\le1,\fc fx=\V x}.$$
@@ -419,6 +414,66 @@ With $\fc{f_0}x=\V x$ and $\V{f_0}\le1$, we have $f_0\in\fc Jx$.
 </details>
 
 <p class="no-indent">
+**Theorem {#thm:voronoi-cell-closure}.**
+Let $X$ be a strictly convex space and $y\in X\setminus\B0$.
+Then, $\overline{D_y}=\bar D_y$, where $\overline{D_y}$ is the closure of $D_y$.
+</p>
+
+<details><summary>Proof</summary>
+
+Because $D_y\subseteq\bar D_y$ and $\bar D_y$ is closed, we have $\overline{D_y}\subseteq\bar D_y$.
+Suppose for contradiction that there exists $u\in\bar D_y\setminus\overline{D_y}$.
+
+Note that
+$$\bar D_y\setminus\overline{D_y}\subseteq\bar D_y\setminus D_y=\set{a\in X}{\V{y-a}=\V a},$$
+so $\V{y-u}=\V u$.
+Because $u\notin\overline{D_y}$, there exists $\dlt>0$ such that $\fc B{u,\dlt}\cap D_y=\varnothing$.
+In other words,
+$$\forall a\in\fc B{u,\dlt}:\V{y-a}\ge\V a.$$
+For any $v\in X\setminus\B0$ and $t\in\p{-\dlt/\V v,\dlt/\V v}$, we have
+$$\V{u+tv-y}\ge\V{u+tv}.$$
+Take the right derivatives of both sides w.r.t. $t$ at $t=0$.
+Theorem [@thm:subdifferential-directional-derivative] guarantees that the derivatives exist:
+$$\max_{f\in\fc J{u-y}}\fc fv=\partial_v\V{u-y}\ge\partial_v\V u=\max_{f\in\fc Ju}\fc fv.$$
+Because $\fc Ju$ is weak\*-compact and convex by Theorem [@thm:subdifferential-properties],
+we have $\fc Ju\subseteq\fc J{u-y}$; otherwise the Hahn--Banach separation theorem breaks the inequality above.
+
+<details><summary>Why $\fc Ju\subseteq\fc J{u-y}$</summary>
+<p>
+Suppose for contradiction that there exists $f_0\in\fc Ju\setminus\fc J{u-y}$.
+Because $\fc J{u-y}$ is weak\*-compact and convex, by the Hahn--Banach separation theorem,
+there exists $v\in X$ (the set of weak\*-continuous linear functionals on $X^*$) such that
+$$\max_{f\in\fc J{u-y}}\fc fv<\fc{f_0}v\le\max_{f\in\fc Ju}\fc fv.$$
+This is a contradiction.
+</p>
+</details>
+
+Now pick any $f\in\fc Ju$.
+By Definition [@thm:subdifferential], we have $\fc fu=\V u$ and $\V f\le 1$.
+Because $\fc Ju\subseteq\fc J{u-y}$, we also have $f\in\fc J{u-y}$, so $\fc f{u-y}=\V{u-y}=\V u$.
+Therefore, the line segment connecting $u$ and $u-y$ is on the sphere with radius $\V u$,
+contradicting with $X$ being strictly convex.
+
+<details><summary>Why the line segment is on the sphere</summary>
+<p>
+We have $\fc fy=\fc fu-\fc f{u-y}=0$.
+Because $\V f\le 1$ by Definition [@thm:subdifferential], we have
+$$\V{u-\fr y2}\ge\V f\fc f{u-\fr y2}\ge\fc f{u-\fr y2}=\V u.$$
+On the other hand, by the triangle inequality, we have
+$$\V{u-\fr y2}\le\fr12\p{\V{u-y}+\V u}=\V u.$$
+Squeezing by the two inequalities, we have $\V{u-y/2}=\V u=\V{u-y}$.
+Because $t\mapsto\V{u+ty}$ is a convex function and it evaluates to the same value at $t=0,-1/2,-1$,
+it must be constant on the interval $\b{-1,0}$.
+Therefore, the line segment connecting $u$ and $u-y$ is on the sphere of radius $\V u$.
+</p>
+</details>
+
+Therefore, $\overline{D_y}=\bar D_y$.
+{% qed %}
+
+</details>
+
+<p class="no-indent">
 **Definition {#thm:birkhoff-james-orthogonality}**
 ([Birkhoff, 1935](https://doi.org/10.1215/S0012-7094-35-00115-6))**.**
 Let $X$ be a normed space, and let $u,v\in X$.
@@ -515,66 +570,6 @@ Take infimum over $t$ on both sides, and we have $\a{x-p,p-a}\ge0$.
 {% qed %}
 </p>
 </details>
-
-<p class="no-indent">
-**Lemma {#thm:finite-subgradient-criterion}.**
-Let $X$ be a normed space, $S\subseteq X$ be a finite set,
-and $x\in X\setminus S$.
-Then, $x\in\fc PS$ iff
-$$0\in\opn{conv}\bigcup_{a\in S}\fc J{x-a},$$
-where $J$ denotes subdifferentials.
-</p>
-
-<details><summary>Proof</summary>
-
-Define
-$$K\ceq\opn{conv}\bigcup_{a\in S}\fc J{x-a}.$$
-Then, $K$ can be expressed as
-$$K=\set{\sum_{a\in S}\lmd_af_a}{\lmd_a\ge0,f_a\in\fc J{x-a},\sum_{a\in S}\lmd_a=1}.$$
-Then, we can see $K$ is weak\*-compact because it is the image of a compact set
-$\Dlt_{n-1}\times\prod_{a\in S}\fc J{x-a}$ (where $\Dlt_{n-1}$ is the unit simplex)
-under a continuous map $\p{\B{\lmd_a},\B{f_a}}\mapsto\sum_{a\in S}\lmd_af_a$.
-
-First prove $0\in K\Rightarrow x\in\fc PS$.
-Suppose for contradiction that $0\in K$ and $y\in\fc I{S,x}$.
-When $0\in K$, there exists $\B{\lmd_a}$ and $\B{f_a}$ such that $\sum_a\lmd_af_a=0$.
-Then, from Equation [@eq:subdifferential-inequality], we have
-$$\V{y-a}\ge\V{x-a}+\fc{f_a}{y-x}.$$
-Multiply both sides by $\lmd_a$ and sum over $a\in S$ to get
-$$\sum_a\lmd_a\V{y-a}\ge\sum_a\lmd_a\V{x-a}+\sum_a\lmd_a\fc{f_a}{y-x}=\sum_a\lmd_a\V{x-a}.$$ {#eq:finite-subgradient-criterion-1}
-On the other hand, $y\in\fc I{S,x}$ implies $\V{y-a}<\V{x-a}$ for all $a\in S$.
-Multiply both sides by $\lmd_a$ and sum over $a\in S$ to get
-$$\sum_a\lmd_a\V{y-a}<\sum_a\lmd_a\V{x-a}.$$ {#eq:finite-subgradient-criterion-2}
-Equations [@eq:finite-subgradient-criterion-1] and [@eq:finite-subgradient-criterion-2] contradict each other.
-
-Then prove $0\notin K\Rightarrow x\in\fc PS$.
-When $0\notin K$, by the
-[Hahn--Banach separation theorem](https://en.wikipedia.org/wiki/Hahn%E2%80%93Banach_theorem#Geometric_Hahn%E2%80%93Banach_(the_Hahn%E2%80%93Banach_separation_theorems)),
-because $K$ is weak\*-compact and convex,
-there exists $v\in X$ (understand $X$ as the set of weak\*-continuous linear functionals on $X^*$) such that
-$-\veps\ceq\sup_{g\in K}\fc gv<0$.
-For any $a\in S$, because $\fc J{x-a}\subseteq K$,
-it then follows that $\forall f\in\fc J{x-a}:\fc fv\le-\veps$.
-Using Theorem [@thm:subdifferential-directional-derivative], we have
-$$\partial_v\V{x-a}=\max_{f\in\fc J{x-a}}\fc fv\le-\veps.$$
-Using Definition [@thm:directional-derivative], we can see that there exists $\dlt_a>0$ such that,
-for any $t\in\p{0,\dlt_a}$,
-$$\fr{\V{x+tv-a}-\V{x-a}}t<-\fr\veps2.$$
-Now pick $y\ceq x+tv$ for some $t\in\p{0,\min_{a\in S}\dlt_a}$.
-Then, for any $a\in S$, we have
-$$\V{y-a}=\V{x+tv-a}<\V{x-a}-t\fr\veps2<\V{x-a},$$
-so $y\in\fc I{S,x}$.
-{% qed %}
-
-</details>
-
-<p class="no-indent">
-**Lemma {#thm:smooth-to-bj-additive}**
-([Diestel, 1975](https://doi.org/10.1007/BFb0082079), Chapter 2, Section 1, Theorem 4)**.**
-A normed space $X$ is smooth iff its Birkhoff--James orthogonality is right additive,
-i.e.,
-$$\forall x,y,z\in X:x\perp_\mrm{BJ}y\land x\perp_\mrm{BJ}z\Rightarrow x\perp_\mrm{BJ}y+z.$$
-</p>
 
 <p class="no-indent">
 **Lemma {#thm:continuous-subgradient-to-frechet-differentiable}**
@@ -793,11 +788,10 @@ Therefore, $x+tv\in\fc I{S,x}$, so $\fc I{S,x}\ne\varnothing$, proving $P_2^\mrm
 </details>
 
 <p class="no-indent">
-**Theorem {#thm:p2f-to-inner-product}.**
+**Theorem {#thm:bar-p2f-to-inner-product}.**
 Let $X$ be a normed space with $\dim X\ge3$.
-If $X$ satisfies $P_2^\mrm f$, then $X$ is an inner product space.
+If $X$ satisfies $\bar P_2^\mrm f$, then $X$ is an inner product space.
 </p>
-<!-- TODO: can this be strenthened to $\bar P_2^\mrm f$? -->
 
 <details><summary>Proof</summary>
 
@@ -814,13 +808,23 @@ Therefore, $\V{\fc jx}=1$, so $\fc jx\in S_{X^*}$.
 </p>
 </details>
 
-By $P_2^\mrm f$, we have $0\notin\opn{conv}S\Rightarrow0\notin\fc PS$
-for any finite set $S\subseteq S_X$.
-Combining it with Lemma [@thm:finite-subgradient-criterion], we have
-$0\notin\opn{conv}S\Rightarrow0\notin\opn{conv}\bigcup_{a\in S}\fc Ja$
-(I replaced $\fc J{-a}$ with $\fc Ja$ because I am allowed to do that by the oddness of $J$).
-Because $\fc jS\subseteq\bigcup_{a\in S}\fc Ja$, we have
-$$0\notin\opn{conv}S\Rightarrow0\notin\opn{conv}\fc jS.$$ {#eq:preserve-hemisphere}
+We claim
+$$0\notin\opn{conv}S\Rightarrow0\notin\opn{conv}\fc jS$$ {#eq:preserve-hemisphere}
+for finite $S\subseteq S_X$.
+Suppose for contradiction that $0\notin\opn{conv}S$ and $0\in\opn{conv}\fc jS$.
+Then, there exist $\B{\lmd_a}$ such that $\sum_{a\in S}\lmd_a\fc ja=0$,
+that $\sum_{a\in S}\lmd_a=1$, and that $\lmd_a\ge0$ for any $a\in S$.
+By $\bar P_2^\mrm f$, there exists $y\in\fc{\bar I}{S,0}\setminus\B0$ such that
+$$\forall a\in S:\V{y-a}\le\V a.$$
+By Equation [@eq:subdifferential-inequality],
+$$\V{y-a}\ge\V{-a}+\fc{\fc j{-a}}y=\V a-\fc{\fc ja}y.$$
+We then have
+$$\fc{\fc ja}y\ge\V a-\V{y-a}\ge0.$$
+Because $\sum_a\lmd_a\fc ja=0$, we must have $\lmd_a>0\Rightarrow\fc{\fc ja}y=0$.
+Thus,
+$$\lmd_a>0\Rightarrow\V{y-a}=\V a=1.$$
+
+TODO: find a contradiction.
 
 With that, we can also prove that $j$ is injective.
 Suppose that $\fc jx=\fc jy$ for some $x,y\in S_X$.
@@ -881,53 +885,9 @@ One can then know that $\fc{j'}x\in\fc Jx$ by Equation [@eq:subdifferential-scal
 By Lemma [@thm:continuous-subgradient-to-frechet-differentiable],
 $\V\cdot$ is Fr&eacute;chet differentiable on $X\setminus\B0$.
 
-By Equation [@eq:subdifferential-inequality] and Definition [@thm:birkhoff-james-orthogonality],
-we know that $\forall x,y\in X:\fc{\fc Tx}y=0\Rightarrow x\perp_\mrm{BJ}y$.
-When $x,y$ are linearly independent, they span a strictly convex plane
-(strict convexity by Theorem [@thm:not-strictly-convex-to-not-p2f] and $P_2^\mrm f$),
-so if $x\perp_\mrm{BJ}y$, then $x$ is the unique vector in this plane up to a scalar multiple
-such that $x\perp_\mrm{BJ}y$ by Theorem [@thm:bj-orthogonal-existence].
-This makes $\forall x,y\in X:x\perp_\mrm{BJ}y\Rightarrow\fc{\fc Tx}y=0$.
-We have thus proven that $\forall x,y\in X:\fc{\fc Tx}y=0\Leftrightarrow x\perp_\mrm{BJ}y$.
-By the linearity of $\fc Tx$, we have that the Birkhoff--James orthogonality is right additive.
-Then, by Lemma [@thm:smooth-to-bj-additive], $X$ is smooth.
-
-<details><summary>Details on $\fc{\fc Tx}y=0\Rightarrow x\perp_\mrm{BJ}y$</summary>
-<p>
-The case when $x=0$ is trivial, and we assume $x\ne0$ from here.
-We then have $\hat x\ceq x/\V x\in S_X$.
-When $\fc{\fc Tx}y=0$, by Equation [@eq:linear-isomorphism], we have $\fc{\fc j{\hat x}}y=0$.
-By Equation [@eq:subdifferential-inequality], for any $t\in\bR$, we have
-$$\V{\hat x+ty}\ge\V{\hat x}+\fc{\fc j{\hat x}}{ty}=\V{\hat x},$$
-so $\hat x\perp_\mrm{BJ}y$ by Definition [@thm:birkhoff-james-orthogonality].
-We then have $x\perp_\mrm{BJ}y$.
-</p>
-</details>
-
-<details><summary>Details on $x\perp_\mrm{BJ}y\Rightarrow\fc{\fc Tx}y=0$</summary>
-<p>
-The case when $x=0$ or $y=0$ is trivial, and we assume $x,y\ne0$ from here.
-Denote $\hat x\ceq x/\V x\in S_X$ and $\hat y\ceq y/\V y\in S_X$.
-When $x\perp_\mrm{BJ}y$, we have $\hat x\perp_\mrm{BJ}\hat y$.
-By Theorem [@thm:bj-orthogonal-existence], $\hat x,\hat y$ are linearly independent,
-so they span a plane $W\subseteq X$.
-By Theorem [@thm:not-strictly-convex-to-not-p2f] and $P_2^\mrm f$, $W$ is strictly convex.
-Then, by Theorem [@thm:bj-orthogonal-existence], $\hat x$ is the unique vector in $W$ up to a scalar multiple
-such that $\hat x\perp_\mrm{BJ}\hat y$.
-Now let us solve the equation $\fc{\fc T{\hat x+t\hat y}}{\hat y}=0$ for $t\in\bR$.
-By Equation [@eq:linear-isomorphism] and Definition [@thm:subdifferential], we have
-$$\fc{\fc T{\hat y}}{\hat y}=\V{\hat y}\fc\lmd{\hat y}\fc{\fc j{\hat y}}{\hat y}
-=\V{\hat y}\fc\lmd{\hat y}\V{\hat y}\ne0.$$
-Therefore, the solution to $t$ exists and is unique:
-$$t=-\fr{\fc{\fc T{\hat x}}{\hat y}}{\fc{\fc T{\hat y}}{\hat y}}.$$
-Now because $\fc{\fc T{\hat x+t\hat y}}{\hat y}=0$, we have $\hat x+t\hat y\perp_\mrm{BJ}\hat y$,
-this means that $\hat x+t\hat y$ is a scalar multiple of $\hat x$,
-and this is only possible when $t=0$ because $\hat x,\hat y$ are linearly independent.
-Therefore, we have $\fc{\fc T{\hat x}}{\hat y}=0$, which is equivalent to $\fc{\fc Tx}y=0$.
-</p>
-</details>
-
-Because $X$ is smooth, by Definition [@thm:subdifferential],
+When a function is Fr&eacute;chet differentiable,
+its Fr&eacute;chet derivative must match the directional derivatives.
+This forces $X$ to be smooth, i.e.,
 for any $x\in X\setminus\B0$, $\fc{j'}x$ is the only element in $\fc Jx$.
 By Equation [@eq:subdifferential-directional-derivative],
 and because the Fr&eacute;chet derivative agrees with the directional derivative if the former exists,
@@ -1463,10 +1423,23 @@ We then have $\opn{\overline{conv}}S=\opn{conv}\overline S$.
 
 </details>
 
-Because $S\subseteq D_y$, we have
-$\overline S\subseteq\overline{D_y}$, where $\overline{D_y}$ is the closure of $D_y$.
 Set up a bisector coordinate system with $y$ as the descent direction.
 Denote the bisector direction as $u$.
+We can always choose $u$ so that $\forall t\in\p{0,+\infty}:\V{u+ty}>\V u$.
+
+<details><summary>Why we can choose $u$ so that $\forall t\in\p{0,+\infty}:\V{u+ty}>\V u$</summary>
+<p>
+Let $u'\in X\setminus\B0$ such that $u'\perp_\mrm{BJ}y$.
+By Definition [@thm:birkhoff-james-orthogonality], we have $\forall t\in\bR:\V{u'+ty}\ge\V{u'}$.
+Define $T\ceq\set{t\in\bR}{\V{u'+ty}=\V{u'}}$.
+Because $t\mapsto\V{u'+ty}$ is continuous, $T$ is closed.
+Define $u\ceq u'+y\max T$.
+We can easily see that $u\perp_\mrm{BJ}y$ and $\forall t\in\p{0,+\infty}:\V{u+ty}>\V u$.
+</p>
+</details>
+
+Because $S\subseteq D_y$, we have
+$\overline S\subseteq\overline{D_y}$, where $\overline{D_y}$ is the closure of $D_y$.
 By Lemma [@thm:bisector-function-nonnegative] and Lemma [@thm:voronoi-cell-descent-coordinate],
 we have
 $$D_y=\set{ru+sy}{s>\fc\beta r}\subseteq H\ceq\set{ru+sy}{s>0}.$$
@@ -1488,17 +1461,11 @@ However, $\fc I{S,0}$ cannot contain $0$ by definition, so this is a contradicti
 For the second case, at least two $a_i$ are different points.
 Because $\sum_i\lmd_i\fc{\pi_r}{a_i}=0$,
 there must exist $i$ with $\fc{\pi_r}{a_i}<0$ and another $i$ with $\fc{\pi_r}{a_i}>0$.
-Without loss of generality, suppose that $\fc{\pi_r}{a_1}<0$ and $\fc{\pi_r}{a_2}>0$.
-Then, because $a_1,a_2\in\overline{D_y}\subseteq\bar D_y$, we have
-$\V{a_1-y}\le\V{a_1}$ and $\V{a_2-y}\le\V{a_2}$.
-Adding them together gives
-$$\V{a_1-y}+\V{a_2-y}\le\V{a_1}+\V{a_2}=\p{\v{\fc{\pi_r}{a_1}}+\v{\fc{\pi_r}{a_2}}}\V u
-=\V{a_1-a_2}.$$
-By the triangle inequality,
-$$\V{a_1-y}+\V{a_2-y}\ge\V{a_1-a_2}.$$
-Therefore, we have $\V{a_1-y}+\V{a_2-y}=\V{a_1-a_2}$, which means $y$ is also on $\bR u$,
-but this is impossible because we dictate $u,y$ to be linearly independent
-in the definition of the bisector coordinate system, so this is a contradiction.
+Without loss of generality, suppose that $\fc{\pi_r}{a_1}<0$.
+Then, because $a_1\in\overline{D_y}\subseteq\bar D_y$, we have $\V{a_1-y}\le\V{a_1}$.
+On the other hand, since $\forall t\in\p{0,+\infty}:\V{u+ty}>\V u$, we have
+$$\V{a_1-y}=\v{\fc{\pi_r}{a_1}}\V{u-\fr1{\fc{\pi_r}{a_1}}y}>\v{\fc{\pi_r}{a_1}}\V u=\V{a_1}.$$
+This gives a contradiction.
 
 Either way, we have a contradiction, so $\fc I{S,0}=\varnothing$.
 {% qed %}
@@ -1564,7 +1531,8 @@ $$\V{a_1-y}+\V{a_2-y}\le\V{a_1}+\V{a_2}=\p{\v{\fc{\pi_r}{a_1}}+\v{\fc{\pi_r}{a_2
 =\V{a_1-a_2}.$$
 By the triangle inequality,
 $$\V{a_1-y}+\V{a_2-y}\ge\V{a_1-a_2}.$$
-Therefore, we have $\V{a_1-y}+\V{a_2-y}=\V{a_1-a_2}$, which means $y$ is also on $\bR u$,
+Therefore, we have $\V{a_1-y}+\V{a_2-y}=\V{a_1-a_2}$,
+which means $y$ is also on $\bR u$ since $X$ is strictly convex,
 but this is impossible because we dictate $u,y$ to be linearly independent
 in the definition of the bisector coordinate system, so this is a contradiction.
 
@@ -1698,3 +1666,65 @@ By Definition [@thm:voronoi-cell], we can easily see $x+v\in\fc I{S,x}$.
 {% qed %}
 
 </details>
+
+<p class="no-indent">
+**Theorem {#thm:2d-to-bar-p2a}.**
+A normed plane satisfies $\bar P_2^\mrm a$.
+</p>
+
+<details><summary>Proof</summary>
+
+Let $X$ be a normed plane.
+We need to prove that for any $S\subseteq X$ and $x\in X$ such that $x\notin\opn{\overline{conv}}S$,
+we have $\fc{\bar I}{S,x}\setminus\B x\ne\varnothing$.
+
+Define $C\ceq\opn{\overline{conv}}S-x$, and we have $0\notin C$.
+Because $C$ is a closed convex set, by the
+[Hahn--Banach separation theorem](https://en.wikipedia.org/wiki/Hahn%E2%80%93Banach_theorem#Geometric_Hahn%E2%80%93Banach_(the_Hahn%E2%80%93Banach_separation_theorems)),
+there exists $f'\in X^*$ and $\dlt\in\p{0,+\infty}$ such that
+$\forall a\in C:\fc{f'}a\ge\dlt$.
+Define $f\ceq f'/\dlt$, and we have $\forall a\in C:\fc fa\ge1$.
+
+Pick any $u\in\opn{ker}f\setminus\{0\}$.
+By Theorem [@thm:bj-orthogonal-existence], there exists $v'\in X\setminus\B0$ such that $u\perp_\mrm{BJ}v'$.
+Because $u,v'$ are linearly independent, $v'\notin\opn{ker}f$, so $\fc f{v'}\ne0$.
+Define $v\ceq v'/\fc f{v'}$.
+Because Birkhoff--James orthogonality is invariant under scalar multiplication,
+we still have $u\perp_\mrm{BJ}v$.
+Also, we have $\fc fv=1$.
+
+Set up a bisector coordinate system with basis $\B{u,v}$.
+Any $a\in C$ can be expressed as $a=ru+sv$ for some $r,s\in\bR$.
+Then, $\fc fa\ge1$ can be expressed as $\forall ru+sv\in C:s\ge1$.
+Because $u\perp_\mrm{BJ}v$, we have $\V{ru+sv}\ge\V{ru}$ for all $r,s\in\bR$.
+Therefore, $s\mapsto\V{ru+sv}$ achieves its global minimum at $s=0$.
+Because it is a convex function, it is monotonically non-decreasing on $\left[0,+\infty\right)$.
+Then, for any $a\in C$,
+$$\V{a-v}=\V{ru+\p{s-1}v}\le\V{ru+sv}=\V a.$$
+We can then see that $x+v\in\fc{\bar I}{S,x}$.
+This proves $\bar P_2^\mrm a$.
+{% qed %}
+
+</details>
+
+## Summary
+
+The following table lists the required theorems for completely characterizing the normed spaces
+that satisfy each of the properties $P_{1,2}^{\mrm f,b,a}$ and $\bar P_{1,2}^{\mrm f,b,a}$.
+This makes sure that any space matching the characterization satisfies the property
+and that any space not matching the characterization does not satisfy the property.
+
+| Property | Sufficiency | Necessity |
+|-|-|-|
+| $P_1^\mrm f$ | [@thm:inner-product-to-bar-p1a], [@thm:2d-to-p1b] | [@thm:not-inner-product-to-not-p1f] |
+| $P_1^\mrm b$ | [@thm:inner-product-to-bar-p1a], [@thm:2d-to-p1b] | [@thm:not-inner-product-to-not-p1f] |
+| $P_1^\mrm a$ | [@thm:inner-product-to-bar-p1a], [@thm:asymptotically-balanced-to-p1a] | [@thm:not-inner-product-to-not-p1f], [@thm:not-asymptotically-balanced-to-not-p1a] |
+| $P_2^\mrm f$ | [@thm:inner-product-to-p2b], [@thm:2d-strictly-convex-to-p2a] | [@thm:not-strictly-convex-to-not-p2f], [@thm:bar-p2f-to-inner-product] |
+| $P_2^\mrm b$ | [@thm:inner-product-to-p2b], [@thm:2d-strictly-convex-to-p2a] | [@thm:not-strictly-convex-to-not-p2f], [@thm:bar-p2f-to-inner-product] |
+| $P_2^\mrm a$ | [@thm:hilbert-to-p2a], [@thm:2d-strictly-convex-to-p2a] | [@thm:not-strictly-convex-to-not-p2f], [@thm:not-hilbert-to-not-bar-p2a], [@thm:bar-p2f-to-inner-product] |
+| $\bar P_1^\mrm f$ | [@thm:inner-product-to-bar-p1a], [@thm:strictly-convex-2d-to-bar-p1b] | [@thm:not-strictly-convex-to-not-bar-p1f], [@thm:not-inner-product-to-not-p1f] |
+| $\bar P_1^\mrm b$ | [@thm:inner-product-to-bar-p1a], [@thm:strictly-convex-2d-to-bar-p1b] | [@thm:not-strictly-convex-to-not-bar-p1f], [@thm:not-inner-product-to-not-p1f] |
+| $\bar P_1^\mrm a$ | [@thm:inner-product-to-bar-p1a], [@thm:strictly-convex-asymptotically-balanced-to-bar-p1a] | [@thm:not-strictly-convex-to-not-bar-p1f], [@thm:not-inner-product-to-not-p1f], [@thm:not-asymptotically-balanced-to-not-p1a] |
+| $\bar P_2^\mrm f$ | [@thm:inner-product-to-p2b], [@thm:2d-to-bar-p2a] | [@thm:bar-p2f-to-inner-product] |
+| $\bar P_2^\mrm b$ | [@thm:inner-product-to-p2b], [@thm:2d-to-bar-p2a] | [@thm:bar-p2f-to-inner-product] |
+| $\bar P_2^\mrm a$ | [@thm:hilbert-to-p2a], [@thm:2d-to-bar-p2a] | [@thm:not-hilbert-to-not-bar-p2a], [@thm:bar-p2f-to-inner-product] |
