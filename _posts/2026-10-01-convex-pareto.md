@@ -60,10 +60,12 @@ The complete classification of these properties across all real normed spaces is
 
 | Property | Characterization |
 |-|-|
-| $P_1^{\mrm f,\mrm b},\bar P_2^{\mrm f,\mrm b}$ | inner product space or plane |
+| $P_1^{\mrm f,\mrm b}$ | inner product space or plane |
 | $\bar P_1^{\mrm f,\mrm b},P_2^{\mrm f,\mrm b}$ | inner product space or strictly convex plane |
 | $P_1^\mrm a$ | inner product space or asymptotically balanced plane |
 | $\bar P_1^\mrm a$ | inner product space or strictly convex asymptotically balanced plane |
+| $\bar P_2^\mrm f$ | ? (between: inner product space or plane; infinite-dimensional space or inner product space or plane) |
+| $\bar P_2^\mrm b$ | ? (between: inner product space or plane; infinite-dimensional space or inner product space or plane) |
 | $P_2^\mrm a$ | Hilbert space or strictly convex plane |
 | $\bar P_2^\mrm a$ | Hilbert space or plane |
 
@@ -414,6 +416,28 @@ With $\fc{f_0}x=\V x$ and $\V{f_0}\le1$, we have $f_0\in\fc Jx$.
 </details>
 
 <p class="no-indent">
+**Theorem {#thm:share-subgradient-to-not-strictly-convex}.**
+Let $X$ be a normed space.
+If there exists two distinct points $u,v\in X\setminus\B0$ such that $\fc Ju\cap\fc Jv\ne\varnothing$,
+then $X$ is not strictly convex.
+</p>
+
+<details><summary>Proof</summary>
+<p>
+Let $f\in\fc Ju\cap\fc Jv$.
+Define $\hat u\ceq u/\V u$ and $\hat v\ceq v/\V v$.
+Then, $\fc f{\hat u}=\fc f{\hat v}=1$.
+Because $\V f\le 1$, we have
+$$\V{\hat u+\hat v}\ge\V f\fc f{\hat u+\hat v}\ge\fc f{\hat u+\hat v}=2.$$
+On the other hand, by the triangle inequality, we have
+$$\V{\hat u+\hat v}\le\V{\hat u}+\V{\hat v}=2.$$
+Squeezing by the two inequalities, we have $\V{\hat u+\hat v}=2$.
+This means $X$ is not strictly convex.
+{% qed %}
+</p>
+</details>
+
+<p class="no-indent">
 **Theorem {#thm:voronoi-cell-closure}.**
 Let $X$ be a strictly convex space and $y\in X\setminus\B0$.
 Then, $\overline{D_y}=\bar D_y$, where $\overline{D_y}$ is the closure of $D_y$.
@@ -448,27 +472,9 @@ This is a contradiction.
 </p>
 </details>
 
-Now pick any $f\in\fc Ju$.
-By Definition [@thm:subdifferential], we have $\fc fu=\V u$ and $\V f\le 1$.
-Because $\fc Ju\subseteq\fc J{u-y}$, we also have $f\in\fc J{u-y}$, so $\fc f{u-y}=\V{u-y}=\V u$.
-Therefore, the line segment connecting $u$ and $u-y$ is on the sphere with radius $\V u$,
-contradicting with $X$ being strictly convex.
-
-<details><summary>Why the line segment is on the sphere</summary>
-<p>
-We have $\fc fy=\fc fu-\fc f{u-y}=0$.
-Because $\V f\le 1$ by Definition [@thm:subdifferential], we have
-$$\V{u-\fr y2}\ge\V f\fc f{u-\fr y2}\ge\fc f{u-\fr y2}=\V u.$$
-On the other hand, by the triangle inequality, we have
-$$\V{u-\fr y2}\le\fr12\p{\V{u-y}+\V u}=\V u.$$
-Squeezing by the two inequalities, we have $\V{u-y/2}=\V u=\V{u-y}$.
-Because $t\mapsto\V{u+ty}$ is a convex function and it evaluates to the same value at $t=0,-1/2,-1$,
-it must be constant on the interval $\b{-1,0}$.
-Therefore, the line segment connecting $u$ and $u-y$ is on the sphere of radius $\V u$.
-</p>
-</details>
-
-Therefore, $\overline{D_y}=\bar D_y$.
+We then have $\fc Ju\cap\fc J{u-y}\ne\varnothing$.
+By Theorem [@thm:share-subgradient-to-not-strictly-convex],
+$X$ is not strictly convex, a contradiction.
 {% qed %}
 
 </details>
@@ -788,9 +794,9 @@ Therefore, $x+tv\in\fc I{S,x}$, so $\fc I{S,x}\ne\varnothing$, proving $P_2^\mrm
 </details>
 
 <p class="no-indent">
-**Theorem {#thm:bar-p2f-to-inner-product}.**
+**Theorem {#thm:p2f-to-inner-product}.**
 Let $X$ be a normed space with $\dim X\ge3$.
-If $X$ satisfies $\bar P_2^\mrm f$, then $X$ is an inner product space.
+If $X$ satisfies $P_2^\mrm f$, then $X$ is an inner product space.
 </p>
 
 <details><summary>Proof</summary>
@@ -822,9 +828,11 @@ We then have
 $$\fc{\fc ja}y\ge\V a-\V{y-a}\ge0.$$
 Because $\sum_a\lmd_a\fc ja=0$, we must have $\lmd_a>0\Rightarrow\fc{\fc ja}y=0$.
 Thus,
-$$\lmd_a>0\Rightarrow\V{y-a}=\V a=1.$$
-
-TODO: find a contradiction.
+$$\lmd_a>0\Rightarrow\V{y-a}=\V a=1=\fc{\fc ja}a=-\fc{\fc ja}{y-a}.$$
+Therefore, $\lmd_a>0\Rightarrow-\fc ja\in\fc J{-a}\cap\fc J{y-a}$.
+By Theorem [@thm:share-subgradient-to-not-strictly-convex],
+$X$ is not strictly convex, a contradiction.
+Therefore, Equation [@eq:preserve-hemisphere] is true.
 
 With that, we can also prove that $j$ is injective.
 Suppose that $\fc jx=\fc jy$ for some $x,y\in S_X$.
@@ -956,6 +964,26 @@ Comparing this with Equation [@eq:linear-isomorphism], we can see that
 $\lmd$ is a constant function $x\mapsto\lmd_0$, and therefore $\lmd_0$ is positive.
 This means that the norm is induced by the bilinear form $\lmd_0\fc{\fc T\cdot}\cdot$, so $X$ is an inner product space.
 {% qed %}
+
+</details>
+
+<p class="no-indent">
+**Theorem {#thm:finite-dimension-not-inner-product-to-not-bar-p2f}.**
+Let $X$ be a normed space with $3\le\dim X<\infty$.
+If $X$ is not an inner product space, then $X$ does not satisfy $\bar P_2^\mrm f$.
+</p>
+
+<details><summary>Proof</summary>
+
+</details>
+
+<p class="no-indent">
+**Theorem {#thm:bar-p2a-to-inner-product}.**
+Let $X$ be a normed space with $\dim X\ge3$.
+If $X$ satisfies $\bar P_2^\mrm a$, then $X$ is an inner product space.
+</p>
+
+<details><summary>Proof</summary>
 
 </details>
 
@@ -1719,12 +1747,21 @@ and that any space not matching the characterization does not satisfy the proper
 | $P_1^\mrm f$ | [@thm:inner-product-to-bar-p1a], [@thm:2d-to-p1b] | [@thm:not-inner-product-to-not-p1f] |
 | $P_1^\mrm b$ | [@thm:inner-product-to-bar-p1a], [@thm:2d-to-p1b] | [@thm:not-inner-product-to-not-p1f] |
 | $P_1^\mrm a$ | [@thm:inner-product-to-bar-p1a], [@thm:asymptotically-balanced-to-p1a] | [@thm:not-inner-product-to-not-p1f], [@thm:not-asymptotically-balanced-to-not-p1a] |
-| $P_2^\mrm f$ | [@thm:inner-product-to-p2b], [@thm:2d-strictly-convex-to-p2a] | [@thm:not-strictly-convex-to-not-p2f], [@thm:bar-p2f-to-inner-product] |
-| $P_2^\mrm b$ | [@thm:inner-product-to-p2b], [@thm:2d-strictly-convex-to-p2a] | [@thm:not-strictly-convex-to-not-p2f], [@thm:bar-p2f-to-inner-product] |
-| $P_2^\mrm a$ | [@thm:hilbert-to-p2a], [@thm:2d-strictly-convex-to-p2a] | [@thm:not-strictly-convex-to-not-p2f], [@thm:not-hilbert-to-not-bar-p2a], [@thm:bar-p2f-to-inner-product] |
+| $P_2^\mrm f$ | [@thm:inner-product-to-p2b], [@thm:2d-strictly-convex-to-p2a] | [@thm:not-strictly-convex-to-not-p2f], [@thm:p2f-to-inner-product] |
+| $P_2^\mrm b$ | [@thm:inner-product-to-p2b], [@thm:2d-strictly-convex-to-p2a] | [@thm:not-strictly-convex-to-not-p2f], [@thm:p2f-to-inner-product] |
+| $P_2^\mrm a$ | [@thm:hilbert-to-p2a], [@thm:2d-strictly-convex-to-p2a] | [@thm:not-strictly-convex-to-not-p2f], [@thm:not-hilbert-to-not-bar-p2a], [@thm:p2f-to-inner-product] |
 | $\bar P_1^\mrm f$ | [@thm:inner-product-to-bar-p1a], [@thm:strictly-convex-2d-to-bar-p1b] | [@thm:not-strictly-convex-to-not-bar-p1f], [@thm:not-inner-product-to-not-p1f] |
 | $\bar P_1^\mrm b$ | [@thm:inner-product-to-bar-p1a], [@thm:strictly-convex-2d-to-bar-p1b] | [@thm:not-strictly-convex-to-not-bar-p1f], [@thm:not-inner-product-to-not-p1f] |
 | $\bar P_1^\mrm a$ | [@thm:inner-product-to-bar-p1a], [@thm:strictly-convex-asymptotically-balanced-to-bar-p1a] | [@thm:not-strictly-convex-to-not-bar-p1f], [@thm:not-inner-product-to-not-p1f], [@thm:not-asymptotically-balanced-to-not-p1a] |
-| $\bar P_2^\mrm f$ | [@thm:inner-product-to-p2b], [@thm:2d-to-bar-p2a] | [@thm:bar-p2f-to-inner-product] |
-| $\bar P_2^\mrm b$ | [@thm:inner-product-to-p2b], [@thm:2d-to-bar-p2a] | [@thm:bar-p2f-to-inner-product] |
-| $\bar P_2^\mrm a$ | [@thm:hilbert-to-p2a], [@thm:2d-to-bar-p2a] | [@thm:not-hilbert-to-not-bar-p2a], [@thm:bar-p2f-to-inner-product] |
+| $\bar P_2^\mrm f$ | [@thm:inner-product-to-p2b], [@thm:2d-to-bar-p2a] | [@thm:finite-dimension-not-inner-product-to-not-bar-p2f] |
+| $\bar P_2^\mrm b$ | [@thm:inner-product-to-p2b], [@thm:2d-to-bar-p2a] | [@thm:finite-dimension-not-inner-product-to-not-bar-p2f] |
+| $\bar P_2^\mrm a$ | [@thm:hilbert-to-p2a], [@thm:2d-to-bar-p2a] | [@thm:not-hilbert-to-not-bar-p2a], [@thm:bar-p2a-to-inner-product] |
+
+## Open problem
+
+What are the exact characterizations of infinite-dimensional normed spaces
+satisfying $\bar P_2^\mrm f$ and $\bar P_2^\mrm b$?
+
+What is certain is that their characterizations must be different.
+This is because $c_0$ (real sequences converging to $0$) with the supremum norm
+satisfies $\bar P_2^\mrm b$ but not $\bar P_2^\mrm f$.
