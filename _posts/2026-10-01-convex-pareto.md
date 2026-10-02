@@ -585,6 +585,31 @@ Then, $\V\cdot$ is [Fr&eacute;chet differentiable](https://en.wikipedia.org/wiki
 at $x_0\in S_X$
 iff there exists a map $j:S_X\to S_{X^*}$ continuous at $x_0$ such that $\forall x\in S_X:\fc jx\in\fc Jx$.
 </p>
+
+<p class="no-indent">
+**Lemma {#thm:finite-restricting-set}.**
+Let $X$ be a finite-dimensional normed space.
+For any nonempty compact convex set $S\subseteq X$,
+there exists a finite set $S'\subseteq S$ such that $S'-y\subseteq S\Rightarrow y=0$.
+</p>
+
+<details><summary>Proof</summary>
+
+Let $W\ceq\opc{span}{S-S}$ and choose a basis $B^*$ on $W^*$.
+For each $\phi\in B^*$, choose $p^-_\phi\in S$ that minimizes $\phi$
+and choose $p^+_\phi\in S$ that maximizes $\phi$.
+Such points must exist because $S$ is compact.
+
+Define $S'\ceq\set{p^-_\phi,p^+_\phi}{\phi\in B^*}$.
+Suppose $S'-y\subseteq S$.
+Obviously, $y\in W$.
+For every $\phi\in B^*$, we have
+$$\fc\phi{p^+_\phi-y}\le\fc\phi{p^+_\phi},\qquad
+\fc\phi{p^-_\phi-y}\ge\fc\phi{p^-_\phi}.$$
+The two inequalities forces $\fc\phi y=0$, so $y=0$.
+{% qed %}
+
+</details>
 </details>
 
 <p class="no-indent">
@@ -975,6 +1000,42 @@ If $X$ is not an inner product space, then $X$ does not satisfy $\bar P_2^\mrm f
 
 <details><summary>Proof</summary>
 
+Because $X$ is not an inner product space, $X^*$ is not an inner product space.
+By Theorem [@thm:not-inner-product-to-not-p1f], $X^*$ does not satisfy $P_1^\mrm f$.
+This means there exists $h\in X^*$ and a finite set $S^*\subseteq D_h$ such that $0\in\opn{conv}S^*$.
+There exists $\B{\lmd_f}$ such that $\lmd_f\ge0$ for every $f\in S^*$, that $\sum_{f\in S^*}\lmd_f=1$,
+and that $\sum_{f\in S^*}\lmd_ff=0$.
+Without loss of generality, we can assume $\lmd_f>0$ for every $f\in S^*$ because
+we can always discard such $f$ that $\lmd_f=0$ from $S^*$.
+
+For every $f\in S^*$, define
+$$S_f\ceq\set{a\in\fc{\bar B}{0,1}}{\fc fa=\V f},$$
+where $\fc{\bar B}{0,1}$ is the closed unit ball in $X$.
+We then have
+$$\forall a\in S_f:\fc ha=\fc fa+\fc{\p{h-f}}a\ge\V f-\V{h-f}\V a>0,$$ {#eq:finite-dimension-not-inner-product-to-not-bar-p2f-1}
+where the last inequality is by $f\in D_h$.
+
+Because $X$ is finite-dimensional, $\fc{\bar B}{0,1}$ is compact, so every $S_f$ is a nonempty compact convex set.
+By Lemma [@thm:finite-restricting-set], there exists finite set $S'_f\subseteq S_f$ such that
+$S'_f-y\subseteq S_f\Rightarrow y=0$.
+Define $S\ceq\bigcup_{f\in S^*}S'_f$.
+By Equation [@eq:finite-dimension-not-inner-product-to-not-bar-p2f-1], we then have $\forall a\in S:\fc ha>0$.
+Therefore, $0\notin\opn{conv}S$.
+
+Now let $y\in\fc{\bar I}{S,0}$.
+We then have $\forall a\in S:\V{a-y}\le\V a=1$.
+On the other hand, for $a\in S'_f$,
+$$\V{a-y}\ge\fr{\fc f{a-y}}{\V f}=1-\fr{\fc fy}{\V f}.$$
+Therefore, $\fc fy\ge0$.
+Then, $\sum_f\lmd_ff=0$ forces $\fc fy=0$.
+Then, for any $a\in S'_f$, we have $\fc f{a-y}=\V f$ and $\V{a-y}\le1$,
+which means $a-y\in S_f$.
+We now have $S'_f-y\subseteq S_f$, implying $y=0$.
+
+Therefore, we have $\fc{\bar I}{S,0}=\B0$.
+This gives a counterexample to $\bar P_2^\mrm f$.
+{% qed %}
+
 </details>
 
 <p class="no-indent">
@@ -984,6 +1045,7 @@ If $X$ satisfies $\bar P_2^\mrm a$, then $X$ is an inner product space.
 </p>
 
 <details><summary>Proof</summary>
+
 
 </details>
 
