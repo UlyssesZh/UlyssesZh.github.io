@@ -482,9 +482,10 @@ $X$ is not strictly convex, a contradiction.
 <p class="no-indent">
 **Definition {#thm:birkhoff-james-orthogonality}**
 ([Birkhoff, 1935](https://doi.org/10.1215/S0012-7094-35-00115-6))**.**
-Let $X$ be a normed space, and let $u,v\in X$.
-We say $u$ is Birkhoff--James orthogonal to $v$, denoted as $u\perp_\mrm{BJ}v$, if
-$$\forall t\in\bR:\V{u+tv}\ge\V u.$$
+Let $X$ be a normed space, and let $u,y\in X$.
+We say $u$ is Birkhoff--James orthogonal to $y$, denoted as $u\perp_\mrm{BJ}y$, if
+$$\forall t\in\bR:\V{u+ty}\ge\V u.$$
+For a set $H\subseteq X$, one denotes $H\perp_\mrm{BJ}y$ if $\forall u\in H:u\perp_\mrm{BJ}y$.
 </p>
 
 <p class="no-indent">
@@ -610,7 +611,18 @@ The two inequalities forces $\fc\phi y=0$, so $y=0$.
 {% qed %}
 
 </details>
+
+<p class="no-indent">
+**Lemma {#thm:orthogonal-hyperplane-to-inner-product}**
+([James, 1947](https://doi.org/10.1090/S0002-9904-1947-08831-5)] [^hyperplane], Theorem 4)**.**
+Let $X$ be a normed space with $\dim X\ge3$.
+Then, $X$ is an inner product space iff for every hyperplane $H\subseteq X$,
+there exists $y\in X\setminus\B0$ such that $H\perp_\mrm{BJ}y$.
+</p>
 </details>
+
+[^hyperplane]:
+Note that, when James talks about a "hyperplane", it actually means a closed hyperplane.
 
 <p class="no-indent">
 **Theorem {#thm:inner-product-to-bar-p1a}.**
@@ -1046,6 +1058,46 @@ If $X$ satisfies $\bar P_2^\mrm a$, then $X$ is an inner product space.
 
 <details><summary>Proof</summary>
 
+Let $f\in X^*\setminus\B0$ be a continuous functional and $S\ceq\set{a\in X}{\fc fa=1}$.
+Then $S$ is closed and convex, and $0\notin S=\opn{\overline{conv}}S$.
+By $\bar P_2^\mrm a$, there exists $y\in X\setminus\B0$ such that
+$$\forall a\in S:\V{a-y}\le\V a,$$ {#eq:bar-p2a-to-inner-product-1}
+
+First show $k\ceq\fc fy\ne0$.
+Suppose for contradiction that $k=0$.
+Then one can prove by mathematical induction
+(using Equation [@eq:bar-p2a-to-inner-product-1] as the induction step)
+that $\forall n\in\bN,a\in S:\V{a-ny}\le\V a$.
+Then $\V a\ge\V{a-ny}\ge n\V y-\V a$, which fails when $n\ge3\V a/\V y$, a contradiction.
+Therefore, $k\ne0$.
+
+We then have $y/k\in S$.
+Therefore, $S=y/k+\opn{ker}f$.
+Equation [@eq:bar-p2a-to-inner-product-1] becomes
+$$\forall u\in\opn{ker}f:\V{u+\p{\fr1k-1}y}\le\V{u+\fr1ky}.$$
+Noticing that $k\opn{ker}f=\opn{ker}f$, we have
+$$\forall u\in\opn{ker}f:\V{u+\p{1-k}y}\le\V{u+y}.$$
+The particular case $u=0$ sets $\v{1-k}\le1$.
+For any $t\in\bR\setminus\B0$, replacing $u$ with $u/t$ gives
+$$\V{u+\p{1-k}ty}\le\V{u+ty},$$ {#eq:bar-p2a-to-inner-product-2}
+which obviously is also true when $t=0$.
+
+Consider two cases $\v{1-k}<1$ and $\v{1-k}=1$.
+For the first case, we can prove by mathematical induction
+(using Equation [@eq:bar-p2a-to-inner-product-2] as the induction step) that
+$$\forall n\in\bN:\V{u+\p{1-k}^nty}\le\V{u+ty}.$$
+Take the limit $n\to\infty$ gives $\V u\le\V{u+ty}$, so $u\perp_\mrm{BJ}y$.
+
+For the second case, because $k\ne0$, we necessarily have $k=2$,
+so Equation [@eq:bar-p2a-to-inner-product-2] gives $\V{u-ty}\le\V{u+ty}$.
+By the triangle inequality,
+$$\V u\le\fr12\p{\V{u+ty}+\V{u-ty}}\le\V{u+ty},$$
+so $u\perp_\mrm{BJ}y$.
+
+This esbalishes $\opn{ker}f\perp_\mrm{BJ}y$.
+Because any closed hyperplane can be expressed as $\opn{ker}f$,
+by Lemma [@thm:orthogonal-hyperplane-to-inner-product], $X$ is an inner product space.
+{% qed %}
 
 </details>
 
