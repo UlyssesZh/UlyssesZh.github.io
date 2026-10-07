@@ -41,7 +41,7 @@ A lot of repetitive work is done for each converted document:
 - Spawning a Haskell process (Pandoc CLI).
 - Spawning a Ruby process and loading gems (Paru and Rouge).
 - Spawning another Haskell process (pandoc-crossref).
-- Sawpning a native binary (pandoc-katex) that initializes a JavaScript engine (QuickJS).
+- Spawning a native binary (pandoc-katex) that initializes a JavaScript engine (QuickJS).
 - Serialize and deserialize the entire AST to JSON between every two steps.
 
 ## Optimization of calling JavaScript
