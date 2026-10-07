@@ -16,6 +16,8 @@ bundle exec rake build
 Use `bundle exec rake serve` to serve the site locally.
 For a faster experience but limited features, use `bundle exec rake serve_i`.
 
+Use `bundle exec rake update` to update the Ruby, Cabal, and npm dependencies.
+
 ## License
 
 The development codes are licensed under MIT.
