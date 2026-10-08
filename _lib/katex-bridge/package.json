@@ -9,7 +9,7 @@
 	"dependencies": {
 		"@msgpack/msgpack": "^3.0.0",
 		"fastestsmallesttextencoderdecoder": "^1.0.22",
-		"katex": "^0.16.11"
+		"katex": "^0.18.2"
 	},
 	"devDependencies": {
 		"esbuild": "^0.24.2"
