@@ -1212,7 +1212,7 @@ Therefore, $X$ has balanced tangent chords at $y$.
 </details>
 
 <p class="no-indent">
-**Theorem {#thm:balanced-tangent-chords-equivalence}.**
+**Lemma {#thm:balanced-tangent-chords-equivalence}.**
 For a normed space, positive bisectability at $y$
 is equivalent to having balanced tangent chords at $y$.
 </p>
@@ -1223,23 +1223,27 @@ The case $y=0$ is immediate, so assume $y\ne0$.
 For a nonzero $u\perp_\mrm{BJ}y$, write $\fc dt\ceq\V{u+ty}-\V u$.
 This convex function has its minimum at $0$, so it is non-decreasing along either ray from $0$.
 
-Suppose first that $\fc dt\le\fc d{-Ct}$ for $\v t\le\dlt$.
-Increasing $C$ preserves this inequality.
-Choose $C\ge1+2\V u/\p{\dlt\V y}$ as well.
+First prove that having balanced tangent chords at $y$ implies positive bisectability at $y$.
+Suppose that $\fc dt\le\fc d{-Ct}$ for $\v t\le\dlt$.
+Define
+$$C'\ceq\opc{max}{C,1+\fr{2u}{\dlt\V y}}.$$
+For $\v t\le\dlt$, we have $\fc dt\le\fc d{-Ct}\le\fc d{-C't}$.
 For $\v t\ge\dlt$, the triangle inequality gives
-$$\fc d{-Ct}\ge C\v t\V y-2\V u\ge\v t\V y\ge\fc dt.$$
-Thus $\fc dt\le\fc d{-Ct}$ for every real $t$.
-Set $\veps\ceq1/\p{C+1}$.
-For $r\ne0$, use $t=\veps/r$ and $-C\veps=\veps-1$ to obtain
-$$\V{ru+\veps y}\le\V{ru+\p{\veps-1}y}.$$
-Therefore, $\fc{\beta_{u,y}}r\ge\veps$.
-Also $\fc{\beta_{u,y}}0=1/2\ge\veps$, proving positive bisectability.
+$$\fc d{-C't}\ge C'\v t\V y-2\V u\ge\v t\V y\ge\fc dt.$$
+Thus $\forall t\in\bR:\fc dt\le\fc d{-C't}$.
 
-Conversely, choose $0<\veps\le\min\B{1/2,\inf_r\fc{\beta_{u,y}}r}$.
-The function
-$$s\longmapsto\V{ru+sy}-\V{ru+\p{s-1}y}$$
-is continuous and non-decreasing, so its nonpositive set contains $\veps$.
-For $t\ne0$, take $r=\veps/t$ to obtain
+Set $\veps\ceq1/\p{C'+1}$.
+For $r\ne0$, we have
+$$\V{ru+\veps y}=\v r\fc d{\fr\veps r}
+\le\v r\fc d{-C'\fr\veps r}=\V{ru+\p{\veps-1}y}.$$
+Therefore, $\fc{\beta_{u,y}}r\ge\veps$.
+Also $\fc{\beta_{u,y}}0=1/2\ge\veps$.
+Therefore, positive bisectability at $y$ is proven.
+
+Conversely, prove that positive bisectability at $y$ implies having balanced tangent chords at $y$.
+Define $\veps\ceq\inf_{r\in\bR}\fc{\beta_{u,y}}r$.
+The fact that $\fc{\beta_{u,y}}r\ge\veps$ means that $\V{ru+\veps y}\ge\V{ru+\p{\veps-1}y}$.
+This reduces to
 $$\fc dt\le\fc d{-\fr{1-\veps}\veps t}.$$
 The same inequality holds at $t=0$.
 This proves balanced tangent chords, with $C=\p{1-\veps}/\veps$.
@@ -1424,7 +1428,7 @@ it is equivalent to prove that $0\notin\opn{\overline{conv}}D_y$ for any $y\in X
 where $D_y$ is the Voronoi cell of $y$.
 The case where $y=0$ is trivial, and we assume $y\ne0$ from here.
 
-By Theorem [@thm:balanced-tangent-chords-equivalence], $X$ is positively bisectable.
+By Lemma [@thm:balanced-tangent-chords-equivalence], $X$ is positively bisectable.
 This means we can choose a nonzero $u\perp_\mrm{BJ}y$ such that $\inf_{r\in\bR}\fc{\beta_{u,y}}r\eqc\veps>0$.
 
 Set up a bisector coordinate system with basis $\B{u,y}$.
@@ -1448,7 +1452,7 @@ By Theorem [@thm:voronoi-cell-equivalence], to prove that $X$ satisfies $\bar P_
 it is equivalent to prove that $0\notin\opn{\overline{conv}}\bar D_y$ for any $y\in X\setminus\B0$,
 where $\bar D_y$ is the closed Voronoi cell of $y$.
 
-By Theorem [@thm:balanced-tangent-chords-equivalence], $X$ is positively bisectable.
+By Lemma [@thm:balanced-tangent-chords-equivalence], $X$ is positively bisectable.
 This means we can choose a nonzero $u\perp_\mrm{BJ}y$ such that $\inf_{r\in\bR}\fc{\beta_{u,y}}r\eqc\veps>0$.
 
 Set up a bisector coordinate system with basis $\B{u,y}$.
@@ -1473,7 +1477,7 @@ Let $X$ be a normed plane without balanced tangent chords.
 By Theorem [@thm:voronoi-cell-equivalence], to prove that $X$ does not satisfy $P_\supset^\mrm a$,
 it is equivalent to prove that there exists $y\in X$ such that $0\in\opn{\overline{conv}}D_y$.
 
-By Theorem [@thm:balanced-tangent-chords-equivalence],
+By Lemma [@thm:balanced-tangent-chords-equivalence],
 $X$ is not positively bisectable.
 Choose $y\in X$ at which positive bisectability fails.
 For every nonzero $u\perp_\mrm{BJ}y$, nonnegativity of the bisector function then gives
