@@ -11,7 +11,7 @@ Here are some of my friends (ordered lexicographically):
 - [IamI](https://iami.town){title=II},
 - [Invwindy](https://cirno.blog){title=⑨姐姐},
 - [Lanza](https://lanzainc.xyz){title=lanza},
-- [Misaka13514](https://atri.tk){title=欠陥電気},
+- [Misaka13514](https://blog.apeiria.net){title=欠陥電気},
 - [Silent](https://not-hentai.com){title=静寂之夜},
 - [Taroxd](https://taroxd.github.io){title=状元},
 - [Xiang](https://orashshi.github.io){title=Orash},

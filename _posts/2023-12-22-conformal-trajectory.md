@@ -54,12 +54,14 @@ trajectories of harmonic oscillators under complex squaring.
 You may ask, how can we notice complex squaring does the said transformation on ellipses?
 The observation is noticing the simple algebra
 $$\p{z+\fr1z}^2=z^2+\fr1{z^2}+2,$$
-which means that the Joukowski transform $z\mapsto z+1/z$ of a unit circle
+which means that the Joukowski transform [^joukowski-transform] $z\mapsto z+1/z$ of a unit circle
 simply translates under complex squaring.
 We can then try to generalize this to circles of other radii,
 whose Joukowski transformations are just ellipses!
-(If you remember, this is the second time Joukowski transformation appears in my blog.
-The first time was [here]({% post_url 2020-06-13-joukowsky-heart %}).)
+
+[^joukowski-transform]:
+If you remember, this is the second time Joukowski transformation appears in my blog.
+The first time was [here]({% post_url 2020-06-13-joukowsky-heart %}).
 
 Then, are the Kepler problem and the harmonic oscillator the only two central-force potentials
 whose trajectories can be transformed into each other by a complex function?
