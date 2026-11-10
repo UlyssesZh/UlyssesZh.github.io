@@ -4,6 +4,7 @@
 		ghc
 		cabal-install
 		nodejs_26
+		pkg-config
 	];
 	buildInputs = [
 		zlib
