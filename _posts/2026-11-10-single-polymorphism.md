@@ -23,7 +23,7 @@ class MyData
 
 	extend Binary
 
-	MASK = [0xdeadbeef].pack ?v
+	MASK = [0xdeadbeef].pack ?V
 	def mask data
 		data.bytes.zip((MASK * (data.bytesize / MASK.bytesize + 1)).bytes).map { _1 ^ _2 }.pack 'C*'
 	end
