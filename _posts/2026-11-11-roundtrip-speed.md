@@ -74,7 +74,7 @@ $$\fr{\d t}{\d s}=\fc{c^{-1}}{t,x,u},\quad\fr{\d x}{\d s}=u.$$
 In transformed coordinates $\p{\tau,x}$, Equation [@eq:ode] reads
 $$\fc{\tilde c^{-1}}{\tau,x,u}=\fr{\d\tau}{\d s}
 =\fr{\d t}{\d s}\,\fc{\partial_t\tau}{t,x}+\fr{\d x}{\d s}\,\fc{\nabla_x\tau}{t,x}.$$
-This recovers Equation [@eq:transform].
+This recovers the desired equation for $\tilde c^{-1}$.
 Because $\gma$ is arbitrary, it is true in general.
 
 </details>
